@@ -60,6 +60,13 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
   public static final Version IE9 = new Version (9);
   public static final Version IE10 = new Version (10);
   public static final Version IE11 = new Version (11);
+  public static final String CONDITION_IF_IE_GENERIC = "if IE";
+  public static final String CONDITION_IF_IE = "if IE ";
+  public static final String CONDITION_IF_NOT_IE = "if !IE ";
+  public static final String CONDITION_IF_LT_IE = "if lt IE ";
+  public static final String CONDITION_IF_LTE_IE = "if lte IE ";
+  public static final String CONDITION_IF_GT_IE = "if gt IE ";
+  public static final String CONDITION_IF_GTE_IE = "if gte IE ";
 
   private static final ReadWriteLock s_aRWLock = new ReentrantReadWriteLock ();
 
@@ -207,7 +214,7 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
   @Nonnull
   public static HCConditionalCommentNode createForIE (@Nonnull final IHCNode aWrappedNode)
   {
-    return new HCConditionalCommentNode ("if IE", aWrappedNode);
+    return new HCConditionalCommentNode (CONDITION_IF_IE_GENERIC, aWrappedNode);
   }
 
   @Nonnull
@@ -216,7 +223,7 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
   {
     ValueEnforcer.notNull (aVersion, "Version");
 
-    return new HCConditionalCommentNode ("if IE " + aVersion.getAsString (), aWrappedNode);
+    return new HCConditionalCommentNode (CONDITION_IF_IE + aVersion.getAsString (), aWrappedNode);
   }
 
   @Nonnull
@@ -267,7 +274,7 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
   {
     ValueEnforcer.notNull (aVersion, "Version");
 
-    return new HCConditionalCommentNode ("if !IE " + aVersion.getAsString (), aWrappedNode);
+    return new HCConditionalCommentNode (CONDITION_IF_NOT_IE + aVersion.getAsString (), aWrappedNode);
   }
 
   @Nonnull
@@ -275,7 +282,7 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
                                                                       @Nonnull final IHCNode aWrappedNode)
   {
     ValueEnforcer.notNull (aVersion, "Version");
-    return new HCConditionalCommentNode ("if lt IE " + aVersion.getAsString (), aWrappedNode);
+    return new HCConditionalCommentNode (CONDITION_IF_LT_IE + aVersion.getAsString (), aWrappedNode);
   }
 
   @Nonnull
@@ -326,7 +333,7 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
   {
     ValueEnforcer.notNull (aVersion, "Version");
 
-    return new HCConditionalCommentNode ("if lte IE " + aVersion.getAsString (), aWrappedNode);
+    return new HCConditionalCommentNode (CONDITION_IF_LTE_IE + aVersion.getAsString (), aWrappedNode);
   }
 
   @Nonnull
@@ -377,7 +384,7 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
   {
     ValueEnforcer.notNull (aVersion, "Version");
 
-    return new HCConditionalCommentNode ("if gt IE " + aVersion.getAsString (), aWrappedNode);
+    return new HCConditionalCommentNode (CONDITION_IF_GT_IE + aVersion.getAsString (), aWrappedNode);
   }
 
   @Nonnull
@@ -428,7 +435,7 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
   {
     ValueEnforcer.notNull (aVersion, "Version");
 
-    return new HCConditionalCommentNode ("if gte IE " + aVersion.getAsString (), aWrappedNode);
+    return new HCConditionalCommentNode (CONDITION_IF_GTE_IE + aVersion.getAsString (), aWrappedNode);
   }
 
   @Nonnull
