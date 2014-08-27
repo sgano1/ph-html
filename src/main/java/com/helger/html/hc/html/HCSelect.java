@@ -47,7 +47,7 @@ import com.helger.html.request.IHCRequestField;
 
 /**
  * Represents an HTML &lt;select&gt; element
- * 
+ *
  * @author Philip Helger
  */
 // TODO change hierarchy to http://dev.w3.org/html5/markup/select.html#select
@@ -126,7 +126,7 @@ public class HCSelect extends AbstractHCControl <HCSelect>
 
   /**
    * Callback
-   * 
+   *
    * @param aOption
    *        The added option. Never <code>null</code>.
    */
@@ -360,7 +360,7 @@ public class HCSelect extends AbstractHCControl <HCSelect>
 
   /**
    * Get the option at the specified index
-   * 
+   *
    * @param nIndex
    *        The index to retrieve. Should always be &ge; 0.
    * @return <code>null</code> if no option is available for the specified
@@ -386,7 +386,7 @@ public class HCSelect extends AbstractHCControl <HCSelect>
 
   /**
    * Get the option group at the specified index
-   * 
+   *
    * @param nIndex
    *        The index to retrieve. Should always be &ge; 0.
    * @return <code>null</code> if no option group is available for the specified
@@ -465,7 +465,7 @@ public class HCSelect extends AbstractHCControl <HCSelect>
 
   /**
    * Check if this select has at least one selected option
-   * 
+   *
    * @return <code>true</code> if at least one option is selected
    */
   public final boolean hasSelectedOption ()

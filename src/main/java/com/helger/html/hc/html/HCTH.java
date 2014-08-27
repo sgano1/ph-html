@@ -21,7 +21,7 @@ import com.helger.html.EHTMLElement;
 
 /**
  * Represents an HTML &lt;th&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCTH extends AbstractHCCell <HCTH>

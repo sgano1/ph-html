@@ -73,7 +73,7 @@ public class Main_AbstractJQueryInvocationExtendedTest extends AbstractCreateJQu
                             aEntry.getIdentifier () +
                             " (" +
                             _getTestValue (sJavaType) +
-                            ")); }");
+                    ")); }");
               }
           }
           else
@@ -96,10 +96,10 @@ public class Main_AbstractJQueryInvocationExtendedTest extends AbstractCreateJQu
               if (aUsedJavaSignatures.add (sUsedSignaturePrefix + StringHelper.getImploded (',', aJavaTypeKey)))
               {
                 String sLine = sRealPrefix +
-                               (nUniqueIndex++) +
-                               "() { assertNotNull (JQuery.idRef (\"any\")." +
-                               aEntry.getIdentifier () +
-                               " (";
+                    (nUniqueIndex++) +
+                    "() { assertNotNull (JQuery.idRef (\"any\")." +
+                    aEntry.getIdentifier () +
+                    " (";
                 int i = 0;
                 for (final Argument aArg : aSignature.getAllArguments ())
                 {
@@ -167,11 +167,11 @@ public class Main_AbstractJQueryInvocationExtendedTest extends AbstractCreateJQu
                 {
                   final String sParams = aAllParams.get (i);
                   final String sLine = sRealPrefix +
-                                       (nUniqueIndex++) +
-                                       "() { assertNotNull (JQuery.idRef (\"any\")." +
-                                       aEntry.getIdentifier () +
-                                       " (" +
-                                       sParams;
+                      (nUniqueIndex++) +
+                      "() { assertNotNull (JQuery.idRef (\"any\")." +
+                      aEntry.getIdentifier () +
+                      " (" +
+                      sParams;
                   aLines.add (sLine + ")); }");
                 }
               }
@@ -181,35 +181,35 @@ public class Main_AbstractJQueryInvocationExtendedTest extends AbstractCreateJQu
       }
 
     final StringBuilder aFull = new StringBuilder ("package com.helger.html.js.builder.jquery;\n" +
-                                                   "\n" +
-                                                   "import static org.junit.Assert.assertNotNull;\n" +
-                                                   "\n" +
-                                                   "import org.junit.Test;\n" +
-                                                   "\n" +
-                                                   "import java.math.BigDecimal;\n" +
-                                                   "import java.math.BigInteger;\n" +
-                                                   "\n" +
-                                                   "\n" +
-                                                   "import com.helger.commons.collections.ContainerHelper;\n" +
-                                                   "import com.helger.html.EHTMLElement;\n" +
-                                                   "import com.helger.html.css.DefaultCSSClassProvider;\n" +
-                                                   "import com.helger.html.hc.html.HCDiv;\n" +
-                                                   "import com.helger.html.js.builder.JSAnonymousFunction;\n" +
-                                                   "import com.helger.html.js.builder.JSArray;\n" +
-                                                   "import com.helger.html.js.builder.JSExpr;\n" +
-                                                   "import com.helger.json.impl.JsonObject;\n" +
-                                                   "\n" +
-                                                   "/**\n" +
-                                                   " * Unit test class for class @{link AbstractJQueryInvocation}\n" +
-                                                   " *\n" +
-                                                   " * This file is generated - do NOT edit!\n" +
-                                                   " * @author " +
-                                                   Main_AbstractJQueryInvocationExtendedTest.class.getName () +
-                                                   "\n" +
-                                                   "*/\n" +
-                                                   "@SuppressWarnings (\"deprecation\")\n" +
-                                                   "public final class AbstractJQueryInvocationExtendedTest\n" +
-                                                   "{\n");
+        "\n" +
+        "import static org.junit.Assert.assertNotNull;\n" +
+        "\n" +
+        "import org.junit.Test;\n" +
+        "\n" +
+        "import java.math.BigDecimal;\n" +
+        "import java.math.BigInteger;\n" +
+        "\n" +
+        "\n" +
+        "import com.helger.commons.collections.ContainerHelper;\n" +
+        "import com.helger.html.EHTMLElement;\n" +
+        "import com.helger.html.css.DefaultCSSClassProvider;\n" +
+        "import com.helger.html.hc.html.HCDiv;\n" +
+        "import com.helger.html.js.builder.JSAnonymousFunction;\n" +
+        "import com.helger.html.js.builder.JSArray;\n" +
+        "import com.helger.html.js.builder.JSExpr;\n" +
+        "import com.helger.json.impl.JsonObject;\n" +
+        "\n" +
+        "/**\n" +
+        " * Unit test class for class @{link AbstractJQueryInvocation}\n" +
+        " *\n" +
+        " * This file is generated - do NOT edit!\n" +
+        " * @author " +
+        Main_AbstractJQueryInvocationExtendedTest.class.getName () +
+        "\n" +
+        "*/\n" +
+        "@SuppressWarnings (\"deprecation\")\n" +
+        "public final class AbstractJQueryInvocationExtendedTest\n" +
+        "{\n");
     for (final String sEntry : aLines)
       aFull.append (sEntry).append ("\n\n");
     aFull.append ("}\n");

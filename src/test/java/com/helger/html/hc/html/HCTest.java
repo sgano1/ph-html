@@ -30,83 +30,11 @@ import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.api.EHCLinkType;
 import com.helger.html.hc.conversion.HCSettings;
 import com.helger.html.hc.conversion.IHCConversionSettings;
-import com.helger.html.hc.html.HCA;
-import com.helger.html.hc.html.HCA_Target;
-import com.helger.html.hc.html.HCAbbr;
-import com.helger.html.hc.html.HCAddress;
-import com.helger.html.hc.html.HCB;
-import com.helger.html.hc.html.HCBDO;
-import com.helger.html.hc.html.HCBlockQuote;
-import com.helger.html.hc.html.HCBody;
-import com.helger.html.hc.html.HCButton;
-import com.helger.html.hc.html.HCButton_Reset;
-import com.helger.html.hc.html.HCButton_Submit;
-import com.helger.html.hc.html.HCCenter;
-import com.helger.html.hc.html.HCCheckBox;
-import com.helger.html.hc.html.HCCite;
-import com.helger.html.hc.html.HCCode;
-import com.helger.html.hc.html.HCCol;
-import com.helger.html.hc.html.HCDD;
-import com.helger.html.hc.html.HCDFN;
-import com.helger.html.hc.html.HCDL;
-import com.helger.html.hc.html.HCDT;
-import com.helger.html.hc.html.HCDel;
-import com.helger.html.hc.html.HCDiv;
-import com.helger.html.hc.html.HCEM;
-import com.helger.html.hc.html.HCEdit;
-import com.helger.html.hc.html.HCEditFile;
-import com.helger.html.hc.html.HCEditPassword;
-import com.helger.html.hc.html.HCEmbed;
-import com.helger.html.hc.html.HCFieldSet;
-import com.helger.html.hc.html.HCForm;
-import com.helger.html.hc.html.HCFrame;
-import com.helger.html.hc.html.HCFrameset;
-import com.helger.html.hc.html.HCH1;
-import com.helger.html.hc.html.HCH2;
-import com.helger.html.hc.html.HCH3;
-import com.helger.html.hc.html.HCH4;
-import com.helger.html.hc.html.HCH5;
-import com.helger.html.hc.html.HCH6;
-import com.helger.html.hc.html.HCHR;
-import com.helger.html.hc.html.HCHiddenField;
-import com.helger.html.hc.html.HCHtml;
-import com.helger.html.hc.html.HCI;
-import com.helger.html.hc.html.HCIFrame;
-import com.helger.html.hc.html.HCImg;
-import com.helger.html.hc.html.HCIns;
-import com.helger.html.hc.html.HCKBD;
-import com.helger.html.hc.html.HCLabel;
-import com.helger.html.hc.html.HCLegend;
-import com.helger.html.hc.html.HCLink;
-import com.helger.html.hc.html.HCMenu;
-import com.helger.html.hc.html.HCNoScript;
-import com.helger.html.hc.html.HCOL;
-import com.helger.html.hc.html.HCObject;
-import com.helger.html.hc.html.HCOptGroup;
-import com.helger.html.hc.html.HCP;
-import com.helger.html.hc.html.HCParam;
-import com.helger.html.hc.html.HCPre;
-import com.helger.html.hc.html.HCQ;
-import com.helger.html.hc.html.HCRadioButton;
-import com.helger.html.hc.html.HCS;
-import com.helger.html.hc.html.HCSamp;
-import com.helger.html.hc.html.HCScript;
-import com.helger.html.hc.html.HCScriptFile;
-import com.helger.html.hc.html.HCSelect;
-import com.helger.html.hc.html.HCSpan;
-import com.helger.html.hc.html.HCStrong;
-import com.helger.html.hc.html.HCStyle;
-import com.helger.html.hc.html.HCSub;
-import com.helger.html.hc.html.HCSup;
-import com.helger.html.hc.html.HCTable;
-import com.helger.html.hc.html.HCTextArea;
-import com.helger.html.hc.html.HCUL;
-import com.helger.html.hc.html.HCVar;
 import com.helger.html.js.builder.JSExpr;
 
 /**
  * Instantiate and generate code for all HTML elements available
- * 
+ *
  * @author Philip Helger
  */
 public final class HCTest
@@ -184,15 +112,15 @@ public final class HCTest
     b.addChild (new HCLegend ());
     b.addChild (new HCLegend ().addChild ("Legend"));
     b.addChild (new HCLink ().setRel (EHCLinkType.ALTERNATE)
-                             .setType (CMimeType.TEXT_HTML)
-                             .setHref (new SimpleURL ("any.html")));
+                .setType (CMimeType.TEXT_HTML)
+                .setHref (new SimpleURL ("any.html")));
     final HCMenu aMenu = new HCMenu ();
     aMenu.addItem ("File");
     aMenu.addItem ("Settings");
     b.addChild (aMenu);
     b.addChild (new HCNoScript ().addChild ("JS missing"));
     final HCObject aObject = new HCObject ().setType (CMimeType.APPLICATION_SHOCKWAVE_FLASH)
-                                            .setClassID ("classID{567}");
+        .setClassID ("classID{567}");
     aObject.addChild (new HCParam ("par1"));
     b.addChild (aObject);
     final HCOL aOL = new HCOL ();

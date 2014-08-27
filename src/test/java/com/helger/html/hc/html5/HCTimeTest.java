@@ -25,11 +25,9 @@ import org.joda.time.DateTime;
 import org.joda.time.Duration;
 import org.junit.Test;
 
-import com.helger.html.hc.html5.HCTime;
-
 /**
  * Test class for class {@link HCTime}
- * 
+ *
  * @author Philip Helger
  */
 public final class HCTimeTest

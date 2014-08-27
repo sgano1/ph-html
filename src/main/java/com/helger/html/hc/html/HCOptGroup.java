@@ -31,7 +31,7 @@ import com.helger.html.hc.impl.AbstractHCElementWithInternalChildren;
 
 /**
  * Represents an HTML &lt;optgroup&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCOptGroup extends AbstractHCElementWithInternalChildren <HCOptGroup, HCOption> implements IHCCanBeDisabled <HCOptGroup>

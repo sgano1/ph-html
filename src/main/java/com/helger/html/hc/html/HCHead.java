@@ -53,7 +53,7 @@ import com.helger.html.meta.IMetaElement;
 
 /**
  * Represents an HTML &lt;head&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCHead extends AbstractHCElement <HCHead>
@@ -185,7 +185,7 @@ public class HCHead extends AbstractHCElement <HCHead>
 
   /**
    * Add a link object to the head.
-   * 
+   *
    * @param aLink
    *        The link to be added. May not be <code>null</code>.
    * @return this
@@ -200,7 +200,7 @@ public class HCHead extends AbstractHCElement <HCHead>
 
   /**
    * Add a link object to the head at the specified position.
-   * 
+   *
    * @param nIndex
    *        The index where the links should be added (counting link elements
    *        only)
@@ -304,7 +304,7 @@ public class HCHead extends AbstractHCElement <HCHead>
 
   /**
    * Append some JavaScript code
-   * 
+   *
    * @param aJS
    *        The JS to be added. May not be <code>null</code>.
    * @return this
@@ -321,7 +321,7 @@ public class HCHead extends AbstractHCElement <HCHead>
 
   /**
    * Append some JavaScript code at the specified index
-   * 
+   *
    * @param nIndex
    *        The index where the JS should be added (counting only JS elements)
    * @param aJS

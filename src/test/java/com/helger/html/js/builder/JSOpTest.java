@@ -25,17 +25,9 @@ import java.math.BigDecimal;
 
 import org.junit.Test;
 
-import com.helger.html.js.builder.IJSExpression;
-import com.helger.html.js.builder.JSAtomBigDecimal;
-import com.helger.html.js.builder.JSAtomInt;
-import com.helger.html.js.builder.JSExpr;
-import com.helger.html.js.builder.JSOp;
-import com.helger.html.js.builder.JSPrimitiveType;
-import com.helger.html.js.builder.JSRef;
-
 /**
  * Test class for class {@link JSOp}.
- * 
+ *
  * @author Philip Helger
  */
 public final class JSOpTest

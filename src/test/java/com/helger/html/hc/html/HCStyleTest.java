@@ -22,11 +22,10 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.helger.html.hc.conversion.HCSettings;
-import com.helger.html.hc.html.HCStyle;
 
 /**
  * Test class for class {@link HCStyle}.
- * 
+ *
  * @author Philip Helger
  */
 public final class HCStyleTest

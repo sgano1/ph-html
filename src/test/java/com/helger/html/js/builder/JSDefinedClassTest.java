@@ -19,18 +19,11 @@ package com.helger.html.js.builder;
 
 import org.junit.Test;
 
-import com.helger.html.js.builder.JSConstructor;
-import com.helger.html.js.builder.JSDefinedClass;
-import com.helger.html.js.builder.JSExpr;
-import com.helger.html.js.builder.JSFieldVar;
-import com.helger.html.js.builder.JSMethod;
-import com.helger.html.js.builder.JSPackage;
-import com.helger.html.js.builder.JSVar;
 import com.helger.html.js.builder.html.JSHtml;
 
 /**
  * Test class for class {@link JSDefinedClass}
- * 
+ *
  * @author Philip Helger
  */
 public final class JSDefinedClassTest

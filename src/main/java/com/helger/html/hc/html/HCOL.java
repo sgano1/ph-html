@@ -30,7 +30,7 @@ import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
 /**
  * Represents an HTML &lt;ol&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCOL extends AbstractHCList <HCOL>

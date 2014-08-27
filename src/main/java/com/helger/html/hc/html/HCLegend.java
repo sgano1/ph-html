@@ -27,7 +27,7 @@ import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;legend&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCLegend extends AbstractHCElementWithChildren <HCLegend>
@@ -39,7 +39,7 @@ public class HCLegend extends AbstractHCElementWithChildren <HCLegend>
 
   /**
    * Create a new LEGEND element with the passed child text
-   * 
+   *
    * @param aChild
    *        The child text provider to be appended. May be <code>null</code>
    * @return The created HCLegend element and never <code>null</code>
@@ -52,7 +52,7 @@ public class HCLegend extends AbstractHCElementWithChildren <HCLegend>
 
   /**
    * Create a new LEGEND element with the passed child texts
-   * 
+   *
    * @param aChildren
    *        The child texts to be appended. May be <code>null</code>
    * @return The created HCLegend element and never <code>null</code>
@@ -65,7 +65,7 @@ public class HCLegend extends AbstractHCElementWithChildren <HCLegend>
 
   /**
    * Create a new LEGEND element with the passed child text
-   * 
+   *
    * @param sChild
    *        The child to be appended. May be <code>null</code>
    * @return The created HCLegend element and never <code>null</code>
@@ -78,7 +78,7 @@ public class HCLegend extends AbstractHCElementWithChildren <HCLegend>
 
   /**
    * Create a new LEGEND element with the passed child texts
-   * 
+   *
    * @param aChildren
    *        The child texts to be appended. May be <code>null</code>
    * @return The created HCLegend element and never <code>null</code>
@@ -91,7 +91,7 @@ public class HCLegend extends AbstractHCElementWithChildren <HCLegend>
 
   /**
    * Create a new LEGEND element with the passed child node
-   * 
+   *
    * @param aChild
    *        The child node to be appended. May be <code>null</code>
    * @return The created HCLegend element and never <code>null</code>
@@ -104,7 +104,7 @@ public class HCLegend extends AbstractHCElementWithChildren <HCLegend>
 
   /**
    * Create a new LEGEND element with the passed child nodes
-   * 
+   *
    * @param aChildren
    *        The child nodes to be appended. May be <code>null</code>
    * @return The created HCLegend element and never <code>null</code>
@@ -117,7 +117,7 @@ public class HCLegend extends AbstractHCElementWithChildren <HCLegend>
 
   /**
    * Create a new LEGEND element with the passed child nodes
-   * 
+   *
    * @param aChildren
    *        The child nodes to be appended. May be <code>null</code>
    * @return The created HCLegend element and never <code>null</code>

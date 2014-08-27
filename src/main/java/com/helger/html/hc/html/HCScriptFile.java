@@ -32,7 +32,7 @@ import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 /**
  * Represents an HTML &lt;script&gt; element that loads the code from a source
  * URL.
- * 
+ *
  * @author Philip Helger
  * @see HCScript
  * @see HCScriptOnDocumentReady

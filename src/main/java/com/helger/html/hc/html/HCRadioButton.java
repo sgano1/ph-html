@@ -33,7 +33,7 @@ import com.helger.html.request.IHCRequestFieldBoolean;
 
 /**
  * Represents an HTML &lt;input&gt; element of type "radio"
- * 
+ *
  * @author Philip Helger
  */
 public class HCRadioButton extends AbstractHCInput <HCRadioButton>

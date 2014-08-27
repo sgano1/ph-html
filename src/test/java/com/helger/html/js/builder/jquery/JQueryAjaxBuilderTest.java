@@ -21,11 +21,9 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.helger.html.js.builder.jquery.JQueryAjaxBuilder;
-
 /**
  * Test class for class {@link JQueryAjaxBuilder}.
- * 
+ *
  * @author Philip Helger
  */
 public final class JQueryAjaxBuilderTest

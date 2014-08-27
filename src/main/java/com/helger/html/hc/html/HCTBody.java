@@ -21,7 +21,7 @@ import com.helger.html.EHTMLElement;
 
 /**
  * HTML &lt;tbody&gt; element.
- * 
+ *
  * @author Philip Helger
  */
 public class HCTBody extends AbstractHCTablePart <HCTBody>

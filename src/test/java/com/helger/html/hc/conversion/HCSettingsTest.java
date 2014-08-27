@@ -22,12 +22,11 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-import com.helger.html.hc.conversion.HCSettings;
 import com.helger.html.hc.html.HCBR;
 
 /**
  * Test class for class {final @link HCSettings}.
- * 
+ *
  * @author Philip Helger
  */
 public final class HCSettingsTest

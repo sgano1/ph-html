@@ -31,7 +31,7 @@ import com.helger.html.hc.impl.AbstractHCElement;
 
 /**
  * Represents an HTML &lt;base&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCBase extends AbstractHCElement <HCBase>

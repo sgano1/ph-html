@@ -33,7 +33,7 @@ import com.helger.html.hc.impl.AbstractHCElement;
 
 /**
  * Represents a single parameter for an {@link HCObject} or an applet.
- * 
+ *
  * @author Philip Helger
  */
 public class HCParam extends AbstractHCElement <HCParam>

@@ -23,7 +23,7 @@ import com.helger.html.annotations.DeprecatedInXHTML1;
 
 /**
  * Represents an HTML &lt;menu&gt; element
- * 
+ *
  * @author Philip Helger
  */
 @DeprecatedInHTML4

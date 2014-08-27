@@ -24,15 +24,9 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import com.helger.html.js.builder.AbstractJSExpression;
-import com.helger.html.js.builder.JSBlock;
-import com.helger.html.js.builder.JSExpr;
-import com.helger.html.js.builder.JSOp;
-import com.helger.html.js.builder.JSVar;
-
 /**
  * Test class for class {@link JSBlock}
- * 
+ *
  * @author Philip Helger
  */
 public final class JSBlockTest

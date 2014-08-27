@@ -24,12 +24,10 @@ import org.junit.Test;
 import com.helger.html.EHTMLElement;
 import com.helger.html.css.DefaultCSSClassProvider;
 import com.helger.html.js.builder.JSExpr;
-import com.helger.html.js.builder.jquery.JQuerySelector;
-import com.helger.html.js.builder.jquery.JQuerySelectorList;
 
 /**
  * Test class for class {@link JQuerySelector}.
- * 
+ *
  * @author Philip Helger
  */
 public final class JQuerySelectorTest
@@ -43,35 +41,35 @@ public final class JQuerySelectorTest
     assertEquals ("'#abc'", JQuerySelector.id ("abc").getJSCode ());
     assertEquals ("'ul#abc'", JQuerySelector.element (EHTMLElement.UL).chain (JQuerySelector.id ("abc")).getJSCode ());
     assertEquals ("'ul,li'", JQuerySelector.element (EHTMLElement.UL)
-                                           .multiple (JQuerySelector.element ("li"))
-                                           .getJSCode ());
+                  .multiple (JQuerySelector.element ("li"))
+                  .getJSCode ());
     assertEquals ("'ul > li'", JQuerySelector.element (EHTMLElement.UL)
-                                             .child (JQuerySelector.element ("li"))
-                                             .getJSCode ());
+                  .child (JQuerySelector.element ("li"))
+                  .getJSCode ());
     assertEquals ("'ul li'", JQuerySelector.element (EHTMLElement.UL)
-                                           .descendant (JQuerySelector.element ("li"))
-                                           .getJSCode ());
+                  .descendant (JQuerySelector.element ("li"))
+                  .getJSCode ());
     assertEquals ("'ul + li'", JQuerySelector.element (EHTMLElement.UL)
-                                             .nextAdjacent (JQuerySelector.element ("li"))
-                                             .getJSCode ());
+                  .nextAdjacent (JQuerySelector.element ("li"))
+                  .getJSCode ());
     assertEquals ("'ul ~ li'", JQuerySelector.element (EHTMLElement.UL)
-                                             .nextSiblings (JQuerySelector.element ("li"))
-                                             .getJSCode ());
+                  .nextSiblings (JQuerySelector.element ("li"))
+                  .getJSCode ());
 
     assertEquals ("'ul.any > li,ol#bla'",
                   JQuerySelector.element (EHTMLElement.UL)
-                                .chain (JQuerySelector.clazz (DefaultCSSClassProvider.create ("any")))
-                                .child (JQuerySelector.element ("li"))
-                                .multiple (JQuerySelector.element ("ol").chain (JQuerySelector.id ("bla")))
-                                .getJSCode ());
+                  .chain (JQuerySelector.clazz (DefaultCSSClassProvider.create ("any")))
+                  .child (JQuerySelector.element ("li"))
+                  .multiple (JQuerySelector.element ("ol").chain (JQuerySelector.id ("bla")))
+                  .getJSCode ());
   }
 
   @Test
   public void testExpr ()
   {
     assertEquals ("('#prefix_'+any)", JQuerySelector.id ("prefix_")
-                                                    .chain (new JQuerySelector (JSExpr.ref ("any")))
-                                                    .getJSCode ());
+                  .chain (new JQuerySelector (JSExpr.ref ("any")))
+                  .getJSCode ());
   }
 
   @Test

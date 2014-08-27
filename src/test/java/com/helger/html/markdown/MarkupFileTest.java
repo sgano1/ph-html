@@ -77,17 +77,15 @@ import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.commons.io.streams.StreamUtils;
 import com.helger.commons.regex.RegExPool;
 import com.helger.commons.string.StringHelper;
-import com.helger.html.markdown.MarkdownConfiguration;
-import com.helger.html.markdown.MarkdownProcessor;
 import com.helger.html.markdown.MarkdownConfiguration.Builder;
 
 @RunWith (Parameterized.class)
 public final class MarkupFileTest
 {
   private final static String [] TEST_FILENAMES = new String [] { "/dingus.txt",
-                                                                 "/paragraphs.txt",
-                                                                 "/snippets.txt",
-                                                                 "/lists.txt" };
+                                                                  "/paragraphs.txt",
+                                                                  "/snippets.txt",
+  "/lists.txt" };
 
   private static void _addTestResultPair (final List <String []> list,
                                           @Nonnull final File aFile,
@@ -153,12 +151,12 @@ public final class MarkupFileTest
             if (!testNumber.equals (resultNumber))
             {
               throw new RuntimeException ("Result " +
-                                          resultNumber +
-                                          " test " +
-                                          testNumber +
-                                          " (line " +
-                                          lineNumber +
-                                          ")");
+                  resultNumber +
+                  " test " +
+                  testNumber +
+                  " (line " +
+                  lineNumber +
+                  ")");
             }
 
             curbuf = result;

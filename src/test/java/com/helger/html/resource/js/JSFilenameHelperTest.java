@@ -24,11 +24,9 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-import com.helger.html.resource.js.JSFilenameHelper;
-
 /**
  * Test class for class {@link JSFilenameHelper}.
- * 
+ *
  * @author Philip Helger
  */
 public final class JSFilenameHelperTest

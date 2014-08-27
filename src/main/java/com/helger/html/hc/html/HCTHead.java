@@ -21,7 +21,7 @@ import com.helger.html.EHTMLElement;
 
 /**
  * HTML &lt;thead&gt; element.
- * 
+ *
  * @author Philip Helger
  */
 public class HCTHead extends AbstractHCTablePart <HCTHead>

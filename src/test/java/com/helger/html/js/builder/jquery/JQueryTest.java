@@ -28,12 +28,10 @@ import com.helger.html.css.DefaultCSSClassProvider;
 import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.js.builder.JSAnonymousFunction;
 import com.helger.html.js.builder.JSExpr;
-import com.helger.html.js.builder.jquery.JQuery;
-import com.helger.html.js.builder.jquery.JQueryInvocation;
 
 /**
  * Test class for class {@link JQuery}.
- * 
+ *
  * @author Philip Helger
  */
 public final class JQueryTest

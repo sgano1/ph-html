@@ -22,7 +22,6 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.helger.html.hc.conversion.HCSettings;
-import com.helger.html.hc.html.HCBody;
 import com.helger.html.js.EJSEvent;
 import com.helger.html.js.builder.JSExpr;
 

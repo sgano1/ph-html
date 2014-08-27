@@ -48,7 +48,7 @@ import com.helger.html.hc.impl.HCTextNode;
 /**
  * This is the common base class for regular HC tables as well as for more
  * complex constructs (e.g. PUI)
- * 
+ *
  * @author Philip Helger
  * @param <IMPLTYPE>
  *        Implementation type
@@ -66,7 +66,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
   /**
    * This constructor is used to create elements with logic like a table but
    * actually not having a top 'table' element
-   * 
+   *
    * @param aElement
    *        The HTML element to be used to create the table
    */
@@ -358,7 +358,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
   /**
    * Get the contained list object that holds all the rows. Handle with care
    * because it alters the internal data structures of this table.
-   * 
+   *
    * @return The contained list object for external row order handling.
    */
   @Nullable
@@ -507,7 +507,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
   /**
    * Get the contained list object that holds all the rows. Handle with care
    * because it alters the internal data structures of this table.
-   * 
+   *
    * @return The contained list object for external row order handling.
    */
   @Nullable
@@ -657,7 +657,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
   /**
    * Get the contained list object that holds all the rows. Handle with care
    * because it alters the internal data structures of this table.
-   * 
+   *
    * @return The contained list object for external row order handling.
    */
   @Nullable

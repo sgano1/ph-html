@@ -41,7 +41,7 @@ import com.helger.html.hc.utils.HCSpecialNodeHandler;
 
 /**
  * The node that represents a full HTML document.
- * 
+ *
  * @author Philip Helger
  */
 public class HCHtml extends AbstractHCElement <HCHtml>
@@ -62,7 +62,7 @@ public class HCHtml extends AbstractHCElement <HCHtml>
 
   /**
    * Overwrite this method to create a custom {@link HCHead} implementation
-   * 
+   *
    * @return Never <code>null</code>.
    */
   @Nonnull
@@ -74,7 +74,7 @@ public class HCHtml extends AbstractHCElement <HCHtml>
 
   /**
    * Overwrite this method to create a custom {@link HCBody} implementation
-   * 
+   *
    * @return Never <code>null</code>.
    */
   @Nonnull

@@ -30,7 +30,7 @@ import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;frameset&gt; element
- * 
+ *
  * @author Philip Helger
  */
 @DeprecatedInHTML5

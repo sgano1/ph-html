@@ -23,7 +23,7 @@ import com.helger.html.hc.impl.AbstractHCInput;
  * Represents a generic HTML &lt;input&gt; element.<br>
  * For concrete elements see {@link HCEdit}, {@link HCEditFile},
  * {@link HCEditPassword}, {@link HCCheckBox} and {@link HCRadioButton}.
- * 
+ *
  * @author Philip Helger
  */
 public class HCInput extends AbstractHCInput <HCInput>

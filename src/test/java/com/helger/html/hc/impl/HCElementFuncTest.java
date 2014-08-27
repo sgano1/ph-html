@@ -26,11 +26,10 @@ import static org.junit.Assert.fail;
 import org.junit.Test;
 
 import com.helger.html.hc.html.HCP;
-import com.helger.html.hc.impl.AbstractHCElement;
 
 /**
  * Test class for class {@link AbstractHCElement}
- * 
+ *
  * @author Philip Helger
  */
 public final class HCElementFuncTest

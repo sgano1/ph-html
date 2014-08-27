@@ -22,11 +22,10 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.helger.html.hc.conversion.HCSettings;
-import com.helger.html.hc.impl.HCCommentNode;
 
 /**
  * Test class for class {@link HCCommentNode}
- * 
+ *
  * @author Philip Helger
  */
 public final class HCCommentNodeTest

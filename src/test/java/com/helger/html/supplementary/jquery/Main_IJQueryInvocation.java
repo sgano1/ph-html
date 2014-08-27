@@ -86,16 +86,16 @@ public class Main_IJQueryInvocation extends AbstractCreateJQueryAPIList
         aLines.add ("/**");
         if (!bIsDeprecated && bIsPartiallyDeprecated)
           aLines.add ("* Certain versions of this method are deprecated since jQuery " +
-                      StringHelper.getImploded (" or ", aDeprecatedVersions));
+              StringHelper.getImploded (" or ", aDeprecatedVersions));
         aLines.add (" * @return The invocation of the jQuery " +
-                    sPrefix +
-                    "function <code>" +
-                    sRealName +
-                    "()</code> with return type " +
-                    StringHelper.getImploded (" or ", aReturnTypes));
+            sPrefix +
+            "function <code>" +
+            sRealName +
+            "()</code> with return type " +
+            StringHelper.getImploded (" or ", aReturnTypes));
         if (bIsDeprecated)
           aLines.add (" * @deprecated Deprecated since jQuery " +
-                      StringHelper.getImploded (" or ", aDeprecatedVersions));
+              StringHelper.getImploded (" or ", aDeprecatedVersions));
         if (sSince != null)
           aLines.add (" * @since jQuery " + sSince);
         aLines.add (" */");
@@ -108,85 +108,85 @@ public class Main_IJQueryInvocation extends AbstractCreateJQueryAPIList
     }
 
     final StringBuilder aFull = new StringBuilder ("package com.helger.html.js.builder.jquery;\n"
-                                                   + "\n"
-                                                   + "import javax.annotation.Nonnull;\n"
-                                                   + "import javax.annotation.Nullable;\n"
-                                                   + "\n"
-                                                   + "import com.helger.commons.annotations.Nonempty;\n"
-                                                   + "import com.helger.html.css.ICSSClassProvider;\n"
-                                                   + "import com.helger.html.js.builder.JSFieldRef;\n"
-                                                   + "\n"
-                                                   + "/**\n"
-                                                   + " * This file is generated - do NOT edit!\n"
-                                                   + " * @author " +
-                                                   Main_IJQueryInvocation.class.getName () +
-                                                   "\n" +
-                                                   "*/\n" +
-                                                   "public interface IJQueryInvocation <IMPLTYPE extends IJQueryInvocation <IMPLTYPE>>\n" +
-                                                   "{\n" +
-                                                   "  /**\n" +
-                                                   "   * Invoke an arbitrary function on this jQuery object.\n" +
-                                                   "   * \n" +
-                                                   "   * @param sMethod\n" +
-                                                   "   *        The method to be invoked. May neither be <code>null</code> nor\n" +
-                                                   "   *        empty.\n" +
-                                                   "   * @return A new jQuery invocation object. Never <code>null</code>.\n" +
-                                                   "   */\n" +
-                                                   "  @Nonnull\n" +
-                                                   "  IMPLTYPE jqinvoke (@Nonnull @Nonempty String sMethod);\n" +
-                                                   "\n" +
-                                                   "  /**\n" +
-                                                   "   * Adds a CSSClassProvider selector as a string argument.\n" +
-                                                   "   * \n" +
-                                                   "   * @param aArgument\n" +
-                                                   "   *        value to be added as an argument\n" +
-                                                   "   * @return this\n" +
-                                                   "   */\n" +
-                                                   "  @Nonnull\n" +
-                                                   "  IMPLTYPE arg (@Nullable ICSSClassProvider aArgument);\n" +
-                                                   "\n" +
-                                                   "  /**\n" +
-                                                   "   * Adds a JQuery selector as a string argument.\n" +
-                                                   "   * \n" +
-                                                   "   * @param aArgument\n" +
-                                                   "   *        value to be added as an argument\n" +
-                                                   "   * @return this\n" +
-                                                   "   */\n" +
-                                                   "  @Nonnull\n" +
-                                                   "  IMPLTYPE arg (@Nullable IJQuerySelector aArgument);\n" +
-                                                   "\n" +
-                                                   "  /**\n" +
-                                                   "   * Adds a JQuery selector list as a string argument.\n" +
-                                                   "   * \n" +
-                                                   "   * @param aArgument\n" +
-                                                   "   *        value to be added as an argument\n" +
-                                                   "   * @return this\n" +
-                                                   "   */\n" +
-                                                   "  @Nonnull\n" +
-                                                   "  IMPLTYPE arg (@Nullable JQuerySelectorList aArgument);\n" +
-                                                   "\n" +
-                                                   "  // Properties of jQuery Object Instances\n" +
-                                                   "\n" +
-                                                   "  /**\n" +
-                                                   "   * @return The invocation of the jQuery function <code>context()</code>\n" +
-                                                   "   * @since jQuery 1.3\n" +
-                                                   "   * @deprecated Deprecated since jQuery 1.10\n" +
-                                                   "   */\n" +
-                                                   "  @Deprecated\n" +
-                                                   "  @Nonnull\n" +
-                                                   "  JSFieldRef context ();\n" +
-                                                   "\n" +
-                                                   "  /**\n" +
-                                                   "   * @return The invocation of the jQuery field <code>jquery</code>\n" +
-                                                   "   */\n" +
-                                                   "  @Nonnull\n" +
-                                                   "  JSFieldRef jquery ();\n" +
-                                                   "\n" +
-                                                   "  /**\n" +
-                                                   "   * @return The invocation of the jQuery field <code>length()</code>\n" +
-                                                   "   */\n" +
-                                                   "  @Nonnull\n" +
-                                                   "  JSFieldRef length ();\n");
+        + "\n"
+        + "import javax.annotation.Nonnull;\n"
+        + "import javax.annotation.Nullable;\n"
+        + "\n"
+        + "import com.helger.commons.annotations.Nonempty;\n"
+        + "import com.helger.html.css.ICSSClassProvider;\n"
+        + "import com.helger.html.js.builder.JSFieldRef;\n"
+        + "\n"
+        + "/**\n"
+        + " * This file is generated - do NOT edit!\n"
+        + " * @author " +
+        Main_IJQueryInvocation.class.getName () +
+        "\n" +
+        "*/\n" +
+        "public interface IJQueryInvocation <IMPLTYPE extends IJQueryInvocation <IMPLTYPE>>\n" +
+        "{\n" +
+        "  /**\n" +
+        "   * Invoke an arbitrary function on this jQuery object.\n" +
+        "   * \n" +
+        "   * @param sMethod\n" +
+        "   *        The method to be invoked. May neither be <code>null</code> nor\n" +
+        "   *        empty.\n" +
+        "   * @return A new jQuery invocation object. Never <code>null</code>.\n" +
+        "   */\n" +
+        "  @Nonnull\n" +
+        "  IMPLTYPE jqinvoke (@Nonnull @Nonempty String sMethod);\n" +
+        "\n" +
+        "  /**\n" +
+        "   * Adds a CSSClassProvider selector as a string argument.\n" +
+        "   * \n" +
+        "   * @param aArgument\n" +
+        "   *        value to be added as an argument\n" +
+        "   * @return this\n" +
+        "   */\n" +
+        "  @Nonnull\n" +
+        "  IMPLTYPE arg (@Nullable ICSSClassProvider aArgument);\n" +
+        "\n" +
+        "  /**\n" +
+        "   * Adds a JQuery selector as a string argument.\n" +
+        "   * \n" +
+        "   * @param aArgument\n" +
+        "   *        value to be added as an argument\n" +
+        "   * @return this\n" +
+        "   */\n" +
+        "  @Nonnull\n" +
+        "  IMPLTYPE arg (@Nullable IJQuerySelector aArgument);\n" +
+        "\n" +
+        "  /**\n" +
+        "   * Adds a JQuery selector list as a string argument.\n" +
+        "   * \n" +
+        "   * @param aArgument\n" +
+        "   *        value to be added as an argument\n" +
+        "   * @return this\n" +
+        "   */\n" +
+        "  @Nonnull\n" +
+        "  IMPLTYPE arg (@Nullable JQuerySelectorList aArgument);\n" +
+        "\n" +
+        "  // Properties of jQuery Object Instances\n" +
+        "\n" +
+        "  /**\n" +
+        "   * @return The invocation of the jQuery function <code>context()</code>\n" +
+        "   * @since jQuery 1.3\n" +
+        "   * @deprecated Deprecated since jQuery 1.10\n" +
+        "   */\n" +
+        "  @Deprecated\n" +
+        "  @Nonnull\n" +
+        "  JSFieldRef context ();\n" +
+        "\n" +
+        "  /**\n" +
+        "   * @return The invocation of the jQuery field <code>jquery</code>\n" +
+        "   */\n" +
+        "  @Nonnull\n" +
+        "  JSFieldRef jquery ();\n" +
+        "\n" +
+        "  /**\n" +
+        "   * @return The invocation of the jQuery field <code>length()</code>\n" +
+        "   */\n" +
+        "  @Nonnull\n" +
+        "  JSFieldRef length ();\n");
 
     for (final String sLine : aLines)
       if (sLine.length () > 0)

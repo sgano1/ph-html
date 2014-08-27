@@ -26,12 +26,10 @@ import org.junit.Test;
 
 import com.helger.commons.collections.ContainerHelper;
 import com.helger.commons.string.StringHelper;
-import com.helger.html.js.EJSEvent;
-import com.helger.html.js.EJSEventType;
 
 /**
  * Test class for class {@link EJSEvent}
- * 
+ *
  * @author Philip Helger
  */
 public final class EJSEventTest

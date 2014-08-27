@@ -33,9 +33,6 @@ import org.junit.rules.TestRule;
 import com.helger.commons.GlobalDebug;
 import com.helger.commons.mock.DebugModeTestRule;
 import com.helger.html.hc.conversion.HCSettings;
-import com.helger.html.hc.html.HCCol;
-import com.helger.html.hc.html.HCRow;
-import com.helger.html.hc.html.HCTable;
 
 /**
  * Test class for class {@link HCTable}.

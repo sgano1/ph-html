@@ -21,7 +21,7 @@ import com.helger.html.EHTMLElement;
 
 /**
  * HTML &lt;tfoot&gt; element.
- * 
+ *
  * @author Philip Helger
  */
 public class HCTFoot extends AbstractHCTablePart <HCTFoot>

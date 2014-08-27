@@ -33,7 +33,7 @@ import com.helger.html.hc.impl.AbstractHCElement;
 
 /**
  * Represents an HTML &lt;frame&gt; element
- * 
+ *
  * @author Philip Helger
  */
 @DeprecatedInHTML5

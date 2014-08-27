@@ -39,7 +39,7 @@ import com.helger.html.js.builder.IJSStatement;
 
 /**
  * Represents an HTML &lt;form&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>> extends AbstractHCElementWithChildren <IMPLTYPE>
@@ -217,7 +217,7 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
 
   /**
    * Make this form a file-upload form.
-   * 
+   *
    * @return this
    */
   @Nonnull

@@ -29,7 +29,7 @@ import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
 /**
  * Represents an HTML &lt;input&gt; element with type "file"
- * 
+ *
  * @author Philip Helger
  */
 public class HCEditFile extends AbstractHCEdit <HCEditFile>

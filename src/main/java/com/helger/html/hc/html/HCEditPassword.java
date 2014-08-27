@@ -30,7 +30,7 @@ import com.helger.html.hc.customize.HCDefaultSettings;
 
 /**
  * Represents an HTML &lt;input&gt; element with type "password"
- * 
+ *
  * @author Philip Helger
  */
 public class HCEditPassword extends AbstractHCEdit <HCEditPassword>

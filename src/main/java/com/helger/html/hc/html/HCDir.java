@@ -22,7 +22,7 @@ import com.helger.html.annotations.DeprecatedInHTML5;
 
 /**
  * Represents an HTML &lt;dir&gt; element
- * 
+ *
  * @author Philip Helger
  */
 @DeprecatedInHTML5

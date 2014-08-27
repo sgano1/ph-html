@@ -29,12 +29,11 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.html.HCBR;
 import com.helger.html.hc.html.HCDiv;
-import com.helger.html.hc.htmlext.HCUtils;
 import com.helger.html.hc.impl.HCTextNode;
 
 /**
  * Test class for class {@link HCUtils}.
- * 
+ *
  * @author Philip Helger
  */
 public final class HCUtilsTest

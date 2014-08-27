@@ -38,7 +38,7 @@ import com.helger.html.js.builder.html.JSHtml;
 
 /**
  * Represents an HTML &lt;button&gt; element with type "button"
- * 
+ *
  * @author Philip Helger
  */
 public abstract class AbstractHCButton <IMPLTYPE extends AbstractHCButton <IMPLTYPE>> extends AbstractHCElementWithChildren <IMPLTYPE> implements IHCButton <IMPLTYPE>

@@ -24,7 +24,7 @@ import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;caption&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCCaption extends AbstractHCElementWithChildren <HCCaption>

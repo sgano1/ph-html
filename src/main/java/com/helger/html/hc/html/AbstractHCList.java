@@ -31,7 +31,7 @@ import com.helger.html.hc.impl.AbstractHCElementWithInternalChildren;
 
 /**
  * Abstract base class for UL and OL elements.
- * 
+ *
  * @author Philip Helger
  * @param <THISTYPE>
  *        The real implementation type.
@@ -46,7 +46,7 @@ public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>
   /**
    * Callback method to be implemented in derived classes. Called everytime
    * after an item was added.
-   * 
+   *
    * @param aItem
    *        The added item. Never <code>null</code>.
    */

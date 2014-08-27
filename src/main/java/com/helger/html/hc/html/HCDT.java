@@ -21,7 +21,7 @@ import com.helger.html.EHTMLElement;
 
 /**
  * Represents an HTML &lt;dt&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCDT extends AbstractHCDefinitionItem <HCDT>

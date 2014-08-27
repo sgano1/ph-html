@@ -31,7 +31,7 @@ import com.helger.html.request.IHCRequestField;
 
 /**
  * Represents an HTML &lt;input&gt; element with type "text"
- * 
+ *
  * @author Philip Helger
  */
 public class HCEdit extends AbstractHCEdit <HCEdit>

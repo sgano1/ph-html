@@ -27,7 +27,7 @@ import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;P&gt; element<br>
- * 
+ *
  * @author Philip Helger
  */
 public class HCP extends AbstractHCElementWithChildren <HCP>
@@ -49,7 +49,7 @@ public class HCP extends AbstractHCElementWithChildren <HCP>
 
   /**
    * Create a new P element with the passed child text
-   * 
+   *
    * @param aChild
    *        The child text provider to be appended. May be <code>null</code>
    * @return The created HCP element and never <code>null</code>
@@ -62,7 +62,7 @@ public class HCP extends AbstractHCElementWithChildren <HCP>
 
   /**
    * Create a new P element with the passed child texts
-   * 
+   *
    * @param aChildren
    *        The child texts to be appended. May be <code>null</code>
    * @return The created HCP element and never <code>null</code>
@@ -75,7 +75,7 @@ public class HCP extends AbstractHCElementWithChildren <HCP>
 
   /**
    * Create a new P element with the passed child text
-   * 
+   *
    * @param sChild
    *        The child to be appended. May be <code>null</code>
    * @return The created HCP element and never <code>null</code>
@@ -88,7 +88,7 @@ public class HCP extends AbstractHCElementWithChildren <HCP>
 
   /**
    * Create a new P element with the passed child texts
-   * 
+   *
    * @param aChildren
    *        The child texts to be appended. May be <code>null</code>
    * @return The created HCP element and never <code>null</code>
@@ -101,7 +101,7 @@ public class HCP extends AbstractHCElementWithChildren <HCP>
 
   /**
    * Create a new P element with the passed child node
-   * 
+   *
    * @param aChild
    *        The child node to be appended. May be <code>null</code>
    * @return The created HCP element and never <code>null</code>
@@ -114,7 +114,7 @@ public class HCP extends AbstractHCElementWithChildren <HCP>
 
   /**
    * Create a new P element with the passed child nodes
-   * 
+   *
    * @param aChildren
    *        The child nodes to be appended. May be <code>null</code>
    * @return The created HCP element and never <code>null</code>
@@ -127,7 +127,7 @@ public class HCP extends AbstractHCElementWithChildren <HCP>
 
   /**
    * Create a new P element with the passed child nodes
-   * 
+   *
    * @param aChildren
    *        The child nodes to be appended. May be <code>null</code>
    * @return The created HCP element and never <code>null</code>

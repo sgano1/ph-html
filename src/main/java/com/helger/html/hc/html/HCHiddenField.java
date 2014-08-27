@@ -33,7 +33,7 @@ import com.helger.html.request.IHCRequestField;
 
 /**
  * Represents an HTML &lt;input&gt; element with type "hidden"
- * 
+ *
  * @author Philip Helger
  */
 public class HCHiddenField extends AbstractHCInput <HCHiddenField>

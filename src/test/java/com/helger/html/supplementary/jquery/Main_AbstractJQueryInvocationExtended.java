@@ -75,7 +75,7 @@ public class Main_AbstractJQueryInvocationExtended extends AbstractCreateJQueryA
                             aEntry.getIdentifier () +
                             " ().arg (" +
                             aArg.getIdentifier () +
-                            "); }");
+                    "); }");
               }
           }
           else
@@ -157,11 +157,11 @@ public class Main_AbstractJQueryInvocationExtended extends AbstractCreateJQueryA
                 if (aUsedJavaSignatures.add (sUsedSignaturePrefix + aAllJavaKeys.get (i)))
                 {
                   String sLine = sRealPrefix +
-                                 "(" +
-                                 aAllParams.get (i) +
-                                 ") { return " +
-                                 aEntry.getIdentifier () +
-                                 " ()";
+                      "(" +
+                      aAllParams.get (i) +
+                      ") { return " +
+                      aEntry.getIdentifier () +
+                      " ()";
                   for (final Argument aArg : aSignature.getAllArguments ())
                     sLine += ".arg (" + aArg.getIdentifier () + ")";
                   aLines.add (sLine + "; }");
@@ -172,41 +172,41 @@ public class Main_AbstractJQueryInvocationExtended extends AbstractCreateJQueryA
       }
 
     final StringBuilder aFull = new StringBuilder ("package com.helger.html.js.builder.jquery;\n" +
-                                                   "\n" +
-                                                   "import java.math.BigDecimal;\n" +
-                                                   "import java.math.BigInteger;\n" +
-                                                   "\n" +
-                                                   "import javax.annotation.Nonnull;\n" +
-                                                   "import javax.annotation.Nullable;\n" +
-                                                   "\n" +
-                                                   "import com.helger.commons.annotations.Nonempty;\n" +
-                                                   "import com.helger.html.EHTMLElement;\n" +
-                                                   "import com.helger.html.css.ICSSClassProvider;\n" +
-                                                   "import com.helger.html.hc.IHCNode;\n" +
-                                                   "import com.helger.html.js.builder.IJSExpression;\n" +
-                                                   "import com.helger.html.js.builder.JSAnonymousFunction;\n" +
-                                                   "import com.helger.html.js.builder.JSArray;\n" +
-                                                   "import com.helger.html.js.builder.JSFunction;\n" +
-                                                   "import com.helger.json.IJson;\n" +
-                                                   "\n" +
-                                                   "/**\n" +
-                                                   " * This file is generated - do NOT edit!\n" +
-                                                   " * @author " +
-                                                   Main_AbstractJQueryInvocationExtended.class.getName () +
-                                                   "\n" +
-                                                   "*/\n" +
-                                                   "public abstract class AbstractJQueryInvocationExtended <IMPLTYPE extends AbstractJQueryInvocationExtended <IMPLTYPE>> extends AbstractJQueryInvocation <IMPLTYPE> implements IJQueryInvocationExtended <IMPLTYPE>\n" +
-                                                   "{\n" +
-                                                   "  public AbstractJQueryInvocationExtended (@Nonnull final JSFunction aFunction)\n" +
-                                                   "  {\n" +
-                                                   "    super (aFunction);\n" +
-                                                   "  }\n" +
-                                                   "\n" +
-                                                   "  public AbstractJQueryInvocationExtended (@Nullable final IJSExpression aLhs, @Nonnull @Nonempty final String sMethod)\n" +
-                                                   "  {\n" +
-                                                   "    super (aLhs, sMethod);\n" +
-                                                   "  }\n" +
-                                                   "\n");
+        "\n" +
+        "import java.math.BigDecimal;\n" +
+        "import java.math.BigInteger;\n" +
+        "\n" +
+        "import javax.annotation.Nonnull;\n" +
+        "import javax.annotation.Nullable;\n" +
+        "\n" +
+        "import com.helger.commons.annotations.Nonempty;\n" +
+        "import com.helger.html.EHTMLElement;\n" +
+        "import com.helger.html.css.ICSSClassProvider;\n" +
+        "import com.helger.html.hc.IHCNode;\n" +
+        "import com.helger.html.js.builder.IJSExpression;\n" +
+        "import com.helger.html.js.builder.JSAnonymousFunction;\n" +
+        "import com.helger.html.js.builder.JSArray;\n" +
+        "import com.helger.html.js.builder.JSFunction;\n" +
+        "import com.helger.json.IJson;\n" +
+        "\n" +
+        "/**\n" +
+        " * This file is generated - do NOT edit!\n" +
+        " * @author " +
+        Main_AbstractJQueryInvocationExtended.class.getName () +
+        "\n" +
+        "*/\n" +
+        "public abstract class AbstractJQueryInvocationExtended <IMPLTYPE extends AbstractJQueryInvocationExtended <IMPLTYPE>> extends AbstractJQueryInvocation <IMPLTYPE> implements IJQueryInvocationExtended <IMPLTYPE>\n" +
+        "{\n" +
+        "  public AbstractJQueryInvocationExtended (@Nonnull final JSFunction aFunction)\n" +
+        "  {\n" +
+        "    super (aFunction);\n" +
+        "  }\n" +
+        "\n" +
+        "  public AbstractJQueryInvocationExtended (@Nullable final IJSExpression aLhs, @Nonnull @Nonempty final String sMethod)\n" +
+        "  {\n" +
+        "    super (aLhs, sMethod);\n" +
+        "  }\n" +
+        "\n");
     for (final String sEntry : aLines)
       aFull.append (sEntry).append ("\n\n");
     aFull.append ("}\n");

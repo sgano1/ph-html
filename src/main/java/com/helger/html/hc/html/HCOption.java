@@ -32,7 +32,7 @@ import com.helger.html.hc.impl.HCTextNode;
 
 /**
  * Represents a single option within a select box.
- * 
+ *
  * @author Philip Helger
  */
 public class HCOption extends AbstractHCElementWithInternalChildren <HCOption, HCTextNode> implements IHCCanBeDisabled <HCOption>

@@ -27,34 +27,10 @@ import com.helger.html.hc.conversion.HCSettings;
 import com.helger.html.hc.conversion.IHCConversionSettings;
 import com.helger.html.hc.html.HCBody;
 import com.helger.html.hc.html.HCHtml;
-import com.helger.html.hc.html5.HCArticle;
-import com.helger.html.hc.html5.HCAside;
-import com.helger.html.hc.html5.HCAudio;
-import com.helger.html.hc.html5.HCBDI;
-import com.helger.html.hc.html5.HCCanvas;
-import com.helger.html.hc.html5.HCCommand;
-import com.helger.html.hc.html5.HCFigure;
-import com.helger.html.hc.html5.HCFooter;
-import com.helger.html.hc.html5.HCHGroup;
-import com.helger.html.hc.html5.HCHeader;
-import com.helger.html.hc.html5.HCKeyGen;
-import com.helger.html.hc.html5.HCMark;
-import com.helger.html.hc.html5.HCMeter;
-import com.helger.html.hc.html5.HCNav;
-import com.helger.html.hc.html5.HCProgress;
-import com.helger.html.hc.html5.HCRP;
-import com.helger.html.hc.html5.HCRT;
-import com.helger.html.hc.html5.HCRuby;
-import com.helger.html.hc.html5.HCSection;
-import com.helger.html.hc.html5.HCSource;
-import com.helger.html.hc.html5.HCTime;
-import com.helger.html.hc.html5.HCTrack;
-import com.helger.html.hc.html5.HCVideo;
-import com.helger.html.hc.html5.HCWBR;
 
 /**
  * Instantiate and generate code for all HTML5 elements available
- * 
+ *
  * @author Philip Helger
  */
 public final class HC5Test

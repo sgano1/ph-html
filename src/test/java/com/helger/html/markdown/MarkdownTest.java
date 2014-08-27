@@ -68,7 +68,6 @@ import org.junit.runners.Parameterized.Parameters;
 import com.helger.commons.charset.CCharset;
 import com.helger.commons.io.file.SimpleFileIO;
 import com.helger.commons.io.file.iterate.FileSystemRecursiveIterator;
-import com.helger.html.markdown.MarkdownProcessor;
 
 @RunWith (value = Parameterized.class)
 public final class MarkdownTest

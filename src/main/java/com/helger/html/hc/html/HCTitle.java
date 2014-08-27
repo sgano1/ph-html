@@ -28,7 +28,7 @@ import com.helger.html.hc.impl.AbstractHCElement;
 
 /**
  * Represents an HTML &lt;title&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCTitle extends AbstractHCElement <HCTitle>

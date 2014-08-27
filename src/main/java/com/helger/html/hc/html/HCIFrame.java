@@ -35,7 +35,7 @@ import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;iframe&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCIFrame extends AbstractHCElementWithChildren <HCIFrame>
@@ -146,7 +146,7 @@ public class HCIFrame extends AbstractHCElementWithChildren <HCIFrame>
 
   /**
    * Set the width in pixel
-   * 
+   *
    * @param nWidth
    *        the width in pixel
    * @return this

@@ -29,7 +29,7 @@ import com.helger.html.hc.impl.AbstractHCElementWithInternalChildren;
 
 /**
  * Represents an HTML &lt;colgroup&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCColGroup extends AbstractHCElementWithInternalChildren <HCColGroup, HCCol>
@@ -59,7 +59,7 @@ public class HCColGroup extends AbstractHCElementWithInternalChildren <HCColGrou
 
   /**
    * Add a new column.
-   * 
+   *
    * @param aCol
    *        the column to add
    * @return this
@@ -74,7 +74,7 @@ public class HCColGroup extends AbstractHCElementWithInternalChildren <HCColGrou
 
   /**
    * Add a new column.
-   * 
+   *
    * @param nIndex
    *        The index where the column should be added
    * @param aCol
@@ -126,7 +126,7 @@ public class HCColGroup extends AbstractHCElementWithInternalChildren <HCColGrou
 
   /**
    * Get the column at the specified index
-   * 
+   *
    * @param nIndex
    *        The index to retrieve the column from
    * @return <code>null</code> if no such column exists
@@ -139,7 +139,7 @@ public class HCColGroup extends AbstractHCElementWithInternalChildren <HCColGrou
 
   /**
    * Remove the column at the specified index
-   * 
+   *
    * @param nIndex
    *        The index of the column to be removed
    * @return this
@@ -153,7 +153,7 @@ public class HCColGroup extends AbstractHCElementWithInternalChildren <HCColGrou
 
   /**
    * Remove all contained columns
-   * 
+   *
    * @return this
    */
   @Nonnull

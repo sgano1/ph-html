@@ -30,7 +30,7 @@ import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;body&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCBody extends AbstractHCElementWithChildren <HCBody>

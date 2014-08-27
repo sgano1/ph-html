@@ -25,7 +25,7 @@ import com.helger.html.js.builder.IJSStatement;
 
 /**
  * Represents an HTML &lt;form&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCForm extends AbstractHCForm <HCForm>

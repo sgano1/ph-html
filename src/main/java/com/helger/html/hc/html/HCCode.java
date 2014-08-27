@@ -22,7 +22,7 @@ import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;code&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCCode extends AbstractHCElementWithChildren <HCCode>

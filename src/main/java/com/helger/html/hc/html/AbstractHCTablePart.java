@@ -32,7 +32,7 @@ import com.helger.html.hc.impl.AbstractHCElementWithInternalChildren;
 
 /**
  * This is the base class for thead, tbody and tfoot
- * 
+ *
  * @author Philip Helger
  * @param <THISTYPE>
  *        Implementation type
@@ -71,7 +71,7 @@ public abstract class AbstractHCTablePart <THISTYPE extends AbstractHCTablePart 
   /**
    * Get the contained list object that holds all the rows. Handle with care
    * because it alters the internal data structures of this table.
-   * 
+   *
    * @return The contained list object. May be <code>null</code>.
    */
   @Nullable

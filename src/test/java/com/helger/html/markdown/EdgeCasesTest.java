@@ -61,8 +61,6 @@ import java.util.regex.Pattern;
 import org.junit.Test;
 
 import com.helger.commons.regex.RegExPool;
-import com.helger.html.markdown.MarkdownHTML;
-import com.helger.html.markdown.MarkdownProcessor;
 
 public final class EdgeCasesTest
 {
@@ -77,13 +75,13 @@ public final class EdgeCasesTest
                   p.process ("First line<table><tr><td>Block level</td></tr></table>.").getAsHTMLString ());
     assertEquals ("<p>First line<table><tbody><tr><td><td>Block level</td></td></tr></tbody></table>.</p>",
                   p.process ("First line<table><tbody><tr><td>Block level</td></tr></tbody></table>.")
-                   .getAsHTMLString ());
+                  .getAsHTMLString ());
     assertEquals ("<p>First line<table><thead><tr><td><td>Block level</td></td></tr></thead></table>.</p>",
                   p.process ("First line<table><thead><tr><td>Block level</td></tr></thead></table>.")
-                   .getAsHTMLString ());
+                  .getAsHTMLString ());
     assertEquals ("<p>First line<table><tfoot><tr><td><td>Block level</td></td></tr></tfoot></table>.</p>",
                   p.process ("First line<table><tfoot><tr><td>Block level</td></tr></tfoot></table>.")
-                   .getAsHTMLString ());
+                  .getAsHTMLString ());
     assertEquals ("<p>First line *unclosed</p>", p.process ("First line *unclosed").getAsHTMLString ());
     assertEquals ("<p>First line **unclosed</p>", p.process ("First line **unclosed").getAsHTMLString ());
     assertEquals ("<p>First line unclosed*</p>", p.process ("First line unclosed*").getAsHTMLString ());

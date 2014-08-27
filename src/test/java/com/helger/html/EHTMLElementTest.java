@@ -22,11 +22,9 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import com.helger.html.EHTMLElement;
-
 /**
  * Test class for class {@link EHTMLElement}.
- * 
+ *
  * @author Philip Helger
  */
 public final class EHTMLElementTest

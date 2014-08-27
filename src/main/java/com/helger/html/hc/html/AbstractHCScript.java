@@ -36,7 +36,7 @@ import com.helger.html.hc.impl.AbstractHCElement;
 
 /**
  * Represents an HTML &lt;script&gt; element
- * 
+ *
  * @author Philip Helger
  * @see HCScript
  * @see HCScriptFile

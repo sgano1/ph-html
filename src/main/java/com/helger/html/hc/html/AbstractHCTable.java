@@ -31,7 +31,7 @@ import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
 /**
  * Represents an HTML &lt;table&gt; element with open semantics.
- * 
+ *
  * @author Philip Helger
  * @param <THISTYPE>
  *        The implementing type

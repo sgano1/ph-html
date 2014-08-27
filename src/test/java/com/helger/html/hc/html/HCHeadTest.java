@@ -29,15 +29,11 @@ import org.junit.Test;
 import com.helger.commons.state.EChange;
 import com.helger.commons.url.SimpleURL;
 import com.helger.html.hc.conversion.HCSettings;
-import com.helger.html.hc.html.HCA_Target;
-import com.helger.html.hc.html.HCHead;
-import com.helger.html.hc.html.HCLink;
-import com.helger.html.hc.html.HCScriptFile;
 import com.helger.html.meta.MetaElement;
 
 /**
  * Test class for class {@link HCHead}
- * 
+ *
  * @author Philip Helger
  */
 public final class HCHeadTest
@@ -96,9 +92,9 @@ public final class HCHeadTest
     assertSame (aHead, aHead.addMetaElement (new MetaElement ("goo", true, "car")));
     assertEquals (2, aHead.getMetaElementCount ());
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\">"
-                  + "<meta name=\"foo\" content=\"bar\" />"
-                  + "<meta http-equiv=\"goo\" content=\"car\" />"
-                  + "</head>", HCSettings.getAsHTMLString (aHead, false));
+        + "<meta name=\"foo\" content=\"bar\" />"
+        + "<meta http-equiv=\"goo\" content=\"car\" />"
+        + "</head>", HCSettings.getAsHTMLString (aHead, false));
 
     assertEquals (EChange.UNCHANGED, aHead.removeMetaElement ("any"));
     assertEquals (2, aHead.getMetaElementCount ());
@@ -107,8 +103,8 @@ public final class HCHeadTest
     assertEquals (EChange.UNCHANGED, aHead.removeMetaElement ("foo"));
     assertEquals (1, aHead.getMetaElementCount ());
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\">"
-                  + "<meta http-equiv=\"goo\" content=\"car\" />"
-                  + "</head>", HCSettings.getAsHTMLString (aHead, false));
+        + "<meta http-equiv=\"goo\" content=\"car\" />"
+        + "</head>", HCSettings.getAsHTMLString (aHead, false));
     assertEquals (EChange.CHANGED, aHead.removeMetaElement ("goo"));
     assertEquals (0, aHead.getMetaElementCount ());
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"></head>", HCSettings.getAsHTMLString (aHead, false));

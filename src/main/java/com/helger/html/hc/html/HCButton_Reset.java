@@ -23,7 +23,7 @@ import com.helger.html.hc.api.EHCButtonType;
 
 /**
  * Represents an HTML &lt;button&gt; element with type "reset"
- * 
+ *
  * @author Philip Helger
  */
 public class HCButton_Reset extends AbstractHCButton <HCButton_Reset>

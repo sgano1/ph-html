@@ -67,7 +67,7 @@ import com.helger.html.hc.impl.AbstractHCElement;
 
 /**
  * Represents an HTML &lt;style&gt; element
- * 
+ *
  * @author Philip Helger
  */
 @OutOfBandNode
@@ -175,7 +175,7 @@ public class HCStyle extends AbstractHCElement <HCStyle> implements IHCCSSNode
 
   /**
    * Check if the passed medium is explicitly specified
-   * 
+   *
    * @param eMedium
    *        The medium to be checked. May be <code>null</code>.
    * @return <code>true</code> if it is contained, <code>false</code> otherwise
@@ -314,7 +314,7 @@ public class HCStyle extends AbstractHCElement <HCStyle> implements IHCCSSNode
    * Set how the content of style elements should be emitted. This only affects
    * new built objects, and does not alter existing objects! The default mode is
    * {@link #DEFAULT_MODE}.
-   * 
+   *
    * @param eMode
    *        The new mode to set. May not be <code>null</code>.
    */

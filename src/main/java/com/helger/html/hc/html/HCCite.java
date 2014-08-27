@@ -22,7 +22,7 @@ import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;cite&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCCite extends AbstractHCElementWithChildren <HCCite>

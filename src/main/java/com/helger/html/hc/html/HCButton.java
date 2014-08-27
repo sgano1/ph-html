@@ -25,7 +25,7 @@ import com.helger.html.js.IJSCodeProvider;
 
 /**
  * Represents an HTML &lt;button&gt; element with type "button"
- * 
+ *
  * @author Philip Helger
  */
 public class HCButton extends AbstractHCButton <HCButton>

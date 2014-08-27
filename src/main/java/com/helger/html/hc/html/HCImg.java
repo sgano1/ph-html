@@ -164,10 +164,10 @@ public class HCImg extends AbstractHCElement <HCImg>
   public String toString ()
   {
     return ToStringGenerator.getDerived (super.toString ())
-                            .appendIfNotNull ("src", m_sSrc)
-                            .appendIfNotNull ("extent", m_aExtent)
-                            .appendIfNotNull ("alt", m_sAlt)
-                            .toString ();
+        .appendIfNotNull ("src", m_sSrc)
+        .appendIfNotNull ("extent", m_aExtent)
+        .appendIfNotNull ("alt", m_sAlt)
+        .toString ();
   }
 
   @Nonnull
