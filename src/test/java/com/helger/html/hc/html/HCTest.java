@@ -1,5 +1,4 @@
 /**
- * Copyright (C) 2006-2014 phloc systems (www.phloc.com)
  * Copyright (C) 2014 Philip Helger (www.helger.com)
  * philip[at]helger[dot]com
  *
@@ -112,15 +111,15 @@ public final class HCTest
     b.addChild (new HCLegend ());
     b.addChild (new HCLegend ().addChild ("Legend"));
     b.addChild (new HCLink ().setRel (EHCLinkType.ALTERNATE)
-                .setType (CMimeType.TEXT_HTML)
-                .setHref (new SimpleURL ("any.html")));
+                             .setType (CMimeType.TEXT_HTML)
+                             .setHref (new SimpleURL ("any.html")));
     final HCMenu aMenu = new HCMenu ();
     aMenu.addItem ("File");
     aMenu.addItem ("Settings");
     b.addChild (aMenu);
     b.addChild (new HCNoScript ().addChild ("JS missing"));
     final HCObject aObject = new HCObject ().setType (CMimeType.APPLICATION_SHOCKWAVE_FLASH)
-        .setClassID ("classID{567}");
+                                            .setClassID ("classID{567}");
     aObject.addChild (new HCParam ("par1"));
     b.addChild (aObject);
     final HCOL aOL = new HCOL ();

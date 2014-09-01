@@ -1,5 +1,4 @@
 /**
- * Copyright (C) 2006-2014 phloc systems (www.phloc.com)
  * Copyright (C) 2014 Philip Helger (www.helger.com)
  * philip[at]helger[dot]com
  *
@@ -27,7 +26,7 @@ import com.helger.html.js.builder.JSFunction;
 
 /**
  * Special invocation semantics for jQuery
- * 
+ *
  * @author Philip Helger
  */
 public class JQueryInvocation extends AbstractJQueryInvocationExtended <JQueryInvocation>
@@ -44,7 +43,7 @@ public class JQueryInvocation extends AbstractJQueryInvocationExtended <JQueryIn
 
   /**
    * Invoke an arbitrary function on this jQuery object.
-   * 
+   *
    * @param sMethod
    *        The method to be invoked. May neither be <code>null</code> nor
    *        empty.
@@ -69,7 +68,7 @@ public class JQueryInvocation extends AbstractJQueryInvocationExtended <JQueryIn
     return prop ().arg ("checked");
   }
 
-  // Custom provided methods from jquery-utils.js in phloc-webctrls
+  // Custom provided methods from jquery-utils.js in ph-webctrls
 
   /**
    * @return The invocation of the custom jQuery function <code>enable()</code>

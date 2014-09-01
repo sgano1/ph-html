@@ -1,5 +1,4 @@
 /**
- * Copyright (C) 2006-2014 phloc systems (www.phloc.com)
  * Copyright (C) 2014 Philip Helger (www.helger.com)
  * philip[at]helger[dot]com
  *
@@ -116,32 +115,32 @@ public final class HCHeadTest
     final HCHead aHead = new HCHead ();
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"></head>", HCSettings.getAsHTMLString (aHead, false));
 
-    aHead.setPageTitle ("phloc");
-    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>phloc</title></head>",
+    aHead.setPageTitle ("test");
+    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>test</title></head>",
                   HCSettings.getAsHTMLString (aHead, false));
 
     aHead.setBaseHref ("/root");
-    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>phloc</title><base href=\"/root\" /></head>",
+    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>test</title><base href=\"/root\" /></head>",
                   HCSettings.getAsHTMLString (aHead, false));
     aHead.setBaseHref (null);
     aHead.setBaseTarget (HCA_Target.BLANK);
-    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>phloc</title><base target=\"_blank\" /></head>",
+    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>test</title><base target=\"_blank\" /></head>",
                   HCSettings.getAsHTMLString (aHead, false));
     aHead.setBaseTarget (null);
-    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>phloc</title></head>",
+    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>test</title></head>",
                   HCSettings.getAsHTMLString (aHead, false));
 
     aHead.setShortcutIconHref (new SimpleURL ("/favicon.ico"));
-    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>phloc</title><link rel=\"shortcut icon\" href=\"/favicon.ico\"></link><link rel=\"icon\" type=\"image/icon\" href=\"/favicon.ico\"></link></head>",
+    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>test</title><link rel=\"shortcut icon\" href=\"/favicon.ico\"></link><link rel=\"icon\" type=\"image/icon\" href=\"/favicon.ico\"></link></head>",
                   HCSettings.getAsHTMLString (aHead, false));
 
     aHead.setShortcutIconHref (null);
     aHead.addJS (HCScriptFile.create (new SimpleURL ("/my.js")));
-    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>phloc</title><script type=\"text/javascript\" src=\"/my.js\"></script></head>",
+    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>test</title><script type=\"text/javascript\" src=\"/my.js\"></script></head>",
                   HCSettings.getAsHTMLString (aHead, false));
 
     aHead.addCSS (HCLink.createCSSLink (new SimpleURL ("/my.css")));
-    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>phloc</title><link rel=\"stylesheet\" type=\"text/css\" href=\"/my.css\"></link><script type=\"text/javascript\" src=\"/my.js\"></script></head>",
+    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>test</title><link rel=\"stylesheet\" type=\"text/css\" href=\"/my.css\"></link><script type=\"text/javascript\" src=\"/my.js\"></script></head>",
                   HCSettings.getAsHTMLString (aHead, false));
   }
 }

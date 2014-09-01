@@ -1,5 +1,4 @@
 /**
- * Copyright (C) 2006-2014 phloc systems (www.phloc.com)
  * Copyright (C) 2014 Philip Helger (www.helger.com)
  * philip[at]helger[dot]com
  *
@@ -18,8 +17,9 @@
 package com.helger.html.hc.api;
 
 /**
- * Base interface for link types (used in com.phloc.html.hc.html.HCLink)
- * 
+ * Base interface for link types (used in {@link com.helger.html.hc.html.HCLink}
+ * )
+ *
  * @author Philip Helger
  */
 public interface IHCLinkType extends IHCHasHTMLAttributeValue
