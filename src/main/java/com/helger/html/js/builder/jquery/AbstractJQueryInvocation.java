@@ -27,9 +27,9 @@ import com.helger.html.js.builder.JSFieldRef;
 import com.helger.html.js.builder.JSFunction;
 
 /**
- * Special invocation semantics for jQuery
+ * Special invocation semantics for jQuery This file is generated - do NOT edit!
  * 
- * @author com.phloc.html.supplementary.jquery.Main_AbstractJQueryInvocation
+ * @author com.helger.html.supplementary.jquery.Main_AbstractJQueryInvocation
  */
 public abstract class AbstractJQueryInvocation <IMPLTYPE extends AbstractJQueryInvocation <IMPLTYPE>> extends AbstractJSInvocation <IMPLTYPE> implements IJQueryInvocation <IMPLTYPE>
 {

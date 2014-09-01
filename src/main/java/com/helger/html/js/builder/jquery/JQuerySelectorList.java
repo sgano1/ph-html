@@ -32,7 +32,7 @@ import com.helger.html.js.builder.IJSExpression;
 
 /**
  * A list of jQuery selectors that are chained with ' ' (space)
- * 
+ *
  * @author Philip Helger
  */
 public class JQuerySelectorList implements IJSCodeProvider

@@ -29,7 +29,7 @@ import com.helger.html.js.builder.JSExpr;
 
 /**
  * Utility class handling <code>$.ajax</code>
- * 
+ *
  * @author Philip Helger
  */
 public class JQueryAjaxBuilder implements Serializable
@@ -217,7 +217,7 @@ public class JQueryAjaxBuilder implements Serializable
   /**
    * Set an anonymous beforeSend function. Type: Function( jqXHR jqXHR,
    * PlainObject settings )
-   * 
+   *
    * @param aBeforeSend
    *        May be <code>null</code>.
    * @return this
@@ -238,7 +238,7 @@ public class JQueryAjaxBuilder implements Serializable
   /**
    * Set an anonymous complete function. Type: Function( jqXHR jqXHR, String
    * textStatus )
-   * 
+   *
    * @param aComplete
    *        May be <code>null</code>.
    * @return this
@@ -259,7 +259,7 @@ public class JQueryAjaxBuilder implements Serializable
   /**
    * Set an anonymous error function. Type: Function( jqXHR jqXHR, String
    * textStatus, String errorThrown )
-   * 
+   *
    * @param aError
    *        May be <code>null</code>.
    * @return this
@@ -280,7 +280,7 @@ public class JQueryAjaxBuilder implements Serializable
   /**
    * Set an anonymous success function. Type: Function( PlainObject data, String
    * textStatus, jqXHR jqXHR )
-   * 
+   *
    * @param aSuccess
    *        May be <code>null</code>.
    * @return this

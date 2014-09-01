@@ -329,7 +329,7 @@ public final class XHTMLParserTest
   {
     final XHTMLParser aParser = new XHTMLParser ();
     assertNotNull (aParser.unescapeXHTMLFragment ("<b>Hallo</b>"));
-    assertNotNull (aParser.unescapeXHTMLFragment ("<b>Hallo<br/>phloc</b>"));
+    assertNotNull (aParser.unescapeXHTMLFragment ("<b>Hallo<br/>helger</b>"));
     assertNotNull (aParser.unescapeXHTMLFragment (""));
     assertNotNull (aParser.unescapeXHTMLFragment ("&lt;"));
     assertNotNull (aParser.unescapeXHTMLFragment ("&gt;"));
@@ -350,7 +350,7 @@ public final class XHTMLParserTest
     assertTrue (aMicroNode instanceof IMicroContainer);
     assertTrue (((IMicroContainer) aMicroNode).getChildAtIndex (0) instanceof IMicroElement);
 
-    aNode = aParser.convertToXHTMLFragmentOnDemand ("<b>Hallo<br/>phloc</b>");
+    aNode = aParser.convertToXHTMLFragmentOnDemand ("<b>Hallo<br/>helger</b>");
     assertTrue (aNode instanceof HCDOMWrapper);
     aMicroNode = HCSettings.getAsNode (aNode, true);
     assertTrue (aMicroNode instanceof IMicroContainer);

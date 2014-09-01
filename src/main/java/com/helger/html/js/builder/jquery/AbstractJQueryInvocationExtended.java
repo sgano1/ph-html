@@ -36,7 +36,7 @@ import com.helger.json.IJson;
  * This file is generated - do NOT edit!
  * 
  * @author 
- *         com.phloc.html.supplementary.jquery.Main_AbstractJQueryInvocationExtended
+ *         com.helger.html.supplementary.jquery.Main_AbstractJQueryInvocationExtended
  */
 public abstract class AbstractJQueryInvocationExtended <IMPLTYPE extends AbstractJQueryInvocationExtended <IMPLTYPE>> extends AbstractJQueryInvocation <IMPLTYPE> implements IJQueryInvocationExtended <IMPLTYPE>
 {
@@ -51,15565 +51,16300 @@ public abstract class AbstractJQueryInvocationExtended <IMPLTYPE extends Abstrac
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull IJSExpression selector)
+  public IMPLTYPE add (@Nonnull final IJSExpression selector)
   {
     return add ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull IJQuerySelector selector)
+  public IMPLTYPE add (@Nonnull final IJQuerySelector selector)
   {
     return add ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull JQuerySelectorList selector)
+  public IMPLTYPE add (@Nonnull final JQuerySelectorList selector)
   {
     return add ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull EHTMLElement selector)
+  public IMPLTYPE add (@Nonnull final EHTMLElement selector)
   {
     return add ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull ICSSClassProvider selector)
+  public IMPLTYPE add (@Nonnull final ICSSClassProvider selector)
   {
     return add ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull EHTMLElement... elements)
+  public IMPLTYPE add (@Nonnull final EHTMLElement... elements)
   {
     return add ().arg (elements);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull Iterable <EHTMLElement> elements)
+  public IMPLTYPE add (@Nonnull final Iterable <EHTMLElement> elements)
   {
     return add ().arg (elements);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull String... elements)
+  public IMPLTYPE add (@Nonnull final String... elements)
   {
     return add ().arg (elements);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull IHCNode html)
+  public IMPLTYPE add (@Nonnull final IHCNode html)
   {
     return add ().arg (html);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull String html)
+  public IMPLTYPE add (@Nonnull final String html)
   {
     return add ().arg (html);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull JQueryInvocation jQuery_object)
+  public IMPLTYPE add (@Nonnull final JQueryInvocation jQuery_object)
   {
     return add ().arg (jQuery_object);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull IJSExpression selector, @Nonnull IJSExpression context)
+  public IMPLTYPE add (@Nonnull final IJSExpression selector, @Nonnull final IJSExpression context)
   {
     return add ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull IJQuerySelector selector, @Nonnull IJSExpression context)
+  public IMPLTYPE add (@Nonnull final IJQuerySelector selector, @Nonnull final IJSExpression context)
   {
     return add ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull JQuerySelectorList selector, @Nonnull IJSExpression context)
+  public IMPLTYPE add (@Nonnull final JQuerySelectorList selector, @Nonnull final IJSExpression context)
   {
     return add ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull EHTMLElement selector, @Nonnull IJSExpression context)
+  public IMPLTYPE add (@Nonnull final EHTMLElement selector, @Nonnull final IJSExpression context)
   {
     return add ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull ICSSClassProvider selector, @Nonnull IJSExpression context)
+  public IMPLTYPE add (@Nonnull final ICSSClassProvider selector, @Nonnull final IJSExpression context)
   {
     return add ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull IJSExpression selector, @Nonnull EHTMLElement context)
+  public IMPLTYPE add (@Nonnull final IJSExpression selector, @Nonnull final EHTMLElement context)
   {
     return add ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull IJQuerySelector selector, @Nonnull EHTMLElement context)
+  public IMPLTYPE add (@Nonnull final IJQuerySelector selector, @Nonnull final EHTMLElement context)
   {
     return add ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull JQuerySelectorList selector, @Nonnull EHTMLElement context)
+  public IMPLTYPE add (@Nonnull final JQuerySelectorList selector, @Nonnull final EHTMLElement context)
   {
     return add ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull EHTMLElement selector, @Nonnull EHTMLElement context)
+  public IMPLTYPE add (@Nonnull final EHTMLElement selector, @Nonnull final EHTMLElement context)
   {
     return add ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull ICSSClassProvider selector, @Nonnull EHTMLElement context)
+  public IMPLTYPE add (@Nonnull final ICSSClassProvider selector, @Nonnull final EHTMLElement context)
   {
     return add ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull IJSExpression selector, @Nonnull String context)
+  public IMPLTYPE add (@Nonnull final IJSExpression selector, @Nonnull final String context)
   {
     return add ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull IJQuerySelector selector, @Nonnull String context)
+  public IMPLTYPE add (@Nonnull final IJQuerySelector selector, @Nonnull final String context)
   {
     return add ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull JQuerySelectorList selector, @Nonnull String context)
+  public IMPLTYPE add (@Nonnull final JQuerySelectorList selector, @Nonnull final String context)
   {
     return add ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull EHTMLElement selector, @Nonnull String context)
+  public IMPLTYPE add (@Nonnull final EHTMLElement selector, @Nonnull final String context)
   {
     return add ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE add (@Nonnull ICSSClassProvider selector, @Nonnull String context)
+  public IMPLTYPE add (@Nonnull final ICSSClassProvider selector, @Nonnull final String context)
   {
     return add ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE addBack (@Nonnull IJSExpression selector)
+  public IMPLTYPE addBack (@Nonnull final IJSExpression selector)
   {
     return addBack ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE addBack (@Nonnull IJQuerySelector selector)
+  public IMPLTYPE addBack (@Nonnull final IJQuerySelector selector)
   {
     return addBack ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE addBack (@Nonnull JQuerySelectorList selector)
+  public IMPLTYPE addBack (@Nonnull final JQuerySelectorList selector)
   {
     return addBack ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE addBack (@Nonnull EHTMLElement selector)
+  public IMPLTYPE addBack (@Nonnull final EHTMLElement selector)
   {
     return addBack ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE addBack (@Nonnull ICSSClassProvider selector)
+  public IMPLTYPE addBack (@Nonnull final ICSSClassProvider selector)
   {
     return addBack ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE addClass (@Nonnull IJSExpression className)
+  public IMPLTYPE addClass (@Nonnull final IJSExpression className)
   {
     return addClass ().arg (className);
   }
 
   @Nonnull
-  public IMPLTYPE addClass (@Nonnull IJson className)
+  public IMPLTYPE addClass (@Nonnull final IJson className)
   {
     return addClass ().arg (className);
   }
 
   @Nonnull
-  public IMPLTYPE addClass (@Nonnull IHCNode className)
+  public IMPLTYPE addClass (@Nonnull final IHCNode className)
   {
     return addClass ().arg (className);
   }
 
   @Nonnull
-  public IMPLTYPE addClass (@Nonnull String className)
+  public IMPLTYPE addClass (@Nonnull final String className)
   {
     return addClass ().arg (className);
   }
 
   @Nonnull
-  public IMPLTYPE addClass (@Nonnull JSAnonymousFunction function)
+  public IMPLTYPE addClass (@Nonnull final JSAnonymousFunction function)
   {
     return addClass ().arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull IJSExpression content)
+  public IMPLTYPE after (@Nonnull final IJSExpression content)
   {
     return after ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull IHCNode content)
+  public IMPLTYPE after (@Nonnull final IHCNode content)
   {
     return after ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull String content)
+  public IMPLTYPE after (@Nonnull final String content)
   {
     return after ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull EHTMLElement content)
+  public IMPLTYPE after (@Nonnull final EHTMLElement content)
   {
     return after ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull JSArray content)
+  public IMPLTYPE after (@Nonnull final JSArray content)
   {
     return after ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull JQueryInvocation content)
+  public IMPLTYPE after (@Nonnull final JQueryInvocation content)
   {
     return after ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull IJSExpression content, @Nonnull IJSExpression content1)
+  public IMPLTYPE after (@Nonnull final IJSExpression content, @Nonnull final IJSExpression content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull IHCNode content, @Nonnull IJSExpression content1)
+  public IMPLTYPE after (@Nonnull final IHCNode content, @Nonnull final IJSExpression content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull String content, @Nonnull IJSExpression content1)
+  public IMPLTYPE after (@Nonnull final String content, @Nonnull final IJSExpression content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull EHTMLElement content, @Nonnull IJSExpression content1)
+  public IMPLTYPE after (@Nonnull final EHTMLElement content, @Nonnull final IJSExpression content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull JSArray content, @Nonnull IJSExpression content1)
+  public IMPLTYPE after (@Nonnull final JSArray content, @Nonnull final IJSExpression content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull JQueryInvocation content, @Nonnull IJSExpression content1)
+  public IMPLTYPE after (@Nonnull final JQueryInvocation content, @Nonnull final IJSExpression content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull IJSExpression content, @Nonnull IHCNode content1)
+  public IMPLTYPE after (@Nonnull final IJSExpression content, @Nonnull final IHCNode content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull IHCNode content, @Nonnull IHCNode content1)
+  public IMPLTYPE after (@Nonnull final IHCNode content, @Nonnull final IHCNode content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull String content, @Nonnull IHCNode content1)
+  public IMPLTYPE after (@Nonnull final String content, @Nonnull final IHCNode content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull EHTMLElement content, @Nonnull IHCNode content1)
+  public IMPLTYPE after (@Nonnull final EHTMLElement content, @Nonnull final IHCNode content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull JSArray content, @Nonnull IHCNode content1)
+  public IMPLTYPE after (@Nonnull final JSArray content, @Nonnull final IHCNode content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull JQueryInvocation content, @Nonnull IHCNode content1)
+  public IMPLTYPE after (@Nonnull final JQueryInvocation content, @Nonnull final IHCNode content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull IJSExpression content, @Nonnull String content1)
+  public IMPLTYPE after (@Nonnull final IJSExpression content, @Nonnull final String content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull IHCNode content, @Nonnull String content1)
+  public IMPLTYPE after (@Nonnull final IHCNode content, @Nonnull final String content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull String content, @Nonnull String content1)
+  public IMPLTYPE after (@Nonnull final String content, @Nonnull final String content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull EHTMLElement content, @Nonnull String content1)
+  public IMPLTYPE after (@Nonnull final EHTMLElement content, @Nonnull final String content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull JSArray content, @Nonnull String content1)
+  public IMPLTYPE after (@Nonnull final JSArray content, @Nonnull final String content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull JQueryInvocation content, @Nonnull String content1)
+  public IMPLTYPE after (@Nonnull final JQueryInvocation content, @Nonnull final String content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull IJSExpression content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE after (@Nonnull final IJSExpression content, @Nonnull final EHTMLElement content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull IHCNode content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE after (@Nonnull final IHCNode content, @Nonnull final EHTMLElement content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull String content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE after (@Nonnull final String content, @Nonnull final EHTMLElement content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull EHTMLElement content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE after (@Nonnull final EHTMLElement content, @Nonnull final EHTMLElement content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull JSArray content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE after (@Nonnull final JSArray content, @Nonnull final EHTMLElement content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull JQueryInvocation content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE after (@Nonnull final JQueryInvocation content, @Nonnull final EHTMLElement content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull IJSExpression content, @Nonnull JSArray content1)
+  public IMPLTYPE after (@Nonnull final IJSExpression content, @Nonnull final JSArray content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull IHCNode content, @Nonnull JSArray content1)
+  public IMPLTYPE after (@Nonnull final IHCNode content, @Nonnull final JSArray content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull String content, @Nonnull JSArray content1)
+  public IMPLTYPE after (@Nonnull final String content, @Nonnull final JSArray content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull EHTMLElement content, @Nonnull JSArray content1)
+  public IMPLTYPE after (@Nonnull final EHTMLElement content, @Nonnull final JSArray content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull JSArray content, @Nonnull JSArray content1)
+  public IMPLTYPE after (@Nonnull final JSArray content, @Nonnull final JSArray content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull JQueryInvocation content, @Nonnull JSArray content1)
+  public IMPLTYPE after (@Nonnull final JQueryInvocation content, @Nonnull final JSArray content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull IJSExpression content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE after (@Nonnull final IJSExpression content, @Nonnull final JQueryInvocation content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull IHCNode content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE after (@Nonnull final IHCNode content, @Nonnull final JQueryInvocation content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull String content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE after (@Nonnull final String content, @Nonnull final JQueryInvocation content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull EHTMLElement content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE after (@Nonnull final EHTMLElement content, @Nonnull final JQueryInvocation content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull JSArray content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE after (@Nonnull final JSArray content, @Nonnull final JQueryInvocation content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull JQueryInvocation content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE after (@Nonnull final JQueryInvocation content, @Nonnull final JQueryInvocation content1)
   {
     return after ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE after (@Nonnull JSAnonymousFunction function)
+  public IMPLTYPE after (@Nonnull final JSAnonymousFunction function)
   {
     return after ().arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE ajaxComplete (@Nonnull IJSExpression handler)
+  public IMPLTYPE ajaxComplete (@Nonnull final IJSExpression handler)
   {
     return ajaxComplete ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE ajaxComplete (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE ajaxComplete (@Nonnull final JSAnonymousFunction handler)
   {
     return ajaxComplete ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE ajaxError (@Nonnull IJSExpression handler)
+  public IMPLTYPE ajaxError (@Nonnull final IJSExpression handler)
   {
     return ajaxError ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE ajaxError (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE ajaxError (@Nonnull final JSAnonymousFunction handler)
   {
     return ajaxError ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE ajaxSend (@Nonnull IJSExpression handler)
+  public IMPLTYPE ajaxSend (@Nonnull final IJSExpression handler)
   {
     return ajaxSend ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE ajaxSend (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE ajaxSend (@Nonnull final JSAnonymousFunction handler)
   {
     return ajaxSend ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE ajaxStart (@Nonnull IJSExpression handler)
+  public IMPLTYPE ajaxStart (@Nonnull final IJSExpression handler)
   {
     return ajaxStart ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE ajaxStart (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE ajaxStart (@Nonnull final JSAnonymousFunction handler)
   {
     return ajaxStart ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE ajaxStop (@Nonnull IJSExpression handler)
+  public IMPLTYPE ajaxStop (@Nonnull final IJSExpression handler)
   {
     return ajaxStop ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE ajaxStop (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE ajaxStop (@Nonnull final JSAnonymousFunction handler)
   {
     return ajaxStop ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE ajaxSuccess (@Nonnull IJSExpression handler)
+  public IMPLTYPE ajaxSuccess (@Nonnull final IJSExpression handler)
   {
     return ajaxSuccess ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE ajaxSuccess (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE ajaxSuccess (@Nonnull final JSAnonymousFunction handler)
   {
     return ajaxSuccess ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE animate (@Nonnull IJSExpression properties)
+  public IMPLTYPE animate (@Nonnull final IJSExpression properties)
   {
     return animate ().arg (properties);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull IJSExpression content)
+  public IMPLTYPE append (@Nonnull final IJSExpression content)
   {
     return append ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull IHCNode content)
+  public IMPLTYPE append (@Nonnull final IHCNode content)
   {
     return append ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull String content)
+  public IMPLTYPE append (@Nonnull final String content)
   {
     return append ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull EHTMLElement content)
+  public IMPLTYPE append (@Nonnull final EHTMLElement content)
   {
     return append ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull JSArray content)
+  public IMPLTYPE append (@Nonnull final JSArray content)
   {
     return append ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull JQueryInvocation content)
+  public IMPLTYPE append (@Nonnull final JQueryInvocation content)
   {
     return append ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull IJSExpression content, @Nonnull IJSExpression content1)
+  public IMPLTYPE append (@Nonnull final IJSExpression content, @Nonnull final IJSExpression content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull IHCNode content, @Nonnull IJSExpression content1)
+  public IMPLTYPE append (@Nonnull final IHCNode content, @Nonnull final IJSExpression content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull String content, @Nonnull IJSExpression content1)
+  public IMPLTYPE append (@Nonnull final String content, @Nonnull final IJSExpression content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull EHTMLElement content, @Nonnull IJSExpression content1)
+  public IMPLTYPE append (@Nonnull final EHTMLElement content, @Nonnull final IJSExpression content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull JSArray content, @Nonnull IJSExpression content1)
+  public IMPLTYPE append (@Nonnull final JSArray content, @Nonnull final IJSExpression content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull JQueryInvocation content, @Nonnull IJSExpression content1)
+  public IMPLTYPE append (@Nonnull final JQueryInvocation content, @Nonnull final IJSExpression content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull IJSExpression content, @Nonnull IHCNode content1)
+  public IMPLTYPE append (@Nonnull final IJSExpression content, @Nonnull final IHCNode content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull IHCNode content, @Nonnull IHCNode content1)
+  public IMPLTYPE append (@Nonnull final IHCNode content, @Nonnull final IHCNode content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull String content, @Nonnull IHCNode content1)
+  public IMPLTYPE append (@Nonnull final String content, @Nonnull final IHCNode content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull EHTMLElement content, @Nonnull IHCNode content1)
+  public IMPLTYPE append (@Nonnull final EHTMLElement content, @Nonnull final IHCNode content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull JSArray content, @Nonnull IHCNode content1)
+  public IMPLTYPE append (@Nonnull final JSArray content, @Nonnull final IHCNode content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull JQueryInvocation content, @Nonnull IHCNode content1)
+  public IMPLTYPE append (@Nonnull final JQueryInvocation content, @Nonnull final IHCNode content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull IJSExpression content, @Nonnull String content1)
+  public IMPLTYPE append (@Nonnull final IJSExpression content, @Nonnull final String content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull IHCNode content, @Nonnull String content1)
+  public IMPLTYPE append (@Nonnull final IHCNode content, @Nonnull final String content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull String content, @Nonnull String content1)
+  public IMPLTYPE append (@Nonnull final String content, @Nonnull final String content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull EHTMLElement content, @Nonnull String content1)
+  public IMPLTYPE append (@Nonnull final EHTMLElement content, @Nonnull final String content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull JSArray content, @Nonnull String content1)
+  public IMPLTYPE append (@Nonnull final JSArray content, @Nonnull final String content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull JQueryInvocation content, @Nonnull String content1)
+  public IMPLTYPE append (@Nonnull final JQueryInvocation content, @Nonnull final String content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull IJSExpression content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE append (@Nonnull final IJSExpression content, @Nonnull final EHTMLElement content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull IHCNode content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE append (@Nonnull final IHCNode content, @Nonnull final EHTMLElement content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull String content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE append (@Nonnull final String content, @Nonnull final EHTMLElement content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull EHTMLElement content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE append (@Nonnull final EHTMLElement content, @Nonnull final EHTMLElement content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull JSArray content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE append (@Nonnull final JSArray content, @Nonnull final EHTMLElement content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull JQueryInvocation content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE append (@Nonnull final JQueryInvocation content, @Nonnull final EHTMLElement content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull IJSExpression content, @Nonnull JSArray content1)
+  public IMPLTYPE append (@Nonnull final IJSExpression content, @Nonnull final JSArray content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull IHCNode content, @Nonnull JSArray content1)
+  public IMPLTYPE append (@Nonnull final IHCNode content, @Nonnull final JSArray content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull String content, @Nonnull JSArray content1)
+  public IMPLTYPE append (@Nonnull final String content, @Nonnull final JSArray content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull EHTMLElement content, @Nonnull JSArray content1)
+  public IMPLTYPE append (@Nonnull final EHTMLElement content, @Nonnull final JSArray content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull JSArray content, @Nonnull JSArray content1)
+  public IMPLTYPE append (@Nonnull final JSArray content, @Nonnull final JSArray content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull JQueryInvocation content, @Nonnull JSArray content1)
+  public IMPLTYPE append (@Nonnull final JQueryInvocation content, @Nonnull final JSArray content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull IJSExpression content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE append (@Nonnull final IJSExpression content, @Nonnull final JQueryInvocation content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull IHCNode content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE append (@Nonnull final IHCNode content, @Nonnull final JQueryInvocation content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull String content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE append (@Nonnull final String content, @Nonnull final JQueryInvocation content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull EHTMLElement content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE append (@Nonnull final EHTMLElement content, @Nonnull final JQueryInvocation content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull JSArray content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE append (@Nonnull final JSArray content, @Nonnull final JQueryInvocation content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull JQueryInvocation content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE append (@Nonnull final JQueryInvocation content, @Nonnull final JQueryInvocation content1)
   {
     return append ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE append (@Nonnull JSAnonymousFunction function)
+  public IMPLTYPE append (@Nonnull final JSAnonymousFunction function)
   {
     return append ().arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE appendTo (@Nonnull IJSExpression target)
+  public IMPLTYPE appendTo (@Nonnull final IJSExpression target)
   {
     return appendTo ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE appendTo (@Nonnull IJQuerySelector target)
+  public IMPLTYPE appendTo (@Nonnull final IJQuerySelector target)
   {
     return appendTo ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE appendTo (@Nonnull JQuerySelectorList target)
+  public IMPLTYPE appendTo (@Nonnull final JQuerySelectorList target)
   {
     return appendTo ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE appendTo (@Nonnull EHTMLElement target)
+  public IMPLTYPE appendTo (@Nonnull final EHTMLElement target)
   {
     return appendTo ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE appendTo (@Nonnull ICSSClassProvider target)
+  public IMPLTYPE appendTo (@Nonnull final ICSSClassProvider target)
   {
     return appendTo ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE appendTo (@Nonnull IHCNode target)
+  public IMPLTYPE appendTo (@Nonnull final IHCNode target)
   {
     return appendTo ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE appendTo (@Nonnull String target)
+  public IMPLTYPE appendTo (@Nonnull final String target)
   {
     return appendTo ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE appendTo (@Nonnull JSArray target)
+  public IMPLTYPE appendTo (@Nonnull final JSArray target)
   {
     return appendTo ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE appendTo (@Nonnull JQueryInvocation target)
+  public IMPLTYPE appendTo (@Nonnull final JQueryInvocation target)
   {
     return appendTo ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJSExpression attributeName)
+  public IMPLTYPE attr (@Nonnull final IJSExpression attributeName)
   {
     return attr ().arg (attributeName);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJson attributeName)
+  public IMPLTYPE attr (@Nonnull final IJson attributeName)
   {
     return attr ().arg (attributeName);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IHCNode attributeName)
+  public IMPLTYPE attr (@Nonnull final IHCNode attributeName)
   {
     return attr ().arg (attributeName);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull String attributeName)
+  public IMPLTYPE attr (@Nonnull final String attributeName)
   {
     return attr ().arg (attributeName);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJSExpression attributeName, @Nonnull IJSExpression value)
+  public IMPLTYPE attr (@Nonnull final IJSExpression attributeName, @Nonnull final IJSExpression value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJson attributeName, @Nonnull IJSExpression value)
+  public IMPLTYPE attr (@Nonnull final IJson attributeName, @Nonnull final IJSExpression value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IHCNode attributeName, @Nonnull IJSExpression value)
+  public IMPLTYPE attr (@Nonnull final IHCNode attributeName, @Nonnull final IJSExpression value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull String attributeName, @Nonnull IJSExpression value)
+  public IMPLTYPE attr (@Nonnull final String attributeName, @Nonnull final IJSExpression value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJSExpression attributeName, @Nonnull IJson value)
+  public IMPLTYPE attr (@Nonnull final IJSExpression attributeName, @Nonnull final IJson value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJson attributeName, @Nonnull IJson value)
+  public IMPLTYPE attr (@Nonnull final IJson attributeName, @Nonnull final IJson value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IHCNode attributeName, @Nonnull IJson value)
+  public IMPLTYPE attr (@Nonnull final IHCNode attributeName, @Nonnull final IJson value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull String attributeName, @Nonnull IJson value)
+  public IMPLTYPE attr (@Nonnull final String attributeName, @Nonnull final IJson value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJSExpression attributeName, @Nonnull IHCNode value)
+  public IMPLTYPE attr (@Nonnull final IJSExpression attributeName, @Nonnull final IHCNode value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJson attributeName, @Nonnull IHCNode value)
+  public IMPLTYPE attr (@Nonnull final IJson attributeName, @Nonnull final IHCNode value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IHCNode attributeName, @Nonnull IHCNode value)
+  public IMPLTYPE attr (@Nonnull final IHCNode attributeName, @Nonnull final IHCNode value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull String attributeName, @Nonnull IHCNode value)
+  public IMPLTYPE attr (@Nonnull final String attributeName, @Nonnull final IHCNode value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJSExpression attributeName, @Nonnull String value)
+  public IMPLTYPE attr (@Nonnull final IJSExpression attributeName, @Nonnull final String value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJson attributeName, @Nonnull String value)
+  public IMPLTYPE attr (@Nonnull final IJson attributeName, @Nonnull final String value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IHCNode attributeName, @Nonnull String value)
+  public IMPLTYPE attr (@Nonnull final IHCNode attributeName, @Nonnull final String value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull String attributeName, @Nonnull String value)
+  public IMPLTYPE attr (@Nonnull final String attributeName, @Nonnull final String value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJSExpression attributeName, int value)
+  public IMPLTYPE attr (@Nonnull final IJSExpression attributeName, final int value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJson attributeName, int value)
+  public IMPLTYPE attr (@Nonnull final IJson attributeName, final int value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IHCNode attributeName, int value)
+  public IMPLTYPE attr (@Nonnull final IHCNode attributeName, final int value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull String attributeName, int value)
+  public IMPLTYPE attr (@Nonnull final String attributeName, final int value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJSExpression attributeName, long value)
+  public IMPLTYPE attr (@Nonnull final IJSExpression attributeName, final long value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJson attributeName, long value)
+  public IMPLTYPE attr (@Nonnull final IJson attributeName, final long value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IHCNode attributeName, long value)
+  public IMPLTYPE attr (@Nonnull final IHCNode attributeName, final long value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull String attributeName, long value)
+  public IMPLTYPE attr (@Nonnull final String attributeName, final long value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJSExpression attributeName, @Nonnull BigInteger value)
+  public IMPLTYPE attr (@Nonnull final IJSExpression attributeName, @Nonnull final BigInteger value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJson attributeName, @Nonnull BigInteger value)
+  public IMPLTYPE attr (@Nonnull final IJson attributeName, @Nonnull final BigInteger value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IHCNode attributeName, @Nonnull BigInteger value)
+  public IMPLTYPE attr (@Nonnull final IHCNode attributeName, @Nonnull final BigInteger value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull String attributeName, @Nonnull BigInteger value)
+  public IMPLTYPE attr (@Nonnull final String attributeName, @Nonnull final BigInteger value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJSExpression attributeName, double value)
+  public IMPLTYPE attr (@Nonnull final IJSExpression attributeName, final double value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJson attributeName, double value)
+  public IMPLTYPE attr (@Nonnull final IJson attributeName, final double value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IHCNode attributeName, double value)
+  public IMPLTYPE attr (@Nonnull final IHCNode attributeName, final double value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull String attributeName, double value)
+  public IMPLTYPE attr (@Nonnull final String attributeName, final double value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJSExpression attributeName, @Nonnull BigDecimal value)
+  public IMPLTYPE attr (@Nonnull final IJSExpression attributeName, @Nonnull final BigDecimal value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJson attributeName, @Nonnull BigDecimal value)
+  public IMPLTYPE attr (@Nonnull final IJson attributeName, @Nonnull final BigDecimal value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IHCNode attributeName, @Nonnull BigDecimal value)
+  public IMPLTYPE attr (@Nonnull final IHCNode attributeName, @Nonnull final BigDecimal value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull String attributeName, @Nonnull BigDecimal value)
+  public IMPLTYPE attr (@Nonnull final String attributeName, @Nonnull final BigDecimal value)
   {
     return attr ().arg (attributeName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJSExpression attributeName, @Nonnull JSAnonymousFunction function)
+  public IMPLTYPE attr (@Nonnull final IJSExpression attributeName, @Nonnull final JSAnonymousFunction function)
   {
     return attr ().arg (attributeName).arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IJson attributeName, @Nonnull JSAnonymousFunction function)
+  public IMPLTYPE attr (@Nonnull final IJson attributeName, @Nonnull final JSAnonymousFunction function)
   {
     return attr ().arg (attributeName).arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull IHCNode attributeName, @Nonnull JSAnonymousFunction function)
+  public IMPLTYPE attr (@Nonnull final IHCNode attributeName, @Nonnull final JSAnonymousFunction function)
   {
     return attr ().arg (attributeName).arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE attr (@Nonnull String attributeName, @Nonnull JSAnonymousFunction function)
+  public IMPLTYPE attr (@Nonnull final String attributeName, @Nonnull final JSAnonymousFunction function)
   {
     return attr ().arg (attributeName).arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull IJSExpression content)
+  public IMPLTYPE before (@Nonnull final IJSExpression content)
   {
     return before ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull IHCNode content)
+  public IMPLTYPE before (@Nonnull final IHCNode content)
   {
     return before ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull String content)
+  public IMPLTYPE before (@Nonnull final String content)
   {
     return before ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull EHTMLElement content)
+  public IMPLTYPE before (@Nonnull final EHTMLElement content)
   {
     return before ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull JSArray content)
+  public IMPLTYPE before (@Nonnull final JSArray content)
   {
     return before ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull JQueryInvocation content)
+  public IMPLTYPE before (@Nonnull final JQueryInvocation content)
   {
     return before ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull IJSExpression content, @Nonnull IJSExpression content1)
+  public IMPLTYPE before (@Nonnull final IJSExpression content, @Nonnull final IJSExpression content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull IHCNode content, @Nonnull IJSExpression content1)
+  public IMPLTYPE before (@Nonnull final IHCNode content, @Nonnull final IJSExpression content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull String content, @Nonnull IJSExpression content1)
+  public IMPLTYPE before (@Nonnull final String content, @Nonnull final IJSExpression content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull EHTMLElement content, @Nonnull IJSExpression content1)
+  public IMPLTYPE before (@Nonnull final EHTMLElement content, @Nonnull final IJSExpression content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull JSArray content, @Nonnull IJSExpression content1)
+  public IMPLTYPE before (@Nonnull final JSArray content, @Nonnull final IJSExpression content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull JQueryInvocation content, @Nonnull IJSExpression content1)
+  public IMPLTYPE before (@Nonnull final JQueryInvocation content, @Nonnull final IJSExpression content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull IJSExpression content, @Nonnull IHCNode content1)
+  public IMPLTYPE before (@Nonnull final IJSExpression content, @Nonnull final IHCNode content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull IHCNode content, @Nonnull IHCNode content1)
+  public IMPLTYPE before (@Nonnull final IHCNode content, @Nonnull final IHCNode content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull String content, @Nonnull IHCNode content1)
+  public IMPLTYPE before (@Nonnull final String content, @Nonnull final IHCNode content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull EHTMLElement content, @Nonnull IHCNode content1)
+  public IMPLTYPE before (@Nonnull final EHTMLElement content, @Nonnull final IHCNode content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull JSArray content, @Nonnull IHCNode content1)
+  public IMPLTYPE before (@Nonnull final JSArray content, @Nonnull final IHCNode content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull JQueryInvocation content, @Nonnull IHCNode content1)
+  public IMPLTYPE before (@Nonnull final JQueryInvocation content, @Nonnull final IHCNode content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull IJSExpression content, @Nonnull String content1)
+  public IMPLTYPE before (@Nonnull final IJSExpression content, @Nonnull final String content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull IHCNode content, @Nonnull String content1)
+  public IMPLTYPE before (@Nonnull final IHCNode content, @Nonnull final String content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull String content, @Nonnull String content1)
+  public IMPLTYPE before (@Nonnull final String content, @Nonnull final String content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull EHTMLElement content, @Nonnull String content1)
+  public IMPLTYPE before (@Nonnull final EHTMLElement content, @Nonnull final String content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull JSArray content, @Nonnull String content1)
+  public IMPLTYPE before (@Nonnull final JSArray content, @Nonnull final String content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull JQueryInvocation content, @Nonnull String content1)
+  public IMPLTYPE before (@Nonnull final JQueryInvocation content, @Nonnull final String content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull IJSExpression content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE before (@Nonnull final IJSExpression content, @Nonnull final EHTMLElement content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull IHCNode content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE before (@Nonnull final IHCNode content, @Nonnull final EHTMLElement content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull String content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE before (@Nonnull final String content, @Nonnull final EHTMLElement content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull EHTMLElement content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE before (@Nonnull final EHTMLElement content, @Nonnull final EHTMLElement content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull JSArray content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE before (@Nonnull final JSArray content, @Nonnull final EHTMLElement content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull JQueryInvocation content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE before (@Nonnull final JQueryInvocation content, @Nonnull final EHTMLElement content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull IJSExpression content, @Nonnull JSArray content1)
+  public IMPLTYPE before (@Nonnull final IJSExpression content, @Nonnull final JSArray content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull IHCNode content, @Nonnull JSArray content1)
+  public IMPLTYPE before (@Nonnull final IHCNode content, @Nonnull final JSArray content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull String content, @Nonnull JSArray content1)
+  public IMPLTYPE before (@Nonnull final String content, @Nonnull final JSArray content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull EHTMLElement content, @Nonnull JSArray content1)
+  public IMPLTYPE before (@Nonnull final EHTMLElement content, @Nonnull final JSArray content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull JSArray content, @Nonnull JSArray content1)
+  public IMPLTYPE before (@Nonnull final JSArray content, @Nonnull final JSArray content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull JQueryInvocation content, @Nonnull JSArray content1)
+  public IMPLTYPE before (@Nonnull final JQueryInvocation content, @Nonnull final JSArray content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull IJSExpression content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE before (@Nonnull final IJSExpression content, @Nonnull final JQueryInvocation content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull IHCNode content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE before (@Nonnull final IHCNode content, @Nonnull final JQueryInvocation content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull String content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE before (@Nonnull final String content, @Nonnull final JQueryInvocation content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull EHTMLElement content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE before (@Nonnull final EHTMLElement content, @Nonnull final JQueryInvocation content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull JSArray content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE before (@Nonnull final JSArray content, @Nonnull final JQueryInvocation content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull JQueryInvocation content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE before (@Nonnull final JQueryInvocation content, @Nonnull final JQueryInvocation content1)
   {
     return before ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE before (@Nonnull JSAnonymousFunction function)
+  public IMPLTYPE before (@Nonnull final JSAnonymousFunction function)
   {
     return before ().arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE bind (@Nonnull IJSExpression eventType, @Nonnull IJSExpression eventData)
+  public IMPLTYPE bind (@Nonnull final IJSExpression eventType, @Nonnull final IJSExpression eventData)
   {
     return bind ().arg (eventType).arg (eventData);
   }
 
   @Nonnull
-  public IMPLTYPE bind (@Nonnull IJson eventType, @Nonnull IJSExpression eventData)
+  public IMPLTYPE bind (@Nonnull final IJson eventType, @Nonnull final IJSExpression eventData)
   {
     return bind ().arg (eventType).arg (eventData);
   }
 
   @Nonnull
-  public IMPLTYPE bind (@Nonnull IHCNode eventType, @Nonnull IJSExpression eventData)
+  public IMPLTYPE bind (@Nonnull final IHCNode eventType, @Nonnull final IJSExpression eventData)
   {
     return bind ().arg (eventType).arg (eventData);
   }
 
   @Nonnull
-  public IMPLTYPE bind (@Nonnull String eventType, @Nonnull IJSExpression eventData)
+  public IMPLTYPE bind (@Nonnull final String eventType, @Nonnull final IJSExpression eventData)
   {
     return bind ().arg (eventType).arg (eventData);
   }
 
   @Nonnull
-  public IMPLTYPE bind (@Nonnull IJSExpression eventType,
-                        @Nonnull IJSExpression eventData,
-                        @Nonnull IJSExpression handler)
+  public IMPLTYPE bind (@Nonnull final IJSExpression eventType,
+                        @Nonnull final IJSExpression eventData,
+                        @Nonnull final IJSExpression handler)
   {
     return bind ().arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE bind (@Nonnull IJson eventType, @Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE bind (@Nonnull final IJson eventType,
+                        @Nonnull final IJSExpression eventData,
+                        @Nonnull final IJSExpression handler)
   {
     return bind ().arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE bind (@Nonnull IHCNode eventType, @Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE bind (@Nonnull final IHCNode eventType,
+                        @Nonnull final IJSExpression eventData,
+                        @Nonnull final IJSExpression handler)
   {
     return bind ().arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE bind (@Nonnull String eventType, @Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE bind (@Nonnull final String eventType,
+                        @Nonnull final IJSExpression eventData,
+                        @Nonnull final IJSExpression handler)
   {
     return bind ().arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE bind (@Nonnull IJSExpression eventType,
-                        @Nonnull IJSExpression eventData,
-                        @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE bind (@Nonnull final IJSExpression eventType,
+                        @Nonnull final IJSExpression eventData,
+                        @Nonnull final JSAnonymousFunction handler)
   {
     return bind ().arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE bind (@Nonnull IJson eventType, @Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE bind (@Nonnull final IJson eventType,
+                        @Nonnull final IJSExpression eventData,
+                        @Nonnull final JSAnonymousFunction handler)
   {
     return bind ().arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE bind (@Nonnull IHCNode eventType,
-                        @Nonnull IJSExpression eventData,
-                        @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE bind (@Nonnull final IHCNode eventType,
+                        @Nonnull final IJSExpression eventData,
+                        @Nonnull final JSAnonymousFunction handler)
   {
     return bind ().arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE bind (@Nonnull String eventType,
-                        @Nonnull IJSExpression eventData,
-                        @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE bind (@Nonnull final String eventType,
+                        @Nonnull final IJSExpression eventData,
+                        @Nonnull final JSAnonymousFunction handler)
   {
     return bind ().arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE bind (@Nonnull IJSExpression eventType)
+  public IMPLTYPE bind (@Nonnull final IJSExpression eventType)
   {
     return bind ().arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE bind (@Nonnull IJson eventType)
+  public IMPLTYPE bind (@Nonnull final IJson eventType)
   {
     return bind ().arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE bind (@Nonnull IHCNode eventType)
+  public IMPLTYPE bind (@Nonnull final IHCNode eventType)
   {
     return bind ().arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE bind (@Nonnull String eventType)
+  public IMPLTYPE bind (@Nonnull final String eventType)
   {
     return bind ().arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE bind (@Nonnull IJSExpression eventType, @Nonnull IJSExpression eventData, boolean preventBubble)
+  public IMPLTYPE bind (@Nonnull final IJSExpression eventType,
+                        @Nonnull final IJSExpression eventData,
+                        final boolean preventBubble)
   {
     return bind ().arg (eventType).arg (eventData).arg (preventBubble);
   }
 
   @Nonnull
-  public IMPLTYPE bind (@Nonnull IJson eventType, @Nonnull IJSExpression eventData, boolean preventBubble)
+  public IMPLTYPE bind (@Nonnull final IJson eventType,
+                        @Nonnull final IJSExpression eventData,
+                        final boolean preventBubble)
   {
     return bind ().arg (eventType).arg (eventData).arg (preventBubble);
   }
 
   @Nonnull
-  public IMPLTYPE bind (@Nonnull IHCNode eventType, @Nonnull IJSExpression eventData, boolean preventBubble)
+  public IMPLTYPE bind (@Nonnull final IHCNode eventType,
+                        @Nonnull final IJSExpression eventData,
+                        final boolean preventBubble)
   {
     return bind ().arg (eventType).arg (eventData).arg (preventBubble);
   }
 
   @Nonnull
-  public IMPLTYPE bind (@Nonnull String eventType, @Nonnull IJSExpression eventData, boolean preventBubble)
+  public IMPLTYPE bind (@Nonnull final String eventType,
+                        @Nonnull final IJSExpression eventData,
+                        final boolean preventBubble)
   {
     return bind ().arg (eventType).arg (eventData).arg (preventBubble);
   }
 
   @Nonnull
-  public IMPLTYPE blur (@Nonnull IJSExpression handler)
+  public IMPLTYPE blur (@Nonnull final IJSExpression handler)
   {
     return blur ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE blur (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE blur (@Nonnull final JSAnonymousFunction handler)
   {
     return blur ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE blur (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE blur (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return blur ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE blur (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE blur (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return blur ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE callbacks_add (@Nonnull IJSExpression callbacks)
+  public IMPLTYPE callbacks_add (@Nonnull final IJSExpression callbacks)
   {
     return callbacks_add ().arg (callbacks);
   }
 
   @Nonnull
-  public IMPLTYPE callbacks_add (@Nonnull JSAnonymousFunction callbacks)
+  public IMPLTYPE callbacks_add (@Nonnull final JSAnonymousFunction callbacks)
   {
     return callbacks_add ().arg (callbacks);
   }
 
   @Nonnull
-  public IMPLTYPE callbacks_add (@Nonnull JSArray callbacks)
+  public IMPLTYPE callbacks_add (@Nonnull final JSArray callbacks)
   {
     return callbacks_add ().arg (callbacks);
   }
 
   @Nonnull
-  public IMPLTYPE callbacks_fire (@Nonnull IJSExpression arguments)
+  public IMPLTYPE callbacks_fire (@Nonnull final IJSExpression arguments)
   {
     return callbacks_fire ().arg (arguments);
   }
 
   @Nonnull
-  public IMPLTYPE callbacks_fireWith (@Nonnull IJSExpression context)
+  public IMPLTYPE callbacks_fireWith (@Nonnull final IJSExpression context)
   {
     return callbacks_fireWith ().arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE callbacks_fireWith (@Nonnull IJSExpression context, @Nonnull IJSExpression args)
+  public IMPLTYPE callbacks_fireWith (@Nonnull final IJSExpression context, @Nonnull final IJSExpression args)
   {
     return callbacks_fireWith ().arg (context).arg (args);
   }
 
   @Nonnull
-  public IMPLTYPE callbacks_has (@Nonnull IJSExpression callback)
+  public IMPLTYPE callbacks_has (@Nonnull final IJSExpression callback)
   {
     return callbacks_has ().arg (callback);
   }
 
   @Nonnull
-  public IMPLTYPE callbacks_has (@Nonnull JSAnonymousFunction callback)
+  public IMPLTYPE callbacks_has (@Nonnull final JSAnonymousFunction callback)
   {
     return callbacks_has ().arg (callback);
   }
 
   @Nonnull
-  public IMPLTYPE callbacks_remove (@Nonnull IJSExpression callbacks)
+  public IMPLTYPE callbacks_remove (@Nonnull final IJSExpression callbacks)
   {
     return callbacks_remove ().arg (callbacks);
   }
 
   @Nonnull
-  public IMPLTYPE callbacks_remove (@Nonnull JSAnonymousFunction callbacks)
+  public IMPLTYPE callbacks_remove (@Nonnull final JSAnonymousFunction callbacks)
   {
     return callbacks_remove ().arg (callbacks);
   }
 
   @Nonnull
-  public IMPLTYPE callbacks_remove (@Nonnull JSArray callbacks)
+  public IMPLTYPE callbacks_remove (@Nonnull final JSArray callbacks)
   {
     return callbacks_remove ().arg (callbacks);
   }
 
   @Nonnull
-  public IMPLTYPE change (@Nonnull IJSExpression handler)
+  public IMPLTYPE change (@Nonnull final IJSExpression handler)
   {
     return change ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE change (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE change (@Nonnull final JSAnonymousFunction handler)
   {
     return change ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE change (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE change (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return change ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE change (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE change (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return change ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE children (@Nonnull IJSExpression selector)
+  public IMPLTYPE children (@Nonnull final IJSExpression selector)
   {
     return children ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE children (@Nonnull IJQuerySelector selector)
+  public IMPLTYPE children (@Nonnull final IJQuerySelector selector)
   {
     return children ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE children (@Nonnull JQuerySelectorList selector)
+  public IMPLTYPE children (@Nonnull final JQuerySelectorList selector)
   {
     return children ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE children (@Nonnull EHTMLElement selector)
+  public IMPLTYPE children (@Nonnull final EHTMLElement selector)
   {
     return children ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE children (@Nonnull ICSSClassProvider selector)
+  public IMPLTYPE children (@Nonnull final ICSSClassProvider selector)
   {
     return children ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE clearQueue (@Nonnull IJSExpression queueName)
+  public IMPLTYPE clearQueue (@Nonnull final IJSExpression queueName)
   {
     return clearQueue ().arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE clearQueue (@Nonnull IJson queueName)
+  public IMPLTYPE clearQueue (@Nonnull final IJson queueName)
   {
     return clearQueue ().arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE clearQueue (@Nonnull IHCNode queueName)
+  public IMPLTYPE clearQueue (@Nonnull final IHCNode queueName)
   {
     return clearQueue ().arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE clearQueue (@Nonnull String queueName)
+  public IMPLTYPE clearQueue (@Nonnull final String queueName)
   {
     return clearQueue ().arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE click (@Nonnull IJSExpression handler)
+  public IMPLTYPE click (@Nonnull final IJSExpression handler)
   {
     return click ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE click (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE click (@Nonnull final JSAnonymousFunction handler)
   {
     return click ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE click (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE click (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return click ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE click (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE click (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return click ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE _clone (@Nonnull IJSExpression withDataAndEvents)
+  public IMPLTYPE _clone (@Nonnull final IJSExpression withDataAndEvents)
   {
     return _clone ().arg (withDataAndEvents);
   }
 
   @Nonnull
-  public IMPLTYPE _clone (boolean withDataAndEvents)
+  public IMPLTYPE _clone (final boolean withDataAndEvents)
   {
     return _clone ().arg (withDataAndEvents);
   }
 
   @Nonnull
-  public IMPLTYPE _clone (@Nonnull IJSExpression withDataAndEvents, @Nonnull IJSExpression deepWithDataAndEvents)
+  public IMPLTYPE _clone (@Nonnull final IJSExpression withDataAndEvents,
+                          @Nonnull final IJSExpression deepWithDataAndEvents)
   {
     return _clone ().arg (withDataAndEvents).arg (deepWithDataAndEvents);
   }
 
   @Nonnull
-  public IMPLTYPE _clone (boolean withDataAndEvents, @Nonnull IJSExpression deepWithDataAndEvents)
+  public IMPLTYPE _clone (final boolean withDataAndEvents, @Nonnull final IJSExpression deepWithDataAndEvents)
   {
     return _clone ().arg (withDataAndEvents).arg (deepWithDataAndEvents);
   }
 
   @Nonnull
-  public IMPLTYPE _clone (@Nonnull IJSExpression withDataAndEvents, boolean deepWithDataAndEvents)
+  public IMPLTYPE _clone (@Nonnull final IJSExpression withDataAndEvents, final boolean deepWithDataAndEvents)
   {
     return _clone ().arg (withDataAndEvents).arg (deepWithDataAndEvents);
   }
 
   @Nonnull
-  public IMPLTYPE _clone (boolean withDataAndEvents, boolean deepWithDataAndEvents)
+  public IMPLTYPE _clone (final boolean withDataAndEvents, final boolean deepWithDataAndEvents)
   {
     return _clone ().arg (withDataAndEvents).arg (deepWithDataAndEvents);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull IJSExpression selector)
+  public IMPLTYPE closest (@Nonnull final IJSExpression selector)
   {
     return closest ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull IJQuerySelector selector)
+  public IMPLTYPE closest (@Nonnull final IJQuerySelector selector)
   {
     return closest ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull JQuerySelectorList selector)
+  public IMPLTYPE closest (@Nonnull final JQuerySelectorList selector)
   {
     return closest ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull EHTMLElement selector)
+  public IMPLTYPE closest (@Nonnull final EHTMLElement selector)
   {
     return closest ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull ICSSClassProvider selector)
+  public IMPLTYPE closest (@Nonnull final ICSSClassProvider selector)
   {
     return closest ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull IJSExpression selector, @Nonnull IJSExpression context)
+  public IMPLTYPE closest (@Nonnull final IJSExpression selector, @Nonnull final IJSExpression context)
   {
     return closest ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull IJQuerySelector selector, @Nonnull IJSExpression context)
+  public IMPLTYPE closest (@Nonnull final IJQuerySelector selector, @Nonnull final IJSExpression context)
   {
     return closest ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull JQuerySelectorList selector, @Nonnull IJSExpression context)
+  public IMPLTYPE closest (@Nonnull final JQuerySelectorList selector, @Nonnull final IJSExpression context)
   {
     return closest ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull EHTMLElement selector, @Nonnull IJSExpression context)
+  public IMPLTYPE closest (@Nonnull final EHTMLElement selector, @Nonnull final IJSExpression context)
   {
     return closest ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull ICSSClassProvider selector, @Nonnull IJSExpression context)
+  public IMPLTYPE closest (@Nonnull final ICSSClassProvider selector, @Nonnull final IJSExpression context)
   {
     return closest ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull IJSExpression selector, @Nonnull EHTMLElement context)
+  public IMPLTYPE closest (@Nonnull final IJSExpression selector, @Nonnull final EHTMLElement context)
   {
     return closest ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull IJQuerySelector selector, @Nonnull EHTMLElement context)
+  public IMPLTYPE closest (@Nonnull final IJQuerySelector selector, @Nonnull final EHTMLElement context)
   {
     return closest ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull JQuerySelectorList selector, @Nonnull EHTMLElement context)
+  public IMPLTYPE closest (@Nonnull final JQuerySelectorList selector, @Nonnull final EHTMLElement context)
   {
     return closest ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull EHTMLElement selector, @Nonnull EHTMLElement context)
+  public IMPLTYPE closest (@Nonnull final EHTMLElement selector, @Nonnull final EHTMLElement context)
   {
     return closest ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull ICSSClassProvider selector, @Nonnull EHTMLElement context)
+  public IMPLTYPE closest (@Nonnull final ICSSClassProvider selector, @Nonnull final EHTMLElement context)
   {
     return closest ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull IJSExpression selector, @Nonnull String context)
+  public IMPLTYPE closest (@Nonnull final IJSExpression selector, @Nonnull final String context)
   {
     return closest ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull IJQuerySelector selector, @Nonnull String context)
+  public IMPLTYPE closest (@Nonnull final IJQuerySelector selector, @Nonnull final String context)
   {
     return closest ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull JQuerySelectorList selector, @Nonnull String context)
+  public IMPLTYPE closest (@Nonnull final JQuerySelectorList selector, @Nonnull final String context)
   {
     return closest ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull EHTMLElement selector, @Nonnull String context)
+  public IMPLTYPE closest (@Nonnull final EHTMLElement selector, @Nonnull final String context)
   {
     return closest ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull ICSSClassProvider selector, @Nonnull String context)
+  public IMPLTYPE closest (@Nonnull final ICSSClassProvider selector, @Nonnull final String context)
   {
     return closest ().arg (selector).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull JQueryInvocation jQuery_object)
+  public IMPLTYPE closest (@Nonnull final JQueryInvocation jQuery_object)
   {
     return closest ().arg (jQuery_object);
   }
 
   @Nonnull
-  public IMPLTYPE closest (@Nonnull String element)
+  public IMPLTYPE closest (@Nonnull final String element)
   {
     return closest ().arg (element);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE closest (@Nonnull JSArray selectors)
+  public IMPLTYPE closest (@Nonnull final JSArray selectors)
   {
     return closest ().arg (selectors);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE closest (@Nonnull JSArray selectors, @Nonnull IJSExpression context)
+  public IMPLTYPE closest (@Nonnull final JSArray selectors, @Nonnull final IJSExpression context)
   {
     return closest ().arg (selectors).arg (context);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE closest (@Nonnull JSArray selectors, @Nonnull EHTMLElement context)
+  public IMPLTYPE closest (@Nonnull final JSArray selectors, @Nonnull final EHTMLElement context)
   {
     return closest ().arg (selectors).arg (context);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE closest (@Nonnull JSArray selectors, @Nonnull String context)
+  public IMPLTYPE closest (@Nonnull final JSArray selectors, @Nonnull final String context)
   {
     return closest ().arg (selectors).arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJSExpression propertyName)
+  public IMPLTYPE css (@Nonnull final IJSExpression propertyName)
   {
     return css ().arg (propertyName);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJson propertyName)
+  public IMPLTYPE css (@Nonnull final IJson propertyName)
   {
     return css ().arg (propertyName);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IHCNode propertyName)
+  public IMPLTYPE css (@Nonnull final IHCNode propertyName)
   {
     return css ().arg (propertyName);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull String propertyName)
+  public IMPLTYPE css (@Nonnull final String propertyName)
   {
     return css ().arg (propertyName);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull JSArray propertyNames)
+  public IMPLTYPE css (@Nonnull final JSArray propertyNames)
   {
     return css ().arg (propertyNames);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJSExpression propertyName, @Nonnull IJSExpression value)
+  public IMPLTYPE css (@Nonnull final IJSExpression propertyName, @Nonnull final IJSExpression value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJson propertyName, @Nonnull IJSExpression value)
+  public IMPLTYPE css (@Nonnull final IJson propertyName, @Nonnull final IJSExpression value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IHCNode propertyName, @Nonnull IJSExpression value)
+  public IMPLTYPE css (@Nonnull final IHCNode propertyName, @Nonnull final IJSExpression value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull String propertyName, @Nonnull IJSExpression value)
+  public IMPLTYPE css (@Nonnull final String propertyName, @Nonnull final IJSExpression value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJSExpression propertyName, @Nonnull IJson value)
+  public IMPLTYPE css (@Nonnull final IJSExpression propertyName, @Nonnull final IJson value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJson propertyName, @Nonnull IJson value)
+  public IMPLTYPE css (@Nonnull final IJson propertyName, @Nonnull final IJson value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IHCNode propertyName, @Nonnull IJson value)
+  public IMPLTYPE css (@Nonnull final IHCNode propertyName, @Nonnull final IJson value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull String propertyName, @Nonnull IJson value)
+  public IMPLTYPE css (@Nonnull final String propertyName, @Nonnull final IJson value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJSExpression propertyName, @Nonnull IHCNode value)
+  public IMPLTYPE css (@Nonnull final IJSExpression propertyName, @Nonnull final IHCNode value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJson propertyName, @Nonnull IHCNode value)
+  public IMPLTYPE css (@Nonnull final IJson propertyName, @Nonnull final IHCNode value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IHCNode propertyName, @Nonnull IHCNode value)
+  public IMPLTYPE css (@Nonnull final IHCNode propertyName, @Nonnull final IHCNode value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull String propertyName, @Nonnull IHCNode value)
+  public IMPLTYPE css (@Nonnull final String propertyName, @Nonnull final IHCNode value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJSExpression propertyName, @Nonnull String value)
+  public IMPLTYPE css (@Nonnull final IJSExpression propertyName, @Nonnull final String value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJson propertyName, @Nonnull String value)
+  public IMPLTYPE css (@Nonnull final IJson propertyName, @Nonnull final String value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IHCNode propertyName, @Nonnull String value)
+  public IMPLTYPE css (@Nonnull final IHCNode propertyName, @Nonnull final String value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull String propertyName, @Nonnull String value)
+  public IMPLTYPE css (@Nonnull final String propertyName, @Nonnull final String value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJSExpression propertyName, int value)
+  public IMPLTYPE css (@Nonnull final IJSExpression propertyName, final int value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJson propertyName, int value)
+  public IMPLTYPE css (@Nonnull final IJson propertyName, final int value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IHCNode propertyName, int value)
+  public IMPLTYPE css (@Nonnull final IHCNode propertyName, final int value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull String propertyName, int value)
+  public IMPLTYPE css (@Nonnull final String propertyName, final int value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJSExpression propertyName, long value)
+  public IMPLTYPE css (@Nonnull final IJSExpression propertyName, final long value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJson propertyName, long value)
+  public IMPLTYPE css (@Nonnull final IJson propertyName, final long value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IHCNode propertyName, long value)
+  public IMPLTYPE css (@Nonnull final IHCNode propertyName, final long value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull String propertyName, long value)
+  public IMPLTYPE css (@Nonnull final String propertyName, final long value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJSExpression propertyName, @Nonnull BigInteger value)
+  public IMPLTYPE css (@Nonnull final IJSExpression propertyName, @Nonnull final BigInteger value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJson propertyName, @Nonnull BigInteger value)
+  public IMPLTYPE css (@Nonnull final IJson propertyName, @Nonnull final BigInteger value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IHCNode propertyName, @Nonnull BigInteger value)
+  public IMPLTYPE css (@Nonnull final IHCNode propertyName, @Nonnull final BigInteger value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull String propertyName, @Nonnull BigInteger value)
+  public IMPLTYPE css (@Nonnull final String propertyName, @Nonnull final BigInteger value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJSExpression propertyName, double value)
+  public IMPLTYPE css (@Nonnull final IJSExpression propertyName, final double value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJson propertyName, double value)
+  public IMPLTYPE css (@Nonnull final IJson propertyName, final double value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IHCNode propertyName, double value)
+  public IMPLTYPE css (@Nonnull final IHCNode propertyName, final double value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull String propertyName, double value)
+  public IMPLTYPE css (@Nonnull final String propertyName, final double value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJSExpression propertyName, @Nonnull BigDecimal value)
+  public IMPLTYPE css (@Nonnull final IJSExpression propertyName, @Nonnull final BigDecimal value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJson propertyName, @Nonnull BigDecimal value)
+  public IMPLTYPE css (@Nonnull final IJson propertyName, @Nonnull final BigDecimal value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IHCNode propertyName, @Nonnull BigDecimal value)
+  public IMPLTYPE css (@Nonnull final IHCNode propertyName, @Nonnull final BigDecimal value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull String propertyName, @Nonnull BigDecimal value)
+  public IMPLTYPE css (@Nonnull final String propertyName, @Nonnull final BigDecimal value)
   {
     return css ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJSExpression propertyName, @Nonnull JSAnonymousFunction function)
+  public IMPLTYPE css (@Nonnull final IJSExpression propertyName, @Nonnull final JSAnonymousFunction function)
   {
     return css ().arg (propertyName).arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IJson propertyName, @Nonnull JSAnonymousFunction function)
+  public IMPLTYPE css (@Nonnull final IJson propertyName, @Nonnull final JSAnonymousFunction function)
   {
     return css ().arg (propertyName).arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull IHCNode propertyName, @Nonnull JSAnonymousFunction function)
+  public IMPLTYPE css (@Nonnull final IHCNode propertyName, @Nonnull final JSAnonymousFunction function)
   {
     return css ().arg (propertyName).arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE css (@Nonnull String propertyName, @Nonnull JSAnonymousFunction function)
+  public IMPLTYPE css (@Nonnull final String propertyName, @Nonnull final JSAnonymousFunction function)
   {
     return css ().arg (propertyName).arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE data (@Nonnull IJSExpression key, @Nonnull IJSExpression value)
+  public IMPLTYPE data (@Nonnull final IJSExpression key, @Nonnull final IJSExpression value)
   {
     return data ().arg (key).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE data (@Nonnull IJson key, @Nonnull IJSExpression value)
+  public IMPLTYPE data (@Nonnull final IJson key, @Nonnull final IJSExpression value)
   {
     return data ().arg (key).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE data (@Nonnull IHCNode key, @Nonnull IJSExpression value)
+  public IMPLTYPE data (@Nonnull final IHCNode key, @Nonnull final IJSExpression value)
   {
     return data ().arg (key).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE data (@Nonnull String key, @Nonnull IJSExpression value)
+  public IMPLTYPE data (@Nonnull final String key, @Nonnull final IJSExpression value)
   {
     return data ().arg (key).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE data (@Nonnull IJSExpression obj)
+  public IMPLTYPE data (@Nonnull final IJSExpression obj)
   {
     return data ().arg (obj);
   }
 
   @Nonnull
-  public IMPLTYPE data (@Nonnull IJson key)
+  public IMPLTYPE data (@Nonnull final IJson key)
   {
     return data ().arg (key);
   }
 
   @Nonnull
-  public IMPLTYPE data (@Nonnull IHCNode key)
+  public IMPLTYPE data (@Nonnull final IHCNode key)
   {
     return data ().arg (key);
   }
 
   @Nonnull
-  public IMPLTYPE data (@Nonnull String key)
+  public IMPLTYPE data (@Nonnull final String key)
   {
     return data ().arg (key);
   }
 
   @Nonnull
-  public IMPLTYPE dblclick (@Nonnull IJSExpression handler)
+  public IMPLTYPE dblclick (@Nonnull final IJSExpression handler)
   {
     return dblclick ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE dblclick (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE dblclick (@Nonnull final JSAnonymousFunction handler)
   {
     return dblclick ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE dblclick (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE dblclick (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return dblclick ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE dblclick (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE dblclick (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return dblclick ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_always (@Nonnull IJSExpression alwaysCallbacks)
+  public IMPLTYPE deferred_always (@Nonnull final IJSExpression alwaysCallbacks)
   {
     return deferred_always ().arg (alwaysCallbacks);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_always (@Nonnull JSAnonymousFunction alwaysCallbacks)
+  public IMPLTYPE deferred_always (@Nonnull final JSAnonymousFunction alwaysCallbacks)
   {
     return deferred_always ().arg (alwaysCallbacks);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_always (@Nonnull IJSExpression alwaysCallbacks, @Nonnull IJSExpression alwaysCallbacks1)
+  public IMPLTYPE deferred_always (@Nonnull final IJSExpression alwaysCallbacks,
+                                   @Nonnull final IJSExpression alwaysCallbacks1)
   {
     return deferred_always ().arg (alwaysCallbacks).arg (alwaysCallbacks1);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_always (@Nonnull JSAnonymousFunction alwaysCallbacks, @Nonnull IJSExpression alwaysCallbacks1)
+  public IMPLTYPE deferred_always (@Nonnull final JSAnonymousFunction alwaysCallbacks,
+                                   @Nonnull final IJSExpression alwaysCallbacks1)
   {
     return deferred_always ().arg (alwaysCallbacks).arg (alwaysCallbacks1);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_always (@Nonnull IJSExpression alwaysCallbacks, @Nonnull JSAnonymousFunction alwaysCallbacks1)
+  public IMPLTYPE deferred_always (@Nonnull final IJSExpression alwaysCallbacks,
+                                   @Nonnull final JSAnonymousFunction alwaysCallbacks1)
   {
     return deferred_always ().arg (alwaysCallbacks).arg (alwaysCallbacks1);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_always (@Nonnull JSAnonymousFunction alwaysCallbacks,
-                                   @Nonnull JSAnonymousFunction alwaysCallbacks1)
+  public IMPLTYPE deferred_always (@Nonnull final JSAnonymousFunction alwaysCallbacks,
+                                   @Nonnull final JSAnonymousFunction alwaysCallbacks1)
   {
     return deferred_always ().arg (alwaysCallbacks).arg (alwaysCallbacks1);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_done (@Nonnull IJSExpression doneCallbacks)
+  public IMPLTYPE deferred_done (@Nonnull final IJSExpression doneCallbacks)
   {
     return deferred_done ().arg (doneCallbacks);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_done (@Nonnull JSAnonymousFunction doneCallbacks)
+  public IMPLTYPE deferred_done (@Nonnull final JSAnonymousFunction doneCallbacks)
   {
     return deferred_done ().arg (doneCallbacks);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_done (@Nonnull IJSExpression doneCallbacks, @Nonnull IJSExpression doneCallbacks1)
+  public IMPLTYPE deferred_done (@Nonnull final IJSExpression doneCallbacks, @Nonnull final IJSExpression doneCallbacks1)
   {
     return deferred_done ().arg (doneCallbacks).arg (doneCallbacks1);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_done (@Nonnull JSAnonymousFunction doneCallbacks, @Nonnull IJSExpression doneCallbacks1)
+  public IMPLTYPE deferred_done (@Nonnull final JSAnonymousFunction doneCallbacks,
+                                 @Nonnull final IJSExpression doneCallbacks1)
   {
     return deferred_done ().arg (doneCallbacks).arg (doneCallbacks1);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_done (@Nonnull IJSExpression doneCallbacks, @Nonnull JSAnonymousFunction doneCallbacks1)
+  public IMPLTYPE deferred_done (@Nonnull final IJSExpression doneCallbacks,
+                                 @Nonnull final JSAnonymousFunction doneCallbacks1)
   {
     return deferred_done ().arg (doneCallbacks).arg (doneCallbacks1);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_done (@Nonnull JSAnonymousFunction doneCallbacks, @Nonnull JSAnonymousFunction doneCallbacks1)
+  public IMPLTYPE deferred_done (@Nonnull final JSAnonymousFunction doneCallbacks,
+                                 @Nonnull final JSAnonymousFunction doneCallbacks1)
   {
     return deferred_done ().arg (doneCallbacks).arg (doneCallbacks1);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_fail (@Nonnull IJSExpression failCallbacks)
+  public IMPLTYPE deferred_fail (@Nonnull final IJSExpression failCallbacks)
   {
     return deferred_fail ().arg (failCallbacks);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_fail (@Nonnull JSAnonymousFunction failCallbacks)
+  public IMPLTYPE deferred_fail (@Nonnull final JSAnonymousFunction failCallbacks)
   {
     return deferred_fail ().arg (failCallbacks);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_fail (@Nonnull IJSExpression failCallbacks, @Nonnull IJSExpression failCallbacks1)
+  public IMPLTYPE deferred_fail (@Nonnull final IJSExpression failCallbacks, @Nonnull final IJSExpression failCallbacks1)
   {
     return deferred_fail ().arg (failCallbacks).arg (failCallbacks1);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_fail (@Nonnull JSAnonymousFunction failCallbacks, @Nonnull IJSExpression failCallbacks1)
+  public IMPLTYPE deferred_fail (@Nonnull final JSAnonymousFunction failCallbacks,
+                                 @Nonnull final IJSExpression failCallbacks1)
   {
     return deferred_fail ().arg (failCallbacks).arg (failCallbacks1);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_fail (@Nonnull IJSExpression failCallbacks, @Nonnull JSAnonymousFunction failCallbacks1)
+  public IMPLTYPE deferred_fail (@Nonnull final IJSExpression failCallbacks,
+                                 @Nonnull final JSAnonymousFunction failCallbacks1)
   {
     return deferred_fail ().arg (failCallbacks).arg (failCallbacks1);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_fail (@Nonnull JSAnonymousFunction failCallbacks, @Nonnull JSAnonymousFunction failCallbacks1)
+  public IMPLTYPE deferred_fail (@Nonnull final JSAnonymousFunction failCallbacks,
+                                 @Nonnull final JSAnonymousFunction failCallbacks1)
   {
     return deferred_fail ().arg (failCallbacks).arg (failCallbacks1);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_notify (@Nonnull IJSExpression args)
+  public IMPLTYPE deferred_notify (@Nonnull final IJSExpression args)
   {
     return deferred_notify ().arg (args);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_notifyWith (@Nonnull IJSExpression context)
+  public IMPLTYPE deferred_notifyWith (@Nonnull final IJSExpression context)
   {
     return deferred_notifyWith ().arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_notifyWith (@Nonnull IJSExpression context, @Nonnull IJSExpression args)
+  public IMPLTYPE deferred_notifyWith (@Nonnull final IJSExpression context, @Nonnull final IJSExpression args)
   {
     return deferred_notifyWith ().arg (context).arg (args);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE deferred_pipe (@Nonnull IJSExpression doneFilter)
+  public IMPLTYPE deferred_pipe (@Nonnull final IJSExpression doneFilter)
   {
     return deferred_pipe ().arg (doneFilter);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE deferred_pipe (@Nonnull JSAnonymousFunction doneFilter)
+  public IMPLTYPE deferred_pipe (@Nonnull final JSAnonymousFunction doneFilter)
   {
     return deferred_pipe ().arg (doneFilter);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE deferred_pipe (@Nonnull IJSExpression doneFilter, @Nonnull IJSExpression failFilter)
+  public IMPLTYPE deferred_pipe (@Nonnull final IJSExpression doneFilter, @Nonnull final IJSExpression failFilter)
   {
     return deferred_pipe ().arg (doneFilter).arg (failFilter);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE deferred_pipe (@Nonnull JSAnonymousFunction doneFilter, @Nonnull IJSExpression failFilter)
+  public IMPLTYPE deferred_pipe (@Nonnull final JSAnonymousFunction doneFilter, @Nonnull final IJSExpression failFilter)
   {
     return deferred_pipe ().arg (doneFilter).arg (failFilter);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE deferred_pipe (@Nonnull IJSExpression doneFilter, @Nonnull JSAnonymousFunction failFilter)
+  public IMPLTYPE deferred_pipe (@Nonnull final IJSExpression doneFilter, @Nonnull final JSAnonymousFunction failFilter)
   {
     return deferred_pipe ().arg (doneFilter).arg (failFilter);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE deferred_pipe (@Nonnull JSAnonymousFunction doneFilter, @Nonnull JSAnonymousFunction failFilter)
+  public IMPLTYPE deferred_pipe (@Nonnull final JSAnonymousFunction doneFilter,
+                                 @Nonnull final JSAnonymousFunction failFilter)
   {
     return deferred_pipe ().arg (doneFilter).arg (failFilter);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE deferred_pipe (@Nonnull IJSExpression doneFilter,
-                                 @Nonnull IJSExpression failFilter,
-                                 @Nonnull IJSExpression progressFilter)
+  public IMPLTYPE deferred_pipe (@Nonnull final IJSExpression doneFilter,
+                                 @Nonnull final IJSExpression failFilter,
+                                 @Nonnull final IJSExpression progressFilter)
   {
     return deferred_pipe ().arg (doneFilter).arg (failFilter).arg (progressFilter);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE deferred_pipe (@Nonnull JSAnonymousFunction doneFilter,
-                                 @Nonnull IJSExpression failFilter,
-                                 @Nonnull IJSExpression progressFilter)
+  public IMPLTYPE deferred_pipe (@Nonnull final JSAnonymousFunction doneFilter,
+                                 @Nonnull final IJSExpression failFilter,
+                                 @Nonnull final IJSExpression progressFilter)
   {
     return deferred_pipe ().arg (doneFilter).arg (failFilter).arg (progressFilter);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE deferred_pipe (@Nonnull IJSExpression doneFilter,
-                                 @Nonnull JSAnonymousFunction failFilter,
-                                 @Nonnull IJSExpression progressFilter)
+  public IMPLTYPE deferred_pipe (@Nonnull final IJSExpression doneFilter,
+                                 @Nonnull final JSAnonymousFunction failFilter,
+                                 @Nonnull final IJSExpression progressFilter)
   {
     return deferred_pipe ().arg (doneFilter).arg (failFilter).arg (progressFilter);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE deferred_pipe (@Nonnull JSAnonymousFunction doneFilter,
-                                 @Nonnull JSAnonymousFunction failFilter,
-                                 @Nonnull IJSExpression progressFilter)
+  public IMPLTYPE deferred_pipe (@Nonnull final JSAnonymousFunction doneFilter,
+                                 @Nonnull final JSAnonymousFunction failFilter,
+                                 @Nonnull final IJSExpression progressFilter)
   {
     return deferred_pipe ().arg (doneFilter).arg (failFilter).arg (progressFilter);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE deferred_pipe (@Nonnull IJSExpression doneFilter,
-                                 @Nonnull IJSExpression failFilter,
-                                 @Nonnull JSAnonymousFunction progressFilter)
+  public IMPLTYPE deferred_pipe (@Nonnull final IJSExpression doneFilter,
+                                 @Nonnull final IJSExpression failFilter,
+                                 @Nonnull final JSAnonymousFunction progressFilter)
   {
     return deferred_pipe ().arg (doneFilter).arg (failFilter).arg (progressFilter);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE deferred_pipe (@Nonnull JSAnonymousFunction doneFilter,
-                                 @Nonnull IJSExpression failFilter,
-                                 @Nonnull JSAnonymousFunction progressFilter)
+  public IMPLTYPE deferred_pipe (@Nonnull final JSAnonymousFunction doneFilter,
+                                 @Nonnull final IJSExpression failFilter,
+                                 @Nonnull final JSAnonymousFunction progressFilter)
   {
     return deferred_pipe ().arg (doneFilter).arg (failFilter).arg (progressFilter);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE deferred_pipe (@Nonnull IJSExpression doneFilter,
-                                 @Nonnull JSAnonymousFunction failFilter,
-                                 @Nonnull JSAnonymousFunction progressFilter)
+  public IMPLTYPE deferred_pipe (@Nonnull final IJSExpression doneFilter,
+                                 @Nonnull final JSAnonymousFunction failFilter,
+                                 @Nonnull final JSAnonymousFunction progressFilter)
   {
     return deferred_pipe ().arg (doneFilter).arg (failFilter).arg (progressFilter);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE deferred_pipe (@Nonnull JSAnonymousFunction doneFilter,
-                                 @Nonnull JSAnonymousFunction failFilter,
-                                 @Nonnull JSAnonymousFunction progressFilter)
+  public IMPLTYPE deferred_pipe (@Nonnull final JSAnonymousFunction doneFilter,
+                                 @Nonnull final JSAnonymousFunction failFilter,
+                                 @Nonnull final JSAnonymousFunction progressFilter)
   {
     return deferred_pipe ().arg (doneFilter).arg (failFilter).arg (progressFilter);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_progress (@Nonnull IJSExpression progressCallbacks)
+  public IMPLTYPE deferred_progress (@Nonnull final IJSExpression progressCallbacks)
   {
     return deferred_progress ().arg (progressCallbacks);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_progress (@Nonnull JSAnonymousFunction progressCallbacks)
+  public IMPLTYPE deferred_progress (@Nonnull final JSAnonymousFunction progressCallbacks)
   {
     return deferred_progress ().arg (progressCallbacks);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_progress (@Nonnull JSArray progressCallbacks)
+  public IMPLTYPE deferred_progress (@Nonnull final JSArray progressCallbacks)
   {
     return deferred_progress ().arg (progressCallbacks);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_promise (@Nonnull IJSExpression target)
+  public IMPLTYPE deferred_promise (@Nonnull final IJSExpression target)
   {
     return deferred_promise ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_reject (@Nonnull IJSExpression args)
+  public IMPLTYPE deferred_reject (@Nonnull final IJSExpression args)
   {
     return deferred_reject ().arg (args);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_rejectWith (@Nonnull IJSExpression context)
+  public IMPLTYPE deferred_rejectWith (@Nonnull final IJSExpression context)
   {
     return deferred_rejectWith ().arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_rejectWith (@Nonnull IJSExpression context, @Nonnull IJSExpression args)
+  public IMPLTYPE deferred_rejectWith (@Nonnull final IJSExpression context, @Nonnull final IJSExpression args)
   {
     return deferred_rejectWith ().arg (context).arg (args);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_rejectWith (@Nonnull IJSExpression context, @Nonnull JSArray args)
+  public IMPLTYPE deferred_rejectWith (@Nonnull final IJSExpression context, @Nonnull final JSArray args)
   {
     return deferred_rejectWith ().arg (context).arg (args);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_resolve (@Nonnull IJSExpression args)
+  public IMPLTYPE deferred_resolve (@Nonnull final IJSExpression args)
   {
     return deferred_resolve ().arg (args);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_resolveWith (@Nonnull IJSExpression context)
+  public IMPLTYPE deferred_resolveWith (@Nonnull final IJSExpression context)
   {
     return deferred_resolveWith ().arg (context);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_resolveWith (@Nonnull IJSExpression context, @Nonnull IJSExpression args)
+  public IMPLTYPE deferred_resolveWith (@Nonnull final IJSExpression context, @Nonnull final IJSExpression args)
   {
     return deferred_resolveWith ().arg (context).arg (args);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_resolveWith (@Nonnull IJSExpression context, @Nonnull JSArray args)
+  public IMPLTYPE deferred_resolveWith (@Nonnull final IJSExpression context, @Nonnull final JSArray args)
   {
     return deferred_resolveWith ().arg (context).arg (args);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_then (@Nonnull IJSExpression doneFilter)
+  public IMPLTYPE deferred_then (@Nonnull final IJSExpression doneFilter)
   {
     return deferred_then ().arg (doneFilter);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_then (@Nonnull JSAnonymousFunction doneFilter)
+  public IMPLTYPE deferred_then (@Nonnull final JSAnonymousFunction doneFilter)
   {
     return deferred_then ().arg (doneFilter);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_then (@Nonnull IJSExpression doneFilter,
-                                 @Nonnull IJSExpression failFilter,
-                                 @Nonnull IJSExpression progressFilter)
+  public IMPLTYPE deferred_then (@Nonnull final IJSExpression doneFilter,
+                                 @Nonnull final IJSExpression failFilter,
+                                 @Nonnull final IJSExpression progressFilter)
   {
     return deferred_then ().arg (doneFilter).arg (failFilter).arg (progressFilter);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_then (@Nonnull JSAnonymousFunction doneFilter,
-                                 @Nonnull IJSExpression failFilter,
-                                 @Nonnull IJSExpression progressFilter)
+  public IMPLTYPE deferred_then (@Nonnull final JSAnonymousFunction doneFilter,
+                                 @Nonnull final IJSExpression failFilter,
+                                 @Nonnull final IJSExpression progressFilter)
   {
     return deferred_then ().arg (doneFilter).arg (failFilter).arg (progressFilter);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_then (@Nonnull IJSExpression doneFilter,
-                                 @Nonnull JSAnonymousFunction failFilter,
-                                 @Nonnull IJSExpression progressFilter)
+  public IMPLTYPE deferred_then (@Nonnull final IJSExpression doneFilter,
+                                 @Nonnull final JSAnonymousFunction failFilter,
+                                 @Nonnull final IJSExpression progressFilter)
   {
     return deferred_then ().arg (doneFilter).arg (failFilter).arg (progressFilter);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_then (@Nonnull JSAnonymousFunction doneFilter,
-                                 @Nonnull JSAnonymousFunction failFilter,
-                                 @Nonnull IJSExpression progressFilter)
+  public IMPLTYPE deferred_then (@Nonnull final JSAnonymousFunction doneFilter,
+                                 @Nonnull final JSAnonymousFunction failFilter,
+                                 @Nonnull final IJSExpression progressFilter)
   {
     return deferred_then ().arg (doneFilter).arg (failFilter).arg (progressFilter);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_then (@Nonnull IJSExpression doneFilter,
-                                 @Nonnull IJSExpression failFilter,
-                                 @Nonnull JSAnonymousFunction progressFilter)
+  public IMPLTYPE deferred_then (@Nonnull final IJSExpression doneFilter,
+                                 @Nonnull final IJSExpression failFilter,
+                                 @Nonnull final JSAnonymousFunction progressFilter)
   {
     return deferred_then ().arg (doneFilter).arg (failFilter).arg (progressFilter);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_then (@Nonnull JSAnonymousFunction doneFilter,
-                                 @Nonnull IJSExpression failFilter,
-                                 @Nonnull JSAnonymousFunction progressFilter)
+  public IMPLTYPE deferred_then (@Nonnull final JSAnonymousFunction doneFilter,
+                                 @Nonnull final IJSExpression failFilter,
+                                 @Nonnull final JSAnonymousFunction progressFilter)
   {
     return deferred_then ().arg (doneFilter).arg (failFilter).arg (progressFilter);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_then (@Nonnull IJSExpression doneFilter,
-                                 @Nonnull JSAnonymousFunction failFilter,
-                                 @Nonnull JSAnonymousFunction progressFilter)
+  public IMPLTYPE deferred_then (@Nonnull final IJSExpression doneFilter,
+                                 @Nonnull final JSAnonymousFunction failFilter,
+                                 @Nonnull final JSAnonymousFunction progressFilter)
   {
     return deferred_then ().arg (doneFilter).arg (failFilter).arg (progressFilter);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_then (@Nonnull JSAnonymousFunction doneFilter,
-                                 @Nonnull JSAnonymousFunction failFilter,
-                                 @Nonnull JSAnonymousFunction progressFilter)
+  public IMPLTYPE deferred_then (@Nonnull final JSAnonymousFunction doneFilter,
+                                 @Nonnull final JSAnonymousFunction failFilter,
+                                 @Nonnull final JSAnonymousFunction progressFilter)
   {
     return deferred_then ().arg (doneFilter).arg (failFilter).arg (progressFilter);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_then (@Nonnull IJSExpression doneCallbacks, @Nonnull IJSExpression failCallbacks)
+  public IMPLTYPE deferred_then (@Nonnull final IJSExpression doneCallbacks, @Nonnull final IJSExpression failCallbacks)
   {
     return deferred_then ().arg (doneCallbacks).arg (failCallbacks);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_then (@Nonnull JSAnonymousFunction doneCallbacks, @Nonnull IJSExpression failCallbacks)
+  public IMPLTYPE deferred_then (@Nonnull final JSAnonymousFunction doneCallbacks,
+                                 @Nonnull final IJSExpression failCallbacks)
   {
     return deferred_then ().arg (doneCallbacks).arg (failCallbacks);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_then (@Nonnull IJSExpression doneCallbacks, @Nonnull JSAnonymousFunction failCallbacks)
+  public IMPLTYPE deferred_then (@Nonnull final IJSExpression doneCallbacks,
+                                 @Nonnull final JSAnonymousFunction failCallbacks)
   {
     return deferred_then ().arg (doneCallbacks).arg (failCallbacks);
   }
 
   @Nonnull
-  public IMPLTYPE deferred_then (@Nonnull JSAnonymousFunction doneCallbacks, @Nonnull JSAnonymousFunction failCallbacks)
+  public IMPLTYPE deferred_then (@Nonnull final JSAnonymousFunction doneCallbacks,
+                                 @Nonnull final JSAnonymousFunction failCallbacks)
   {
     return deferred_then ().arg (doneCallbacks).arg (failCallbacks);
   }
 
   @Nonnull
-  public IMPLTYPE delay (@Nonnull IJSExpression duration)
+  public IMPLTYPE delay (@Nonnull final IJSExpression duration)
   {
     return delay ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE delay (int duration)
+  public IMPLTYPE delay (final int duration)
   {
     return delay ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE delay (long duration)
+  public IMPLTYPE delay (final long duration)
   {
     return delay ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE delay (@Nonnull BigInteger duration)
+  public IMPLTYPE delay (@Nonnull final BigInteger duration)
   {
     return delay ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE delay (@Nonnull IJSExpression duration, @Nonnull IJSExpression queueName)
+  public IMPLTYPE delay (@Nonnull final IJSExpression duration, @Nonnull final IJSExpression queueName)
   {
     return delay ().arg (duration).arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE delay (int duration, @Nonnull IJSExpression queueName)
+  public IMPLTYPE delay (final int duration, @Nonnull final IJSExpression queueName)
   {
     return delay ().arg (duration).arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE delay (long duration, @Nonnull IJSExpression queueName)
+  public IMPLTYPE delay (final long duration, @Nonnull final IJSExpression queueName)
   {
     return delay ().arg (duration).arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE delay (@Nonnull BigInteger duration, @Nonnull IJSExpression queueName)
+  public IMPLTYPE delay (@Nonnull final BigInteger duration, @Nonnull final IJSExpression queueName)
   {
     return delay ().arg (duration).arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE delay (@Nonnull IJSExpression duration, @Nonnull IJson queueName)
+  public IMPLTYPE delay (@Nonnull final IJSExpression duration, @Nonnull final IJson queueName)
   {
     return delay ().arg (duration).arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE delay (int duration, @Nonnull IJson queueName)
+  public IMPLTYPE delay (final int duration, @Nonnull final IJson queueName)
   {
     return delay ().arg (duration).arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE delay (long duration, @Nonnull IJson queueName)
+  public IMPLTYPE delay (final long duration, @Nonnull final IJson queueName)
   {
     return delay ().arg (duration).arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE delay (@Nonnull BigInteger duration, @Nonnull IJson queueName)
+  public IMPLTYPE delay (@Nonnull final BigInteger duration, @Nonnull final IJson queueName)
   {
     return delay ().arg (duration).arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE delay (@Nonnull IJSExpression duration, @Nonnull IHCNode queueName)
+  public IMPLTYPE delay (@Nonnull final IJSExpression duration, @Nonnull final IHCNode queueName)
   {
     return delay ().arg (duration).arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE delay (int duration, @Nonnull IHCNode queueName)
+  public IMPLTYPE delay (final int duration, @Nonnull final IHCNode queueName)
   {
     return delay ().arg (duration).arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE delay (long duration, @Nonnull IHCNode queueName)
+  public IMPLTYPE delay (final long duration, @Nonnull final IHCNode queueName)
   {
     return delay ().arg (duration).arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE delay (@Nonnull BigInteger duration, @Nonnull IHCNode queueName)
+  public IMPLTYPE delay (@Nonnull final BigInteger duration, @Nonnull final IHCNode queueName)
   {
     return delay ().arg (duration).arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE delay (@Nonnull IJSExpression duration, @Nonnull String queueName)
+  public IMPLTYPE delay (@Nonnull final IJSExpression duration, @Nonnull final String queueName)
   {
     return delay ().arg (duration).arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE delay (int duration, @Nonnull String queueName)
+  public IMPLTYPE delay (final int duration, @Nonnull final String queueName)
   {
     return delay ().arg (duration).arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE delay (long duration, @Nonnull String queueName)
+  public IMPLTYPE delay (final long duration, @Nonnull final String queueName)
   {
     return delay ().arg (duration).arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE delay (@Nonnull BigInteger duration, @Nonnull String queueName)
+  public IMPLTYPE delay (@Nonnull final BigInteger duration, @Nonnull final String queueName)
   {
     return delay ().arg (duration).arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJSExpression selector,
-                            @Nonnull IJSExpression eventType,
-                            @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IJSExpression selector,
+                            @Nonnull final IJSExpression eventType,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJson selector, @Nonnull IJSExpression eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IJson selector,
+                            @Nonnull final IJSExpression eventType,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IHCNode selector, @Nonnull IJSExpression eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IHCNode selector,
+                            @Nonnull final IJSExpression eventType,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull String selector, @Nonnull IJSExpression eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final String selector,
+                            @Nonnull final IJSExpression eventType,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJSExpression selector, @Nonnull IJson eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IJSExpression selector,
+                            @Nonnull final IJson eventType,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJson selector, @Nonnull IJson eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IJson selector,
+                            @Nonnull final IJson eventType,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IHCNode selector, @Nonnull IJson eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IHCNode selector,
+                            @Nonnull final IJson eventType,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull String selector, @Nonnull IJson eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final String selector,
+                            @Nonnull final IJson eventType,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJSExpression selector, @Nonnull IHCNode eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IJSExpression selector,
+                            @Nonnull final IHCNode eventType,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJson selector, @Nonnull IHCNode eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IJson selector,
+                            @Nonnull final IHCNode eventType,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IHCNode selector, @Nonnull IHCNode eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IHCNode selector,
+                            @Nonnull final IHCNode eventType,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull String selector, @Nonnull IHCNode eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final String selector,
+                            @Nonnull final IHCNode eventType,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJSExpression selector, @Nonnull String eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IJSExpression selector,
+                            @Nonnull final String eventType,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJson selector, @Nonnull String eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IJson selector,
+                            @Nonnull final String eventType,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IHCNode selector, @Nonnull String eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IHCNode selector,
+                            @Nonnull final String eventType,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull String selector, @Nonnull String eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final String selector,
+                            @Nonnull final String eventType,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJSExpression selector,
-                            @Nonnull IJSExpression eventType,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IJSExpression selector,
+                            @Nonnull final IJSExpression eventType,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJson selector,
-                            @Nonnull IJSExpression eventType,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IJson selector,
+                            @Nonnull final IJSExpression eventType,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IHCNode selector,
-                            @Nonnull IJSExpression eventType,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IHCNode selector,
+                            @Nonnull final IJSExpression eventType,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull String selector,
-                            @Nonnull IJSExpression eventType,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final String selector,
+                            @Nonnull final IJSExpression eventType,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJSExpression selector,
-                            @Nonnull IJson eventType,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IJSExpression selector,
+                            @Nonnull final IJson eventType,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJson selector, @Nonnull IJson eventType, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IJson selector,
+                            @Nonnull final IJson eventType,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IHCNode selector, @Nonnull IJson eventType, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IHCNode selector,
+                            @Nonnull final IJson eventType,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull String selector, @Nonnull IJson eventType, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final String selector,
+                            @Nonnull final IJson eventType,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJSExpression selector,
-                            @Nonnull IHCNode eventType,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IJSExpression selector,
+                            @Nonnull final IHCNode eventType,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJson selector, @Nonnull IHCNode eventType, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IJson selector,
+                            @Nonnull final IHCNode eventType,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IHCNode selector, @Nonnull IHCNode eventType, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IHCNode selector,
+                            @Nonnull final IHCNode eventType,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull String selector, @Nonnull IHCNode eventType, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final String selector,
+                            @Nonnull final IHCNode eventType,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJSExpression selector,
-                            @Nonnull String eventType,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IJSExpression selector,
+                            @Nonnull final String eventType,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJson selector, @Nonnull String eventType, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IJson selector,
+                            @Nonnull final String eventType,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IHCNode selector, @Nonnull String eventType, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IHCNode selector,
+                            @Nonnull final String eventType,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull String selector, @Nonnull String eventType, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final String selector,
+                            @Nonnull final String eventType,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJSExpression selector,
-                            @Nonnull IJSExpression eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IJSExpression selector,
+                            @Nonnull final IJSExpression eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJson selector,
-                            @Nonnull IJSExpression eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IJson selector,
+                            @Nonnull final IJSExpression eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IHCNode selector,
-                            @Nonnull IJSExpression eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IHCNode selector,
+                            @Nonnull final IJSExpression eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull String selector,
-                            @Nonnull IJSExpression eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final String selector,
+                            @Nonnull final IJSExpression eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJSExpression selector,
-                            @Nonnull IJson eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IJSExpression selector,
+                            @Nonnull final IJson eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJson selector,
-                            @Nonnull IJson eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IJson selector,
+                            @Nonnull final IJson eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IHCNode selector,
-                            @Nonnull IJson eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IHCNode selector,
+                            @Nonnull final IJson eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull String selector,
-                            @Nonnull IJson eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final String selector,
+                            @Nonnull final IJson eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJSExpression selector,
-                            @Nonnull IHCNode eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IJSExpression selector,
+                            @Nonnull final IHCNode eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJson selector,
-                            @Nonnull IHCNode eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IJson selector,
+                            @Nonnull final IHCNode eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IHCNode selector,
-                            @Nonnull IHCNode eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IHCNode selector,
+                            @Nonnull final IHCNode eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull String selector,
-                            @Nonnull IHCNode eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final String selector,
+                            @Nonnull final IHCNode eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJSExpression selector,
-                            @Nonnull String eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IJSExpression selector,
+                            @Nonnull final String eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJson selector,
-                            @Nonnull String eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IJson selector,
+                            @Nonnull final String eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IHCNode selector,
-                            @Nonnull String eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final IHCNode selector,
+                            @Nonnull final String eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull String selector,
-                            @Nonnull String eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull IJSExpression handler)
+  public IMPLTYPE delegate (@Nonnull final String selector,
+                            @Nonnull final String eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final IJSExpression handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJSExpression selector,
-                            @Nonnull IJSExpression eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IJSExpression selector,
+                            @Nonnull final IJSExpression eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJson selector,
-                            @Nonnull IJSExpression eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IJson selector,
+                            @Nonnull final IJSExpression eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IHCNode selector,
-                            @Nonnull IJSExpression eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IHCNode selector,
+                            @Nonnull final IJSExpression eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull String selector,
-                            @Nonnull IJSExpression eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final String selector,
+                            @Nonnull final IJSExpression eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJSExpression selector,
-                            @Nonnull IJson eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IJSExpression selector,
+                            @Nonnull final IJson eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJson selector,
-                            @Nonnull IJson eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IJson selector,
+                            @Nonnull final IJson eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IHCNode selector,
-                            @Nonnull IJson eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IHCNode selector,
+                            @Nonnull final IJson eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull String selector,
-                            @Nonnull IJson eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final String selector,
+                            @Nonnull final IJson eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJSExpression selector,
-                            @Nonnull IHCNode eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IJSExpression selector,
+                            @Nonnull final IHCNode eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJson selector,
-                            @Nonnull IHCNode eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IJson selector,
+                            @Nonnull final IHCNode eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IHCNode selector,
-                            @Nonnull IHCNode eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IHCNode selector,
+                            @Nonnull final IHCNode eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull String selector,
-                            @Nonnull IHCNode eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final String selector,
+                            @Nonnull final IHCNode eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJSExpression selector,
-                            @Nonnull String eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IJSExpression selector,
+                            @Nonnull final String eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJson selector,
-                            @Nonnull String eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IJson selector,
+                            @Nonnull final String eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IHCNode selector,
-                            @Nonnull String eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final IHCNode selector,
+                            @Nonnull final String eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull String selector,
-                            @Nonnull String eventType,
-                            @Nonnull IJSExpression eventData,
-                            @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE delegate (@Nonnull final String selector,
+                            @Nonnull final String eventType,
+                            @Nonnull final IJSExpression eventData,
+                            @Nonnull final JSAnonymousFunction handler)
   {
     return delegate ().arg (selector).arg (eventType).arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJSExpression selector, @Nonnull IJSExpression events)
+  public IMPLTYPE delegate (@Nonnull final IJSExpression selector, @Nonnull final IJSExpression events)
   {
     return delegate ().arg (selector).arg (events);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IJson selector, @Nonnull IJSExpression events)
+  public IMPLTYPE delegate (@Nonnull final IJson selector, @Nonnull final IJSExpression events)
   {
     return delegate ().arg (selector).arg (events);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull IHCNode selector, @Nonnull IJSExpression events)
+  public IMPLTYPE delegate (@Nonnull final IHCNode selector, @Nonnull final IJSExpression events)
   {
     return delegate ().arg (selector).arg (events);
   }
 
   @Nonnull
-  public IMPLTYPE delegate (@Nonnull String selector, @Nonnull IJSExpression events)
+  public IMPLTYPE delegate (@Nonnull final String selector, @Nonnull final IJSExpression events)
   {
     return delegate ().arg (selector).arg (events);
   }
 
   @Nonnull
-  public IMPLTYPE dequeue (@Nonnull IJSExpression queueName)
+  public IMPLTYPE dequeue (@Nonnull final IJSExpression queueName)
   {
     return dequeue ().arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE dequeue (@Nonnull IJson queueName)
+  public IMPLTYPE dequeue (@Nonnull final IJson queueName)
   {
     return dequeue ().arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE dequeue (@Nonnull IHCNode queueName)
+  public IMPLTYPE dequeue (@Nonnull final IHCNode queueName)
   {
     return dequeue ().arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE dequeue (@Nonnull String queueName)
+  public IMPLTYPE dequeue (@Nonnull final String queueName)
   {
     return dequeue ().arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE detach (@Nonnull IJSExpression selector)
+  public IMPLTYPE detach (@Nonnull final IJSExpression selector)
   {
     return detach ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE detach (@Nonnull IJQuerySelector selector)
+  public IMPLTYPE detach (@Nonnull final IJQuerySelector selector)
   {
     return detach ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE detach (@Nonnull JQuerySelectorList selector)
+  public IMPLTYPE detach (@Nonnull final JQuerySelectorList selector)
   {
     return detach ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE detach (@Nonnull EHTMLElement selector)
+  public IMPLTYPE detach (@Nonnull final EHTMLElement selector)
   {
     return detach ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE detach (@Nonnull ICSSClassProvider selector)
+  public IMPLTYPE detach (@Nonnull final ICSSClassProvider selector)
   {
     return detach ().arg (selector);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE die (@Nonnull IJSExpression eventType)
+  public IMPLTYPE die (@Nonnull final IJSExpression eventType)
   {
     return die ().arg (eventType);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE die (@Nonnull IJson eventType)
+  public IMPLTYPE die (@Nonnull final IJson eventType)
   {
     return die ().arg (eventType);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE die (@Nonnull IHCNode eventType)
+  public IMPLTYPE die (@Nonnull final IHCNode eventType)
   {
     return die ().arg (eventType);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE die (@Nonnull String eventType)
+  public IMPLTYPE die (@Nonnull final String eventType)
   {
     return die ().arg (eventType);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE die (@Nonnull IJSExpression eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE die (@Nonnull final IJSExpression eventType, @Nonnull final IJSExpression handler)
   {
     return die ().arg (eventType).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE die (@Nonnull IJson eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE die (@Nonnull final IJson eventType, @Nonnull final IJSExpression handler)
   {
     return die ().arg (eventType).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE die (@Nonnull IHCNode eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE die (@Nonnull final IHCNode eventType, @Nonnull final IJSExpression handler)
   {
     return die ().arg (eventType).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE die (@Nonnull String eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE die (@Nonnull final String eventType, @Nonnull final IJSExpression handler)
   {
     return die ().arg (eventType).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE die (@Nonnull IJSExpression eventType, @Nonnull IJson handler)
+  public IMPLTYPE die (@Nonnull final IJSExpression eventType, @Nonnull final IJson handler)
   {
     return die ().arg (eventType).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE die (@Nonnull IJson eventType, @Nonnull IJson handler)
+  public IMPLTYPE die (@Nonnull final IJson eventType, @Nonnull final IJson handler)
   {
     return die ().arg (eventType).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE die (@Nonnull IHCNode eventType, @Nonnull IJson handler)
+  public IMPLTYPE die (@Nonnull final IHCNode eventType, @Nonnull final IJson handler)
   {
     return die ().arg (eventType).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE die (@Nonnull String eventType, @Nonnull IJson handler)
+  public IMPLTYPE die (@Nonnull final String eventType, @Nonnull final IJson handler)
   {
     return die ().arg (eventType).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE die (@Nonnull IJSExpression eventType, @Nonnull IHCNode handler)
+  public IMPLTYPE die (@Nonnull final IJSExpression eventType, @Nonnull final IHCNode handler)
   {
     return die ().arg (eventType).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE die (@Nonnull IJson eventType, @Nonnull IHCNode handler)
+  public IMPLTYPE die (@Nonnull final IJson eventType, @Nonnull final IHCNode handler)
   {
     return die ().arg (eventType).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE die (@Nonnull IHCNode eventType, @Nonnull IHCNode handler)
+  public IMPLTYPE die (@Nonnull final IHCNode eventType, @Nonnull final IHCNode handler)
   {
     return die ().arg (eventType).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE die (@Nonnull String eventType, @Nonnull IHCNode handler)
+  public IMPLTYPE die (@Nonnull final String eventType, @Nonnull final IHCNode handler)
   {
     return die ().arg (eventType).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE die (@Nonnull IJSExpression eventType, @Nonnull String handler)
+  public IMPLTYPE die (@Nonnull final IJSExpression eventType, @Nonnull final String handler)
   {
     return die ().arg (eventType).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE die (@Nonnull IJson eventType, @Nonnull String handler)
+  public IMPLTYPE die (@Nonnull final IJson eventType, @Nonnull final String handler)
   {
     return die ().arg (eventType).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE die (@Nonnull IHCNode eventType, @Nonnull String handler)
+  public IMPLTYPE die (@Nonnull final IHCNode eventType, @Nonnull final String handler)
   {
     return die ().arg (eventType).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE die (@Nonnull String eventType, @Nonnull String handler)
+  public IMPLTYPE die (@Nonnull final String eventType, @Nonnull final String handler)
   {
     return die ().arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE each (@Nonnull IJSExpression function)
+  public IMPLTYPE each (@Nonnull final IJSExpression function)
   {
     return each ().arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE each (@Nonnull JSAnonymousFunction function)
+  public IMPLTYPE each (@Nonnull final JSAnonymousFunction function)
   {
     return each ().arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE _eq (@Nonnull IJSExpression index)
+  public IMPLTYPE _eq (@Nonnull final IJSExpression index)
   {
     return _eq ().arg (index);
   }
 
   @Nonnull
-  public IMPLTYPE _eq (int index)
+  public IMPLTYPE _eq (final int index)
   {
     return _eq ().arg (index);
   }
 
   @Nonnull
-  public IMPLTYPE _eq (long index)
+  public IMPLTYPE _eq (final long index)
   {
     return _eq ().arg (index);
   }
 
   @Nonnull
-  public IMPLTYPE _eq (@Nonnull BigInteger index)
+  public IMPLTYPE _eq (@Nonnull final BigInteger index)
   {
     return _eq ().arg (index);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE error (@Nonnull IJSExpression handler)
+  public IMPLTYPE error (@Nonnull final IJSExpression handler)
   {
     return error ().arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE error (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE error (@Nonnull final JSAnonymousFunction handler)
   {
     return error ().arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE error (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE error (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return error ().arg (eventData).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE error (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE error (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return error ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull IJSExpression opacity)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration, @Nonnull final IJSExpression opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull IJSExpression opacity)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, @Nonnull final IJSExpression opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull IJSExpression opacity)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration, @Nonnull final IJSExpression opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull IJSExpression opacity)
+  public IMPLTYPE fadeTo (@Nonnull final String duration, @Nonnull final IJSExpression opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, @Nonnull IJSExpression opacity)
+  public IMPLTYPE fadeTo (final int duration, @Nonnull final IJSExpression opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, @Nonnull IJSExpression opacity)
+  public IMPLTYPE fadeTo (final long duration, @Nonnull final IJSExpression opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull IJSExpression opacity)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration, @Nonnull final IJSExpression opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, @Nonnull IJSExpression opacity)
+  public IMPLTYPE fadeTo (final double duration, @Nonnull final IJSExpression opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull IJSExpression opacity)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration, @Nonnull final IJSExpression opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, int opacity)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration, final int opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, int opacity)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, final int opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, int opacity)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration, final int opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, int opacity)
+  public IMPLTYPE fadeTo (@Nonnull final String duration, final int opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, int opacity)
+  public IMPLTYPE fadeTo (final int duration, final int opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, int opacity)
+  public IMPLTYPE fadeTo (final long duration, final int opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, int opacity)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration, final int opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, int opacity)
+  public IMPLTYPE fadeTo (final double duration, final int opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, int opacity)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration, final int opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, long opacity)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration, final long opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, long opacity)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, final long opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, long opacity)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration, final long opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, long opacity)
+  public IMPLTYPE fadeTo (@Nonnull final String duration, final long opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, long opacity)
+  public IMPLTYPE fadeTo (final int duration, final long opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, long opacity)
+  public IMPLTYPE fadeTo (final long duration, final long opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, long opacity)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration, final long opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, long opacity)
+  public IMPLTYPE fadeTo (final double duration, final long opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, long opacity)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration, final long opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull BigInteger opacity)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration, @Nonnull final BigInteger opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull BigInteger opacity)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, @Nonnull final BigInteger opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull BigInteger opacity)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration, @Nonnull final BigInteger opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull BigInteger opacity)
+  public IMPLTYPE fadeTo (@Nonnull final String duration, @Nonnull final BigInteger opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, @Nonnull BigInteger opacity)
+  public IMPLTYPE fadeTo (final int duration, @Nonnull final BigInteger opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, @Nonnull BigInteger opacity)
+  public IMPLTYPE fadeTo (final long duration, @Nonnull final BigInteger opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull BigInteger opacity)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration, @Nonnull final BigInteger opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, @Nonnull BigInteger opacity)
+  public IMPLTYPE fadeTo (final double duration, @Nonnull final BigInteger opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull BigInteger opacity)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration, @Nonnull final BigInteger opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, double opacity)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration, final double opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, double opacity)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, final double opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, double opacity)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration, final double opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, double opacity)
+  public IMPLTYPE fadeTo (@Nonnull final String duration, final double opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, double opacity)
+  public IMPLTYPE fadeTo (final int duration, final double opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, double opacity)
+  public IMPLTYPE fadeTo (final long duration, final double opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, double opacity)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration, final double opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, double opacity)
+  public IMPLTYPE fadeTo (final double duration, final double opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, double opacity)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration, final double opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull BigDecimal opacity)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration, @Nonnull final BigDecimal opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull BigDecimal opacity)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, @Nonnull final BigDecimal opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull BigDecimal opacity)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration, @Nonnull final BigDecimal opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull BigDecimal opacity)
+  public IMPLTYPE fadeTo (@Nonnull final String duration, @Nonnull final BigDecimal opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, @Nonnull BigDecimal opacity)
+  public IMPLTYPE fadeTo (final int duration, @Nonnull final BigDecimal opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, @Nonnull BigDecimal opacity)
+  public IMPLTYPE fadeTo (final long duration, @Nonnull final BigDecimal opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull BigDecimal opacity)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration, @Nonnull final BigDecimal opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, @Nonnull BigDecimal opacity)
+  public IMPLTYPE fadeTo (final double duration, @Nonnull final BigDecimal opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull BigDecimal opacity)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration, @Nonnull final BigDecimal opacity)
   {
     return fadeTo ().arg (duration).arg (opacity);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull IJSExpression opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull IJSExpression opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull IJSExpression opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, @Nonnull IJSExpression opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, @Nonnull IJSExpression opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull IJSExpression opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, @Nonnull IJSExpression opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull IJSExpression opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, int opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final int opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, int opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, final int opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, int opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration, final int opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, int opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration, final int opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, int opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration, final int opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, int opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration, final int opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, int opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration, final int opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, int opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration, final int opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, int opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration, final int opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, long opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final long opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, long opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, final long opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, long opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration, final long opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, long opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration, final long opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, long opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration, final long opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, long opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration, final long opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, long opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration, final long opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, long opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration, final long opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, long opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration, final long opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull BigInteger opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull BigInteger opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull BigInteger opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull BigInteger opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, @Nonnull BigInteger opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration, @Nonnull final BigInteger opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, @Nonnull BigInteger opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration, @Nonnull final BigInteger opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull BigInteger opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, @Nonnull BigInteger opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull BigInteger opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, double opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final double opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, double opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, final double opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, double opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration, final double opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, double opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration, final double opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, double opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration, final double opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, double opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration, final double opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, double opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final double opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, double opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration, final double opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, double opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final double opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull BigDecimal opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull BigDecimal opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull BigDecimal opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull BigDecimal opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, @Nonnull BigDecimal opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration, @Nonnull final BigDecimal opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, @Nonnull BigDecimal opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration, @Nonnull final BigDecimal opacity, @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull BigDecimal opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, @Nonnull BigDecimal opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull BigDecimal opacity, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull IJSExpression opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, @Nonnull IJSExpression opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, @Nonnull IJSExpression opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, @Nonnull IJSExpression opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, int opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final int opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, int opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, final int opacity, @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, int opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final int opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, int opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration, final int opacity, @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, int opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration, final int opacity, @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, int opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration, final int opacity, @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, int opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final int opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, int opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration, final int opacity, @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, int opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final int opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, long opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final long opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, long opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, final long opacity, @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, long opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final long opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, long opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final long opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, long opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration, final long opacity, @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, long opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration, final long opacity, @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, long opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final long opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, long opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration, final long opacity, @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, long opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final long opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull BigInteger opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull BigInteger opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull BigInteger opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, @Nonnull BigInteger opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, @Nonnull BigInteger opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, @Nonnull BigInteger opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, double opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final double opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, double opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final double opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, double opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final double opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, double opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final double opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, double opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration, final double opacity, @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, double opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration, final double opacity, @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, double opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final double opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, double opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration, final double opacity, @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, double opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final double opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull BigDecimal opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull BigDecimal opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull BigDecimal opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, @Nonnull BigDecimal opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, @Nonnull BigDecimal opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, @Nonnull BigDecimal opacity, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull IJSExpression opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull IJSExpression opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull IJSExpression opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull IJSExpression opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, @Nonnull IJSExpression opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (final int duration, @Nonnull final IJSExpression opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, @Nonnull IJSExpression opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (final long duration, @Nonnull final IJSExpression opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull IJSExpression opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, @Nonnull IJSExpression opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (final double duration, @Nonnull final IJSExpression opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull IJSExpression opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, int opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration, final int opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, int opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, final int opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, int opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration, final int opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, int opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final String duration, final int opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, int opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (final int duration, final int opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, int opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (final long duration, final int opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, int opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration, final int opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, int opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (final double duration, final int opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, int opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration, final int opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, long opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration, final long opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, long opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, final long opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, long opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration, final long opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, long opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final String duration, final long opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, long opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (final int duration, final long opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, long opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (final long duration, final long opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, long opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration, final long opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, long opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (final double duration, final long opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, long opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration, final long opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull BigInteger opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull BigInteger opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, @Nonnull final BigInteger opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull BigInteger opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull BigInteger opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final String duration, @Nonnull final BigInteger opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, @Nonnull BigInteger opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (final int duration, @Nonnull final BigInteger opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, @Nonnull BigInteger opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (final long duration, @Nonnull final BigInteger opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull BigInteger opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, @Nonnull BigInteger opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (final double duration, @Nonnull final BigInteger opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull BigInteger opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, double opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration, final double opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, double opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, final double opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, double opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration, final double opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, double opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final String duration, final double opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, double opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (final int duration, final double opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, double opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (final long duration, final double opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, double opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration, final double opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, double opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (final double duration, final double opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, double opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration, final double opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull BigDecimal opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull BigDecimal opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, @Nonnull final BigDecimal opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull BigDecimal opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull BigDecimal opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final String duration, @Nonnull final BigDecimal opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, @Nonnull BigDecimal opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (final int duration, @Nonnull final BigDecimal opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, @Nonnull BigDecimal opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (final long duration, @Nonnull final BigDecimal opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull BigDecimal opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, @Nonnull BigDecimal opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (final double duration, @Nonnull final BigDecimal opacity, @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull BigDecimal opacity, @Nonnull IJson easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull IJSExpression opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull IJSExpression opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull IJSExpression opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull IJSExpression opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, @Nonnull IJSExpression opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (final int duration, @Nonnull final IJSExpression opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, @Nonnull IJSExpression opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (final long duration, @Nonnull final IJSExpression opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull IJSExpression opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, @Nonnull IJSExpression opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (final double duration, @Nonnull final IJSExpression opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull IJSExpression opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, int opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration, final int opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, int opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, final int opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, int opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration, final int opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, int opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final String duration, final int opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, int opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (final int duration, final int opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, int opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (final long duration, final int opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, int opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration, final int opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, int opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (final double duration, final int opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, int opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration, final int opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, long opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration, final long opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, long opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, final long opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, long opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration, final long opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, long opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final String duration, final long opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, long opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (final int duration, final long opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, long opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (final long duration, final long opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, long opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration, final long opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, long opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (final double duration, final long opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, long opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration, final long opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull BigInteger opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull BigInteger opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull BigInteger opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull BigInteger opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, @Nonnull BigInteger opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (final int duration, @Nonnull final BigInteger opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, @Nonnull BigInteger opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (final long duration, @Nonnull final BigInteger opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull BigInteger opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, @Nonnull BigInteger opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (final double duration, @Nonnull final BigInteger opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull BigInteger opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, double opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration, final double opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, double opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, final double opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, double opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration, final double opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, double opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final String duration, final double opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, double opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (final int duration, final double opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, double opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (final long duration, final double opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, double opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration, final double opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, double opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (final double duration, final double opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, double opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration, final double opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull BigDecimal opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull BigDecimal opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull BigDecimal opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull BigDecimal opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, @Nonnull BigDecimal opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (final int duration, @Nonnull final BigDecimal opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, @Nonnull BigDecimal opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (final long duration, @Nonnull final BigDecimal opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull BigDecimal opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, @Nonnull BigDecimal opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (final double duration, @Nonnull final BigDecimal opacity, @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull BigDecimal opacity, @Nonnull IHCNode easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull IJSExpression opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull IJSExpression opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull IJSExpression opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull IJSExpression opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, @Nonnull IJSExpression opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (final int duration, @Nonnull final IJSExpression opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, @Nonnull IJSExpression opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (final long duration, @Nonnull final IJSExpression opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull IJSExpression opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, @Nonnull IJSExpression opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (final double duration, @Nonnull final IJSExpression opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull IJSExpression opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, int opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration, final int opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, int opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, final int opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, int opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration, final int opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, int opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final String duration, final int opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, int opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (final int duration, final int opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, int opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (final long duration, final int opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, int opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration, final int opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, int opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (final double duration, final int opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, int opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration, final int opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, long opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration, final long opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, long opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, final long opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, long opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration, final long opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, long opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final String duration, final long opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, long opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (final int duration, final long opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, long opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (final long duration, final long opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, long opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration, final long opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, long opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (final double duration, final long opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, long opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration, final long opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull BigInteger opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull BigInteger opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, @Nonnull final BigInteger opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull BigInteger opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull BigInteger opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, @Nonnull BigInteger opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (final int duration, @Nonnull final BigInteger opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, @Nonnull BigInteger opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (final long duration, @Nonnull final BigInteger opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull BigInteger opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, @Nonnull BigInteger opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (final double duration, @Nonnull final BigInteger opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull BigInteger opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, double opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration, final double opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, double opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, final double opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, double opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration, final double opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, double opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final String duration, final double opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, double opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (final int duration, final double opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, double opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (final long duration, final double opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, double opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration, final double opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, double opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (final double duration, final double opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, double opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration, final double opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull BigDecimal opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull BigDecimal opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration, @Nonnull final BigDecimal opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull BigDecimal opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull BigDecimal opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, @Nonnull BigDecimal opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (final int duration, @Nonnull final BigDecimal opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, @Nonnull BigDecimal opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (final long duration, @Nonnull final BigDecimal opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull BigDecimal opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, @Nonnull BigDecimal opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (final double duration, @Nonnull final BigDecimal opacity, @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull BigDecimal opacity, @Nonnull String easing)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          int opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final int opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          int opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final int opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          int opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final int opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          int opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final int opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, int opacity, @Nonnull IJSExpression easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final int opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, int opacity, @Nonnull IJSExpression easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final int opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          int opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final int opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, int opacity, @Nonnull IJSExpression easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final int opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          int opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final int opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          long opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final long opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          long opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final long opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          long opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final long opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          long opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final long opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, long opacity, @Nonnull IJSExpression easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final long opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, long opacity, @Nonnull IJSExpression easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final long opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          long opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final long opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, long opacity, @Nonnull IJSExpression easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final long opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          long opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final long opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          double opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final double opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          double opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final double opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          double opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final double opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          double opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final double opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, double opacity, @Nonnull IJSExpression easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final double opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, double opacity, @Nonnull IJSExpression easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final double opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          double opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final double opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          double opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final double opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          double opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final double opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          int opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final int opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, int opacity, @Nonnull IJson easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final int opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration, int opacity, @Nonnull IJson easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final int opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, int opacity, @Nonnull IJson easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final int opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, int opacity, @Nonnull IJson easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final int opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, int opacity, @Nonnull IJson easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final int opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          int opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final int opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, int opacity, @Nonnull IJson easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final int opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          int opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final int opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          long opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final long opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, long opacity, @Nonnull IJson easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final long opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          long opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final long opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, long opacity, @Nonnull IJson easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final long opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, long opacity, @Nonnull IJson easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final long opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, long opacity, @Nonnull IJson easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final long opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          long opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final long opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, long opacity, @Nonnull IJson easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final long opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          long opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final long opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          double opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final double opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          double opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final double opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          double opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final double opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          double opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final double opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, double opacity, @Nonnull IJson easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final double opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, double opacity, @Nonnull IJson easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final double opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          double opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final double opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, double opacity, @Nonnull IJson easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final double opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          double opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final double opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          int opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final int opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, int opacity, @Nonnull IHCNode easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final int opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          int opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final int opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          int opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final int opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, int opacity, @Nonnull IHCNode easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final int opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, int opacity, @Nonnull IHCNode easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final int opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          int opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final int opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, int opacity, @Nonnull IHCNode easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final int opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          int opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final int opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          long opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final long opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          long opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final long opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          long opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final long opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          long opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final long opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, long opacity, @Nonnull IHCNode easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final long opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, long opacity, @Nonnull IHCNode easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final long opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          long opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final long opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, long opacity, @Nonnull IHCNode easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final long opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          long opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final long opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          double opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final double opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          double opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final double opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          double opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final double opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          double opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final double opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, double opacity, @Nonnull IHCNode easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final double opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, double opacity, @Nonnull IHCNode easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final double opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          double opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final double opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, double opacity, @Nonnull IHCNode easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final double opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          double opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final double opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          int opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final int opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, int opacity, @Nonnull String easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final int opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          int opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final int opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration, int opacity, @Nonnull String easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final int opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, int opacity, @Nonnull String easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final int opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, int opacity, @Nonnull String easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final int opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          int opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final int opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, int opacity, @Nonnull String easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final int opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          int opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final int opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          long opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final long opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration, long opacity, @Nonnull String easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final long opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          long opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final long opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          long opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final long opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, long opacity, @Nonnull String easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final long opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, long opacity, @Nonnull String easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final long opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          long opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final long opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, long opacity, @Nonnull String easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final long opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          long opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final long opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          double opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final double opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          double opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final double opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          double opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final double opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          double opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final double opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, double opacity, @Nonnull String easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final double opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, double opacity, @Nonnull String easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final double opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          double opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final double opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, double opacity, @Nonnull String easing, @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final double opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          double opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final double opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull String easing,
-                          @Nonnull IJSExpression complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final IJSExpression complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          int opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final int opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          int opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final int opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          int opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final int opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          int opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final int opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          int opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final int opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          int opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final int opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          int opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final int opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          int opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final int opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          int opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final int opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          long opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final long opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          long opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final long opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          long opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final long opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          long opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final long opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          long opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final long opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          long opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final long opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          long opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final long opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          long opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final long opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          long opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final long opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          double opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final double opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          double opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final double opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          double opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final double opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          double opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final double opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          double opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final double opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          double opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final double opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          double opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final double opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          double opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final double opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          double opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final double opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJSExpression easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJSExpression easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          int opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final int opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          int opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final int opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          int opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final int opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          int opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final int opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, int opacity, @Nonnull IJson easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final int opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, int opacity, @Nonnull IJson easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final int opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          int opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final int opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, int opacity, @Nonnull IJson easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final int opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          int opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final int opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          long opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final long opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          long opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final long opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          long opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final long opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          long opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final long opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, long opacity, @Nonnull IJson easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final long opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, long opacity, @Nonnull IJson easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final long opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          long opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final long opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, long opacity, @Nonnull IJson easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final long opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          long opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final long opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          double opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final double opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          double opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final double opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          double opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final double opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          double opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final double opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, double opacity, @Nonnull IJson easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final double opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, double opacity, @Nonnull IJson easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final double opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          double opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final double opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, double opacity, @Nonnull IJson easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final double opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          double opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final double opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IJson easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IJson easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          int opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final int opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          int opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final int opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          int opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final int opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          int opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final int opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, int opacity, @Nonnull IHCNode easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final int opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, int opacity, @Nonnull IHCNode easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final int opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          int opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final int opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, int opacity, @Nonnull IHCNode easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final int opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          int opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final int opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          long opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final long opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          long opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final long opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          long opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final long opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          long opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final long opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, long opacity, @Nonnull IHCNode easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final long opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, long opacity, @Nonnull IHCNode easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final long opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          long opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final long opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, long opacity, @Nonnull IHCNode easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final long opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          long opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final long opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          double opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final double opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          double opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final double opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          double opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final double opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          double opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final double opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, double opacity, @Nonnull IHCNode easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final double opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, double opacity, @Nonnull IHCNode easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final double opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          double opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final double opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          double opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final double opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          double opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final double opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull IHCNode easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final IHCNode easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull IJSExpression opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final IJSExpression opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          int opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final int opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          int opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final int opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          int opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final int opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          int opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final int opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, int opacity, @Nonnull String easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final int opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, int opacity, @Nonnull String easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final int opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          int opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final int opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, int opacity, @Nonnull String easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final int opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          int opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final int opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          long opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final long opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          long opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final long opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          long opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final long opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          long opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final long opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, long opacity, @Nonnull String easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final long opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, long opacity, @Nonnull String easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final long opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          long opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final long opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, long opacity, @Nonnull String easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final long opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          long opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final long opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull BigInteger opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigInteger opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          double opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          final double opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          double opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          final double opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          double opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          final double opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          double opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          final double opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration, double opacity, @Nonnull String easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          final double opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration, double opacity, @Nonnull String easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          final double opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          double opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          final double opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration, double opacity, @Nonnull String easing, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          final double opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          double opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          final double opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJSExpression duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IJson duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IJson duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull IHCNode duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final IHCNode duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull String duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final String duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (int duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final int duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (long duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final long duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigInteger duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigInteger duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (double duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (final double duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE fadeTo (@Nonnull BigDecimal duration,
-                          @Nonnull BigDecimal opacity,
-                          @Nonnull String easing,
-                          @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE fadeTo (@Nonnull final BigDecimal duration,
+                          @Nonnull final BigDecimal opacity,
+                          @Nonnull final String easing,
+                          @Nonnull final JSAnonymousFunction complete)
   {
     return fadeTo ().arg (duration).arg (opacity).arg (easing).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE filter (@Nonnull IJSExpression selector)
+  public IMPLTYPE filter (@Nonnull final IJSExpression selector)
   {
     return filter ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE filter (@Nonnull IJQuerySelector selector)
+  public IMPLTYPE filter (@Nonnull final IJQuerySelector selector)
   {
     return filter ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE filter (@Nonnull JQuerySelectorList selector)
+  public IMPLTYPE filter (@Nonnull final JQuerySelectorList selector)
   {
     return filter ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE filter (@Nonnull EHTMLElement selector)
+  public IMPLTYPE filter (@Nonnull final EHTMLElement selector)
   {
     return filter ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE filter (@Nonnull ICSSClassProvider selector)
+  public IMPLTYPE filter (@Nonnull final ICSSClassProvider selector)
   {
     return filter ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE filter (@Nonnull JSAnonymousFunction function)
+  public IMPLTYPE filter (@Nonnull final JSAnonymousFunction function)
   {
     return filter ().arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE filter (@Nonnull String element)
+  public IMPLTYPE filter (@Nonnull final String element)
   {
     return filter ().arg (element);
   }
 
   @Nonnull
-  public IMPLTYPE find (@Nonnull IJSExpression selector)
+  public IMPLTYPE find (@Nonnull final IJSExpression selector)
   {
     return find ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE find (@Nonnull IJQuerySelector selector)
+  public IMPLTYPE find (@Nonnull final IJQuerySelector selector)
   {
     return find ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE find (@Nonnull JQuerySelectorList selector)
+  public IMPLTYPE find (@Nonnull final JQuerySelectorList selector)
   {
     return find ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE find (@Nonnull EHTMLElement selector)
+  public IMPLTYPE find (@Nonnull final EHTMLElement selector)
   {
     return find ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE find (@Nonnull ICSSClassProvider selector)
+  public IMPLTYPE find (@Nonnull final ICSSClassProvider selector)
   {
     return find ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE find (@Nonnull String element)
+  public IMPLTYPE find (@Nonnull final String element)
   {
     return find ().arg (element);
   }
 
   @Nonnull
-  public IMPLTYPE finish (@Nonnull IJSExpression queue)
+  public IMPLTYPE finish (@Nonnull final IJSExpression queue)
   {
     return finish ().arg (queue);
   }
 
   @Nonnull
-  public IMPLTYPE finish (@Nonnull IJson queue)
+  public IMPLTYPE finish (@Nonnull final IJson queue)
   {
     return finish ().arg (queue);
   }
 
   @Nonnull
-  public IMPLTYPE finish (@Nonnull IHCNode queue)
+  public IMPLTYPE finish (@Nonnull final IHCNode queue)
   {
     return finish ().arg (queue);
   }
 
   @Nonnull
-  public IMPLTYPE finish (@Nonnull String queue)
+  public IMPLTYPE finish (@Nonnull final String queue)
   {
     return finish ().arg (queue);
   }
 
   @Nonnull
-  public IMPLTYPE focus (@Nonnull IJSExpression handler)
+  public IMPLTYPE focus (@Nonnull final IJSExpression handler)
   {
     return focus ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE focus (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE focus (@Nonnull final JSAnonymousFunction handler)
   {
     return focus ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE focus (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE focus (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return focus ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE focus (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE focus (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return focus ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE focusin (@Nonnull IJSExpression handler)
+  public IMPLTYPE focusin (@Nonnull final IJSExpression handler)
   {
     return focusin ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE focusin (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE focusin (@Nonnull final JSAnonymousFunction handler)
   {
     return focusin ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE focusin (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE focusin (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return focusin ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE focusin (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE focusin (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return focusin ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE focusout (@Nonnull IJSExpression handler)
+  public IMPLTYPE focusout (@Nonnull final IJSExpression handler)
   {
     return focusout ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE focusout (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE focusout (@Nonnull final JSAnonymousFunction handler)
   {
     return focusout ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE focusout (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE focusout (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return focusout ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE focusout (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE focusout (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return focusout ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE get (@Nonnull IJSExpression index)
+  public IMPLTYPE get (@Nonnull final IJSExpression index)
   {
     return get ().arg (index);
   }
 
   @Nonnull
-  public IMPLTYPE get (int index)
+  public IMPLTYPE get (final int index)
   {
     return get ().arg (index);
   }
 
   @Nonnull
-  public IMPLTYPE get (long index)
+  public IMPLTYPE get (final long index)
   {
     return get ().arg (index);
   }
 
   @Nonnull
-  public IMPLTYPE get (@Nonnull BigInteger index)
+  public IMPLTYPE get (@Nonnull final BigInteger index)
   {
     return get ().arg (index);
   }
 
   @Nonnull
-  public IMPLTYPE has (@Nonnull IJSExpression selector)
+  public IMPLTYPE has (@Nonnull final IJSExpression selector)
   {
     return has ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE has (@Nonnull IJson selector)
+  public IMPLTYPE has (@Nonnull final IJson selector)
   {
     return has ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE has (@Nonnull IHCNode selector)
+  public IMPLTYPE has (@Nonnull final IHCNode selector)
   {
     return has ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE has (@Nonnull String selector)
+  public IMPLTYPE has (@Nonnull final String selector)
   {
     return has ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE has (@Nonnull EHTMLElement contained)
+  public IMPLTYPE has (@Nonnull final EHTMLElement contained)
   {
     return has ().arg (contained);
   }
 
   @Nonnull
-  public IMPLTYPE hasClass (@Nonnull IJSExpression className)
+  public IMPLTYPE hasClass (@Nonnull final IJSExpression className)
   {
     return hasClass ().arg (className);
   }
 
   @Nonnull
-  public IMPLTYPE hasClass (@Nonnull IJson className)
+  public IMPLTYPE hasClass (@Nonnull final IJson className)
   {
     return hasClass ().arg (className);
   }
 
   @Nonnull
-  public IMPLTYPE hasClass (@Nonnull IHCNode className)
+  public IMPLTYPE hasClass (@Nonnull final IHCNode className)
   {
     return hasClass ().arg (className);
   }
 
   @Nonnull
-  public IMPLTYPE hasClass (@Nonnull String className)
+  public IMPLTYPE hasClass (@Nonnull final String className)
   {
     return hasClass ().arg (className);
   }
 
   @Nonnull
-  public IMPLTYPE height (@Nonnull IJSExpression value)
+  public IMPLTYPE height (@Nonnull final IJSExpression value)
   {
     return height ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE height (@Nonnull IJson value)
+  public IMPLTYPE height (@Nonnull final IJson value)
   {
     return height ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE height (@Nonnull IHCNode value)
+  public IMPLTYPE height (@Nonnull final IHCNode value)
   {
     return height ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE height (@Nonnull String value)
+  public IMPLTYPE height (@Nonnull final String value)
   {
     return height ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE height (int value)
+  public IMPLTYPE height (final int value)
   {
     return height ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE height (long value)
+  public IMPLTYPE height (final long value)
   {
     return height ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE height (@Nonnull BigInteger value)
+  public IMPLTYPE height (@Nonnull final BigInteger value)
   {
     return height ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE height (double value)
+  public IMPLTYPE height (final double value)
   {
     return height ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE height (@Nonnull BigDecimal value)
+  public IMPLTYPE height (@Nonnull final BigDecimal value)
   {
     return height ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE height (@Nonnull JSAnonymousFunction function)
+  public IMPLTYPE height (@Nonnull final JSAnonymousFunction function)
   {
     return height ().arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE hide (@Nonnull IJSExpression duration)
+  public IMPLTYPE hide (@Nonnull final IJSExpression duration)
   {
     return hide ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE hide (int duration)
+  public IMPLTYPE hide (final int duration)
   {
     return hide ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE hide (long duration)
+  public IMPLTYPE hide (final long duration)
   {
     return hide ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE hide (@Nonnull BigInteger duration)
+  public IMPLTYPE hide (@Nonnull final BigInteger duration)
   {
     return hide ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE hide (double duration)
+  public IMPLTYPE hide (final double duration)
   {
     return hide ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE hide (@Nonnull BigDecimal duration)
+  public IMPLTYPE hide (@Nonnull final BigDecimal duration)
   {
     return hide ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE hide (@Nonnull IJson duration)
+  public IMPLTYPE hide (@Nonnull final IJson duration)
   {
     return hide ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE hide (@Nonnull IHCNode duration)
+  public IMPLTYPE hide (@Nonnull final IHCNode duration)
   {
     return hide ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE hide (@Nonnull String duration)
+  public IMPLTYPE hide (@Nonnull final String duration)
   {
     return hide ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE hover (@Nonnull IJSExpression handlerIn, @Nonnull IJSExpression handlerOut)
+  public IMPLTYPE hover (@Nonnull final IJSExpression handlerIn, @Nonnull final IJSExpression handlerOut)
   {
     return hover ().arg (handlerIn).arg (handlerOut);
   }
 
   @Nonnull
-  public IMPLTYPE hover (@Nonnull JSAnonymousFunction handlerIn, @Nonnull IJSExpression handlerOut)
+  public IMPLTYPE hover (@Nonnull final JSAnonymousFunction handlerIn, @Nonnull final IJSExpression handlerOut)
   {
     return hover ().arg (handlerIn).arg (handlerOut);
   }
 
   @Nonnull
-  public IMPLTYPE hover (@Nonnull IJSExpression handlerIn, @Nonnull JSAnonymousFunction handlerOut)
+  public IMPLTYPE hover (@Nonnull final IJSExpression handlerIn, @Nonnull final JSAnonymousFunction handlerOut)
   {
     return hover ().arg (handlerIn).arg (handlerOut);
   }
 
   @Nonnull
-  public IMPLTYPE hover (@Nonnull JSAnonymousFunction handlerIn, @Nonnull JSAnonymousFunction handlerOut)
+  public IMPLTYPE hover (@Nonnull final JSAnonymousFunction handlerIn, @Nonnull final JSAnonymousFunction handlerOut)
   {
     return hover ().arg (handlerIn).arg (handlerOut);
   }
 
   @Nonnull
-  public IMPLTYPE hover (@Nonnull IJSExpression handlerInOut)
+  public IMPLTYPE hover (@Nonnull final IJSExpression handlerInOut)
   {
     return hover ().arg (handlerInOut);
   }
 
   @Nonnull
-  public IMPLTYPE hover (@Nonnull JSAnonymousFunction handlerInOut)
+  public IMPLTYPE hover (@Nonnull final JSAnonymousFunction handlerInOut)
   {
     return hover ().arg (handlerInOut);
   }
 
   @Nonnull
-  public IMPLTYPE html (@Nonnull IJSExpression htmlString)
+  public IMPLTYPE html (@Nonnull final IJSExpression htmlString)
   {
     return html ().arg (htmlString);
   }
 
   @Nonnull
-  public IMPLTYPE html (@Nonnull IHCNode htmlString)
+  public IMPLTYPE html (@Nonnull final IHCNode htmlString)
   {
     return html ().arg (htmlString);
   }
 
   @Nonnull
-  public IMPLTYPE html (@Nonnull String htmlString)
+  public IMPLTYPE html (@Nonnull final String htmlString)
   {
     return html ().arg (htmlString);
   }
 
   @Nonnull
-  public IMPLTYPE html (@Nonnull JSAnonymousFunction function)
+  public IMPLTYPE html (@Nonnull final JSAnonymousFunction function)
   {
     return html ().arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE index (@Nonnull IJSExpression selector)
+  public IMPLTYPE index (@Nonnull final IJSExpression selector)
   {
     return index ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE index (@Nonnull IJQuerySelector selector)
+  public IMPLTYPE index (@Nonnull final IJQuerySelector selector)
   {
     return index ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE index (@Nonnull JQuerySelectorList selector)
+  public IMPLTYPE index (@Nonnull final JQuerySelectorList selector)
   {
     return index ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE index (@Nonnull EHTMLElement selector)
+  public IMPLTYPE index (@Nonnull final EHTMLElement selector)
   {
     return index ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE index (@Nonnull ICSSClassProvider selector)
+  public IMPLTYPE index (@Nonnull final ICSSClassProvider selector)
   {
     return index ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE index (@Nonnull String element)
+  public IMPLTYPE index (@Nonnull final String element)
   {
     return index ().arg (element);
   }
 
   @Nonnull
-  public IMPLTYPE index (@Nonnull JQueryInvocation element)
+  public IMPLTYPE index (@Nonnull final JQueryInvocation element)
   {
     return index ().arg (element);
   }
 
   @Nonnull
-  public IMPLTYPE innerWidth (@Nonnull IJSExpression value)
+  public IMPLTYPE innerWidth (@Nonnull final IJSExpression value)
   {
     return innerWidth ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE innerWidth (@Nonnull IJson value)
+  public IMPLTYPE innerWidth (@Nonnull final IJson value)
   {
     return innerWidth ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE innerWidth (@Nonnull IHCNode value)
+  public IMPLTYPE innerWidth (@Nonnull final IHCNode value)
   {
     return innerWidth ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE innerWidth (@Nonnull String value)
+  public IMPLTYPE innerWidth (@Nonnull final String value)
   {
     return innerWidth ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE innerWidth (int value)
+  public IMPLTYPE innerWidth (final int value)
   {
     return innerWidth ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE innerWidth (long value)
+  public IMPLTYPE innerWidth (final long value)
   {
     return innerWidth ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE innerWidth (@Nonnull BigInteger value)
+  public IMPLTYPE innerWidth (@Nonnull final BigInteger value)
   {
     return innerWidth ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE innerWidth (double value)
+  public IMPLTYPE innerWidth (final double value)
   {
     return innerWidth ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE innerWidth (@Nonnull BigDecimal value)
+  public IMPLTYPE innerWidth (@Nonnull final BigDecimal value)
   {
     return innerWidth ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE innerWidth (@Nonnull JSAnonymousFunction function)
+  public IMPLTYPE innerWidth (@Nonnull final JSAnonymousFunction function)
   {
     return innerWidth ().arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE insertAfter (@Nonnull IJSExpression target)
+  public IMPLTYPE insertAfter (@Nonnull final IJSExpression target)
   {
     return insertAfter ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE insertAfter (@Nonnull IJQuerySelector target)
+  public IMPLTYPE insertAfter (@Nonnull final IJQuerySelector target)
   {
     return insertAfter ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE insertAfter (@Nonnull JQuerySelectorList target)
+  public IMPLTYPE insertAfter (@Nonnull final JQuerySelectorList target)
   {
     return insertAfter ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE insertAfter (@Nonnull EHTMLElement target)
+  public IMPLTYPE insertAfter (@Nonnull final EHTMLElement target)
   {
     return insertAfter ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE insertAfter (@Nonnull ICSSClassProvider target)
+  public IMPLTYPE insertAfter (@Nonnull final ICSSClassProvider target)
   {
     return insertAfter ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE insertAfter (@Nonnull IHCNode target)
+  public IMPLTYPE insertAfter (@Nonnull final IHCNode target)
   {
     return insertAfter ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE insertAfter (@Nonnull String target)
+  public IMPLTYPE insertAfter (@Nonnull final String target)
   {
     return insertAfter ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE insertAfter (@Nonnull JSArray target)
+  public IMPLTYPE insertAfter (@Nonnull final JSArray target)
   {
     return insertAfter ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE insertAfter (@Nonnull JQueryInvocation target)
+  public IMPLTYPE insertAfter (@Nonnull final JQueryInvocation target)
   {
     return insertAfter ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE insertBefore (@Nonnull IJSExpression target)
+  public IMPLTYPE insertBefore (@Nonnull final IJSExpression target)
   {
     return insertBefore ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE insertBefore (@Nonnull IJQuerySelector target)
+  public IMPLTYPE insertBefore (@Nonnull final IJQuerySelector target)
   {
     return insertBefore ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE insertBefore (@Nonnull JQuerySelectorList target)
+  public IMPLTYPE insertBefore (@Nonnull final JQuerySelectorList target)
   {
     return insertBefore ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE insertBefore (@Nonnull EHTMLElement target)
+  public IMPLTYPE insertBefore (@Nonnull final EHTMLElement target)
   {
     return insertBefore ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE insertBefore (@Nonnull ICSSClassProvider target)
+  public IMPLTYPE insertBefore (@Nonnull final ICSSClassProvider target)
   {
     return insertBefore ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE insertBefore (@Nonnull IHCNode target)
+  public IMPLTYPE insertBefore (@Nonnull final IHCNode target)
   {
     return insertBefore ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE insertBefore (@Nonnull String target)
+  public IMPLTYPE insertBefore (@Nonnull final String target)
   {
     return insertBefore ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE insertBefore (@Nonnull JSArray target)
+  public IMPLTYPE insertBefore (@Nonnull final JSArray target)
   {
     return insertBefore ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE insertBefore (@Nonnull JQueryInvocation target)
+  public IMPLTYPE insertBefore (@Nonnull final JQueryInvocation target)
   {
     return insertBefore ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE is (@Nonnull IJSExpression selector)
+  public IMPLTYPE is (@Nonnull final IJSExpression selector)
   {
     return is ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE is (@Nonnull IJQuerySelector selector)
+  public IMPLTYPE is (@Nonnull final IJQuerySelector selector)
   {
     return is ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE is (@Nonnull JQuerySelectorList selector)
+  public IMPLTYPE is (@Nonnull final JQuerySelectorList selector)
   {
     return is ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE is (@Nonnull EHTMLElement selector)
+  public IMPLTYPE is (@Nonnull final EHTMLElement selector)
   {
     return is ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE is (@Nonnull ICSSClassProvider selector)
+  public IMPLTYPE is (@Nonnull final ICSSClassProvider selector)
   {
     return is ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE is (@Nonnull JSAnonymousFunction function)
+  public IMPLTYPE is (@Nonnull final JSAnonymousFunction function)
   {
     return is ().arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE is (@Nonnull String elements)
+  public IMPLTYPE is (@Nonnull final String elements)
   {
     return is ().arg (elements);
   }
 
   @Nonnull
-  public IMPLTYPE keydown (@Nonnull IJSExpression handler)
+  public IMPLTYPE keydown (@Nonnull final IJSExpression handler)
   {
     return keydown ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE keydown (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE keydown (@Nonnull final JSAnonymousFunction handler)
   {
     return keydown ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE keydown (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE keydown (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return keydown ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE keydown (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE keydown (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return keydown ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE keypress (@Nonnull IJSExpression handler)
+  public IMPLTYPE keypress (@Nonnull final IJSExpression handler)
   {
     return keypress ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE keypress (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE keypress (@Nonnull final JSAnonymousFunction handler)
   {
     return keypress ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE keypress (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE keypress (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return keypress ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE keypress (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE keypress (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return keypress ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE keyup (@Nonnull IJSExpression handler)
+  public IMPLTYPE keyup (@Nonnull final IJSExpression handler)
   {
     return keyup ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE keyup (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE keyup (@Nonnull final JSAnonymousFunction handler)
   {
     return keyup ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE keyup (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE keyup (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return keyup ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE keyup (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE keyup (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return keyup ().arg (eventData).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE live (@Nonnull IJSExpression events, @Nonnull IJSExpression handler)
+  public IMPLTYPE live (@Nonnull final IJSExpression events, @Nonnull final IJSExpression handler)
   {
     return live ().arg (events).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE live (@Nonnull IJson events, @Nonnull IJSExpression handler)
+  public IMPLTYPE live (@Nonnull final IJson events, @Nonnull final IJSExpression handler)
   {
     return live ().arg (events).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE live (@Nonnull IHCNode events, @Nonnull IJSExpression handler)
+  public IMPLTYPE live (@Nonnull final IHCNode events, @Nonnull final IJSExpression handler)
   {
     return live ().arg (events).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE live (@Nonnull String events, @Nonnull IJSExpression handler)
+  public IMPLTYPE live (@Nonnull final String events, @Nonnull final IJSExpression handler)
   {
     return live ().arg (events).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE live (@Nonnull IJSExpression events, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE live (@Nonnull final IJSExpression events, @Nonnull final JSAnonymousFunction handler)
   {
     return live ().arg (events).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE live (@Nonnull IJson events, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE live (@Nonnull final IJson events, @Nonnull final JSAnonymousFunction handler)
   {
     return live ().arg (events).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE live (@Nonnull IHCNode events, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE live (@Nonnull final IHCNode events, @Nonnull final JSAnonymousFunction handler)
   {
     return live ().arg (events).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE live (@Nonnull String events, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE live (@Nonnull final String events, @Nonnull final JSAnonymousFunction handler)
   {
     return live ().arg (events).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE live (@Nonnull IJSExpression events, @Nonnull IJSExpression data, @Nonnull IJSExpression handler)
+  public IMPLTYPE live (@Nonnull final IJSExpression events,
+                        @Nonnull final IJSExpression data,
+                        @Nonnull final IJSExpression handler)
   {
     return live ().arg (events).arg (data).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE live (@Nonnull IJson events, @Nonnull IJSExpression data, @Nonnull IJSExpression handler)
+  public IMPLTYPE live (@Nonnull final IJson events,
+                        @Nonnull final IJSExpression data,
+                        @Nonnull final IJSExpression handler)
   {
     return live ().arg (events).arg (data).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE live (@Nonnull IHCNode events, @Nonnull IJSExpression data, @Nonnull IJSExpression handler)
+  public IMPLTYPE live (@Nonnull final IHCNode events,
+                        @Nonnull final IJSExpression data,
+                        @Nonnull final IJSExpression handler)
   {
     return live ().arg (events).arg (data).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE live (@Nonnull String events, @Nonnull IJSExpression data, @Nonnull IJSExpression handler)
+  public IMPLTYPE live (@Nonnull final String events,
+                        @Nonnull final IJSExpression data,
+                        @Nonnull final IJSExpression handler)
   {
     return live ().arg (events).arg (data).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE live (@Nonnull IJSExpression events, @Nonnull IJSExpression data, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE live (@Nonnull final IJSExpression events,
+                        @Nonnull final IJSExpression data,
+                        @Nonnull final JSAnonymousFunction handler)
   {
     return live ().arg (events).arg (data).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE live (@Nonnull IJson events, @Nonnull IJSExpression data, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE live (@Nonnull final IJson events,
+                        @Nonnull final IJSExpression data,
+                        @Nonnull final JSAnonymousFunction handler)
   {
     return live ().arg (events).arg (data).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE live (@Nonnull IHCNode events, @Nonnull IJSExpression data, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE live (@Nonnull final IHCNode events,
+                        @Nonnull final IJSExpression data,
+                        @Nonnull final JSAnonymousFunction handler)
   {
     return live ().arg (events).arg (data).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE live (@Nonnull String events, @Nonnull IJSExpression data, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE live (@Nonnull final String events,
+                        @Nonnull final IJSExpression data,
+                        @Nonnull final JSAnonymousFunction handler)
   {
     return live ().arg (events).arg (data).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE live (@Nonnull IJSExpression events)
+  public IMPLTYPE live (@Nonnull final IJSExpression events)
   {
     return live ().arg (events);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJSExpression handler)
+  public IMPLTYPE load (@Nonnull final IJSExpression handler)
   {
     return load ().arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE load (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE load (@Nonnull final JSAnonymousFunction handler)
   {
     return load ().arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE load (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return load ().arg (eventData).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE load (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return load ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJson url)
+  public IMPLTYPE load (@Nonnull final IJson url)
   {
     return load ().arg (url);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IHCNode url)
+  public IMPLTYPE load (@Nonnull final IHCNode url)
   {
     return load ().arg (url);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull String url)
+  public IMPLTYPE load (@Nonnull final String url)
   {
     return load ().arg (url);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJson url, @Nonnull IJSExpression data)
+  public IMPLTYPE load (@Nonnull final IJson url, @Nonnull final IJSExpression data)
   {
     return load ().arg (url).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IHCNode url, @Nonnull IJSExpression data)
+  public IMPLTYPE load (@Nonnull final IHCNode url, @Nonnull final IJSExpression data)
   {
     return load ().arg (url).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull String url, @Nonnull IJSExpression data)
+  public IMPLTYPE load (@Nonnull final String url, @Nonnull final IJSExpression data)
   {
     return load ().arg (url).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull IJson data)
+  public IMPLTYPE load (@Nonnull final IJSExpression url, @Nonnull final IJson data)
   {
     return load ().arg (url).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJson url, @Nonnull IJson data)
+  public IMPLTYPE load (@Nonnull final IJson url, @Nonnull final IJson data)
   {
     return load ().arg (url).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IHCNode url, @Nonnull IJson data)
+  public IMPLTYPE load (@Nonnull final IHCNode url, @Nonnull final IJson data)
   {
     return load ().arg (url).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull String url, @Nonnull IJson data)
+  public IMPLTYPE load (@Nonnull final String url, @Nonnull final IJson data)
   {
     return load ().arg (url).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull IHCNode data)
+  public IMPLTYPE load (@Nonnull final IJSExpression url, @Nonnull final IHCNode data)
   {
     return load ().arg (url).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJson url, @Nonnull IHCNode data)
+  public IMPLTYPE load (@Nonnull final IJson url, @Nonnull final IHCNode data)
   {
     return load ().arg (url).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IHCNode url, @Nonnull IHCNode data)
+  public IMPLTYPE load (@Nonnull final IHCNode url, @Nonnull final IHCNode data)
   {
     return load ().arg (url).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull String url, @Nonnull IHCNode data)
+  public IMPLTYPE load (@Nonnull final String url, @Nonnull final IHCNode data)
   {
     return load ().arg (url).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull String data)
+  public IMPLTYPE load (@Nonnull final IJSExpression url, @Nonnull final String data)
   {
     return load ().arg (url).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJson url, @Nonnull String data)
+  public IMPLTYPE load (@Nonnull final IJson url, @Nonnull final String data)
   {
     return load ().arg (url).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IHCNode url, @Nonnull String data)
+  public IMPLTYPE load (@Nonnull final IHCNode url, @Nonnull final String data)
   {
     return load ().arg (url).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull String url, @Nonnull String data)
+  public IMPLTYPE load (@Nonnull final String url, @Nonnull final String data)
   {
     return load ().arg (url).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull IJSExpression data, @Nonnull IJSExpression complete)
+  public IMPLTYPE load (@Nonnull final IJSExpression url,
+                        @Nonnull final IJSExpression data,
+                        @Nonnull final IJSExpression complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJson url, @Nonnull IJSExpression data, @Nonnull IJSExpression complete)
+  public IMPLTYPE load (@Nonnull final IJson url,
+                        @Nonnull final IJSExpression data,
+                        @Nonnull final IJSExpression complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IHCNode url, @Nonnull IJSExpression data, @Nonnull IJSExpression complete)
+  public IMPLTYPE load (@Nonnull final IHCNode url,
+                        @Nonnull final IJSExpression data,
+                        @Nonnull final IJSExpression complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull String url, @Nonnull IJSExpression data, @Nonnull IJSExpression complete)
+  public IMPLTYPE load (@Nonnull final String url,
+                        @Nonnull final IJSExpression data,
+                        @Nonnull final IJSExpression complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull IJson data, @Nonnull IJSExpression complete)
+  public IMPLTYPE load (@Nonnull final IJSExpression url,
+                        @Nonnull final IJson data,
+                        @Nonnull final IJSExpression complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJson url, @Nonnull IJson data, @Nonnull IJSExpression complete)
+  public IMPLTYPE load (@Nonnull final IJson url, @Nonnull final IJson data, @Nonnull final IJSExpression complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IHCNode url, @Nonnull IJson data, @Nonnull IJSExpression complete)
+  public IMPLTYPE load (@Nonnull final IHCNode url, @Nonnull final IJson data, @Nonnull final IJSExpression complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull String url, @Nonnull IJson data, @Nonnull IJSExpression complete)
+  public IMPLTYPE load (@Nonnull final String url, @Nonnull final IJson data, @Nonnull final IJSExpression complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull IHCNode data, @Nonnull IJSExpression complete)
+  public IMPLTYPE load (@Nonnull final IJSExpression url,
+                        @Nonnull final IHCNode data,
+                        @Nonnull final IJSExpression complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJson url, @Nonnull IHCNode data, @Nonnull IJSExpression complete)
+  public IMPLTYPE load (@Nonnull final IJson url, @Nonnull final IHCNode data, @Nonnull final IJSExpression complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IHCNode url, @Nonnull IHCNode data, @Nonnull IJSExpression complete)
+  public IMPLTYPE load (@Nonnull final IHCNode url, @Nonnull final IHCNode data, @Nonnull final IJSExpression complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull String url, @Nonnull IHCNode data, @Nonnull IJSExpression complete)
+  public IMPLTYPE load (@Nonnull final String url, @Nonnull final IHCNode data, @Nonnull final IJSExpression complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull String data, @Nonnull IJSExpression complete)
+  public IMPLTYPE load (@Nonnull final IJSExpression url,
+                        @Nonnull final String data,
+                        @Nonnull final IJSExpression complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJson url, @Nonnull String data, @Nonnull IJSExpression complete)
+  public IMPLTYPE load (@Nonnull final IJson url, @Nonnull final String data, @Nonnull final IJSExpression complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IHCNode url, @Nonnull String data, @Nonnull IJSExpression complete)
+  public IMPLTYPE load (@Nonnull final IHCNode url, @Nonnull final String data, @Nonnull final IJSExpression complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull String url, @Nonnull String data, @Nonnull IJSExpression complete)
+  public IMPLTYPE load (@Nonnull final String url, @Nonnull final String data, @Nonnull final IJSExpression complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull IJSExpression data, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE load (@Nonnull final IJSExpression url,
+                        @Nonnull final IJSExpression data,
+                        @Nonnull final JSAnonymousFunction complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJson url, @Nonnull IJSExpression data, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE load (@Nonnull final IJson url,
+                        @Nonnull final IJSExpression data,
+                        @Nonnull final JSAnonymousFunction complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IHCNode url, @Nonnull IJSExpression data, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE load (@Nonnull final IHCNode url,
+                        @Nonnull final IJSExpression data,
+                        @Nonnull final JSAnonymousFunction complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull String url, @Nonnull IJSExpression data, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE load (@Nonnull final String url,
+                        @Nonnull final IJSExpression data,
+                        @Nonnull final JSAnonymousFunction complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull IJson data, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE load (@Nonnull final IJSExpression url,
+                        @Nonnull final IJson data,
+                        @Nonnull final JSAnonymousFunction complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJson url, @Nonnull IJson data, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE load (@Nonnull final IJson url, @Nonnull final IJson data, @Nonnull final JSAnonymousFunction complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IHCNode url, @Nonnull IJson data, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE load (@Nonnull final IHCNode url,
+                        @Nonnull final IJson data,
+                        @Nonnull final JSAnonymousFunction complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull String url, @Nonnull IJson data, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE load (@Nonnull final String url,
+                        @Nonnull final IJson data,
+                        @Nonnull final JSAnonymousFunction complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull IHCNode data, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE load (@Nonnull final IJSExpression url,
+                        @Nonnull final IHCNode data,
+                        @Nonnull final JSAnonymousFunction complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJson url, @Nonnull IHCNode data, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE load (@Nonnull final IJson url,
+                        @Nonnull final IHCNode data,
+                        @Nonnull final JSAnonymousFunction complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IHCNode url, @Nonnull IHCNode data, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE load (@Nonnull final IHCNode url,
+                        @Nonnull final IHCNode data,
+                        @Nonnull final JSAnonymousFunction complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull String url, @Nonnull IHCNode data, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE load (@Nonnull final String url,
+                        @Nonnull final IHCNode data,
+                        @Nonnull final JSAnonymousFunction complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull String data, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE load (@Nonnull final IJSExpression url,
+                        @Nonnull final String data,
+                        @Nonnull final JSAnonymousFunction complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IJson url, @Nonnull String data, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE load (@Nonnull final IJson url,
+                        @Nonnull final String data,
+                        @Nonnull final JSAnonymousFunction complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull IHCNode url, @Nonnull String data, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE load (@Nonnull final IHCNode url,
+                        @Nonnull final String data,
+                        @Nonnull final JSAnonymousFunction complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE load (@Nonnull String url, @Nonnull String data, @Nonnull JSAnonymousFunction complete)
+  public IMPLTYPE load (@Nonnull final String url,
+                        @Nonnull final String data,
+                        @Nonnull final JSAnonymousFunction complete)
   {
     return load ().arg (url).arg (data).arg (complete);
   }
 
   @Nonnull
-  public IMPLTYPE map (@Nonnull IJSExpression callback)
+  public IMPLTYPE map (@Nonnull final IJSExpression callback)
   {
     return map ().arg (callback);
   }
 
   @Nonnull
-  public IMPLTYPE map (@Nonnull JSAnonymousFunction callback)
+  public IMPLTYPE map (@Nonnull final JSAnonymousFunction callback)
   {
     return map ().arg (callback);
   }
 
   @Nonnull
-  public IMPLTYPE mousedown (@Nonnull IJSExpression handler)
+  public IMPLTYPE mousedown (@Nonnull final IJSExpression handler)
   {
     return mousedown ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mousedown (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE mousedown (@Nonnull final JSAnonymousFunction handler)
   {
     return mousedown ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mousedown (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE mousedown (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return mousedown ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mousedown (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE mousedown (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return mousedown ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mouseenter (@Nonnull IJSExpression handler)
+  public IMPLTYPE mouseenter (@Nonnull final IJSExpression handler)
   {
     return mouseenter ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mouseenter (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE mouseenter (@Nonnull final JSAnonymousFunction handler)
   {
     return mouseenter ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mouseenter (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE mouseenter (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return mouseenter ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mouseenter (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE mouseenter (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return mouseenter ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mouseleave (@Nonnull IJSExpression handler)
+  public IMPLTYPE mouseleave (@Nonnull final IJSExpression handler)
   {
     return mouseleave ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mouseleave (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE mouseleave (@Nonnull final JSAnonymousFunction handler)
   {
     return mouseleave ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mouseleave (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE mouseleave (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return mouseleave ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mouseleave (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE mouseleave (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return mouseleave ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mousemove (@Nonnull IJSExpression handler)
+  public IMPLTYPE mousemove (@Nonnull final IJSExpression handler)
   {
     return mousemove ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mousemove (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE mousemove (@Nonnull final JSAnonymousFunction handler)
   {
     return mousemove ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mousemove (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE mousemove (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return mousemove ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mousemove (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE mousemove (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return mousemove ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mouseout (@Nonnull IJSExpression handler)
+  public IMPLTYPE mouseout (@Nonnull final IJSExpression handler)
   {
     return mouseout ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mouseout (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE mouseout (@Nonnull final JSAnonymousFunction handler)
   {
     return mouseout ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mouseout (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE mouseout (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return mouseout ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mouseout (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE mouseout (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return mouseout ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mouseover (@Nonnull IJSExpression handler)
+  public IMPLTYPE mouseover (@Nonnull final IJSExpression handler)
   {
     return mouseover ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mouseover (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE mouseover (@Nonnull final JSAnonymousFunction handler)
   {
     return mouseover ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mouseover (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE mouseover (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return mouseover ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mouseover (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE mouseover (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return mouseover ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mouseup (@Nonnull IJSExpression handler)
+  public IMPLTYPE mouseup (@Nonnull final IJSExpression handler)
   {
     return mouseup ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mouseup (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE mouseup (@Nonnull final JSAnonymousFunction handler)
   {
     return mouseup ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mouseup (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE mouseup (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return mouseup ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE mouseup (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE mouseup (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return mouseup ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE next (@Nonnull IJSExpression selector)
+  public IMPLTYPE next (@Nonnull final IJSExpression selector)
   {
     return next ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE next (@Nonnull IJQuerySelector selector)
+  public IMPLTYPE next (@Nonnull final IJQuerySelector selector)
   {
     return next ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE next (@Nonnull JQuerySelectorList selector)
+  public IMPLTYPE next (@Nonnull final JQuerySelectorList selector)
   {
     return next ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE next (@Nonnull EHTMLElement selector)
+  public IMPLTYPE next (@Nonnull final EHTMLElement selector)
   {
     return next ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE next (@Nonnull ICSSClassProvider selector)
+  public IMPLTYPE next (@Nonnull final ICSSClassProvider selector)
   {
     return next ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE nextAll (@Nonnull IJSExpression selector)
+  public IMPLTYPE nextAll (@Nonnull final IJSExpression selector)
   {
     return nextAll ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE nextAll (@Nonnull IJson selector)
+  public IMPLTYPE nextAll (@Nonnull final IJson selector)
   {
     return nextAll ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE nextAll (@Nonnull IHCNode selector)
+  public IMPLTYPE nextAll (@Nonnull final IHCNode selector)
   {
     return nextAll ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE nextAll (@Nonnull String selector)
+  public IMPLTYPE nextAll (@Nonnull final String selector)
   {
     return nextAll ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull IJSExpression selector)
+  public IMPLTYPE nextUntil (@Nonnull final IJSExpression selector)
   {
     return nextUntil ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull IJQuerySelector selector)
+  public IMPLTYPE nextUntil (@Nonnull final IJQuerySelector selector)
   {
     return nextUntil ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull JQuerySelectorList selector)
+  public IMPLTYPE nextUntil (@Nonnull final JQuerySelectorList selector)
   {
     return nextUntil ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull EHTMLElement selector)
+  public IMPLTYPE nextUntil (@Nonnull final EHTMLElement selector)
   {
     return nextUntil ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull ICSSClassProvider selector)
+  public IMPLTYPE nextUntil (@Nonnull final ICSSClassProvider selector)
   {
     return nextUntil ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull IJSExpression selector, @Nonnull IJSExpression filter)
+  public IMPLTYPE nextUntil (@Nonnull final IJSExpression selector, @Nonnull final IJSExpression filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull IJQuerySelector selector, @Nonnull IJSExpression filter)
+  public IMPLTYPE nextUntil (@Nonnull final IJQuerySelector selector, @Nonnull final IJSExpression filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull JQuerySelectorList selector, @Nonnull IJSExpression filter)
+  public IMPLTYPE nextUntil (@Nonnull final JQuerySelectorList selector, @Nonnull final IJSExpression filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull EHTMLElement selector, @Nonnull IJSExpression filter)
+  public IMPLTYPE nextUntil (@Nonnull final EHTMLElement selector, @Nonnull final IJSExpression filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull ICSSClassProvider selector, @Nonnull IJSExpression filter)
+  public IMPLTYPE nextUntil (@Nonnull final ICSSClassProvider selector, @Nonnull final IJSExpression filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull IJSExpression selector, @Nonnull IJQuerySelector filter)
+  public IMPLTYPE nextUntil (@Nonnull final IJSExpression selector, @Nonnull final IJQuerySelector filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull IJQuerySelector selector, @Nonnull IJQuerySelector filter)
+  public IMPLTYPE nextUntil (@Nonnull final IJQuerySelector selector, @Nonnull final IJQuerySelector filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull JQuerySelectorList selector, @Nonnull IJQuerySelector filter)
+  public IMPLTYPE nextUntil (@Nonnull final JQuerySelectorList selector, @Nonnull final IJQuerySelector filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull EHTMLElement selector, @Nonnull IJQuerySelector filter)
+  public IMPLTYPE nextUntil (@Nonnull final EHTMLElement selector, @Nonnull final IJQuerySelector filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull ICSSClassProvider selector, @Nonnull IJQuerySelector filter)
+  public IMPLTYPE nextUntil (@Nonnull final ICSSClassProvider selector, @Nonnull final IJQuerySelector filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull IJSExpression selector, @Nonnull JQuerySelectorList filter)
+  public IMPLTYPE nextUntil (@Nonnull final IJSExpression selector, @Nonnull final JQuerySelectorList filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull IJQuerySelector selector, @Nonnull JQuerySelectorList filter)
+  public IMPLTYPE nextUntil (@Nonnull final IJQuerySelector selector, @Nonnull final JQuerySelectorList filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull JQuerySelectorList selector, @Nonnull JQuerySelectorList filter)
+  public IMPLTYPE nextUntil (@Nonnull final JQuerySelectorList selector, @Nonnull final JQuerySelectorList filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull EHTMLElement selector, @Nonnull JQuerySelectorList filter)
+  public IMPLTYPE nextUntil (@Nonnull final EHTMLElement selector, @Nonnull final JQuerySelectorList filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull ICSSClassProvider selector, @Nonnull JQuerySelectorList filter)
+  public IMPLTYPE nextUntil (@Nonnull final ICSSClassProvider selector, @Nonnull final JQuerySelectorList filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull IJSExpression selector, @Nonnull EHTMLElement filter)
+  public IMPLTYPE nextUntil (@Nonnull final IJSExpression selector, @Nonnull final EHTMLElement filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull IJQuerySelector selector, @Nonnull EHTMLElement filter)
+  public IMPLTYPE nextUntil (@Nonnull final IJQuerySelector selector, @Nonnull final EHTMLElement filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull JQuerySelectorList selector, @Nonnull EHTMLElement filter)
+  public IMPLTYPE nextUntil (@Nonnull final JQuerySelectorList selector, @Nonnull final EHTMLElement filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull EHTMLElement selector, @Nonnull EHTMLElement filter)
+  public IMPLTYPE nextUntil (@Nonnull final EHTMLElement selector, @Nonnull final EHTMLElement filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull ICSSClassProvider selector, @Nonnull EHTMLElement filter)
+  public IMPLTYPE nextUntil (@Nonnull final ICSSClassProvider selector, @Nonnull final EHTMLElement filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull IJSExpression selector, @Nonnull ICSSClassProvider filter)
+  public IMPLTYPE nextUntil (@Nonnull final IJSExpression selector, @Nonnull final ICSSClassProvider filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull IJQuerySelector selector, @Nonnull ICSSClassProvider filter)
+  public IMPLTYPE nextUntil (@Nonnull final IJQuerySelector selector, @Nonnull final ICSSClassProvider filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull JQuerySelectorList selector, @Nonnull ICSSClassProvider filter)
+  public IMPLTYPE nextUntil (@Nonnull final JQuerySelectorList selector, @Nonnull final ICSSClassProvider filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull EHTMLElement selector, @Nonnull ICSSClassProvider filter)
+  public IMPLTYPE nextUntil (@Nonnull final EHTMLElement selector, @Nonnull final ICSSClassProvider filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull ICSSClassProvider selector, @Nonnull ICSSClassProvider filter)
+  public IMPLTYPE nextUntil (@Nonnull final ICSSClassProvider selector, @Nonnull final ICSSClassProvider filter)
   {
     return nextUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull String element)
+  public IMPLTYPE nextUntil (@Nonnull final String element)
   {
     return nextUntil ().arg (element);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull String element, @Nonnull IJSExpression filter)
+  public IMPLTYPE nextUntil (@Nonnull final String element, @Nonnull final IJSExpression filter)
   {
     return nextUntil ().arg (element).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull String element, @Nonnull IJQuerySelector filter)
+  public IMPLTYPE nextUntil (@Nonnull final String element, @Nonnull final IJQuerySelector filter)
   {
     return nextUntil ().arg (element).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull String element, @Nonnull JQuerySelectorList filter)
+  public IMPLTYPE nextUntil (@Nonnull final String element, @Nonnull final JQuerySelectorList filter)
   {
     return nextUntil ().arg (element).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull String element, @Nonnull EHTMLElement filter)
+  public IMPLTYPE nextUntil (@Nonnull final String element, @Nonnull final EHTMLElement filter)
   {
     return nextUntil ().arg (element).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE nextUntil (@Nonnull String element, @Nonnull ICSSClassProvider filter)
+  public IMPLTYPE nextUntil (@Nonnull final String element, @Nonnull final ICSSClassProvider filter)
   {
     return nextUntil ().arg (element).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE _not (@Nonnull IJSExpression selector)
+  public IMPLTYPE _not (@Nonnull final IJSExpression selector)
   {
     return _not ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE _not (@Nonnull IJQuerySelector selector)
+  public IMPLTYPE _not (@Nonnull final IJQuerySelector selector)
   {
     return _not ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE _not (@Nonnull JQuerySelectorList selector)
+  public IMPLTYPE _not (@Nonnull final JQuerySelectorList selector)
   {
     return _not ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE _not (@Nonnull EHTMLElement selector)
+  public IMPLTYPE _not (@Nonnull final EHTMLElement selector)
   {
     return _not ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE _not (@Nonnull ICSSClassProvider selector)
+  public IMPLTYPE _not (@Nonnull final ICSSClassProvider selector)
   {
     return _not ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE _not (@Nonnull EHTMLElement... elements)
+  public IMPLTYPE _not (@Nonnull final EHTMLElement... elements)
   {
     return _not ().arg (elements);
   }
 
   @Nonnull
-  public IMPLTYPE _not (@Nonnull Iterable <EHTMLElement> elements)
+  public IMPLTYPE _not (@Nonnull final Iterable <EHTMLElement> elements)
   {
     return _not ().arg (elements);
   }
 
   @Nonnull
-  public IMPLTYPE _not (@Nonnull String... elements)
+  public IMPLTYPE _not (@Nonnull final String... elements)
   {
     return _not ().arg (elements);
   }
 
   @Nonnull
-  public IMPLTYPE _not (@Nonnull JSAnonymousFunction function)
+  public IMPLTYPE _not (@Nonnull final JSAnonymousFunction function)
   {
     return _not ().arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJSExpression events)
+  public IMPLTYPE off (@Nonnull final IJSExpression events)
   {
     return off ().arg (events);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJson events)
+  public IMPLTYPE off (@Nonnull final IJson events)
   {
     return off ().arg (events);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IHCNode events)
+  public IMPLTYPE off (@Nonnull final IHCNode events)
   {
     return off ().arg (events);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull String events)
+  public IMPLTYPE off (@Nonnull final String events)
   {
     return off ().arg (events);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJSExpression events, @Nonnull IJSExpression selector)
+  public IMPLTYPE off (@Nonnull final IJSExpression events, @Nonnull final IJSExpression selector)
   {
     return off ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJson events, @Nonnull IJSExpression selector)
+  public IMPLTYPE off (@Nonnull final IJson events, @Nonnull final IJSExpression selector)
   {
     return off ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IHCNode events, @Nonnull IJSExpression selector)
+  public IMPLTYPE off (@Nonnull final IHCNode events, @Nonnull final IJSExpression selector)
   {
     return off ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull String events, @Nonnull IJSExpression selector)
+  public IMPLTYPE off (@Nonnull final String events, @Nonnull final IJSExpression selector)
   {
     return off ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJSExpression events, @Nonnull IJson selector)
+  public IMPLTYPE off (@Nonnull final IJSExpression events, @Nonnull final IJson selector)
   {
     return off ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJson events, @Nonnull IJson selector)
+  public IMPLTYPE off (@Nonnull final IJson events, @Nonnull final IJson selector)
   {
     return off ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IHCNode events, @Nonnull IJson selector)
+  public IMPLTYPE off (@Nonnull final IHCNode events, @Nonnull final IJson selector)
   {
     return off ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull String events, @Nonnull IJson selector)
+  public IMPLTYPE off (@Nonnull final String events, @Nonnull final IJson selector)
   {
     return off ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJSExpression events, @Nonnull IHCNode selector)
+  public IMPLTYPE off (@Nonnull final IJSExpression events, @Nonnull final IHCNode selector)
   {
     return off ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJson events, @Nonnull IHCNode selector)
+  public IMPLTYPE off (@Nonnull final IJson events, @Nonnull final IHCNode selector)
   {
     return off ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IHCNode events, @Nonnull IHCNode selector)
+  public IMPLTYPE off (@Nonnull final IHCNode events, @Nonnull final IHCNode selector)
   {
     return off ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull String events, @Nonnull IHCNode selector)
+  public IMPLTYPE off (@Nonnull final String events, @Nonnull final IHCNode selector)
   {
     return off ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJSExpression events, @Nonnull String selector)
+  public IMPLTYPE off (@Nonnull final IJSExpression events, @Nonnull final String selector)
   {
     return off ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJson events, @Nonnull String selector)
+  public IMPLTYPE off (@Nonnull final IJson events, @Nonnull final String selector)
   {
     return off ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IHCNode events, @Nonnull String selector)
+  public IMPLTYPE off (@Nonnull final IHCNode events, @Nonnull final String selector)
   {
     return off ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull String events, @Nonnull String selector)
+  public IMPLTYPE off (@Nonnull final String events, @Nonnull final String selector)
   {
     return off ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJSExpression events, @Nonnull IJSExpression selector, @Nonnull IJSExpression handler)
+  public IMPLTYPE off (@Nonnull final IJSExpression events,
+                       @Nonnull final IJSExpression selector,
+                       @Nonnull final IJSExpression handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJson events, @Nonnull IJSExpression selector, @Nonnull IJSExpression handler)
+  public IMPLTYPE off (@Nonnull final IJson events,
+                       @Nonnull final IJSExpression selector,
+                       @Nonnull final IJSExpression handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IHCNode events, @Nonnull IJSExpression selector, @Nonnull IJSExpression handler)
+  public IMPLTYPE off (@Nonnull final IHCNode events,
+                       @Nonnull final IJSExpression selector,
+                       @Nonnull final IJSExpression handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull String events, @Nonnull IJSExpression selector, @Nonnull IJSExpression handler)
+  public IMPLTYPE off (@Nonnull final String events,
+                       @Nonnull final IJSExpression selector,
+                       @Nonnull final IJSExpression handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJSExpression events, @Nonnull IJson selector, @Nonnull IJSExpression handler)
+  public IMPLTYPE off (@Nonnull final IJSExpression events,
+                       @Nonnull final IJson selector,
+                       @Nonnull final IJSExpression handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJson events, @Nonnull IJson selector, @Nonnull IJSExpression handler)
+  public IMPLTYPE off (@Nonnull final IJson events, @Nonnull final IJson selector, @Nonnull final IJSExpression handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IHCNode events, @Nonnull IJson selector, @Nonnull IJSExpression handler)
+  public IMPLTYPE off (@Nonnull final IHCNode events,
+                       @Nonnull final IJson selector,
+                       @Nonnull final IJSExpression handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull String events, @Nonnull IJson selector, @Nonnull IJSExpression handler)
+  public IMPLTYPE off (@Nonnull final String events, @Nonnull final IJson selector, @Nonnull final IJSExpression handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJSExpression events, @Nonnull IHCNode selector, @Nonnull IJSExpression handler)
+  public IMPLTYPE off (@Nonnull final IJSExpression events,
+                       @Nonnull final IHCNode selector,
+                       @Nonnull final IJSExpression handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJson events, @Nonnull IHCNode selector, @Nonnull IJSExpression handler)
+  public IMPLTYPE off (@Nonnull final IJson events,
+                       @Nonnull final IHCNode selector,
+                       @Nonnull final IJSExpression handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IHCNode events, @Nonnull IHCNode selector, @Nonnull IJSExpression handler)
+  public IMPLTYPE off (@Nonnull final IHCNode events,
+                       @Nonnull final IHCNode selector,
+                       @Nonnull final IJSExpression handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull String events, @Nonnull IHCNode selector, @Nonnull IJSExpression handler)
+  public IMPLTYPE off (@Nonnull final String events,
+                       @Nonnull final IHCNode selector,
+                       @Nonnull final IJSExpression handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJSExpression events, @Nonnull String selector, @Nonnull IJSExpression handler)
+  public IMPLTYPE off (@Nonnull final IJSExpression events,
+                       @Nonnull final String selector,
+                       @Nonnull final IJSExpression handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJson events, @Nonnull String selector, @Nonnull IJSExpression handler)
+  public IMPLTYPE off (@Nonnull final IJson events, @Nonnull final String selector, @Nonnull final IJSExpression handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IHCNode events, @Nonnull String selector, @Nonnull IJSExpression handler)
+  public IMPLTYPE off (@Nonnull final IHCNode events,
+                       @Nonnull final String selector,
+                       @Nonnull final IJSExpression handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull String events, @Nonnull String selector, @Nonnull IJSExpression handler)
+  public IMPLTYPE off (@Nonnull final String events,
+                       @Nonnull final String selector,
+                       @Nonnull final IJSExpression handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJSExpression events,
-                       @Nonnull IJSExpression selector,
-                       @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE off (@Nonnull final IJSExpression events,
+                       @Nonnull final IJSExpression selector,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJson events, @Nonnull IJSExpression selector, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE off (@Nonnull final IJson events,
+                       @Nonnull final IJSExpression selector,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IHCNode events, @Nonnull IJSExpression selector, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE off (@Nonnull final IHCNode events,
+                       @Nonnull final IJSExpression selector,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull String events, @Nonnull IJSExpression selector, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE off (@Nonnull final String events,
+                       @Nonnull final IJSExpression selector,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJSExpression events, @Nonnull IJson selector, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE off (@Nonnull final IJSExpression events,
+                       @Nonnull final IJson selector,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJson events, @Nonnull IJson selector, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE off (@Nonnull final IJson events,
+                       @Nonnull final IJson selector,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IHCNode events, @Nonnull IJson selector, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE off (@Nonnull final IHCNode events,
+                       @Nonnull final IJson selector,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull String events, @Nonnull IJson selector, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE off (@Nonnull final String events,
+                       @Nonnull final IJson selector,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJSExpression events, @Nonnull IHCNode selector, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE off (@Nonnull final IJSExpression events,
+                       @Nonnull final IHCNode selector,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJson events, @Nonnull IHCNode selector, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE off (@Nonnull final IJson events,
+                       @Nonnull final IHCNode selector,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IHCNode events, @Nonnull IHCNode selector, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE off (@Nonnull final IHCNode events,
+                       @Nonnull final IHCNode selector,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull String events, @Nonnull IHCNode selector, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE off (@Nonnull final String events,
+                       @Nonnull final IHCNode selector,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJSExpression events, @Nonnull String selector, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE off (@Nonnull final IJSExpression events,
+                       @Nonnull final String selector,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IJson events, @Nonnull String selector, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE off (@Nonnull final IJson events,
+                       @Nonnull final String selector,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull IHCNode events, @Nonnull String selector, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE off (@Nonnull final IHCNode events,
+                       @Nonnull final String selector,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE off (@Nonnull String events, @Nonnull String selector, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE off (@Nonnull final String events,
+                       @Nonnull final String selector,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return off ().arg (events).arg (selector).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE offset (@Nonnull IJSExpression coordinates)
+  public IMPLTYPE offset (@Nonnull final IJSExpression coordinates)
   {
     return offset ().arg (coordinates);
   }
 
   @Nonnull
-  public IMPLTYPE offset (@Nonnull JSAnonymousFunction function)
+  public IMPLTYPE offset (@Nonnull final JSAnonymousFunction function)
   {
     return offset ().arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJSExpression events, @Nonnull IJSExpression selector)
+  public IMPLTYPE on (@Nonnull final IJSExpression events, @Nonnull final IJSExpression selector)
   {
     return on ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJson events, @Nonnull IJSExpression selector)
+  public IMPLTYPE on (@Nonnull final IJson events, @Nonnull final IJSExpression selector)
   {
     return on ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IHCNode events, @Nonnull IJSExpression selector)
+  public IMPLTYPE on (@Nonnull final IHCNode events, @Nonnull final IJSExpression selector)
   {
     return on ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull String events, @Nonnull IJSExpression selector)
+  public IMPLTYPE on (@Nonnull final String events, @Nonnull final IJSExpression selector)
   {
     return on ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJSExpression events, @Nonnull IJson selector)
+  public IMPLTYPE on (@Nonnull final IJSExpression events, @Nonnull final IJson selector)
   {
     return on ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJson events, @Nonnull IJson selector)
+  public IMPLTYPE on (@Nonnull final IJson events, @Nonnull final IJson selector)
   {
     return on ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IHCNode events, @Nonnull IJson selector)
+  public IMPLTYPE on (@Nonnull final IHCNode events, @Nonnull final IJson selector)
   {
     return on ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull String events, @Nonnull IJson selector)
+  public IMPLTYPE on (@Nonnull final String events, @Nonnull final IJson selector)
   {
     return on ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJSExpression events, @Nonnull IHCNode selector)
+  public IMPLTYPE on (@Nonnull final IJSExpression events, @Nonnull final IHCNode selector)
   {
     return on ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJson events, @Nonnull IHCNode selector)
+  public IMPLTYPE on (@Nonnull final IJson events, @Nonnull final IHCNode selector)
   {
     return on ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IHCNode events, @Nonnull IHCNode selector)
+  public IMPLTYPE on (@Nonnull final IHCNode events, @Nonnull final IHCNode selector)
   {
     return on ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull String events, @Nonnull IHCNode selector)
+  public IMPLTYPE on (@Nonnull final String events, @Nonnull final IHCNode selector)
   {
     return on ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJSExpression events, @Nonnull String selector)
+  public IMPLTYPE on (@Nonnull final IJSExpression events, @Nonnull final String selector)
   {
     return on ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJson events, @Nonnull String selector)
+  public IMPLTYPE on (@Nonnull final IJson events, @Nonnull final String selector)
   {
     return on ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IHCNode events, @Nonnull String selector)
+  public IMPLTYPE on (@Nonnull final IHCNode events, @Nonnull final String selector)
   {
     return on ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull String events, @Nonnull String selector)
+  public IMPLTYPE on (@Nonnull final String events, @Nonnull final String selector)
   {
     return on ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJSExpression events, @Nonnull IJSExpression selector, @Nonnull IJSExpression data)
+  public IMPLTYPE on (@Nonnull final IJSExpression events,
+                      @Nonnull final IJSExpression selector,
+                      @Nonnull final IJSExpression data)
   {
     return on ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJson events, @Nonnull IJSExpression selector, @Nonnull IJSExpression data)
+  public IMPLTYPE on (@Nonnull final IJson events,
+                      @Nonnull final IJSExpression selector,
+                      @Nonnull final IJSExpression data)
   {
     return on ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IHCNode events, @Nonnull IJSExpression selector, @Nonnull IJSExpression data)
+  public IMPLTYPE on (@Nonnull final IHCNode events,
+                      @Nonnull final IJSExpression selector,
+                      @Nonnull final IJSExpression data)
   {
     return on ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull String events, @Nonnull IJSExpression selector, @Nonnull IJSExpression data)
+  public IMPLTYPE on (@Nonnull final String events,
+                      @Nonnull final IJSExpression selector,
+                      @Nonnull final IJSExpression data)
   {
     return on ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJSExpression events, @Nonnull IJson selector, @Nonnull IJSExpression data)
+  public IMPLTYPE on (@Nonnull final IJSExpression events,
+                      @Nonnull final IJson selector,
+                      @Nonnull final IJSExpression data)
   {
     return on ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJson events, @Nonnull IJson selector, @Nonnull IJSExpression data)
+  public IMPLTYPE on (@Nonnull final IJson events, @Nonnull final IJson selector, @Nonnull final IJSExpression data)
   {
     return on ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IHCNode events, @Nonnull IJson selector, @Nonnull IJSExpression data)
+  public IMPLTYPE on (@Nonnull final IHCNode events, @Nonnull final IJson selector, @Nonnull final IJSExpression data)
   {
     return on ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull String events, @Nonnull IJson selector, @Nonnull IJSExpression data)
+  public IMPLTYPE on (@Nonnull final String events, @Nonnull final IJson selector, @Nonnull final IJSExpression data)
   {
     return on ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJSExpression events, @Nonnull IHCNode selector, @Nonnull IJSExpression data)
+  public IMPLTYPE on (@Nonnull final IJSExpression events,
+                      @Nonnull final IHCNode selector,
+                      @Nonnull final IJSExpression data)
   {
     return on ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJson events, @Nonnull IHCNode selector, @Nonnull IJSExpression data)
+  public IMPLTYPE on (@Nonnull final IJson events, @Nonnull final IHCNode selector, @Nonnull final IJSExpression data)
   {
     return on ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IHCNode events, @Nonnull IHCNode selector, @Nonnull IJSExpression data)
+  public IMPLTYPE on (@Nonnull final IHCNode events, @Nonnull final IHCNode selector, @Nonnull final IJSExpression data)
   {
     return on ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull String events, @Nonnull IHCNode selector, @Nonnull IJSExpression data)
+  public IMPLTYPE on (@Nonnull final String events, @Nonnull final IHCNode selector, @Nonnull final IJSExpression data)
   {
     return on ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJSExpression events, @Nonnull String selector, @Nonnull IJSExpression data)
+  public IMPLTYPE on (@Nonnull final IJSExpression events,
+                      @Nonnull final String selector,
+                      @Nonnull final IJSExpression data)
   {
     return on ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJson events, @Nonnull String selector, @Nonnull IJSExpression data)
+  public IMPLTYPE on (@Nonnull final IJson events, @Nonnull final String selector, @Nonnull final IJSExpression data)
   {
     return on ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IHCNode events, @Nonnull String selector, @Nonnull IJSExpression data)
+  public IMPLTYPE on (@Nonnull final IHCNode events, @Nonnull final String selector, @Nonnull final IJSExpression data)
   {
     return on ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull String events, @Nonnull String selector, @Nonnull IJSExpression data)
+  public IMPLTYPE on (@Nonnull final String events, @Nonnull final String selector, @Nonnull final IJSExpression data)
   {
     return on ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJSExpression events,
-                      @Nonnull IJSExpression selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull IJSExpression handler)
+  public IMPLTYPE on (@Nonnull final IJSExpression events,
+                      @Nonnull final IJSExpression selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final IJSExpression handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJson events,
-                      @Nonnull IJSExpression selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull IJSExpression handler)
+  public IMPLTYPE on (@Nonnull final IJson events,
+                      @Nonnull final IJSExpression selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final IJSExpression handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IHCNode events,
-                      @Nonnull IJSExpression selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull IJSExpression handler)
+  public IMPLTYPE on (@Nonnull final IHCNode events,
+                      @Nonnull final IJSExpression selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final IJSExpression handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull String events,
-                      @Nonnull IJSExpression selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull IJSExpression handler)
+  public IMPLTYPE on (@Nonnull final String events,
+                      @Nonnull final IJSExpression selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final IJSExpression handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJSExpression events,
-                      @Nonnull IJson selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull IJSExpression handler)
+  public IMPLTYPE on (@Nonnull final IJSExpression events,
+                      @Nonnull final IJson selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final IJSExpression handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJson events,
-                      @Nonnull IJson selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull IJSExpression handler)
+  public IMPLTYPE on (@Nonnull final IJson events,
+                      @Nonnull final IJson selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final IJSExpression handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IHCNode events,
-                      @Nonnull IJson selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull IJSExpression handler)
+  public IMPLTYPE on (@Nonnull final IHCNode events,
+                      @Nonnull final IJson selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final IJSExpression handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull String events,
-                      @Nonnull IJson selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull IJSExpression handler)
+  public IMPLTYPE on (@Nonnull final String events,
+                      @Nonnull final IJson selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final IJSExpression handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJSExpression events,
-                      @Nonnull IHCNode selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull IJSExpression handler)
+  public IMPLTYPE on (@Nonnull final IJSExpression events,
+                      @Nonnull final IHCNode selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final IJSExpression handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJson events,
-                      @Nonnull IHCNode selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull IJSExpression handler)
+  public IMPLTYPE on (@Nonnull final IJson events,
+                      @Nonnull final IHCNode selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final IJSExpression handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IHCNode events,
-                      @Nonnull IHCNode selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull IJSExpression handler)
+  public IMPLTYPE on (@Nonnull final IHCNode events,
+                      @Nonnull final IHCNode selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final IJSExpression handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull String events,
-                      @Nonnull IHCNode selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull IJSExpression handler)
+  public IMPLTYPE on (@Nonnull final String events,
+                      @Nonnull final IHCNode selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final IJSExpression handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJSExpression events,
-                      @Nonnull String selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull IJSExpression handler)
+  public IMPLTYPE on (@Nonnull final IJSExpression events,
+                      @Nonnull final String selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final IJSExpression handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJson events,
-                      @Nonnull String selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull IJSExpression handler)
+  public IMPLTYPE on (@Nonnull final IJson events,
+                      @Nonnull final String selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final IJSExpression handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IHCNode events,
-                      @Nonnull String selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull IJSExpression handler)
+  public IMPLTYPE on (@Nonnull final IHCNode events,
+                      @Nonnull final String selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final IJSExpression handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull String events,
-                      @Nonnull String selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull IJSExpression handler)
+  public IMPLTYPE on (@Nonnull final String events,
+                      @Nonnull final String selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final IJSExpression handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJSExpression events,
-                      @Nonnull IJSExpression selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE on (@Nonnull final IJSExpression events,
+                      @Nonnull final IJSExpression selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final JSAnonymousFunction handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJson events,
-                      @Nonnull IJSExpression selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE on (@Nonnull final IJson events,
+                      @Nonnull final IJSExpression selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final JSAnonymousFunction handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IHCNode events,
-                      @Nonnull IJSExpression selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE on (@Nonnull final IHCNode events,
+                      @Nonnull final IJSExpression selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final JSAnonymousFunction handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull String events,
-                      @Nonnull IJSExpression selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE on (@Nonnull final String events,
+                      @Nonnull final IJSExpression selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final JSAnonymousFunction handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJSExpression events,
-                      @Nonnull IJson selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE on (@Nonnull final IJSExpression events,
+                      @Nonnull final IJson selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final JSAnonymousFunction handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJson events,
-                      @Nonnull IJson selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE on (@Nonnull final IJson events,
+                      @Nonnull final IJson selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final JSAnonymousFunction handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IHCNode events,
-                      @Nonnull IJson selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE on (@Nonnull final IHCNode events,
+                      @Nonnull final IJson selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final JSAnonymousFunction handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull String events,
-                      @Nonnull IJson selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE on (@Nonnull final String events,
+                      @Nonnull final IJson selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final JSAnonymousFunction handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJSExpression events,
-                      @Nonnull IHCNode selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE on (@Nonnull final IJSExpression events,
+                      @Nonnull final IHCNode selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final JSAnonymousFunction handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJson events,
-                      @Nonnull IHCNode selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE on (@Nonnull final IJson events,
+                      @Nonnull final IHCNode selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final JSAnonymousFunction handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IHCNode events,
-                      @Nonnull IHCNode selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE on (@Nonnull final IHCNode events,
+                      @Nonnull final IHCNode selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final JSAnonymousFunction handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull String events,
-                      @Nonnull IHCNode selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE on (@Nonnull final String events,
+                      @Nonnull final IHCNode selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final JSAnonymousFunction handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJSExpression events,
-                      @Nonnull String selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE on (@Nonnull final IJSExpression events,
+                      @Nonnull final String selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final JSAnonymousFunction handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJson events,
-                      @Nonnull String selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE on (@Nonnull final IJson events,
+                      @Nonnull final String selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final JSAnonymousFunction handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IHCNode events,
-                      @Nonnull String selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE on (@Nonnull final IHCNode events,
+                      @Nonnull final String selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final JSAnonymousFunction handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull String events,
-                      @Nonnull String selector,
-                      @Nonnull IJSExpression data,
-                      @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE on (@Nonnull final String events,
+                      @Nonnull final String selector,
+                      @Nonnull final IJSExpression data,
+                      @Nonnull final JSAnonymousFunction handler)
   {
     return on ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE on (@Nonnull IJSExpression events)
+  public IMPLTYPE on (@Nonnull final IJSExpression events)
   {
     return on ().arg (events);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJSExpression events, @Nonnull IJSExpression data)
+  public IMPLTYPE one (@Nonnull final IJSExpression events, @Nonnull final IJSExpression data)
   {
     return one ().arg (events).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJson events, @Nonnull IJSExpression data)
+  public IMPLTYPE one (@Nonnull final IJson events, @Nonnull final IJSExpression data)
   {
     return one ().arg (events).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IHCNode events, @Nonnull IJSExpression data)
+  public IMPLTYPE one (@Nonnull final IHCNode events, @Nonnull final IJSExpression data)
   {
     return one ().arg (events).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull String events, @Nonnull IJSExpression data)
+  public IMPLTYPE one (@Nonnull final String events, @Nonnull final IJSExpression data)
   {
     return one ().arg (events).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJSExpression events, @Nonnull IJSExpression data, @Nonnull IJSExpression handler)
+  public IMPLTYPE one (@Nonnull final IJSExpression events,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final IJSExpression handler)
   {
     return one ().arg (events).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJson events, @Nonnull IJSExpression data, @Nonnull IJSExpression handler)
+  public IMPLTYPE one (@Nonnull final IJson events,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final IJSExpression handler)
   {
     return one ().arg (events).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IHCNode events, @Nonnull IJSExpression data, @Nonnull IJSExpression handler)
+  public IMPLTYPE one (@Nonnull final IHCNode events,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final IJSExpression handler)
   {
     return one ().arg (events).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull String events, @Nonnull IJSExpression data, @Nonnull IJSExpression handler)
+  public IMPLTYPE one (@Nonnull final String events,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final IJSExpression handler)
   {
     return one ().arg (events).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJSExpression events, @Nonnull IJSExpression data, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE one (@Nonnull final IJSExpression events,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return one ().arg (events).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJson events, @Nonnull IJSExpression data, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE one (@Nonnull final IJson events,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return one ().arg (events).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IHCNode events, @Nonnull IJSExpression data, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE one (@Nonnull final IHCNode events,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return one ().arg (events).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull String events, @Nonnull IJSExpression data, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE one (@Nonnull final String events,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return one ().arg (events).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJSExpression events, @Nonnull IJson selector)
+  public IMPLTYPE one (@Nonnull final IJSExpression events, @Nonnull final IJson selector)
   {
     return one ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJson events, @Nonnull IJson selector)
+  public IMPLTYPE one (@Nonnull final IJson events, @Nonnull final IJson selector)
   {
     return one ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IHCNode events, @Nonnull IJson selector)
+  public IMPLTYPE one (@Nonnull final IHCNode events, @Nonnull final IJson selector)
   {
     return one ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull String events, @Nonnull IJson selector)
+  public IMPLTYPE one (@Nonnull final String events, @Nonnull final IJson selector)
   {
     return one ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJSExpression events, @Nonnull IHCNode selector)
+  public IMPLTYPE one (@Nonnull final IJSExpression events, @Nonnull final IHCNode selector)
   {
     return one ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJson events, @Nonnull IHCNode selector)
+  public IMPLTYPE one (@Nonnull final IJson events, @Nonnull final IHCNode selector)
   {
     return one ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IHCNode events, @Nonnull IHCNode selector)
+  public IMPLTYPE one (@Nonnull final IHCNode events, @Nonnull final IHCNode selector)
   {
     return one ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull String events, @Nonnull IHCNode selector)
+  public IMPLTYPE one (@Nonnull final String events, @Nonnull final IHCNode selector)
   {
     return one ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJSExpression events, @Nonnull String selector)
+  public IMPLTYPE one (@Nonnull final IJSExpression events, @Nonnull final String selector)
   {
     return one ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJson events, @Nonnull String selector)
+  public IMPLTYPE one (@Nonnull final IJson events, @Nonnull final String selector)
   {
     return one ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IHCNode events, @Nonnull String selector)
+  public IMPLTYPE one (@Nonnull final IHCNode events, @Nonnull final String selector)
   {
     return one ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull String events, @Nonnull String selector)
+  public IMPLTYPE one (@Nonnull final String events, @Nonnull final String selector)
   {
     return one ().arg (events).arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJSExpression events, @Nonnull IJson selector, @Nonnull IJSExpression data)
+  public IMPLTYPE one (@Nonnull final IJSExpression events,
+                       @Nonnull final IJson selector,
+                       @Nonnull final IJSExpression data)
   {
     return one ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJson events, @Nonnull IJson selector, @Nonnull IJSExpression data)
+  public IMPLTYPE one (@Nonnull final IJson events, @Nonnull final IJson selector, @Nonnull final IJSExpression data)
   {
     return one ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IHCNode events, @Nonnull IJson selector, @Nonnull IJSExpression data)
+  public IMPLTYPE one (@Nonnull final IHCNode events, @Nonnull final IJson selector, @Nonnull final IJSExpression data)
   {
     return one ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull String events, @Nonnull IJson selector, @Nonnull IJSExpression data)
+  public IMPLTYPE one (@Nonnull final String events, @Nonnull final IJson selector, @Nonnull final IJSExpression data)
   {
     return one ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJSExpression events, @Nonnull IHCNode selector, @Nonnull IJSExpression data)
+  public IMPLTYPE one (@Nonnull final IJSExpression events,
+                       @Nonnull final IHCNode selector,
+                       @Nonnull final IJSExpression data)
   {
     return one ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJson events, @Nonnull IHCNode selector, @Nonnull IJSExpression data)
+  public IMPLTYPE one (@Nonnull final IJson events, @Nonnull final IHCNode selector, @Nonnull final IJSExpression data)
   {
     return one ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IHCNode events, @Nonnull IHCNode selector, @Nonnull IJSExpression data)
+  public IMPLTYPE one (@Nonnull final IHCNode events, @Nonnull final IHCNode selector, @Nonnull final IJSExpression data)
   {
     return one ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull String events, @Nonnull IHCNode selector, @Nonnull IJSExpression data)
+  public IMPLTYPE one (@Nonnull final String events, @Nonnull final IHCNode selector, @Nonnull final IJSExpression data)
   {
     return one ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJSExpression events, @Nonnull String selector, @Nonnull IJSExpression data)
+  public IMPLTYPE one (@Nonnull final IJSExpression events,
+                       @Nonnull final String selector,
+                       @Nonnull final IJSExpression data)
   {
     return one ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJson events, @Nonnull String selector, @Nonnull IJSExpression data)
+  public IMPLTYPE one (@Nonnull final IJson events, @Nonnull final String selector, @Nonnull final IJSExpression data)
   {
     return one ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IHCNode events, @Nonnull String selector, @Nonnull IJSExpression data)
+  public IMPLTYPE one (@Nonnull final IHCNode events, @Nonnull final String selector, @Nonnull final IJSExpression data)
   {
     return one ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull String events, @Nonnull String selector, @Nonnull IJSExpression data)
+  public IMPLTYPE one (@Nonnull final String events, @Nonnull final String selector, @Nonnull final IJSExpression data)
   {
     return one ().arg (events).arg (selector).arg (data);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJSExpression events,
-                       @Nonnull IJSExpression selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull IJSExpression handler)
+  public IMPLTYPE one (@Nonnull final IJSExpression events,
+                       @Nonnull final IJSExpression selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final IJSExpression handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJson events,
-                       @Nonnull IJSExpression selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull IJSExpression handler)
+  public IMPLTYPE one (@Nonnull final IJson events,
+                       @Nonnull final IJSExpression selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final IJSExpression handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IHCNode events,
-                       @Nonnull IJSExpression selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull IJSExpression handler)
+  public IMPLTYPE one (@Nonnull final IHCNode events,
+                       @Nonnull final IJSExpression selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final IJSExpression handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull String events,
-                       @Nonnull IJSExpression selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull IJSExpression handler)
+  public IMPLTYPE one (@Nonnull final String events,
+                       @Nonnull final IJSExpression selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final IJSExpression handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJSExpression events,
-                       @Nonnull IJson selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull IJSExpression handler)
+  public IMPLTYPE one (@Nonnull final IJSExpression events,
+                       @Nonnull final IJson selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final IJSExpression handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJson events,
-                       @Nonnull IJson selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull IJSExpression handler)
+  public IMPLTYPE one (@Nonnull final IJson events,
+                       @Nonnull final IJson selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final IJSExpression handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IHCNode events,
-                       @Nonnull IJson selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull IJSExpression handler)
+  public IMPLTYPE one (@Nonnull final IHCNode events,
+                       @Nonnull final IJson selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final IJSExpression handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull String events,
-                       @Nonnull IJson selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull IJSExpression handler)
+  public IMPLTYPE one (@Nonnull final String events,
+                       @Nonnull final IJson selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final IJSExpression handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJSExpression events,
-                       @Nonnull IHCNode selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull IJSExpression handler)
+  public IMPLTYPE one (@Nonnull final IJSExpression events,
+                       @Nonnull final IHCNode selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final IJSExpression handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJson events,
-                       @Nonnull IHCNode selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull IJSExpression handler)
+  public IMPLTYPE one (@Nonnull final IJson events,
+                       @Nonnull final IHCNode selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final IJSExpression handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IHCNode events,
-                       @Nonnull IHCNode selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull IJSExpression handler)
+  public IMPLTYPE one (@Nonnull final IHCNode events,
+                       @Nonnull final IHCNode selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final IJSExpression handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull String events,
-                       @Nonnull IHCNode selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull IJSExpression handler)
+  public IMPLTYPE one (@Nonnull final String events,
+                       @Nonnull final IHCNode selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final IJSExpression handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJSExpression events,
-                       @Nonnull String selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull IJSExpression handler)
+  public IMPLTYPE one (@Nonnull final IJSExpression events,
+                       @Nonnull final String selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final IJSExpression handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJson events,
-                       @Nonnull String selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull IJSExpression handler)
+  public IMPLTYPE one (@Nonnull final IJson events,
+                       @Nonnull final String selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final IJSExpression handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IHCNode events,
-                       @Nonnull String selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull IJSExpression handler)
+  public IMPLTYPE one (@Nonnull final IHCNode events,
+                       @Nonnull final String selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final IJSExpression handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull String events,
-                       @Nonnull String selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull IJSExpression handler)
+  public IMPLTYPE one (@Nonnull final String events,
+                       @Nonnull final String selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final IJSExpression handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJSExpression events,
-                       @Nonnull IJSExpression selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE one (@Nonnull final IJSExpression events,
+                       @Nonnull final IJSExpression selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJson events,
-                       @Nonnull IJSExpression selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE one (@Nonnull final IJson events,
+                       @Nonnull final IJSExpression selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IHCNode events,
-                       @Nonnull IJSExpression selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE one (@Nonnull final IHCNode events,
+                       @Nonnull final IJSExpression selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull String events,
-                       @Nonnull IJSExpression selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE one (@Nonnull final String events,
+                       @Nonnull final IJSExpression selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJSExpression events,
-                       @Nonnull IJson selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE one (@Nonnull final IJSExpression events,
+                       @Nonnull final IJson selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJson events,
-                       @Nonnull IJson selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE one (@Nonnull final IJson events,
+                       @Nonnull final IJson selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IHCNode events,
-                       @Nonnull IJson selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE one (@Nonnull final IHCNode events,
+                       @Nonnull final IJson selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull String events,
-                       @Nonnull IJson selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE one (@Nonnull final String events,
+                       @Nonnull final IJson selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJSExpression events,
-                       @Nonnull IHCNode selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE one (@Nonnull final IJSExpression events,
+                       @Nonnull final IHCNode selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJson events,
-                       @Nonnull IHCNode selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE one (@Nonnull final IJson events,
+                       @Nonnull final IHCNode selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IHCNode events,
-                       @Nonnull IHCNode selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE one (@Nonnull final IHCNode events,
+                       @Nonnull final IHCNode selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull String events,
-                       @Nonnull IHCNode selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE one (@Nonnull final String events,
+                       @Nonnull final IHCNode selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJSExpression events,
-                       @Nonnull String selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE one (@Nonnull final IJSExpression events,
+                       @Nonnull final String selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJson events,
-                       @Nonnull String selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE one (@Nonnull final IJson events,
+                       @Nonnull final String selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IHCNode events,
-                       @Nonnull String selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE one (@Nonnull final IHCNode events,
+                       @Nonnull final String selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull String events,
-                       @Nonnull String selector,
-                       @Nonnull IJSExpression data,
-                       @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE one (@Nonnull final String events,
+                       @Nonnull final String selector,
+                       @Nonnull final IJSExpression data,
+                       @Nonnull final JSAnonymousFunction handler)
   {
     return one ().arg (events).arg (selector).arg (data).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE one (@Nonnull IJSExpression events)
+  public IMPLTYPE one (@Nonnull final IJSExpression events)
   {
     return one ().arg (events);
   }
 
   @Nonnull
-  public IMPLTYPE outerHeight (@Nonnull IJSExpression includeMargin)
+  public IMPLTYPE outerHeight (@Nonnull final IJSExpression includeMargin)
   {
     return outerHeight ().arg (includeMargin);
   }
 
   @Nonnull
-  public IMPLTYPE outerHeight (boolean includeMargin)
+  public IMPLTYPE outerHeight (final boolean includeMargin)
   {
     return outerHeight ().arg (includeMargin);
   }
 
   @Nonnull
-  public IMPLTYPE outerWidth (@Nonnull IJSExpression includeMargin)
+  public IMPLTYPE outerWidth (@Nonnull final IJSExpression includeMargin)
   {
     return outerWidth ().arg (includeMargin);
   }
 
   @Nonnull
-  public IMPLTYPE outerWidth (boolean includeMargin)
+  public IMPLTYPE outerWidth (final boolean includeMargin)
   {
     return outerWidth ().arg (includeMargin);
   }
 
   @Nonnull
-  public IMPLTYPE parent (@Nonnull IJSExpression selector)
+  public IMPLTYPE parent (@Nonnull final IJSExpression selector)
   {
     return parent ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE parent (@Nonnull IJQuerySelector selector)
+  public IMPLTYPE parent (@Nonnull final IJQuerySelector selector)
   {
     return parent ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE parent (@Nonnull JQuerySelectorList selector)
+  public IMPLTYPE parent (@Nonnull final JQuerySelectorList selector)
   {
     return parent ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE parent (@Nonnull EHTMLElement selector)
+  public IMPLTYPE parent (@Nonnull final EHTMLElement selector)
   {
     return parent ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE parent (@Nonnull ICSSClassProvider selector)
+  public IMPLTYPE parent (@Nonnull final ICSSClassProvider selector)
   {
     return parent ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE parents (@Nonnull IJSExpression selector)
+  public IMPLTYPE parents (@Nonnull final IJSExpression selector)
   {
     return parents ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE parents (@Nonnull IJQuerySelector selector)
+  public IMPLTYPE parents (@Nonnull final IJQuerySelector selector)
   {
     return parents ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE parents (@Nonnull JQuerySelectorList selector)
+  public IMPLTYPE parents (@Nonnull final JQuerySelectorList selector)
   {
     return parents ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE parents (@Nonnull EHTMLElement selector)
+  public IMPLTYPE parents (@Nonnull final EHTMLElement selector)
   {
     return parents ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE parents (@Nonnull ICSSClassProvider selector)
+  public IMPLTYPE parents (@Nonnull final ICSSClassProvider selector)
   {
     return parents ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull IJSExpression selector)
+  public IMPLTYPE parentsUntil (@Nonnull final IJSExpression selector)
   {
     return parentsUntil ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull IJQuerySelector selector)
+  public IMPLTYPE parentsUntil (@Nonnull final IJQuerySelector selector)
   {
     return parentsUntil ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull JQuerySelectorList selector)
+  public IMPLTYPE parentsUntil (@Nonnull final JQuerySelectorList selector)
   {
     return parentsUntil ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull EHTMLElement selector)
+  public IMPLTYPE parentsUntil (@Nonnull final EHTMLElement selector)
   {
     return parentsUntil ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull ICSSClassProvider selector)
+  public IMPLTYPE parentsUntil (@Nonnull final ICSSClassProvider selector)
   {
     return parentsUntil ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull IJSExpression selector, @Nonnull IJSExpression filter)
+  public IMPLTYPE parentsUntil (@Nonnull final IJSExpression selector, @Nonnull final IJSExpression filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull IJQuerySelector selector, @Nonnull IJSExpression filter)
+  public IMPLTYPE parentsUntil (@Nonnull final IJQuerySelector selector, @Nonnull final IJSExpression filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull JQuerySelectorList selector, @Nonnull IJSExpression filter)
+  public IMPLTYPE parentsUntil (@Nonnull final JQuerySelectorList selector, @Nonnull final IJSExpression filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull EHTMLElement selector, @Nonnull IJSExpression filter)
+  public IMPLTYPE parentsUntil (@Nonnull final EHTMLElement selector, @Nonnull final IJSExpression filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull ICSSClassProvider selector, @Nonnull IJSExpression filter)
+  public IMPLTYPE parentsUntil (@Nonnull final ICSSClassProvider selector, @Nonnull final IJSExpression filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull IJSExpression selector, @Nonnull IJQuerySelector filter)
+  public IMPLTYPE parentsUntil (@Nonnull final IJSExpression selector, @Nonnull final IJQuerySelector filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull IJQuerySelector selector, @Nonnull IJQuerySelector filter)
+  public IMPLTYPE parentsUntil (@Nonnull final IJQuerySelector selector, @Nonnull final IJQuerySelector filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull JQuerySelectorList selector, @Nonnull IJQuerySelector filter)
+  public IMPLTYPE parentsUntil (@Nonnull final JQuerySelectorList selector, @Nonnull final IJQuerySelector filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull EHTMLElement selector, @Nonnull IJQuerySelector filter)
+  public IMPLTYPE parentsUntil (@Nonnull final EHTMLElement selector, @Nonnull final IJQuerySelector filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull ICSSClassProvider selector, @Nonnull IJQuerySelector filter)
+  public IMPLTYPE parentsUntil (@Nonnull final ICSSClassProvider selector, @Nonnull final IJQuerySelector filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull IJSExpression selector, @Nonnull JQuerySelectorList filter)
+  public IMPLTYPE parentsUntil (@Nonnull final IJSExpression selector, @Nonnull final JQuerySelectorList filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull IJQuerySelector selector, @Nonnull JQuerySelectorList filter)
+  public IMPLTYPE parentsUntil (@Nonnull final IJQuerySelector selector, @Nonnull final JQuerySelectorList filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull JQuerySelectorList selector, @Nonnull JQuerySelectorList filter)
+  public IMPLTYPE parentsUntil (@Nonnull final JQuerySelectorList selector, @Nonnull final JQuerySelectorList filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull EHTMLElement selector, @Nonnull JQuerySelectorList filter)
+  public IMPLTYPE parentsUntil (@Nonnull final EHTMLElement selector, @Nonnull final JQuerySelectorList filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull ICSSClassProvider selector, @Nonnull JQuerySelectorList filter)
+  public IMPLTYPE parentsUntil (@Nonnull final ICSSClassProvider selector, @Nonnull final JQuerySelectorList filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull IJSExpression selector, @Nonnull EHTMLElement filter)
+  public IMPLTYPE parentsUntil (@Nonnull final IJSExpression selector, @Nonnull final EHTMLElement filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull IJQuerySelector selector, @Nonnull EHTMLElement filter)
+  public IMPLTYPE parentsUntil (@Nonnull final IJQuerySelector selector, @Nonnull final EHTMLElement filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull JQuerySelectorList selector, @Nonnull EHTMLElement filter)
+  public IMPLTYPE parentsUntil (@Nonnull final JQuerySelectorList selector, @Nonnull final EHTMLElement filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull EHTMLElement selector, @Nonnull EHTMLElement filter)
+  public IMPLTYPE parentsUntil (@Nonnull final EHTMLElement selector, @Nonnull final EHTMLElement filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull ICSSClassProvider selector, @Nonnull EHTMLElement filter)
+  public IMPLTYPE parentsUntil (@Nonnull final ICSSClassProvider selector, @Nonnull final EHTMLElement filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull IJSExpression selector, @Nonnull ICSSClassProvider filter)
+  public IMPLTYPE parentsUntil (@Nonnull final IJSExpression selector, @Nonnull final ICSSClassProvider filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull IJQuerySelector selector, @Nonnull ICSSClassProvider filter)
+  public IMPLTYPE parentsUntil (@Nonnull final IJQuerySelector selector, @Nonnull final ICSSClassProvider filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull JQuerySelectorList selector, @Nonnull ICSSClassProvider filter)
+  public IMPLTYPE parentsUntil (@Nonnull final JQuerySelectorList selector, @Nonnull final ICSSClassProvider filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull EHTMLElement selector, @Nonnull ICSSClassProvider filter)
+  public IMPLTYPE parentsUntil (@Nonnull final EHTMLElement selector, @Nonnull final ICSSClassProvider filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull ICSSClassProvider selector, @Nonnull ICSSClassProvider filter)
+  public IMPLTYPE parentsUntil (@Nonnull final ICSSClassProvider selector, @Nonnull final ICSSClassProvider filter)
   {
     return parentsUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull String element)
+  public IMPLTYPE parentsUntil (@Nonnull final String element)
   {
     return parentsUntil ().arg (element);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull String element, @Nonnull IJSExpression filter)
+  public IMPLTYPE parentsUntil (@Nonnull final String element, @Nonnull final IJSExpression filter)
   {
     return parentsUntil ().arg (element).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull String element, @Nonnull IJQuerySelector filter)
+  public IMPLTYPE parentsUntil (@Nonnull final String element, @Nonnull final IJQuerySelector filter)
   {
     return parentsUntil ().arg (element).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull String element, @Nonnull JQuerySelectorList filter)
+  public IMPLTYPE parentsUntil (@Nonnull final String element, @Nonnull final JQuerySelectorList filter)
   {
     return parentsUntil ().arg (element).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull String element, @Nonnull EHTMLElement filter)
+  public IMPLTYPE parentsUntil (@Nonnull final String element, @Nonnull final EHTMLElement filter)
   {
     return parentsUntil ().arg (element).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE parentsUntil (@Nonnull String element, @Nonnull ICSSClassProvider filter)
+  public IMPLTYPE parentsUntil (@Nonnull final String element, @Nonnull final ICSSClassProvider filter)
   {
     return parentsUntil ().arg (element).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull IJSExpression content)
+  public IMPLTYPE prepend (@Nonnull final IJSExpression content)
   {
     return prepend ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull IHCNode content)
+  public IMPLTYPE prepend (@Nonnull final IHCNode content)
   {
     return prepend ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull String content)
+  public IMPLTYPE prepend (@Nonnull final String content)
   {
     return prepend ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull EHTMLElement content)
+  public IMPLTYPE prepend (@Nonnull final EHTMLElement content)
   {
     return prepend ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull JSArray content)
+  public IMPLTYPE prepend (@Nonnull final JSArray content)
   {
     return prepend ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull JQueryInvocation content)
+  public IMPLTYPE prepend (@Nonnull final JQueryInvocation content)
   {
     return prepend ().arg (content);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull IJSExpression content, @Nonnull IJSExpression content1)
+  public IMPLTYPE prepend (@Nonnull final IJSExpression content, @Nonnull final IJSExpression content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull IHCNode content, @Nonnull IJSExpression content1)
+  public IMPLTYPE prepend (@Nonnull final IHCNode content, @Nonnull final IJSExpression content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull String content, @Nonnull IJSExpression content1)
+  public IMPLTYPE prepend (@Nonnull final String content, @Nonnull final IJSExpression content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull EHTMLElement content, @Nonnull IJSExpression content1)
+  public IMPLTYPE prepend (@Nonnull final EHTMLElement content, @Nonnull final IJSExpression content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull JSArray content, @Nonnull IJSExpression content1)
+  public IMPLTYPE prepend (@Nonnull final JSArray content, @Nonnull final IJSExpression content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull JQueryInvocation content, @Nonnull IJSExpression content1)
+  public IMPLTYPE prepend (@Nonnull final JQueryInvocation content, @Nonnull final IJSExpression content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull IJSExpression content, @Nonnull IHCNode content1)
+  public IMPLTYPE prepend (@Nonnull final IJSExpression content, @Nonnull final IHCNode content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull IHCNode content, @Nonnull IHCNode content1)
+  public IMPLTYPE prepend (@Nonnull final IHCNode content, @Nonnull final IHCNode content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull String content, @Nonnull IHCNode content1)
+  public IMPLTYPE prepend (@Nonnull final String content, @Nonnull final IHCNode content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull EHTMLElement content, @Nonnull IHCNode content1)
+  public IMPLTYPE prepend (@Nonnull final EHTMLElement content, @Nonnull final IHCNode content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull JSArray content, @Nonnull IHCNode content1)
+  public IMPLTYPE prepend (@Nonnull final JSArray content, @Nonnull final IHCNode content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull JQueryInvocation content, @Nonnull IHCNode content1)
+  public IMPLTYPE prepend (@Nonnull final JQueryInvocation content, @Nonnull final IHCNode content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull IJSExpression content, @Nonnull String content1)
+  public IMPLTYPE prepend (@Nonnull final IJSExpression content, @Nonnull final String content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull IHCNode content, @Nonnull String content1)
+  public IMPLTYPE prepend (@Nonnull final IHCNode content, @Nonnull final String content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull String content, @Nonnull String content1)
+  public IMPLTYPE prepend (@Nonnull final String content, @Nonnull final String content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull EHTMLElement content, @Nonnull String content1)
+  public IMPLTYPE prepend (@Nonnull final EHTMLElement content, @Nonnull final String content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull JSArray content, @Nonnull String content1)
+  public IMPLTYPE prepend (@Nonnull final JSArray content, @Nonnull final String content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull JQueryInvocation content, @Nonnull String content1)
+  public IMPLTYPE prepend (@Nonnull final JQueryInvocation content, @Nonnull final String content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull IJSExpression content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE prepend (@Nonnull final IJSExpression content, @Nonnull final EHTMLElement content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull IHCNode content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE prepend (@Nonnull final IHCNode content, @Nonnull final EHTMLElement content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull String content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE prepend (@Nonnull final String content, @Nonnull final EHTMLElement content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull EHTMLElement content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE prepend (@Nonnull final EHTMLElement content, @Nonnull final EHTMLElement content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull JSArray content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE prepend (@Nonnull final JSArray content, @Nonnull final EHTMLElement content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull JQueryInvocation content, @Nonnull EHTMLElement content1)
+  public IMPLTYPE prepend (@Nonnull final JQueryInvocation content, @Nonnull final EHTMLElement content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull IJSExpression content, @Nonnull JSArray content1)
+  public IMPLTYPE prepend (@Nonnull final IJSExpression content, @Nonnull final JSArray content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull IHCNode content, @Nonnull JSArray content1)
+  public IMPLTYPE prepend (@Nonnull final IHCNode content, @Nonnull final JSArray content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull String content, @Nonnull JSArray content1)
+  public IMPLTYPE prepend (@Nonnull final String content, @Nonnull final JSArray content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull EHTMLElement content, @Nonnull JSArray content1)
+  public IMPLTYPE prepend (@Nonnull final EHTMLElement content, @Nonnull final JSArray content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull JSArray content, @Nonnull JSArray content1)
+  public IMPLTYPE prepend (@Nonnull final JSArray content, @Nonnull final JSArray content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull JQueryInvocation content, @Nonnull JSArray content1)
+  public IMPLTYPE prepend (@Nonnull final JQueryInvocation content, @Nonnull final JSArray content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull IJSExpression content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE prepend (@Nonnull final IJSExpression content, @Nonnull final JQueryInvocation content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull IHCNode content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE prepend (@Nonnull final IHCNode content, @Nonnull final JQueryInvocation content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull String content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE prepend (@Nonnull final String content, @Nonnull final JQueryInvocation content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull EHTMLElement content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE prepend (@Nonnull final EHTMLElement content, @Nonnull final JQueryInvocation content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull JSArray content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE prepend (@Nonnull final JSArray content, @Nonnull final JQueryInvocation content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull JQueryInvocation content, @Nonnull JQueryInvocation content1)
+  public IMPLTYPE prepend (@Nonnull final JQueryInvocation content, @Nonnull final JQueryInvocation content1)
   {
     return prepend ().arg (content).arg (content1);
   }
 
   @Nonnull
-  public IMPLTYPE prepend (@Nonnull JSAnonymousFunction function)
+  public IMPLTYPE prepend (@Nonnull final JSAnonymousFunction function)
   {
     return prepend ().arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE prependTo (@Nonnull IJSExpression target)
+  public IMPLTYPE prependTo (@Nonnull final IJSExpression target)
   {
     return prependTo ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE prependTo (@Nonnull IJQuerySelector target)
+  public IMPLTYPE prependTo (@Nonnull final IJQuerySelector target)
   {
     return prependTo ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE prependTo (@Nonnull JQuerySelectorList target)
+  public IMPLTYPE prependTo (@Nonnull final JQuerySelectorList target)
   {
     return prependTo ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE prependTo (@Nonnull EHTMLElement target)
+  public IMPLTYPE prependTo (@Nonnull final EHTMLElement target)
   {
     return prependTo ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE prependTo (@Nonnull ICSSClassProvider target)
+  public IMPLTYPE prependTo (@Nonnull final ICSSClassProvider target)
   {
     return prependTo ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE prependTo (@Nonnull IHCNode target)
+  public IMPLTYPE prependTo (@Nonnull final IHCNode target)
   {
     return prependTo ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE prependTo (@Nonnull String target)
+  public IMPLTYPE prependTo (@Nonnull final String target)
   {
     return prependTo ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE prependTo (@Nonnull JSArray target)
+  public IMPLTYPE prependTo (@Nonnull final JSArray target)
   {
     return prependTo ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE prependTo (@Nonnull JQueryInvocation target)
+  public IMPLTYPE prependTo (@Nonnull final JQueryInvocation target)
   {
     return prependTo ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE prev (@Nonnull IJSExpression selector)
+  public IMPLTYPE prev (@Nonnull final IJSExpression selector)
   {
     return prev ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE prev (@Nonnull IJQuerySelector selector)
+  public IMPLTYPE prev (@Nonnull final IJQuerySelector selector)
   {
     return prev ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE prev (@Nonnull JQuerySelectorList selector)
+  public IMPLTYPE prev (@Nonnull final JQuerySelectorList selector)
   {
     return prev ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE prev (@Nonnull EHTMLElement selector)
+  public IMPLTYPE prev (@Nonnull final EHTMLElement selector)
   {
     return prev ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE prev (@Nonnull ICSSClassProvider selector)
+  public IMPLTYPE prev (@Nonnull final ICSSClassProvider selector)
   {
     return prev ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE prevAll (@Nonnull IJSExpression selector)
+  public IMPLTYPE prevAll (@Nonnull final IJSExpression selector)
   {
     return prevAll ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE prevAll (@Nonnull IJQuerySelector selector)
+  public IMPLTYPE prevAll (@Nonnull final IJQuerySelector selector)
   {
     return prevAll ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE prevAll (@Nonnull JQuerySelectorList selector)
+  public IMPLTYPE prevAll (@Nonnull final JQuerySelectorList selector)
   {
     return prevAll ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE prevAll (@Nonnull EHTMLElement selector)
+  public IMPLTYPE prevAll (@Nonnull final EHTMLElement selector)
   {
     return prevAll ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE prevAll (@Nonnull ICSSClassProvider selector)
+  public IMPLTYPE prevAll (@Nonnull final ICSSClassProvider selector)
   {
     return prevAll ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull IJSExpression selector)
+  public IMPLTYPE prevUntil (@Nonnull final IJSExpression selector)
   {
     return prevUntil ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull IJQuerySelector selector)
+  public IMPLTYPE prevUntil (@Nonnull final IJQuerySelector selector)
   {
     return prevUntil ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull JQuerySelectorList selector)
+  public IMPLTYPE prevUntil (@Nonnull final JQuerySelectorList selector)
   {
     return prevUntil ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull EHTMLElement selector)
+  public IMPLTYPE prevUntil (@Nonnull final EHTMLElement selector)
   {
     return prevUntil ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull ICSSClassProvider selector)
+  public IMPLTYPE prevUntil (@Nonnull final ICSSClassProvider selector)
   {
     return prevUntil ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull IJSExpression selector, @Nonnull IJSExpression filter)
+  public IMPLTYPE prevUntil (@Nonnull final IJSExpression selector, @Nonnull final IJSExpression filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull IJQuerySelector selector, @Nonnull IJSExpression filter)
+  public IMPLTYPE prevUntil (@Nonnull final IJQuerySelector selector, @Nonnull final IJSExpression filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull JQuerySelectorList selector, @Nonnull IJSExpression filter)
+  public IMPLTYPE prevUntil (@Nonnull final JQuerySelectorList selector, @Nonnull final IJSExpression filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull EHTMLElement selector, @Nonnull IJSExpression filter)
+  public IMPLTYPE prevUntil (@Nonnull final EHTMLElement selector, @Nonnull final IJSExpression filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull ICSSClassProvider selector, @Nonnull IJSExpression filter)
+  public IMPLTYPE prevUntil (@Nonnull final ICSSClassProvider selector, @Nonnull final IJSExpression filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull IJSExpression selector, @Nonnull IJQuerySelector filter)
+  public IMPLTYPE prevUntil (@Nonnull final IJSExpression selector, @Nonnull final IJQuerySelector filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull IJQuerySelector selector, @Nonnull IJQuerySelector filter)
+  public IMPLTYPE prevUntil (@Nonnull final IJQuerySelector selector, @Nonnull final IJQuerySelector filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull JQuerySelectorList selector, @Nonnull IJQuerySelector filter)
+  public IMPLTYPE prevUntil (@Nonnull final JQuerySelectorList selector, @Nonnull final IJQuerySelector filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull EHTMLElement selector, @Nonnull IJQuerySelector filter)
+  public IMPLTYPE prevUntil (@Nonnull final EHTMLElement selector, @Nonnull final IJQuerySelector filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull ICSSClassProvider selector, @Nonnull IJQuerySelector filter)
+  public IMPLTYPE prevUntil (@Nonnull final ICSSClassProvider selector, @Nonnull final IJQuerySelector filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull IJSExpression selector, @Nonnull JQuerySelectorList filter)
+  public IMPLTYPE prevUntil (@Nonnull final IJSExpression selector, @Nonnull final JQuerySelectorList filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull IJQuerySelector selector, @Nonnull JQuerySelectorList filter)
+  public IMPLTYPE prevUntil (@Nonnull final IJQuerySelector selector, @Nonnull final JQuerySelectorList filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull JQuerySelectorList selector, @Nonnull JQuerySelectorList filter)
+  public IMPLTYPE prevUntil (@Nonnull final JQuerySelectorList selector, @Nonnull final JQuerySelectorList filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull EHTMLElement selector, @Nonnull JQuerySelectorList filter)
+  public IMPLTYPE prevUntil (@Nonnull final EHTMLElement selector, @Nonnull final JQuerySelectorList filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull ICSSClassProvider selector, @Nonnull JQuerySelectorList filter)
+  public IMPLTYPE prevUntil (@Nonnull final ICSSClassProvider selector, @Nonnull final JQuerySelectorList filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull IJSExpression selector, @Nonnull EHTMLElement filter)
+  public IMPLTYPE prevUntil (@Nonnull final IJSExpression selector, @Nonnull final EHTMLElement filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull IJQuerySelector selector, @Nonnull EHTMLElement filter)
+  public IMPLTYPE prevUntil (@Nonnull final IJQuerySelector selector, @Nonnull final EHTMLElement filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull JQuerySelectorList selector, @Nonnull EHTMLElement filter)
+  public IMPLTYPE prevUntil (@Nonnull final JQuerySelectorList selector, @Nonnull final EHTMLElement filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull EHTMLElement selector, @Nonnull EHTMLElement filter)
+  public IMPLTYPE prevUntil (@Nonnull final EHTMLElement selector, @Nonnull final EHTMLElement filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull ICSSClassProvider selector, @Nonnull EHTMLElement filter)
+  public IMPLTYPE prevUntil (@Nonnull final ICSSClassProvider selector, @Nonnull final EHTMLElement filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull IJSExpression selector, @Nonnull ICSSClassProvider filter)
+  public IMPLTYPE prevUntil (@Nonnull final IJSExpression selector, @Nonnull final ICSSClassProvider filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull IJQuerySelector selector, @Nonnull ICSSClassProvider filter)
+  public IMPLTYPE prevUntil (@Nonnull final IJQuerySelector selector, @Nonnull final ICSSClassProvider filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull JQuerySelectorList selector, @Nonnull ICSSClassProvider filter)
+  public IMPLTYPE prevUntil (@Nonnull final JQuerySelectorList selector, @Nonnull final ICSSClassProvider filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull EHTMLElement selector, @Nonnull ICSSClassProvider filter)
+  public IMPLTYPE prevUntil (@Nonnull final EHTMLElement selector, @Nonnull final ICSSClassProvider filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull ICSSClassProvider selector, @Nonnull ICSSClassProvider filter)
+  public IMPLTYPE prevUntil (@Nonnull final ICSSClassProvider selector, @Nonnull final ICSSClassProvider filter)
   {
     return prevUntil ().arg (selector).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull String element)
+  public IMPLTYPE prevUntil (@Nonnull final String element)
   {
     return prevUntil ().arg (element);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull String element, @Nonnull IJSExpression filter)
+  public IMPLTYPE prevUntil (@Nonnull final String element, @Nonnull final IJSExpression filter)
   {
     return prevUntil ().arg (element).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull String element, @Nonnull IJQuerySelector filter)
+  public IMPLTYPE prevUntil (@Nonnull final String element, @Nonnull final IJQuerySelector filter)
   {
     return prevUntil ().arg (element).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull String element, @Nonnull JQuerySelectorList filter)
+  public IMPLTYPE prevUntil (@Nonnull final String element, @Nonnull final JQuerySelectorList filter)
   {
     return prevUntil ().arg (element).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull String element, @Nonnull EHTMLElement filter)
+  public IMPLTYPE prevUntil (@Nonnull final String element, @Nonnull final EHTMLElement filter)
   {
     return prevUntil ().arg (element).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE prevUntil (@Nonnull String element, @Nonnull ICSSClassProvider filter)
+  public IMPLTYPE prevUntil (@Nonnull final String element, @Nonnull final ICSSClassProvider filter)
   {
     return prevUntil ().arg (element).arg (filter);
   }
 
   @Nonnull
-  public IMPLTYPE promise (@Nonnull IJSExpression type)
+  public IMPLTYPE promise (@Nonnull final IJSExpression type)
   {
     return promise ().arg (type);
   }
 
   @Nonnull
-  public IMPLTYPE promise (@Nonnull IJson type)
+  public IMPLTYPE promise (@Nonnull final IJson type)
   {
     return promise ().arg (type);
   }
 
   @Nonnull
-  public IMPLTYPE promise (@Nonnull IHCNode type)
+  public IMPLTYPE promise (@Nonnull final IHCNode type)
   {
     return promise ().arg (type);
   }
 
   @Nonnull
-  public IMPLTYPE promise (@Nonnull String type)
+  public IMPLTYPE promise (@Nonnull final String type)
   {
     return promise ().arg (type);
   }
 
   @Nonnull
-  public IMPLTYPE promise (@Nonnull IJSExpression type, @Nonnull IJSExpression target)
+  public IMPLTYPE promise (@Nonnull final IJSExpression type, @Nonnull final IJSExpression target)
   {
     return promise ().arg (type).arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE promise (@Nonnull IJson type, @Nonnull IJSExpression target)
+  public IMPLTYPE promise (@Nonnull final IJson type, @Nonnull final IJSExpression target)
   {
     return promise ().arg (type).arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE promise (@Nonnull IHCNode type, @Nonnull IJSExpression target)
+  public IMPLTYPE promise (@Nonnull final IHCNode type, @Nonnull final IJSExpression target)
   {
     return promise ().arg (type).arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE promise (@Nonnull String type, @Nonnull IJSExpression target)
+  public IMPLTYPE promise (@Nonnull final String type, @Nonnull final IJSExpression target)
   {
     return promise ().arg (type).arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJSExpression propertyName)
+  public IMPLTYPE prop (@Nonnull final IJSExpression propertyName)
   {
     return prop ().arg (propertyName);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJson propertyName)
+  public IMPLTYPE prop (@Nonnull final IJson propertyName)
   {
     return prop ().arg (propertyName);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IHCNode propertyName)
+  public IMPLTYPE prop (@Nonnull final IHCNode propertyName)
   {
     return prop ().arg (propertyName);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull String propertyName)
+  public IMPLTYPE prop (@Nonnull final String propertyName)
   {
     return prop ().arg (propertyName);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJSExpression propertyName, @Nonnull IJSExpression value)
+  public IMPLTYPE prop (@Nonnull final IJSExpression propertyName, @Nonnull final IJSExpression value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJson propertyName, @Nonnull IJSExpression value)
+  public IMPLTYPE prop (@Nonnull final IJson propertyName, @Nonnull final IJSExpression value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IHCNode propertyName, @Nonnull IJSExpression value)
+  public IMPLTYPE prop (@Nonnull final IHCNode propertyName, @Nonnull final IJSExpression value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull String propertyName, @Nonnull IJSExpression value)
+  public IMPLTYPE prop (@Nonnull final String propertyName, @Nonnull final IJSExpression value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJSExpression propertyName, @Nonnull IJson value)
+  public IMPLTYPE prop (@Nonnull final IJSExpression propertyName, @Nonnull final IJson value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJson propertyName, @Nonnull IJson value)
+  public IMPLTYPE prop (@Nonnull final IJson propertyName, @Nonnull final IJson value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IHCNode propertyName, @Nonnull IJson value)
+  public IMPLTYPE prop (@Nonnull final IHCNode propertyName, @Nonnull final IJson value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull String propertyName, @Nonnull IJson value)
+  public IMPLTYPE prop (@Nonnull final String propertyName, @Nonnull final IJson value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJSExpression propertyName, @Nonnull IHCNode value)
+  public IMPLTYPE prop (@Nonnull final IJSExpression propertyName, @Nonnull final IHCNode value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJson propertyName, @Nonnull IHCNode value)
+  public IMPLTYPE prop (@Nonnull final IJson propertyName, @Nonnull final IHCNode value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IHCNode propertyName, @Nonnull IHCNode value)
+  public IMPLTYPE prop (@Nonnull final IHCNode propertyName, @Nonnull final IHCNode value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull String propertyName, @Nonnull IHCNode value)
+  public IMPLTYPE prop (@Nonnull final String propertyName, @Nonnull final IHCNode value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJSExpression propertyName, @Nonnull String value)
+  public IMPLTYPE prop (@Nonnull final IJSExpression propertyName, @Nonnull final String value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJson propertyName, @Nonnull String value)
+  public IMPLTYPE prop (@Nonnull final IJson propertyName, @Nonnull final String value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IHCNode propertyName, @Nonnull String value)
+  public IMPLTYPE prop (@Nonnull final IHCNode propertyName, @Nonnull final String value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull String propertyName, @Nonnull String value)
+  public IMPLTYPE prop (@Nonnull final String propertyName, @Nonnull final String value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJSExpression propertyName, int value)
+  public IMPLTYPE prop (@Nonnull final IJSExpression propertyName, final int value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJson propertyName, int value)
+  public IMPLTYPE prop (@Nonnull final IJson propertyName, final int value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IHCNode propertyName, int value)
+  public IMPLTYPE prop (@Nonnull final IHCNode propertyName, final int value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull String propertyName, int value)
+  public IMPLTYPE prop (@Nonnull final String propertyName, final int value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJSExpression propertyName, long value)
+  public IMPLTYPE prop (@Nonnull final IJSExpression propertyName, final long value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJson propertyName, long value)
+  public IMPLTYPE prop (@Nonnull final IJson propertyName, final long value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IHCNode propertyName, long value)
+  public IMPLTYPE prop (@Nonnull final IHCNode propertyName, final long value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull String propertyName, long value)
+  public IMPLTYPE prop (@Nonnull final String propertyName, final long value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJSExpression propertyName, @Nonnull BigInteger value)
+  public IMPLTYPE prop (@Nonnull final IJSExpression propertyName, @Nonnull final BigInteger value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJson propertyName, @Nonnull BigInteger value)
+  public IMPLTYPE prop (@Nonnull final IJson propertyName, @Nonnull final BigInteger value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IHCNode propertyName, @Nonnull BigInteger value)
+  public IMPLTYPE prop (@Nonnull final IHCNode propertyName, @Nonnull final BigInteger value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull String propertyName, @Nonnull BigInteger value)
+  public IMPLTYPE prop (@Nonnull final String propertyName, @Nonnull final BigInteger value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJSExpression propertyName, double value)
+  public IMPLTYPE prop (@Nonnull final IJSExpression propertyName, final double value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJson propertyName, double value)
+  public IMPLTYPE prop (@Nonnull final IJson propertyName, final double value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IHCNode propertyName, double value)
+  public IMPLTYPE prop (@Nonnull final IHCNode propertyName, final double value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull String propertyName, double value)
+  public IMPLTYPE prop (@Nonnull final String propertyName, final double value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJSExpression propertyName, @Nonnull BigDecimal value)
+  public IMPLTYPE prop (@Nonnull final IJSExpression propertyName, @Nonnull final BigDecimal value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJson propertyName, @Nonnull BigDecimal value)
+  public IMPLTYPE prop (@Nonnull final IJson propertyName, @Nonnull final BigDecimal value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IHCNode propertyName, @Nonnull BigDecimal value)
+  public IMPLTYPE prop (@Nonnull final IHCNode propertyName, @Nonnull final BigDecimal value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull String propertyName, @Nonnull BigDecimal value)
+  public IMPLTYPE prop (@Nonnull final String propertyName, @Nonnull final BigDecimal value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJSExpression propertyName, boolean value)
+  public IMPLTYPE prop (@Nonnull final IJSExpression propertyName, final boolean value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJson propertyName, boolean value)
+  public IMPLTYPE prop (@Nonnull final IJson propertyName, final boolean value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IHCNode propertyName, boolean value)
+  public IMPLTYPE prop (@Nonnull final IHCNode propertyName, final boolean value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull String propertyName, boolean value)
+  public IMPLTYPE prop (@Nonnull final String propertyName, final boolean value)
   {
     return prop ().arg (propertyName).arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJSExpression propertyName, @Nonnull JSAnonymousFunction function)
+  public IMPLTYPE prop (@Nonnull final IJSExpression propertyName, @Nonnull final JSAnonymousFunction function)
   {
     return prop ().arg (propertyName).arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IJson propertyName, @Nonnull JSAnonymousFunction function)
+  public IMPLTYPE prop (@Nonnull final IJson propertyName, @Nonnull final JSAnonymousFunction function)
   {
     return prop ().arg (propertyName).arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull IHCNode propertyName, @Nonnull JSAnonymousFunction function)
+  public IMPLTYPE prop (@Nonnull final IHCNode propertyName, @Nonnull final JSAnonymousFunction function)
   {
     return prop ().arg (propertyName).arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE prop (@Nonnull String propertyName, @Nonnull JSAnonymousFunction function)
+  public IMPLTYPE prop (@Nonnull final String propertyName, @Nonnull final JSAnonymousFunction function)
   {
     return prop ().arg (propertyName).arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE pushStack (@Nonnull IJSExpression elements)
+  public IMPLTYPE pushStack (@Nonnull final IJSExpression elements)
   {
     return pushStack ().arg (elements);
   }
 
   @Nonnull
-  public IMPLTYPE pushStack (@Nonnull JSArray elements)
+  public IMPLTYPE pushStack (@Nonnull final JSArray elements)
   {
     return pushStack ().arg (elements);
   }
 
   @Nonnull
-  public IMPLTYPE pushStack (@Nonnull IJSExpression elements,
-                             @Nonnull IJSExpression name,
-                             @Nonnull IJSExpression arguments)
+  public IMPLTYPE pushStack (@Nonnull final IJSExpression elements,
+                             @Nonnull final IJSExpression name,
+                             @Nonnull final IJSExpression arguments)
   {
     return pushStack ().arg (elements).arg (name).arg (arguments);
   }
 
   @Nonnull
-  public IMPLTYPE pushStack (@Nonnull JSArray elements, @Nonnull IJSExpression name, @Nonnull IJSExpression arguments)
+  public IMPLTYPE pushStack (@Nonnull final JSArray elements,
+                             @Nonnull final IJSExpression name,
+                             @Nonnull final IJSExpression arguments)
   {
     return pushStack ().arg (elements).arg (name).arg (arguments);
   }
 
   @Nonnull
-  public IMPLTYPE pushStack (@Nonnull IJSExpression elements, @Nonnull IJson name, @Nonnull IJSExpression arguments)
+  public IMPLTYPE pushStack (@Nonnull final IJSExpression elements,
+                             @Nonnull final IJson name,
+                             @Nonnull final IJSExpression arguments)
   {
     return pushStack ().arg (elements).arg (name).arg (arguments);
   }
 
   @Nonnull
-  public IMPLTYPE pushStack (@Nonnull JSArray elements, @Nonnull IJson name, @Nonnull IJSExpression arguments)
+  public IMPLTYPE pushStack (@Nonnull final JSArray elements,
+                             @Nonnull final IJson name,
+                             @Nonnull final IJSExpression arguments)
   {
     return pushStack ().arg (elements).arg (name).arg (arguments);
   }
 
   @Nonnull
-  public IMPLTYPE pushStack (@Nonnull IJSExpression elements, @Nonnull IHCNode name, @Nonnull IJSExpression arguments)
+  public IMPLTYPE pushStack (@Nonnull final IJSExpression elements,
+                             @Nonnull final IHCNode name,
+                             @Nonnull final IJSExpression arguments)
   {
     return pushStack ().arg (elements).arg (name).arg (arguments);
   }
 
   @Nonnull
-  public IMPLTYPE pushStack (@Nonnull JSArray elements, @Nonnull IHCNode name, @Nonnull IJSExpression arguments)
+  public IMPLTYPE pushStack (@Nonnull final JSArray elements,
+                             @Nonnull final IHCNode name,
+                             @Nonnull final IJSExpression arguments)
   {
     return pushStack ().arg (elements).arg (name).arg (arguments);
   }
 
   @Nonnull
-  public IMPLTYPE pushStack (@Nonnull IJSExpression elements, @Nonnull String name, @Nonnull IJSExpression arguments)
+  public IMPLTYPE pushStack (@Nonnull final IJSExpression elements,
+                             @Nonnull final String name,
+                             @Nonnull final IJSExpression arguments)
   {
     return pushStack ().arg (elements).arg (name).arg (arguments);
   }
 
   @Nonnull
-  public IMPLTYPE pushStack (@Nonnull JSArray elements, @Nonnull String name, @Nonnull IJSExpression arguments)
+  public IMPLTYPE pushStack (@Nonnull final JSArray elements,
+                             @Nonnull final String name,
+                             @Nonnull final IJSExpression arguments)
   {
     return pushStack ().arg (elements).arg (name).arg (arguments);
   }
 
   @Nonnull
-  public IMPLTYPE pushStack (@Nonnull IJSExpression elements, @Nonnull IJSExpression name, @Nonnull JSArray arguments)
+  public IMPLTYPE pushStack (@Nonnull final IJSExpression elements,
+                             @Nonnull final IJSExpression name,
+                             @Nonnull final JSArray arguments)
   {
     return pushStack ().arg (elements).arg (name).arg (arguments);
   }
 
   @Nonnull
-  public IMPLTYPE pushStack (@Nonnull JSArray elements, @Nonnull IJSExpression name, @Nonnull JSArray arguments)
+  public IMPLTYPE pushStack (@Nonnull final JSArray elements,
+                             @Nonnull final IJSExpression name,
+                             @Nonnull final JSArray arguments)
   {
     return pushStack ().arg (elements).arg (name).arg (arguments);
   }
 
   @Nonnull
-  public IMPLTYPE pushStack (@Nonnull IJSExpression elements, @Nonnull IJson name, @Nonnull JSArray arguments)
+  public IMPLTYPE pushStack (@Nonnull final IJSExpression elements,
+                             @Nonnull final IJson name,
+                             @Nonnull final JSArray arguments)
   {
     return pushStack ().arg (elements).arg (name).arg (arguments);
   }
 
   @Nonnull
-  public IMPLTYPE pushStack (@Nonnull JSArray elements, @Nonnull IJson name, @Nonnull JSArray arguments)
+  public IMPLTYPE pushStack (@Nonnull final JSArray elements,
+                             @Nonnull final IJson name,
+                             @Nonnull final JSArray arguments)
   {
     return pushStack ().arg (elements).arg (name).arg (arguments);
   }
 
   @Nonnull
-  public IMPLTYPE pushStack (@Nonnull IJSExpression elements, @Nonnull IHCNode name, @Nonnull JSArray arguments)
+  public IMPLTYPE pushStack (@Nonnull final IJSExpression elements,
+                             @Nonnull final IHCNode name,
+                             @Nonnull final JSArray arguments)
   {
     return pushStack ().arg (elements).arg (name).arg (arguments);
   }
 
   @Nonnull
-  public IMPLTYPE pushStack (@Nonnull JSArray elements, @Nonnull IHCNode name, @Nonnull JSArray arguments)
+  public IMPLTYPE pushStack (@Nonnull final JSArray elements,
+                             @Nonnull final IHCNode name,
+                             @Nonnull final JSArray arguments)
   {
     return pushStack ().arg (elements).arg (name).arg (arguments);
   }
 
   @Nonnull
-  public IMPLTYPE pushStack (@Nonnull IJSExpression elements, @Nonnull String name, @Nonnull JSArray arguments)
+  public IMPLTYPE pushStack (@Nonnull final IJSExpression elements,
+                             @Nonnull final String name,
+                             @Nonnull final JSArray arguments)
   {
     return pushStack ().arg (elements).arg (name).arg (arguments);
   }
 
   @Nonnull
-  public IMPLTYPE pushStack (@Nonnull JSArray elements, @Nonnull String name, @Nonnull JSArray arguments)
+  public IMPLTYPE pushStack (@Nonnull final JSArray elements,
+                             @Nonnull final String name,
+                             @Nonnull final JSArray arguments)
   {
     return pushStack ().arg (elements).arg (name).arg (arguments);
   }
 
   @Nonnull
-  public IMPLTYPE queue (@Nonnull IJSExpression queueName)
+  public IMPLTYPE queue (@Nonnull final IJSExpression queueName)
   {
     return queue ().arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE queue (@Nonnull IJson queueName)
+  public IMPLTYPE queue (@Nonnull final IJson queueName)
   {
     return queue ().arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE queue (@Nonnull IHCNode queueName)
+  public IMPLTYPE queue (@Nonnull final IHCNode queueName)
   {
     return queue ().arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE queue (@Nonnull String queueName)
+  public IMPLTYPE queue (@Nonnull final String queueName)
   {
     return queue ().arg (queueName);
   }
 
   @Nonnull
-  public IMPLTYPE queue (@Nonnull IJSExpression queueName, @Nonnull IJSExpression newQueue)
+  public IMPLTYPE queue (@Nonnull final IJSExpression queueName, @Nonnull final IJSExpression newQueue)
   {
     return queue ().arg (queueName).arg (newQueue);
   }
 
   @Nonnull
-  public IMPLTYPE queue (@Nonnull IJson queueName, @Nonnull IJSExpression newQueue)
+  public IMPLTYPE queue (@Nonnull final IJson queueName, @Nonnull final IJSExpression newQueue)
   {
     return queue ().arg (queueName).arg (newQueue);
   }
 
   @Nonnull
-  public IMPLTYPE queue (@Nonnull IHCNode queueName, @Nonnull IJSExpression newQueue)
+  public IMPLTYPE queue (@Nonnull final IHCNode queueName, @Nonnull final IJSExpression newQueue)
   {
     return queue ().arg (queueName).arg (newQueue);
   }
 
   @Nonnull
-  public IMPLTYPE queue (@Nonnull String queueName, @Nonnull IJSExpression newQueue)
+  public IMPLTYPE queue (@Nonnull final String queueName, @Nonnull final IJSExpression newQueue)
   {
     return queue ().arg (queueName).arg (newQueue);
   }
 
   @Nonnull
-  public IMPLTYPE queue (@Nonnull IJSExpression queueName, @Nonnull JSArray newQueue)
+  public IMPLTYPE queue (@Nonnull final IJSExpression queueName, @Nonnull final JSArray newQueue)
   {
     return queue ().arg (queueName).arg (newQueue);
   }
 
   @Nonnull
-  public IMPLTYPE queue (@Nonnull IJson queueName, @Nonnull JSArray newQueue)
+  public IMPLTYPE queue (@Nonnull final IJson queueName, @Nonnull final JSArray newQueue)
   {
     return queue ().arg (queueName).arg (newQueue);
   }
 
   @Nonnull
-  public IMPLTYPE queue (@Nonnull IHCNode queueName, @Nonnull JSArray newQueue)
+  public IMPLTYPE queue (@Nonnull final IHCNode queueName, @Nonnull final JSArray newQueue)
   {
     return queue ().arg (queueName).arg (newQueue);
   }
 
   @Nonnull
-  public IMPLTYPE queue (@Nonnull String queueName, @Nonnull JSArray newQueue)
+  public IMPLTYPE queue (@Nonnull final String queueName, @Nonnull final JSArray newQueue)
   {
     return queue ().arg (queueName).arg (newQueue);
   }
 
   @Nonnull
-  public IMPLTYPE queue (@Nonnull IJSExpression queueName, @Nonnull JSAnonymousFunction callback)
+  public IMPLTYPE queue (@Nonnull final IJSExpression queueName, @Nonnull final JSAnonymousFunction callback)
   {
     return queue ().arg (queueName).arg (callback);
   }
 
   @Nonnull
-  public IMPLTYPE queue (@Nonnull IJson queueName, @Nonnull JSAnonymousFunction callback)
+  public IMPLTYPE queue (@Nonnull final IJson queueName, @Nonnull final JSAnonymousFunction callback)
   {
     return queue ().arg (queueName).arg (callback);
   }
 
   @Nonnull
-  public IMPLTYPE queue (@Nonnull IHCNode queueName, @Nonnull JSAnonymousFunction callback)
+  public IMPLTYPE queue (@Nonnull final IHCNode queueName, @Nonnull final JSAnonymousFunction callback)
   {
     return queue ().arg (queueName).arg (callback);
   }
 
   @Nonnull
-  public IMPLTYPE queue (@Nonnull String queueName, @Nonnull JSAnonymousFunction callback)
+  public IMPLTYPE queue (@Nonnull final String queueName, @Nonnull final JSAnonymousFunction callback)
   {
     return queue ().arg (queueName).arg (callback);
   }
 
   @Nonnull
-  public IMPLTYPE ready (@Nonnull IJSExpression handler)
+  public IMPLTYPE ready (@Nonnull final IJSExpression handler)
   {
     return ready ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE ready (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE ready (@Nonnull final JSAnonymousFunction handler)
   {
     return ready ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE remove (@Nonnull IJSExpression selector)
+  public IMPLTYPE remove (@Nonnull final IJSExpression selector)
   {
     return remove ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE remove (@Nonnull IJson selector)
+  public IMPLTYPE remove (@Nonnull final IJson selector)
   {
     return remove ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE remove (@Nonnull IHCNode selector)
+  public IMPLTYPE remove (@Nonnull final IHCNode selector)
   {
     return remove ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE remove (@Nonnull String selector)
+  public IMPLTYPE remove (@Nonnull final String selector)
   {
     return remove ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE removeAttr (@Nonnull IJSExpression attributeName)
+  public IMPLTYPE removeAttr (@Nonnull final IJSExpression attributeName)
   {
     return removeAttr ().arg (attributeName);
   }
 
   @Nonnull
-  public IMPLTYPE removeAttr (@Nonnull IJson attributeName)
+  public IMPLTYPE removeAttr (@Nonnull final IJson attributeName)
   {
     return removeAttr ().arg (attributeName);
   }
 
   @Nonnull
-  public IMPLTYPE removeAttr (@Nonnull IHCNode attributeName)
+  public IMPLTYPE removeAttr (@Nonnull final IHCNode attributeName)
   {
     return removeAttr ().arg (attributeName);
   }
 
   @Nonnull
-  public IMPLTYPE removeAttr (@Nonnull String attributeName)
+  public IMPLTYPE removeAttr (@Nonnull final String attributeName)
   {
     return removeAttr ().arg (attributeName);
   }
 
   @Nonnull
-  public IMPLTYPE removeClass (@Nonnull IJSExpression className)
+  public IMPLTYPE removeClass (@Nonnull final IJSExpression className)
   {
     return removeClass ().arg (className);
   }
 
   @Nonnull
-  public IMPLTYPE removeClass (@Nonnull IJson className)
+  public IMPLTYPE removeClass (@Nonnull final IJson className)
   {
     return removeClass ().arg (className);
   }
 
   @Nonnull
-  public IMPLTYPE removeClass (@Nonnull IHCNode className)
+  public IMPLTYPE removeClass (@Nonnull final IHCNode className)
   {
     return removeClass ().arg (className);
   }
 
   @Nonnull
-  public IMPLTYPE removeClass (@Nonnull String className)
+  public IMPLTYPE removeClass (@Nonnull final String className)
   {
     return removeClass ().arg (className);
   }
 
   @Nonnull
-  public IMPLTYPE removeClass (@Nonnull JSAnonymousFunction function)
+  public IMPLTYPE removeClass (@Nonnull final JSAnonymousFunction function)
   {
     return removeClass ().arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE removeData (@Nonnull IJSExpression name)
+  public IMPLTYPE removeData (@Nonnull final IJSExpression name)
   {
     return removeData ().arg (name);
   }
 
   @Nonnull
-  public IMPLTYPE removeData (@Nonnull IJson name)
+  public IMPLTYPE removeData (@Nonnull final IJson name)
   {
     return removeData ().arg (name);
   }
 
   @Nonnull
-  public IMPLTYPE removeData (@Nonnull IHCNode name)
+  public IMPLTYPE removeData (@Nonnull final IHCNode name)
   {
     return removeData ().arg (name);
   }
 
   @Nonnull
-  public IMPLTYPE removeData (@Nonnull String name)
+  public IMPLTYPE removeData (@Nonnull final String name)
   {
     return removeData ().arg (name);
   }
 
   @Nonnull
-  public IMPLTYPE removeData (@Nonnull JSArray list)
+  public IMPLTYPE removeData (@Nonnull final JSArray list)
   {
     return removeData ().arg (list);
   }
 
   @Nonnull
-  public IMPLTYPE removeProp (@Nonnull IJSExpression propertyName)
+  public IMPLTYPE removeProp (@Nonnull final IJSExpression propertyName)
   {
     return removeProp ().arg (propertyName);
   }
 
   @Nonnull
-  public IMPLTYPE removeProp (@Nonnull IJson propertyName)
+  public IMPLTYPE removeProp (@Nonnull final IJson propertyName)
   {
     return removeProp ().arg (propertyName);
   }
 
   @Nonnull
-  public IMPLTYPE removeProp (@Nonnull IHCNode propertyName)
+  public IMPLTYPE removeProp (@Nonnull final IHCNode propertyName)
   {
     return removeProp ().arg (propertyName);
   }
 
   @Nonnull
-  public IMPLTYPE removeProp (@Nonnull String propertyName)
+  public IMPLTYPE removeProp (@Nonnull final String propertyName)
   {
     return removeProp ().arg (propertyName);
   }
 
   @Nonnull
-  public IMPLTYPE replaceAll (@Nonnull IJSExpression target)
+  public IMPLTYPE replaceAll (@Nonnull final IJSExpression target)
   {
     return replaceAll ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE replaceAll (@Nonnull IJQuerySelector target)
+  public IMPLTYPE replaceAll (@Nonnull final IJQuerySelector target)
   {
     return replaceAll ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE replaceAll (@Nonnull JQuerySelectorList target)
+  public IMPLTYPE replaceAll (@Nonnull final JQuerySelectorList target)
   {
     return replaceAll ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE replaceAll (@Nonnull EHTMLElement target)
+  public IMPLTYPE replaceAll (@Nonnull final EHTMLElement target)
   {
     return replaceAll ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE replaceAll (@Nonnull ICSSClassProvider target)
+  public IMPLTYPE replaceAll (@Nonnull final ICSSClassProvider target)
   {
     return replaceAll ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE replaceAll (@Nonnull JQueryInvocation target)
+  public IMPLTYPE replaceAll (@Nonnull final JQueryInvocation target)
   {
     return replaceAll ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE replaceAll (@Nonnull JSArray target)
+  public IMPLTYPE replaceAll (@Nonnull final JSArray target)
   {
     return replaceAll ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE replaceAll (@Nonnull String target)
+  public IMPLTYPE replaceAll (@Nonnull final String target)
   {
     return replaceAll ().arg (target);
   }
 
   @Nonnull
-  public IMPLTYPE replaceWith (@Nonnull IJSExpression newContent)
+  public IMPLTYPE replaceWith (@Nonnull final IJSExpression newContent)
   {
     return replaceWith ().arg (newContent);
   }
 
   @Nonnull
-  public IMPLTYPE replaceWith (@Nonnull IHCNode newContent)
+  public IMPLTYPE replaceWith (@Nonnull final IHCNode newContent)
   {
     return replaceWith ().arg (newContent);
   }
 
   @Nonnull
-  public IMPLTYPE replaceWith (@Nonnull String newContent)
+  public IMPLTYPE replaceWith (@Nonnull final String newContent)
   {
     return replaceWith ().arg (newContent);
   }
 
   @Nonnull
-  public IMPLTYPE replaceWith (@Nonnull EHTMLElement newContent)
+  public IMPLTYPE replaceWith (@Nonnull final EHTMLElement newContent)
   {
     return replaceWith ().arg (newContent);
   }
 
   @Nonnull
-  public IMPLTYPE replaceWith (@Nonnull JSArray newContent)
+  public IMPLTYPE replaceWith (@Nonnull final JSArray newContent)
   {
     return replaceWith ().arg (newContent);
   }
 
   @Nonnull
-  public IMPLTYPE replaceWith (@Nonnull JQueryInvocation newContent)
+  public IMPLTYPE replaceWith (@Nonnull final JQueryInvocation newContent)
   {
     return replaceWith ().arg (newContent);
   }
 
   @Nonnull
-  public IMPLTYPE replaceWith (@Nonnull JSAnonymousFunction function)
+  public IMPLTYPE replaceWith (@Nonnull final JSAnonymousFunction function)
   {
     return replaceWith ().arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE resize (@Nonnull IJSExpression handler)
+  public IMPLTYPE resize (@Nonnull final IJSExpression handler)
   {
     return resize ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE resize (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE resize (@Nonnull final JSAnonymousFunction handler)
   {
     return resize ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE resize (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE resize (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return resize ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE resize (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE resize (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return resize ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE scroll (@Nonnull IJSExpression handler)
+  public IMPLTYPE scroll (@Nonnull final IJSExpression handler)
   {
     return scroll ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE scroll (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE scroll (@Nonnull final JSAnonymousFunction handler)
   {
     return scroll ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE scroll (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE scroll (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return scroll ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE scroll (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE scroll (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return scroll ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE scrollLeft (@Nonnull IJSExpression value)
+  public IMPLTYPE scrollLeft (@Nonnull final IJSExpression value)
   {
     return scrollLeft ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE scrollLeft (int value)
+  public IMPLTYPE scrollLeft (final int value)
   {
     return scrollLeft ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE scrollLeft (long value)
+  public IMPLTYPE scrollLeft (final long value)
   {
     return scrollLeft ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE scrollLeft (@Nonnull BigInteger value)
+  public IMPLTYPE scrollLeft (@Nonnull final BigInteger value)
   {
     return scrollLeft ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE scrollLeft (double value)
+  public IMPLTYPE scrollLeft (final double value)
   {
     return scrollLeft ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE scrollLeft (@Nonnull BigDecimal value)
+  public IMPLTYPE scrollLeft (@Nonnull final BigDecimal value)
   {
     return scrollLeft ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE scrollTop (@Nonnull IJSExpression value)
+  public IMPLTYPE scrollTop (@Nonnull final IJSExpression value)
   {
     return scrollTop ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE scrollTop (int value)
+  public IMPLTYPE scrollTop (final int value)
   {
     return scrollTop ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE scrollTop (long value)
+  public IMPLTYPE scrollTop (final long value)
   {
     return scrollTop ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE scrollTop (@Nonnull BigInteger value)
+  public IMPLTYPE scrollTop (@Nonnull final BigInteger value)
   {
     return scrollTop ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE scrollTop (double value)
+  public IMPLTYPE scrollTop (final double value)
   {
     return scrollTop ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE scrollTop (@Nonnull BigDecimal value)
+  public IMPLTYPE scrollTop (@Nonnull final BigDecimal value)
   {
     return scrollTop ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE select (@Nonnull IJSExpression handler)
+  public IMPLTYPE select (@Nonnull final IJSExpression handler)
   {
     return select ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE select (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE select (@Nonnull final JSAnonymousFunction handler)
   {
     return select ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE select (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE select (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return select ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE select (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE select (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return select ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE show (@Nonnull IJSExpression duration)
+  public IMPLTYPE show (@Nonnull final IJSExpression duration)
   {
     return show ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE show (int duration)
+  public IMPLTYPE show (final int duration)
   {
     return show ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE show (long duration)
+  public IMPLTYPE show (final long duration)
   {
     return show ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE show (@Nonnull BigInteger duration)
+  public IMPLTYPE show (@Nonnull final BigInteger duration)
   {
     return show ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE show (double duration)
+  public IMPLTYPE show (final double duration)
   {
     return show ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE show (@Nonnull BigDecimal duration)
+  public IMPLTYPE show (@Nonnull final BigDecimal duration)
   {
     return show ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE show (@Nonnull IJson duration)
+  public IMPLTYPE show (@Nonnull final IJson duration)
   {
     return show ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE show (@Nonnull IHCNode duration)
+  public IMPLTYPE show (@Nonnull final IHCNode duration)
   {
     return show ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE show (@Nonnull String duration)
+  public IMPLTYPE show (@Nonnull final String duration)
   {
     return show ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE siblings (@Nonnull IJSExpression selector)
+  public IMPLTYPE siblings (@Nonnull final IJSExpression selector)
   {
     return siblings ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE siblings (@Nonnull IJQuerySelector selector)
+  public IMPLTYPE siblings (@Nonnull final IJQuerySelector selector)
   {
     return siblings ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE siblings (@Nonnull JQuerySelectorList selector)
+  public IMPLTYPE siblings (@Nonnull final JQuerySelectorList selector)
   {
     return siblings ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE siblings (@Nonnull EHTMLElement selector)
+  public IMPLTYPE siblings (@Nonnull final EHTMLElement selector)
   {
     return siblings ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE siblings (@Nonnull ICSSClassProvider selector)
+  public IMPLTYPE siblings (@Nonnull final ICSSClassProvider selector)
   {
     return siblings ().arg (selector);
   }
 
   @Nonnull
-  public IMPLTYPE slice (@Nonnull IJSExpression start)
+  public IMPLTYPE slice (@Nonnull final IJSExpression start)
   {
     return slice ().arg (start);
   }
 
   @Nonnull
-  public IMPLTYPE slice (int start)
+  public IMPLTYPE slice (final int start)
   {
     return slice ().arg (start);
   }
 
   @Nonnull
-  public IMPLTYPE slice (long start)
+  public IMPLTYPE slice (final long start)
   {
     return slice ().arg (start);
   }
 
   @Nonnull
-  public IMPLTYPE slice (@Nonnull BigInteger start)
+  public IMPLTYPE slice (@Nonnull final BigInteger start)
   {
     return slice ().arg (start);
   }
 
   @Nonnull
-  public IMPLTYPE slice (@Nonnull IJSExpression start, @Nonnull IJSExpression end)
+  public IMPLTYPE slice (@Nonnull final IJSExpression start, @Nonnull final IJSExpression end)
   {
     return slice ().arg (start).arg (end);
   }
 
   @Nonnull
-  public IMPLTYPE slice (int start, @Nonnull IJSExpression end)
+  public IMPLTYPE slice (final int start, @Nonnull final IJSExpression end)
   {
     return slice ().arg (start).arg (end);
   }
 
   @Nonnull
-  public IMPLTYPE slice (long start, @Nonnull IJSExpression end)
+  public IMPLTYPE slice (final long start, @Nonnull final IJSExpression end)
   {
     return slice ().arg (start).arg (end);
   }
 
   @Nonnull
-  public IMPLTYPE slice (@Nonnull BigInteger start, @Nonnull IJSExpression end)
+  public IMPLTYPE slice (@Nonnull final BigInteger start, @Nonnull final IJSExpression end)
   {
     return slice ().arg (start).arg (end);
   }
 
   @Nonnull
-  public IMPLTYPE slice (@Nonnull IJSExpression start, int end)
+  public IMPLTYPE slice (@Nonnull final IJSExpression start, final int end)
   {
     return slice ().arg (start).arg (end);
   }
 
   @Nonnull
-  public IMPLTYPE slice (int start, int end)
+  public IMPLTYPE slice (final int start, final int end)
   {
     return slice ().arg (start).arg (end);
   }
 
   @Nonnull
-  public IMPLTYPE slice (long start, int end)
+  public IMPLTYPE slice (final long start, final int end)
   {
     return slice ().arg (start).arg (end);
   }
 
   @Nonnull
-  public IMPLTYPE slice (@Nonnull BigInteger start, int end)
+  public IMPLTYPE slice (@Nonnull final BigInteger start, final int end)
   {
     return slice ().arg (start).arg (end);
   }
 
   @Nonnull
-  public IMPLTYPE slice (@Nonnull IJSExpression start, long end)
+  public IMPLTYPE slice (@Nonnull final IJSExpression start, final long end)
   {
     return slice ().arg (start).arg (end);
   }
 
   @Nonnull
-  public IMPLTYPE slice (int start, long end)
+  public IMPLTYPE slice (final int start, final long end)
   {
     return slice ().arg (start).arg (end);
   }
 
   @Nonnull
-  public IMPLTYPE slice (long start, long end)
+  public IMPLTYPE slice (final long start, final long end)
   {
     return slice ().arg (start).arg (end);
   }
 
   @Nonnull
-  public IMPLTYPE slice (@Nonnull BigInteger start, long end)
+  public IMPLTYPE slice (@Nonnull final BigInteger start, final long end)
   {
     return slice ().arg (start).arg (end);
   }
 
   @Nonnull
-  public IMPLTYPE slice (@Nonnull IJSExpression start, @Nonnull BigInteger end)
+  public IMPLTYPE slice (@Nonnull final IJSExpression start, @Nonnull final BigInteger end)
   {
     return slice ().arg (start).arg (end);
   }
 
   @Nonnull
-  public IMPLTYPE slice (int start, @Nonnull BigInteger end)
+  public IMPLTYPE slice (final int start, @Nonnull final BigInteger end)
   {
     return slice ().arg (start).arg (end);
   }
 
   @Nonnull
-  public IMPLTYPE slice (long start, @Nonnull BigInteger end)
+  public IMPLTYPE slice (final long start, @Nonnull final BigInteger end)
   {
     return slice ().arg (start).arg (end);
   }
 
   @Nonnull
-  public IMPLTYPE slice (@Nonnull BigInteger start, @Nonnull BigInteger end)
+  public IMPLTYPE slice (@Nonnull final BigInteger start, @Nonnull final BigInteger end)
   {
     return slice ().arg (start).arg (end);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull IJSExpression clearQueue)
+  public IMPLTYPE stop (@Nonnull final IJSExpression clearQueue)
   {
     return stop ().arg (clearQueue);
   }
 
   @Nonnull
-  public IMPLTYPE stop (boolean clearQueue)
+  public IMPLTYPE stop (final boolean clearQueue)
   {
     return stop ().arg (clearQueue);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull IJSExpression clearQueue, @Nonnull IJSExpression jumpToEnd)
+  public IMPLTYPE stop (@Nonnull final IJSExpression clearQueue, @Nonnull final IJSExpression jumpToEnd)
   {
     return stop ().arg (clearQueue).arg (jumpToEnd);
   }
 
   @Nonnull
-  public IMPLTYPE stop (boolean clearQueue, @Nonnull IJSExpression jumpToEnd)
+  public IMPLTYPE stop (final boolean clearQueue, @Nonnull final IJSExpression jumpToEnd)
   {
     return stop ().arg (clearQueue).arg (jumpToEnd);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull IJSExpression clearQueue, boolean jumpToEnd)
+  public IMPLTYPE stop (@Nonnull final IJSExpression clearQueue, final boolean jumpToEnd)
   {
     return stop ().arg (clearQueue).arg (jumpToEnd);
   }
 
   @Nonnull
-  public IMPLTYPE stop (boolean clearQueue, boolean jumpToEnd)
+  public IMPLTYPE stop (final boolean clearQueue, final boolean jumpToEnd)
   {
     return stop ().arg (clearQueue).arg (jumpToEnd);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull IJson queue)
+  public IMPLTYPE stop (@Nonnull final IJson queue)
   {
     return stop ().arg (queue);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull IHCNode queue)
+  public IMPLTYPE stop (@Nonnull final IHCNode queue)
   {
     return stop ().arg (queue);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull String queue)
+  public IMPLTYPE stop (@Nonnull final String queue)
   {
     return stop ().arg (queue);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull IJson queue, @Nonnull IJSExpression clearQueue)
+  public IMPLTYPE stop (@Nonnull final IJson queue, @Nonnull final IJSExpression clearQueue)
   {
     return stop ().arg (queue).arg (clearQueue);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull IHCNode queue, @Nonnull IJSExpression clearQueue)
+  public IMPLTYPE stop (@Nonnull final IHCNode queue, @Nonnull final IJSExpression clearQueue)
   {
     return stop ().arg (queue).arg (clearQueue);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull String queue, @Nonnull IJSExpression clearQueue)
+  public IMPLTYPE stop (@Nonnull final String queue, @Nonnull final IJSExpression clearQueue)
   {
     return stop ().arg (queue).arg (clearQueue);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull IJson queue, boolean clearQueue)
+  public IMPLTYPE stop (@Nonnull final IJson queue, final boolean clearQueue)
   {
     return stop ().arg (queue).arg (clearQueue);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull IHCNode queue, boolean clearQueue)
+  public IMPLTYPE stop (@Nonnull final IHCNode queue, final boolean clearQueue)
   {
     return stop ().arg (queue).arg (clearQueue);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull String queue, boolean clearQueue)
+  public IMPLTYPE stop (@Nonnull final String queue, final boolean clearQueue)
   {
     return stop ().arg (queue).arg (clearQueue);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull IJSExpression queue,
-                        @Nonnull IJSExpression clearQueue,
-                        @Nonnull IJSExpression jumpToEnd)
+  public IMPLTYPE stop (@Nonnull final IJSExpression queue,
+                        @Nonnull final IJSExpression clearQueue,
+                        @Nonnull final IJSExpression jumpToEnd)
   {
     return stop ().arg (queue).arg (clearQueue).arg (jumpToEnd);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull IJson queue, @Nonnull IJSExpression clearQueue, @Nonnull IJSExpression jumpToEnd)
+  public IMPLTYPE stop (@Nonnull final IJson queue,
+                        @Nonnull final IJSExpression clearQueue,
+                        @Nonnull final IJSExpression jumpToEnd)
   {
     return stop ().arg (queue).arg (clearQueue).arg (jumpToEnd);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull IHCNode queue, @Nonnull IJSExpression clearQueue, @Nonnull IJSExpression jumpToEnd)
+  public IMPLTYPE stop (@Nonnull final IHCNode queue,
+                        @Nonnull final IJSExpression clearQueue,
+                        @Nonnull final IJSExpression jumpToEnd)
   {
     return stop ().arg (queue).arg (clearQueue).arg (jumpToEnd);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull String queue, @Nonnull IJSExpression clearQueue, @Nonnull IJSExpression jumpToEnd)
+  public IMPLTYPE stop (@Nonnull final String queue,
+                        @Nonnull final IJSExpression clearQueue,
+                        @Nonnull final IJSExpression jumpToEnd)
   {
     return stop ().arg (queue).arg (clearQueue).arg (jumpToEnd);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull IJSExpression queue, boolean clearQueue, @Nonnull IJSExpression jumpToEnd)
+  public IMPLTYPE stop (@Nonnull final IJSExpression queue,
+                        final boolean clearQueue,
+                        @Nonnull final IJSExpression jumpToEnd)
   {
     return stop ().arg (queue).arg (clearQueue).arg (jumpToEnd);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull IJson queue, boolean clearQueue, @Nonnull IJSExpression jumpToEnd)
+  public IMPLTYPE stop (@Nonnull final IJson queue, final boolean clearQueue, @Nonnull final IJSExpression jumpToEnd)
   {
     return stop ().arg (queue).arg (clearQueue).arg (jumpToEnd);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull IHCNode queue, boolean clearQueue, @Nonnull IJSExpression jumpToEnd)
+  public IMPLTYPE stop (@Nonnull final IHCNode queue, final boolean clearQueue, @Nonnull final IJSExpression jumpToEnd)
   {
     return stop ().arg (queue).arg (clearQueue).arg (jumpToEnd);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull String queue, boolean clearQueue, @Nonnull IJSExpression jumpToEnd)
+  public IMPLTYPE stop (@Nonnull final String queue, final boolean clearQueue, @Nonnull final IJSExpression jumpToEnd)
   {
     return stop ().arg (queue).arg (clearQueue).arg (jumpToEnd);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull IJSExpression queue, @Nonnull IJSExpression clearQueue, boolean jumpToEnd)
+  public IMPLTYPE stop (@Nonnull final IJSExpression queue,
+                        @Nonnull final IJSExpression clearQueue,
+                        final boolean jumpToEnd)
   {
     return stop ().arg (queue).arg (clearQueue).arg (jumpToEnd);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull IJson queue, @Nonnull IJSExpression clearQueue, boolean jumpToEnd)
+  public IMPLTYPE stop (@Nonnull final IJson queue, @Nonnull final IJSExpression clearQueue, final boolean jumpToEnd)
   {
     return stop ().arg (queue).arg (clearQueue).arg (jumpToEnd);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull IHCNode queue, @Nonnull IJSExpression clearQueue, boolean jumpToEnd)
+  public IMPLTYPE stop (@Nonnull final IHCNode queue, @Nonnull final IJSExpression clearQueue, final boolean jumpToEnd)
   {
     return stop ().arg (queue).arg (clearQueue).arg (jumpToEnd);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull String queue, @Nonnull IJSExpression clearQueue, boolean jumpToEnd)
+  public IMPLTYPE stop (@Nonnull final String queue, @Nonnull final IJSExpression clearQueue, final boolean jumpToEnd)
   {
     return stop ().arg (queue).arg (clearQueue).arg (jumpToEnd);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull IJSExpression queue, boolean clearQueue, boolean jumpToEnd)
+  public IMPLTYPE stop (@Nonnull final IJSExpression queue, final boolean clearQueue, final boolean jumpToEnd)
   {
     return stop ().arg (queue).arg (clearQueue).arg (jumpToEnd);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull IJson queue, boolean clearQueue, boolean jumpToEnd)
+  public IMPLTYPE stop (@Nonnull final IJson queue, final boolean clearQueue, final boolean jumpToEnd)
   {
     return stop ().arg (queue).arg (clearQueue).arg (jumpToEnd);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull IHCNode queue, boolean clearQueue, boolean jumpToEnd)
+  public IMPLTYPE stop (@Nonnull final IHCNode queue, final boolean clearQueue, final boolean jumpToEnd)
   {
     return stop ().arg (queue).arg (clearQueue).arg (jumpToEnd);
   }
 
   @Nonnull
-  public IMPLTYPE stop (@Nonnull String queue, boolean clearQueue, boolean jumpToEnd)
+  public IMPLTYPE stop (@Nonnull final String queue, final boolean clearQueue, final boolean jumpToEnd)
   {
     return stop ().arg (queue).arg (clearQueue).arg (jumpToEnd);
   }
 
   @Nonnull
-  public IMPLTYPE submit (@Nonnull IJSExpression handler)
+  public IMPLTYPE submit (@Nonnull final IJSExpression handler)
   {
     return submit ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE submit (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE submit (@Nonnull final JSAnonymousFunction handler)
   {
     return submit ().arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE submit (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE submit (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return submit ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE submit (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE submit (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return submit ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE text (@Nonnull IJSExpression textString)
+  public IMPLTYPE text (@Nonnull final IJSExpression textString)
   {
     return text ().arg (textString);
   }
 
   @Nonnull
-  public IMPLTYPE text (@Nonnull IJson textString)
+  public IMPLTYPE text (@Nonnull final IJson textString)
   {
     return text ().arg (textString);
   }
 
   @Nonnull
-  public IMPLTYPE text (@Nonnull IHCNode textString)
+  public IMPLTYPE text (@Nonnull final IHCNode textString)
   {
     return text ().arg (textString);
   }
 
   @Nonnull
-  public IMPLTYPE text (@Nonnull String textString)
+  public IMPLTYPE text (@Nonnull final String textString)
   {
     return text ().arg (textString);
   }
 
   @Nonnull
-  public IMPLTYPE text (@Nonnull JSAnonymousFunction function)
+  public IMPLTYPE text (@Nonnull final JSAnonymousFunction function)
   {
     return text ().arg (function);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE toggle (@Nonnull IJSExpression handler, @Nonnull IJSExpression handler_eventObject_1)
+  public IMPLTYPE toggle (@Nonnull final IJSExpression handler, @Nonnull final IJSExpression handler_eventObject_1)
   {
     return toggle ().arg (handler).arg (handler_eventObject_1);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE toggle (@Nonnull JSAnonymousFunction handler, @Nonnull IJSExpression handler_eventObject_1)
+  public IMPLTYPE toggle (@Nonnull final JSAnonymousFunction handler, @Nonnull final IJSExpression handler_eventObject_1)
   {
     return toggle ().arg (handler).arg (handler_eventObject_1);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE toggle (@Nonnull IJSExpression handler, @Nonnull JSAnonymousFunction handler_eventObject_1)
+  public IMPLTYPE toggle (@Nonnull final IJSExpression handler, @Nonnull final JSAnonymousFunction handler_eventObject_1)
   {
     return toggle ().arg (handler).arg (handler_eventObject_1);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE toggle (@Nonnull JSAnonymousFunction handler, @Nonnull JSAnonymousFunction handler_eventObject_1)
+  public IMPLTYPE toggle (@Nonnull final JSAnonymousFunction handler,
+                          @Nonnull final JSAnonymousFunction handler_eventObject_1)
   {
     return toggle ().arg (handler).arg (handler_eventObject_1);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE toggle (@Nonnull IJSExpression handler,
-                          @Nonnull IJSExpression handler_eventObject_1,
-                          @Nonnull IJSExpression handler_eventObject_2)
+  public IMPLTYPE toggle (@Nonnull final IJSExpression handler,
+                          @Nonnull final IJSExpression handler_eventObject_1,
+                          @Nonnull final IJSExpression handler_eventObject_2)
   {
     return toggle ().arg (handler).arg (handler_eventObject_1).arg (handler_eventObject_2);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE toggle (@Nonnull JSAnonymousFunction handler,
-                          @Nonnull IJSExpression handler_eventObject_1,
-                          @Nonnull IJSExpression handler_eventObject_2)
+  public IMPLTYPE toggle (@Nonnull final JSAnonymousFunction handler,
+                          @Nonnull final IJSExpression handler_eventObject_1,
+                          @Nonnull final IJSExpression handler_eventObject_2)
   {
     return toggle ().arg (handler).arg (handler_eventObject_1).arg (handler_eventObject_2);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE toggle (@Nonnull IJSExpression handler,
-                          @Nonnull JSAnonymousFunction handler_eventObject_1,
-                          @Nonnull IJSExpression handler_eventObject_2)
+  public IMPLTYPE toggle (@Nonnull final IJSExpression handler,
+                          @Nonnull final JSAnonymousFunction handler_eventObject_1,
+                          @Nonnull final IJSExpression handler_eventObject_2)
   {
     return toggle ().arg (handler).arg (handler_eventObject_1).arg (handler_eventObject_2);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE toggle (@Nonnull JSAnonymousFunction handler,
-                          @Nonnull JSAnonymousFunction handler_eventObject_1,
-                          @Nonnull IJSExpression handler_eventObject_2)
+  public IMPLTYPE toggle (@Nonnull final JSAnonymousFunction handler,
+                          @Nonnull final JSAnonymousFunction handler_eventObject_1,
+                          @Nonnull final IJSExpression handler_eventObject_2)
   {
     return toggle ().arg (handler).arg (handler_eventObject_1).arg (handler_eventObject_2);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE toggle (@Nonnull IJSExpression handler,
-                          @Nonnull IJSExpression handler_eventObject_1,
-                          @Nonnull JSAnonymousFunction handler_eventObject_2)
+  public IMPLTYPE toggle (@Nonnull final IJSExpression handler,
+                          @Nonnull final IJSExpression handler_eventObject_1,
+                          @Nonnull final JSAnonymousFunction handler_eventObject_2)
   {
     return toggle ().arg (handler).arg (handler_eventObject_1).arg (handler_eventObject_2);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE toggle (@Nonnull JSAnonymousFunction handler,
-                          @Nonnull IJSExpression handler_eventObject_1,
-                          @Nonnull JSAnonymousFunction handler_eventObject_2)
+  public IMPLTYPE toggle (@Nonnull final JSAnonymousFunction handler,
+                          @Nonnull final IJSExpression handler_eventObject_1,
+                          @Nonnull final JSAnonymousFunction handler_eventObject_2)
   {
     return toggle ().arg (handler).arg (handler_eventObject_1).arg (handler_eventObject_2);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE toggle (@Nonnull IJSExpression handler,
-                          @Nonnull JSAnonymousFunction handler_eventObject_1,
-                          @Nonnull JSAnonymousFunction handler_eventObject_2)
+  public IMPLTYPE toggle (@Nonnull final IJSExpression handler,
+                          @Nonnull final JSAnonymousFunction handler_eventObject_1,
+                          @Nonnull final JSAnonymousFunction handler_eventObject_2)
   {
     return toggle ().arg (handler).arg (handler_eventObject_1).arg (handler_eventObject_2);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE toggle (@Nonnull JSAnonymousFunction handler,
-                          @Nonnull JSAnonymousFunction handler_eventObject_1,
-                          @Nonnull JSAnonymousFunction handler_eventObject_2)
+  public IMPLTYPE toggle (@Nonnull final JSAnonymousFunction handler,
+                          @Nonnull final JSAnonymousFunction handler_eventObject_1,
+                          @Nonnull final JSAnonymousFunction handler_eventObject_2)
   {
     return toggle ().arg (handler).arg (handler_eventObject_1).arg (handler_eventObject_2);
   }
 
   @Nonnull
-  public IMPLTYPE toggle (@Nonnull IJSExpression duration)
+  public IMPLTYPE toggle (@Nonnull final IJSExpression duration)
   {
     return toggle ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE toggle (int duration)
+  public IMPLTYPE toggle (final int duration)
   {
     return toggle ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE toggle (long duration)
+  public IMPLTYPE toggle (final long duration)
   {
     return toggle ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE toggle (@Nonnull BigInteger duration)
+  public IMPLTYPE toggle (@Nonnull final BigInteger duration)
   {
     return toggle ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE toggle (double duration)
+  public IMPLTYPE toggle (final double duration)
   {
     return toggle ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE toggle (@Nonnull BigDecimal duration)
+  public IMPLTYPE toggle (@Nonnull final BigDecimal duration)
   {
     return toggle ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE toggle (@Nonnull IJson duration)
+  public IMPLTYPE toggle (@Nonnull final IJson duration)
   {
     return toggle ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE toggle (@Nonnull IHCNode duration)
+  public IMPLTYPE toggle (@Nonnull final IHCNode duration)
   {
     return toggle ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE toggle (@Nonnull String duration)
+  public IMPLTYPE toggle (@Nonnull final String duration)
   {
     return toggle ().arg (duration);
   }
 
   @Nonnull
-  public IMPLTYPE toggle (boolean showOrHide)
+  public IMPLTYPE toggle (final boolean showOrHide)
   {
     return toggle ().arg (showOrHide);
   }
 
   @Nonnull
-  public IMPLTYPE toggleClass (@Nonnull IJSExpression className)
+  public IMPLTYPE toggleClass (@Nonnull final IJSExpression className)
   {
     return toggleClass ().arg (className);
   }
 
   @Nonnull
-  public IMPLTYPE toggleClass (@Nonnull IJson className)
+  public IMPLTYPE toggleClass (@Nonnull final IJson className)
   {
     return toggleClass ().arg (className);
   }
 
   @Nonnull
-  public IMPLTYPE toggleClass (@Nonnull IHCNode className)
+  public IMPLTYPE toggleClass (@Nonnull final IHCNode className)
   {
     return toggleClass ().arg (className);
   }
 
   @Nonnull
-  public IMPLTYPE toggleClass (@Nonnull String className)
+  public IMPLTYPE toggleClass (@Nonnull final String className)
   {
     return toggleClass ().arg (className);
   }
 
   @Nonnull
-  public IMPLTYPE toggleClass (@Nonnull IJSExpression className, @Nonnull IJSExpression _switch)
+  public IMPLTYPE toggleClass (@Nonnull final IJSExpression className, @Nonnull final IJSExpression _switch)
   {
     return toggleClass ().arg (className).arg (_switch);
   }
 
   @Nonnull
-  public IMPLTYPE toggleClass (@Nonnull IJson className, @Nonnull IJSExpression _switch)
+  public IMPLTYPE toggleClass (@Nonnull final IJson className, @Nonnull final IJSExpression _switch)
   {
     return toggleClass ().arg (className).arg (_switch);
   }
 
   @Nonnull
-  public IMPLTYPE toggleClass (@Nonnull IHCNode className, @Nonnull IJSExpression _switch)
+  public IMPLTYPE toggleClass (@Nonnull final IHCNode className, @Nonnull final IJSExpression _switch)
   {
     return toggleClass ().arg (className).arg (_switch);
   }
 
   @Nonnull
-  public IMPLTYPE toggleClass (@Nonnull String className, @Nonnull IJSExpression _switch)
+  public IMPLTYPE toggleClass (@Nonnull final String className, @Nonnull final IJSExpression _switch)
   {
     return toggleClass ().arg (className).arg (_switch);
   }
 
   @Nonnull
-  public IMPLTYPE toggleClass (@Nonnull IJSExpression className, boolean _switch)
+  public IMPLTYPE toggleClass (@Nonnull final IJSExpression className, final boolean _switch)
   {
     return toggleClass ().arg (className).arg (_switch);
   }
 
   @Nonnull
-  public IMPLTYPE toggleClass (@Nonnull IJson className, boolean _switch)
+  public IMPLTYPE toggleClass (@Nonnull final IJson className, final boolean _switch)
   {
     return toggleClass ().arg (className).arg (_switch);
   }
 
   @Nonnull
-  public IMPLTYPE toggleClass (@Nonnull IHCNode className, boolean _switch)
+  public IMPLTYPE toggleClass (@Nonnull final IHCNode className, final boolean _switch)
   {
     return toggleClass ().arg (className).arg (_switch);
   }
 
   @Nonnull
-  public IMPLTYPE toggleClass (@Nonnull String className, boolean _switch)
+  public IMPLTYPE toggleClass (@Nonnull final String className, final boolean _switch)
   {
     return toggleClass ().arg (className).arg (_switch);
   }
 
   @Nonnull
-  public IMPLTYPE toggleClass (boolean _switch)
+  public IMPLTYPE toggleClass (final boolean _switch)
   {
     return toggleClass ().arg (_switch);
   }
 
   @Nonnull
-  public IMPLTYPE toggleClass (@Nonnull JSAnonymousFunction function)
+  public IMPLTYPE toggleClass (@Nonnull final JSAnonymousFunction function)
   {
     return toggleClass ().arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE toggleClass (@Nonnull JSAnonymousFunction function, @Nonnull IJSExpression _switch)
+  public IMPLTYPE toggleClass (@Nonnull final JSAnonymousFunction function, @Nonnull final IJSExpression _switch)
   {
     return toggleClass ().arg (function).arg (_switch);
   }
 
   @Nonnull
-  public IMPLTYPE toggleClass (@Nonnull JSAnonymousFunction function, boolean _switch)
+  public IMPLTYPE toggleClass (@Nonnull final JSAnonymousFunction function, final boolean _switch)
   {
     return toggleClass ().arg (function).arg (_switch);
   }
 
   @Nonnull
-  public IMPLTYPE trigger (@Nonnull IJSExpression eventType)
+  public IMPLTYPE trigger (@Nonnull final IJSExpression eventType)
   {
     return trigger ().arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE trigger (@Nonnull IJson eventType)
+  public IMPLTYPE trigger (@Nonnull final IJson eventType)
   {
     return trigger ().arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE trigger (@Nonnull IHCNode eventType)
+  public IMPLTYPE trigger (@Nonnull final IHCNode eventType)
   {
     return trigger ().arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE trigger (@Nonnull String eventType)
+  public IMPLTYPE trigger (@Nonnull final String eventType)
   {
     return trigger ().arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE trigger (@Nonnull IJSExpression eventType, @Nonnull IJSExpression extraParameters)
+  public IMPLTYPE trigger (@Nonnull final IJSExpression eventType, @Nonnull final IJSExpression extraParameters)
   {
     return trigger ().arg (eventType).arg (extraParameters);
   }
 
   @Nonnull
-  public IMPLTYPE trigger (@Nonnull IJson eventType, @Nonnull IJSExpression extraParameters)
+  public IMPLTYPE trigger (@Nonnull final IJson eventType, @Nonnull final IJSExpression extraParameters)
   {
     return trigger ().arg (eventType).arg (extraParameters);
   }
 
   @Nonnull
-  public IMPLTYPE trigger (@Nonnull IHCNode eventType, @Nonnull IJSExpression extraParameters)
+  public IMPLTYPE trigger (@Nonnull final IHCNode eventType, @Nonnull final IJSExpression extraParameters)
   {
     return trigger ().arg (eventType).arg (extraParameters);
   }
 
   @Nonnull
-  public IMPLTYPE trigger (@Nonnull String eventType, @Nonnull IJSExpression extraParameters)
+  public IMPLTYPE trigger (@Nonnull final String eventType, @Nonnull final IJSExpression extraParameters)
   {
     return trigger ().arg (eventType).arg (extraParameters);
   }
 
   @Nonnull
-  public IMPLTYPE trigger (@Nonnull IJSExpression eventType, @Nonnull JSArray extraParameters)
+  public IMPLTYPE trigger (@Nonnull final IJSExpression eventType, @Nonnull final JSArray extraParameters)
   {
     return trigger ().arg (eventType).arg (extraParameters);
   }
 
   @Nonnull
-  public IMPLTYPE trigger (@Nonnull IJson eventType, @Nonnull JSArray extraParameters)
+  public IMPLTYPE trigger (@Nonnull final IJson eventType, @Nonnull final JSArray extraParameters)
   {
     return trigger ().arg (eventType).arg (extraParameters);
   }
 
   @Nonnull
-  public IMPLTYPE trigger (@Nonnull IHCNode eventType, @Nonnull JSArray extraParameters)
+  public IMPLTYPE trigger (@Nonnull final IHCNode eventType, @Nonnull final JSArray extraParameters)
   {
     return trigger ().arg (eventType).arg (extraParameters);
   }
 
   @Nonnull
-  public IMPLTYPE trigger (@Nonnull String eventType, @Nonnull JSArray extraParameters)
+  public IMPLTYPE trigger (@Nonnull final String eventType, @Nonnull final JSArray extraParameters)
   {
     return trigger ().arg (eventType).arg (extraParameters);
   }
 
   @Nonnull
-  public IMPLTYPE triggerHandler (@Nonnull IJSExpression eventType)
+  public IMPLTYPE triggerHandler (@Nonnull final IJSExpression eventType)
   {
     return triggerHandler ().arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE triggerHandler (@Nonnull IJson eventType)
+  public IMPLTYPE triggerHandler (@Nonnull final IJson eventType)
   {
     return triggerHandler ().arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE triggerHandler (@Nonnull IHCNode eventType)
+  public IMPLTYPE triggerHandler (@Nonnull final IHCNode eventType)
   {
     return triggerHandler ().arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE triggerHandler (@Nonnull String eventType)
+  public IMPLTYPE triggerHandler (@Nonnull final String eventType)
   {
     return triggerHandler ().arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE triggerHandler (@Nonnull IJSExpression eventType, @Nonnull IJSExpression extraParameters)
+  public IMPLTYPE triggerHandler (@Nonnull final IJSExpression eventType, @Nonnull final IJSExpression extraParameters)
   {
     return triggerHandler ().arg (eventType).arg (extraParameters);
   }
 
   @Nonnull
-  public IMPLTYPE triggerHandler (@Nonnull IJson eventType, @Nonnull IJSExpression extraParameters)
+  public IMPLTYPE triggerHandler (@Nonnull final IJson eventType, @Nonnull final IJSExpression extraParameters)
   {
     return triggerHandler ().arg (eventType).arg (extraParameters);
   }
 
   @Nonnull
-  public IMPLTYPE triggerHandler (@Nonnull IHCNode eventType, @Nonnull IJSExpression extraParameters)
+  public IMPLTYPE triggerHandler (@Nonnull final IHCNode eventType, @Nonnull final IJSExpression extraParameters)
   {
     return triggerHandler ().arg (eventType).arg (extraParameters);
   }
 
   @Nonnull
-  public IMPLTYPE triggerHandler (@Nonnull String eventType, @Nonnull IJSExpression extraParameters)
+  public IMPLTYPE triggerHandler (@Nonnull final String eventType, @Nonnull final IJSExpression extraParameters)
   {
     return triggerHandler ().arg (eventType).arg (extraParameters);
   }
 
   @Nonnull
-  public IMPLTYPE triggerHandler (@Nonnull IJSExpression eventType, @Nonnull JSArray extraParameters)
+  public IMPLTYPE triggerHandler (@Nonnull final IJSExpression eventType, @Nonnull final JSArray extraParameters)
   {
     return triggerHandler ().arg (eventType).arg (extraParameters);
   }
 
   @Nonnull
-  public IMPLTYPE triggerHandler (@Nonnull IJson eventType, @Nonnull JSArray extraParameters)
+  public IMPLTYPE triggerHandler (@Nonnull final IJson eventType, @Nonnull final JSArray extraParameters)
   {
     return triggerHandler ().arg (eventType).arg (extraParameters);
   }
 
   @Nonnull
-  public IMPLTYPE triggerHandler (@Nonnull IHCNode eventType, @Nonnull JSArray extraParameters)
+  public IMPLTYPE triggerHandler (@Nonnull final IHCNode eventType, @Nonnull final JSArray extraParameters)
   {
     return triggerHandler ().arg (eventType).arg (extraParameters);
   }
 
   @Nonnull
-  public IMPLTYPE triggerHandler (@Nonnull String eventType, @Nonnull JSArray extraParameters)
+  public IMPLTYPE triggerHandler (@Nonnull final String eventType, @Nonnull final JSArray extraParameters)
   {
     return triggerHandler ().arg (eventType).arg (extraParameters);
   }
 
   @Nonnull
-  public IMPLTYPE unbind (@Nonnull IJSExpression eventType)
+  public IMPLTYPE unbind (@Nonnull final IJSExpression eventType)
   {
     return unbind ().arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE unbind (@Nonnull IJson eventType)
+  public IMPLTYPE unbind (@Nonnull final IJson eventType)
   {
     return unbind ().arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE unbind (@Nonnull IHCNode eventType)
+  public IMPLTYPE unbind (@Nonnull final IHCNode eventType)
   {
     return unbind ().arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE unbind (@Nonnull String eventType)
+  public IMPLTYPE unbind (@Nonnull final String eventType)
   {
     return unbind ().arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE unbind (@Nonnull IJSExpression eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE unbind (@Nonnull final IJSExpression eventType, @Nonnull final IJSExpression handler)
   {
     return unbind ().arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE unbind (@Nonnull IJson eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE unbind (@Nonnull final IJson eventType, @Nonnull final IJSExpression handler)
   {
     return unbind ().arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE unbind (@Nonnull IHCNode eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE unbind (@Nonnull final IHCNode eventType, @Nonnull final IJSExpression handler)
   {
     return unbind ().arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE unbind (@Nonnull String eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE unbind (@Nonnull final String eventType, @Nonnull final IJSExpression handler)
   {
     return unbind ().arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE unbind (@Nonnull IJSExpression eventType, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE unbind (@Nonnull final IJSExpression eventType, @Nonnull final JSAnonymousFunction handler)
   {
     return unbind ().arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE unbind (@Nonnull IJson eventType, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE unbind (@Nonnull final IJson eventType, @Nonnull final JSAnonymousFunction handler)
   {
     return unbind ().arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE unbind (@Nonnull IHCNode eventType, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE unbind (@Nonnull final IHCNode eventType, @Nonnull final JSAnonymousFunction handler)
   {
     return unbind ().arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE unbind (@Nonnull String eventType, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE unbind (@Nonnull final String eventType, @Nonnull final JSAnonymousFunction handler)
   {
     return unbind ().arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE unbind (@Nonnull IJSExpression eventType, boolean _false)
+  public IMPLTYPE unbind (@Nonnull final IJSExpression eventType, final boolean _false)
   {
     return unbind ().arg (eventType).arg (_false);
   }
 
   @Nonnull
-  public IMPLTYPE unbind (@Nonnull IJson eventType, boolean _false)
+  public IMPLTYPE unbind (@Nonnull final IJson eventType, final boolean _false)
   {
     return unbind ().arg (eventType).arg (_false);
   }
 
   @Nonnull
-  public IMPLTYPE unbind (@Nonnull IHCNode eventType, boolean _false)
+  public IMPLTYPE unbind (@Nonnull final IHCNode eventType, final boolean _false)
   {
     return unbind ().arg (eventType).arg (_false);
   }
 
   @Nonnull
-  public IMPLTYPE unbind (@Nonnull String eventType, boolean _false)
+  public IMPLTYPE unbind (@Nonnull final String eventType, final boolean _false)
   {
     return unbind ().arg (eventType).arg (_false);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJSExpression selector, @Nonnull IJSExpression eventType)
+  public IMPLTYPE undelegate (@Nonnull final IJSExpression selector, @Nonnull final IJSExpression eventType)
   {
     return undelegate ().arg (selector).arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJson selector, @Nonnull IJSExpression eventType)
+  public IMPLTYPE undelegate (@Nonnull final IJson selector, @Nonnull final IJSExpression eventType)
   {
     return undelegate ().arg (selector).arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IHCNode selector, @Nonnull IJSExpression eventType)
+  public IMPLTYPE undelegate (@Nonnull final IHCNode selector, @Nonnull final IJSExpression eventType)
   {
     return undelegate ().arg (selector).arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull String selector, @Nonnull IJSExpression eventType)
+  public IMPLTYPE undelegate (@Nonnull final String selector, @Nonnull final IJSExpression eventType)
   {
     return undelegate ().arg (selector).arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJSExpression selector, @Nonnull IJson eventType)
+  public IMPLTYPE undelegate (@Nonnull final IJSExpression selector, @Nonnull final IJson eventType)
   {
     return undelegate ().arg (selector).arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJson selector, @Nonnull IJson eventType)
+  public IMPLTYPE undelegate (@Nonnull final IJson selector, @Nonnull final IJson eventType)
   {
     return undelegate ().arg (selector).arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IHCNode selector, @Nonnull IJson eventType)
+  public IMPLTYPE undelegate (@Nonnull final IHCNode selector, @Nonnull final IJson eventType)
   {
     return undelegate ().arg (selector).arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull String selector, @Nonnull IJson eventType)
+  public IMPLTYPE undelegate (@Nonnull final String selector, @Nonnull final IJson eventType)
   {
     return undelegate ().arg (selector).arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJSExpression selector, @Nonnull IHCNode eventType)
+  public IMPLTYPE undelegate (@Nonnull final IJSExpression selector, @Nonnull final IHCNode eventType)
   {
     return undelegate ().arg (selector).arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJson selector, @Nonnull IHCNode eventType)
+  public IMPLTYPE undelegate (@Nonnull final IJson selector, @Nonnull final IHCNode eventType)
   {
     return undelegate ().arg (selector).arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IHCNode selector, @Nonnull IHCNode eventType)
+  public IMPLTYPE undelegate (@Nonnull final IHCNode selector, @Nonnull final IHCNode eventType)
   {
     return undelegate ().arg (selector).arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull String selector, @Nonnull IHCNode eventType)
+  public IMPLTYPE undelegate (@Nonnull final String selector, @Nonnull final IHCNode eventType)
   {
     return undelegate ().arg (selector).arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJSExpression selector, @Nonnull String eventType)
+  public IMPLTYPE undelegate (@Nonnull final IJSExpression selector, @Nonnull final String eventType)
   {
     return undelegate ().arg (selector).arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJson selector, @Nonnull String eventType)
+  public IMPLTYPE undelegate (@Nonnull final IJson selector, @Nonnull final String eventType)
   {
     return undelegate ().arg (selector).arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IHCNode selector, @Nonnull String eventType)
+  public IMPLTYPE undelegate (@Nonnull final IHCNode selector, @Nonnull final String eventType)
   {
     return undelegate ().arg (selector).arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull String selector, @Nonnull String eventType)
+  public IMPLTYPE undelegate (@Nonnull final String selector, @Nonnull final String eventType)
   {
     return undelegate ().arg (selector).arg (eventType);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJSExpression selector,
-                              @Nonnull IJSExpression eventType,
-                              @Nonnull IJSExpression handler)
+  public IMPLTYPE undelegate (@Nonnull final IJSExpression selector,
+                              @Nonnull final IJSExpression eventType,
+                              @Nonnull final IJSExpression handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJson selector, @Nonnull IJSExpression eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE undelegate (@Nonnull final IJson selector,
+                              @Nonnull final IJSExpression eventType,
+                              @Nonnull final IJSExpression handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IHCNode selector,
-                              @Nonnull IJSExpression eventType,
-                              @Nonnull IJSExpression handler)
+  public IMPLTYPE undelegate (@Nonnull final IHCNode selector,
+                              @Nonnull final IJSExpression eventType,
+                              @Nonnull final IJSExpression handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull String selector, @Nonnull IJSExpression eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE undelegate (@Nonnull final String selector,
+                              @Nonnull final IJSExpression eventType,
+                              @Nonnull final IJSExpression handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJSExpression selector, @Nonnull IJson eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE undelegate (@Nonnull final IJSExpression selector,
+                              @Nonnull final IJson eventType,
+                              @Nonnull final IJSExpression handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJson selector, @Nonnull IJson eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE undelegate (@Nonnull final IJson selector,
+                              @Nonnull final IJson eventType,
+                              @Nonnull final IJSExpression handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IHCNode selector, @Nonnull IJson eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE undelegate (@Nonnull final IHCNode selector,
+                              @Nonnull final IJson eventType,
+                              @Nonnull final IJSExpression handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull String selector, @Nonnull IJson eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE undelegate (@Nonnull final String selector,
+                              @Nonnull final IJson eventType,
+                              @Nonnull final IJSExpression handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJSExpression selector,
-                              @Nonnull IHCNode eventType,
-                              @Nonnull IJSExpression handler)
+  public IMPLTYPE undelegate (@Nonnull final IJSExpression selector,
+                              @Nonnull final IHCNode eventType,
+                              @Nonnull final IJSExpression handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJson selector, @Nonnull IHCNode eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE undelegate (@Nonnull final IJson selector,
+                              @Nonnull final IHCNode eventType,
+                              @Nonnull final IJSExpression handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IHCNode selector, @Nonnull IHCNode eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE undelegate (@Nonnull final IHCNode selector,
+                              @Nonnull final IHCNode eventType,
+                              @Nonnull final IJSExpression handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull String selector, @Nonnull IHCNode eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE undelegate (@Nonnull final String selector,
+                              @Nonnull final IHCNode eventType,
+                              @Nonnull final IJSExpression handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJSExpression selector, @Nonnull String eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE undelegate (@Nonnull final IJSExpression selector,
+                              @Nonnull final String eventType,
+                              @Nonnull final IJSExpression handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJson selector, @Nonnull String eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE undelegate (@Nonnull final IJson selector,
+                              @Nonnull final String eventType,
+                              @Nonnull final IJSExpression handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IHCNode selector, @Nonnull String eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE undelegate (@Nonnull final IHCNode selector,
+                              @Nonnull final String eventType,
+                              @Nonnull final IJSExpression handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull String selector, @Nonnull String eventType, @Nonnull IJSExpression handler)
+  public IMPLTYPE undelegate (@Nonnull final String selector,
+                              @Nonnull final String eventType,
+                              @Nonnull final IJSExpression handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJSExpression selector,
-                              @Nonnull IJSExpression eventType,
-                              @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE undelegate (@Nonnull final IJSExpression selector,
+                              @Nonnull final IJSExpression eventType,
+                              @Nonnull final JSAnonymousFunction handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJson selector,
-                              @Nonnull IJSExpression eventType,
-                              @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE undelegate (@Nonnull final IJson selector,
+                              @Nonnull final IJSExpression eventType,
+                              @Nonnull final JSAnonymousFunction handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IHCNode selector,
-                              @Nonnull IJSExpression eventType,
-                              @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE undelegate (@Nonnull final IHCNode selector,
+                              @Nonnull final IJSExpression eventType,
+                              @Nonnull final JSAnonymousFunction handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull String selector,
-                              @Nonnull IJSExpression eventType,
-                              @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE undelegate (@Nonnull final String selector,
+                              @Nonnull final IJSExpression eventType,
+                              @Nonnull final JSAnonymousFunction handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJSExpression selector,
-                              @Nonnull IJson eventType,
-                              @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE undelegate (@Nonnull final IJSExpression selector,
+                              @Nonnull final IJson eventType,
+                              @Nonnull final JSAnonymousFunction handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJson selector, @Nonnull IJson eventType, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE undelegate (@Nonnull final IJson selector,
+                              @Nonnull final IJson eventType,
+                              @Nonnull final JSAnonymousFunction handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IHCNode selector, @Nonnull IJson eventType, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE undelegate (@Nonnull final IHCNode selector,
+                              @Nonnull final IJson eventType,
+                              @Nonnull final JSAnonymousFunction handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull String selector, @Nonnull IJson eventType, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE undelegate (@Nonnull final String selector,
+                              @Nonnull final IJson eventType,
+                              @Nonnull final JSAnonymousFunction handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJSExpression selector,
-                              @Nonnull IHCNode eventType,
-                              @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE undelegate (@Nonnull final IJSExpression selector,
+                              @Nonnull final IHCNode eventType,
+                              @Nonnull final JSAnonymousFunction handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJson selector, @Nonnull IHCNode eventType, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE undelegate (@Nonnull final IJson selector,
+                              @Nonnull final IHCNode eventType,
+                              @Nonnull final JSAnonymousFunction handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IHCNode selector,
-                              @Nonnull IHCNode eventType,
-                              @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE undelegate (@Nonnull final IHCNode selector,
+                              @Nonnull final IHCNode eventType,
+                              @Nonnull final JSAnonymousFunction handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull String selector, @Nonnull IHCNode eventType, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE undelegate (@Nonnull final String selector,
+                              @Nonnull final IHCNode eventType,
+                              @Nonnull final JSAnonymousFunction handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJSExpression selector,
-                              @Nonnull String eventType,
-                              @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE undelegate (@Nonnull final IJSExpression selector,
+                              @Nonnull final String eventType,
+                              @Nonnull final JSAnonymousFunction handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJson selector, @Nonnull String eventType, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE undelegate (@Nonnull final IJson selector,
+                              @Nonnull final String eventType,
+                              @Nonnull final JSAnonymousFunction handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IHCNode selector, @Nonnull String eventType, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE undelegate (@Nonnull final IHCNode selector,
+                              @Nonnull final String eventType,
+                              @Nonnull final JSAnonymousFunction handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull String selector, @Nonnull String eventType, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE undelegate (@Nonnull final String selector,
+                              @Nonnull final String eventType,
+                              @Nonnull final JSAnonymousFunction handler)
   {
     return undelegate ().arg (selector).arg (eventType).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJSExpression namespace)
+  public IMPLTYPE undelegate (@Nonnull final IJSExpression namespace)
   {
     return undelegate ().arg (namespace);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IJson namespace)
+  public IMPLTYPE undelegate (@Nonnull final IJson namespace)
   {
     return undelegate ().arg (namespace);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull IHCNode namespace)
+  public IMPLTYPE undelegate (@Nonnull final IHCNode namespace)
   {
     return undelegate ().arg (namespace);
   }
 
   @Nonnull
-  public IMPLTYPE undelegate (@Nonnull String namespace)
+  public IMPLTYPE undelegate (@Nonnull final String namespace)
   {
     return undelegate ().arg (namespace);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE unload (@Nonnull IJSExpression handler)
+  public IMPLTYPE unload (@Nonnull final IJSExpression handler)
   {
     return unload ().arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE unload (@Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE unload (@Nonnull final JSAnonymousFunction handler)
   {
     return unload ().arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE unload (@Nonnull IJSExpression eventData, @Nonnull IJSExpression handler)
+  public IMPLTYPE unload (@Nonnull final IJSExpression eventData, @Nonnull final IJSExpression handler)
   {
     return unload ().arg (eventData).arg (handler);
   }
 
   @Deprecated
   @Nonnull
-  public IMPLTYPE unload (@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler)
+  public IMPLTYPE unload (@Nonnull final IJSExpression eventData, @Nonnull final JSAnonymousFunction handler)
   {
     return unload ().arg (eventData).arg (handler);
   }
 
   @Nonnull
-  public IMPLTYPE val (@Nonnull IJSExpression value)
+  public IMPLTYPE val (@Nonnull final IJSExpression value)
   {
     return val ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE val (@Nonnull IJson value)
+  public IMPLTYPE val (@Nonnull final IJson value)
   {
     return val ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE val (@Nonnull IHCNode value)
+  public IMPLTYPE val (@Nonnull final IHCNode value)
   {
     return val ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE val (@Nonnull String value)
+  public IMPLTYPE val (@Nonnull final String value)
   {
     return val ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE val (@Nonnull JSArray value)
+  public IMPLTYPE val (@Nonnull final JSArray value)
   {
     return val ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE val (@Nonnull JSAnonymousFunction function)
+  public IMPLTYPE val (@Nonnull final JSAnonymousFunction function)
   {
     return val ().arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE width (@Nonnull IJSExpression value)
+  public IMPLTYPE width (@Nonnull final IJSExpression value)
   {
     return width ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE width (@Nonnull IJson value)
+  public IMPLTYPE width (@Nonnull final IJson value)
   {
     return width ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE width (@Nonnull IHCNode value)
+  public IMPLTYPE width (@Nonnull final IHCNode value)
   {
     return width ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE width (@Nonnull String value)
+  public IMPLTYPE width (@Nonnull final String value)
   {
     return width ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE width (int value)
+  public IMPLTYPE width (final int value)
   {
     return width ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE width (long value)
+  public IMPLTYPE width (final long value)
   {
     return width ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE width (@Nonnull BigInteger value)
+  public IMPLTYPE width (@Nonnull final BigInteger value)
   {
     return width ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE width (double value)
+  public IMPLTYPE width (final double value)
   {
     return width ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE width (@Nonnull BigDecimal value)
+  public IMPLTYPE width (@Nonnull final BigDecimal value)
   {
     return width ().arg (value);
   }
 
   @Nonnull
-  public IMPLTYPE width (@Nonnull JSAnonymousFunction function)
+  public IMPLTYPE width (@Nonnull final JSAnonymousFunction function)
   {
     return width ().arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE wrap (@Nonnull IJSExpression wrappingElement)
+  public IMPLTYPE wrap (@Nonnull final IJSExpression wrappingElement)
   {
     return wrap ().arg (wrappingElement);
   }
 
   @Nonnull
-  public IMPLTYPE wrap (@Nonnull IJQuerySelector wrappingElement)
+  public IMPLTYPE wrap (@Nonnull final IJQuerySelector wrappingElement)
   {
     return wrap ().arg (wrappingElement);
   }
 
   @Nonnull
-  public IMPLTYPE wrap (@Nonnull JQuerySelectorList wrappingElement)
+  public IMPLTYPE wrap (@Nonnull final JQuerySelectorList wrappingElement)
   {
     return wrap ().arg (wrappingElement);
   }
 
   @Nonnull
-  public IMPLTYPE wrap (@Nonnull EHTMLElement wrappingElement)
+  public IMPLTYPE wrap (@Nonnull final EHTMLElement wrappingElement)
   {
     return wrap ().arg (wrappingElement);
   }
 
   @Nonnull
-  public IMPLTYPE wrap (@Nonnull ICSSClassProvider wrappingElement)
+  public IMPLTYPE wrap (@Nonnull final ICSSClassProvider wrappingElement)
   {
     return wrap ().arg (wrappingElement);
   }
 
   @Nonnull
-  public IMPLTYPE wrap (@Nonnull IHCNode wrappingElement)
+  public IMPLTYPE wrap (@Nonnull final IHCNode wrappingElement)
   {
     return wrap ().arg (wrappingElement);
   }
 
   @Nonnull
-  public IMPLTYPE wrap (@Nonnull String wrappingElement)
+  public IMPLTYPE wrap (@Nonnull final String wrappingElement)
   {
     return wrap ().arg (wrappingElement);
   }
 
   @Nonnull
-  public IMPLTYPE wrap (@Nonnull JQueryInvocation wrappingElement)
+  public IMPLTYPE wrap (@Nonnull final JQueryInvocation wrappingElement)
   {
     return wrap ().arg (wrappingElement);
   }
 
   @Nonnull
-  public IMPLTYPE wrap (@Nonnull JSAnonymousFunction function)
+  public IMPLTYPE wrap (@Nonnull final JSAnonymousFunction function)
   {
     return wrap ().arg (function);
   }
 
   @Nonnull
-  public IMPLTYPE wrapAll (@Nonnull IJSExpression wrappingElement)
+  public IMPLTYPE wrapAll (@Nonnull final IJSExpression wrappingElement)
   {
     return wrapAll ().arg (wrappingElement);
   }
 
   @Nonnull
-  public IMPLTYPE wrapAll (@Nonnull IJQuerySelector wrappingElement)
+  public IMPLTYPE wrapAll (@Nonnull final IJQuerySelector wrappingElement)
   {
     return wrapAll ().arg (wrappingElement);
   }
 
   @Nonnull
-  public IMPLTYPE wrapAll (@Nonnull JQuerySelectorList wrappingElement)
+  public IMPLTYPE wrapAll (@Nonnull final JQuerySelectorList wrappingElement)
   {
     return wrapAll ().arg (wrappingElement);
   }
 
   @Nonnull
-  public IMPLTYPE wrapAll (@Nonnull EHTMLElement wrappingElement)
+  public IMPLTYPE wrapAll (@Nonnull final EHTMLElement wrappingElement)
   {
     return wrapAll ().arg (wrappingElement);
   }
 
   @Nonnull
-  public IMPLTYPE wrapAll (@Nonnull ICSSClassProvider wrappingElement)
+  public IMPLTYPE wrapAll (@Nonnull final ICSSClassProvider wrappingElement)
   {
     return wrapAll ().arg (wrappingElement);
   }
 
   @Nonnull
-  public IMPLTYPE wrapAll (@Nonnull IHCNode wrappingElement)
+  public IMPLTYPE wrapAll (@Nonnull final IHCNode wrappingElement)
   {
     return wrapAll ().arg (wrappingElement);
   }
 
   @Nonnull
-  public IMPLTYPE wrapAll (@Nonnull String wrappingElement)
+  public IMPLTYPE wrapAll (@Nonnull final String wrappingElement)
   {
     return wrapAll ().arg (wrappingElement);
   }
 
   @Nonnull
-  public IMPLTYPE wrapAll (@Nonnull JQueryInvocation wrappingElement)
+  public IMPLTYPE wrapAll (@Nonnull final JQueryInvocation wrappingElement)
   {
     return wrapAll ().arg (wrappingElement);
   }
 
   @Nonnull
-  public IMPLTYPE wrapInner (@Nonnull IJSExpression wrappingElement)
+  public IMPLTYPE wrapInner (@Nonnull final IJSExpression wrappingElement)
   {
     return wrapInner ().arg (wrappingElement);
   }
 
   @Nonnull
-  public IMPLTYPE wrapInner (@Nonnull IJson wrappingElement)
+  public IMPLTYPE wrapInner (@Nonnull final IJson wrappingElement)
   {
     return wrapInner ().arg (wrappingElement);
   }
 
   @Nonnull
-  public IMPLTYPE wrapInner (@Nonnull IHCNode wrappingElement)
+  public IMPLTYPE wrapInner (@Nonnull final IHCNode wrappingElement)
   {
     return wrapInner ().arg (wrappingElement);
   }
 
   @Nonnull
-  public IMPLTYPE wrapInner (@Nonnull String wrappingElement)
+  public IMPLTYPE wrapInner (@Nonnull final String wrappingElement)
   {
     return wrapInner ().arg (wrappingElement);
   }
 
   @Nonnull
-  public IMPLTYPE wrapInner (@Nonnull JSAnonymousFunction function)
+  public IMPLTYPE wrapInner (@Nonnull final JSAnonymousFunction function)
   {
     return wrapInner ().arg (function);
   }
