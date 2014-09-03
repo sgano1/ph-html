@@ -34,27 +34,39 @@ import com.helger.css.media.CSSMediaList;
  */
 public final class ConstantCSSPathProvider implements ICSSPathProvider
 {
+  private static final String DEFAULT_CONDITIONAL_COMMENT = null;
+  private static final CSSMediaList DEFAULT_CSS_MEDIA_LIST = null;
+
   private final String m_sPath;
   private final String m_sMinifiedPath;
+  private final String m_sConditionalComment;
   private final CSSMediaList m_aCSSMediaList;
 
   public ConstantCSSPathProvider (@Nonnull @Nonempty final String sPath)
   {
-    this (sPath, CSSFilenameHelper.getMinifiedCSSFilename (sPath));
+    this (sPath, DEFAULT_CONDITIONAL_COMMENT, DEFAULT_CSS_MEDIA_LIST);
   }
 
   public ConstantCSSPathProvider (@Nonnull @Nonempty final String sPath, @Nullable final CSSMediaList aMediaList)
   {
-    this (sPath, CSSFilenameHelper.getMinifiedCSSFilename (sPath), aMediaList);
+    this (sPath, DEFAULT_CONDITIONAL_COMMENT, aMediaList);
+  }
+
+  public ConstantCSSPathProvider (@Nonnull @Nonempty final String sPath,
+                                  @Nullable final String sConditionalComment,
+                                  @Nullable final CSSMediaList aMediaList)
+  {
+    this (sPath, CSSFilenameHelper.getMinifiedCSSFilename (sPath), sConditionalComment, aMediaList);
   }
 
   public ConstantCSSPathProvider (@Nonnull @Nonempty final String sPath, @Nonnull @Nonempty final String sMinifiedPath)
   {
-    this (sPath, sMinifiedPath, (CSSMediaList) null);
+    this (sPath, sMinifiedPath, DEFAULT_CONDITIONAL_COMMENT, DEFAULT_CSS_MEDIA_LIST);
   }
 
   public ConstantCSSPathProvider (@Nonnull @Nonempty final String sPath,
                                   @Nonnull @Nonempty final String sMinifiedPath,
+                                  @Nullable final String sConditionalComment,
                                   @Nullable final CSSMediaList aMediaList)
   {
     ValueEnforcer.notEmpty (sPath, "Path");
@@ -65,6 +77,7 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
       throw new IllegalArgumentException ("minified path");
     m_sPath = sPath;
     m_sMinifiedPath = sMinifiedPath;
+    m_sConditionalComment = sConditionalComment;
     // Use clone in ph-css > 3.8.0
     m_aCSSMediaList = aMediaList == null ? new CSSMediaList () : new CSSMediaList (aMediaList.getAllMedia ());
   }
@@ -74,6 +87,12 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
   public String getCSSItemPath (final boolean bRegular)
   {
     return bRegular ? m_sPath : m_sMinifiedPath;
+  }
+
+  @Nullable
+  public String getConditionalComment ()
+  {
+    return m_sConditionalComment;
   }
 
   @Nonnull

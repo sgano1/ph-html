@@ -19,6 +19,7 @@ package com.helger.html.resource.css;
 import java.io.Serializable;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import com.helger.commons.annotations.MustImplementEqualsAndHashcode;
 import com.helger.commons.annotations.Nonempty;
@@ -43,6 +44,13 @@ public interface ICSSPathProvider extends Serializable
   @Nonnull
   @Nonempty
   String getCSSItemPath (boolean bRegular);
+
+  /**
+   * @return The conditional comment required for this JS item or
+   *         <code>null</code> if it applies to all browsers.
+   */
+  @Nullable
+  String getConditionalComment ();
 
   /**
    * @return The media list for which this CSS item applies. Never

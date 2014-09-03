@@ -32,8 +32,8 @@ import com.helger.commons.string.ToStringGenerator;
  */
 public final class ConstantJSPathProvider implements IJSPathProvider
 {
-  public static final String DEFAULT_CONDITIONAL_COMMENT = null;
   public static final boolean DEFAULT_CAN_BE_BUNDLED = true;
+  private static final String DEFAULT_CONDITIONAL_COMMENT = null;
 
   private final String m_sPath;
   private final String m_sMinifiedPath;
