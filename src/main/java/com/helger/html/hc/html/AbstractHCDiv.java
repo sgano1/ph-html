@@ -33,6 +33,8 @@ import com.helger.html.hc.impl.AbstractHCElementWithChildren;
  * Represents an HTML &lt;div&gt; element with open semantics.
  *
  * @author Philip Helger
+ * @param <THISTYPE>
+ *        Implementation type
  */
 public abstract class AbstractHCDiv <THISTYPE extends AbstractHCDiv <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE> implements IHCDiv <THISTYPE>
 {

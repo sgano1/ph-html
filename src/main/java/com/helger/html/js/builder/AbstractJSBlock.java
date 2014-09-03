@@ -937,6 +937,8 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   /**
    * Create a Do statement and add it to this block
    *
+   * @param aTest
+   *        Do test
    * @return Newly generated Do statement
    */
   @Nonnull
@@ -947,6 +949,10 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
 
   /**
    * Create a switch/case statement and add it to this block
+   *
+   * @param aTest
+   *        test expression
+   * @return Created switch statement
    */
   @Nonnull
   public JSSwitch _switch (@Nonnull final IJSExpression aTest)
@@ -970,6 +976,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
    *
    * @param aExpr
    *        the expression to be deleted. May not be <code>null</code>.
+   * @return this
    */
   @Nonnull
   public AbstractJSBlock delete (@Nonnull final IJSExpression aExpr)
@@ -980,6 +987,10 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
 
   /**
    * Create a throw statement and add it to this block
+   *
+   * @param aExpr
+   *        Throwing expression
+   * @return this
    */
   @Nonnull
   public AbstractJSBlock _throw (@Nonnull final IJSExpression aExpr)
@@ -988,6 +999,9 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
     return this;
   }
 
+  /**
+   * @return this
+   */
   @Nonnull
   public AbstractJSBlock debugger ()
   {
@@ -998,6 +1012,10 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   /**
    * Create a label, which can be referenced from <code>continue</code> and
    * <code>break</code> statements.
+   *
+   * @param sName
+   *        name
+   * @return this
    */
   @Nonnull
   public JSLabel label (@Nonnull @Nonempty final String sName)
@@ -1020,6 +1038,8 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
 
   /**
    * Create a return statement and add it to this block
+   *
+   * @return this
    */
   @Nonnull
   public AbstractJSBlock _return ()
@@ -1077,6 +1097,10 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
 
   /**
    * Create a return statement and add it to this block
+   * 
+   * @param aExpr
+   *        Expression to return
+   * @return this
    */
   @Nonnull
   public AbstractJSBlock _return (@Nullable final IJSExpression aExpr)

@@ -38,8 +38,10 @@ import com.helger.html.js.provider.CollectingJSCodeProvider;
 
 /**
  * Abstract implementation of {@link IHCSpecialNodes}.
- * 
+ *
  * @author Philip Helger
+ * @param <IMPLTYPE>
+ *        Implementation type
  */
 @NotThreadSafe
 public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecialNodes <IMPLTYPE>> implements IHCSpecialNodes

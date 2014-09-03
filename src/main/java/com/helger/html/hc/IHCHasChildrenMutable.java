@@ -29,8 +29,10 @@ import com.helger.html.hc.impl.HCNodeList;
 
 /**
  * Base interface for HC nodes that have mutable children.
- * 
+ *
  * @author Philip Helger
+ * @param <THISTYPE>
+ *        Implementation type
  */
 public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode> extends IHCHasChildren
 {
@@ -54,7 +56,7 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
 
   /**
    * Use {@link #addChild(IHCNode)} instead.
-   * 
+   *
    * @param aChild
    *        The child to add. May be <code>null</code>.
    * @return this
@@ -103,7 +105,7 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
 
   /**
    * Remove the child at the specified index.
-   * 
+   *
    * @param nIndex
    *        The index to use. Must be &ge; 0.
    * @return this
@@ -113,7 +115,7 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
 
   /**
    * Remove the passed direct child object.
-   * 
+   *
    * @param aNode
    *        The node to be removed. May not be <code>null</code>.
    * @return this
@@ -123,7 +125,7 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
 
   /**
    * Remove all children of this object.
-   * 
+   *
    * @return this
    */
   @Nonnull
@@ -131,7 +133,7 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
 
   /**
    * Check if any of the specified elements is contained as a child of this.
-   * 
+   *
    * @param aElements
    *        The elements to check. May neither be <code>null</code> nor empty.
    * @return <code>true</code> if at least one of the specified elements is
@@ -141,7 +143,7 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
 
   /**
    * Sort all children with the passed comparator
-   * 
+   *
    * @param aComparator
    *        The comparator to be used. May not be <code>null</code>.
    * @return this

@@ -25,7 +25,7 @@ import com.helger.commons.string.ToStringGenerator;
 
 /**
  * Case statement
- * 
+ *
  * @author Philip Helger
  */
 public class JSCase implements IJSStatement
@@ -49,6 +49,9 @@ public class JSCase implements IJSStatement
 
   /**
    * Construct a case statement
+   * 
+   * @param aLabel
+   *        May not be <code>null</code>.
    */
   public JSCase (@Nonnull final IJSExpression aLabel)
   {
@@ -58,7 +61,7 @@ public class JSCase implements IJSStatement
   /**
    * Construct a case statement. If isDefaultCase is true, then label should be
    * null since default cases don't have a label.
-   * 
+   *
    * @param aLabel
    *        May be <code>null</code> if this is the default case
    * @param bIsDefaultCase

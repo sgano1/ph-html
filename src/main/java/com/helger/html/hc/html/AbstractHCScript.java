@@ -39,6 +39,8 @@ import com.helger.html.hc.impl.AbstractHCElement;
  * @author Philip Helger
  * @see HCScript
  * @see HCScriptFile
+ * @param <IMPLTYPE>
+ *        Implementation type
  */
 public abstract class AbstractHCScript <IMPLTYPE extends AbstractHCScript <IMPLTYPE>> extends AbstractHCElement <IMPLTYPE> implements IHCJSNode
 {

@@ -28,7 +28,7 @@ import com.helger.commons.string.ToStringGenerator;
 
 /**
  * A part is a part of a JSDoc comment, and it is a list of values.
- * 
+ *
  * @author Philip Helger
  */
 public class JSCommentPart extends ArrayList <Object>
@@ -37,6 +37,8 @@ public class JSCommentPart extends ArrayList <Object>
    * Appends a new value. If the value is {@link AbstractJSType} it will be
    * printed as a @link tag. Otherwise it will be converted to String via
    * {@link Object#toString()} .
+   *
+   * @return this
    */
   public JSCommentPart append (@Nullable final Object aValue)
   {

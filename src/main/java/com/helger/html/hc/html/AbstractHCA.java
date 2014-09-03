@@ -40,6 +40,8 @@ import com.helger.html.js.IJSCodeProvider;
  * Represents an HTML &lt;a&gt; element
  *
  * @author Philip Helger
+ * @param <THISTYPE>
+ *        Implementation type
  */
 public class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE> implements IHCHasMedia <THISTYPE>
 {

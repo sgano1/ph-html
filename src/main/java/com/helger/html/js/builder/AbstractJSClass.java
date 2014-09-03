@@ -68,28 +68,36 @@ public abstract class AbstractJSClass extends AbstractJSType
     return false;
   }
 
-  /** Generates a static method invocation. */
+  /**
+   * Generates a static method invocation.
+   */
   @Nonnull
   public final JSInvocation staticInvoke (@Nonnull final JSMethod aMethod)
   {
     return new JSInvocation (this, aMethod);
   }
 
-  /** Generates a static method invocation. */
+  /**
+   * Generates a static method invocation.
+   */
   @Nonnull
   public final JSInvocation staticInvoke (@Nonnull @Nonempty final String sMethod)
   {
     return new JSInvocation (this, sMethod);
   }
 
-  /** Static field reference. */
+  /**
+   * Static field reference.
+   */
   @Nonnull
   public final JSFieldRef staticRef (@Nonnull @Nonempty final String sField)
   {
     return new JSFieldRef (this, sField);
   }
 
-  /** Static field reference. */
+  /**
+   * Static field reference.
+   */
   @Nonnull
   public final JSFieldRef staticRef (@Nonnull final JSVar aField)
   {

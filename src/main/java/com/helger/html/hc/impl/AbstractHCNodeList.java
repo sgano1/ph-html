@@ -29,8 +29,10 @@ import com.helger.html.hc.IHCNodeWithChildren;
 /**
  * This class is an abstract HC node that represents a list of nodes without
  * creating an HTML element by itself.
- * 
+ *
  * @author Philip Helger
+ * @param <THISTYPE>
+ *        Implementation type
  */
 @NotThreadSafe
 public abstract class AbstractHCNodeList <THISTYPE extends AbstractHCNodeList <THISTYPE>> extends AbstractHCHasChildrenMutable <THISTYPE, IHCNode> implements IHCNodeWithChildren <THISTYPE>

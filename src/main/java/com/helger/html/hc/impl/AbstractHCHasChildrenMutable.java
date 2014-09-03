@@ -50,8 +50,12 @@ import com.helger.html.hc.htmlext.HCUtils;
 /**
  * This class is an abstract HC node that represents a list of nodes without
  * creating an HTML element by itself.
- * 
+ *
  * @author Philip Helger
+ * @param <THISTYPE>
+ *        Implementation type
+ * @param <CHILDTYPE>
+ *        Child type
  */
 @NotThreadSafe
 public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCHasChildrenMutable <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode> extends AbstractHCNode implements IHCHasChildrenMutable <THISTYPE, CHILDTYPE>
@@ -75,7 +79,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
 
   /**
    * Callback
-   * 
+   *
    * @param aChild
    *        The child that was added
    */
@@ -85,7 +89,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
 
   /**
    * Callback
-   * 
+   *
    * @param nIndex
    *        Index where the child was added. Always &ge; 0.
    * @param aChild
@@ -181,7 +185,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
 
   /**
    * Invoked after an element was removed.
-   * 
+   *
    * @param nIndex
    *        The index where the element was removed from. Always &ge; 0. This is
    *        the OLD index and now contains a different or no child.
@@ -288,7 +292,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
 
   /**
    * Try to simplify this node list as much as possible.
-   * 
+   *
    * @return the most simple representation of this list. If the list is empty,
    *         <code>null</code> is returned. If exactly one element is contained,
    *         this element will be returned. If more than one element is

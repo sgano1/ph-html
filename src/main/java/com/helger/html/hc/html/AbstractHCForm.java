@@ -40,6 +40,8 @@ import com.helger.html.js.builder.IJSStatement;
  * Represents an HTML &lt;form&gt; element
  *
  * @author Philip Helger
+ * @param <IMPLTYPE>
+ *        Implementation type
  */
 public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>> extends AbstractHCElementWithChildren <IMPLTYPE>
 {
