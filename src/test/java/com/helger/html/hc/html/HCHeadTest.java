@@ -45,8 +45,8 @@ public final class HCHeadTest
     assertNull (aHead.getPageTitle ());
     assertNull (aHead.getBaseHref ());
     assertNull (aHead.getBaseTarget ());
-    assertTrue (aHead.getAllMetaElements ().isEmpty ());
-    assertEquals (0, aHead.getMetaElementCount ());
+    assertTrue (aHead.getMetaElementList ().getAllMetaElements ().isEmpty ());
+    assertEquals (0, aHead.getMetaElementList ().getMetaElementCount ());
     assertTrue (aHead.getAllLinks ().isEmpty ());
     assertEquals (0, aHead.getLinkCount ());
     assertTrue (aHead.getAllCSSNodes ().isEmpty ());
@@ -79,33 +79,35 @@ public final class HCHeadTest
   public void testMetaElements ()
   {
     final HCHead aHead = new HCHead ();
-    assertTrue (aHead.getAllMetaElements ().isEmpty ());
-    assertEquals (0, aHead.getMetaElementCount ());
+    assertTrue (aHead.getMetaElementList ().getAllMetaElements ().isEmpty ());
+    assertEquals (0, aHead.getMetaElementList ().getMetaElementCount ());
 
-    assertSame (aHead, aHead.addMetaElement (new MetaElement ("foo", "bar")));
-    assertFalse (aHead.getAllMetaElements ().isEmpty ());
-    assertEquals (1, aHead.getMetaElementCount ());
+    assertSame (aHead.getMetaElementList (), aHead.getMetaElementList ()
+                                                  .addMetaElement (new MetaElement ("foo", "bar")));
+    assertFalse (aHead.getMetaElementList ().getAllMetaElements ().isEmpty ());
+    assertEquals (1, aHead.getMetaElementList ().getMetaElementCount ());
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\">" + "<meta name=\"foo\" content=\"bar\" />" + "</head>",
                   HCSettings.getAsHTMLString (aHead, false));
 
-    assertSame (aHead, aHead.addMetaElement (new MetaElement ("goo", true, "car")));
-    assertEquals (2, aHead.getMetaElementCount ());
+    assertSame (aHead.getMetaElementList (),
+                aHead.getMetaElementList ().addMetaElement (new MetaElement ("goo", true, "car")));
+    assertEquals (2, aHead.getMetaElementList ().getMetaElementCount ());
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\">"
-        + "<meta name=\"foo\" content=\"bar\" />"
-        + "<meta http-equiv=\"goo\" content=\"car\" />"
-        + "</head>", HCSettings.getAsHTMLString (aHead, false));
+                  + "<meta name=\"foo\" content=\"bar\" />"
+                  + "<meta http-equiv=\"goo\" content=\"car\" />"
+                  + "</head>", HCSettings.getAsHTMLString (aHead, false));
 
-    assertEquals (EChange.UNCHANGED, aHead.removeMetaElement ("any"));
-    assertEquals (2, aHead.getMetaElementCount ());
-    assertEquals (EChange.CHANGED, aHead.removeMetaElement ("foo"));
-    assertEquals (1, aHead.getMetaElementCount ());
-    assertEquals (EChange.UNCHANGED, aHead.removeMetaElement ("foo"));
-    assertEquals (1, aHead.getMetaElementCount ());
+    assertEquals (EChange.UNCHANGED, aHead.getMetaElementList ().removeMetaElement ("any"));
+    assertEquals (2, aHead.getMetaElementList ().getMetaElementCount ());
+    assertEquals (EChange.CHANGED, aHead.getMetaElementList ().removeMetaElement ("foo"));
+    assertEquals (1, aHead.getMetaElementList ().getMetaElementCount ());
+    assertEquals (EChange.UNCHANGED, aHead.getMetaElementList ().removeMetaElement ("foo"));
+    assertEquals (1, aHead.getMetaElementList ().getMetaElementCount ());
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\">"
-        + "<meta http-equiv=\"goo\" content=\"car\" />"
-        + "</head>", HCSettings.getAsHTMLString (aHead, false));
-    assertEquals (EChange.CHANGED, aHead.removeMetaElement ("goo"));
-    assertEquals (0, aHead.getMetaElementCount ());
+                  + "<meta http-equiv=\"goo\" content=\"car\" />"
+                  + "</head>", HCSettings.getAsHTMLString (aHead, false));
+    assertEquals (EChange.CHANGED, aHead.getMetaElementList ().removeMetaElement ("goo"));
+    assertEquals (0, aHead.getMetaElementList ().getMetaElementCount ());
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"></head>", HCSettings.getAsHTMLString (aHead, false));
   }
 

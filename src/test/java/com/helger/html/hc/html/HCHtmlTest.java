@@ -60,7 +60,7 @@ public final class HCHtmlTest
   {
     final IHCConversionSettings aCS = HCSettings.getConversionSettings (false);
     final HCHtml aHtml = new HCHtml ();
-    aHtml.getHead ().addMetaElement (new MetaElement ("foo", "bar"));
+    aHtml.getHead ().getMetaElementList ().addMetaElement (new MetaElement ("foo", "bar"));
     aHtml.getBody ().addChild (new HCH1 ().addChild ("Test"));
     aHtml.getBody ().addChild (new HCScriptOnDocumentReady (new UnparsedJSCodeProvider ("a=b;")));
     aHtml.getBody ().addChild (new HCScriptOnDocumentReady (new UnparsedJSCodeProvider ("c=d;")));
