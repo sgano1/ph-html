@@ -17,12 +17,15 @@
 package com.helger.html.resource.css;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.annotations.ReturnsMutableCopy;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.css.CSSFilenameHelper;
+import com.helger.css.media.CSSMediaList;
 
 /**
  * Implementation of {@link ICSSPathProvider} with constant paths.
@@ -33,13 +36,26 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
 {
   private final String m_sPath;
   private final String m_sMinifiedPath;
+  private final CSSMediaList m_aCSSMediaList;
 
   public ConstantCSSPathProvider (@Nonnull @Nonempty final String sPath)
   {
     this (sPath, CSSFilenameHelper.getMinifiedCSSFilename (sPath));
   }
 
+  public ConstantCSSPathProvider (@Nonnull @Nonempty final String sPath, @Nullable final CSSMediaList aMediaList)
+  {
+    this (sPath, CSSFilenameHelper.getMinifiedCSSFilename (sPath), aMediaList);
+  }
+
   public ConstantCSSPathProvider (@Nonnull @Nonempty final String sPath, @Nonnull @Nonempty final String sMinifiedPath)
+  {
+    this (sPath, sMinifiedPath, (CSSMediaList) null);
+  }
+
+  public ConstantCSSPathProvider (@Nonnull @Nonempty final String sPath,
+                                  @Nonnull @Nonempty final String sMinifiedPath,
+                                  @Nullable final CSSMediaList aMediaList)
   {
     ValueEnforcer.notEmpty (sPath, "Path");
     if (!CSSFilenameHelper.isCSSFilename (sPath))
@@ -49,6 +65,8 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
       throw new IllegalArgumentException ("minified path");
     m_sPath = sPath;
     m_sMinifiedPath = sMinifiedPath;
+    // Use clone in ph-css > 3.8.0
+    m_aCSSMediaList = aMediaList == null ? new CSSMediaList () : new CSSMediaList (aMediaList.getAllMedia ());
   }
 
   @Nonnull
@@ -56,6 +74,14 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
   public String getCSSItemPath (final boolean bRegular)
   {
     return bRegular ? m_sPath : m_sMinifiedPath;
+  }
+
+  @Nonnull
+  @ReturnsMutableCopy
+  public CSSMediaList getMediaList ()
+  {
+    // Use clone in ph-css > 3.8.0
+    return new CSSMediaList (m_aCSSMediaList.getAllMedia ());
   }
 
   @Override

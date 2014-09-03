@@ -22,10 +22,12 @@ import javax.annotation.Nonnull;
 
 import com.helger.commons.annotations.MustImplementEqualsAndHashcode;
 import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.annotations.ReturnsMutableCopy;
+import com.helger.css.media.CSSMediaList;
 
 /**
  * Provides a path to an external CSS object.
- * 
+ *
  * @author Philip Helger
  */
 @MustImplementEqualsAndHashcode
@@ -41,4 +43,12 @@ public interface ICSSPathProvider extends Serializable
   @Nonnull
   @Nonempty
   String getCSSItemPath (boolean bRegular);
+
+  /**
+   * @return The media list for which this CSS item applies. Never
+   *         <code>null</code> but maybe empty.
+   */
+  @Nonnull
+  @ReturnsMutableCopy
+  CSSMediaList getMediaList ();
 }
