@@ -17,9 +17,11 @@
 package com.helger.html.resource.js;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 
@@ -30,29 +32,39 @@ import com.helger.commons.string.ToStringGenerator;
  */
 public final class ConstantJSPathProvider implements IJSPathProvider
 {
+  public static final String DEFAULT_CONDITIONAL_COMMENT = null;
   public static final boolean DEFAULT_CAN_BE_BUNDLED = true;
 
   private final String m_sPath;
   private final String m_sMinifiedPath;
+  private final String m_sConditionalComment;
   private final boolean m_bCanBeBundled;
 
   public ConstantJSPathProvider (@Nonnull @Nonempty final String sPath)
   {
-    this (sPath, DEFAULT_CAN_BE_BUNDLED);
+    this (sPath, DEFAULT_CONDITIONAL_COMMENT, DEFAULT_CAN_BE_BUNDLED);
   }
 
   public ConstantJSPathProvider (@Nonnull @Nonempty final String sPath, final boolean bCanBeBundled)
   {
-    this (sPath, JSFilenameHelper.getMinifiedJSPath (sPath), bCanBeBundled);
+    this (sPath, DEFAULT_CONDITIONAL_COMMENT, bCanBeBundled);
+  }
+
+  public ConstantJSPathProvider (@Nonnull @Nonempty final String sPath,
+                                 @Nullable final String sConditionalComment,
+                                 final boolean bCanBeBundled)
+  {
+    this (sPath, JSFilenameHelper.getMinifiedJSPath (sPath), sConditionalComment, bCanBeBundled);
   }
 
   public ConstantJSPathProvider (@Nonnull @Nonempty final String sPath, @Nonnull @Nonempty final String sMinifiedPath)
   {
-    this (sPath, sMinifiedPath, DEFAULT_CAN_BE_BUNDLED);
+    this (sPath, sMinifiedPath, DEFAULT_CONDITIONAL_COMMENT, DEFAULT_CAN_BE_BUNDLED);
   }
 
   public ConstantJSPathProvider (@Nonnull @Nonempty final String sPath,
                                  @Nonnull @Nonempty final String sMinifiedPath,
+                                 @Nullable final String sConditionalComment,
                                  final boolean bCanBeBundled)
   {
     ValueEnforcer.notEmpty (sPath, "Path");
@@ -63,6 +75,7 @@ public final class ConstantJSPathProvider implements IJSPathProvider
       throw new IllegalArgumentException ("minified path");
     m_sPath = sPath;
     m_sMinifiedPath = sMinifiedPath;
+    m_sConditionalComment = sConditionalComment;
     m_bCanBeBundled = bCanBeBundled;
   }
 
@@ -87,6 +100,12 @@ public final class ConstantJSPathProvider implements IJSPathProvider
     return m_sMinifiedPath;
   }
 
+  @Nullable
+  public String getConditionalComment ()
+  {
+    return m_sConditionalComment;
+  }
+
   @Override
   public boolean canBeBundled ()
   {
@@ -103,6 +122,7 @@ public final class ConstantJSPathProvider implements IJSPathProvider
     final ConstantJSPathProvider rhs = (ConstantJSPathProvider) o;
     return m_sPath.equals (rhs.m_sPath) &&
            m_sMinifiedPath.equals (rhs.m_sMinifiedPath) &&
+           EqualsUtils.equals (m_sConditionalComment, rhs.m_sConditionalComment) &&
            m_bCanBeBundled == rhs.m_bCanBeBundled;
   }
 
@@ -111,6 +131,7 @@ public final class ConstantJSPathProvider implements IJSPathProvider
   {
     return new HashCodeGenerator (this).append (m_sPath)
                                        .append (m_sMinifiedPath)
+                                       .append (m_sConditionalComment)
                                        .append (m_bCanBeBundled)
                                        .getHashCode ();
   }
@@ -120,6 +141,7 @@ public final class ConstantJSPathProvider implements IJSPathProvider
   {
     return new ToStringGenerator (this).append ("path", m_sPath)
                                        .append ("minifiedPath", m_sMinifiedPath)
+                                       .appendIfNotNull ("conditionalComment", m_sConditionalComment)
                                        .append ("canBeBundled", m_bCanBeBundled)
                                        .toString ();
   }

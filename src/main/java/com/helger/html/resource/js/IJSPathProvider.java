@@ -19,13 +19,14 @@ package com.helger.html.resource.js;
 import java.io.Serializable;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import com.helger.commons.annotations.MustImplementEqualsAndHashcode;
 import com.helger.commons.annotations.Nonempty;
 
 /**
  * Provides a path to an external JS object.
- * 
+ *
  * @author Philip Helger
  */
 @MustImplementEqualsAndHashcode
@@ -33,7 +34,7 @@ public interface IJSPathProvider extends Serializable
 {
   /**
    * Get the path to this JavaScript resource. It is always classpath relative.
-   * 
+   *
    * @param bRegular
    *        if <code>true</code> the regular version of item should be
    *        retrieved, otherwise the minified version of the file.
@@ -42,6 +43,13 @@ public interface IJSPathProvider extends Serializable
   @Nonnull
   @Nonempty
   String getJSItemPath (boolean bRegular);
+
+  /**
+   * @return The conditional comment required for this JS item or
+   *         <code>null</code> if it applies to all browsers.
+   */
+  @Nullable
+  String getConditionalComment ();
 
   /**
    * @return Whether or not this script can be bundled to a big JS profile. For
