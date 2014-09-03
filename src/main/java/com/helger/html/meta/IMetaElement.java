@@ -24,20 +24,21 @@ import java.util.Set;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.helger.commons.annotations.ReturnsMutableCopy;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.commons.state.EChange;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
 /**
  * Represents a single meta element
- * 
+ *
  * @author Philip Helger
  */
 public interface IMetaElement extends IMetaElementDeclaration
 {
   /**
    * Check if the meta tag is language independent.
-   * 
+   *
    * @return <code>true</code> if the meta tag is language independent,
    *         <code>false</code> if it is not
    */
@@ -47,17 +48,19 @@ public interface IMetaElement extends IMetaElementDeclaration
    * @return A set with all locales a value is present
    */
   @Nonnull
+  @ReturnsMutableCopy
   Set <Locale> getAllLocales ();
 
   /**
    * @return A non-<code>null</code> map from language to value.
    */
   @Nonnull
+  @ReturnsMutableCopy
   Map <Locale, String> getContent ();
 
   /**
    * Set the value of the metatag in the given locale.
-   * 
+   *
    * @param aContentLocale
    *        The locale to set. May be <code>null</code>.
    * @param sContent
@@ -70,7 +73,7 @@ public interface IMetaElement extends IMetaElementDeclaration
 
   /**
    * Remove the value of the given locale.
-   * 
+   *
    * @param aContentLocale
    *        The locale to be removed. May not be <code>null</code>.
    * @return {@link EChange}
@@ -80,7 +83,7 @@ public interface IMetaElement extends IMetaElementDeclaration
 
   /**
    * Change the definition of "is http-equiv"
-   * 
+   *
    * @param bIsHttpEquiv
    *        the new value
    * @return {@link EChange}.
@@ -91,15 +94,16 @@ public interface IMetaElement extends IMetaElementDeclaration
   /**
    * Get the contents of this meta tag as a self contained list of meta tag
    * values.
-   * 
+   *
    * @return A non-<code>null</code> modifiable list of meta tags.
    */
   @Nonnull
+  @ReturnsMutableCopy
   List <IMetaElementValue> getAsMetaElementValueList ();
 
   /**
    * Convert this meta element to an {@link IMicroNode}
-   * 
+   *
    * @param aConversionSettings
    *        The conversion settings to be used. May not be <code>null</code>.
    * @return <code>null</code> if this meta element contains no content.

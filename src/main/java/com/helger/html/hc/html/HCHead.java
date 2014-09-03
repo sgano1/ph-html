@@ -17,9 +17,7 @@
 package com.helger.html.hc.html;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
@@ -32,6 +30,7 @@ import com.helger.commons.GlobalDebug;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.OverrideOnDemand;
 import com.helger.commons.annotations.ReturnsMutableCopy;
+import com.helger.commons.annotations.ReturnsMutableObject;
 import com.helger.commons.collections.ContainerHelper;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.mime.CMimeType;
@@ -49,6 +48,7 @@ import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElement;
 import com.helger.html.hc.utils.HCSpecialNodeHandler;
 import com.helger.html.meta.IMetaElement;
+import com.helger.html.meta.MetaElementList;
 
 /**
  * Represents an HTML &lt;head&gt; element
@@ -63,7 +63,7 @@ public class HCHead extends AbstractHCElement <HCHead>
   private String m_sProfile;
   private final HCTitle m_aPageTitle = new HCTitle ();
   private final HCBase m_aBase = new HCBase ();
-  private final Map <String, IMetaElement> m_aMetaElements = new LinkedHashMap <String, IMetaElement> ();
+  private final MetaElementList m_aMetaElements = new MetaElementList ();
   private final List <HCLink> m_aLinks = new ArrayList <HCLink> ();
   private final List <IHCNode> m_aCSS = new ArrayList <IHCNode> ();
   private final List <IHCNode> m_aJS = new ArrayList <IHCNode> ();
@@ -134,30 +134,40 @@ public class HCHead extends AbstractHCElement <HCHead>
   //
 
   @Nonnull
+  @ReturnsMutableObject (reason = "design")
+  public MetaElementList getMetaElementList ()
+  {
+    return m_aMetaElements;
+  }
+
+  @Nonnull
+  @Deprecated
   public HCHead addMetaElement (@Nonnull final IMetaElement aMetaElement)
   {
-    ValueEnforcer.notNull (aMetaElement, "MetaElement");
-    m_aMetaElements.put (aMetaElement.getName (), aMetaElement);
+    m_aMetaElements.addMetaElement (aMetaElement);
     return this;
   }
 
   @Nonnull
+  @Deprecated
   public EChange removeMetaElement (@Nullable final String sMetaElementName)
   {
-    return EChange.valueOf (m_aMetaElements.remove (sMetaElementName) != null);
+    return m_aMetaElements.removeMetaElement (sMetaElementName);
   }
 
   @Nonnull
   @ReturnsMutableCopy
+  @Deprecated
   public List <IMetaElement> getAllMetaElements ()
   {
-    return ContainerHelper.newList (m_aMetaElements.values ());
+    return m_aMetaElements.getAllMetaElements ();
   }
 
   @Nonnegative
+  @Deprecated
   public int getMetaElementCount ()
   {
-    return m_aMetaElements.size ();
+    return m_aMetaElements.getMetaElementCount ();
   }
 
   //
@@ -420,7 +430,7 @@ public class HCHead extends AbstractHCElement <HCHead>
       eHead.setAttribute (CHTMLAttributes.PROFILE, m_sProfile);
 
     // Append meta element first for charset encoding!
-    for (final IMetaElement aMetaElement : m_aMetaElements.values ())
+    for (final IMetaElement aMetaElement : m_aMetaElements.getAllMetaElements ())
       eHead.appendChild (aMetaElement.convertToNode (aConversionSettings));
 
     // page title

@@ -112,7 +112,7 @@ public enum EStandardMetaElement implements IMetaElementDeclaration
   }
 
   @Nonnull
-  public IMetaElement getAsMetaElement (final String sContent)
+  public IMetaElement getAsMetaElement (@Nullable final String sContent)
   {
     return new MetaElement (this, sContent);
   }
