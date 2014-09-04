@@ -73,78 +73,79 @@ public class Main_AbstractJQueryInvocation extends AbstractCreateJQueryAPIList
     }
 
     final StringBuilder aFull = new StringBuilder ("package com.helger.html.js.builder.jquery;\n"
-        + "\n"
-        + "import javax.annotation.Nonnull;\n"
-        + "import javax.annotation.Nullable;\n"
-        + "\n"
-        + "import com.helger.commons.annotations.Nonempty;\n"
-        + "import com.helger.html.css.ICSSClassProvider;\n"
-        + "import com.helger.html.js.builder.AbstractJSInvocation;\n"
-        + "import com.helger.html.js.builder.IJSExpression;\n"
-        + "import com.helger.html.js.builder.JSFieldRef;\n"
-        + "import com.helger.html.js.builder.JSFunction;\n"
-        + "\n"
-        + "/**\n"
-        + " * Special invocation semantics for jQuery\n"
-        + " * \n"
-        + " * This file is generated - do NOT edit!\n"
-        + " * @author " +
-        Main_AbstractJQueryInvocation.class.getName () +
-        "\n" +
-        " */\n" +
-        "public abstract class AbstractJQueryInvocation <IMPLTYPE extends AbstractJQueryInvocation <IMPLTYPE>> extends AbstractJSInvocation <IMPLTYPE> implements IJQueryInvocation <IMPLTYPE>\n" +
-        "{\n" +
-        "  public AbstractJQueryInvocation (@Nonnull final JSFunction aFunction)\n" +
-        "  {\n" +
-        "    super (aFunction);\n" +
-        "  }\n" +
-        "\n" +
-        "  public AbstractJQueryInvocation (@Nullable final IJSExpression aLhs, @Nonnull @Nonempty final String sMethod)\n" +
-        "  {\n" +
-        "    super (aLhs, sMethod);\n" +
-        "  }\n" +
-        "\n" +
-        "  @Nonnull\n" +
-        "  public IMPLTYPE arg (@Nullable final ICSSClassProvider aArgument)\n" +
-        "  {\n" +
-        "    return aArgument == null ? argNull () : arg (aArgument.getCSSClass ());\n" +
-        "  }\n" +
-        "\n" +
-        "  @Nonnull\n" +
-        "  public IMPLTYPE arg (@Nullable final IJQuerySelector aArgument)\n" +
-        "  {\n" +
-        "    return aArgument == null ? argNull () : arg (aArgument.getExpression ());\n" +
-        "  }\n" +
-        "\n" +
-        "  @Nonnull\n" +
-        "  public IMPLTYPE arg (@Nullable final JQuerySelectorList aArgument)\n" +
-        "  {\n" +
-        "    return aArgument == null ? argNull () : arg (aArgument.getAsExpression ());\n" +
-        "  }\n" +
-        "\n" +
-        "  // Properties of jQuery Object Instances\n" +
-        "\n" +
-        "  @Deprecated\n" +
-        "  @Nonnull\n" +
-        "  public JSFieldRef context ()\n" +
-        "  {\n" +
-        "    return ref (\"context\");\n" +
-        "  }\n" +
-        "\n" +
-        "  @Nonnull\n" +
-        "  public JSFieldRef jquery ()\n" +
-        "  {\n" +
-        "    return ref (\"jquery\");\n" +
-        "  }\n" +
-        "\n" +
-        "  @Nonnull\n" +
-        "  public JSFieldRef length ()\n" +
-        "  {\n" +
-        "    return ref (\"length\");\n" +
-        "  }\n" +
-        "\n" +
-        "  // Methods start here\n" +
-        "\n");
+                                                   + "\n"
+                                                   + "import javax.annotation.Nonnull;\n"
+                                                   + "import javax.annotation.Nullable;\n"
+                                                   + "\n"
+                                                   + "import com.helger.commons.annotations.Nonempty;\n"
+                                                   + "import com.helger.html.css.ICSSClassProvider;\n"
+                                                   + "import com.helger.html.js.builder.AbstractJSInvocation;\n"
+                                                   + "import com.helger.html.js.builder.IJSExpression;\n"
+                                                   + "import com.helger.html.js.builder.JSFieldRef;\n"
+                                                   + "import com.helger.html.js.builder.JSFunction;\n"
+                                                   + "\n"
+                                                   + "/**\n"
+                                                   + " * Special invocation semantics for jQuery\n"
+                                                   + " * \n"
+                                                   + " * This file is generated - do NOT edit!\n"
+                                                   + " * @author " +
+                                                   Main_AbstractJQueryInvocation.class.getName () +
+                                                   "\n" +
+                                                   " * @param <IMPLTYPE> Implementation type\n" +
+                                                   " */\n" +
+                                                   "public abstract class AbstractJQueryInvocation <IMPLTYPE extends AbstractJQueryInvocation <IMPLTYPE>> extends AbstractJSInvocation <IMPLTYPE> implements IJQueryInvocation <IMPLTYPE>\n" +
+                                                   "{\n" +
+                                                   "  public AbstractJQueryInvocation (@Nonnull final JSFunction aFunction)\n" +
+                                                   "  {\n" +
+                                                   "    super (aFunction);\n" +
+                                                   "  }\n" +
+                                                   "\n" +
+                                                   "  public AbstractJQueryInvocation (@Nullable final IJSExpression aLhs, @Nonnull @Nonempty final String sMethod)\n" +
+                                                   "  {\n" +
+                                                   "    super (aLhs, sMethod);\n" +
+                                                   "  }\n" +
+                                                   "\n" +
+                                                   "  @Nonnull\n" +
+                                                   "  public IMPLTYPE arg (@Nullable final ICSSClassProvider aArgument)\n" +
+                                                   "  {\n" +
+                                                   "    return aArgument == null ? argNull () : arg (aArgument.getCSSClass ());\n" +
+                                                   "  }\n" +
+                                                   "\n" +
+                                                   "  @Nonnull\n" +
+                                                   "  public IMPLTYPE arg (@Nullable final IJQuerySelector aArgument)\n" +
+                                                   "  {\n" +
+                                                   "    return aArgument == null ? argNull () : arg (aArgument.getExpression ());\n" +
+                                                   "  }\n" +
+                                                   "\n" +
+                                                   "  @Nonnull\n" +
+                                                   "  public IMPLTYPE arg (@Nullable final JQuerySelectorList aArgument)\n" +
+                                                   "  {\n" +
+                                                   "    return aArgument == null ? argNull () : arg (aArgument.getAsExpression ());\n" +
+                                                   "  }\n" +
+                                                   "\n" +
+                                                   "  // Properties of jQuery Object Instances\n" +
+                                                   "\n" +
+                                                   "  @Deprecated\n" +
+                                                   "  @Nonnull\n" +
+                                                   "  public JSFieldRef context ()\n" +
+                                                   "  {\n" +
+                                                   "    return ref (\"context\");\n" +
+                                                   "  }\n" +
+                                                   "\n" +
+                                                   "  @Nonnull\n" +
+                                                   "  public JSFieldRef jquery ()\n" +
+                                                   "  {\n" +
+                                                   "    return ref (\"jquery\");\n" +
+                                                   "  }\n" +
+                                                   "\n" +
+                                                   "  @Nonnull\n" +
+                                                   "  public JSFieldRef length ()\n" +
+                                                   "  {\n" +
+                                                   "    return ref (\"length\");\n" +
+                                                   "  }\n" +
+                                                   "\n" +
+                                                   "  // Methods start here\n" +
+                                                   "\n");
 
     for (final String sLine : aLines)
       if (sLine.length () > 0)

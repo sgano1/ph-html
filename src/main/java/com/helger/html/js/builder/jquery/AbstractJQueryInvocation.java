@@ -30,6 +30,8 @@ import com.helger.html.js.builder.JSFunction;
  * Special invocation semantics for jQuery This file is generated - do NOT edit!
  * 
  * @author com.helger.html.supplementary.jquery.Main_AbstractJQueryInvocation
+ * @param <IMPLTYPE>
+ *        Implementation type
  */
 public abstract class AbstractJQueryInvocation <IMPLTYPE extends AbstractJQueryInvocation <IMPLTYPE>> extends AbstractJSInvocation <IMPLTYPE> implements IJQueryInvocation <IMPLTYPE>
 {

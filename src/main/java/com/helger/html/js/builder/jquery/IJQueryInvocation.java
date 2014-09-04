@@ -27,6 +27,8 @@ import com.helger.html.js.builder.JSFieldRef;
  * This file is generated - do NOT edit!
  * 
  * @author com.helger.html.supplementary.jquery.Main_IJQueryInvocation
+ * @param <IMPLTYPE>
+ *        Implementation type
  */
 public interface IJQueryInvocation <IMPLTYPE extends IJQueryInvocation <IMPLTYPE>>
 {

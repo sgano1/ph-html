@@ -33,6 +33,8 @@ import com.helger.json.IJson;
  * This file is generated - do NOT edit!
  * 
  * @author com.helger.html.supplementary.jquery.Main_IJQueryInvocationExtended
+ * @param <IMPLTYPE>
+ *        Implementation type
  */
 public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationExtended <IMPLTYPE>> extends IJQueryInvocation <IMPLTYPE>
 {
@@ -40,6 +42,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string representing a selector expression to find additional
    *        elements to add to the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE add (@Nonnull IJSExpression selector);
@@ -48,6 +51,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string representing a selector expression to find additional
    *        elements to add to the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE add (@Nonnull IJQuerySelector selector);
@@ -56,6 +60,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string representing a selector expression to find additional
    *        elements to add to the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE add (@Nonnull JQuerySelectorList selector);
@@ -64,6 +69,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string representing a selector expression to find additional
    *        elements to add to the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE add (@Nonnull EHTMLElement selector);
@@ -72,6 +78,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string representing a selector expression to find additional
    *        elements to add to the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE add (@Nonnull ICSSClassProvider selector);
@@ -79,6 +86,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param elements
    *        One or more elements to add to the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE add (@Nonnull EHTMLElement... elements);
@@ -86,6 +94,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param elements
    *        One or more elements to add to the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE add (@Nonnull Iterable <EHTMLElement> elements);
@@ -93,6 +102,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param elements
    *        One or more elements to add to the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE add (@Nonnull String... elements);
@@ -100,6 +110,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param html
    *        An HTML fragment to add to the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE add (@Nonnull IHCNode html);
@@ -107,6 +118,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param html
    *        An HTML fragment to add to the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE add (@Nonnull String html);
@@ -114,6 +126,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param jQuery_object
    *        An existing jQuery object to add to the set of matched elements.
+   * @return this
    * @since jQuery 1.3.2
    */
   @Nonnull
@@ -127,6 +140,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The point in the document at which the selector should begin
    *        matching; similar to the context argument of the $(selector,
    *        context) method.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -140,6 +154,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The point in the document at which the selector should begin
    *        matching; similar to the context argument of the $(selector,
    *        context) method.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -153,6 +168,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The point in the document at which the selector should begin
    *        matching; similar to the context argument of the $(selector,
    *        context) method.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -166,6 +182,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The point in the document at which the selector should begin
    *        matching; similar to the context argument of the $(selector,
    *        context) method.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -179,6 +196,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The point in the document at which the selector should begin
    *        matching; similar to the context argument of the $(selector,
    *        context) method.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -192,6 +210,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The point in the document at which the selector should begin
    *        matching; similar to the context argument of the $(selector,
    *        context) method.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -205,6 +224,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The point in the document at which the selector should begin
    *        matching; similar to the context argument of the $(selector,
    *        context) method.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -218,6 +238,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The point in the document at which the selector should begin
    *        matching; similar to the context argument of the $(selector,
    *        context) method.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -231,6 +252,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The point in the document at which the selector should begin
    *        matching; similar to the context argument of the $(selector,
    *        context) method.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -244,6 +266,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The point in the document at which the selector should begin
    *        matching; similar to the context argument of the $(selector,
    *        context) method.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -257,6 +280,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The point in the document at which the selector should begin
    *        matching; similar to the context argument of the $(selector,
    *        context) method.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -270,6 +294,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The point in the document at which the selector should begin
    *        matching; similar to the context argument of the $(selector,
    *        context) method.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -283,6 +308,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The point in the document at which the selector should begin
    *        matching; similar to the context argument of the $(selector,
    *        context) method.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -296,6 +322,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The point in the document at which the selector should begin
    *        matching; similar to the context argument of the $(selector,
    *        context) method.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -309,6 +336,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The point in the document at which the selector should begin
    *        matching; similar to the context argument of the $(selector,
    *        context) method.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -321,6 +349,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to match the current set
    *        of elements against.
+   * @return this
    * @since jQuery 1.8
    */
   @Nonnull
@@ -330,6 +359,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to match the current set
    *        of elements against.
+   * @return this
    * @since jQuery 1.8
    */
   @Nonnull
@@ -339,6 +369,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to match the current set
    *        of elements against.
+   * @return this
    * @since jQuery 1.8
    */
   @Nonnull
@@ -348,6 +379,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to match the current set
    *        of elements against.
+   * @return this
    * @since jQuery 1.8
    */
   @Nonnull
@@ -357,6 +389,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to match the current set
    *        of elements against.
+   * @return this
    * @since jQuery 1.8
    */
   @Nonnull
@@ -366,6 +399,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param className
    *        One or more space-separated classes to be added to the class
    *        attribute of each matched element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE addClass (@Nonnull IJSExpression className);
@@ -374,6 +408,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param className
    *        One or more space-separated classes to be added to the class
    *        attribute of each matched element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE addClass (@Nonnull IJson className);
@@ -382,6 +417,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param className
    *        One or more space-separated classes to be added to the class
    *        attribute of each matched element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE addClass (@Nonnull IHCNode className);
@@ -390,6 +426,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param className
    *        One or more space-separated classes to be added to the class
    *        attribute of each matched element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE addClass (@Nonnull String className);
@@ -400,6 +437,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        added to the existing class name(s). Receives the index position of
    *        the element in the set and the existing class name(s) as arguments.
    *        Within the function, this refers to the current element in the set.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -409,6 +447,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param content
    *        HTML string, DOM element, array of elements, or jQuery object to
    *        insert after each element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull IJSExpression content);
@@ -417,6 +456,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param content
    *        HTML string, DOM element, array of elements, or jQuery object to
    *        insert after each element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull IHCNode content);
@@ -425,6 +465,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param content
    *        HTML string, DOM element, array of elements, or jQuery object to
    *        insert after each element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull String content);
@@ -433,6 +474,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param content
    *        HTML string, DOM element, array of elements, or jQuery object to
    *        insert after each element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull EHTMLElement content);
@@ -441,6 +483,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param content
    *        HTML string, DOM element, array of elements, or jQuery object to
    *        insert after each element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull JSArray content);
@@ -449,6 +492,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param content
    *        HTML string, DOM element, array of elements, or jQuery object to
    *        insert after each element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull JQueryInvocation content);
@@ -461,6 +505,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull IJSExpression content, @Nonnull IJSExpression content1);
@@ -473,6 +518,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull IHCNode content, @Nonnull IJSExpression content1);
@@ -485,6 +531,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull String content, @Nonnull IJSExpression content1);
@@ -497,6 +544,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull EHTMLElement content, @Nonnull IJSExpression content1);
@@ -509,6 +557,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull JSArray content, @Nonnull IJSExpression content1);
@@ -521,6 +570,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull JQueryInvocation content, @Nonnull IJSExpression content1);
@@ -533,6 +583,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull IJSExpression content, @Nonnull IHCNode content1);
@@ -545,6 +596,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull IHCNode content, @Nonnull IHCNode content1);
@@ -557,6 +609,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull String content, @Nonnull IHCNode content1);
@@ -569,6 +622,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull EHTMLElement content, @Nonnull IHCNode content1);
@@ -581,6 +635,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull JSArray content, @Nonnull IHCNode content1);
@@ -593,6 +648,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull JQueryInvocation content, @Nonnull IHCNode content1);
@@ -605,6 +661,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull IJSExpression content, @Nonnull String content1);
@@ -617,6 +674,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull IHCNode content, @Nonnull String content1);
@@ -629,6 +687,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull String content, @Nonnull String content1);
@@ -641,6 +700,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull EHTMLElement content, @Nonnull String content1);
@@ -653,6 +713,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull JSArray content, @Nonnull String content1);
@@ -665,6 +726,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull JQueryInvocation content, @Nonnull String content1);
@@ -677,6 +739,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull IJSExpression content, @Nonnull EHTMLElement content1);
@@ -689,6 +752,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull IHCNode content, @Nonnull EHTMLElement content1);
@@ -701,6 +765,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull String content, @Nonnull EHTMLElement content1);
@@ -713,6 +778,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull EHTMLElement content, @Nonnull EHTMLElement content1);
@@ -725,6 +791,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull JSArray content, @Nonnull EHTMLElement content1);
@@ -737,6 +804,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull JQueryInvocation content, @Nonnull EHTMLElement content1);
@@ -749,6 +817,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull IJSExpression content, @Nonnull JSArray content1);
@@ -761,6 +830,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull IHCNode content, @Nonnull JSArray content1);
@@ -773,6 +843,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull String content, @Nonnull JSArray content1);
@@ -785,6 +856,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull EHTMLElement content, @Nonnull JSArray content1);
@@ -797,6 +869,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull JSArray content, @Nonnull JSArray content1);
@@ -809,6 +882,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull JQueryInvocation content, @Nonnull JSArray content1);
@@ -821,6 +895,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull IJSExpression content, @Nonnull JQueryInvocation content1);
@@ -833,6 +908,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull IHCNode content, @Nonnull JQueryInvocation content1);
@@ -845,6 +921,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull String content, @Nonnull JQueryInvocation content1);
@@ -857,6 +934,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull EHTMLElement content, @Nonnull JQueryInvocation content1);
@@ -869,6 +947,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull JSArray content, @Nonnull JQueryInvocation content1);
@@ -881,6 +960,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert after each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE after (@Nonnull JQueryInvocation content, @Nonnull JQueryInvocation content1);
@@ -892,6 +972,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        Receives the index position of the element in the set as an
    *        argument. Within the function, this refers to the current element in
    *        the set.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -900,6 +981,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        The function to be invoked.
+   * @return this
    */
   @Nonnull
   IMPLTYPE ajaxComplete (@Nonnull IJSExpression handler);
@@ -907,6 +989,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        The function to be invoked.
+   * @return this
    */
   @Nonnull
   IMPLTYPE ajaxComplete (@Nonnull JSAnonymousFunction handler);
@@ -914,6 +997,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        The function to be invoked.
+   * @return this
    */
   @Nonnull
   IMPLTYPE ajaxError (@Nonnull IJSExpression handler);
@@ -921,6 +1005,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        The function to be invoked.
+   * @return this
    */
   @Nonnull
   IMPLTYPE ajaxError (@Nonnull JSAnonymousFunction handler);
@@ -928,6 +1013,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        The function to be invoked.
+   * @return this
    */
   @Nonnull
   IMPLTYPE ajaxSend (@Nonnull IJSExpression handler);
@@ -935,6 +1021,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        The function to be invoked.
+   * @return this
    */
   @Nonnull
   IMPLTYPE ajaxSend (@Nonnull JSAnonymousFunction handler);
@@ -942,6 +1029,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        The function to be invoked.
+   * @return this
    */
   @Nonnull
   IMPLTYPE ajaxStart (@Nonnull IJSExpression handler);
@@ -949,6 +1037,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        The function to be invoked.
+   * @return this
    */
   @Nonnull
   IMPLTYPE ajaxStart (@Nonnull JSAnonymousFunction handler);
@@ -956,6 +1045,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        The function to be invoked.
+   * @return this
    */
   @Nonnull
   IMPLTYPE ajaxStop (@Nonnull IJSExpression handler);
@@ -963,6 +1053,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        The function to be invoked.
+   * @return this
    */
   @Nonnull
   IMPLTYPE ajaxStop (@Nonnull JSAnonymousFunction handler);
@@ -970,6 +1061,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        The function to be invoked.
+   * @return this
    */
   @Nonnull
   IMPLTYPE ajaxSuccess (@Nonnull IJSExpression handler);
@@ -977,6 +1069,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        The function to be invoked.
+   * @return this
    */
   @Nonnull
   IMPLTYPE ajaxSuccess (@Nonnull JSAnonymousFunction handler);
@@ -989,6 +1082,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param properties
    *        An object of CSS properties and values that the animation will move
    *        toward.
+   * @return this
    */
   @Nonnull
   IMPLTYPE animate (@Nonnull IJSExpression properties);
@@ -997,6 +1091,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param content
    *        DOM element, array of elements, HTML string, or jQuery object to
    *        insert at the end of each element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull IJSExpression content);
@@ -1005,6 +1100,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param content
    *        DOM element, array of elements, HTML string, or jQuery object to
    *        insert at the end of each element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull IHCNode content);
@@ -1013,6 +1109,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param content
    *        DOM element, array of elements, HTML string, or jQuery object to
    *        insert at the end of each element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull String content);
@@ -1021,6 +1118,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param content
    *        DOM element, array of elements, HTML string, or jQuery object to
    *        insert at the end of each element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull EHTMLElement content);
@@ -1029,6 +1127,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param content
    *        DOM element, array of elements, HTML string, or jQuery object to
    *        insert at the end of each element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull JSArray content);
@@ -1037,6 +1136,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param content
    *        DOM element, array of elements, HTML string, or jQuery object to
    *        insert at the end of each element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull JQueryInvocation content);
@@ -1049,6 +1149,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull IJSExpression content, @Nonnull IJSExpression content1);
@@ -1061,6 +1162,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull IHCNode content, @Nonnull IJSExpression content1);
@@ -1073,6 +1175,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull String content, @Nonnull IJSExpression content1);
@@ -1085,6 +1188,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull EHTMLElement content, @Nonnull IJSExpression content1);
@@ -1097,6 +1201,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull JSArray content, @Nonnull IJSExpression content1);
@@ -1109,6 +1214,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull JQueryInvocation content, @Nonnull IJSExpression content1);
@@ -1121,6 +1227,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull IJSExpression content, @Nonnull IHCNode content1);
@@ -1133,6 +1240,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull IHCNode content, @Nonnull IHCNode content1);
@@ -1145,6 +1253,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull String content, @Nonnull IHCNode content1);
@@ -1157,6 +1266,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull EHTMLElement content, @Nonnull IHCNode content1);
@@ -1169,6 +1279,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull JSArray content, @Nonnull IHCNode content1);
@@ -1181,6 +1292,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull JQueryInvocation content, @Nonnull IHCNode content1);
@@ -1193,6 +1305,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull IJSExpression content, @Nonnull String content1);
@@ -1205,6 +1318,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull IHCNode content, @Nonnull String content1);
@@ -1217,6 +1331,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull String content, @Nonnull String content1);
@@ -1229,6 +1344,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull EHTMLElement content, @Nonnull String content1);
@@ -1241,6 +1357,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull JSArray content, @Nonnull String content1);
@@ -1253,6 +1370,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull JQueryInvocation content, @Nonnull String content1);
@@ -1265,6 +1383,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull IJSExpression content, @Nonnull EHTMLElement content1);
@@ -1277,6 +1396,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull IHCNode content, @Nonnull EHTMLElement content1);
@@ -1289,6 +1409,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull String content, @Nonnull EHTMLElement content1);
@@ -1301,6 +1422,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull EHTMLElement content, @Nonnull EHTMLElement content1);
@@ -1313,6 +1435,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull JSArray content, @Nonnull EHTMLElement content1);
@@ -1325,6 +1448,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull JQueryInvocation content, @Nonnull EHTMLElement content1);
@@ -1337,6 +1461,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull IJSExpression content, @Nonnull JSArray content1);
@@ -1349,6 +1474,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull IHCNode content, @Nonnull JSArray content1);
@@ -1361,6 +1487,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull String content, @Nonnull JSArray content1);
@@ -1373,6 +1500,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull EHTMLElement content, @Nonnull JSArray content1);
@@ -1385,6 +1513,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull JSArray content, @Nonnull JSArray content1);
@@ -1397,6 +1526,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull JQueryInvocation content, @Nonnull JSArray content1);
@@ -1409,6 +1539,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull IJSExpression content, @Nonnull JQueryInvocation content1);
@@ -1421,6 +1552,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull IHCNode content, @Nonnull JQueryInvocation content1);
@@ -1433,6 +1565,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull String content, @Nonnull JQueryInvocation content1);
@@ -1445,6 +1578,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull EHTMLElement content, @Nonnull JQueryInvocation content1);
@@ -1457,6 +1591,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull JSArray content, @Nonnull JQueryInvocation content1);
@@ -1469,6 +1604,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the end of each element in
    *        the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE append (@Nonnull JQueryInvocation content, @Nonnull JQueryInvocation content1);
@@ -1480,6 +1616,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        elements. Receives the index position of the element in the set and
    *        the old HTML value of the element as arguments. Within the function,
    *        this refers to the current element in the set.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -1490,6 +1627,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, HTML string, array of elements, or jQuery
    *        object; the matched set of elements will be inserted at the end of
    *        the element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE appendTo (@Nonnull IJSExpression target);
@@ -1499,6 +1637,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, HTML string, array of elements, or jQuery
    *        object; the matched set of elements will be inserted at the end of
    *        the element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE appendTo (@Nonnull IJQuerySelector target);
@@ -1508,6 +1647,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, HTML string, array of elements, or jQuery
    *        object; the matched set of elements will be inserted at the end of
    *        the element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE appendTo (@Nonnull JQuerySelectorList target);
@@ -1517,6 +1657,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, HTML string, array of elements, or jQuery
    *        object; the matched set of elements will be inserted at the end of
    *        the element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE appendTo (@Nonnull EHTMLElement target);
@@ -1526,6 +1667,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, HTML string, array of elements, or jQuery
    *        object; the matched set of elements will be inserted at the end of
    *        the element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE appendTo (@Nonnull ICSSClassProvider target);
@@ -1535,6 +1677,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, HTML string, array of elements, or jQuery
    *        object; the matched set of elements will be inserted at the end of
    *        the element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE appendTo (@Nonnull IHCNode target);
@@ -1544,6 +1687,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, HTML string, array of elements, or jQuery
    *        object; the matched set of elements will be inserted at the end of
    *        the element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE appendTo (@Nonnull String target);
@@ -1553,6 +1697,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, HTML string, array of elements, or jQuery
    *        object; the matched set of elements will be inserted at the end of
    *        the element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE appendTo (@Nonnull JSArray target);
@@ -1562,6 +1707,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, HTML string, array of elements, or jQuery
    *        object; the matched set of elements will be inserted at the end of
    *        the element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE appendTo (@Nonnull JQueryInvocation target);
@@ -1569,6 +1715,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param attributeName
    *        The name of the attribute to get.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IJSExpression attributeName);
@@ -1576,6 +1723,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param attributeName
    *        The name of the attribute to get.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IJson attributeName);
@@ -1583,6 +1731,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param attributeName
    *        The name of the attribute to get.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IHCNode attributeName);
@@ -1590,6 +1739,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param attributeName
    *        The name of the attribute to get.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull String attributeName);
@@ -1599,6 +1749,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IJSExpression attributeName, @Nonnull IJSExpression value);
@@ -1608,6 +1759,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IJson attributeName, @Nonnull IJSExpression value);
@@ -1617,6 +1769,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IHCNode attributeName, @Nonnull IJSExpression value);
@@ -1626,6 +1779,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull String attributeName, @Nonnull IJSExpression value);
@@ -1635,6 +1789,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IJSExpression attributeName, @Nonnull IJson value);
@@ -1644,6 +1799,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IJson attributeName, @Nonnull IJson value);
@@ -1653,6 +1809,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IHCNode attributeName, @Nonnull IJson value);
@@ -1662,6 +1819,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull String attributeName, @Nonnull IJson value);
@@ -1671,6 +1829,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IJSExpression attributeName, @Nonnull IHCNode value);
@@ -1680,6 +1839,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IJson attributeName, @Nonnull IHCNode value);
@@ -1689,6 +1849,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IHCNode attributeName, @Nonnull IHCNode value);
@@ -1698,6 +1859,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull String attributeName, @Nonnull IHCNode value);
@@ -1707,6 +1869,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IJSExpression attributeName, @Nonnull String value);
@@ -1716,6 +1879,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IJson attributeName, @Nonnull String value);
@@ -1725,6 +1889,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IHCNode attributeName, @Nonnull String value);
@@ -1734,6 +1899,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull String attributeName, @Nonnull String value);
@@ -1743,6 +1909,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IJSExpression attributeName, int value);
@@ -1752,6 +1919,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IJson attributeName, int value);
@@ -1761,6 +1929,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IHCNode attributeName, int value);
@@ -1770,6 +1939,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull String attributeName, int value);
@@ -1779,6 +1949,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IJSExpression attributeName, long value);
@@ -1788,6 +1959,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IJson attributeName, long value);
@@ -1797,6 +1969,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IHCNode attributeName, long value);
@@ -1806,6 +1979,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull String attributeName, long value);
@@ -1815,6 +1989,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IJSExpression attributeName, @Nonnull BigInteger value);
@@ -1824,6 +1999,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IJson attributeName, @Nonnull BigInteger value);
@@ -1833,6 +2009,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IHCNode attributeName, @Nonnull BigInteger value);
@@ -1842,6 +2019,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull String attributeName, @Nonnull BigInteger value);
@@ -1851,6 +2029,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IJSExpression attributeName, double value);
@@ -1860,6 +2039,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IJson attributeName, double value);
@@ -1869,6 +2049,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IHCNode attributeName, double value);
@@ -1878,6 +2059,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull String attributeName, double value);
@@ -1887,6 +2069,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IJSExpression attributeName, @Nonnull BigDecimal value);
@@ -1896,6 +2079,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IJson attributeName, @Nonnull BigDecimal value);
@@ -1905,6 +2089,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull IHCNode attributeName, @Nonnull BigDecimal value);
@@ -1914,6 +2099,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the attribute to set.
    * @param value
    *        A value to set for the attribute.
+   * @return this
    */
   @Nonnull
   IMPLTYPE attr (@Nonnull String attributeName, @Nonnull BigDecimal value);
@@ -1925,6 +2111,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function returning the value to set. this is the current element.
    *        Receives the index position of the element in the set and the old
    *        attribute value as arguments.
+   * @return this
    * @since jQuery 1.1
    */
   @Nonnull
@@ -1937,6 +2124,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function returning the value to set. this is the current element.
    *        Receives the index position of the element in the set and the old
    *        attribute value as arguments.
+   * @return this
    * @since jQuery 1.1
    */
   @Nonnull
@@ -1949,6 +2137,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function returning the value to set. this is the current element.
    *        Receives the index position of the element in the set and the old
    *        attribute value as arguments.
+   * @return this
    * @since jQuery 1.1
    */
   @Nonnull
@@ -1961,6 +2150,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function returning the value to set. this is the current element.
    *        Receives the index position of the element in the set and the old
    *        attribute value as arguments.
+   * @return this
    * @since jQuery 1.1
    */
   @Nonnull
@@ -1970,6 +2160,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param content
    *        HTML string, DOM element, array of elements, or jQuery object to
    *        insert before each element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull IJSExpression content);
@@ -1978,6 +2169,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param content
    *        HTML string, DOM element, array of elements, or jQuery object to
    *        insert before each element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull IHCNode content);
@@ -1986,6 +2178,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param content
    *        HTML string, DOM element, array of elements, or jQuery object to
    *        insert before each element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull String content);
@@ -1994,6 +2187,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param content
    *        HTML string, DOM element, array of elements, or jQuery object to
    *        insert before each element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull EHTMLElement content);
@@ -2002,6 +2196,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param content
    *        HTML string, DOM element, array of elements, or jQuery object to
    *        insert before each element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull JSArray content);
@@ -2010,6 +2205,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param content
    *        HTML string, DOM element, array of elements, or jQuery object to
    *        insert before each element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull JQueryInvocation content);
@@ -2022,6 +2218,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull IJSExpression content, @Nonnull IJSExpression content1);
@@ -2034,6 +2231,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull IHCNode content, @Nonnull IJSExpression content1);
@@ -2046,6 +2244,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull String content, @Nonnull IJSExpression content1);
@@ -2058,6 +2257,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull EHTMLElement content, @Nonnull IJSExpression content1);
@@ -2070,6 +2270,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull JSArray content, @Nonnull IJSExpression content1);
@@ -2082,6 +2283,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull JQueryInvocation content, @Nonnull IJSExpression content1);
@@ -2094,6 +2296,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull IJSExpression content, @Nonnull IHCNode content1);
@@ -2106,6 +2309,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull IHCNode content, @Nonnull IHCNode content1);
@@ -2118,6 +2322,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull String content, @Nonnull IHCNode content1);
@@ -2130,6 +2335,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull EHTMLElement content, @Nonnull IHCNode content1);
@@ -2142,6 +2348,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull JSArray content, @Nonnull IHCNode content1);
@@ -2154,6 +2361,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull JQueryInvocation content, @Nonnull IHCNode content1);
@@ -2166,6 +2374,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull IJSExpression content, @Nonnull String content1);
@@ -2178,6 +2387,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull IHCNode content, @Nonnull String content1);
@@ -2190,6 +2400,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull String content, @Nonnull String content1);
@@ -2202,6 +2413,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull EHTMLElement content, @Nonnull String content1);
@@ -2214,6 +2426,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull JSArray content, @Nonnull String content1);
@@ -2226,6 +2439,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull JQueryInvocation content, @Nonnull String content1);
@@ -2238,6 +2452,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull IJSExpression content, @Nonnull EHTMLElement content1);
@@ -2250,6 +2465,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull IHCNode content, @Nonnull EHTMLElement content1);
@@ -2262,6 +2478,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull String content, @Nonnull EHTMLElement content1);
@@ -2274,6 +2491,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull EHTMLElement content, @Nonnull EHTMLElement content1);
@@ -2286,6 +2504,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull JSArray content, @Nonnull EHTMLElement content1);
@@ -2298,6 +2517,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull JQueryInvocation content, @Nonnull EHTMLElement content1);
@@ -2310,6 +2530,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull IJSExpression content, @Nonnull JSArray content1);
@@ -2322,6 +2543,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull IHCNode content, @Nonnull JSArray content1);
@@ -2334,6 +2556,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull String content, @Nonnull JSArray content1);
@@ -2346,6 +2569,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull EHTMLElement content, @Nonnull JSArray content1);
@@ -2358,6 +2582,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull JSArray content, @Nonnull JSArray content1);
@@ -2370,6 +2595,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull JQueryInvocation content, @Nonnull JSArray content1);
@@ -2382,6 +2608,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull IJSExpression content, @Nonnull JQueryInvocation content1);
@@ -2394,6 +2621,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull IHCNode content, @Nonnull JQueryInvocation content1);
@@ -2406,6 +2634,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull String content, @Nonnull JQueryInvocation content1);
@@ -2418,6 +2647,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull EHTMLElement content, @Nonnull JQueryInvocation content1);
@@ -2430,6 +2660,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull JSArray content, @Nonnull JQueryInvocation content1);
@@ -2442,6 +2673,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert before each element in the set
    *        of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE before (@Nonnull JQueryInvocation content, @Nonnull JQueryInvocation content1);
@@ -2452,7 +2684,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        object to insert before each element in the set of matched elements.
    *        Receives the index position of the element in the set as an
    *        argument. Within the function, this refers to the current element in
-   *        the set. @since jQuery 1.4
+   *        the set. @return this
+   * @since jQuery 1.4
    */
   @Nonnull
   IMPLTYPE before (@Nonnull JSAnonymousFunction function);
@@ -2463,6 +2696,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "submit," or custom event names.
    * @param eventData
    *        An object containing data that will be passed to the event handler.
+   * @return this
    */
   @Nonnull
   IMPLTYPE bind (@Nonnull IJSExpression eventType, @Nonnull IJSExpression eventData);
@@ -2473,6 +2707,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "submit," or custom event names.
    * @param eventData
    *        An object containing data that will be passed to the event handler.
+   * @return this
    */
   @Nonnull
   IMPLTYPE bind (@Nonnull IJson eventType, @Nonnull IJSExpression eventData);
@@ -2483,6 +2718,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "submit," or custom event names.
    * @param eventData
    *        An object containing data that will be passed to the event handler.
+   * @return this
    */
   @Nonnull
   IMPLTYPE bind (@Nonnull IHCNode eventType, @Nonnull IJSExpression eventData);
@@ -2493,6 +2729,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "submit," or custom event names.
    * @param eventData
    *        An object containing data that will be passed to the event handler.
+   * @return this
    */
   @Nonnull
   IMPLTYPE bind (@Nonnull String eventType, @Nonnull IJSExpression eventData);
@@ -2505,6 +2742,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE bind (@Nonnull IJSExpression eventType, @Nonnull IJSExpression eventData, @Nonnull IJSExpression handler);
@@ -2517,6 +2755,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE bind (@Nonnull IJson eventType, @Nonnull IJSExpression eventData, @Nonnull IJSExpression handler);
@@ -2529,6 +2768,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE bind (@Nonnull IHCNode eventType, @Nonnull IJSExpression eventData, @Nonnull IJSExpression handler);
@@ -2541,6 +2781,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE bind (@Nonnull String eventType, @Nonnull IJSExpression eventData, @Nonnull IJSExpression handler);
@@ -2553,6 +2794,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE bind (@Nonnull IJSExpression eventType,
@@ -2567,6 +2809,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE bind (@Nonnull IJson eventType, @Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler);
@@ -2579,6 +2822,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE bind (@Nonnull IHCNode eventType, @Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler);
@@ -2591,6 +2835,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE bind (@Nonnull String eventType, @Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler);
@@ -2599,6 +2844,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing one or more DOM event types, such as "click" or
    *        "submit," or custom event names.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -2608,6 +2854,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing one or more DOM event types, such as "click" or
    *        "submit," or custom event names.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -2617,6 +2864,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing one or more DOM event types, such as "click" or
    *        "submit," or custom event names.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -2626,6 +2874,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing one or more DOM event types, such as "click" or
    *        "submit," or custom event names.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -2641,6 +2890,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        Setting the third argument to false will attach a function that
    *        prevents the default action from occurring and stops the event from
    *        bubbling. The default is true.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -2656,6 +2906,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        Setting the third argument to false will attach a function that
    *        prevents the default action from occurring and stops the event from
    *        bubbling. The default is true.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -2671,6 +2922,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        Setting the third argument to false will attach a function that
    *        prevents the default action from occurring and stops the event from
    *        bubbling. The default is true.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -2686,6 +2938,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        Setting the third argument to false will attach a function that
    *        prevents the default action from occurring and stops the event from
    *        bubbling. The default is true.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -2694,6 +2947,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE blur (@Nonnull IJSExpression handler);
@@ -2701,6 +2955,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE blur (@Nonnull JSAnonymousFunction handler);
@@ -2710,6 +2965,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -2720,6 +2976,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -2732,6 +2989,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param callbacks
    *        A function, or array of functions, that are to be added to the
    *        callback list.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -2741,6 +2999,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param callbacks
    *        A function, or array of functions, that are to be added to the
    *        callback list.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -2750,6 +3009,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param callbacks
    *        A function, or array of functions, that are to be added to the
    *        callback list.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -2767,6 +3027,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param arguments
    *        The argument or list of arguments to pass back to the callback list.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -2779,6 +3040,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param context
    *        A reference to the context in which the callbacks in the list should
    *        be fired.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -2791,6 +3053,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param args
    *        An argument, or array of arguments, to pass to the callbacks in the
    *        list.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -2802,6 +3065,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param callback
    *        The callback to search for.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -2810,6 +3074,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param callback
    *        The callback to search for.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -2825,6 +3090,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param callbacks
    *        A function, or array of functions, that are to be removed from the
    *        callback list.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -2834,6 +3100,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param callbacks
    *        A function, or array of functions, that are to be removed from the
    *        callback list.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -2843,6 +3110,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param callbacks
    *        A function, or array of functions, that are to be removed from the
    *        callback list.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -2851,6 +3119,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE change (@Nonnull IJSExpression handler);
@@ -2858,6 +3127,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE change (@Nonnull JSAnonymousFunction handler);
@@ -2867,6 +3137,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -2877,6 +3148,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -2891,6 +3163,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE children (@Nonnull IJSExpression selector);
@@ -2898,6 +3171,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE children (@Nonnull IJQuerySelector selector);
@@ -2905,6 +3179,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE children (@Nonnull JQuerySelectorList selector);
@@ -2912,6 +3187,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE children (@Nonnull EHTMLElement selector);
@@ -2919,6 +3195,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE children (@Nonnull ICSSClassProvider selector);
@@ -2930,6 +3207,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -2939,6 +3217,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -2948,6 +3227,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -2957,6 +3237,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -2965,6 +3246,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE click (@Nonnull IJSExpression handler);
@@ -2972,6 +3254,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE click (@Nonnull JSAnonymousFunction handler);
@@ -2981,6 +3264,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -2991,6 +3275,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -3007,6 +3292,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A Boolean indicating whether event handlers should be copied along
    *        with the elements. As of jQuery 1.4, element data will be copied as
    *        well.
+   * @return this
    */
   @Nonnull
   IMPLTYPE _clone (@Nonnull IJSExpression withDataAndEvents);
@@ -3016,6 +3302,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A Boolean indicating whether event handlers should be copied along
    *        with the elements. As of jQuery 1.4, element data will be copied as
    *        well.
+   * @return this
    */
   @Nonnull
   IMPLTYPE _clone (boolean withDataAndEvents);
@@ -3030,6 +3317,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A Boolean indicating whether event handlers and data for all
    *        children of the cloned element should be copied. By default its
    *        value matches the first argument's value (which defaults to false).
+   * @return this
    * @since jQuery 1.5
    */
   @Nonnull
@@ -3045,6 +3333,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A Boolean indicating whether event handlers and data for all
    *        children of the cloned element should be copied. By default its
    *        value matches the first argument's value (which defaults to false).
+   * @return this
    * @since jQuery 1.5
    */
   @Nonnull
@@ -3060,6 +3349,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A Boolean indicating whether event handlers and data for all
    *        children of the cloned element should be copied. By default its
    *        value matches the first argument's value (which defaults to false).
+   * @return this
    * @since jQuery 1.5
    */
   @Nonnull
@@ -3075,6 +3365,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A Boolean indicating whether event handlers and data for all
    *        children of the cloned element should be copied. By default its
    *        value matches the first argument's value (which defaults to false).
+   * @return this
    * @since jQuery 1.5
    */
   @Nonnull
@@ -3083,6 +3374,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -3091,6 +3383,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -3099,6 +3392,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -3107,6 +3401,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -3115,6 +3410,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -3127,6 +3423,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A DOM element within which a matching element may be found. If no
    *        context is passed in then the context of the jQuery set will be used
    *        instead.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -3139,6 +3436,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A DOM element within which a matching element may be found. If no
    *        context is passed in then the context of the jQuery set will be used
    *        instead.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -3151,6 +3449,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A DOM element within which a matching element may be found. If no
    *        context is passed in then the context of the jQuery set will be used
    *        instead.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -3163,6 +3462,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A DOM element within which a matching element may be found. If no
    *        context is passed in then the context of the jQuery set will be used
    *        instead.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -3175,6 +3475,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A DOM element within which a matching element may be found. If no
    *        context is passed in then the context of the jQuery set will be used
    *        instead.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -3187,6 +3488,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A DOM element within which a matching element may be found. If no
    *        context is passed in then the context of the jQuery set will be used
    *        instead.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -3199,6 +3501,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A DOM element within which a matching element may be found. If no
    *        context is passed in then the context of the jQuery set will be used
    *        instead.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -3211,6 +3514,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A DOM element within which a matching element may be found. If no
    *        context is passed in then the context of the jQuery set will be used
    *        instead.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -3223,6 +3527,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A DOM element within which a matching element may be found. If no
    *        context is passed in then the context of the jQuery set will be used
    *        instead.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -3235,6 +3540,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A DOM element within which a matching element may be found. If no
    *        context is passed in then the context of the jQuery set will be used
    *        instead.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -3247,6 +3553,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A DOM element within which a matching element may be found. If no
    *        context is passed in then the context of the jQuery set will be used
    *        instead.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -3259,6 +3566,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A DOM element within which a matching element may be found. If no
    *        context is passed in then the context of the jQuery set will be used
    *        instead.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -3271,6 +3579,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A DOM element within which a matching element may be found. If no
    *        context is passed in then the context of the jQuery set will be used
    *        instead.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -3283,6 +3592,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A DOM element within which a matching element may be found. If no
    *        context is passed in then the context of the jQuery set will be used
    *        instead.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -3295,6 +3605,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A DOM element within which a matching element may be found. If no
    *        context is passed in then the context of the jQuery set will be used
    *        instead.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -3303,6 +3614,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param jQuery_object
    *        A jQuery object to match elements against.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -3311,6 +3623,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param element
    *        An element to match elements against.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -3320,6 +3633,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selectors
    *        An array or string containing a selector expression to match
    *        elements against (can also be a jQuery object).
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.4
    */
@@ -3335,6 +3649,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A DOM element within which a matching element may be found. If no
    *        context is passed in then the context of the jQuery set will be used
    *        instead.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.4
    */
@@ -3350,6 +3665,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A DOM element within which a matching element may be found. If no
    *        context is passed in then the context of the jQuery set will be used
    *        instead.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.4
    */
@@ -3365,6 +3681,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A DOM element within which a matching element may be found. If no
    *        context is passed in then the context of the jQuery set will be used
    *        instead.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.4
    */
@@ -3378,6 +3695,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param propertyName
    *        A CSS property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IJSExpression propertyName);
@@ -3385,6 +3703,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param propertyName
    *        A CSS property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IJson propertyName);
@@ -3392,6 +3711,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param propertyName
    *        A CSS property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IHCNode propertyName);
@@ -3399,6 +3719,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param propertyName
    *        A CSS property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull String propertyName);
@@ -3406,6 +3727,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param propertyNames
    *        An array of one or more CSS properties.
+   * @return this
    * @since jQuery 1.9
    */
   @Nonnull
@@ -3416,6 +3738,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IJSExpression propertyName, @Nonnull IJSExpression value);
@@ -3425,6 +3748,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IJson propertyName, @Nonnull IJSExpression value);
@@ -3434,6 +3758,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IHCNode propertyName, @Nonnull IJSExpression value);
@@ -3443,6 +3768,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull String propertyName, @Nonnull IJSExpression value);
@@ -3452,6 +3778,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IJSExpression propertyName, @Nonnull IJson value);
@@ -3461,6 +3788,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IJson propertyName, @Nonnull IJson value);
@@ -3470,6 +3798,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IHCNode propertyName, @Nonnull IJson value);
@@ -3479,6 +3808,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull String propertyName, @Nonnull IJson value);
@@ -3488,6 +3818,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IJSExpression propertyName, @Nonnull IHCNode value);
@@ -3497,6 +3828,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IJson propertyName, @Nonnull IHCNode value);
@@ -3506,6 +3838,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IHCNode propertyName, @Nonnull IHCNode value);
@@ -3515,6 +3848,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull String propertyName, @Nonnull IHCNode value);
@@ -3524,6 +3858,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IJSExpression propertyName, @Nonnull String value);
@@ -3533,6 +3868,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IJson propertyName, @Nonnull String value);
@@ -3542,6 +3878,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IHCNode propertyName, @Nonnull String value);
@@ -3551,6 +3888,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull String propertyName, @Nonnull String value);
@@ -3560,6 +3898,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IJSExpression propertyName, int value);
@@ -3569,6 +3908,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IJson propertyName, int value);
@@ -3578,6 +3918,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IHCNode propertyName, int value);
@@ -3587,6 +3928,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull String propertyName, int value);
@@ -3596,6 +3938,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IJSExpression propertyName, long value);
@@ -3605,6 +3948,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IJson propertyName, long value);
@@ -3614,6 +3958,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IHCNode propertyName, long value);
@@ -3623,6 +3968,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull String propertyName, long value);
@@ -3632,6 +3978,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IJSExpression propertyName, @Nonnull BigInteger value);
@@ -3641,6 +3988,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IJson propertyName, @Nonnull BigInteger value);
@@ -3650,6 +3998,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IHCNode propertyName, @Nonnull BigInteger value);
@@ -3659,6 +4008,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull String propertyName, @Nonnull BigInteger value);
@@ -3668,6 +4018,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IJSExpression propertyName, double value);
@@ -3677,6 +4028,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IJson propertyName, double value);
@@ -3686,6 +4038,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IHCNode propertyName, double value);
@@ -3695,6 +4048,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull String propertyName, double value);
@@ -3704,6 +4058,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IJSExpression propertyName, @Nonnull BigDecimal value);
@@ -3713,6 +4068,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IJson propertyName, @Nonnull BigDecimal value);
@@ -3722,6 +4078,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull IHCNode propertyName, @Nonnull BigDecimal value);
@@ -3731,6 +4088,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A CSS property name.
    * @param value
    *        A value to set for the property.
+   * @return this
    */
   @Nonnull
   IMPLTYPE css (@Nonnull String propertyName, @Nonnull BigDecimal value);
@@ -3742,6 +4100,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function returning the value to set. this is the current element.
    *        Receives the index position of the element in the set and the old
    *        value as arguments.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -3754,6 +4113,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function returning the value to set. this is the current element.
    *        Receives the index position of the element in the set and the old
    *        value as arguments.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -3766,6 +4126,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function returning the value to set. this is the current element.
    *        Receives the index position of the element in the set and the old
    *        value as arguments.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -3778,6 +4139,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function returning the value to set. this is the current element.
    *        Receives the index position of the element in the set and the old
    *        value as arguments.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -3789,6 +4151,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        The new data value; it can be any Javascript type including Array or
    *        Object.
+   * @return this
    * @since jQuery 1.2.3
    */
   @Nonnull
@@ -3800,6 +4163,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        The new data value; it can be any Javascript type including Array or
    *        Object.
+   * @return this
    * @since jQuery 1.2.3
    */
   @Nonnull
@@ -3811,6 +4175,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        The new data value; it can be any Javascript type including Array or
    *        Object.
+   * @return this
    * @since jQuery 1.2.3
    */
   @Nonnull
@@ -3822,6 +4187,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        The new data value; it can be any Javascript type including Array or
    *        Object.
+   * @return this
    * @since jQuery 1.2.3
    */
   @Nonnull
@@ -3830,6 +4196,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param obj
    *        An object of key-value pairs of data to update.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -3838,6 +4205,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param key
    *        Name of the data stored.
+   * @return this
    * @since jQuery 1.2.3
    */
   @Nonnull
@@ -3846,6 +4214,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param key
    *        Name of the data stored.
+   * @return this
    * @since jQuery 1.2.3
    */
   @Nonnull
@@ -3854,6 +4223,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param key
    *        Name of the data stored.
+   * @return this
    * @since jQuery 1.2.3
    */
   @Nonnull
@@ -3865,6 +4235,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE dblclick (@Nonnull IJSExpression handler);
@@ -3872,6 +4243,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE dblclick (@Nonnull JSAnonymousFunction handler);
@@ -3881,6 +4253,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -3891,6 +4264,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -3902,7 +4276,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param alwaysCallbacks
    *        A function, or array of functions, that is called when the Deferred
-   *        is resolved or rejected. @since jQuery 1.6
+   *        is resolved or rejected. @return this
+   * @since jQuery 1.6
    */
   @Nonnull
   IMPLTYPE deferred_always (@Nonnull IJSExpression alwaysCallbacks);
@@ -3910,7 +4285,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param alwaysCallbacks
    *        A function, or array of functions, that is called when the Deferred
-   *        is resolved or rejected. @since jQuery 1.6
+   *        is resolved or rejected. @return this
+   * @since jQuery 1.6
    */
   @Nonnull
   IMPLTYPE deferred_always (@Nonnull JSAnonymousFunction alwaysCallbacks);
@@ -3920,7 +4296,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function, or array of functions, that is called when the Deferred
    *        is resolved or rejected. @param alwaysCallbacks1
    *        Optional additional functions, or arrays of functions, that are
-   *        called when the Deferred is resolved or rejected. @since jQuery 1.6
+   *        called when the Deferred is resolved or rejected. @return this
+   * @since jQuery 1.6
    */
   @Nonnull
   IMPLTYPE deferred_always (@Nonnull IJSExpression alwaysCallbacks, @Nonnull IJSExpression alwaysCallbacks1);
@@ -3930,7 +4307,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function, or array of functions, that is called when the Deferred
    *        is resolved or rejected. @param alwaysCallbacks1
    *        Optional additional functions, or arrays of functions, that are
-   *        called when the Deferred is resolved or rejected. @since jQuery 1.6
+   *        called when the Deferred is resolved or rejected. @return this
+   * @since jQuery 1.6
    */
   @Nonnull
   IMPLTYPE deferred_always (@Nonnull JSAnonymousFunction alwaysCallbacks, @Nonnull IJSExpression alwaysCallbacks1);
@@ -3940,7 +4318,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function, or array of functions, that is called when the Deferred
    *        is resolved or rejected. @param alwaysCallbacks1
    *        Optional additional functions, or arrays of functions, that are
-   *        called when the Deferred is resolved or rejected. @since jQuery 1.6
+   *        called when the Deferred is resolved or rejected. @return this
+   * @since jQuery 1.6
    */
   @Nonnull
   IMPLTYPE deferred_always (@Nonnull IJSExpression alwaysCallbacks, @Nonnull JSAnonymousFunction alwaysCallbacks1);
@@ -3950,7 +4329,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function, or array of functions, that is called when the Deferred
    *        is resolved or rejected. @param alwaysCallbacks1
    *        Optional additional functions, or arrays of functions, that are
-   *        called when the Deferred is resolved or rejected. @since jQuery 1.6
+   *        called when the Deferred is resolved or rejected. @return this
+   * @since jQuery 1.6
    */
   @Nonnull
   IMPLTYPE deferred_always (@Nonnull JSAnonymousFunction alwaysCallbacks, @Nonnull JSAnonymousFunction alwaysCallbacks1);
@@ -3958,7 +4338,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param doneCallbacks
    *        A function, or array of functions, that are called when the Deferred
-   *        is resolved. @since jQuery 1.5
+   *        is resolved. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_done (@Nonnull IJSExpression doneCallbacks);
@@ -3966,7 +4347,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param doneCallbacks
    *        A function, or array of functions, that are called when the Deferred
-   *        is resolved. @since jQuery 1.5
+   *        is resolved. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_done (@Nonnull JSAnonymousFunction doneCallbacks);
@@ -3976,7 +4358,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function, or array of functions, that are called when the Deferred
    *        is resolved. @param doneCallbacks1
    *        Optional additional functions, or arrays of functions, that are
-   *        called when the Deferred is resolved. @since jQuery 1.5
+   *        called when the Deferred is resolved. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_done (@Nonnull IJSExpression doneCallbacks, @Nonnull IJSExpression doneCallbacks1);
@@ -3986,7 +4369,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function, or array of functions, that are called when the Deferred
    *        is resolved. @param doneCallbacks1
    *        Optional additional functions, or arrays of functions, that are
-   *        called when the Deferred is resolved. @since jQuery 1.5
+   *        called when the Deferred is resolved. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_done (@Nonnull JSAnonymousFunction doneCallbacks, @Nonnull IJSExpression doneCallbacks1);
@@ -3996,7 +4380,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function, or array of functions, that are called when the Deferred
    *        is resolved. @param doneCallbacks1
    *        Optional additional functions, or arrays of functions, that are
-   *        called when the Deferred is resolved. @since jQuery 1.5
+   *        called when the Deferred is resolved. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_done (@Nonnull IJSExpression doneCallbacks, @Nonnull JSAnonymousFunction doneCallbacks1);
@@ -4006,7 +4391,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function, or array of functions, that are called when the Deferred
    *        is resolved. @param doneCallbacks1
    *        Optional additional functions, or arrays of functions, that are
-   *        called when the Deferred is resolved. @since jQuery 1.5
+   *        called when the Deferred is resolved. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_done (@Nonnull JSAnonymousFunction doneCallbacks, @Nonnull JSAnonymousFunction doneCallbacks1);
@@ -4014,7 +4400,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param failCallbacks
    *        A function, or array of functions, that are called when the Deferred
-   *        is rejected. @since jQuery 1.5
+   *        is rejected. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_fail (@Nonnull IJSExpression failCallbacks);
@@ -4022,7 +4409,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param failCallbacks
    *        A function, or array of functions, that are called when the Deferred
-   *        is rejected. @since jQuery 1.5
+   *        is rejected. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_fail (@Nonnull JSAnonymousFunction failCallbacks);
@@ -4032,7 +4420,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function, or array of functions, that are called when the Deferred
    *        is rejected. @param failCallbacks1
    *        Optional additional functions, or arrays of functions, that are
-   *        called when the Deferred is rejected. @since jQuery 1.5
+   *        called when the Deferred is rejected. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_fail (@Nonnull IJSExpression failCallbacks, @Nonnull IJSExpression failCallbacks1);
@@ -4042,7 +4431,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function, or array of functions, that are called when the Deferred
    *        is rejected. @param failCallbacks1
    *        Optional additional functions, or arrays of functions, that are
-   *        called when the Deferred is rejected. @since jQuery 1.5
+   *        called when the Deferred is rejected. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_fail (@Nonnull JSAnonymousFunction failCallbacks, @Nonnull IJSExpression failCallbacks1);
@@ -4052,7 +4442,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function, or array of functions, that are called when the Deferred
    *        is rejected. @param failCallbacks1
    *        Optional additional functions, or arrays of functions, that are
-   *        called when the Deferred is rejected. @since jQuery 1.5
+   *        called when the Deferred is rejected. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_fail (@Nonnull IJSExpression failCallbacks, @Nonnull JSAnonymousFunction failCallbacks1);
@@ -4062,7 +4453,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function, or array of functions, that are called when the Deferred
    *        is rejected. @param failCallbacks1
    *        Optional additional functions, or arrays of functions, that are
-   *        called when the Deferred is rejected. @since jQuery 1.5
+   *        called when the Deferred is rejected. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_fail (@Nonnull JSAnonymousFunction failCallbacks, @Nonnull JSAnonymousFunction failCallbacks1);
@@ -4077,14 +4469,16 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
   /**
    * @param args
-   *        Optional arguments that are passed to the progressCallbacks. @since jQuery 1.7
+   *        Optional arguments that are passed to the progressCallbacks. @return this
+   * @since jQuery 1.7
    */
   @Nonnull
   IMPLTYPE deferred_notify (@Nonnull IJSExpression args);
 
   /**
    * @param context
-   *        Context passed to the progressCallbacks as the this object. @since jQuery 1.7
+   *        Context passed to the progressCallbacks as the this object. @return this
+   * @since jQuery 1.7
    */
   @Nonnull
   IMPLTYPE deferred_notifyWith (@Nonnull IJSExpression context);
@@ -4092,7 +4486,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param context
    *        Context passed to the progressCallbacks as the this object. @param args
-   *        Optional arguments that are passed to the progressCallbacks. @since jQuery 1.7
+   *        Optional arguments that are passed to the progressCallbacks. @return this
+   * @since jQuery 1.7
    */
   @Nonnull
   IMPLTYPE deferred_notifyWith (@Nonnull IJSExpression context, @Nonnull IJSExpression args);
@@ -4103,7 +4498,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
   /**
    * @param doneFilter
-   *        An optional function that is called when the Deferred is resolved. @deprecated Deprecated since jQuery 1.8
+   *        An optional function that is called when the Deferred is resolved. @return this
+   * @deprecated Deprecated since jQuery 1.8
    * @since jQuery 1.6
    */
   @Deprecated
@@ -4112,7 +4508,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
   /**
    * @param doneFilter
-   *        An optional function that is called when the Deferred is resolved. @deprecated Deprecated since jQuery 1.8
+   *        An optional function that is called when the Deferred is resolved. @return this
+   * @deprecated Deprecated since jQuery 1.8
    * @since jQuery 1.6
    */
   @Deprecated
@@ -4122,7 +4519,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param doneFilter
    *        An optional function that is called when the Deferred is resolved. @param failFilter
-   *        An optional function that is called when the Deferred is rejected. @deprecated Deprecated since jQuery 1.8
+   *        An optional function that is called when the Deferred is rejected. @return this
+   * @deprecated Deprecated since jQuery 1.8
    * @since jQuery 1.6
    */
   @Deprecated
@@ -4132,7 +4530,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param doneFilter
    *        An optional function that is called when the Deferred is resolved. @param failFilter
-   *        An optional function that is called when the Deferred is rejected. @deprecated Deprecated since jQuery 1.8
+   *        An optional function that is called when the Deferred is rejected. @return this
+   * @deprecated Deprecated since jQuery 1.8
    * @since jQuery 1.6
    */
   @Deprecated
@@ -4142,7 +4541,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param doneFilter
    *        An optional function that is called when the Deferred is resolved. @param failFilter
-   *        An optional function that is called when the Deferred is rejected. @deprecated Deprecated since jQuery 1.8
+   *        An optional function that is called when the Deferred is rejected. @return this
+   * @deprecated Deprecated since jQuery 1.8
    * @since jQuery 1.6
    */
   @Deprecated
@@ -4152,7 +4552,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param doneFilter
    *        An optional function that is called when the Deferred is resolved. @param failFilter
-   *        An optional function that is called when the Deferred is rejected. @deprecated Deprecated since jQuery 1.8
+   *        An optional function that is called when the Deferred is rejected. @return this
+   * @deprecated Deprecated since jQuery 1.8
    * @since jQuery 1.6
    */
   @Deprecated
@@ -4164,7 +4565,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An optional function that is called when the Deferred is resolved. @param failFilter
    *        An optional function that is called when the Deferred is rejected. @param progressFilter
    *        An optional function that is called when progress notifications are
-   *        sent to the Deferred. @deprecated Deprecated since jQuery 1.8
+   *        sent to the Deferred. @return this
+   * @deprecated Deprecated since jQuery 1.8
    * @since jQuery 1.7
    */
   @Deprecated
@@ -4178,7 +4580,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An optional function that is called when the Deferred is resolved. @param failFilter
    *        An optional function that is called when the Deferred is rejected. @param progressFilter
    *        An optional function that is called when progress notifications are
-   *        sent to the Deferred. @deprecated Deprecated since jQuery 1.8
+   *        sent to the Deferred. @return this
+   * @deprecated Deprecated since jQuery 1.8
    * @since jQuery 1.7
    */
   @Deprecated
@@ -4192,7 +4595,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An optional function that is called when the Deferred is resolved. @param failFilter
    *        An optional function that is called when the Deferred is rejected. @param progressFilter
    *        An optional function that is called when progress notifications are
-   *        sent to the Deferred. @deprecated Deprecated since jQuery 1.8
+   *        sent to the Deferred. @return this
+   * @deprecated Deprecated since jQuery 1.8
    * @since jQuery 1.7
    */
   @Deprecated
@@ -4206,7 +4610,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An optional function that is called when the Deferred is resolved. @param failFilter
    *        An optional function that is called when the Deferred is rejected. @param progressFilter
    *        An optional function that is called when progress notifications are
-   *        sent to the Deferred. @deprecated Deprecated since jQuery 1.8
+   *        sent to the Deferred. @return this
+   * @deprecated Deprecated since jQuery 1.8
    * @since jQuery 1.7
    */
   @Deprecated
@@ -4220,7 +4625,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An optional function that is called when the Deferred is resolved. @param failFilter
    *        An optional function that is called when the Deferred is rejected. @param progressFilter
    *        An optional function that is called when progress notifications are
-   *        sent to the Deferred. @deprecated Deprecated since jQuery 1.8
+   *        sent to the Deferred. @return this
+   * @deprecated Deprecated since jQuery 1.8
    * @since jQuery 1.7
    */
   @Deprecated
@@ -4234,7 +4640,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An optional function that is called when the Deferred is resolved. @param failFilter
    *        An optional function that is called when the Deferred is rejected. @param progressFilter
    *        An optional function that is called when progress notifications are
-   *        sent to the Deferred. @deprecated Deprecated since jQuery 1.8
+   *        sent to the Deferred. @return this
+   * @deprecated Deprecated since jQuery 1.8
    * @since jQuery 1.7
    */
   @Deprecated
@@ -4248,7 +4655,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An optional function that is called when the Deferred is resolved. @param failFilter
    *        An optional function that is called when the Deferred is rejected. @param progressFilter
    *        An optional function that is called when progress notifications are
-   *        sent to the Deferred. @deprecated Deprecated since jQuery 1.8
+   *        sent to the Deferred. @return this
+   * @deprecated Deprecated since jQuery 1.8
    * @since jQuery 1.7
    */
   @Deprecated
@@ -4262,7 +4670,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An optional function that is called when the Deferred is resolved. @param failFilter
    *        An optional function that is called when the Deferred is rejected. @param progressFilter
    *        An optional function that is called when progress notifications are
-   *        sent to the Deferred. @deprecated Deprecated since jQuery 1.8
+   *        sent to the Deferred. @return this
+   * @deprecated Deprecated since jQuery 1.8
    * @since jQuery 1.7
    */
   @Deprecated
@@ -4274,7 +4683,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param progressCallbacks
    *        A function, or array of functions, to be called when the Deferred
-   *        generates progress notifications. @since jQuery 1.7
+   *        generates progress notifications. @return this
+   * @since jQuery 1.7
    */
   @Nonnull
   IMPLTYPE deferred_progress (@Nonnull IJSExpression progressCallbacks);
@@ -4282,7 +4692,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param progressCallbacks
    *        A function, or array of functions, to be called when the Deferred
-   *        generates progress notifications. @since jQuery 1.7
+   *        generates progress notifications. @return this
+   * @since jQuery 1.7
    */
   @Nonnull
   IMPLTYPE deferred_progress (@Nonnull JSAnonymousFunction progressCallbacks);
@@ -4290,7 +4701,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param progressCallbacks
    *        A function, or array of functions, to be called when the Deferred
-   *        generates progress notifications. @since jQuery 1.7
+   *        generates progress notifications. @return this
+   * @since jQuery 1.7
    */
   @Nonnull
   IMPLTYPE deferred_progress (@Nonnull JSArray progressCallbacks);
@@ -4301,6 +4713,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param target
    *        Object onto which the promise methods have to be attached
+   * @return this
    * @since jQuery 1.5
    */
   @Nonnull
@@ -4311,14 +4724,16 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
   /**
    * @param args
-   *        Optional arguments that are passed to the failCallbacks. @since jQuery 1.5
+   *        Optional arguments that are passed to the failCallbacks. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_reject (@Nonnull IJSExpression args);
 
   /**
    * @param context
-   *        Context passed to the failCallbacks as the this object. @since jQuery 1.5
+   *        Context passed to the failCallbacks as the this object. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_rejectWith (@Nonnull IJSExpression context);
@@ -4326,7 +4741,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param context
    *        Context passed to the failCallbacks as the this object. @param args
-   *        An optional array of arguments that are passed to the failCallbacks. @since jQuery 1.5
+   *        An optional array of arguments that are passed to the failCallbacks. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_rejectWith (@Nonnull IJSExpression context, @Nonnull IJSExpression args);
@@ -4334,7 +4750,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param context
    *        Context passed to the failCallbacks as the this object. @param args
-   *        An optional array of arguments that are passed to the failCallbacks. @since jQuery 1.5
+   *        An optional array of arguments that are passed to the failCallbacks. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_rejectWith (@Nonnull IJSExpression context, @Nonnull JSArray args);
@@ -4344,14 +4761,16 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
   /**
    * @param args
-   *        Optional arguments that are passed to the doneCallbacks. @since jQuery 1.5
+   *        Optional arguments that are passed to the doneCallbacks. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_resolve (@Nonnull IJSExpression args);
 
   /**
    * @param context
-   *        Context passed to the doneCallbacks as the this object. @since jQuery 1.5
+   *        Context passed to the doneCallbacks as the this object. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_resolveWith (@Nonnull IJSExpression context);
@@ -4359,7 +4778,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param context
    *        Context passed to the doneCallbacks as the this object. @param args
-   *        An optional array of arguments that are passed to the doneCallbacks. @since jQuery 1.5
+   *        An optional array of arguments that are passed to the doneCallbacks. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_resolveWith (@Nonnull IJSExpression context, @Nonnull IJSExpression args);
@@ -4367,7 +4787,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param context
    *        Context passed to the doneCallbacks as the this object. @param args
-   *        An optional array of arguments that are passed to the doneCallbacks. @since jQuery 1.5
+   *        An optional array of arguments that are passed to the doneCallbacks. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_resolveWith (@Nonnull IJSExpression context, @Nonnull JSArray args);
@@ -4377,14 +4798,16 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
   /**
    * @param doneFilter
-   *        A function that is called when the Deferred is resolved. @since jQuery 1.8
+   *        A function that is called when the Deferred is resolved. @return this
+   * @since jQuery 1.8
    */
   @Nonnull
   IMPLTYPE deferred_then (@Nonnull IJSExpression doneFilter);
 
   /**
    * @param doneFilter
-   *        A function that is called when the Deferred is resolved. @since jQuery 1.8
+   *        A function that is called when the Deferred is resolved. @return this
+   * @since jQuery 1.8
    */
   @Nonnull
   IMPLTYPE deferred_then (@Nonnull JSAnonymousFunction doneFilter);
@@ -4394,7 +4817,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function that is called when the Deferred is resolved. @param failFilter
    *        An optional function that is called when the Deferred is rejected. @param progressFilter
    *        An optional function that is called when progress notifications are
-   *        sent to the Deferred. @since jQuery 1.8
+   *        sent to the Deferred. @return this
+   * @since jQuery 1.8
    */
   @Nonnull
   IMPLTYPE deferred_then (@Nonnull IJSExpression doneFilter,
@@ -4406,7 +4830,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function that is called when the Deferred is resolved. @param failFilter
    *        An optional function that is called when the Deferred is rejected. @param progressFilter
    *        An optional function that is called when progress notifications are
-   *        sent to the Deferred. @since jQuery 1.8
+   *        sent to the Deferred. @return this
+   * @since jQuery 1.8
    */
   @Nonnull
   IMPLTYPE deferred_then (@Nonnull JSAnonymousFunction doneFilter,
@@ -4418,7 +4843,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function that is called when the Deferred is resolved. @param failFilter
    *        An optional function that is called when the Deferred is rejected. @param progressFilter
    *        An optional function that is called when progress notifications are
-   *        sent to the Deferred. @since jQuery 1.8
+   *        sent to the Deferred. @return this
+   * @since jQuery 1.8
    */
   @Nonnull
   IMPLTYPE deferred_then (@Nonnull IJSExpression doneFilter,
@@ -4430,7 +4856,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function that is called when the Deferred is resolved. @param failFilter
    *        An optional function that is called when the Deferred is rejected. @param progressFilter
    *        An optional function that is called when progress notifications are
-   *        sent to the Deferred. @since jQuery 1.8
+   *        sent to the Deferred. @return this
+   * @since jQuery 1.8
    */
   @Nonnull
   IMPLTYPE deferred_then (@Nonnull JSAnonymousFunction doneFilter,
@@ -4442,7 +4869,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function that is called when the Deferred is resolved. @param failFilter
    *        An optional function that is called when the Deferred is rejected. @param progressFilter
    *        An optional function that is called when progress notifications are
-   *        sent to the Deferred. @since jQuery 1.8
+   *        sent to the Deferred. @return this
+   * @since jQuery 1.8
    */
   @Nonnull
   IMPLTYPE deferred_then (@Nonnull IJSExpression doneFilter,
@@ -4454,7 +4882,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function that is called when the Deferred is resolved. @param failFilter
    *        An optional function that is called when the Deferred is rejected. @param progressFilter
    *        An optional function that is called when progress notifications are
-   *        sent to the Deferred. @since jQuery 1.8
+   *        sent to the Deferred. @return this
+   * @since jQuery 1.8
    */
   @Nonnull
   IMPLTYPE deferred_then (@Nonnull JSAnonymousFunction doneFilter,
@@ -4466,7 +4895,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function that is called when the Deferred is resolved. @param failFilter
    *        An optional function that is called when the Deferred is rejected. @param progressFilter
    *        An optional function that is called when progress notifications are
-   *        sent to the Deferred. @since jQuery 1.8
+   *        sent to the Deferred. @return this
+   * @since jQuery 1.8
    */
   @Nonnull
   IMPLTYPE deferred_then (@Nonnull IJSExpression doneFilter,
@@ -4478,7 +4908,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function that is called when the Deferred is resolved. @param failFilter
    *        An optional function that is called when the Deferred is rejected. @param progressFilter
    *        An optional function that is called when progress notifications are
-   *        sent to the Deferred. @since jQuery 1.8
+   *        sent to the Deferred. @return this
+   * @since jQuery 1.8
    */
   @Nonnull
   IMPLTYPE deferred_then (@Nonnull JSAnonymousFunction doneFilter,
@@ -4490,7 +4921,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function, or array of functions, called when the Deferred is
    *        resolved. @param failCallbacks
    *        A function, or array of functions, called when the Deferred is
-   *        rejected. @since jQuery 1.5
+   *        rejected. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_then (@Nonnull IJSExpression doneCallbacks, @Nonnull IJSExpression failCallbacks);
@@ -4500,7 +4932,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function, or array of functions, called when the Deferred is
    *        resolved. @param failCallbacks
    *        A function, or array of functions, called when the Deferred is
-   *        rejected. @since jQuery 1.5
+   *        rejected. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_then (@Nonnull JSAnonymousFunction doneCallbacks, @Nonnull IJSExpression failCallbacks);
@@ -4510,7 +4943,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function, or array of functions, called when the Deferred is
    *        resolved. @param failCallbacks
    *        A function, or array of functions, called when the Deferred is
-   *        rejected. @since jQuery 1.5
+   *        rejected. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_then (@Nonnull IJSExpression doneCallbacks, @Nonnull JSAnonymousFunction failCallbacks);
@@ -4520,7 +4954,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function, or array of functions, called when the Deferred is
    *        resolved. @param failCallbacks
    *        A function, or array of functions, called when the Deferred is
-   *        rejected. @since jQuery 1.5
+   *        rejected. @return this
+   * @since jQuery 1.5
    */
   @Nonnull
   IMPLTYPE deferred_then (@Nonnull JSAnonymousFunction doneCallbacks, @Nonnull JSAnonymousFunction failCallbacks);
@@ -4529,6 +4964,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param duration
    *        An integer indicating the number of milliseconds to delay execution
    *        of the next item in the queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -4538,6 +4974,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param duration
    *        An integer indicating the number of milliseconds to delay execution
    *        of the next item in the queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -4547,6 +4984,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param duration
    *        An integer indicating the number of milliseconds to delay execution
    *        of the next item in the queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -4556,6 +4994,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param duration
    *        An integer indicating the number of milliseconds to delay execution
    *        of the next item in the queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -4568,6 +5007,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -4580,6 +5020,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -4592,6 +5033,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -4604,6 +5046,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -4616,6 +5059,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -4628,6 +5072,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -4640,6 +5085,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -4652,6 +5098,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -4664,6 +5111,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -4676,6 +5124,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -4688,6 +5137,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -4700,6 +5150,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -4712,6 +5163,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -4724,6 +5176,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -4736,6 +5189,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -4748,6 +5202,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -4761,6 +5216,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -4774,6 +5230,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -4787,6 +5244,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -4800,6 +5258,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -4813,6 +5272,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -4826,6 +5286,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -4839,6 +5300,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -4852,6 +5314,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -4865,6 +5328,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -4878,6 +5342,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -4891,6 +5356,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -4904,6 +5370,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -4917,6 +5384,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -4930,6 +5398,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -4943,6 +5412,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -4956,6 +5426,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -4969,6 +5440,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -4984,6 +5456,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -4997,6 +5470,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5010,6 +5484,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5023,6 +5498,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5036,6 +5512,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5049,6 +5526,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5062,6 +5540,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5075,6 +5554,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5088,6 +5568,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5101,6 +5582,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5114,6 +5596,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5127,6 +5610,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5140,6 +5624,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5153,6 +5638,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5166,6 +5652,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        types, such as "click" or "keydown," or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5181,6 +5668,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5199,6 +5687,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5217,6 +5706,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5235,6 +5725,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5253,6 +5744,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5271,6 +5763,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5289,6 +5782,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5307,6 +5801,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5325,6 +5820,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5343,6 +5839,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5361,6 +5858,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5379,6 +5877,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5397,6 +5896,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5415,6 +5915,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5433,6 +5934,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5451,6 +5953,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5469,6 +5972,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5487,6 +5991,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5505,6 +6010,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5523,6 +6029,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5541,6 +6048,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5559,6 +6067,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5577,6 +6086,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5595,6 +6105,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5613,6 +6124,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5631,6 +6143,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5649,6 +6162,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5667,6 +6181,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5685,6 +6200,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5703,6 +6219,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5721,6 +6238,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5739,6 +6257,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -5753,6 +6272,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param events
    *        A plain object of one or more event types and functions to execute
    *        for them.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -5764,6 +6284,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param events
    *        A plain object of one or more event types and functions to execute
    *        for them.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -5775,6 +6296,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param events
    *        A plain object of one or more event types and functions to execute
    *        for them.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -5786,6 +6308,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param events
    *        A plain object of one or more event types and functions to execute
    *        for them.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -5798,6 +6321,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -5807,6 +6331,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -5816,6 +6341,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -5825,6 +6351,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -5837,6 +6364,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector expression that filters the set of matched elements to be
    *        removed.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -5846,6 +6374,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector expression that filters the set of matched elements to be
    *        removed.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -5855,6 +6384,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector expression that filters the set of matched elements to be
    *        removed.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -5864,6 +6394,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector expression that filters the set of matched elements to be
    *        removed.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -5873,6 +6404,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector expression that filters the set of matched elements to be
    *        removed.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -5886,6 +6418,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as click or
    *        keydown.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -5897,6 +6430,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as click or
    *        keydown.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -5908,6 +6442,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as click or
    *        keydown.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -5919,6 +6454,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as click or
    *        keydown.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -5932,6 +6468,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        keydown.
    * @param handler
    *        The function that is no longer to be executed.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -5945,6 +6482,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        keydown.
    * @param handler
    *        The function that is no longer to be executed.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -5958,6 +6496,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        keydown.
    * @param handler
    *        The function that is no longer to be executed.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -5971,6 +6510,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        keydown.
    * @param handler
    *        The function that is no longer to be executed.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -5984,6 +6524,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        keydown.
    * @param handler
    *        The function that is no longer to be executed.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -5997,6 +6538,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        keydown.
    * @param handler
    *        The function that is no longer to be executed.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -6010,6 +6552,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        keydown.
    * @param handler
    *        The function that is no longer to be executed.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -6023,6 +6566,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        keydown.
    * @param handler
    *        The function that is no longer to be executed.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -6036,6 +6580,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        keydown.
    * @param handler
    *        The function that is no longer to be executed.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -6049,6 +6594,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        keydown.
    * @param handler
    *        The function that is no longer to be executed.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -6062,6 +6608,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        keydown.
    * @param handler
    *        The function that is no longer to be executed.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -6075,6 +6622,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        keydown.
    * @param handler
    *        The function that is no longer to be executed.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -6088,6 +6636,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        keydown.
    * @param handler
    *        The function that is no longer to be executed.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -6101,6 +6650,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        keydown.
    * @param handler
    *        The function that is no longer to be executed.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -6114,6 +6664,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        keydown.
    * @param handler
    *        The function that is no longer to be executed.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -6127,6 +6678,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        keydown.
    * @param handler
    *        The function that is no longer to be executed.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -6137,6 +6689,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param function
    *        A function to execute for each matched element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE each (@Nonnull IJSExpression function);
@@ -6144,6 +6697,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param function
    *        A function to execute for each matched element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE each (@Nonnull JSAnonymousFunction function);
@@ -6157,6 +6711,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param index
    *        An integer indicating the 0-based position of the element.
+   * @return this
    * @since jQuery 1.1.2
    */
   @Nonnull
@@ -6165,6 +6720,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param index
    *        An integer indicating the 0-based position of the element.
+   * @return this
    * @since jQuery 1.1.2
    */
   @Nonnull
@@ -6173,6 +6729,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param index
    *        An integer indicating the 0-based position of the element.
+   * @return this
    * @since jQuery 1.1.2
    */
   @Nonnull
@@ -6181,6 +6738,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param index
    *        An integer indicating the 0-based position of the element.
+   * @return this
    * @since jQuery 1.1.2
    */
   @Nonnull
@@ -6189,6 +6747,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute when the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    */
   @Deprecated
@@ -6198,6 +6757,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute when the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    */
   @Deprecated
@@ -6209,6 +6769,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    * @since jQuery 1.4.3
    */
@@ -6221,6 +6782,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    * @since jQuery 1.4.3
    */
@@ -6257,6 +6819,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull IJSExpression opacity);
@@ -6266,6 +6829,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull IJSExpression opacity);
@@ -6275,6 +6839,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull IJSExpression opacity);
@@ -6284,6 +6849,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull IJSExpression opacity);
@@ -6293,6 +6859,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (int duration, @Nonnull IJSExpression opacity);
@@ -6302,6 +6869,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (long duration, @Nonnull IJSExpression opacity);
@@ -6311,6 +6879,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull IJSExpression opacity);
@@ -6320,6 +6889,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (double duration, @Nonnull IJSExpression opacity);
@@ -6329,6 +6899,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull IJSExpression opacity);
@@ -6338,6 +6909,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJSExpression duration, int opacity);
@@ -6347,6 +6919,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJson duration, int opacity);
@@ -6356,6 +6929,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IHCNode duration, int opacity);
@@ -6365,6 +6939,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull String duration, int opacity);
@@ -6374,6 +6949,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (int duration, int opacity);
@@ -6383,6 +6959,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (long duration, int opacity);
@@ -6392,6 +6969,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigInteger duration, int opacity);
@@ -6401,6 +6979,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (double duration, int opacity);
@@ -6410,6 +6989,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigDecimal duration, int opacity);
@@ -6419,6 +6999,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJSExpression duration, long opacity);
@@ -6428,6 +7009,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJson duration, long opacity);
@@ -6437,6 +7019,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IHCNode duration, long opacity);
@@ -6446,6 +7029,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull String duration, long opacity);
@@ -6455,6 +7039,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (int duration, long opacity);
@@ -6464,6 +7049,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (long duration, long opacity);
@@ -6473,6 +7059,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigInteger duration, long opacity);
@@ -6482,6 +7069,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (double duration, long opacity);
@@ -6491,6 +7079,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigDecimal duration, long opacity);
@@ -6500,6 +7089,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull BigInteger opacity);
@@ -6509,6 +7099,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull BigInteger opacity);
@@ -6518,6 +7109,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull BigInteger opacity);
@@ -6527,6 +7119,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull BigInteger opacity);
@@ -6536,6 +7129,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (int duration, @Nonnull BigInteger opacity);
@@ -6545,6 +7139,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (long duration, @Nonnull BigInteger opacity);
@@ -6554,6 +7149,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull BigInteger opacity);
@@ -6563,6 +7159,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (double duration, @Nonnull BigInteger opacity);
@@ -6572,6 +7169,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull BigInteger opacity);
@@ -6581,6 +7179,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJSExpression duration, double opacity);
@@ -6590,6 +7189,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJson duration, double opacity);
@@ -6599,6 +7199,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IHCNode duration, double opacity);
@@ -6608,6 +7209,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull String duration, double opacity);
@@ -6617,6 +7219,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (int duration, double opacity);
@@ -6626,6 +7229,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (long duration, double opacity);
@@ -6635,6 +7239,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigInteger duration, double opacity);
@@ -6644,6 +7249,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (double duration, double opacity);
@@ -6653,6 +7259,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigDecimal duration, double opacity);
@@ -6662,6 +7269,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull BigDecimal opacity);
@@ -6671,6 +7279,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull BigDecimal opacity);
@@ -6680,6 +7289,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull BigDecimal opacity);
@@ -6689,6 +7299,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull BigDecimal opacity);
@@ -6698,6 +7309,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (int duration, @Nonnull BigDecimal opacity);
@@ -6707,6 +7319,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (long duration, @Nonnull BigDecimal opacity);
@@ -6716,6 +7329,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull BigDecimal opacity);
@@ -6725,6 +7339,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (double duration, @Nonnull BigDecimal opacity);
@@ -6734,6 +7349,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string or number determining how long the animation will run.
    * @param opacity
    *        A number between 0 and 1 denoting the target opacity.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull BigDecimal opacity);
@@ -6745,6 +7361,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull IJSExpression opacity, @Nonnull IJSExpression complete);
@@ -6756,6 +7373,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull IJSExpression opacity, @Nonnull IJSExpression complete);
@@ -6767,6 +7385,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull IJSExpression opacity, @Nonnull IJSExpression complete);
@@ -6778,6 +7397,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull IJSExpression opacity, @Nonnull IJSExpression complete);
@@ -6789,6 +7409,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (int duration, @Nonnull IJSExpression opacity, @Nonnull IJSExpression complete);
@@ -6800,6 +7421,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (long duration, @Nonnull IJSExpression opacity, @Nonnull IJSExpression complete);
@@ -6811,6 +7433,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull IJSExpression opacity, @Nonnull IJSExpression complete);
@@ -6822,6 +7445,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (double duration, @Nonnull IJSExpression opacity, @Nonnull IJSExpression complete);
@@ -6833,6 +7457,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull IJSExpression opacity, @Nonnull IJSExpression complete);
@@ -6844,6 +7469,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJSExpression duration, int opacity, @Nonnull IJSExpression complete);
@@ -6855,6 +7481,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJson duration, int opacity, @Nonnull IJSExpression complete);
@@ -6866,6 +7493,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IHCNode duration, int opacity, @Nonnull IJSExpression complete);
@@ -6877,6 +7505,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull String duration, int opacity, @Nonnull IJSExpression complete);
@@ -6888,6 +7517,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (int duration, int opacity, @Nonnull IJSExpression complete);
@@ -6899,6 +7529,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (long duration, int opacity, @Nonnull IJSExpression complete);
@@ -6910,6 +7541,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigInteger duration, int opacity, @Nonnull IJSExpression complete);
@@ -6921,6 +7553,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (double duration, int opacity, @Nonnull IJSExpression complete);
@@ -6932,6 +7565,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigDecimal duration, int opacity, @Nonnull IJSExpression complete);
@@ -6943,6 +7577,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJSExpression duration, long opacity, @Nonnull IJSExpression complete);
@@ -6954,6 +7589,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJson duration, long opacity, @Nonnull IJSExpression complete);
@@ -6965,6 +7601,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IHCNode duration, long opacity, @Nonnull IJSExpression complete);
@@ -6976,6 +7613,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull String duration, long opacity, @Nonnull IJSExpression complete);
@@ -6987,6 +7625,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (int duration, long opacity, @Nonnull IJSExpression complete);
@@ -6998,6 +7637,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (long duration, long opacity, @Nonnull IJSExpression complete);
@@ -7009,6 +7649,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigInteger duration, long opacity, @Nonnull IJSExpression complete);
@@ -7020,6 +7661,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (double duration, long opacity, @Nonnull IJSExpression complete);
@@ -7031,6 +7673,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigDecimal duration, long opacity, @Nonnull IJSExpression complete);
@@ -7042,6 +7685,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull BigInteger opacity, @Nonnull IJSExpression complete);
@@ -7053,6 +7697,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull BigInteger opacity, @Nonnull IJSExpression complete);
@@ -7064,6 +7709,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull BigInteger opacity, @Nonnull IJSExpression complete);
@@ -7075,6 +7721,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull BigInteger opacity, @Nonnull IJSExpression complete);
@@ -7086,6 +7733,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (int duration, @Nonnull BigInteger opacity, @Nonnull IJSExpression complete);
@@ -7097,6 +7745,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (long duration, @Nonnull BigInteger opacity, @Nonnull IJSExpression complete);
@@ -7108,6 +7757,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull BigInteger opacity, @Nonnull IJSExpression complete);
@@ -7119,6 +7769,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (double duration, @Nonnull BigInteger opacity, @Nonnull IJSExpression complete);
@@ -7130,6 +7781,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull BigInteger opacity, @Nonnull IJSExpression complete);
@@ -7141,6 +7793,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJSExpression duration, double opacity, @Nonnull IJSExpression complete);
@@ -7152,6 +7805,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJson duration, double opacity, @Nonnull IJSExpression complete);
@@ -7163,6 +7817,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IHCNode duration, double opacity, @Nonnull IJSExpression complete);
@@ -7174,6 +7829,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull String duration, double opacity, @Nonnull IJSExpression complete);
@@ -7185,6 +7841,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (int duration, double opacity, @Nonnull IJSExpression complete);
@@ -7196,6 +7853,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (long duration, double opacity, @Nonnull IJSExpression complete);
@@ -7207,6 +7865,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigInteger duration, double opacity, @Nonnull IJSExpression complete);
@@ -7218,6 +7877,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (double duration, double opacity, @Nonnull IJSExpression complete);
@@ -7229,6 +7889,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigDecimal duration, double opacity, @Nonnull IJSExpression complete);
@@ -7240,6 +7901,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull BigDecimal opacity, @Nonnull IJSExpression complete);
@@ -7251,6 +7913,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull BigDecimal opacity, @Nonnull IJSExpression complete);
@@ -7262,6 +7925,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull BigDecimal opacity, @Nonnull IJSExpression complete);
@@ -7273,6 +7937,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull BigDecimal opacity, @Nonnull IJSExpression complete);
@@ -7284,6 +7949,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (int duration, @Nonnull BigDecimal opacity, @Nonnull IJSExpression complete);
@@ -7295,6 +7961,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (long duration, @Nonnull BigDecimal opacity, @Nonnull IJSExpression complete);
@@ -7306,6 +7973,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull BigDecimal opacity, @Nonnull IJSExpression complete);
@@ -7317,6 +7985,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (double duration, @Nonnull BigDecimal opacity, @Nonnull IJSExpression complete);
@@ -7328,6 +7997,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull BigDecimal opacity, @Nonnull IJSExpression complete);
@@ -7339,6 +8009,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJSExpression duration,
@@ -7352,6 +8023,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull IJSExpression opacity, @Nonnull JSAnonymousFunction complete);
@@ -7363,6 +8035,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull IJSExpression opacity, @Nonnull JSAnonymousFunction complete);
@@ -7374,6 +8047,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull IJSExpression opacity, @Nonnull JSAnonymousFunction complete);
@@ -7385,6 +8059,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (int duration, @Nonnull IJSExpression opacity, @Nonnull JSAnonymousFunction complete);
@@ -7396,6 +8071,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (long duration, @Nonnull IJSExpression opacity, @Nonnull JSAnonymousFunction complete);
@@ -7407,6 +8083,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull IJSExpression opacity, @Nonnull JSAnonymousFunction complete);
@@ -7418,6 +8095,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (double duration, @Nonnull IJSExpression opacity, @Nonnull JSAnonymousFunction complete);
@@ -7429,6 +8107,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull IJSExpression opacity, @Nonnull JSAnonymousFunction complete);
@@ -7440,6 +8119,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJSExpression duration, int opacity, @Nonnull JSAnonymousFunction complete);
@@ -7451,6 +8131,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJson duration, int opacity, @Nonnull JSAnonymousFunction complete);
@@ -7462,6 +8143,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IHCNode duration, int opacity, @Nonnull JSAnonymousFunction complete);
@@ -7473,6 +8155,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull String duration, int opacity, @Nonnull JSAnonymousFunction complete);
@@ -7484,6 +8167,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (int duration, int opacity, @Nonnull JSAnonymousFunction complete);
@@ -7495,6 +8179,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (long duration, int opacity, @Nonnull JSAnonymousFunction complete);
@@ -7506,6 +8191,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigInteger duration, int opacity, @Nonnull JSAnonymousFunction complete);
@@ -7517,6 +8203,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (double duration, int opacity, @Nonnull JSAnonymousFunction complete);
@@ -7528,6 +8215,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigDecimal duration, int opacity, @Nonnull JSAnonymousFunction complete);
@@ -7539,6 +8227,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJSExpression duration, long opacity, @Nonnull JSAnonymousFunction complete);
@@ -7550,6 +8239,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJson duration, long opacity, @Nonnull JSAnonymousFunction complete);
@@ -7561,6 +8251,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IHCNode duration, long opacity, @Nonnull JSAnonymousFunction complete);
@@ -7572,6 +8263,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull String duration, long opacity, @Nonnull JSAnonymousFunction complete);
@@ -7583,6 +8275,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (int duration, long opacity, @Nonnull JSAnonymousFunction complete);
@@ -7594,6 +8287,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (long duration, long opacity, @Nonnull JSAnonymousFunction complete);
@@ -7605,6 +8299,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigInteger duration, long opacity, @Nonnull JSAnonymousFunction complete);
@@ -7616,6 +8311,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (double duration, long opacity, @Nonnull JSAnonymousFunction complete);
@@ -7627,6 +8323,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigDecimal duration, long opacity, @Nonnull JSAnonymousFunction complete);
@@ -7638,6 +8335,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull BigInteger opacity, @Nonnull JSAnonymousFunction complete);
@@ -7649,6 +8347,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull BigInteger opacity, @Nonnull JSAnonymousFunction complete);
@@ -7660,6 +8359,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull BigInteger opacity, @Nonnull JSAnonymousFunction complete);
@@ -7671,6 +8371,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull BigInteger opacity, @Nonnull JSAnonymousFunction complete);
@@ -7682,6 +8383,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (int duration, @Nonnull BigInteger opacity, @Nonnull JSAnonymousFunction complete);
@@ -7693,6 +8395,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (long duration, @Nonnull BigInteger opacity, @Nonnull JSAnonymousFunction complete);
@@ -7704,6 +8407,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull BigInteger opacity, @Nonnull JSAnonymousFunction complete);
@@ -7715,6 +8419,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (double duration, @Nonnull BigInteger opacity, @Nonnull JSAnonymousFunction complete);
@@ -7726,6 +8431,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull BigInteger opacity, @Nonnull JSAnonymousFunction complete);
@@ -7737,6 +8443,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJSExpression duration, double opacity, @Nonnull JSAnonymousFunction complete);
@@ -7748,6 +8455,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJson duration, double opacity, @Nonnull JSAnonymousFunction complete);
@@ -7759,6 +8467,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IHCNode duration, double opacity, @Nonnull JSAnonymousFunction complete);
@@ -7770,6 +8479,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull String duration, double opacity, @Nonnull JSAnonymousFunction complete);
@@ -7781,6 +8491,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (int duration, double opacity, @Nonnull JSAnonymousFunction complete);
@@ -7792,6 +8503,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (long duration, double opacity, @Nonnull JSAnonymousFunction complete);
@@ -7803,6 +8515,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigInteger duration, double opacity, @Nonnull JSAnonymousFunction complete);
@@ -7814,6 +8527,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (double duration, double opacity, @Nonnull JSAnonymousFunction complete);
@@ -7825,6 +8539,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigDecimal duration, double opacity, @Nonnull JSAnonymousFunction complete);
@@ -7836,6 +8551,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJSExpression duration, @Nonnull BigDecimal opacity, @Nonnull JSAnonymousFunction complete);
@@ -7847,6 +8563,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IJson duration, @Nonnull BigDecimal opacity, @Nonnull JSAnonymousFunction complete);
@@ -7858,6 +8575,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull IHCNode duration, @Nonnull BigDecimal opacity, @Nonnull JSAnonymousFunction complete);
@@ -7869,6 +8587,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull String duration, @Nonnull BigDecimal opacity, @Nonnull JSAnonymousFunction complete);
@@ -7880,6 +8599,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (int duration, @Nonnull BigDecimal opacity, @Nonnull JSAnonymousFunction complete);
@@ -7891,6 +8611,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (long duration, @Nonnull BigDecimal opacity, @Nonnull JSAnonymousFunction complete);
@@ -7902,6 +8623,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigInteger duration, @Nonnull BigDecimal opacity, @Nonnull JSAnonymousFunction complete);
@@ -7913,6 +8635,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (double duration, @Nonnull BigDecimal opacity, @Nonnull JSAnonymousFunction complete);
@@ -7924,6 +8647,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    */
   @Nonnull
   IMPLTYPE fadeTo (@Nonnull BigDecimal duration, @Nonnull BigDecimal opacity, @Nonnull JSAnonymousFunction complete);
@@ -7935,6 +8659,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -7947,6 +8672,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -7959,6 +8685,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -7971,6 +8698,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -7983,6 +8711,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -7995,6 +8724,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8007,6 +8737,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8019,6 +8750,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8031,6 +8763,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8043,6 +8776,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8055,6 +8789,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8067,6 +8802,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8079,6 +8815,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8091,6 +8828,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8103,6 +8841,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8115,6 +8854,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8127,6 +8867,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8139,6 +8880,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8151,6 +8893,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8163,6 +8906,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8175,6 +8919,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8187,6 +8932,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8199,6 +8945,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8211,6 +8958,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8223,6 +8971,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8235,6 +8984,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8247,6 +8997,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8259,6 +9010,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8271,6 +9023,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8283,6 +9036,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8295,6 +9049,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8307,6 +9062,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8319,6 +9075,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8331,6 +9088,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8343,6 +9101,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8355,6 +9114,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8367,6 +9127,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8379,6 +9140,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8391,6 +9153,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8403,6 +9166,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8415,6 +9179,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8427,6 +9192,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8439,6 +9205,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8451,6 +9218,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8463,6 +9231,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8475,6 +9244,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8487,6 +9257,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8499,6 +9270,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8511,6 +9283,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8523,6 +9296,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8535,6 +9309,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8547,6 +9322,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8559,6 +9335,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8571,6 +9348,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8583,6 +9361,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8595,6 +9374,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8607,6 +9387,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8619,6 +9400,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8631,6 +9413,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8643,6 +9426,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8655,6 +9439,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8667,6 +9452,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8679,6 +9465,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8691,6 +9478,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8703,6 +9491,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8715,6 +9504,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8727,6 +9517,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8739,6 +9530,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8751,6 +9543,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8763,6 +9556,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8775,6 +9569,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8787,6 +9582,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8799,6 +9595,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8811,6 +9608,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8823,6 +9621,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8835,6 +9634,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8847,6 +9647,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8859,6 +9660,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8871,6 +9673,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8883,6 +9686,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8895,6 +9699,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8907,6 +9712,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8919,6 +9725,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8931,6 +9738,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8943,6 +9751,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8955,6 +9764,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8967,6 +9777,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8979,6 +9790,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -8991,6 +9803,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9003,6 +9816,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9015,6 +9829,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9027,6 +9842,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9039,6 +9855,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9051,6 +9868,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9063,6 +9881,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9075,6 +9894,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9087,6 +9907,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9099,6 +9920,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9111,6 +9933,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9123,6 +9946,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9135,6 +9959,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9147,6 +9972,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9159,6 +9985,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9171,6 +9998,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9183,6 +10011,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9195,6 +10024,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9207,6 +10037,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9219,6 +10050,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9231,6 +10063,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9243,6 +10076,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9255,6 +10089,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9267,6 +10102,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9279,6 +10115,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9291,6 +10128,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9303,6 +10141,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9315,6 +10154,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9327,6 +10167,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9339,6 +10180,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9351,6 +10193,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9363,6 +10206,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9375,6 +10219,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9387,6 +10232,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9399,6 +10245,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9411,6 +10258,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9423,6 +10271,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9435,6 +10284,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9447,6 +10297,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9459,6 +10310,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9471,6 +10323,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9483,6 +10336,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9495,6 +10349,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9507,6 +10362,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9519,6 +10375,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9531,6 +10388,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9543,6 +10401,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9555,6 +10414,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9567,6 +10427,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9579,6 +10440,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9591,6 +10453,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9603,6 +10466,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9615,6 +10479,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9627,6 +10492,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9639,6 +10505,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9651,6 +10518,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9663,6 +10531,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9675,6 +10544,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9687,6 +10557,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9699,6 +10570,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9711,6 +10583,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9723,6 +10596,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9735,6 +10609,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9747,6 +10622,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9759,6 +10635,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9771,6 +10648,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9783,6 +10661,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9795,6 +10674,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9807,6 +10687,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9819,6 +10700,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9831,6 +10713,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9843,6 +10726,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9855,6 +10739,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9867,6 +10752,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A number between 0 and 1 denoting the target opacity.
    * @param easing
    *        A string indicating which easing function to use for the transition.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9881,6 +10767,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9898,6 +10785,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9915,6 +10803,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9932,6 +10821,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9949,6 +10839,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9966,6 +10857,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -9983,6 +10875,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10000,6 +10893,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10017,6 +10911,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10034,6 +10929,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10051,6 +10947,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10065,6 +10962,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10082,6 +10980,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10096,6 +10995,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10110,6 +11010,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10124,6 +11025,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10141,6 +11043,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10155,6 +11058,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10172,6 +11076,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10189,6 +11094,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10203,6 +11109,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10220,6 +11127,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10237,6 +11145,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10251,6 +11160,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10265,6 +11175,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10282,6 +11193,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10296,6 +11208,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10313,6 +11226,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10330,6 +11244,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10347,6 +11262,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10364,6 +11280,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10381,6 +11298,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10398,6 +11316,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10415,6 +11334,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10432,6 +11352,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10449,6 +11370,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10466,6 +11388,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10483,6 +11406,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10500,6 +11424,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10517,6 +11442,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10534,6 +11460,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10548,6 +11475,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10562,6 +11490,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10579,6 +11508,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10593,6 +11523,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10610,6 +11541,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10627,6 +11559,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10644,6 +11577,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10661,6 +11595,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10678,6 +11613,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10695,6 +11631,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10712,6 +11649,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10729,6 +11667,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10746,6 +11685,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10763,6 +11703,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10780,6 +11721,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10797,6 +11739,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10814,6 +11757,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10831,6 +11775,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10845,6 +11790,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10859,6 +11805,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10876,6 +11823,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10893,6 +11841,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10910,6 +11859,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10924,6 +11874,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10938,6 +11889,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10952,6 +11904,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10966,6 +11919,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10980,6 +11934,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -10994,6 +11949,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11008,6 +11964,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11022,6 +11979,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11036,6 +11994,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11050,6 +12009,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11064,6 +12024,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11078,6 +12039,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11092,6 +12054,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11106,6 +12069,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11120,6 +12084,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11134,6 +12099,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11148,6 +12114,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11162,6 +12129,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11179,6 +12147,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11196,6 +12165,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11213,6 +12183,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11230,6 +12201,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11244,6 +12216,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11258,6 +12231,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11275,6 +12249,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11289,6 +12264,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11306,6 +12282,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11323,6 +12300,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11337,6 +12315,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11351,6 +12330,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11365,6 +12345,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11379,6 +12360,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11393,6 +12375,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11407,6 +12390,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11421,6 +12405,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11435,6 +12420,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11452,6 +12438,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11469,6 +12456,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11486,6 +12474,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11503,6 +12492,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11517,6 +12507,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11531,6 +12522,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11548,6 +12540,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11562,6 +12555,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11579,6 +12573,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11596,6 +12591,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11613,6 +12609,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11630,6 +12627,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11647,6 +12645,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11664,6 +12663,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11681,6 +12681,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11698,6 +12699,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11715,6 +12717,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11732,6 +12735,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11749,6 +12753,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11763,6 +12768,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11777,6 +12783,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11791,6 +12798,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11805,6 +12813,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11819,6 +12828,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11833,6 +12843,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11847,6 +12858,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11861,6 +12873,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11878,6 +12891,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11892,6 +12906,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11906,6 +12921,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11920,6 +12936,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11934,6 +12951,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11948,6 +12966,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11962,6 +12981,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11976,6 +12996,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -11990,6 +13011,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12007,6 +13029,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12024,6 +13047,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12041,6 +13065,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12058,6 +13083,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12072,6 +13098,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12086,6 +13113,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12103,6 +13131,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12120,6 +13149,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12137,6 +13167,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12154,6 +13185,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12168,6 +13200,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12182,6 +13215,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12196,6 +13230,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12210,6 +13245,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12224,6 +13260,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12241,6 +13278,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12255,6 +13293,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12272,6 +13311,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12289,6 +13329,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12306,6 +13347,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12323,6 +13365,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12340,6 +13383,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12354,6 +13398,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12368,6 +13413,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12385,6 +13431,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12402,6 +13449,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12419,6 +13467,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12436,6 +13485,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12453,6 +13503,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12470,6 +13521,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12487,6 +13539,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12501,6 +13554,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12518,6 +13572,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12535,6 +13590,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12552,6 +13608,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12569,6 +13626,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12583,6 +13641,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12597,6 +13656,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12611,6 +13671,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12625,6 +13686,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12639,6 +13701,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12653,6 +13716,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12667,6 +13731,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12681,6 +13746,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12695,6 +13761,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12712,6 +13779,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12726,6 +13794,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12740,6 +13809,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12754,6 +13824,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12768,6 +13839,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12782,6 +13854,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12796,6 +13869,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12810,6 +13884,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12824,6 +13899,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12841,6 +13917,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12858,6 +13935,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12875,6 +13953,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12892,6 +13971,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12906,6 +13986,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12920,6 +14001,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12937,6 +14019,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12951,6 +14034,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12968,6 +14052,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12985,6 +14070,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -12999,6 +14085,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13013,6 +14100,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13027,6 +14115,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13041,6 +14130,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13055,6 +14145,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13069,6 +14160,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13083,6 +14175,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13097,6 +14190,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13114,6 +14208,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13131,6 +14226,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13148,6 +14244,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13165,6 +14262,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13179,6 +14277,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13193,6 +14292,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13210,6 +14310,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13224,6 +14325,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13241,6 +14343,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13258,6 +14361,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13275,6 +14379,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13292,6 +14397,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13309,6 +14415,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13326,6 +14433,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13343,6 +14451,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13360,6 +14469,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13377,6 +14487,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13394,6 +14505,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13411,6 +14523,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13428,6 +14541,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13445,6 +14559,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13462,6 +14577,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13476,6 +14592,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13490,6 +14607,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13507,6 +14625,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13521,6 +14640,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13538,6 +14658,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13555,6 +14676,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13572,6 +14694,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13589,6 +14712,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13606,6 +14730,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13620,6 +14745,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13634,6 +14760,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13651,6 +14778,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13665,6 +14793,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13682,6 +14811,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13699,6 +14829,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13716,6 +14847,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13733,6 +14865,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13750,6 +14883,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13767,6 +14901,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13784,6 +14919,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13801,6 +14937,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13818,6 +14955,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13835,6 +14973,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13852,6 +14991,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13869,6 +15009,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13886,6 +15027,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13903,6 +15045,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13917,6 +15060,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13931,6 +15075,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13948,6 +15093,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13962,6 +15108,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13979,6 +15126,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -13996,6 +15144,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14013,6 +15162,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14030,6 +15180,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14047,6 +15198,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14064,6 +15216,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14081,6 +15234,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14098,6 +15252,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14115,6 +15270,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14132,6 +15288,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14149,6 +15306,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14166,6 +15324,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14183,6 +15342,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14200,6 +15360,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14217,6 +15378,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14234,6 +15396,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14251,6 +15414,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14268,6 +15432,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14285,6 +15450,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14302,6 +15468,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14316,6 +15483,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14330,6 +15498,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14344,6 +15513,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14358,6 +15528,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14372,6 +15543,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14389,6 +15561,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14403,6 +15576,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14420,6 +15594,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14437,6 +15612,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14451,6 +15627,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14465,6 +15642,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14479,6 +15657,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14493,6 +15672,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14507,6 +15687,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14524,6 +15705,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14538,6 +15720,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14555,6 +15738,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14572,6 +15756,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14589,6 +15774,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14606,6 +15792,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14623,6 +15810,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14640,6 +15828,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14657,6 +15846,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14674,6 +15864,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14691,6 +15882,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14708,6 +15900,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14725,6 +15918,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14739,6 +15933,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14756,6 +15951,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14773,6 +15969,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14787,6 +15984,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14801,6 +15999,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14818,6 +16017,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14832,6 +16032,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14849,6 +16050,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14866,6 +16068,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14883,6 +16086,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14900,6 +16104,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14917,6 +16122,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14934,6 +16140,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14951,6 +16158,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14968,6 +16176,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -14985,6 +16194,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15002,6 +16212,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15019,6 +16230,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15036,6 +16248,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15053,6 +16266,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15070,6 +16284,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15087,6 +16302,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15104,6 +16320,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15121,6 +16338,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15138,6 +16356,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15155,6 +16374,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15172,6 +16392,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15186,6 +16407,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15203,6 +16425,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15217,6 +16440,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15231,6 +16455,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15245,6 +16470,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15262,6 +16488,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15276,6 +16503,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15293,6 +16521,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15310,6 +16539,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15324,6 +16554,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15341,6 +16572,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15358,6 +16590,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15372,6 +16605,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15386,6 +16620,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15403,6 +16638,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15417,6 +16653,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15434,6 +16671,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15451,6 +16689,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15468,6 +16707,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15485,6 +16725,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15502,6 +16743,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15519,6 +16761,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15536,6 +16779,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15553,6 +16797,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15570,6 +16815,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15587,6 +16833,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15604,6 +16851,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15621,6 +16869,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15638,6 +16887,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15655,6 +16905,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15669,6 +16920,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15683,6 +16935,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15700,6 +16953,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15714,6 +16968,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15731,6 +16986,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15748,6 +17004,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15765,6 +17022,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15782,6 +17040,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15799,6 +17058,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15816,6 +17076,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15833,6 +17094,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15850,6 +17112,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15867,6 +17130,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15884,6 +17148,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15901,6 +17166,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15918,6 +17184,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15935,6 +17202,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15952,6 +17220,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15969,6 +17238,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -15986,6 +17256,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16003,6 +17274,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16020,6 +17292,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16037,6 +17310,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16054,6 +17328,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16068,6 +17343,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16082,6 +17358,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16096,6 +17373,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16110,6 +17388,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16124,6 +17403,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16141,6 +17421,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16155,6 +17436,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16172,6 +17454,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16189,6 +17472,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16203,6 +17487,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16220,6 +17505,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16234,6 +17520,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16248,6 +17535,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16262,6 +17550,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16279,6 +17568,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16293,6 +17583,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16310,6 +17601,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16327,6 +17619,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16344,6 +17637,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16361,6 +17655,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16378,6 +17673,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16395,6 +17691,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16412,6 +17709,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16429,6 +17727,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16446,6 +17745,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16463,6 +17763,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16480,6 +17781,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16497,6 +17799,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16514,6 +17817,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16531,6 +17835,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16545,6 +17850,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16559,6 +17865,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16576,6 +17883,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16590,6 +17898,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16607,6 +17916,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16624,6 +17934,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16641,6 +17952,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16658,6 +17970,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16675,6 +17988,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16692,6 +18006,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16709,6 +18024,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16726,6 +18042,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16743,6 +18060,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A string indicating which easing function to use for the transition.
    * @param complete
    *        A function to call once the animation is complete.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16758,6 +18076,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to match the current set
    *        of elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE filter (@Nonnull IJSExpression selector);
@@ -16766,6 +18085,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to match the current set
    *        of elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE filter (@Nonnull IJQuerySelector selector);
@@ -16774,6 +18094,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to match the current set
    *        of elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE filter (@Nonnull JQuerySelectorList selector);
@@ -16782,6 +18103,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to match the current set
    *        of elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE filter (@Nonnull EHTMLElement selector);
@@ -16790,6 +18112,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to match the current set
    *        of elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE filter (@Nonnull ICSSClassProvider selector);
@@ -16798,6 +18121,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param function
    *        A function used as a test for each element in the set. this is the
    *        current DOM element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE filter (@Nonnull JSAnonymousFunction function);
@@ -16805,6 +18129,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param element
    *        An element to match the current set of elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -16813,6 +18138,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE find (@Nonnull IJSExpression selector);
@@ -16820,6 +18146,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE find (@Nonnull IJQuerySelector selector);
@@ -16827,6 +18154,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE find (@Nonnull JQuerySelectorList selector);
@@ -16834,6 +18162,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE find (@Nonnull EHTMLElement selector);
@@ -16841,6 +18170,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE find (@Nonnull ICSSClassProvider selector);
@@ -16848,6 +18178,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param element
    *        An element to match elements against.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -16859,6 +18190,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param queue
    *        The name of the queue in which to stop animations.
+   * @return this
    * @since jQuery 1.9
    */
   @Nonnull
@@ -16867,6 +18199,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param queue
    *        The name of the queue in which to stop animations.
+   * @return this
    * @since jQuery 1.9
    */
   @Nonnull
@@ -16875,6 +18208,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param queue
    *        The name of the queue in which to stop animations.
+   * @return this
    * @since jQuery 1.9
    */
   @Nonnull
@@ -16883,6 +18217,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param queue
    *        The name of the queue in which to stop animations.
+   * @return this
    * @since jQuery 1.9
    */
   @Nonnull
@@ -16894,6 +18229,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE focus (@Nonnull IJSExpression handler);
@@ -16901,6 +18237,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE focus (@Nonnull JSAnonymousFunction handler);
@@ -16910,6 +18247,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16920,6 +18258,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16931,6 +18270,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -16939,6 +18279,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -16949,6 +18290,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16959,6 +18301,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16967,6 +18310,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -16975,6 +18319,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -16985,6 +18330,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -16995,6 +18341,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -17003,6 +18350,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param index
    *        A zero-based integer indicating which element to retrieve.
+   * @return this
    */
   @Nonnull
   IMPLTYPE get (@Nonnull IJSExpression index);
@@ -17010,6 +18358,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param index
    *        A zero-based integer indicating which element to retrieve.
+   * @return this
    */
   @Nonnull
   IMPLTYPE get (int index);
@@ -17017,6 +18366,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param index
    *        A zero-based integer indicating which element to retrieve.
+   * @return this
    */
   @Nonnull
   IMPLTYPE get (long index);
@@ -17024,6 +18374,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param index
    *        A zero-based integer indicating which element to retrieve.
+   * @return this
    */
   @Nonnull
   IMPLTYPE get (@Nonnull BigInteger index);
@@ -17034,6 +18385,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -17042,6 +18394,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -17050,6 +18403,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -17058,6 +18412,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -17066,6 +18421,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param contained
    *        A DOM element to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -17074,6 +18430,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param className
    *        The class name to search for.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -17082,6 +18439,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param className
    *        The class name to search for.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -17090,6 +18448,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param className
    *        The class name to search for.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -17098,6 +18457,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param className
    *        The class name to search for.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -17110,6 +18470,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        An integer representing the number of pixels, or an integer with an
    *        optional unit of measure appended (as a string).
+   * @return this
    */
   @Nonnull
   IMPLTYPE height (@Nonnull IJSExpression value);
@@ -17118,6 +18479,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        An integer representing the number of pixels, or an integer with an
    *        optional unit of measure appended (as a string).
+   * @return this
    */
   @Nonnull
   IMPLTYPE height (@Nonnull IJson value);
@@ -17126,6 +18488,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        An integer representing the number of pixels, or an integer with an
    *        optional unit of measure appended (as a string).
+   * @return this
    */
   @Nonnull
   IMPLTYPE height (@Nonnull IHCNode value);
@@ -17134,6 +18497,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        An integer representing the number of pixels, or an integer with an
    *        optional unit of measure appended (as a string).
+   * @return this
    */
   @Nonnull
   IMPLTYPE height (@Nonnull String value);
@@ -17142,6 +18506,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        An integer representing the number of pixels, or an integer with an
    *        optional unit of measure appended (as a string).
+   * @return this
    */
   @Nonnull
   IMPLTYPE height (int value);
@@ -17150,6 +18515,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        An integer representing the number of pixels, or an integer with an
    *        optional unit of measure appended (as a string).
+   * @return this
    */
   @Nonnull
   IMPLTYPE height (long value);
@@ -17158,6 +18524,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        An integer representing the number of pixels, or an integer with an
    *        optional unit of measure appended (as a string).
+   * @return this
    */
   @Nonnull
   IMPLTYPE height (@Nonnull BigInteger value);
@@ -17166,6 +18533,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        An integer representing the number of pixels, or an integer with an
    *        optional unit of measure appended (as a string).
+   * @return this
    */
   @Nonnull
   IMPLTYPE height (double value);
@@ -17174,6 +18542,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        An integer representing the number of pixels, or an integer with an
    *        optional unit of measure appended (as a string).
+   * @return this
    */
   @Nonnull
   IMPLTYPE height (@Nonnull BigDecimal value);
@@ -17183,6 +18552,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function returning the height to set. Receives the index position
    *        of the element in the set and the old height as arguments. Within
    *        the function, this refers to the current element in the set.
+   * @return this
    * @since jQuery 1.4.1
    */
   @Nonnull
@@ -17194,6 +18564,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -17202,6 +18573,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -17210,6 +18582,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -17218,6 +18591,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -17226,6 +18600,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -17234,6 +18609,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -17242,6 +18618,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -17250,6 +18627,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -17258,6 +18636,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -17268,6 +18647,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the mouse pointer enters the element.
    * @param handlerOut
    *        A function to execute when the mouse pointer leaves the element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE hover (@Nonnull IJSExpression handlerIn, @Nonnull IJSExpression handlerOut);
@@ -17277,6 +18657,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the mouse pointer enters the element.
    * @param handlerOut
    *        A function to execute when the mouse pointer leaves the element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE hover (@Nonnull JSAnonymousFunction handlerIn, @Nonnull IJSExpression handlerOut);
@@ -17286,6 +18667,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the mouse pointer enters the element.
    * @param handlerOut
    *        A function to execute when the mouse pointer leaves the element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE hover (@Nonnull IJSExpression handlerIn, @Nonnull JSAnonymousFunction handlerOut);
@@ -17295,6 +18677,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the mouse pointer enters the element.
    * @param handlerOut
    *        A function to execute when the mouse pointer leaves the element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE hover (@Nonnull JSAnonymousFunction handlerIn, @Nonnull JSAnonymousFunction handlerOut);
@@ -17303,6 +18686,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handlerInOut
    *        A function to execute when the mouse pointer enters or leaves the
    *        element.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -17312,6 +18696,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handlerInOut
    *        A function to execute when the mouse pointer enters or leaves the
    *        element.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -17323,6 +18708,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param htmlString
    *        A string of HTML to set as the content of each matched element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE html (@Nonnull IJSExpression htmlString);
@@ -17330,6 +18716,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param htmlString
    *        A string of HTML to set as the content of each matched element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE html (@Nonnull IHCNode htmlString);
@@ -17337,6 +18724,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param htmlString
    *        A string of HTML to set as the content of each matched element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE html (@Nonnull String htmlString);
@@ -17348,6 +18736,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        arguments. jQuery empties the element before calling the function;
    *        use the oldhtml argument to reference the previous content. Within
    *        the function, this refers to the current element in the set.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -17360,6 +18749,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector representing a jQuery collection in which to look for an
    *        element.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -17369,6 +18759,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector representing a jQuery collection in which to look for an
    *        element.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -17378,6 +18769,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector representing a jQuery collection in which to look for an
    *        element.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -17387,6 +18779,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector representing a jQuery collection in which to look for an
    *        element.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -17396,6 +18789,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector representing a jQuery collection in which to look for an
    *        element.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -17405,6 +18799,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param element
    *        The DOM element or first element within the jQuery object to look
    *        for.
+   * @return this
    */
   @Nonnull
   IMPLTYPE index (@Nonnull String element);
@@ -17413,6 +18808,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param element
    *        The DOM element or first element within the jQuery object to look
    *        for.
+   * @return this
    */
   @Nonnull
   IMPLTYPE index (@Nonnull JQueryInvocation element);
@@ -17427,6 +18823,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        A number representing the number of pixels, or a number along with
    *        an optional unit of measure appended (as a string).
+   * @return this
    * @since jQuery 1.8
    */
   @Nonnull
@@ -17436,6 +18833,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        A number representing the number of pixels, or a number along with
    *        an optional unit of measure appended (as a string).
+   * @return this
    * @since jQuery 1.8
    */
   @Nonnull
@@ -17445,6 +18843,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        A number representing the number of pixels, or a number along with
    *        an optional unit of measure appended (as a string).
+   * @return this
    * @since jQuery 1.8
    */
   @Nonnull
@@ -17454,6 +18853,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        A number representing the number of pixels, or a number along with
    *        an optional unit of measure appended (as a string).
+   * @return this
    * @since jQuery 1.8
    */
   @Nonnull
@@ -17463,6 +18863,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        A number representing the number of pixels, or a number along with
    *        an optional unit of measure appended (as a string).
+   * @return this
    * @since jQuery 1.8
    */
   @Nonnull
@@ -17472,6 +18873,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        A number representing the number of pixels, or a number along with
    *        an optional unit of measure appended (as a string).
+   * @return this
    * @since jQuery 1.8
    */
   @Nonnull
@@ -17481,6 +18883,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        A number representing the number of pixels, or a number along with
    *        an optional unit of measure appended (as a string).
+   * @return this
    * @since jQuery 1.8
    */
   @Nonnull
@@ -17490,6 +18893,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        A number representing the number of pixels, or a number along with
    *        an optional unit of measure appended (as a string).
+   * @return this
    * @since jQuery 1.8
    */
   @Nonnull
@@ -17499,6 +18903,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        A number representing the number of pixels, or a number along with
    *        an optional unit of measure appended (as a string).
+   * @return this
    * @since jQuery 1.8
    */
   @Nonnull
@@ -17510,6 +18915,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        border) to set. Receives the index position of the element in the
    *        set and the old inner width as arguments. Within the function, this
    *        refers to the current element in the set.
+   * @return this
    * @since jQuery 1.8
    */
   @Nonnull
@@ -17520,6 +18926,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, array of elements, HTML string, or jQuery
    *        object; the matched set of elements will be inserted after the
    *        element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE insertAfter (@Nonnull IJSExpression target);
@@ -17529,6 +18936,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, array of elements, HTML string, or jQuery
    *        object; the matched set of elements will be inserted after the
    *        element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE insertAfter (@Nonnull IJQuerySelector target);
@@ -17538,6 +18946,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, array of elements, HTML string, or jQuery
    *        object; the matched set of elements will be inserted after the
    *        element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE insertAfter (@Nonnull JQuerySelectorList target);
@@ -17547,6 +18956,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, array of elements, HTML string, or jQuery
    *        object; the matched set of elements will be inserted after the
    *        element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE insertAfter (@Nonnull EHTMLElement target);
@@ -17556,6 +18966,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, array of elements, HTML string, or jQuery
    *        object; the matched set of elements will be inserted after the
    *        element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE insertAfter (@Nonnull ICSSClassProvider target);
@@ -17565,6 +18976,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, array of elements, HTML string, or jQuery
    *        object; the matched set of elements will be inserted after the
    *        element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE insertAfter (@Nonnull IHCNode target);
@@ -17574,6 +18986,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, array of elements, HTML string, or jQuery
    *        object; the matched set of elements will be inserted after the
    *        element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE insertAfter (@Nonnull String target);
@@ -17583,6 +18996,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, array of elements, HTML string, or jQuery
    *        object; the matched set of elements will be inserted after the
    *        element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE insertAfter (@Nonnull JSArray target);
@@ -17592,6 +19006,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, array of elements, HTML string, or jQuery
    *        object; the matched set of elements will be inserted after the
    *        element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE insertAfter (@Nonnull JQueryInvocation target);
@@ -17601,6 +19016,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, array of elements, HTML string, or jQuery
    *        object; the matched set of elements will be inserted before the
    *        element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE insertBefore (@Nonnull IJSExpression target);
@@ -17610,6 +19026,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, array of elements, HTML string, or jQuery
    *        object; the matched set of elements will be inserted before the
    *        element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE insertBefore (@Nonnull IJQuerySelector target);
@@ -17619,6 +19036,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, array of elements, HTML string, or jQuery
    *        object; the matched set of elements will be inserted before the
    *        element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE insertBefore (@Nonnull JQuerySelectorList target);
@@ -17628,6 +19046,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, array of elements, HTML string, or jQuery
    *        object; the matched set of elements will be inserted before the
    *        element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE insertBefore (@Nonnull EHTMLElement target);
@@ -17637,6 +19056,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, array of elements, HTML string, or jQuery
    *        object; the matched set of elements will be inserted before the
    *        element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE insertBefore (@Nonnull ICSSClassProvider target);
@@ -17646,6 +19066,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, array of elements, HTML string, or jQuery
    *        object; the matched set of elements will be inserted before the
    *        element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE insertBefore (@Nonnull IHCNode target);
@@ -17655,6 +19076,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, array of elements, HTML string, or jQuery
    *        object; the matched set of elements will be inserted before the
    *        element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE insertBefore (@Nonnull String target);
@@ -17664,6 +19086,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, array of elements, HTML string, or jQuery
    *        object; the matched set of elements will be inserted before the
    *        element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE insertBefore (@Nonnull JSArray target);
@@ -17673,6 +19096,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, array of elements, HTML string, or jQuery
    *        object; the matched set of elements will be inserted before the
    *        element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE insertBefore (@Nonnull JQueryInvocation target);
@@ -17680,6 +19104,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE is (@Nonnull IJSExpression selector);
@@ -17687,6 +19112,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE is (@Nonnull IJQuerySelector selector);
@@ -17694,6 +19120,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE is (@Nonnull JQuerySelectorList selector);
@@ -17701,6 +19128,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE is (@Nonnull EHTMLElement selector);
@@ -17708,6 +19136,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE is (@Nonnull ICSSClassProvider selector);
@@ -17718,6 +19147,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        argument, index, which is the element's index in the jQuery
    *        collection.Within the function, this refers to the current DOM
    *        element.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -17726,6 +19156,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param elements
    *        One or more elements to match the current set of elements against.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -17734,6 +19165,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE keydown (@Nonnull IJSExpression handler);
@@ -17741,6 +19173,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE keydown (@Nonnull JSAnonymousFunction handler);
@@ -17750,6 +19183,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -17760,6 +19194,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -17771,6 +19206,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE keypress (@Nonnull IJSExpression handler);
@@ -17778,6 +19214,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE keypress (@Nonnull JSAnonymousFunction handler);
@@ -17787,6 +19224,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -17797,6 +19235,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -17808,6 +19247,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE keyup (@Nonnull IJSExpression handler);
@@ -17815,6 +19255,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE keyup (@Nonnull JSAnonymousFunction handler);
@@ -17824,6 +19265,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -17834,6 +19276,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -17852,6 +19295,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        space-separated event types or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -17866,6 +19310,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        space-separated event types or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -17880,6 +19325,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        space-separated event types or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -17894,6 +19340,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        space-separated event types or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -17908,6 +19355,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        space-separated event types or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -17922,6 +19370,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        space-separated event types or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -17936,6 +19385,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        space-separated event types or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -17950,6 +19400,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        space-separated event types or custom event names.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.3
    */
@@ -17966,6 +19417,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.4
    */
@@ -17982,6 +19434,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.4
    */
@@ -17998,6 +19451,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.4
    */
@@ -18014,6 +19468,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.4
    */
@@ -18030,6 +19485,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.4
    */
@@ -18046,6 +19502,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.4
    */
@@ -18062,6 +19519,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.4
    */
@@ -18078,6 +19536,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.4
    */
@@ -18089,6 +19548,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param events
    *        A plain object of one or more JavaScript event types and functions
    *        to execute for them.
+   * @return this
    * @deprecated Deprecated since jQuery 1.7
    * @since jQuery 1.4.3
    */
@@ -18099,6 +19559,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute when the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    */
   @Deprecated
@@ -18108,6 +19569,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute when the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    */
   @Deprecated
@@ -18119,6 +19581,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    * @since jQuery 1.4.3
    */
@@ -18131,6 +19594,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    * @since jQuery 1.4.3
    */
@@ -18141,6 +19605,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param url
    *        A string containing the URL to which the request is sent.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJson url);
@@ -18148,6 +19613,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param url
    *        A string containing the URL to which the request is sent.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IHCNode url);
@@ -18155,6 +19621,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param url
    *        A string containing the URL to which the request is sent.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull String url);
@@ -18165,6 +19632,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        A plain object or string that is sent to the server with the
    *        request.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJson url, @Nonnull IJSExpression data);
@@ -18175,6 +19643,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        A plain object or string that is sent to the server with the
    *        request.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IHCNode url, @Nonnull IJSExpression data);
@@ -18185,6 +19654,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        A plain object or string that is sent to the server with the
    *        request.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull String url, @Nonnull IJSExpression data);
@@ -18195,6 +19665,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        A plain object or string that is sent to the server with the
    *        request.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull IJson data);
@@ -18205,6 +19676,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        A plain object or string that is sent to the server with the
    *        request.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJson url, @Nonnull IJson data);
@@ -18215,6 +19687,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        A plain object or string that is sent to the server with the
    *        request.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IHCNode url, @Nonnull IJson data);
@@ -18225,6 +19698,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        A plain object or string that is sent to the server with the
    *        request.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull String url, @Nonnull IJson data);
@@ -18235,6 +19709,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        A plain object or string that is sent to the server with the
    *        request.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull IHCNode data);
@@ -18245,6 +19720,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        A plain object or string that is sent to the server with the
    *        request.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJson url, @Nonnull IHCNode data);
@@ -18255,6 +19731,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        A plain object or string that is sent to the server with the
    *        request.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IHCNode url, @Nonnull IHCNode data);
@@ -18265,6 +19742,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        A plain object or string that is sent to the server with the
    *        request.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull String url, @Nonnull IHCNode data);
@@ -18275,6 +19753,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        A plain object or string that is sent to the server with the
    *        request.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull String data);
@@ -18285,6 +19764,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        A plain object or string that is sent to the server with the
    *        request.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJson url, @Nonnull String data);
@@ -18295,6 +19775,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        A plain object or string that is sent to the server with the
    *        request.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IHCNode url, @Nonnull String data);
@@ -18305,6 +19786,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        A plain object or string that is sent to the server with the
    *        request.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull String url, @Nonnull String data);
@@ -18317,6 +19799,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull IJSExpression data, @Nonnull IJSExpression complete);
@@ -18329,6 +19812,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJson url, @Nonnull IJSExpression data, @Nonnull IJSExpression complete);
@@ -18341,6 +19825,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IHCNode url, @Nonnull IJSExpression data, @Nonnull IJSExpression complete);
@@ -18353,6 +19838,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull String url, @Nonnull IJSExpression data, @Nonnull IJSExpression complete);
@@ -18365,6 +19851,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull IJson data, @Nonnull IJSExpression complete);
@@ -18377,6 +19864,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJson url, @Nonnull IJson data, @Nonnull IJSExpression complete);
@@ -18389,6 +19877,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IHCNode url, @Nonnull IJson data, @Nonnull IJSExpression complete);
@@ -18401,6 +19890,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull String url, @Nonnull IJson data, @Nonnull IJSExpression complete);
@@ -18413,6 +19903,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull IHCNode data, @Nonnull IJSExpression complete);
@@ -18425,6 +19916,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJson url, @Nonnull IHCNode data, @Nonnull IJSExpression complete);
@@ -18437,6 +19929,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IHCNode url, @Nonnull IHCNode data, @Nonnull IJSExpression complete);
@@ -18449,6 +19942,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull String url, @Nonnull IHCNode data, @Nonnull IJSExpression complete);
@@ -18461,6 +19955,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull String data, @Nonnull IJSExpression complete);
@@ -18473,6 +19968,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJson url, @Nonnull String data, @Nonnull IJSExpression complete);
@@ -18485,6 +19981,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IHCNode url, @Nonnull String data, @Nonnull IJSExpression complete);
@@ -18497,6 +19994,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull String url, @Nonnull String data, @Nonnull IJSExpression complete);
@@ -18509,6 +20007,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull IJSExpression data, @Nonnull JSAnonymousFunction complete);
@@ -18521,6 +20020,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJson url, @Nonnull IJSExpression data, @Nonnull JSAnonymousFunction complete);
@@ -18533,6 +20033,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IHCNode url, @Nonnull IJSExpression data, @Nonnull JSAnonymousFunction complete);
@@ -18545,6 +20046,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull String url, @Nonnull IJSExpression data, @Nonnull JSAnonymousFunction complete);
@@ -18557,6 +20059,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull IJson data, @Nonnull JSAnonymousFunction complete);
@@ -18569,6 +20072,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJson url, @Nonnull IJson data, @Nonnull JSAnonymousFunction complete);
@@ -18581,6 +20085,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IHCNode url, @Nonnull IJson data, @Nonnull JSAnonymousFunction complete);
@@ -18593,6 +20098,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull String url, @Nonnull IJson data, @Nonnull JSAnonymousFunction complete);
@@ -18605,6 +20111,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull IHCNode data, @Nonnull JSAnonymousFunction complete);
@@ -18617,6 +20124,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJson url, @Nonnull IHCNode data, @Nonnull JSAnonymousFunction complete);
@@ -18629,6 +20137,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IHCNode url, @Nonnull IHCNode data, @Nonnull JSAnonymousFunction complete);
@@ -18641,6 +20150,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull String url, @Nonnull IHCNode data, @Nonnull JSAnonymousFunction complete);
@@ -18653,6 +20163,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJSExpression url, @Nonnull String data, @Nonnull JSAnonymousFunction complete);
@@ -18665,6 +20176,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IJson url, @Nonnull String data, @Nonnull JSAnonymousFunction complete);
@@ -18677,6 +20189,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull IHCNode url, @Nonnull String data, @Nonnull JSAnonymousFunction complete);
@@ -18689,6 +20202,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        request.
    * @param complete
    *        A callback function that is executed when the request completes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE load (@Nonnull String url, @Nonnull String data, @Nonnull JSAnonymousFunction complete);
@@ -18697,6 +20211,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param callback
    *        A function object that will be invoked for each element in the
    *        current set.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -18706,6 +20221,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param callback
    *        A function object that will be invoked for each element in the
    *        current set.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -18714,6 +20230,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE mousedown (@Nonnull IJSExpression handler);
@@ -18721,6 +20238,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE mousedown (@Nonnull JSAnonymousFunction handler);
@@ -18730,6 +20248,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -18740,6 +20259,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -18751,6 +20271,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE mouseenter (@Nonnull IJSExpression handler);
@@ -18758,6 +20279,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE mouseenter (@Nonnull JSAnonymousFunction handler);
@@ -18767,6 +20289,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -18777,6 +20300,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -18788,6 +20312,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE mouseleave (@Nonnull IJSExpression handler);
@@ -18795,6 +20320,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE mouseleave (@Nonnull JSAnonymousFunction handler);
@@ -18804,6 +20330,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -18814,6 +20341,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -18825,6 +20353,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE mousemove (@Nonnull IJSExpression handler);
@@ -18832,6 +20361,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE mousemove (@Nonnull JSAnonymousFunction handler);
@@ -18841,6 +20371,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -18851,6 +20382,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -18862,6 +20394,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE mouseout (@Nonnull IJSExpression handler);
@@ -18869,6 +20402,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE mouseout (@Nonnull JSAnonymousFunction handler);
@@ -18878,6 +20412,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -18888,6 +20423,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -18899,6 +20435,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE mouseover (@Nonnull IJSExpression handler);
@@ -18906,6 +20443,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE mouseover (@Nonnull JSAnonymousFunction handler);
@@ -18915,6 +20453,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -18925,6 +20464,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -18936,6 +20476,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE mouseup (@Nonnull IJSExpression handler);
@@ -18943,6 +20484,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE mouseup (@Nonnull JSAnonymousFunction handler);
@@ -18952,6 +20494,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -18962,6 +20505,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -18976,6 +20520,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE next (@Nonnull IJSExpression selector);
@@ -18983,6 +20528,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE next (@Nonnull IJQuerySelector selector);
@@ -18990,6 +20536,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE next (@Nonnull JQuerySelectorList selector);
@@ -18997,6 +20544,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE next (@Nonnull EHTMLElement selector);
@@ -19004,6 +20552,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE next (@Nonnull ICSSClassProvider selector);
@@ -19014,6 +20563,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -19022,6 +20572,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -19030,6 +20581,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -19038,6 +20590,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -19050,6 +20603,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to indicate where to stop
    *        matching following sibling elements.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19059,6 +20613,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to indicate where to stop
    *        matching following sibling elements.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19068,6 +20623,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to indicate where to stop
    *        matching following sibling elements.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19077,6 +20633,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to indicate where to stop
    *        matching following sibling elements.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19086,6 +20643,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to indicate where to stop
    *        matching following sibling elements.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19097,6 +20655,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19108,6 +20667,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19119,6 +20679,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19130,6 +20691,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19141,6 +20703,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19152,6 +20715,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19163,6 +20727,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19174,6 +20739,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19185,6 +20751,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19196,6 +20763,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19207,6 +20775,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19218,6 +20787,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19229,6 +20799,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19240,6 +20811,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19251,6 +20823,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19262,6 +20835,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19273,6 +20847,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19284,6 +20859,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19295,6 +20871,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19306,6 +20883,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19317,6 +20895,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19328,6 +20907,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19339,6 +20919,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19350,6 +20931,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19361,6 +20943,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19370,6 +20953,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param element
    *        A DOM node or jQuery object indicating where to stop matching
    *        following sibling elements.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -19381,6 +20965,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -19392,6 +20977,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -19403,6 +20989,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -19414,6 +21001,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -19425,6 +21013,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        following sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -19433,6 +21022,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE _not (@Nonnull IJSExpression selector);
@@ -19440,6 +21030,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE _not (@Nonnull IJQuerySelector selector);
@@ -19447,6 +21038,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE _not (@Nonnull JQuerySelectorList selector);
@@ -19454,6 +21046,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE _not (@Nonnull EHTMLElement selector);
@@ -19461,6 +21054,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE _not (@Nonnull ICSSClassProvider selector);
@@ -19468,6 +21062,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param elements
    *        One or more DOM elements to remove from the matched set.
+   * @return this
    */
   @Nonnull
   IMPLTYPE _not (@Nonnull EHTMLElement... elements);
@@ -19475,6 +21070,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param elements
    *        One or more DOM elements to remove from the matched set.
+   * @return this
    */
   @Nonnull
   IMPLTYPE _not (@Nonnull Iterable <EHTMLElement> elements);
@@ -19482,6 +21078,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param elements
    *        One or more DOM elements to remove from the matched set.
+   * @return this
    */
   @Nonnull
   IMPLTYPE _not (@Nonnull String... elements);
@@ -19490,6 +21087,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param function
    *        A function used as a test for each element in the set. this is the
    *        current DOM element.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -19500,6 +21098,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more space-separated event types and optional namespaces, or
    *        just namespaces, such as "click", "keydown.myPlugin", or
    *        ".myPlugin".
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19510,6 +21109,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more space-separated event types and optional namespaces, or
    *        just namespaces, such as "click", "keydown.myPlugin", or
    *        ".myPlugin".
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19520,6 +21120,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more space-separated event types and optional namespaces, or
    *        just namespaces, such as "click", "keydown.myPlugin", or
    *        ".myPlugin".
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19530,6 +21131,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more space-separated event types and optional namespaces, or
    *        just namespaces, such as "click", "keydown.myPlugin", or
    *        ".myPlugin".
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19543,6 +21145,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector which should match the one originally passed to .on()
    *        when attaching event handlers.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19556,6 +21159,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector which should match the one originally passed to .on()
    *        when attaching event handlers.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19569,6 +21173,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector which should match the one originally passed to .on()
    *        when attaching event handlers.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19582,6 +21187,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector which should match the one originally passed to .on()
    *        when attaching event handlers.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19595,6 +21201,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector which should match the one originally passed to .on()
    *        when attaching event handlers.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19608,6 +21215,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector which should match the one originally passed to .on()
    *        when attaching event handlers.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19621,6 +21229,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector which should match the one originally passed to .on()
    *        when attaching event handlers.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19634,6 +21243,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector which should match the one originally passed to .on()
    *        when attaching event handlers.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19647,6 +21257,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector which should match the one originally passed to .on()
    *        when attaching event handlers.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19660,6 +21271,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector which should match the one originally passed to .on()
    *        when attaching event handlers.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19673,6 +21285,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector which should match the one originally passed to .on()
    *        when attaching event handlers.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19686,6 +21299,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector which should match the one originally passed to .on()
    *        when attaching event handlers.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19699,6 +21313,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector which should match the one originally passed to .on()
    *        when attaching event handlers.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19712,6 +21327,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector which should match the one originally passed to .on()
    *        when attaching event handlers.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19725,6 +21341,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector which should match the one originally passed to .on()
    *        when attaching event handlers.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19738,6 +21355,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector which should match the one originally passed to .on()
    *        when attaching event handlers.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19754,6 +21372,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19770,6 +21389,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19786,6 +21406,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19802,6 +21423,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19818,6 +21440,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19834,6 +21457,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19850,6 +21474,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19866,6 +21491,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19882,6 +21508,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19898,6 +21525,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19914,6 +21542,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19930,6 +21559,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19946,6 +21576,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19962,6 +21593,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19978,6 +21610,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -19994,6 +21627,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20010,6 +21644,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20026,6 +21661,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20042,6 +21678,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20058,6 +21695,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20074,6 +21712,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20090,6 +21729,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20106,6 +21746,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20122,6 +21763,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20138,6 +21780,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20154,6 +21797,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20170,6 +21814,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20186,6 +21831,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20202,6 +21848,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20218,6 +21865,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20234,6 +21882,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20250,6 +21899,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param handler
    *        A handler function previously attached for the event(s), or the
    *        special value false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20265,6 +21915,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param coordinates
    *        An object containing the properties top and left, which are numbers
    *        indicating the new top and left coordinates for the elements.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -20276,6 +21927,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        the element in the collection as the first argument and the current
    *        coordinates as the second argument. The function should return an
    *        object with the new top and left properties.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -20292,6 +21944,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20305,6 +21958,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20318,6 +21972,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20331,6 +21986,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20344,6 +22000,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20357,6 +22014,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20370,6 +22028,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20383,6 +22042,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20396,6 +22056,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20409,6 +22070,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20422,6 +22084,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20435,6 +22098,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20448,6 +22112,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20461,6 +22126,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20474,6 +22140,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20487,6 +22154,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20503,6 +22171,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20519,6 +22188,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20535,6 +22205,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20551,6 +22222,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20567,6 +22239,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20583,6 +22256,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20599,6 +22273,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20615,6 +22290,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20631,6 +22307,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20647,6 +22324,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20663,6 +22341,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20679,6 +22358,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20695,6 +22375,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20711,6 +22392,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20727,6 +22409,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20743,6 +22426,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20763,6 +22447,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20786,6 +22471,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20809,6 +22495,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20832,6 +22519,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20855,6 +22543,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20878,6 +22567,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20901,6 +22591,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20924,6 +22615,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20947,6 +22639,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20970,6 +22663,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -20993,6 +22687,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21016,6 +22711,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21039,6 +22735,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21062,6 +22759,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21085,6 +22783,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21108,6 +22807,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21131,6 +22831,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21154,6 +22855,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21177,6 +22879,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21200,6 +22903,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21223,6 +22927,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21246,6 +22951,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21269,6 +22975,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21292,6 +22999,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21315,6 +23023,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21338,6 +23047,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21361,6 +23071,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21384,6 +23095,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21407,6 +23119,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21430,6 +23143,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21453,6 +23167,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21476,6 +23191,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21489,6 +23205,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object in which the string keys represent one or more
    *        space-separated event types and optional namespaces, and the values
    *        represent a handler function to be called for the event(s).
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21500,6 +23217,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "click" or "submit," or custom event names.
    * @param data
    *        An object containing data that will be passed to the event handler.
+   * @return this
    * @since jQuery 1.1
    */
   @Nonnull
@@ -21511,6 +23229,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "click" or "submit," or custom event names.
    * @param data
    *        An object containing data that will be passed to the event handler.
+   * @return this
    * @since jQuery 1.1
    */
   @Nonnull
@@ -21522,6 +23241,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "click" or "submit," or custom event names.
    * @param data
    *        An object containing data that will be passed to the event handler.
+   * @return this
    * @since jQuery 1.1
    */
   @Nonnull
@@ -21533,6 +23253,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "click" or "submit," or custom event names.
    * @param data
    *        An object containing data that will be passed to the event handler.
+   * @return this
    * @since jQuery 1.1
    */
   @Nonnull
@@ -21546,6 +23267,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.1
    */
   @Nonnull
@@ -21559,6 +23281,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.1
    */
   @Nonnull
@@ -21572,6 +23295,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.1
    */
   @Nonnull
@@ -21585,6 +23309,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.1
    */
   @Nonnull
@@ -21598,6 +23323,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.1
    */
   @Nonnull
@@ -21611,6 +23337,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.1
    */
   @Nonnull
@@ -21624,6 +23351,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.1
    */
   @Nonnull
@@ -21637,6 +23365,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.1
    */
   @Nonnull
@@ -21650,6 +23379,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21663,6 +23393,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21676,6 +23407,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21689,6 +23421,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21702,6 +23435,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21715,6 +23449,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21728,6 +23463,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21741,6 +23477,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21754,6 +23491,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21767,6 +23505,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21780,6 +23519,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21793,6 +23533,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector string to filter the descendants of the selected elements
    *        that trigger the event. If the selector is null or omitted, the
    *        event is always triggered when it reaches the selected element.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21809,6 +23550,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21825,6 +23567,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21841,6 +23584,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21857,6 +23601,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21873,6 +23618,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21889,6 +23635,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21905,6 +23652,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21921,6 +23669,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21937,6 +23686,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21953,6 +23703,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21969,6 +23720,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -21985,6 +23737,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param data
    *        Data to be passed to the handler in event.data when an event is
    *        triggered.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22005,6 +23758,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22028,6 +23782,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22051,6 +23806,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22074,6 +23830,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22097,6 +23854,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22120,6 +23878,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22143,6 +23902,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22166,6 +23926,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22189,6 +23950,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22212,6 +23974,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22235,6 +23998,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22258,6 +24022,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22281,6 +24046,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22304,6 +24070,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22327,6 +24094,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22350,6 +24118,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22373,6 +24142,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22396,6 +24166,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22419,6 +24190,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22442,6 +24214,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22465,6 +24238,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22488,6 +24262,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22511,6 +24286,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22534,6 +24310,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22557,6 +24334,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22580,6 +24358,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22603,6 +24382,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22626,6 +24406,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22649,6 +24430,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22672,6 +24454,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22695,6 +24478,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22718,6 +24502,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute when the event is triggered. The value false
    *        is also allowed as a shorthand for a function that simply does
    *        return false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22731,6 +24516,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object in which the string keys represent one or more
    *        space-separated event types and optional namespaces, and the values
    *        represent a handler function to be called for the event(s).
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -22743,6 +24529,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param includeMargin
    *        A Boolean indicating whether to include the element's margin in the
    *        calculation.
+   * @return this
    * @since jQuery 1.2.6
    */
   @Nonnull
@@ -22752,6 +24539,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param includeMargin
    *        A Boolean indicating whether to include the element's margin in the
    *        calculation.
+   * @return this
    * @since jQuery 1.2.6
    */
   @Nonnull
@@ -22764,6 +24552,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param includeMargin
    *        A Boolean indicating whether to include the element's margin in the
    *        calculation.
+   * @return this
    * @since jQuery 1.2.6
    */
   @Nonnull
@@ -22773,6 +24562,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param includeMargin
    *        A Boolean indicating whether to include the element's margin in the
    *        calculation.
+   * @return this
    * @since jQuery 1.2.6
    */
   @Nonnull
@@ -22784,6 +24574,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE parent (@Nonnull IJSExpression selector);
@@ -22791,6 +24582,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE parent (@Nonnull IJQuerySelector selector);
@@ -22798,6 +24590,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE parent (@Nonnull JQuerySelectorList selector);
@@ -22805,6 +24598,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE parent (@Nonnull EHTMLElement selector);
@@ -22812,6 +24606,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE parent (@Nonnull ICSSClassProvider selector);
@@ -22822,6 +24617,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE parents (@Nonnull IJSExpression selector);
@@ -22829,6 +24625,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE parents (@Nonnull IJQuerySelector selector);
@@ -22836,6 +24633,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE parents (@Nonnull JQuerySelectorList selector);
@@ -22843,6 +24641,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE parents (@Nonnull EHTMLElement selector);
@@ -22850,6 +24649,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE parents (@Nonnull ICSSClassProvider selector);
@@ -22861,6 +24661,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to indicate where to stop
    *        matching ancestor elements.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -22870,6 +24671,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to indicate where to stop
    *        matching ancestor elements.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -22879,6 +24681,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to indicate where to stop
    *        matching ancestor elements.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -22888,6 +24691,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to indicate where to stop
    *        matching ancestor elements.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -22897,6 +24701,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to indicate where to stop
    *        matching ancestor elements.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -22908,6 +24713,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -22919,6 +24725,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -22930,6 +24737,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -22941,6 +24749,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -22952,6 +24761,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -22963,6 +24773,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -22974,6 +24785,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -22985,6 +24797,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -22996,6 +24809,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23007,6 +24821,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23018,6 +24833,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23029,6 +24845,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23040,6 +24857,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23051,6 +24869,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23062,6 +24881,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23073,6 +24893,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23084,6 +24905,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23095,6 +24917,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23106,6 +24929,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23117,6 +24941,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23128,6 +24953,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23139,6 +24965,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23150,6 +24977,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23161,6 +24989,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23172,6 +25001,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23181,6 +25011,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param element
    *        A DOM node or jQuery object indicating where to stop matching
    *        ancestor elements.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -23192,6 +25023,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -23203,6 +25035,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -23214,6 +25047,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -23225,6 +25059,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -23236,6 +25071,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        ancestor elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -23249,6 +25085,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        DOM element, array of elements, HTML string, or jQuery object to
    *        insert at the beginning of each element in the set of matched
    *        elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull IJSExpression content);
@@ -23258,6 +25095,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        DOM element, array of elements, HTML string, or jQuery object to
    *        insert at the beginning of each element in the set of matched
    *        elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull IHCNode content);
@@ -23267,6 +25105,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        DOM element, array of elements, HTML string, or jQuery object to
    *        insert at the beginning of each element in the set of matched
    *        elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull String content);
@@ -23276,6 +25115,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        DOM element, array of elements, HTML string, or jQuery object to
    *        insert at the beginning of each element in the set of matched
    *        elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull EHTMLElement content);
@@ -23285,6 +25125,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        DOM element, array of elements, HTML string, or jQuery object to
    *        insert at the beginning of each element in the set of matched
    *        elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull JSArray content);
@@ -23294,6 +25135,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        DOM element, array of elements, HTML string, or jQuery object to
    *        insert at the beginning of each element in the set of matched
    *        elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull JQueryInvocation content);
@@ -23307,6 +25149,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull IJSExpression content, @Nonnull IJSExpression content1);
@@ -23320,6 +25163,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull IHCNode content, @Nonnull IJSExpression content1);
@@ -23333,6 +25177,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull String content, @Nonnull IJSExpression content1);
@@ -23346,6 +25191,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull EHTMLElement content, @Nonnull IJSExpression content1);
@@ -23359,6 +25205,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull JSArray content, @Nonnull IJSExpression content1);
@@ -23372,6 +25219,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull JQueryInvocation content, @Nonnull IJSExpression content1);
@@ -23385,6 +25233,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull IJSExpression content, @Nonnull IHCNode content1);
@@ -23398,6 +25247,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull IHCNode content, @Nonnull IHCNode content1);
@@ -23411,6 +25261,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull String content, @Nonnull IHCNode content1);
@@ -23424,6 +25275,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull EHTMLElement content, @Nonnull IHCNode content1);
@@ -23437,6 +25289,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull JSArray content, @Nonnull IHCNode content1);
@@ -23450,6 +25303,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull JQueryInvocation content, @Nonnull IHCNode content1);
@@ -23463,6 +25317,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull IJSExpression content, @Nonnull String content1);
@@ -23476,6 +25331,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull IHCNode content, @Nonnull String content1);
@@ -23489,6 +25345,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull String content, @Nonnull String content1);
@@ -23502,6 +25359,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull EHTMLElement content, @Nonnull String content1);
@@ -23515,6 +25373,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull JSArray content, @Nonnull String content1);
@@ -23528,6 +25387,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull JQueryInvocation content, @Nonnull String content1);
@@ -23541,6 +25401,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull IJSExpression content, @Nonnull EHTMLElement content1);
@@ -23554,6 +25415,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull IHCNode content, @Nonnull EHTMLElement content1);
@@ -23567,6 +25429,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull String content, @Nonnull EHTMLElement content1);
@@ -23580,6 +25443,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull EHTMLElement content, @Nonnull EHTMLElement content1);
@@ -23593,6 +25457,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull JSArray content, @Nonnull EHTMLElement content1);
@@ -23606,6 +25471,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull JQueryInvocation content, @Nonnull EHTMLElement content1);
@@ -23619,6 +25485,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull IJSExpression content, @Nonnull JSArray content1);
@@ -23632,6 +25499,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull IHCNode content, @Nonnull JSArray content1);
@@ -23645,6 +25513,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull String content, @Nonnull JSArray content1);
@@ -23658,6 +25527,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull EHTMLElement content, @Nonnull JSArray content1);
@@ -23671,6 +25541,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull JSArray content, @Nonnull JSArray content1);
@@ -23684,6 +25555,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull JQueryInvocation content, @Nonnull JSArray content1);
@@ -23697,6 +25569,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull IJSExpression content, @Nonnull JQueryInvocation content1);
@@ -23710,6 +25583,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull IHCNode content, @Nonnull JQueryInvocation content1);
@@ -23723,6 +25597,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull String content, @Nonnull JQueryInvocation content1);
@@ -23736,6 +25611,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull EHTMLElement content, @Nonnull JQueryInvocation content1);
@@ -23749,6 +25625,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull JSArray content, @Nonnull JQueryInvocation content1);
@@ -23762,6 +25639,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        One or more additional DOM elements, arrays of elements, HTML
    *        strings, or jQuery objects to insert at the beginning of each
    *        element in the set of matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prepend (@Nonnull JQueryInvocation content, @Nonnull JQueryInvocation content1);
@@ -23773,6 +25651,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matched elements. Receives the index position of the element in the
    *        set and the old HTML value of the element as arguments. Within the
    *        function, this refers to the current element in the set.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23783,6 +25662,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, HTML string, array of elements, or jQuery
    *        object; the matched set of elements will be inserted at the
    *        beginning of the element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prependTo (@Nonnull IJSExpression target);
@@ -23792,6 +25672,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, HTML string, array of elements, or jQuery
    *        object; the matched set of elements will be inserted at the
    *        beginning of the element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prependTo (@Nonnull IJQuerySelector target);
@@ -23801,6 +25682,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, HTML string, array of elements, or jQuery
    *        object; the matched set of elements will be inserted at the
    *        beginning of the element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prependTo (@Nonnull JQuerySelectorList target);
@@ -23810,6 +25692,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, HTML string, array of elements, or jQuery
    *        object; the matched set of elements will be inserted at the
    *        beginning of the element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prependTo (@Nonnull EHTMLElement target);
@@ -23819,6 +25702,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, HTML string, array of elements, or jQuery
    *        object; the matched set of elements will be inserted at the
    *        beginning of the element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prependTo (@Nonnull ICSSClassProvider target);
@@ -23828,6 +25712,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, HTML string, array of elements, or jQuery
    *        object; the matched set of elements will be inserted at the
    *        beginning of the element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prependTo (@Nonnull IHCNode target);
@@ -23837,6 +25722,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, HTML string, array of elements, or jQuery
    *        object; the matched set of elements will be inserted at the
    *        beginning of the element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prependTo (@Nonnull String target);
@@ -23846,6 +25732,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, HTML string, array of elements, or jQuery
    *        object; the matched set of elements will be inserted at the
    *        beginning of the element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prependTo (@Nonnull JSArray target);
@@ -23855,6 +25742,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A selector, element, HTML string, array of elements, or jQuery
    *        object; the matched set of elements will be inserted at the
    *        beginning of the element(s) specified by this parameter.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prependTo (@Nonnull JQueryInvocation target);
@@ -23865,6 +25753,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prev (@Nonnull IJSExpression selector);
@@ -23872,6 +25761,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prev (@Nonnull IJQuerySelector selector);
@@ -23879,6 +25769,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prev (@Nonnull JQuerySelectorList selector);
@@ -23886,6 +25777,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prev (@Nonnull EHTMLElement selector);
@@ -23893,6 +25785,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE prev (@Nonnull ICSSClassProvider selector);
@@ -23903,6 +25796,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -23911,6 +25805,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -23919,6 +25814,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -23927,6 +25823,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -23935,6 +25832,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -23947,6 +25845,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to indicate where to stop
    *        matching preceding sibling elements.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23956,6 +25855,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to indicate where to stop
    *        matching preceding sibling elements.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23965,6 +25865,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to indicate where to stop
    *        matching preceding sibling elements.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23974,6 +25875,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to indicate where to stop
    *        matching preceding sibling elements.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23983,6 +25885,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A string containing a selector expression to indicate where to stop
    *        matching preceding sibling elements.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -23994,6 +25897,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24005,6 +25909,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24016,6 +25921,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24027,6 +25933,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24038,6 +25945,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24049,6 +25957,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24060,6 +25969,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24071,6 +25981,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24082,6 +25993,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24093,6 +26005,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24104,6 +26017,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24115,6 +26029,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24126,6 +26041,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24137,6 +26053,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24148,6 +26065,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24159,6 +26077,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24170,6 +26089,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24181,6 +26101,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24192,6 +26113,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24203,6 +26125,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24214,6 +26137,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24225,6 +26149,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24236,6 +26161,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24247,6 +26173,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24258,6 +26185,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        matching preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -24267,6 +26195,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param element
    *        A DOM node or jQuery object indicating where to stop matching
    *        preceding sibling elements.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24278,6 +26207,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24289,6 +26219,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24300,6 +26231,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24311,6 +26243,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24322,6 +26255,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        preceding sibling elements.
    * @param filter
    *        A string containing a selector expression to match elements against.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24333,6 +26267,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param type
    *        The type of queue that needs to be observed.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24341,6 +26276,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param type
    *        The type of queue that needs to be observed.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24349,6 +26285,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param type
    *        The type of queue that needs to be observed.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24357,6 +26294,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param type
    *        The type of queue that needs to be observed.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24367,6 +26305,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The type of queue that needs to be observed.
    * @param target
    *        Object onto which the promise methods have to be attached
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24377,6 +26316,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The type of queue that needs to be observed.
    * @param target
    *        Object onto which the promise methods have to be attached
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24387,6 +26327,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The type of queue that needs to be observed.
    * @param target
    *        Object onto which the promise methods have to be attached
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24397,6 +26338,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The type of queue that needs to be observed.
    * @param target
    *        Object onto which the promise methods have to be attached
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24405,6 +26347,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param propertyName
    *        The name of the property to get.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24413,6 +26356,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param propertyName
    *        The name of the property to get.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24421,6 +26365,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param propertyName
    *        The name of the property to get.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24429,6 +26374,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param propertyName
    *        The name of the property to get.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24439,6 +26385,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24449,6 +26396,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24459,6 +26407,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24469,6 +26418,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24479,6 +26429,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24489,6 +26440,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24499,6 +26451,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24509,6 +26462,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24519,6 +26473,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24529,6 +26484,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24539,6 +26495,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24549,6 +26506,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24559,6 +26517,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24569,6 +26528,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24579,6 +26539,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24589,6 +26550,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24599,6 +26561,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24609,6 +26572,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24619,6 +26583,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24629,6 +26594,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24639,6 +26605,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24649,6 +26616,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24659,6 +26627,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24669,6 +26638,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24679,6 +26649,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24689,6 +26660,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24699,6 +26671,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24709,6 +26682,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24719,6 +26693,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24729,6 +26704,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24739,6 +26715,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24749,6 +26726,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24759,6 +26737,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24769,6 +26748,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24779,6 +26759,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24789,6 +26770,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24799,6 +26781,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24809,6 +26792,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24819,6 +26803,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24829,6 +26814,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        The name of the property to set.
    * @param value
    *        A value to set for the property.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24841,6 +26827,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function returning the value to set. Receives the index position
    *        of the element in the set and the old property value as arguments.
    *        Within the function, the keyword this refers to the current element.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24853,6 +26840,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function returning the value to set. Receives the index position
    *        of the element in the set and the old property value as arguments.
    *        Within the function, the keyword this refers to the current element.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24865,6 +26853,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function returning the value to set. Receives the index position
    *        of the element in the set and the old property value as arguments.
    *        Within the function, the keyword this refers to the current element.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24877,6 +26866,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function returning the value to set. Receives the index position
    *        of the element in the set and the old property value as arguments.
    *        Within the function, the keyword this refers to the current element.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -24886,6 +26876,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param elements
    *        An array of elements to push onto the stack and make into a new
    *        jQuery object.
+   * @return this
    */
   @Nonnull
   IMPLTYPE pushStack (@Nonnull IJSExpression elements);
@@ -24894,6 +26885,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param elements
    *        An array of elements to push onto the stack and make into a new
    *        jQuery object.
+   * @return this
    */
   @Nonnull
   IMPLTYPE pushStack (@Nonnull JSArray elements);
@@ -24907,6 +26899,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param arguments
    *        The arguments that were passed in to the jQuery method (for
    *        serialization).
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -24921,6 +26914,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param arguments
    *        The arguments that were passed in to the jQuery method (for
    *        serialization).
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -24935,6 +26929,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param arguments
    *        The arguments that were passed in to the jQuery method (for
    *        serialization).
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -24949,6 +26944,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param arguments
    *        The arguments that were passed in to the jQuery method (for
    *        serialization).
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -24963,6 +26959,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param arguments
    *        The arguments that were passed in to the jQuery method (for
    *        serialization).
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -24977,6 +26974,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param arguments
    *        The arguments that were passed in to the jQuery method (for
    *        serialization).
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -24991,6 +26989,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param arguments
    *        The arguments that were passed in to the jQuery method (for
    *        serialization).
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -25005,6 +27004,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param arguments
    *        The arguments that were passed in to the jQuery method (for
    *        serialization).
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -25019,6 +27019,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param arguments
    *        The arguments that were passed in to the jQuery method (for
    *        serialization).
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -25033,6 +27034,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param arguments
    *        The arguments that were passed in to the jQuery method (for
    *        serialization).
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -25047,6 +27049,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param arguments
    *        The arguments that were passed in to the jQuery method (for
    *        serialization).
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -25061,6 +27064,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param arguments
    *        The arguments that were passed in to the jQuery method (for
    *        serialization).
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -25075,6 +27079,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param arguments
    *        The arguments that were passed in to the jQuery method (for
    *        serialization).
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -25089,6 +27094,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param arguments
    *        The arguments that were passed in to the jQuery method (for
    *        serialization).
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -25103,6 +27109,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param arguments
    *        The arguments that were passed in to the jQuery method (for
    *        serialization).
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -25117,6 +27124,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param arguments
    *        The arguments that were passed in to the jQuery method (for
    *        serialization).
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -25129,6 +27137,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25138,6 +27147,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25147,6 +27157,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25156,6 +27167,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param queueName
    *        A string containing the name of the queue. Defaults to fx, the
    *        standard effects queue.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25167,6 +27179,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        standard effects queue.
    * @param newQueue
    *        An array of functions to replace the current queue contents.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25178,6 +27191,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        standard effects queue.
    * @param newQueue
    *        An array of functions to replace the current queue contents.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25189,6 +27203,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        standard effects queue.
    * @param newQueue
    *        An array of functions to replace the current queue contents.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25200,6 +27215,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        standard effects queue.
    * @param newQueue
    *        An array of functions to replace the current queue contents.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25211,6 +27227,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        standard effects queue.
    * @param newQueue
    *        An array of functions to replace the current queue contents.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25222,6 +27239,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        standard effects queue.
    * @param newQueue
    *        An array of functions to replace the current queue contents.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25233,6 +27251,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        standard effects queue.
    * @param newQueue
    *        An array of functions to replace the current queue contents.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25244,6 +27263,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        standard effects queue.
    * @param newQueue
    *        An array of functions to replace the current queue contents.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25256,6 +27276,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param callback
    *        The new function to add to the queue, with a function to call that
    *        will dequeue the next item.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25268,6 +27289,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param callback
    *        The new function to add to the queue, with a function to call that
    *        will dequeue the next item.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25280,6 +27302,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param callback
    *        The new function to add to the queue, with a function to call that
    *        will dequeue the next item.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25292,6 +27315,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param callback
    *        The new function to add to the queue, with a function to call that
    *        will dequeue the next item.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25300,6 +27324,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute after the DOM is ready.
+   * @return this
    */
   @Nonnull
   IMPLTYPE ready (@Nonnull IJSExpression handler);
@@ -25307,6 +27332,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute after the DOM is ready.
+   * @return this
    */
   @Nonnull
   IMPLTYPE ready (@Nonnull JSAnonymousFunction handler);
@@ -25318,6 +27344,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector expression that filters the set of matched elements to be
    *        removed.
+   * @return this
    */
   @Nonnull
   IMPLTYPE remove (@Nonnull IJSExpression selector);
@@ -25326,6 +27353,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector expression that filters the set of matched elements to be
    *        removed.
+   * @return this
    */
   @Nonnull
   IMPLTYPE remove (@Nonnull IJson selector);
@@ -25334,6 +27362,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector expression that filters the set of matched elements to be
    *        removed.
+   * @return this
    */
   @Nonnull
   IMPLTYPE remove (@Nonnull IHCNode selector);
@@ -25342,6 +27371,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param selector
    *        A selector expression that filters the set of matched elements to be
    *        removed.
+   * @return this
    */
   @Nonnull
   IMPLTYPE remove (@Nonnull String selector);
@@ -25350,6 +27380,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param attributeName
    *        An attribute to remove; as of version 1.7, it can be a
    *        space-separated list of attributes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE removeAttr (@Nonnull IJSExpression attributeName);
@@ -25358,6 +27389,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param attributeName
    *        An attribute to remove; as of version 1.7, it can be a
    *        space-separated list of attributes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE removeAttr (@Nonnull IJson attributeName);
@@ -25366,6 +27398,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param attributeName
    *        An attribute to remove; as of version 1.7, it can be a
    *        space-separated list of attributes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE removeAttr (@Nonnull IHCNode attributeName);
@@ -25374,6 +27407,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param attributeName
    *        An attribute to remove; as of version 1.7, it can be a
    *        space-separated list of attributes.
+   * @return this
    */
   @Nonnull
   IMPLTYPE removeAttr (@Nonnull String attributeName);
@@ -25385,6 +27419,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param className
    *        One or more space-separated classes to be removed from the class
    *        attribute of each matched element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE removeClass (@Nonnull IJSExpression className);
@@ -25393,6 +27428,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param className
    *        One or more space-separated classes to be removed from the class
    *        attribute of each matched element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE removeClass (@Nonnull IJson className);
@@ -25401,6 +27437,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param className
    *        One or more space-separated classes to be removed from the class
    *        attribute of each matched element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE removeClass (@Nonnull IHCNode className);
@@ -25409,6 +27446,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param className
    *        One or more space-separated classes to be removed from the class
    *        attribute of each matched element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE removeClass (@Nonnull String className);
@@ -25418,6 +27456,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function returning one or more space-separated class names to be
    *        removed. Receives the index position of the element in the set and
    *        the old class value as arguments.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -25429,6 +27468,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param name
    *        A string naming the piece of data to delete.
+   * @return this
    * @since jQuery 1.2.3
    */
   @Nonnull
@@ -25437,6 +27477,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param name
    *        A string naming the piece of data to delete.
+   * @return this
    * @since jQuery 1.2.3
    */
   @Nonnull
@@ -25445,6 +27486,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param name
    *        A string naming the piece of data to delete.
+   * @return this
    * @since jQuery 1.2.3
    */
   @Nonnull
@@ -25453,6 +27495,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param name
    *        A string naming the piece of data to delete.
+   * @return this
    * @since jQuery 1.2.3
    */
   @Nonnull
@@ -25462,6 +27505,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param list
    *        An array or space-separated string naming the pieces of data to
    *        delete.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -25470,6 +27514,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param propertyName
    *        The name of the property to remove.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -25478,6 +27523,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param propertyName
    *        The name of the property to remove.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -25486,6 +27532,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param propertyName
    *        The name of the property to remove.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -25494,6 +27541,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param propertyName
    *        The name of the property to remove.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -25503,6 +27551,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param target
    *        A selector string, jQuery object, DOM element, or array of elements
    *        indicating which element(s) to replace.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25512,6 +27561,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param target
    *        A selector string, jQuery object, DOM element, or array of elements
    *        indicating which element(s) to replace.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25521,6 +27571,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param target
    *        A selector string, jQuery object, DOM element, or array of elements
    *        indicating which element(s) to replace.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25530,6 +27581,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param target
    *        A selector string, jQuery object, DOM element, or array of elements
    *        indicating which element(s) to replace.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25539,6 +27591,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param target
    *        A selector string, jQuery object, DOM element, or array of elements
    *        indicating which element(s) to replace.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25548,6 +27601,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param target
    *        A selector string, jQuery object, DOM element, or array of elements
    *        indicating which element(s) to replace.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25557,6 +27611,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param target
    *        A selector string, jQuery object, DOM element, or array of elements
    *        indicating which element(s) to replace.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25566,6 +27621,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param target
    *        A selector string, jQuery object, DOM element, or array of elements
    *        indicating which element(s) to replace.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25575,6 +27631,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param newContent
    *        The content to insert. May be an HTML string, DOM element, array of
    *        DOM elements, or jQuery object.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25584,6 +27641,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param newContent
    *        The content to insert. May be an HTML string, DOM element, array of
    *        DOM elements, or jQuery object.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25593,6 +27651,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param newContent
    *        The content to insert. May be an HTML string, DOM element, array of
    *        DOM elements, or jQuery object.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25602,6 +27661,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param newContent
    *        The content to insert. May be an HTML string, DOM element, array of
    *        DOM elements, or jQuery object.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25611,6 +27671,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param newContent
    *        The content to insert. May be an HTML string, DOM element, array of
    *        DOM elements, or jQuery object.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25620,6 +27681,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param newContent
    *        The content to insert. May be an HTML string, DOM element, array of
    *        DOM elements, or jQuery object.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -25629,6 +27691,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param function
    *        A function that returns content with which to replace the set of
    *        matched elements.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -25637,6 +27700,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE resize (@Nonnull IJSExpression handler);
@@ -25644,6 +27708,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE resize (@Nonnull JSAnonymousFunction handler);
@@ -25653,6 +27718,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -25663,6 +27729,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -25674,6 +27741,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE scroll (@Nonnull IJSExpression handler);
@@ -25681,6 +27749,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE scroll (@Nonnull JSAnonymousFunction handler);
@@ -25690,6 +27759,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -25700,6 +27770,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -25714,6 +27785,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param value
    *        An integer indicating the new position to set the scroll bar to.
+   * @return this
    * @since jQuery 1.2.6
    */
   @Nonnull
@@ -25722,6 +27794,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param value
    *        An integer indicating the new position to set the scroll bar to.
+   * @return this
    * @since jQuery 1.2.6
    */
   @Nonnull
@@ -25730,6 +27803,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param value
    *        An integer indicating the new position to set the scroll bar to.
+   * @return this
    * @since jQuery 1.2.6
    */
   @Nonnull
@@ -25738,6 +27812,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param value
    *        An integer indicating the new position to set the scroll bar to.
+   * @return this
    * @since jQuery 1.2.6
    */
   @Nonnull
@@ -25746,6 +27821,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param value
    *        An integer indicating the new position to set the scroll bar to.
+   * @return this
    * @since jQuery 1.2.6
    */
   @Nonnull
@@ -25754,6 +27830,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param value
    *        An integer indicating the new position to set the scroll bar to.
+   * @return this
    * @since jQuery 1.2.6
    */
   @Nonnull
@@ -25765,6 +27842,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param value
    *        An integer indicating the new position to set the scroll bar to.
+   * @return this
    * @since jQuery 1.2.6
    */
   @Nonnull
@@ -25773,6 +27851,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param value
    *        An integer indicating the new position to set the scroll bar to.
+   * @return this
    * @since jQuery 1.2.6
    */
   @Nonnull
@@ -25781,6 +27860,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param value
    *        An integer indicating the new position to set the scroll bar to.
+   * @return this
    * @since jQuery 1.2.6
    */
   @Nonnull
@@ -25789,6 +27869,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param value
    *        An integer indicating the new position to set the scroll bar to.
+   * @return this
    * @since jQuery 1.2.6
    */
   @Nonnull
@@ -25797,6 +27878,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param value
    *        An integer indicating the new position to set the scroll bar to.
+   * @return this
    * @since jQuery 1.2.6
    */
   @Nonnull
@@ -25805,6 +27887,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param value
    *        An integer indicating the new position to set the scroll bar to.
+   * @return this
    * @since jQuery 1.2.6
    */
   @Nonnull
@@ -25813,6 +27896,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE select (@Nonnull IJSExpression handler);
@@ -25820,6 +27904,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE select (@Nonnull JSAnonymousFunction handler);
@@ -25829,6 +27914,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -25839,6 +27925,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -25859,6 +27946,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -25867,6 +27955,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -25875,6 +27964,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -25883,6 +27973,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -25891,6 +27982,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -25899,6 +27991,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -25907,6 +28000,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -25915,6 +28009,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -25923,6 +28018,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -25934,6 +28030,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE siblings (@Nonnull IJSExpression selector);
@@ -25941,6 +28038,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE siblings (@Nonnull IJQuerySelector selector);
@@ -25948,6 +28046,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE siblings (@Nonnull JQuerySelectorList selector);
@@ -25955,6 +28054,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE siblings (@Nonnull EHTMLElement selector);
@@ -25962,6 +28062,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param selector
    *        A string containing a selector expression to match elements against.
+   * @return this
    */
   @Nonnull
   IMPLTYPE siblings (@Nonnull ICSSClassProvider selector);
@@ -25975,6 +28076,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An integer indicating the 0-based position at which the elements
    *        begin to be selected. If negative, it indicates an offset from the
    *        end of the set.
+   * @return this
    * @since jQuery 1.1.4
    */
   @Nonnull
@@ -25985,6 +28087,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An integer indicating the 0-based position at which the elements
    *        begin to be selected. If negative, it indicates an offset from the
    *        end of the set.
+   * @return this
    * @since jQuery 1.1.4
    */
   @Nonnull
@@ -25995,6 +28098,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An integer indicating the 0-based position at which the elements
    *        begin to be selected. If negative, it indicates an offset from the
    *        end of the set.
+   * @return this
    * @since jQuery 1.1.4
    */
   @Nonnull
@@ -26005,6 +28109,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An integer indicating the 0-based position at which the elements
    *        begin to be selected. If negative, it indicates an offset from the
    *        end of the set.
+   * @return this
    * @since jQuery 1.1.4
    */
   @Nonnull
@@ -26020,6 +28125,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        stop being selected. If negative, it indicates an offset from the
    *        end of the set. If omitted, the range continues until the end of the
    *        set.
+   * @return this
    * @since jQuery 1.1.4
    */
   @Nonnull
@@ -26035,6 +28141,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        stop being selected. If negative, it indicates an offset from the
    *        end of the set. If omitted, the range continues until the end of the
    *        set.
+   * @return this
    * @since jQuery 1.1.4
    */
   @Nonnull
@@ -26050,6 +28157,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        stop being selected. If negative, it indicates an offset from the
    *        end of the set. If omitted, the range continues until the end of the
    *        set.
+   * @return this
    * @since jQuery 1.1.4
    */
   @Nonnull
@@ -26065,6 +28173,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        stop being selected. If negative, it indicates an offset from the
    *        end of the set. If omitted, the range continues until the end of the
    *        set.
+   * @return this
    * @since jQuery 1.1.4
    */
   @Nonnull
@@ -26080,6 +28189,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        stop being selected. If negative, it indicates an offset from the
    *        end of the set. If omitted, the range continues until the end of the
    *        set.
+   * @return this
    * @since jQuery 1.1.4
    */
   @Nonnull
@@ -26095,6 +28205,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        stop being selected. If negative, it indicates an offset from the
    *        end of the set. If omitted, the range continues until the end of the
    *        set.
+   * @return this
    * @since jQuery 1.1.4
    */
   @Nonnull
@@ -26110,6 +28221,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        stop being selected. If negative, it indicates an offset from the
    *        end of the set. If omitted, the range continues until the end of the
    *        set.
+   * @return this
    * @since jQuery 1.1.4
    */
   @Nonnull
@@ -26125,6 +28237,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        stop being selected. If negative, it indicates an offset from the
    *        end of the set. If omitted, the range continues until the end of the
    *        set.
+   * @return this
    * @since jQuery 1.1.4
    */
   @Nonnull
@@ -26140,6 +28253,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        stop being selected. If negative, it indicates an offset from the
    *        end of the set. If omitted, the range continues until the end of the
    *        set.
+   * @return this
    * @since jQuery 1.1.4
    */
   @Nonnull
@@ -26155,6 +28269,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        stop being selected. If negative, it indicates an offset from the
    *        end of the set. If omitted, the range continues until the end of the
    *        set.
+   * @return this
    * @since jQuery 1.1.4
    */
   @Nonnull
@@ -26170,6 +28285,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        stop being selected. If negative, it indicates an offset from the
    *        end of the set. If omitted, the range continues until the end of the
    *        set.
+   * @return this
    * @since jQuery 1.1.4
    */
   @Nonnull
@@ -26185,6 +28301,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        stop being selected. If negative, it indicates an offset from the
    *        end of the set. If omitted, the range continues until the end of the
    *        set.
+   * @return this
    * @since jQuery 1.1.4
    */
   @Nonnull
@@ -26200,6 +28317,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        stop being selected. If negative, it indicates an offset from the
    *        end of the set. If omitted, the range continues until the end of the
    *        set.
+   * @return this
    * @since jQuery 1.1.4
    */
   @Nonnull
@@ -26215,6 +28333,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        stop being selected. If negative, it indicates an offset from the
    *        end of the set. If omitted, the range continues until the end of the
    *        set.
+   * @return this
    * @since jQuery 1.1.4
    */
   @Nonnull
@@ -26230,6 +28349,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        stop being selected. If negative, it indicates an offset from the
    *        end of the set. If omitted, the range continues until the end of the
    *        set.
+   * @return this
    * @since jQuery 1.1.4
    */
   @Nonnull
@@ -26245,6 +28365,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        stop being selected. If negative, it indicates an offset from the
    *        end of the set. If omitted, the range continues until the end of the
    *        set.
+   * @return this
    * @since jQuery 1.1.4
    */
   @Nonnull
@@ -26266,6 +28387,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param clearQueue
    *        A Boolean indicating whether to remove queued animation as well.
    *        Defaults to false.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -26275,6 +28397,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param clearQueue
    *        A Boolean indicating whether to remove queued animation as well.
    *        Defaults to false.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -26287,6 +28410,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param jumpToEnd
    *        A Boolean indicating whether to complete the current animation
    *        immediately. Defaults to false.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -26299,6 +28423,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param jumpToEnd
    *        A Boolean indicating whether to complete the current animation
    *        immediately. Defaults to false.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -26311,6 +28436,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param jumpToEnd
    *        A Boolean indicating whether to complete the current animation
    *        immediately. Defaults to false.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -26323,6 +28449,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param jumpToEnd
    *        A Boolean indicating whether to complete the current animation
    *        immediately. Defaults to false.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -26331,6 +28458,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param queue
    *        The name of the queue in which to stop animations.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26339,6 +28467,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param queue
    *        The name of the queue in which to stop animations.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26347,6 +28476,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param queue
    *        The name of the queue in which to stop animations.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26358,6 +28488,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param clearQueue
    *        A Boolean indicating whether to remove queued animation as well.
    *        Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26369,6 +28500,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param clearQueue
    *        A Boolean indicating whether to remove queued animation as well.
    *        Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26380,6 +28512,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param clearQueue
    *        A Boolean indicating whether to remove queued animation as well.
    *        Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26391,6 +28524,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param clearQueue
    *        A Boolean indicating whether to remove queued animation as well.
    *        Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26402,6 +28536,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param clearQueue
    *        A Boolean indicating whether to remove queued animation as well.
    *        Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26413,6 +28548,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param clearQueue
    *        A Boolean indicating whether to remove queued animation as well.
    *        Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26427,6 +28563,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param jumpToEnd
    *        A Boolean indicating whether to complete the current animation
    *        immediately. Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26441,6 +28578,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param jumpToEnd
    *        A Boolean indicating whether to complete the current animation
    *        immediately. Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26455,6 +28593,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param jumpToEnd
    *        A Boolean indicating whether to complete the current animation
    *        immediately. Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26469,6 +28608,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param jumpToEnd
    *        A Boolean indicating whether to complete the current animation
    *        immediately. Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26483,6 +28623,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param jumpToEnd
    *        A Boolean indicating whether to complete the current animation
    *        immediately. Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26497,6 +28638,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param jumpToEnd
    *        A Boolean indicating whether to complete the current animation
    *        immediately. Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26511,6 +28653,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param jumpToEnd
    *        A Boolean indicating whether to complete the current animation
    *        immediately. Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26525,6 +28668,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param jumpToEnd
    *        A Boolean indicating whether to complete the current animation
    *        immediately. Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26539,6 +28683,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param jumpToEnd
    *        A Boolean indicating whether to complete the current animation
    *        immediately. Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26553,6 +28698,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param jumpToEnd
    *        A Boolean indicating whether to complete the current animation
    *        immediately. Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26567,6 +28713,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param jumpToEnd
    *        A Boolean indicating whether to complete the current animation
    *        immediately. Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26581,6 +28728,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param jumpToEnd
    *        A Boolean indicating whether to complete the current animation
    *        immediately. Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26595,6 +28743,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param jumpToEnd
    *        A Boolean indicating whether to complete the current animation
    *        immediately. Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26609,6 +28758,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param jumpToEnd
    *        A Boolean indicating whether to complete the current animation
    *        immediately. Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26623,6 +28773,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param jumpToEnd
    *        A Boolean indicating whether to complete the current animation
    *        immediately. Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26637,6 +28788,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param jumpToEnd
    *        A Boolean indicating whether to complete the current animation
    *        immediately. Defaults to false.
+   * @return this
    * @since jQuery 1.7
    */
   @Nonnull
@@ -26645,6 +28797,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE submit (@Nonnull IJSExpression handler);
@@ -26652,6 +28805,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    */
   @Nonnull
   IMPLTYPE submit (@Nonnull JSAnonymousFunction handler);
@@ -26661,6 +28815,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -26671,6 +28826,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An object containing data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -26685,6 +28841,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param textString
    *        A string of text to set as the content of each matched element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE text (@Nonnull IJSExpression textString);
@@ -26692,6 +28849,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param textString
    *        A string of text to set as the content of each matched element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE text (@Nonnull IJson textString);
@@ -26699,6 +28857,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param textString
    *        A string of text to set as the content of each matched element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE text (@Nonnull IHCNode textString);
@@ -26706,6 +28865,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param textString
    *        A string of text to set as the content of each matched element.
+   * @return this
    */
   @Nonnull
   IMPLTYPE text (@Nonnull String textString);
@@ -26715,6 +28875,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function returning the text content to set. Receives the index
    *        position of the element in the set and the old text value as
    *        arguments.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -26728,6 +28889,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute every even time the element is clicked.
    * @param handler_eventObject_1
    *        A function to execute every odd time the element is clicked.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    */
   @Deprecated
@@ -26739,6 +28901,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute every even time the element is clicked.
    * @param handler_eventObject_1
    *        A function to execute every odd time the element is clicked.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    */
   @Deprecated
@@ -26750,6 +28913,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute every even time the element is clicked.
    * @param handler_eventObject_1
    *        A function to execute every odd time the element is clicked.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    */
   @Deprecated
@@ -26761,6 +28925,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute every even time the element is clicked.
    * @param handler_eventObject_1
    *        A function to execute every odd time the element is clicked.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    */
   @Deprecated
@@ -26774,6 +28939,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute every odd time the element is clicked.
    * @param handler_eventObject_2
    *        Additional handlers to cycle through after clicks.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    */
   @Deprecated
@@ -26789,6 +28955,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute every odd time the element is clicked.
    * @param handler_eventObject_2
    *        Additional handlers to cycle through after clicks.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    */
   @Deprecated
@@ -26804,6 +28971,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute every odd time the element is clicked.
    * @param handler_eventObject_2
    *        Additional handlers to cycle through after clicks.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    */
   @Deprecated
@@ -26819,6 +28987,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute every odd time the element is clicked.
    * @param handler_eventObject_2
    *        Additional handlers to cycle through after clicks.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    */
   @Deprecated
@@ -26834,6 +29003,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute every odd time the element is clicked.
    * @param handler_eventObject_2
    *        Additional handlers to cycle through after clicks.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    */
   @Deprecated
@@ -26849,6 +29019,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute every odd time the element is clicked.
    * @param handler_eventObject_2
    *        Additional handlers to cycle through after clicks.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    */
   @Deprecated
@@ -26864,6 +29035,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute every odd time the element is clicked.
    * @param handler_eventObject_2
    *        Additional handlers to cycle through after clicks.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    */
   @Deprecated
@@ -26879,6 +29051,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function to execute every odd time the element is clicked.
    * @param handler_eventObject_2
    *        Additional handlers to cycle through after clicks.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    */
   @Deprecated
@@ -26893,6 +29066,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -26901,6 +29075,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -26909,6 +29084,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -26917,6 +29093,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -26925,6 +29102,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -26933,6 +29111,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -26941,6 +29120,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -26949,6 +29129,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -26957,6 +29138,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param duration
    *        A string or number determining how long the animation will run.
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -26965,6 +29147,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param showOrHide
    *        A Boolean indicating whether to show or hide the elements.
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -26974,6 +29157,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param className
    *        One or more class names (separated by spaces) to be toggled for each
    *        element in the matched set.
+   * @return this
    */
   @Nonnull
   IMPLTYPE toggleClass (@Nonnull IJSExpression className);
@@ -26982,6 +29166,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param className
    *        One or more class names (separated by spaces) to be toggled for each
    *        element in the matched set.
+   * @return this
    */
   @Nonnull
   IMPLTYPE toggleClass (@Nonnull IJson className);
@@ -26990,6 +29175,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param className
    *        One or more class names (separated by spaces) to be toggled for each
    *        element in the matched set.
+   * @return this
    */
   @Nonnull
   IMPLTYPE toggleClass (@Nonnull IHCNode className);
@@ -26998,6 +29184,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param className
    *        One or more class names (separated by spaces) to be toggled for each
    *        element in the matched set.
+   * @return this
    */
   @Nonnull
   IMPLTYPE toggleClass (@Nonnull String className);
@@ -27009,6 +29196,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param _switch
    *        A Boolean (not just truthy/falsy) value to determine whether the
    *        class should be added or removed.
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -27021,6 +29209,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param _switch
    *        A Boolean (not just truthy/falsy) value to determine whether the
    *        class should be added or removed.
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -27033,6 +29222,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param _switch
    *        A Boolean (not just truthy/falsy) value to determine whether the
    *        class should be added or removed.
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -27045,6 +29235,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param _switch
    *        A Boolean (not just truthy/falsy) value to determine whether the
    *        class should be added or removed.
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -27057,6 +29248,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param _switch
    *        A Boolean (not just truthy/falsy) value to determine whether the
    *        class should be added or removed.
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -27069,6 +29261,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param _switch
    *        A Boolean (not just truthy/falsy) value to determine whether the
    *        class should be added or removed.
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -27081,6 +29274,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param _switch
    *        A Boolean (not just truthy/falsy) value to determine whether the
    *        class should be added or removed.
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -27093,6 +29287,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param _switch
    *        A Boolean (not just truthy/falsy) value to determine whether the
    *        class should be added or removed.
+   * @return this
    * @since jQuery 1.3
    */
   @Nonnull
@@ -27105,6 +29300,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param _switch
    *        A boolean value to determine whether the class should be added or
    *        removed.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -27116,6 +29312,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        attribute of each element in the matched set. Receives the index
    *        position of the element in the set, the old class value, and the
    *        switch as arguments.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -27130,6 +29327,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param _switch
    *        A boolean value to determine whether the class should be added or
    *        removed.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -27144,6 +29342,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param _switch
    *        A boolean value to determine whether the class should be added or
    *        removed.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -27153,6 +29352,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as click or
    *        submit.
+   * @return this
    */
   @Nonnull
   IMPLTYPE trigger (@Nonnull IJSExpression eventType);
@@ -27161,6 +29361,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as click or
    *        submit.
+   * @return this
    */
   @Nonnull
   IMPLTYPE trigger (@Nonnull IJson eventType);
@@ -27169,6 +29370,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as click or
    *        submit.
+   * @return this
    */
   @Nonnull
   IMPLTYPE trigger (@Nonnull IHCNode eventType);
@@ -27177,6 +29379,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as click or
    *        submit.
+   * @return this
    */
   @Nonnull
   IMPLTYPE trigger (@Nonnull String eventType);
@@ -27187,6 +29390,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        submit.
    * @param extraParameters
    *        Additional parameters to pass along to the event handler.
+   * @return this
    */
   @Nonnull
   IMPLTYPE trigger (@Nonnull IJSExpression eventType, @Nonnull IJSExpression extraParameters);
@@ -27197,6 +29401,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        submit.
    * @param extraParameters
    *        Additional parameters to pass along to the event handler.
+   * @return this
    */
   @Nonnull
   IMPLTYPE trigger (@Nonnull IJson eventType, @Nonnull IJSExpression extraParameters);
@@ -27207,6 +29412,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        submit.
    * @param extraParameters
    *        Additional parameters to pass along to the event handler.
+   * @return this
    */
   @Nonnull
   IMPLTYPE trigger (@Nonnull IHCNode eventType, @Nonnull IJSExpression extraParameters);
@@ -27217,6 +29423,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        submit.
    * @param extraParameters
    *        Additional parameters to pass along to the event handler.
+   * @return this
    */
   @Nonnull
   IMPLTYPE trigger (@Nonnull String eventType, @Nonnull IJSExpression extraParameters);
@@ -27227,6 +29434,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        submit.
    * @param extraParameters
    *        Additional parameters to pass along to the event handler.
+   * @return this
    */
   @Nonnull
   IMPLTYPE trigger (@Nonnull IJSExpression eventType, @Nonnull JSArray extraParameters);
@@ -27237,6 +29445,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        submit.
    * @param extraParameters
    *        Additional parameters to pass along to the event handler.
+   * @return this
    */
   @Nonnull
   IMPLTYPE trigger (@Nonnull IJson eventType, @Nonnull JSArray extraParameters);
@@ -27247,6 +29456,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        submit.
    * @param extraParameters
    *        Additional parameters to pass along to the event handler.
+   * @return this
    */
   @Nonnull
   IMPLTYPE trigger (@Nonnull IHCNode eventType, @Nonnull JSArray extraParameters);
@@ -27257,6 +29467,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        submit.
    * @param extraParameters
    *        Additional parameters to pass along to the event handler.
+   * @return this
    */
   @Nonnull
   IMPLTYPE trigger (@Nonnull String eventType, @Nonnull JSArray extraParameters);
@@ -27265,6 +29476,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as click or
    *        submit.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -27274,6 +29486,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as click or
    *        submit.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -27283,6 +29496,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as click or
    *        submit.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -27292,6 +29506,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as click or
    *        submit.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -27304,6 +29519,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param extraParameters
    *        An array of additional parameters to pass along to the event
    *        handler.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -27316,6 +29532,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param extraParameters
    *        An array of additional parameters to pass along to the event
    *        handler.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -27328,6 +29545,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param extraParameters
    *        An array of additional parameters to pass along to the event
    *        handler.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -27340,6 +29558,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param extraParameters
    *        An array of additional parameters to pass along to the event
    *        handler.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -27352,6 +29571,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param extraParameters
    *        An array of additional parameters to pass along to the event
    *        handler.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -27364,6 +29584,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param extraParameters
    *        An array of additional parameters to pass along to the event
    *        handler.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -27376,6 +29597,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param extraParameters
    *        An array of additional parameters to pass along to the event
    *        handler.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -27388,6 +29610,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param extraParameters
    *        An array of additional parameters to pass along to the event
    *        handler.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -27397,6 +29620,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as click or
    *        submit.
+   * @return this
    */
   @Nonnull
   IMPLTYPE unbind (@Nonnull IJSExpression eventType);
@@ -27405,6 +29629,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as click or
    *        submit.
+   * @return this
    */
   @Nonnull
   IMPLTYPE unbind (@Nonnull IJson eventType);
@@ -27413,6 +29638,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as click or
    *        submit.
+   * @return this
    */
   @Nonnull
   IMPLTYPE unbind (@Nonnull IHCNode eventType);
@@ -27421,6 +29647,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as click or
    *        submit.
+   * @return this
    */
   @Nonnull
   IMPLTYPE unbind (@Nonnull String eventType);
@@ -27431,6 +29658,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        submit.
    * @param handler
    *        The function that is to be no longer executed.
+   * @return this
    */
   @Nonnull
   IMPLTYPE unbind (@Nonnull IJSExpression eventType, @Nonnull IJSExpression handler);
@@ -27441,6 +29669,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        submit.
    * @param handler
    *        The function that is to be no longer executed.
+   * @return this
    */
   @Nonnull
   IMPLTYPE unbind (@Nonnull IJson eventType, @Nonnull IJSExpression handler);
@@ -27451,6 +29680,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        submit.
    * @param handler
    *        The function that is to be no longer executed.
+   * @return this
    */
   @Nonnull
   IMPLTYPE unbind (@Nonnull IHCNode eventType, @Nonnull IJSExpression handler);
@@ -27461,6 +29691,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        submit.
    * @param handler
    *        The function that is to be no longer executed.
+   * @return this
    */
   @Nonnull
   IMPLTYPE unbind (@Nonnull String eventType, @Nonnull IJSExpression handler);
@@ -27471,6 +29702,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        submit.
    * @param handler
    *        The function that is to be no longer executed.
+   * @return this
    */
   @Nonnull
   IMPLTYPE unbind (@Nonnull IJSExpression eventType, @Nonnull JSAnonymousFunction handler);
@@ -27481,6 +29713,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        submit.
    * @param handler
    *        The function that is to be no longer executed.
+   * @return this
    */
   @Nonnull
   IMPLTYPE unbind (@Nonnull IJson eventType, @Nonnull JSAnonymousFunction handler);
@@ -27491,6 +29724,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        submit.
    * @param handler
    *        The function that is to be no longer executed.
+   * @return this
    */
   @Nonnull
   IMPLTYPE unbind (@Nonnull IHCNode eventType, @Nonnull JSAnonymousFunction handler);
@@ -27501,6 +29735,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        submit.
    * @param handler
    *        The function that is to be no longer executed.
+   * @return this
    */
   @Nonnull
   IMPLTYPE unbind (@Nonnull String eventType, @Nonnull JSAnonymousFunction handler);
@@ -27512,6 +29747,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param _false
    *        Unbinds the corresponding 'return false' function that was bound
    *        using .bind( eventType, false ).
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -27524,6 +29760,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param _false
    *        Unbinds the corresponding 'return false' function that was bound
    *        using .bind( eventType, false ).
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -27536,6 +29773,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param _false
    *        Unbinds the corresponding 'return false' function that was bound
    *        using .bind( eventType, false ).
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -27548,6 +29786,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param _false
    *        Unbinds the corresponding 'return false' function that was bound
    *        using .bind( eventType, false ).
+   * @return this
    * @since jQuery 1.4.3
    */
   @Nonnull
@@ -27565,6 +29804,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as "click" or
    *        "keydown"
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27576,6 +29816,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as "click" or
    *        "keydown"
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27587,6 +29828,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as "click" or
    *        "keydown"
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27598,6 +29840,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as "click" or
    *        "keydown"
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27609,6 +29852,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as "click" or
    *        "keydown"
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27620,6 +29864,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as "click" or
    *        "keydown"
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27631,6 +29876,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as "click" or
    *        "keydown"
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27642,6 +29888,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as "click" or
    *        "keydown"
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27653,6 +29900,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as "click" or
    *        "keydown"
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27664,6 +29912,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as "click" or
    *        "keydown"
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27675,6 +29924,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as "click" or
    *        "keydown"
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27686,6 +29936,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as "click" or
    *        "keydown"
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27697,6 +29948,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as "click" or
    *        "keydown"
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27708,6 +29960,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as "click" or
    *        "keydown"
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27719,6 +29972,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as "click" or
    *        "keydown"
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27730,6 +29984,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param eventType
    *        A string containing a JavaScript event type, such as "click" or
    *        "keydown"
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27743,6 +29998,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27756,6 +30012,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27769,6 +30026,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27782,6 +30040,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27795,6 +30054,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27808,6 +30068,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27821,6 +30082,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27834,6 +30096,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27847,6 +30110,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27860,6 +30124,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27873,6 +30138,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27886,6 +30152,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27899,6 +30166,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27912,6 +30180,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27925,6 +30194,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27938,6 +30208,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27951,6 +30222,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27966,6 +30238,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27979,6 +30252,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -27992,6 +30266,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -28005,6 +30280,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -28018,6 +30294,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -28031,6 +30308,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -28044,6 +30322,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -28057,6 +30336,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -28070,6 +30350,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -28083,6 +30364,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -28096,6 +30378,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -28109,6 +30392,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -28122,6 +30406,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -28135,6 +30420,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -28148,6 +30434,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        "keydown"
    * @param handler
    *        A function to execute at the time the event is triggered.
+   * @return this
    * @since jQuery 1.4.2
    */
   @Nonnull
@@ -28156,6 +30443,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param namespace
    *        A string containing a namespace to unbind all events from.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -28164,6 +30452,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param namespace
    *        A string containing a namespace to unbind all events from.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -28172,6 +30461,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param namespace
    *        A string containing a namespace to unbind all events from.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -28180,6 +30470,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param namespace
    *        A string containing a namespace to unbind all events from.
+   * @return this
    * @since jQuery 1.6
    */
   @Nonnull
@@ -28188,6 +30479,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute when the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    */
   @Deprecated
@@ -28197,6 +30489,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
   /**
    * @param handler
    *        A function to execute when the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    */
   @Deprecated
@@ -28208,6 +30501,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A plain object of data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    * @since jQuery 1.4.3
    */
@@ -28220,6 +30514,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A plain object of data that will be passed to the event handler.
    * @param handler
    *        A function to execute each time the event is triggered.
+   * @return this
    * @deprecated Deprecated since jQuery 1.8
    * @since jQuery 1.4.3
    */
@@ -28237,6 +30532,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        A string of text or an array of strings corresponding to the value
    *        of each matched element to set as selected/checked.
+   * @return this
    */
   @Nonnull
   IMPLTYPE val (@Nonnull IJSExpression value);
@@ -28245,6 +30541,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        A string of text or an array of strings corresponding to the value
    *        of each matched element to set as selected/checked.
+   * @return this
    */
   @Nonnull
   IMPLTYPE val (@Nonnull IJson value);
@@ -28253,6 +30550,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        A string of text or an array of strings corresponding to the value
    *        of each matched element to set as selected/checked.
+   * @return this
    */
   @Nonnull
   IMPLTYPE val (@Nonnull IHCNode value);
@@ -28261,6 +30559,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        A string of text or an array of strings corresponding to the value
    *        of each matched element to set as selected/checked.
+   * @return this
    */
   @Nonnull
   IMPLTYPE val (@Nonnull String value);
@@ -28269,6 +30568,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        A string of text or an array of strings corresponding to the value
    *        of each matched element to set as selected/checked.
+   * @return this
    */
   @Nonnull
   IMPLTYPE val (@Nonnull JSArray value);
@@ -28278,6 +30578,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function returning the value to set. this is the current element.
    *        Receives the index position of the element in the set and the old
    *        value as arguments.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -28290,6 +30591,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        An integer representing the number of pixels, or an integer along
    *        with an optional unit of measure appended (as a string).
+   * @return this
    */
   @Nonnull
   IMPLTYPE width (@Nonnull IJSExpression value);
@@ -28298,6 +30600,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        An integer representing the number of pixels, or an integer along
    *        with an optional unit of measure appended (as a string).
+   * @return this
    */
   @Nonnull
   IMPLTYPE width (@Nonnull IJson value);
@@ -28306,6 +30609,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        An integer representing the number of pixels, or an integer along
    *        with an optional unit of measure appended (as a string).
+   * @return this
    */
   @Nonnull
   IMPLTYPE width (@Nonnull IHCNode value);
@@ -28314,6 +30618,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        An integer representing the number of pixels, or an integer along
    *        with an optional unit of measure appended (as a string).
+   * @return this
    */
   @Nonnull
   IMPLTYPE width (@Nonnull String value);
@@ -28322,6 +30627,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        An integer representing the number of pixels, or an integer along
    *        with an optional unit of measure appended (as a string).
+   * @return this
    */
   @Nonnull
   IMPLTYPE width (int value);
@@ -28330,6 +30636,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        An integer representing the number of pixels, or an integer along
    *        with an optional unit of measure appended (as a string).
+   * @return this
    */
   @Nonnull
   IMPLTYPE width (long value);
@@ -28338,6 +30645,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        An integer representing the number of pixels, or an integer along
    *        with an optional unit of measure appended (as a string).
+   * @return this
    */
   @Nonnull
   IMPLTYPE width (@Nonnull BigInteger value);
@@ -28346,6 +30654,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        An integer representing the number of pixels, or an integer along
    *        with an optional unit of measure appended (as a string).
+   * @return this
    */
   @Nonnull
   IMPLTYPE width (double value);
@@ -28354,6 +30663,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param value
    *        An integer representing the number of pixels, or an integer along
    *        with an optional unit of measure appended (as a string).
+   * @return this
    */
   @Nonnull
   IMPLTYPE width (@Nonnull BigDecimal value);
@@ -28363,6 +30673,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        A function returning the width to set. Receives the index position
    *        of the element in the set and the old width as arguments. Within the
    *        function, this refers to the current element in the set.
+   * @return this
    * @since jQuery 1.4.1
    */
   @Nonnull
@@ -28372,6 +30683,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param wrappingElement
    *        A selector, element, HTML string, or jQuery object specifying the
    *        structure to wrap around the matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE wrap (@Nonnull IJSExpression wrappingElement);
@@ -28380,6 +30692,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param wrappingElement
    *        A selector, element, HTML string, or jQuery object specifying the
    *        structure to wrap around the matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE wrap (@Nonnull IJQuerySelector wrappingElement);
@@ -28388,6 +30701,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param wrappingElement
    *        A selector, element, HTML string, or jQuery object specifying the
    *        structure to wrap around the matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE wrap (@Nonnull JQuerySelectorList wrappingElement);
@@ -28396,6 +30710,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param wrappingElement
    *        A selector, element, HTML string, or jQuery object specifying the
    *        structure to wrap around the matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE wrap (@Nonnull EHTMLElement wrappingElement);
@@ -28404,6 +30719,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param wrappingElement
    *        A selector, element, HTML string, or jQuery object specifying the
    *        structure to wrap around the matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE wrap (@Nonnull ICSSClassProvider wrappingElement);
@@ -28412,6 +30728,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param wrappingElement
    *        A selector, element, HTML string, or jQuery object specifying the
    *        structure to wrap around the matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE wrap (@Nonnull IHCNode wrappingElement);
@@ -28420,6 +30737,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param wrappingElement
    *        A selector, element, HTML string, or jQuery object specifying the
    *        structure to wrap around the matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE wrap (@Nonnull String wrappingElement);
@@ -28428,6 +30746,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param wrappingElement
    *        A selector, element, HTML string, or jQuery object specifying the
    *        structure to wrap around the matched elements.
+   * @return this
    */
   @Nonnull
   IMPLTYPE wrap (@Nonnull JQueryInvocation wrappingElement);
@@ -28438,6 +30757,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        wrap around the matched elements. Receives the index position of the
    *        element in the set as an argument. Within the function, this refers
    *        to the current element in the set.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull
@@ -28447,6 +30767,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param wrappingElement
    *        A selector, element, HTML string, or jQuery object specifying the
    *        structure to wrap around the matched elements.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -28456,6 +30777,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param wrappingElement
    *        A selector, element, HTML string, or jQuery object specifying the
    *        structure to wrap around the matched elements.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -28465,6 +30787,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param wrappingElement
    *        A selector, element, HTML string, or jQuery object specifying the
    *        structure to wrap around the matched elements.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -28474,6 +30797,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param wrappingElement
    *        A selector, element, HTML string, or jQuery object specifying the
    *        structure to wrap around the matched elements.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -28483,6 +30807,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param wrappingElement
    *        A selector, element, HTML string, or jQuery object specifying the
    *        structure to wrap around the matched elements.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -28492,6 +30817,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param wrappingElement
    *        A selector, element, HTML string, or jQuery object specifying the
    *        structure to wrap around the matched elements.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -28501,6 +30827,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param wrappingElement
    *        A selector, element, HTML string, or jQuery object specifying the
    *        structure to wrap around the matched elements.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -28510,6 +30837,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    * @param wrappingElement
    *        A selector, element, HTML string, or jQuery object specifying the
    *        structure to wrap around the matched elements.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -28520,6 +30848,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An HTML snippet, selector expression, jQuery object, or DOM element
    *        specifying the structure to wrap around the content of the matched
    *        elements.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -28530,6 +30859,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An HTML snippet, selector expression, jQuery object, or DOM element
    *        specifying the structure to wrap around the content of the matched
    *        elements.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -28540,6 +30870,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An HTML snippet, selector expression, jQuery object, or DOM element
    *        specifying the structure to wrap around the content of the matched
    *        elements.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -28550,6 +30881,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        An HTML snippet, selector expression, jQuery object, or DOM element
    *        specifying the structure to wrap around the content of the matched
    *        elements.
+   * @return this
    * @since jQuery 1.2
    */
   @Nonnull
@@ -28561,6 +30893,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
    *        content of the matched elements. Receives the index position of the
    *        element in the set as an argument. Within the function, this refers
    *        to the current element in the set.
+   * @return this
    * @since jQuery 1.4
    */
   @Nonnull

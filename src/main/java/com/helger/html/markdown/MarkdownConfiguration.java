@@ -107,8 +107,21 @@ public class MarkdownConfiguration
    * Constructor.
    *
    * @param bSafeMode
+   *        safe mode?
    * @param aEncoding
+   *        Encoding to use
    * @param aDecorator
+   *        Decorator to use
+   * @param aCodeBlockEmitter
+   *        Code block emitter to use
+   * @param bForceExtendedProfile
+   *        Force extended profile?
+   * @param bConvertNewline2Br
+   *        Convert newline to &lt;br&gt;
+   * @param aSpecialLinkEmitter
+   *        Special link emitted
+   * @param aPlugins
+   *        Custom plugins
    */
   public MarkdownConfiguration (final boolean bSafeMode,
                                 @Nonnull final Charset aEncoding,
@@ -215,6 +228,8 @@ public class MarkdownConfiguration
     /**
      * Forces extened profile to be enabled by default.
      *
+     * @param bExtendedProfile
+     *        true to use extended profile
      * @return This builder.
      * @since 0.7
      */

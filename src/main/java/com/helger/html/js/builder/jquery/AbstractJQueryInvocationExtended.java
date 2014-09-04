@@ -37,6 +37,8 @@ import com.helger.json.IJson;
  * 
  * @author 
  *         com.helger.html.supplementary.jquery.Main_AbstractJQueryInvocationExtended
+ * @param <IMPLTYPE>
+ *        Implementation type
  */
 public abstract class AbstractJQueryInvocationExtended <IMPLTYPE extends AbstractJQueryInvocationExtended <IMPLTYPE>> extends AbstractJQueryInvocation <IMPLTYPE> implements IJQueryInvocationExtended <IMPLTYPE>
 {

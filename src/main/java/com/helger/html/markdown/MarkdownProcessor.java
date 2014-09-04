@@ -489,6 +489,8 @@ public class MarkdownProcessor
   /**
    * Does all the processing.
    *
+   * @param aReader
+   *        The reader to read from
    * @return The processing result.
    * @throws IOException
    *         If an IO error occurred.

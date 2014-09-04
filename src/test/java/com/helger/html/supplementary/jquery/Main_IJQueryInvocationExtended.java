@@ -59,6 +59,7 @@ public class Main_IJQueryInvocationExtended extends AbstractCreateJQueryAPIList
               sDesc = "parameter value";
             sComment += "* @param " + aArg.getIdentifier () + " " + sDesc + "\n";
           }
+          sComment += "* @return this\n";
           if (aEntry.isDeprecated ())
           {
             sComment += "* @deprecated Deprecated since jQuery " + aEntry.getDeprecated ().getAsString (false) + "\n";
@@ -90,7 +91,7 @@ public class Main_IJQueryInvocationExtended extends AbstractCreateJQueryAPIList
                               sJavaType +
                               " " +
                               aArg.getIdentifier () +
-                      ");");
+                              ");");
             }
             else
             {
@@ -171,28 +172,29 @@ public class Main_IJQueryInvocationExtended extends AbstractCreateJQueryAPIList
       }
 
     final StringBuilder aFull = new StringBuilder ("package com.helger.html.js.builder.jquery;\n" +
-        "\n" +
-        "import java.math.BigDecimal;\n" +
-        "import java.math.BigInteger;\n" +
-        "\n" +
-        "import javax.annotation.Nonnull;\n" +
-        "\n" +
-        "import com.helger.html.EHTMLElement;\n" +
-        "import com.helger.html.css.ICSSClassProvider;\n" +
-        "import com.helger.html.hc.IHCNode;\n" +
-        "import com.helger.html.js.builder.IJSExpression;\n" +
-        "import com.helger.html.js.builder.JSAnonymousFunction;\n" +
-        "import com.helger.html.js.builder.JSArray;\n" +
-        "import com.helger.json.IJson;\n" +
-        "\n" +
-        "/**\n" +
-        " * This file is generated - do NOT edit!\n" +
-        " * @author " +
-        Main_IJQueryInvocationExtended.class.getName () +
-        "\n" +
-        "*/\n" +
-        "public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationExtended <IMPLTYPE>> extends IJQueryInvocation <IMPLTYPE>\n" +
-        "{\n");
+                                                   "\n" +
+                                                   "import java.math.BigDecimal;\n" +
+                                                   "import java.math.BigInteger;\n" +
+                                                   "\n" +
+                                                   "import javax.annotation.Nonnull;\n" +
+                                                   "\n" +
+                                                   "import com.helger.html.EHTMLElement;\n" +
+                                                   "import com.helger.html.css.ICSSClassProvider;\n" +
+                                                   "import com.helger.html.hc.IHCNode;\n" +
+                                                   "import com.helger.html.js.builder.IJSExpression;\n" +
+                                                   "import com.helger.html.js.builder.JSAnonymousFunction;\n" +
+                                                   "import com.helger.html.js.builder.JSArray;\n" +
+                                                   "import com.helger.json.IJson;\n" +
+                                                   "\n" +
+                                                   "/**\n" +
+                                                   " * This file is generated - do NOT edit!\n" +
+                                                   " * @author " +
+                                                   Main_IJQueryInvocationExtended.class.getName () +
+                                                   "\n" +
+                                                   " * @param <IMPLTYPE> Implementation type\n" +
+                                                   "*/\n" +
+                                                   "public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationExtended <IMPLTYPE>> extends IJQueryInvocation <IMPLTYPE>\n" +
+                                                   "{\n");
     for (final String sEntry : aLines)
       aFull.append (sEntry).append ("\n\n");
     aFull.append ("}\n");

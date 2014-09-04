@@ -39,6 +39,8 @@ final class LinkRef
    *        The link.
    * @param sTitle
    *        The title (may be <code>null</code>).
+   * @param bIsAbbrev
+   *        Is abbreviation?
    */
   public LinkRef (@Nonnull final String sLink, final String sTitle, final boolean bIsAbbrev)
   {
