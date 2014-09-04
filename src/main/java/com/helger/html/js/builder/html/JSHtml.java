@@ -36,7 +36,7 @@ import com.helger.html.js.builder.JSVar;
 
 /**
  * This class contains JS builder default constructs that are used very commonly
- * 
+ *
  * @author Philip Helger
  */
 @Immutable
@@ -1046,7 +1046,7 @@ public final class JSHtml
 
   /**
    * window.onbeforeunload
-   * 
+   *
    * @param aCallback
    *        Callback function with one parameter (the event) and return type
    *        string to display a message or null to display none.
@@ -1061,6 +1061,8 @@ public final class JSHtml
   // -- others ---
 
   /**
+   * @param aExpr
+   *        Source expression
    * @return <code>aExpr.options[aExpr.selectedIndex].value</code>
    */
   @Nonnull

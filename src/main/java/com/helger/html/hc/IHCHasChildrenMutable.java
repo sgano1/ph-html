@@ -33,6 +33,8 @@ import com.helger.html.hc.impl.HCNodeList;
  * @author Philip Helger
  * @param <THISTYPE>
  *        Implementation type
+ * @param <CHILDTYPE>
+ *        Desired child type
  */
 public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode> extends IHCHasChildren
 {

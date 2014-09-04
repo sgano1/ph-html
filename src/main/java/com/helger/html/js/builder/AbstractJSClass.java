@@ -51,7 +51,12 @@ public abstract class AbstractJSClass extends AbstractJSType
    * Checks the relationship between two classes.
    * <p>
    * This method works in the same way as {@link Class#isAssignableFrom(Class)}
-   * works. For example, baseClass.isAssignableFrom(derivedClass)==true.
+   * works. For example
+   * <code>baseClass.isAssignableFrom(derivedClass)==true</code>.
+   *
+   * @param aDerived
+   *        class to check
+   * @return <code>true</code> if this class is assignable from the passed class
    */
   public final boolean isAssignableFrom (@Nonnull final AbstractJSClass aDerived)
   {
@@ -70,6 +75,10 @@ public abstract class AbstractJSClass extends AbstractJSType
 
   /**
    * Generates a static method invocation.
+   *
+   * @param aMethod
+   *        Method to invoke
+   * @return The created {@link JSInvocation}
    */
   @Nonnull
   public final JSInvocation staticInvoke (@Nonnull final JSMethod aMethod)
@@ -79,6 +88,10 @@ public abstract class AbstractJSClass extends AbstractJSType
 
   /**
    * Generates a static method invocation.
+   *
+   * @param sMethod
+   *        Method to invoke
+   * @return The created {@link JSInvocation}
    */
   @Nonnull
   public final JSInvocation staticInvoke (@Nonnull @Nonempty final String sMethod)
@@ -88,6 +101,10 @@ public abstract class AbstractJSClass extends AbstractJSType
 
   /**
    * Static field reference.
+   *
+   * @param sField
+   *        Field to reference
+   * @return The created {@link JSFieldRef}
    */
   @Nonnull
   public final JSFieldRef staticRef (@Nonnull @Nonempty final String sField)
@@ -97,6 +114,10 @@ public abstract class AbstractJSClass extends AbstractJSType
 
   /**
    * Static field reference.
+   * 
+   * @param aField
+   *        Field to reference
+   * @return The created {@link JSFieldRef}
    */
   @Nonnull
   public final JSFieldRef staticRef (@Nonnull final JSVar aField)

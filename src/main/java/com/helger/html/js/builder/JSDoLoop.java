@@ -43,6 +43,9 @@ public class JSDoLoop implements IJSStatement
 
   /**
    * Constructor
+   * 
+   * @param aTest
+   *        Test expression
    */
   public JSDoLoop (@Nonnull final IJSExpression aTest)
   {

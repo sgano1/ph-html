@@ -77,6 +77,8 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
   /**
    * function constructor
    *
+   * @param aType
+   *        Type to use
    * @param sName
    *        Name of this function
    */
@@ -89,7 +91,7 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
   }
 
   /**
-   * Returns the return type.
+   * @return the return type.
    */
   @Nullable
   public AbstractJSType type ()
@@ -99,6 +101,10 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
 
   /**
    * Overrides the return type.
+   *
+   * @param aType
+   *        new return type
+   * @return this
    */
   @Nonnull
   public JSFunction type (@Nullable final AbstractJSType aType)
@@ -115,6 +121,10 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
 
   /**
    * Changes the name of the function.
+   * 
+   * @param sName
+   *        new function name
+   * @return this
    */
   @Nonnull
   public JSFunction name (@Nonnull @Nonempty final String sName)

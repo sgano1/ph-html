@@ -23,15 +23,16 @@ import com.helger.commons.annotations.Nonempty;
 
 /**
  * Object invocation
- * 
+ *
  * @author Philip Helger
  */
 public class JSInvocation extends AbstractJSInvocation <JSInvocation>
 {
   /**
    * Invoke a function
-   * 
+   *
    * @param aFunction
+   *        Function to invoke
    */
   public JSInvocation (@Nonnull final JSFunction aFunction)
   {
@@ -40,8 +41,9 @@ public class JSInvocation extends AbstractJSInvocation <JSInvocation>
 
   /**
    * Invoke a function
-   * 
+   *
    * @param sFunctionName
+   *        Function to invoke
    */
   public JSInvocation (@Nonnull final String sFunctionName)
   {
@@ -50,7 +52,7 @@ public class JSInvocation extends AbstractJSInvocation <JSInvocation>
 
   /**
    * Invoke an anonymous function
-   * 
+   *
    * @param aAnonymousFunction
    *        The function to be invoked
    */
@@ -61,7 +63,7 @@ public class JSInvocation extends AbstractJSInvocation <JSInvocation>
 
   /**
    * Invokes a method on an object.
-   * 
+   *
    * @param aObject
    *        JExpression for the object upon which the named method will be
    *        invoked, or null if none
@@ -80,6 +82,11 @@ public class JSInvocation extends AbstractJSInvocation <JSInvocation>
 
   /**
    * Invokes a static method on a class.
+   * 
+   * @param aType
+   *        Type to use
+   * @param sName
+   *        Function name to invoke
    */
   public JSInvocation (@Nullable final AbstractJSClass aType, @Nonnull @Nonempty final String sName)
   {
@@ -93,7 +100,7 @@ public class JSInvocation extends AbstractJSInvocation <JSInvocation>
 
   /**
    * Invokes a constructor of an object (i.e., creates a new object.)
-   * 
+   *
    * @param aType
    *        Type of the object to be created. May not be <code>null</code>.
    */

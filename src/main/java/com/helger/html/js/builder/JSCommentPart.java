@@ -38,6 +38,8 @@ public class JSCommentPart extends ArrayList <Object>
    * printed as a @link tag. Otherwise it will be converted to String via
    * {@link Object#toString()} .
    *
+   * @param aValue
+   *        Value to append
    * @return this
    */
   public JSCommentPart append (@Nullable final Object aValue)

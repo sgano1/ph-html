@@ -424,6 +424,7 @@ final class Utils
    *
    * @param in
    *        Input String.
+   * @return XML tag name
    */
   @Nonnull
   public static String getXMLTag (final String in)

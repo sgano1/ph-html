@@ -25,7 +25,7 @@ import com.helger.commons.annotations.PresentForCodeCoverage;
 
 /**
  * Class for generating expressions containing operators
- * 
+ *
  * @author Philip Helger
  */
 @Immutable
@@ -40,6 +40,10 @@ public final class JSOp
 
   /**
    * Determine whether the top level of an expression involves an operator.
+   *
+   * @param aExpr
+   *        Expression to check
+   * @return <code>true</code> if it involves an operator
    */
   public static boolean hasOperator (@Nullable final IJSExpression aExpr)
   {
@@ -66,6 +70,10 @@ public final class JSOp
 
   /**
    * Logical not <tt>'!x'</tt>.
+   * 
+   * @param aExpr
+   *        Expression to negate
+   * @return ![this]
    */
   @Nonnull
   public static AbstractJSExpression not (@Nonnull final IJSExpression aExpr)
@@ -206,7 +214,7 @@ public final class JSOp
 
   /**
    * Binary-and
-   * 
+   *
    * @param aLeft
    *        lhs
    * @param aRight
@@ -221,7 +229,7 @@ public final class JSOp
 
   /**
    * Binary-or
-   * 
+   *
    * @param aLeft
    *        lhs
    * @param aRight
@@ -236,7 +244,7 @@ public final class JSOp
 
   /**
    * Logical-and
-   * 
+   *
    * @param aLeft
    *        lhs
    * @param aRight
@@ -259,7 +267,7 @@ public final class JSOp
 
   /**
    * Logical-or
-   * 
+   *
    * @param aLeft
    *        lhs
    * @param aRight
@@ -282,7 +290,7 @@ public final class JSOp
 
   /**
    * Exclusive-or
-   * 
+   *
    * @param aLeft
    *        lhs
    * @param aRight

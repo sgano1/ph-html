@@ -43,6 +43,9 @@ public class JSWhileLoop implements IJSStatement
 
   /**
    * Construct a While statement
+   * 
+   * @param aTest
+   *        Test expression
    */
   public JSWhileLoop (@Nonnull final IJSExpression aTest)
   {

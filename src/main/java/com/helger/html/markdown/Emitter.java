@@ -64,13 +64,18 @@ final class Emitter
   /** Plugins references **/
   private final Map <String, AbstractMarkdownPlugin> m_aPlugins = new HashMap <String, AbstractMarkdownPlugin> ();
 
-  /** Constructor. */
-  public Emitter (final MarkdownConfiguration config)
+  /**
+   * Constructor.
+   * 
+   * @param aConfig
+   *        config to use
+   */
+  public Emitter (final MarkdownConfiguration aConfig)
   {
-    m_aConfig = config;
-    m_bUseExtensions = config.isExtendedProfile ();
-    m_bConvertNewline2Br = config.isConvertNewline2Br ();
-    for (final AbstractMarkdownPlugin plugin : config.getAllPlugins ())
+    m_aConfig = aConfig;
+    m_bUseExtensions = aConfig.isExtendedProfile ();
+    m_bConvertNewline2Br = aConfig.isConvertNewline2Br ();
+    for (final AbstractMarkdownPlugin plugin : aConfig.getAllPlugins ())
       register (plugin);
   }
 

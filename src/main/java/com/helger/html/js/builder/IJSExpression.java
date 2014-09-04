@@ -374,232 +374,690 @@ public interface IJSExpression extends IJSGeneratable
   @Nonnull
   IJSExpression shrz (@Nonnull IJSExpression aExpr);
 
-  /** Bit-wise AND '&amp;'. */
+  /**
+   * Bit-wise AND '&amp;'.
+   *
+   * @param nValue
+   *        value
+   * @return [this] &amp; value
+   */
   @Nonnull
   IJSExpression band (int nValue);
 
-  /** Bit-wise AND '&amp;'. */
+  /**
+   * Bit-wise AND '&amp;'.
+   *
+   * @param nValue
+   *        value
+   * @return [this] &amp; value
+   */
   @Nonnull
   IJSExpression band (long nValue);
 
-  /** Bit-wise AND '&amp;'. */
+  /**
+   * Bit-wise AND '&amp;'.
+   *
+   * @param aExpr
+   *        value
+   * @return [this] &amp; value
+   */
   @Nonnull
   IJSExpression band (@Nonnull IJSExpression aExpr);
 
-  /** Bit-wise OR '|'. */
+  /**
+   * Bit-wise OR '|'.
+   *
+   * @param nValue
+   *        value
+   * @return [this] | value
+   */
   @Nonnull
   IJSExpression bor (int nValue);
 
-  /** Bit-wise OR '|'. */
+  /**
+   * Bit-wise OR '|'.
+   *
+   * @param nValue
+   *        value
+   * @return [this] | value
+   */
   @Nonnull
   IJSExpression bor (long nValue);
 
-  /** Bit-wise OR '|'. */
+  /**
+   * Bit-wise OR '|'.
+   *
+   * @param aExpr
+   *        value
+   * @return [this] | value
+   */
   @Nonnull
   IJSExpression bor (@Nonnull IJSExpression aExpr);
 
-  /** Logical AND '&amp;&amp;'. */
+  /**
+   * Logical AND '&amp;&amp;'.
+   *
+   * @param aExpr
+   *        value
+   * @return [this] &amp;&amp; value
+   */
   @Nonnull
   IJSExpression cand (@Nonnull IJSExpression aExpr);
 
-  /** Logical OR '||'. */
+  /**
+   * Logical OR '||'.
+   *
+   * @param aExpr
+   *        value
+   * @return [this] || value
+   */
   @Nonnull
   IJSExpression cor (@Nonnull IJSExpression aExpr);
 
-  /** XOR '^'. */
+  /**
+   * XOR '^'.
+   *
+   * @param nValue
+   *        value
+   * @return [this] ^ value
+   */
   @Nonnull
   IJSExpression xor (int nValue);
 
-  /** XOR '^'. */
+  /**
+   * XOR '^'.
+   *
+   * @param nValue
+   *        value
+   * @return [this] ^ value
+   */
   @Nonnull
   IJSExpression xor (long nValue);
 
-  /** XOR '^'. */
+  /**
+   * XOR '^'.
+   *
+   * @param aExpr
+   *        value
+   * @return [this] ^ value
+   */
   @Nonnull
   IJSExpression xor (@Nonnull IJSExpression aExpr);
 
+  /**
+   * Lower than '&lt;'.
+   *
+   * @param dValue
+   *        value
+   * @return [this] &lt; value
+   */
   @Nonnull
   IJSExpression lt (double dValue);
 
+  /**
+   * Lower than '&lt;'.
+   *
+   * @param fValue
+   *        value
+   * @return [this] &lt; value
+   */
   @Nonnull
   IJSExpression lt (float fValue);
 
+  /**
+   * Lower than '&lt;'.
+   *
+   * @param nValue
+   *        value
+   * @return [this] &lt; value
+   */
   @Nonnull
   IJSExpression lt (int nValue);
 
+  /**
+   * Lower than '&lt;'.
+   *
+   * @param nValue
+   *        value
+   * @return [this] &lt; value
+   */
   @Nonnull
   IJSExpression lt (long nValue);
 
-  /** Lower than '&lt;'. */
+  /**
+   * Lower than '&lt;'.
+   *
+   * @param aExpr
+   *        value
+   * @return [this] &lt; value
+   */
   @Nonnull
   IJSExpression lt (@Nonnull IJSExpression aExpr);
 
+  /**
+   * Lower than or equal '&lt;='.
+   *
+   * @param dValue
+   *        value
+   * @return [this] &lt;= value
+   */
   @Nonnull
   IJSExpression lte (double dValue);
 
+  /**
+   * Lower than or equal '&lt;='.
+   *
+   * @param fValue
+   *        value
+   * @return [this] &lt;= value
+   */
   @Nonnull
   IJSExpression lte (float fValue);
 
+  /**
+   * Lower than or equal '&lt;='.
+   *
+   * @param nValue
+   *        value
+   * @return [this] &lt;= value
+   */
   @Nonnull
   IJSExpression lte (int nValue);
 
+  /**
+   * Lower than or equal '&lt;='.
+   *
+   * @param nValue
+   *        value
+   * @return [this] &lt;= value
+   */
   @Nonnull
   IJSExpression lte (long nValue);
 
-  /** Lower than or equal '&lt;='. */
+  /**
+   * Lower than or equal '&lt;='.
+   *
+   * @param aExpr
+   *        value
+   * @return [this] &lt;= value
+   */
   @Nonnull
   IJSExpression lte (@Nonnull IJSExpression aExpr);
 
+  /**
+   * Greater than '&gt;'.
+   *
+   * @param dValue
+   *        value
+   * @return [this] &gt; value
+   */
   @Nonnull
   IJSExpression gt (double dValue);
 
+  /**
+   * Greater than '&gt;'.
+   *
+   * @param fValue
+   *        value
+   * @return [this] &gt; value
+   */
   @Nonnull
   IJSExpression gt (float fValue);
 
+  /**
+   * Greater than '&gt;'.
+   *
+   * @param nValue
+   *        value
+   * @return [this] &gt; value
+   */
   @Nonnull
   IJSExpression gt (int nValue);
 
+  /**
+   * Greater than '&gt;'.
+   *
+   * @param nValue
+   *        value
+   * @return [this] &gt; value
+   */
   @Nonnull
   IJSExpression gt (long nValue);
 
-  /** Greater than '&gt;'. */
+  /**
+   * Greater than '&gt;'.
+   *
+   * @param aExpr
+   *        value
+   * @return [this] &gt; value
+   */
   @Nonnull
   IJSExpression gt (@Nonnull IJSExpression aExpr);
 
+  /**
+   * Greater than or equal '&gt;='.
+   *
+   * @param dValue
+   *        value
+   * @return [this] &gt;= value
+   */
   @Nonnull
   IJSExpression gte (double dValue);
 
+  /**
+   * Greater than or equal '&gt;='.
+   *
+   * @param fValue
+   *        value
+   * @return [this] &gt;= value
+   */
   @Nonnull
   IJSExpression gte (float fValue);
 
+  /**
+   * Greater than or equal '&gt;='.
+   *
+   * @param nValue
+   *        value
+   * @return [this] &gt;= value
+   */
   @Nonnull
   IJSExpression gte (int nValue);
 
+  /**
+   * Greater than or equal '&gt;='.
+   *
+   * @param nValue
+   *        value
+   * @return [this] &gt;= value
+   */
   @Nonnull
   IJSExpression gte (long nValue);
 
-  /** Greater than or equal '&gt;='. */
+  /**
+   * Greater than or equal '&gt;='.
+   *
+   * @param aExpr
+   *        value
+   * @return [this] &gt;= value
+   */
   @Nonnull
   IJSExpression gte (@Nonnull IJSExpression aExpr);
 
+  /**
+   * Equals '=='.
+   *
+   * @param bValue
+   *        value
+   * @return [this] == value
+   */
   @Nonnull
   IJSExpression eq (boolean bValue);
 
+  /**
+   * Equals '=='.
+   *
+   * @param cValue
+   *        value
+   * @return [this] == value
+   */
   @Nonnull
   IJSExpression eq (char cValue);
 
+  /**
+   * Equals '=='.
+   *
+   * @param fValue
+   *        value
+   * @return [this] == value
+   */
   @Nonnull
   IJSExpression eq (float fValue);
 
+  /**
+   * Equals '=='.
+   *
+   * @param dValue
+   *        value
+   * @return [this] == value
+   */
   @Nonnull
   IJSExpression eq (double dValue);
 
+  /**
+   * Equals '=='.
+   *
+   * @param nValue
+   *        value
+   * @return [this] == value
+   */
   @Nonnull
   IJSExpression eq (int nValue);
 
+  /**
+   * Equals '=='.
+   *
+   * @param nValue
+   *        value
+   * @return [this] == value
+   */
   @Nonnull
   IJSExpression eq (long nValue);
 
+  /**
+   * Equals '=='.
+   *
+   * @param sValue
+   *        value
+   * @return [this] == value
+   */
   @Nonnull
   IJSExpression eq (@Nonnull String sValue);
 
+  /**
+   * Equals '=='.
+   *
+   * @param aValue
+   *        value
+   * @return [this] == value
+   */
   @Nonnull
   IJSExpression eq (@Nonnull IJson aValue);
 
-  /** Equals '=='. */
+  /**
+   * Equals '=='.
+   *
+   * @param aExpr
+   *        value
+   * @return [this] == value
+   */
   @Nonnull
   IJSExpression eq (@Nonnull IJSExpression aExpr);
 
+  /**
+   * Exactly equals '==='.
+   *
+   * @param bValue
+   *        value
+   * @return [this] === value
+   */
   @Nonnull
   IJSExpression eeq (boolean bValue);
 
+  /**
+   * Exactly equals '==='.
+   *
+   * @param cValue
+   *        value
+   * @return [this] === value
+   */
   @Nonnull
   IJSExpression eeq (char cValue);
 
+  /**
+   * Exactly equals '==='.
+   *
+   * @param fValue
+   *        value
+   * @return [this] === value
+   */
   @Nonnull
   IJSExpression eeq (float fValue);
 
+  /**
+   * Exactly equals '==='.
+   *
+   * @param dValue
+   *        value
+   * @return [this] === value
+   */
   @Nonnull
   IJSExpression eeq (double dValue);
 
+  /**
+   * Exactly equals '==='.
+   *
+   * @param nValue
+   *        value
+   * @return [this] === value
+   */
   @Nonnull
   IJSExpression eeq (int nValue);
 
+  /**
+   * Exactly equals '==='.
+   *
+   * @param nValue
+   *        value
+   * @return [this] === value
+   */
   @Nonnull
   IJSExpression eeq (long nValue);
 
+  /**
+   * Exactly equals '==='.
+   *
+   * @param sValue
+   *        value
+   * @return [this] === value
+   */
   @Nonnull
   IJSExpression eeq (@Nonnull String sValue);
 
+  /**
+   * Exactly equals '==='.
+   *
+   * @param aValue
+   *        value
+   * @return [this] === value
+   */
   @Nonnull
   IJSExpression eeq (@Nonnull IJson aValue);
 
-  /** Exactly equals '==='. */
+  /**
+   * Exactly equals '==='.
+   *
+   * @param aExpr
+   *        value
+   * @return [this] === value
+   */
   @Nonnull
   IJSExpression eeq (@Nonnull IJSExpression aExpr);
 
+  /**
+   * Not equals '!='.
+   *
+   * @param bValue
+   *        value
+   * @return [this] != value
+   */
   @Nonnull
   IJSExpression ne (boolean bValue);
 
+  /**
+   * Not equals '!='.
+   *
+   * @param cValue
+   *        value
+   * @return [this] != value
+   */
   @Nonnull
   IJSExpression ne (char cValue);
 
+  /**
+   * Not equals '!='.
+   *
+   * @param fValue
+   *        value
+   * @return [this] != value
+   */
   @Nonnull
   IJSExpression ne (float fValue);
 
+  /**
+   * Not equals '!='.
+   *
+   * @param dValue
+   *        value
+   * @return [this] != value
+   */
   @Nonnull
   IJSExpression ne (double dValue);
 
+  /**
+   * Not equals '!='.
+   *
+   * @param nValue
+   *        value
+   * @return [this] != value
+   */
   @Nonnull
   IJSExpression ne (int nValue);
 
+  /**
+   * Not equals '!='.
+   *
+   * @param nValue
+   *        value
+   * @return [this] != value
+   */
   @Nonnull
   IJSExpression ne (long nValue);
 
+  /**
+   * Not equals '!='.
+   *
+   * @param sValue
+   *        value
+   * @return [this] != value
+   */
   @Nonnull
   IJSExpression ne (@Nonnull String sValue);
 
+  /**
+   * Not equals '!='.
+   *
+   * @param aValue
+   *        value
+   * @return [this] != value
+   */
   @Nonnull
   IJSExpression ne (@Nonnull IJson aValue);
 
-  /** Not equals '!='. */
+  /**
+   * Not equals '!='.
+   *
+   * @param aExpr
+   *        value
+   * @return [this] != value
+   */
   @Nonnull
   IJSExpression ne (@Nonnull IJSExpression aExpr);
 
+  /**
+   * Exactly not equals '!=='.
+   *
+   * @param bValue
+   *        value
+   * @return [this] !== value
+   */
   @Nonnull
   IJSExpression ene (boolean bValue);
 
+  /**
+   * Exactly not equals '!=='.
+   *
+   * @param cValue
+   *        value
+   * @return [this] !== value
+   */
   @Nonnull
   IJSExpression ene (char cValue);
 
+  /**
+   * Exactly not equals '!=='.
+   *
+   * @param fValue
+   *        value
+   * @return [this] !== value
+   */
   @Nonnull
   IJSExpression ene (float fValue);
 
+  /**
+   * Exactly not equals '!=='.
+   *
+   * @param dValue
+   *        value
+   * @return [this] !== value
+   */
   @Nonnull
   IJSExpression ene (double dValue);
 
+  /**
+   * Exactly not equals '!=='.
+   *
+   * @param nValue
+   *        value
+   * @return [this] !== value
+   */
   @Nonnull
   IJSExpression ene (int nValue);
 
+  /**
+   * Exactly not equals '!=='.
+   *
+   * @param nValue
+   *        value
+   * @return [this] !== value
+   */
   @Nonnull
   IJSExpression ene (long nValue);
 
+  /**
+   * Exactly not equals '!=='.
+   *
+   * @param sValue
+   *        value
+   * @return [this] !== value
+   */
   @Nonnull
   IJSExpression ene (@Nonnull String sValue);
 
+  /**
+   * Exactly not equals '!=='.
+   *
+   * @param aValue
+   *        value
+   * @return [this] !== value
+   */
   @Nonnull
   IJSExpression ene (@Nonnull IJson aValue);
 
-  /** Exactly not equals '!=='. */
+  /**
+   * Exactly not equals '!=='.
+   *
+   * @param aExpr
+   *        value
+   * @return [this] !== value
+   */
   @Nonnull
   IJSExpression ene (@Nonnull IJSExpression aExpr);
 
-  /** instanceof */
+  /**
+   * instanceof
+   *
+   * @param aType
+   *        Type to check
+   * @return [this] instanceof type
+   */
   @Nonnull
   @CodingStyleguideUnaware
   IJSExpression _instanceof (@Nonnull AbstractJSType aType);
 
   /**
+   * @param aMethod
+   *        Method to invoke
    * @return "[this].[method]". Arguments shall be added to the returned
    *         {@link JSInvocation} object.
    */
@@ -607,30 +1065,77 @@ public interface IJSExpression extends IJSGeneratable
   JSInvocation invoke (@Nonnull JSMethod aMethod);
 
   /**
+   * @param sMethod
+   *        Method to invoke
    * @return "[this].[method]". Arguments shall be added to the returned
    *         {@link JSInvocation} object.
    */
   @Nonnull
   JSInvocation invoke (@Nonnull String sMethod);
 
+  /**
+   * @param aField
+   *        Field to reference
+   * @return "[this].[field]"
+   */
   @Nonnull
   JSFieldRef ref (@Nonnull JSVar aField);
 
+  /**
+   * @param sField
+   *        Field to reference
+   * @return "[this].[field]"
+   */
   @Nonnull
   JSFieldRef ref (@Nonnull String sField);
 
+  /**
+   * Get the array component at the specified index.
+   *
+   * @param cIndex
+   *        Index expression
+   * @return [this]<b>[</b>value<b>]</b>
+   */
   @Nonnull
   JSArrayCompRef component (char cIndex);
 
+  /**
+   * Get the array component at the specified index.
+   *
+   * @param nIndex
+   *        Index expression
+   * @return [this]<b>[</b>value<b>]</b>
+   */
   @Nonnull
   JSArrayCompRef component (int nIndex);
 
+  /**
+   * Get the array component at the specified index.
+   *
+   * @param nIndex
+   *        Index expression
+   * @return [this]<b>[</b>value<b>]</b>
+   */
   @Nonnull
   JSArrayCompRef component (long nIndex);
 
+  /**
+   * Get the array component at the specified index.
+   *
+   * @param sIndex
+   *        Index expression
+   * @return [this]<b>[</b>value<b>]</b>
+   */
   @Nonnull
   JSArrayCompRef component (@Nonnull String sIndex);
 
+  /**
+   * Get the array component at the specified index.
+   *
+   * @param aExpr
+   *        Index expression
+   * @return [this]<b>[</b>value<b>]</b>
+   */
   @Nonnull
   JSArrayCompRef component (@Nonnull IJSExpression aExpr);
 }

@@ -130,6 +130,7 @@ public interface IMarkdownDecorator
    *
    * @param out
    *        The StringBuilder to write to.
+   * @return code element
    */
   HCCode openCodeSpan (@Nonnull HCStack out);
 
@@ -164,6 +165,9 @@ public interface IMarkdownDecorator
    *
    * @param out
    *        The StringBuilder to write to.
+   * @param level
+   *        Headline level
+   * @return Headline element
    */
   @Nonnull
   AbstractHCElementWithChildren <?> openHeadline (@Nonnull HCStack out, int level);
@@ -182,6 +186,8 @@ public interface IMarkdownDecorator
    *
    * @param out
    *        The StringBuilder to write to.
+   * @param level
+   *        Headline level
    */
   void closeHeadline (@Nonnull HCStack out, int level);
 
@@ -380,6 +386,7 @@ public interface IMarkdownDecorator
    *
    * @param out
    *        The StringBuilder to write to.
+   * @return List item element
    */
   @Nonnull
   HCLI openListItem (@Nonnull HCStack out);
@@ -428,7 +435,8 @@ public interface IMarkdownDecorator
    * </pre>
    *
    * @param out
-   *        The StringBuilder to write to.
+   *        The stack to write to.
+   * @return Link element
    */
   @Nonnull
   HCA openLink (@Nonnull HCStack out);
@@ -450,6 +458,7 @@ public interface IMarkdownDecorator
    *
    * @param out
    *        The StringBuilder to write to.
+   * @return Image element
    */
   @Nonnull
   HCImg appendImage (@Nonnull HCStack out);

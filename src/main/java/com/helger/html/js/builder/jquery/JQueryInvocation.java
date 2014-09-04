@@ -99,6 +99,8 @@ public class JQueryInvocation extends AbstractJQueryInvocationExtended <JQueryIn
   }
 
   /**
+   * @param bDisabled
+   *        <code>true</code> to set disabled
    * @return The invocation of the custom jQuery function
    *         <code>setDisabled()</code>
    */
@@ -109,6 +111,8 @@ public class JQueryInvocation extends AbstractJQueryInvocationExtended <JQueryIn
   }
 
   /**
+   * @param aExpr
+   *        Expression to determine disabled state
    * @return The invocation of the custom jQuery function
    *         <code>setDisabled()</code>
    */
@@ -147,6 +151,8 @@ public class JQueryInvocation extends AbstractJQueryInvocationExtended <JQueryIn
   }
 
   /**
+   * @param bChecked
+   *        <code>true</code> to check it
    * @return The invocation of the custom jQuery function
    *         <code>setChecked()</code>
    */
@@ -157,6 +163,8 @@ public class JQueryInvocation extends AbstractJQueryInvocationExtended <JQueryIn
   }
 
   /**
+   * @param aExpr
+   *        Expression to determine checked state
    * @return The invocation of the custom jQuery function
    *         <code>setChecked()</code>
    */

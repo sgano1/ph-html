@@ -24,16 +24,17 @@ import com.helger.html.js.IJSCodeProvider;
 
 /**
  * The common aspect of a package and a function.
- * 
+ *
  * @author Philip Helger
  */
 public interface IJSFunctionContainer extends IJSCodeProvider
 {
   /**
-   * Add a new public function to this container
-   * 
+   * Add a new function to this container
+   *
    * @param sName
    *        function name
+   * @return The created function
    * @exception JSNameAlreadyExistsException
    *            When the specified function was already created.
    */
@@ -41,12 +42,13 @@ public interface IJSFunctionContainer extends IJSCodeProvider
   JSFunction function (@Nonnull @Nonempty String sName) throws JSNameAlreadyExistsException;
 
   /**
-   * Add a new public function to this container
-   * 
+   * Add a new function to this container
+   *
    * @param aReturnType
    *        optional return type
    * @param sName
    *        function name
+   * @return The created function
    * @exception JSNameAlreadyExistsException
    *            When the specified function was already created.
    */

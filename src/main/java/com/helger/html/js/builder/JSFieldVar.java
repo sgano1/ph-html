@@ -42,6 +42,8 @@ public class JSFieldVar extends JSVar implements IJSDocCommentable
   /**
    * Field constructor
    *
+   * @param aOwnerClass
+   *        Owner class
    * @param aType
    *        data type of this variable
    * @param sName

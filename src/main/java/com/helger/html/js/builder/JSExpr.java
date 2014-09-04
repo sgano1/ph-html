@@ -319,6 +319,10 @@ public final class JSExpr
    * <p>
    * Be warned that there is a danger in using this method, as it obfuscates the
    * object model.
+   * 
+   * @param sSource
+   *        direct JS code
+   * @return Direct expression
    */
   @Nonnull
   public static JSExprDirect direct (@Nonnull final String sSource)

@@ -50,7 +50,7 @@ public class JSForIn implements IJSStatement
   }
 
   /**
-   * Returns a reference to the loop variable.
+   * @return a reference to the loop variable.
    */
   @Nonnull
   public JSVar var ()

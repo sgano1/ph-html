@@ -22,15 +22,16 @@ import javax.annotation.Nullable;
 
 /**
  * Base interface for objects with dependencies.
- * 
+ *
  * @author Philip Helger
- * @param <T>
+ * @param <DEPTYPE>
+ *        Dependency type
  */
-public interface IHasDependencies <T>
+public interface IHasDependencies <DEPTYPE>
 {
   /**
    * @return A list of all dependents in the correct order
    */
   @Nullable
-  List <T> getAllDependents ();
+  List <DEPTYPE> getAllDependents ();
 }

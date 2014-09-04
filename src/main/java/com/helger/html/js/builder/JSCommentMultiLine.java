@@ -62,6 +62,10 @@ public class JSCommentMultiLine extends JSCommentPart implements IJSGeneratable
 
   /**
    * Append a text to a @-param tag to the JSDoc
+   *
+   * @param sParam
+   *        Param name
+   * @return Comment part
    */
   @Nonnull
   public JSCommentPart addParam (@Nonnull final String sParam)
@@ -79,6 +83,10 @@ public class JSCommentMultiLine extends JSCommentPart implements IJSGeneratable
 
   /**
    * Append a text to an @-param tag.
+   *
+   * @param aParam
+   *        Param name
+   * @return Comment part
    */
   @Nonnull
   public JSCommentPart addParam (@Nonnull final JSVar aParam)
@@ -88,6 +96,8 @@ public class JSCommentMultiLine extends JSCommentPart implements IJSGeneratable
 
   /**
    * Appends a text to @return tag.
+   *
+   * @return Comment part
    */
   @Nonnull
   public JSCommentPart addReturn ()
@@ -99,6 +109,8 @@ public class JSCommentMultiLine extends JSCommentPart implements IJSGeneratable
 
   /**
    * add an @-deprecated tag to the JSDoc, with the associated message.
+   *
+   * @return Comment part
    */
   @Nonnull
   public JSCommentPart addDeprecated ()
@@ -110,6 +122,10 @@ public class JSCommentMultiLine extends JSCommentPart implements IJSGeneratable
 
   /**
    * add an xdoclet.
+   *
+   * @param sName
+   *        xdoclet name
+   * @return XDoclect to be filled
    */
   @Nonnull
   public Map <String, String> addXdoclet (@Nonnull final String sName)
@@ -127,6 +143,12 @@ public class JSCommentMultiLine extends JSCommentPart implements IJSGeneratable
 
   /**
    * add an xdoclet.
+   *
+   * @param sName
+   *        xdoclet name
+   * @param aAttributes
+   *        Attributes to add
+   * @return XDoclect to be filled
    */
   @Nonnull
   public Map <String, String> addXdoclet (@Nonnull final String sName, @Nonnull final Map <String, String> aAttributes)
@@ -138,7 +160,16 @@ public class JSCommentMultiLine extends JSCommentPart implements IJSGeneratable
 
   /**
    * add an xdoclet.
+   *
+   * @param sName
+   *        xdoclet name
+   * @param sAttributeName
+   *        Attributes name
+   * @param sAttributeValue
+   *        Attribute value
+   * @return XDoclect to be filled
    */
+  @Nonnull
   public Map <String, String> addXdoclet (@Nonnull final String sName,
                                           @Nonnull final String sAttributeName,
                                           @Nonnull final String sAttributeValue)

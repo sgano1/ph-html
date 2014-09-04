@@ -143,6 +143,10 @@ public class JSVar extends AbstractJSAssignmentTarget implements IJSDeclaration
 
   /**
    * Changes the name of this variable.
+   *
+   * @param sName
+   *        New variable name
+   * @return this
    */
   @Nonnull
   public JSVar name (@Nonnull @Nonempty final String sName)
@@ -177,6 +181,7 @@ public class JSVar extends AbstractJSAssignmentTarget implements IJSDeclaration
    * @param aNewInit
    *        Expression to be used to initialize this field. May be
    *        <code>null</code>.
+   * @return this
    */
   @Nonnull
   public JSVar init (@Nullable final IJSExpression aNewInit)

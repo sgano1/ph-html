@@ -225,6 +225,8 @@ public class JSDefinedClass extends AbstractJSClass implements IJSDeclaration, I
   /**
    * Removes a {@link JSFieldVar} from this class.
    *
+   * @param aField
+   *        Field to be removed
    * @return this
    * @throws IllegalArgumentException
    *         if the given field is not a field on this class.
@@ -290,7 +292,7 @@ public class JSDefinedClass extends AbstractJSClass implements IJSDeclaration, I
   }
 
   /**
-   * Returns the set of methods defined in this class.
+   * @return the set of methods defined in this class.
    */
   @Nonnull
   @ReturnsMutableCopy

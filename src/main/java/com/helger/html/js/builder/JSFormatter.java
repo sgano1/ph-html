@@ -50,19 +50,17 @@ public class JSFormatter implements Closeable
    * Current number of indentation strings to print
    */
   private int m_nIndentLevel;
-
   private String m_sIndentCache = "";
-
   private boolean m_bAtBeginningOfLine = true;
-
   private boolean m_bIndentAndAlign = true;
-
   private boolean m_bGenerateTypeNames = true;
-
   private boolean m_bGenerateComments = true;
 
   /**
    * Creates a formatter with default incremental indentations of 2 spaces.
+   *
+   * @param aWriter
+   *        Writer to use
    */
   public JSFormatter (@Nonnull @WillCloseWhenClosed final Writer aWriter)
   {
@@ -71,6 +69,9 @@ public class JSFormatter implements Closeable
 
   /**
    * Creates a formatter with default incremental indentations of 2 spaces.
+   *
+   * @param aPrintWriter
+   *        {@link PrintWriter} to be used
    */
   public JSFormatter (@Nonnull @WillCloseWhenClosed final PrintWriter aPrintWriter)
   {
@@ -204,6 +205,7 @@ public class JSFormatter implements Closeable
    *
    * @param cChar
    *        the char
+   * @return this
    */
   @Nonnull
   public JSFormatter plain (final char cChar)
@@ -218,6 +220,7 @@ public class JSFormatter implements Closeable
    *
    * @param sText
    *        the {@link String}
+   * @return this
    */
   @Nonnull
   public JSFormatter plain (@Nonnull final String sText)
@@ -232,6 +235,7 @@ public class JSFormatter implements Closeable
    *
    * @param aType
    *        The type whose name is to be printed
+   * @return this
    */
   @Nonnull
   public JSFormatter type (@Nonnull final AbstractJSType aType)
@@ -271,6 +275,7 @@ public class JSFormatter implements Closeable
    *
    * @param aGeneratable
    *        the {@link IJSGeneratable} object
+   * @return this
    */
   @Nonnull
   public JSFormatter generatable (@Nonnull final IJSGeneratable aGeneratable)
@@ -281,6 +286,10 @@ public class JSFormatter implements Closeable
 
   /**
    * Produces {@link IJSGeneratable}s separated by ','
+   *
+   * @param aCont
+   *        contained of {@link IJSGeneratable}
+   * @return this
    */
   @Nonnull
   public JSFormatter generatable (@Nonnull final Collection <? extends IJSGeneratable> aCont)
@@ -302,6 +311,7 @@ public class JSFormatter implements Closeable
    *
    * @param aDeclaration
    *        the {@link IJSDeclaration} object
+   * @return this
    */
   @Nonnull
   public JSFormatter decl (@Nonnull final IJSDeclaration aDeclaration)
@@ -315,6 +325,7 @@ public class JSFormatter implements Closeable
    *
    * @param aStatement
    *        the {@link IJSStatement} object
+   * @return this
    */
   @Nonnull
   public JSFormatter stmt (@Nonnull final IJSStatement aStatement)
@@ -328,6 +339,7 @@ public class JSFormatter implements Closeable
    *
    * @param aVar
    *        the {@link JSVar} object
+   * @return this
    */
   @Nonnull
   public JSFormatter var (@Nonnull final JSVar aVar)

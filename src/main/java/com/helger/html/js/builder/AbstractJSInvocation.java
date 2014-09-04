@@ -43,6 +43,8 @@ import com.helger.json.IJson;
  * Object invocation
  *
  * @author Philip Helger
+ * @param <IMPLTYPE>
+ *        Implementation type
  */
 public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocation <IMPLTYPE>> extends AbstractJSExpression implements IJSStatement
 {
@@ -89,6 +91,7 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
    * Invoke a function
    *
    * @param sFunctionName
+   *        function name
    */
   public AbstractJSInvocation (@Nonnull final String sFunctionName)
   {
@@ -388,6 +391,8 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
 
   /**
    * Adds a null argument. Short for {@code arg(JSExpr.NULL)}
+   *
+   * @return this
    */
   @Nonnull
   public IMPLTYPE argNull ()
@@ -397,6 +402,8 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
 
   /**
    * Adds a null argument. Short for {@code arg(JSExpr.THIS)}
+   *
+   * @return this
    */
   @Nonnull
   public IMPLTYPE argThis ()
@@ -407,8 +414,11 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
   /**
    * Add an expression to this invocation's argument list
    *
+   * @param nIndex
+   *        Index to insert
    * @param aArgument
    *        Argument to add to argument list
+   * @return this
    */
   @Nonnull
   public IMPLTYPE argOrNull (@Nonnegative final int nIndex, @Nullable final IJSExpression aArgument)
@@ -419,8 +429,11 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
   /**
    * Add an expression to this invocation's argument list
    *
+   * @param nIndex
+   *        Index to insert
    * @param aArgument
    *        Argument to add to argument list
+   * @return this
    */
   @Nonnull
   public IMPLTYPE arg (@Nonnegative final int nIndex, @Nonnull final IJSExpression aArgument)
@@ -432,6 +445,12 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
 
   /**
    * Adds a literal argument. Short for {@code arg(nIndex, JSExpr.lit(v))}
+   *
+   * @param nIndex
+   *        Index to insert
+   * @param bValue
+   *        argument value
+   * @return this
    */
   @Nonnull
   public IMPLTYPE arg (@Nonnegative final int nIndex, final boolean bValue)
@@ -441,6 +460,12 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
 
   /**
    * Adds a literal argument. Short for {@code arg(nIndex, JSExpr.lit(v))}
+   *
+   * @param nIndex
+   *        Index to insert
+   * @param cValue
+   *        argument value
+   * @return this
    */
   @Nonnull
   public IMPLTYPE arg (@Nonnegative final int nIndex, final char cValue)
@@ -450,6 +475,12 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
 
   /**
    * Adds a literal argument. Short for {@code arg(nIndex, JSExpr.lit(v))}
+   *
+   * @param nIndex
+   *        Index to insert
+   * @param dValue
+   *        argument value
+   * @return this
    */
   @Nonnull
   public IMPLTYPE arg (@Nonnegative final int nIndex, final double dValue)
@@ -459,6 +490,12 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
 
   /**
    * Adds a literal argument. Short for {@code arg(nIndex, JSExpr.lit(v))}
+   *
+   * @param nIndex
+   *        Index to insert
+   * @param fValue
+   *        argument value
+   * @return this
    */
   @Nonnull
   public IMPLTYPE arg (@Nonnegative final int nIndex, final float fValue)
@@ -468,6 +505,12 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
 
   /**
    * Adds a literal argument. Short for {@code arg(nIndex, JSExpr.lit(v))}
+   *
+   * @param nIndex
+   *        Index to insert
+   * @param nValue
+   *        argument value
+   * @return this
    */
   @Nonnull
   public IMPLTYPE arg (@Nonnegative final int nIndex, final int nValue)
@@ -477,6 +520,12 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
 
   /**
    * Adds a literal argument. Short for {@code arg(nIndex, JSExpr.lit(v))}
+   *
+   * @param nIndex
+   *        Index to insert
+   * @param nValue
+   *        argument value
+   * @return this
    */
   @Nonnull
   public IMPLTYPE arg (@Nonnegative final int nIndex, final long nValue)
@@ -516,6 +565,10 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
 
   /**
    * Adds a null argument. Short for {@code arg(nIndex, JSExpr.NULL)}
+   *
+   * @param nIndex
+   *        Index to insert
+   * @return this
    */
   @Nonnull
   public IMPLTYPE argNull (@Nonnegative final int nIndex)
@@ -525,6 +578,10 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
 
   /**
    * Adds a null argument. Short for {@code arg(nIndex, JSExpr.THIS)}
+   * 
+   * @param nIndex
+   *        Index to insert
+   * @return this
    */
   @Nonnull
   public IMPLTYPE argThis (@Nonnegative final int nIndex)

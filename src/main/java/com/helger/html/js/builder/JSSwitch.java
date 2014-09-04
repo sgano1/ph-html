@@ -54,6 +54,9 @@ public class JSSwitch implements IJSStatement
 
   /**
    * Construct a switch statement
+   * 
+   * @param aTest
+   *        Test expression
    */
   public JSSwitch (@Nonnull final IJSExpression aTest)
   {

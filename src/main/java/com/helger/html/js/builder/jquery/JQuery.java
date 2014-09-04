@@ -99,6 +99,8 @@ public final class JQuery
   }
 
   /**
+   * @param aExpr
+   *        Expression to use
    * @return a {@link JQueryInvocation} with an arbitrary expression.
    *         <code>$(<i>expr</i>)</code>
    */

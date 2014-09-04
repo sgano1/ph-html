@@ -31,7 +31,7 @@ import com.helger.html.js.IJSCodeProvider;
  * statements/declarations. Those newly created statements/declarations are
  * inserted into the {@link #pos() "current position"}. The position advances
  * one every time you add a new instruction.
- * 
+ *
  * @author Philip Helger
  */
 public class JSBlock extends AbstractJSBlock implements IJSGeneratable, IJSStatement
@@ -76,7 +76,7 @@ public class JSBlock extends AbstractJSBlock implements IJSGeneratable, IJSState
   /**
    * Determine whether a newline should be printed at the end of the block. This
    * is only set to false for anonymous functions
-   * 
+   *
    * @param bNewLineAtEnd
    *        <code>true</code> to enable newline at the end
    * @return this
@@ -100,6 +100,8 @@ public class JSBlock extends AbstractJSBlock implements IJSGeneratable, IJSState
 
   /**
    * Create a break statement and add it to this block
+   *
+   * @return Created break block
    */
   @Nonnull
   @CodingStyleguideUnaware
@@ -125,6 +127,10 @@ public class JSBlock extends AbstractJSBlock implements IJSGeneratable, IJSState
 
   /**
    * Create a continue statement and add it to this block
+   *
+   * @param aLabel
+   *        optional label to be used
+   * @return Created continue block
    */
   @Nonnull
   @CodingStyleguideUnaware

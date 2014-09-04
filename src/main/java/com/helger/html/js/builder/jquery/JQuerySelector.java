@@ -414,7 +414,9 @@ public final class JQuerySelector implements IJQuerySelector
 
   /**
    * @param sAttrName
+   *        Attribute name
    * @param sAttrValue
+   *        Attribute value
    * @return <code>[attrName*='attrValue']</code>
    */
   @Nonnull
@@ -428,7 +430,9 @@ public final class JQuerySelector implements IJQuerySelector
 
   /**
    * @param sAttrName
+   *        Attribute name
    * @param sAttrValue
+   *        Attribute value
    * @return <code>[attrName|='attrValue']</code>
    */
   @Nonnull
@@ -442,7 +446,9 @@ public final class JQuerySelector implements IJQuerySelector
 
   /**
    * @param sAttrName
+   *        Attribute name
    * @param sAttrValue
+   *        Attribute value
    * @return <code>[attrName~='attrValue']</code>
    */
   @Nonnull
@@ -456,7 +462,9 @@ public final class JQuerySelector implements IJQuerySelector
 
   /**
    * @param sAttrName
+   *        Attribute name
    * @param sAttrValue
+   *        Attribute value
    * @return <code>[attrName$='attrValue']</code>
    */
   @Nonnull
@@ -470,7 +478,9 @@ public final class JQuerySelector implements IJQuerySelector
 
   /**
    * @param sAttrName
+   *        Attribute name
    * @param sAttrValue
+   *        Attribute value
    * @return <code>[attrName='attrValue']</code>
    */
   @Nonnull
@@ -484,6 +494,7 @@ public final class JQuerySelector implements IJQuerySelector
 
   /**
    * @param sAttrName
+   *        Attribute name
    * @return <code>[attrName]</code>
    */
   @Nonnull
@@ -495,7 +506,9 @@ public final class JQuerySelector implements IJQuerySelector
 
   /**
    * @param sAttrName
+   *        Attribute name
    * @param sAttrValue
+   *        Attribute value
    * @return <code>[attrName!='attrValue']</code>
    */
   @Nonnull
@@ -509,7 +522,9 @@ public final class JQuerySelector implements IJQuerySelector
 
   /**
    * @param sAttrName
+   *        Attribute name
    * @param sAttrValue
+   *        Attribute value
    * @return <code>[attrName^='attrValue']</code>
    */
   @Nonnull
@@ -523,7 +538,9 @@ public final class JQuerySelector implements IJQuerySelector
 
   /**
    * @param aParentSelector
+   *        Parent selector
    * @param aChildSelector
+   *        Child selector
    * @return <code>parent &gt; child</code>
    */
   @Nonnull
@@ -533,8 +550,8 @@ public final class JQuerySelector implements IJQuerySelector
     ValueEnforcer.notNull (aParentSelector, "ParentSelector");
     ValueEnforcer.notNull (aChildSelector, "ChildSelector");
     return new JQuerySelector (aParentSelector.getExpression ()
-                               .plus (JSExpr.lit (" > "))
-                               .plus (aChildSelector.getExpression ()));
+                                              .plus (JSExpr.lit (" > "))
+                                              .plus (aChildSelector.getExpression ()));
   }
 
   /**
@@ -577,7 +594,9 @@ public final class JQuerySelector implements IJQuerySelector
 
   /**
    * @param aAncestorSelector
+   *        Ancestor selector
    * @param aDescendantSelector
+   *        Descendant selector
    * @return <code>ancestor descendant</code>
    */
   @Nonnull
@@ -587,8 +606,8 @@ public final class JQuerySelector implements IJQuerySelector
     ValueEnforcer.notNull (aAncestorSelector, "AncestorSelector");
     ValueEnforcer.notNull (aDescendantSelector, "DescendantSelector");
     return new JQuerySelector (aAncestorSelector.getExpression ()
-                               .plus (" ")
-                               .plus (aDescendantSelector.getExpression ()));
+                                                .plus (" ")
+                                                .plus (aDescendantSelector.getExpression ()));
   }
 
   /**
@@ -904,7 +923,9 @@ public final class JQuerySelector implements IJQuerySelector
 
   /**
    * @param aPrevSelector
+   *        Previous selector
    * @param aNextSelector
+   *        Next selector
    * @return <code>prev + next</code>
    */
   @Nonnull
@@ -914,13 +935,15 @@ public final class JQuerySelector implements IJQuerySelector
     ValueEnforcer.notNull (aPrevSelector, "PrevSelector");
     ValueEnforcer.notNull (aNextSelector, "NextSelector");
     return new JQuerySelector (aPrevSelector.getExpression ()
-                               .plus (JSExpr.lit (" + "))
-                               .plus (aNextSelector.getExpression ()));
+                                            .plus (JSExpr.lit (" + "))
+                                            .plus (aNextSelector.getExpression ()));
   }
 
   /**
    * @param aPrevSelector
+   *        Previous selector
    * @param aSiblingsSelector
+   *        Siblings selector
    * @return <code>prev ~ siblings</code>
    */
   @Nonnull
@@ -930,8 +953,8 @@ public final class JQuerySelector implements IJQuerySelector
     ValueEnforcer.notNull (aPrevSelector, "PrevSelector");
     ValueEnforcer.notNull (aSiblingsSelector, "SiblingsSelector");
     return new JQuerySelector (aPrevSelector.getExpression ()
-                               .plus (JSExpr.lit (" ~ "))
-                               .plus (aSiblingsSelector.getExpression ()));
+                                            .plus (JSExpr.lit (" ~ "))
+                                            .plus (aSiblingsSelector.getExpression ()));
   }
 
   @Nonnull
