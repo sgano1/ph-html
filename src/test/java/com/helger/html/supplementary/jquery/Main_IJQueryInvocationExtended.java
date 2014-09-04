@@ -59,7 +59,7 @@ public class Main_IJQueryInvocationExtended extends AbstractCreateJQueryAPIList
               sDesc = "parameter value";
             sComment += "* @param " + aArg.getIdentifier () + " " + sDesc + "\n";
           }
-          sComment += "* @return this\n";
+          sComment += "\n* @return this\n";
           if (aEntry.isDeprecated ())
           {
             sComment += "* @deprecated Deprecated since jQuery " + aEntry.getDeprecated ().getAsString (false) + "\n";
