@@ -226,8 +226,7 @@ public class HCScript extends AbstractHCScript <HCScript> implements IJSCodeProv
   @Nonnull
   public HCScript setLineSeparator (@Nonnull @Nonempty final String sLineSeparator)
   {
-    if (StringHelper.hasNoText (sLineSeparator))
-      throw new IllegalArgumentException ("lineSeparator");
+    ValueEnforcer.notEmpty (sLineSeparator, "LineSeparator");
     m_sLineSeparator = sLineSeparator;
     return this;
   }
@@ -332,13 +331,16 @@ public class HCScript extends AbstractHCScript <HCScript> implements IJSCodeProv
     s_aRWLock.writeLock ().lock ();
     try
     {
-      s_eDefaultMode = eMode;
+      if (s_eDefaultMode != eMode)
+      {
+        s_eDefaultMode = eMode;
+        s_aLogger.info ("Default <script> mode set to " + eMode);
+      }
     }
     finally
     {
       s_aRWLock.writeLock ().unlock ();
     }
-    s_aLogger.info ("Default <script> mode set to " + eMode);
   }
 
   @Nonnull
@@ -358,8 +360,7 @@ public class HCScript extends AbstractHCScript <HCScript> implements IJSCodeProv
 
   public static void setDefaultLineSeparator (@Nonnull @Nonempty final String sDefaultLineSeparator)
   {
-    if (StringHelper.hasNoText (sDefaultLineSeparator))
-      throw new IllegalArgumentException ("defaultLineSeparator");
+    ValueEnforcer.notEmpty (sDefaultLineSeparator, "DefaultLineSeparator");
 
     s_aRWLock.writeLock ().lock ();
     try
