@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 
 /**
  * Special request field for check boxes and radio buttons.
- * 
+ *
  * @author Philip Helger, Boris Gregorcic
  */
 public interface IHCRequestFieldBoolean extends IHCRequestField
@@ -41,5 +41,6 @@ public interface IHCRequestFieldBoolean extends IHCRequestField
    *         parameter is present and the fall-back is <code>true</code>,
    *         <code>false</code> otherwise.
    */
+  @Deprecated
   boolean isChecked (@Nullable String sFieldValue);
 }

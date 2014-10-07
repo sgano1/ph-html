@@ -27,23 +27,35 @@ import com.helger.commons.annotations.Nonempty;
 /**
  * Defines an abstract request field for input controls. It encapsulates a name
  * and a request value.
- * 
+ *
  * @author Philip Helger
  */
 public interface IHCRequestField extends Serializable
 {
   /**
-   * @return The field name of this request field
+   * @return The field name of this request field. Neither <code>null</code> nor
+   *         empty.
    */
   @Nonnull
   @Nonempty
   String getFieldName ();
 
   /**
+   * Get the default value that should be used if no request value is present.
+   *
+   * @return The default value to be used as fallback. May not be
+   *         <code>null</code>. <code>null</code> have to be returned as empty
+   *         strings!
+   */
+  @Nonnull
+  String getDefaultValue ();
+
+  /**
    * Get the value of the request - optionally falling back to an eventually
    * provided default value if no such request parameter is present
-   * 
+   *
    * @return A single request value as string.
+   * @see #getDefaultValue()
    */
   @Nonnull
   String getRequestValue ();
@@ -53,10 +65,10 @@ public interface IHCRequestField extends Serializable
    * multi-selects or checkboxes) this method retrieves all request values. If
    * no such request value is present a list with one entry (the default value)
    * is returned, in case the default value is non-empty
-   * 
+   *
    * @return A list of simple request values with the same key or
    *         <code>null</code> if no such request parameter is present and no
-   *         default value was provided
+   *         (or an empty) default value was provided.
    */
   @Nullable
   List <String> getRequestValues ();

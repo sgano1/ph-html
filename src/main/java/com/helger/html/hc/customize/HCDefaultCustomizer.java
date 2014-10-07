@@ -33,7 +33,6 @@ import com.helger.css.property.CCSSProperties;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.css.DefaultCSSClassProvider;
 import com.helger.html.css.ICSSClassProvider;
-import com.helger.html.hc.CHCParam;
 import com.helger.html.hc.IHCButton;
 import com.helger.html.hc.IHCCanBeDisabled;
 import com.helger.html.hc.IHCCell;
@@ -155,52 +154,43 @@ public class HCDefaultCustomizer extends HCEmptyCustomizer
                       aElement.addClass (CSS_CLASS_RADIO);
       }
 
-      if (aElement instanceof HCCheckBox)
+      if (aElement instanceof AbstractHCForm <?>)
       {
-        final HCCheckBox aCheckBox = (HCCheckBox) aElement;
-
-        // If no value is present, assign the default value "true"
-        if (aCheckBox.getValue () == null)
-          aCheckBox.setValue (CHCParam.VALUE_CHECKED);
+        final AbstractHCForm <?> aForm = (AbstractHCForm <?>) aElement;
+        if (aForm.isSubmitPressingEnter ())
+        {
+          final IHCButton <?> aButton = createFakeSubmitButton ();
+          aButton.setTabIndex (aForm.getSubmitButtonTabIndex ());
+          aForm.addChild (aButton);
+        }
       }
       else
-        if (aElement instanceof AbstractHCForm <?>)
+        if (aElement instanceof IHCTable <?>)
         {
-          final AbstractHCForm <?> aForm = (AbstractHCForm <?>) aElement;
-          if (aForm.isSubmitPressingEnter ())
+          final IHCTable <?> aTable = (IHCTable <?>) aElement;
+          final HCColGroup aColGroup = aTable.getColGroup ();
+          // bug fix for IE9 table layout bug
+          // (http://msdn.microsoft.com/en-us/library/ms531161%28v=vs.85%29.aspx)
+          // IE9 only interprets column widths if the first row
+          // does not use colspan (i.e. at least one row does not
+          // use colspan)
+          if (aColGroup != null &&
+              aColGroup.hasColumns () &&
+              aTable.hasBodyRows () &&
+              aTable.getFirstBodyRow ().isColspanUsed ())
           {
-            final IHCButton <?> aButton = createFakeSubmitButton ();
-            aButton.setTabIndex (aForm.getSubmitButtonTabIndex ());
-            aForm.addChild (aButton);
+            // Create a dummy row with explicit widths
+            final HCRow aRow = new HCRow (false).addClass (CSS_FORCE_COLSPAN);
+            for (final HCCol aCol : aColGroup.getAllColumns ())
+            {
+              final IHCCell <?> aCell = aRow.addAndReturnCell (HCEntityNode.newNBSP ());
+              final int nWidth = StringParser.parseInt (aCol.getWidth (), -1);
+              if (nWidth >= 0)
+                aCell.addStyle (CCSSProperties.WIDTH.newValue (ECSSUnit.px (nWidth)));
+            }
+            aTable.addBodyRow (0, aRow);
           }
         }
-        else
-          if (aElement instanceof IHCTable <?>)
-          {
-            final IHCTable <?> aTable = (IHCTable <?>) aElement;
-            final HCColGroup aColGroup = aTable.getColGroup ();
-            // bug fix for IE9 table layout bug
-            // (http://msdn.microsoft.com/en-us/library/ms531161%28v=vs.85%29.aspx)
-            // IE9 only interprets column widths if the first row
-            // does not use colspan (i.e. at least one row does not
-            // use colspan)
-            if (aColGroup != null &&
-                aColGroup.hasColumns () &&
-                aTable.hasBodyRows () &&
-                aTable.getFirstBodyRow ().isColspanUsed ())
-            {
-              // Create a dummy row with explicit widths
-              final HCRow aRow = new HCRow (false).addClass (CSS_FORCE_COLSPAN);
-              for (final HCCol aCol : aColGroup.getAllColumns ())
-              {
-                final IHCCell <?> aCell = aRow.addAndReturnCell (HCEntityNode.newNBSP ());
-                final int nWidth = StringParser.parseInt (aCol.getWidth (), -1);
-                if (nWidth >= 0)
-                  aCell.addStyle (CCSSProperties.WIDTH.newValue (ECSSUnit.px (nWidth)));
-              }
-              aTable.addBodyRow (0, aRow);
-            }
-          }
 
       // Unfocusable?
       if (aElement.isUnfocusable ())

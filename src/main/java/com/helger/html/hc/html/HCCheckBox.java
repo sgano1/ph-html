@@ -27,6 +27,7 @@ import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
+import com.helger.html.hc.CHCParam;
 import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCNodeWithChildren;
 import com.helger.html.hc.api.EHCInputType;
@@ -41,6 +42,9 @@ import com.helger.html.request.IHCRequestFieldBoolean;
  */
 public class HCCheckBox extends AbstractHCInput <HCCheckBox>
 {
+  /** The default value of the "value" attribute in HTML */
+  public static final String DEFAULT_VALUE = CHCParam.VALUE_CHECKED;
+
   /** Check-box is not checked by default */
   public static final boolean DEFAULT_CHECKED = false;
 
@@ -54,7 +58,7 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
   public static final String DEFAULT_HIDDEN_FIELD_PREFIX = "__";
 
   private String m_sValue;
-  private boolean m_bChecked = DEFAULT_CHECKED;
+  private boolean m_bChecked;
   private boolean m_bEmitHiddenField = DEFAULT_EMIT_HIDDEN_FIELD;
 
   /**
@@ -62,7 +66,7 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
    */
   public HCCheckBox ()
   {
-    super (EHCInputType.CHECKBOX);
+    this ((String) null, DEFAULT_CHECKED, DEFAULT_VALUE);
   }
 
   /**
@@ -73,8 +77,7 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
    */
   public HCCheckBox (@Nullable final String sName)
   {
-    this ();
-    setName (sName);
+    this (sName, DEFAULT_CHECKED, DEFAULT_VALUE);
   }
 
   /**
@@ -87,8 +90,7 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
    */
   public HCCheckBox (@Nullable final String sName, final boolean bChecked)
   {
-    this (sName);
-    setChecked (bChecked);
+    this (sName, bChecked, DEFAULT_VALUE);
   }
 
   /**
@@ -103,8 +105,21 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
    */
   public HCCheckBox (@Nullable final String sName, final boolean bChecked, @Nullable final String sValue)
   {
-    this (sName, bChecked);
+    super (EHCInputType.CHECKBOX);
+    setName (sName);
+    setChecked (bChecked);
     setValue (sValue);
+  }
+
+  /**
+   * Constructor
+   *
+   * @param aRF
+   *        The request field
+   */
+  public HCCheckBox (@Nonnull final IHCRequestFieldBoolean aRF)
+  {
+    this (aRF.getFieldName (), aRF.isChecked (), DEFAULT_VALUE);
   }
 
   /**
@@ -117,18 +132,7 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
    */
   public HCCheckBox (@Nonnull final IHCRequestFieldBoolean aRF, @Nullable final String sValue)
   {
-    this (aRF.getFieldName (), aRF.isChecked (sValue), sValue);
-  }
-
-  /**
-   * Constructor
-   *
-   * @param aRF
-   *        The request field
-   */
-  public HCCheckBox (@Nonnull final IHCRequestFieldBoolean aRF)
-  {
-    this (aRF, null);
+    this (aRF.getFieldName (), aRF.isChecked (), sValue);
   }
 
   /**
