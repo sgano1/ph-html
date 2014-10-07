@@ -19,7 +19,6 @@ package com.helger.html.hc.html;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.CHTMLAttributeValues;
@@ -27,8 +26,8 @@ import com.helger.html.CHTMLAttributes;
 import com.helger.html.hc.api.EHCInputType;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCInput;
-import com.helger.html.request.IHCRequestField;
 import com.helger.html.request.IHCRequestFieldBoolean;
+import com.helger.html.request.IHCRequestFieldBooleanMultiValue;
 
 /**
  * Represents an HTML &lt;input&gt; element of type "radio"
@@ -45,53 +44,35 @@ public class HCRadioButton extends AbstractHCInput <HCRadioButton>
 
   public HCRadioButton (@Nullable final String sName)
   {
-    super (EHCInputType.RADIO);
-    setName (sName);
+    this (sName, null, DEFAULT_CHECKED);
   }
 
   public HCRadioButton (@Nullable final String sName, @Nullable final String sValue)
   {
-    this (sName);
-    setValue (sValue);
+    this (sName, sValue, DEFAULT_CHECKED);
   }
 
   public HCRadioButton (@Nullable final String sName, final boolean bChecked)
   {
-    this (sName);
-    setChecked (bChecked);
+    this (sName, null, bChecked);
   }
 
   public HCRadioButton (@Nullable final String sName, @Nullable final String sValue, final boolean bChecked)
   {
-    this (sName, sValue);
+    super (EHCInputType.RADIO);
+    setName (sName);
+    setValue (sValue);
     setChecked (bChecked);
   }
 
   public HCRadioButton (@Nonnull final IHCRequestFieldBoolean aRF)
   {
-    this (aRF.getFieldName (), aRF.isChecked ());
+    this (aRF.getFieldName (), null, aRF.isChecked ());
   }
 
-  public HCRadioButton (@Nonnull final IHCRequestFieldBoolean aRF, @Nullable final String sValue)
+  public HCRadioButton (@Nonnull final IHCRequestFieldBooleanMultiValue aRF)
   {
-    this (aRF);
-    setValue (sValue);
-  }
-
-  public HCRadioButton (@Nonnull final IHCRequestField aRF)
-  {
-    this (aRF.getFieldName (), aRF.getRequestValue ());
-  }
-
-  public HCRadioButton (@Nonnull final IHCRequestField aRF, final boolean bChecked)
-  {
-    this (aRF);
-    setChecked (bChecked);
-  }
-
-  public HCRadioButton (@Nonnull final IHCRequestField aRF, @Nullable final String sValue)
-  {
-    this (aRF.getFieldName (), sValue, EqualsUtils.equals (sValue, aRF.getRequestValue ()));
+    this (aRF.getFieldName (), aRF.getValue (), aRF.isChecked ());
   }
 
   @Nullable

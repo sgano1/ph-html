@@ -34,6 +34,7 @@ import com.helger.html.hc.api.EHCInputType;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCInput;
 import com.helger.html.request.IHCRequestFieldBoolean;
+import com.helger.html.request.IHCRequestFieldBooleanMultiValue;
 
 /**
  * Represents an HTML &lt;input&gt; element with type "checkbox"
@@ -123,16 +124,14 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
   }
 
   /**
-   * Constructor, where the passed value decides upon the initial check state
+   * Constructor
    *
    * @param aRF
    *        The request field
-   * @param sValue
-   *        The value to be set for this check-box
    */
-  public HCCheckBox (@Nonnull final IHCRequestFieldBoolean aRF, @Nullable final String sValue)
+  public HCCheckBox (@Nonnull final IHCRequestFieldBooleanMultiValue aRF)
   {
-    this (aRF.getFieldName (), aRF.isChecked (), sValue);
+    this (aRF.getFieldName (), aRF.isChecked (), aRF.getValue ());
   }
 
   /**

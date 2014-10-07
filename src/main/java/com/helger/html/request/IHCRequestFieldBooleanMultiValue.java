@@ -16,19 +16,27 @@
  */
 package com.helger.html.request;
 
+import javax.annotation.Nonnull;
+
 /**
- * Special request field for check boxes and radio buttons. Assumes that the
- * field name is unique.
+ * Special request field for check boxes and radio buttons where the same field
+ * name is used with multiple different values.
  *
  * @author Philip Helger
- * @see IHCRequestFieldBooleanMultiValue
+ * @see IHCRequestFieldBoolean
  */
-public interface IHCRequestFieldBoolean extends IHCRequestField
+public interface IHCRequestFieldBooleanMultiValue extends IHCRequestField
 {
   /**
-   * @return <code>true</code> if the check-box is checked or if no such request
-   *         parameter is present and the fall-back is <code>true</code>,
-   *         <code>false</code> otherwise.
+   * @return The value to be used for the check box or radio button.
+   */
+  @Nonnull
+  String getValue ();
+
+  /**
+   * @return <code>true</code> if the check box with the passed value is checked
+   *         is checked or if no such request parameter is present and the
+   *         fall-back is <code>true</code>, <code>false</code> otherwise.
    */
   boolean isChecked ();
 }
