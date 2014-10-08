@@ -19,32 +19,19 @@ package com.helger.html.hc.impl;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.text.IPredefinedLocaleTextProvider;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeBuilder;
 
 /**
  * This class is an abstract HC node that represents a list of nodes without
  * creating an HTML element by itself.
- * 
+ *
  * @author Philip Helger
  */
 public class HCNodeList extends AbstractHCNodeList <HCNodeList>
 {
   public HCNodeList ()
   {}
-
-  @Nonnull
-  public static HCNodeList create (@Nullable final IPredefinedLocaleTextProvider aChild)
-  {
-    return new HCNodeList ().addChild (aChild);
-  }
-
-  @Nonnull
-  public static HCNodeList create (@Nullable final IPredefinedLocaleTextProvider... aChildren)
-  {
-    return new HCNodeList ().addChildren (aChildren);
-  }
 
   @Nonnull
   public static HCNodeList create (@Nullable final String sChild)

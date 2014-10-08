@@ -31,6 +31,7 @@ import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.CGlobal;
 import com.helger.commons.ValueEnforcer;
+import com.helger.commons.annotations.DevelopersNote;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.OverrideOnDemand;
 import com.helger.commons.annotations.ReturnsMutableCopy;
@@ -58,7 +59,9 @@ import com.helger.html.hc.htmlext.HCUtils;
  *        Child type
  */
 @NotThreadSafe
-public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCHasChildrenMutable <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode> extends AbstractHCNode implements IHCHasChildrenMutable <THISTYPE, CHILDTYPE>
+public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCHasChildrenMutable <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode> extends
+                                                                                                                                                    AbstractHCNode implements
+                                                                                                                                                                  IHCHasChildrenMutable <THISTYPE, CHILDTYPE>
 {
   private List <CHILDTYPE> m_aChildren;
 
@@ -143,6 +146,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
   }
 
   @Nonnull
+  @DevelopersNote ("Use addChild instead!")
   @Deprecated
   public final THISTYPE addChildren (@Nullable final CHILDTYPE aChild)
   {

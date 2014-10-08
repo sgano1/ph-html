@@ -26,7 +26,6 @@ import javax.annotation.Nullable;
 import com.helger.commons.annotations.DevelopersNote;
 import com.helger.commons.annotations.ReturnsMutableCopy;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.commons.text.IPredefinedLocaleTextProvider;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCCell;
 import com.helger.html.hc.IHCNode;
@@ -94,20 +93,6 @@ public class HCRow extends AbstractHCElementWithInternalChildren <HCRow, IHCCell
   /**
    * Add a single cell with the given text element.
    *
-   * @param aCellText
-   *        The text to be set into the cell. May not be <code>null</code>.
-   * @return the created table cell
-   */
-  @Nonnull
-  @CheckReturnValue
-  public IHCCell <?> addAndReturnCell (@Nonnull final IPredefinedLocaleTextProvider aCellText)
-  {
-    return addCell ().addChild (aCellText);
-  }
-
-  /**
-   * Add a single cell with the given text element.
-   *
    * @param sCellText
    *        The text to be set into the cell. May be <code>null</code>.
    * @return the created table cell
@@ -145,20 +130,6 @@ public class HCRow extends AbstractHCElementWithInternalChildren <HCRow, IHCCell
   public IHCCell <?> addAndReturnCell (@Nullable final IHCNode aCellChild)
   {
     return addCell ().addChild (aCellChild);
-  }
-
-  /**
-   * Add a single cell with the given text elements.
-   *
-   * @param aCellTexts
-   *        The text to be set into the cell. May be <code>null</code>.
-   * @return the created table cell
-   */
-  @Nonnull
-  @CheckReturnValue
-  public IHCCell <?> addAndReturnCell (@Nullable final IPredefinedLocaleTextProvider... aCellTexts)
-  {
-    return addCell ().addChildren (aCellTexts);
   }
 
   /**
@@ -222,23 +193,6 @@ public class HCRow extends AbstractHCElementWithInternalChildren <HCRow, IHCCell
    *
    * @param nIndex
    *        The index where the cell should be added
-   * @param aCellText
-   *        The text to be set into the cell. May not be <code>null</code>.
-   * @return the created table cell
-   */
-  @Nonnull
-  @CheckReturnValue
-  public IHCCell <?> addAndReturnCell (@Nonnegative final int nIndex,
-                                       @Nonnull final IPredefinedLocaleTextProvider aCellText)
-  {
-    return addCell (nIndex).addChild (aCellText);
-  }
-
-  /**
-   * Add a single cell with the given text element.
-   *
-   * @param nIndex
-   *        The index where the cell should be added
    * @param sCellText
    *        The text to be set into the cell. May be <code>null</code>.
    * @return the created table cell
@@ -280,23 +234,6 @@ public class HCRow extends AbstractHCElementWithInternalChildren <HCRow, IHCCell
   public IHCCell <?> addAndReturnCell (@Nonnegative final int nIndex, @Nullable final IHCNode aCellChild)
   {
     return addCell (nIndex).addChild (aCellChild);
-  }
-
-  /**
-   * Add a single cell with the given text elements.
-   *
-   * @param nIndex
-   *        The index where the cell should be added
-   * @param aCellTexts
-   *        The text to be set into the cell. May be <code>null</code>.
-   * @return the created table cell
-   */
-  @Nonnull
-  @CheckReturnValue
-  public IHCCell <?> addAndReturnCell (@Nonnegative final int nIndex,
-                                       @Nullable final IPredefinedLocaleTextProvider... aCellTexts)
-  {
-    return addCell (nIndex).addChildren (aCellTexts);
   }
 
   /**
@@ -367,20 +304,6 @@ public class HCRow extends AbstractHCElementWithInternalChildren <HCRow, IHCCell
   /**
    * Add a single cell with the given text element.
    *
-   * @param aCellText
-   *        The text to be set into the cell.
-   * @return this (the table row)
-   */
-  @Nonnull
-  public HCRow addCell (@Nonnull final IPredefinedLocaleTextProvider aCellText)
-  {
-    addCell ().addChild (aCellText);
-    return this;
-  }
-
-  /**
-   * Add a single cell with the given text element.
-   *
    * @param sCellText
    *        The text to be set into the cell. May be <code>null</code>.
    * @return this (the table row)
@@ -417,20 +340,6 @@ public class HCRow extends AbstractHCElementWithInternalChildren <HCRow, IHCCell
   public HCRow addCell (@Nullable final IHCNode aChild)
   {
     addCell ().addChild (aChild);
-    return this;
-  }
-
-  /**
-   * Add a single new cell and add the passed texts.
-   *
-   * @param aCellTexts
-   *        The list of texts to add. May be <code>null</code>.
-   * @return this (the table row)
-   */
-  @Nonnull
-  public HCRow addCell (@Nullable final IPredefinedLocaleTextProvider... aCellTexts)
-  {
-    addCell ().addChildren (aCellTexts);
     return this;
   }
 
@@ -495,22 +404,6 @@ public class HCRow extends AbstractHCElementWithInternalChildren <HCRow, IHCCell
    *
    * @param nIndex
    *        The index where the cell should be added
-   * @param aCellText
-   *        The text to be set into the cell.
-   * @return this (the table row)
-   */
-  @Nonnull
-  public HCRow addCell (@Nonnegative final int nIndex, @Nonnull final IPredefinedLocaleTextProvider aCellText)
-  {
-    addCell (nIndex).addChild (aCellText);
-    return this;
-  }
-
-  /**
-   * Add a single cell with the given text element.
-   *
-   * @param nIndex
-   *        The index where the cell should be added
    * @param sCellText
    *        The text to be set into the cell. May be <code>null</code>.
    * @return this (the table row)
@@ -551,22 +444,6 @@ public class HCRow extends AbstractHCElementWithInternalChildren <HCRow, IHCCell
   public HCRow addCell (@Nonnegative final int nIndex, @Nullable final IHCNode aChild)
   {
     addCell (nIndex).addChild (aChild);
-    return this;
-  }
-
-  /**
-   * Add a single new cell and add the passed texts.
-   *
-   * @param nIndex
-   *        The index where the cell should be added
-   * @param aCellChildren
-   *        The list of texts to add. May be <code>null</code>.
-   * @return this (the table row)
-   */
-  @Nonnull
-  public HCRow addCell (@Nonnegative final int nIndex, @Nullable final IPredefinedLocaleTextProvider... aCellChildren)
-  {
-    addCell (nIndex).addChildren (aCellChildren);
     return this;
   }
 
@@ -631,30 +508,6 @@ public class HCRow extends AbstractHCElementWithInternalChildren <HCRow, IHCCell
   public HCRow addCell (@Nonnegative final int nIndex, @Nullable final Iterable <? extends IHCNode> aCellChildren)
   {
     addCell (nIndex).addChildren (aCellChildren);
-    return this;
-  }
-
-  @Deprecated
-  @DevelopersNote ("Use either addCell or add parameters :)")
-  @Nonnull
-  public HCRow addCells (@Nonnull final IPredefinedLocaleTextProvider aCellTextProvider)
-  {
-    return addCell (aCellTextProvider);
-  }
-
-  /**
-   * Add multiple cells, one for each passed string.
-   *
-   * @param aCellTextProviders
-   *        The list of text providers for which a table cell should be created.
-   * @return this (the table row)
-   */
-  @Nonnull
-  public HCRow addCells (@Nullable final IPredefinedLocaleTextProvider... aCellTextProviders)
-  {
-    if (aCellTextProviders != null)
-      for (final IPredefinedLocaleTextProvider aCellTextProvider : aCellTextProviders)
-        addCell (aCellTextProvider.getText ());
     return this;
   }
 

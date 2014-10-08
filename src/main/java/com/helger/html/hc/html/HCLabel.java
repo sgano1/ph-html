@@ -22,7 +22,6 @@ import javax.annotation.Nullable;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.commons.text.IPredefinedLocaleTextProvider;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCElement;
@@ -121,32 +120,6 @@ public class HCLabel extends AbstractHCElementWithChildren <HCLabel>
                             .appendIfNotNull ("for", m_sFor)
                             .appendIfNotNull ("form", m_sForm)
                             .toString ();
-  }
-
-  /**
-   * Create a new LABEL element with the passed child text
-   *
-   * @param aChild
-   *        The child text provider to be appended. May be <code>null</code>
-   * @return The created HCLabel element and never <code>null</code>
-   */
-  @Nonnull
-  public static HCLabel create (@Nullable final IPredefinedLocaleTextProvider aChild)
-  {
-    return new HCLabel ().addChild (aChild);
-  }
-
-  /**
-   * Create a new LABEL element with the passed child texts
-   *
-   * @param aChildren
-   *        The child texts to be appended. May be <code>null</code>
-   * @return The created HCLabel element and never <code>null</code>
-   */
-  @Nonnull
-  public static HCLabel create (@Nullable final IPredefinedLocaleTextProvider... aChildren)
-  {
-    return new HCLabel ().addChildren (aChildren);
   }
 
   /**

@@ -22,7 +22,6 @@ import javax.annotation.Nullable;
 import com.helger.commons.microdom.IMicroComment;
 import com.helger.commons.microdom.impl.MicroComment;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.commons.text.IPredefinedLocaleTextProvider;
 import com.helger.commons.xml.serialize.XMLEmitter;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
@@ -34,11 +33,6 @@ import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 public class HCCommentNode extends AbstractHCNode
 {
   private final String m_sText;
-
-  public HCCommentNode (@Nonnull final IPredefinedLocaleTextProvider aTextProvider)
-  {
-    this (aTextProvider.getText ());
-  }
 
   public HCCommentNode (@Nullable final String sText)
   {

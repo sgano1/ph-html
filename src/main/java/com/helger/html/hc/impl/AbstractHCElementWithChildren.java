@@ -22,26 +22,19 @@ import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.annotations.DevelopersNote;
-import com.helger.commons.text.IPredefinedLocaleTextProvider;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCElementWithChildren;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeBuilder;
 
 @NotThreadSafe
-public abstract class AbstractHCElementWithChildren <THISTYPE extends AbstractHCElementWithChildren <THISTYPE>> extends AbstractHCElementWithInternalChildren <THISTYPE, IHCNode> implements IHCElementWithChildren <THISTYPE>
+public abstract class AbstractHCElementWithChildren <THISTYPE extends AbstractHCElementWithChildren <THISTYPE>> extends
+                                                                                                                AbstractHCElementWithInternalChildren <THISTYPE, IHCNode> implements
+                                                                                                                                                                         IHCElementWithChildren <THISTYPE>
 {
   protected AbstractHCElementWithChildren (@Nonnull final EHTMLElement eElement)
   {
     super (eElement);
-  }
-
-  @Nonnull
-  public final THISTYPE addChild (@Nullable final IPredefinedLocaleTextProvider aTextProvider)
-  {
-    if (aTextProvider != null)
-      return addChild (aTextProvider.getText ());
-    return thisAsT ();
   }
 
   @Nonnull
@@ -62,15 +55,6 @@ public abstract class AbstractHCElementWithChildren <THISTYPE extends AbstractHC
   }
 
   @Nonnull
-  public final THISTYPE addChild (@Nonnegative final int nIndex,
-                                  @Nullable final IPredefinedLocaleTextProvider aTextProvider)
-  {
-    if (aTextProvider != null)
-      return addChild (nIndex, aTextProvider.getText ());
-    return thisAsT ();
-  }
-
-  @Nonnull
   public final THISTYPE addChild (@Nonnegative final int nIndex, @Nullable final String sText)
   {
     // Empty text is OK!!!
@@ -84,23 +68,6 @@ public abstract class AbstractHCElementWithChildren <THISTYPE extends AbstractHC
   {
     if (aNodeBuilder != null)
       addChild (nIndex, aNodeBuilder.build ());
-    return thisAsT ();
-  }
-
-  @Nonnull
-  @DevelopersNote ("Use addChild instead!")
-  @Deprecated
-  public final THISTYPE addChildren (@Nullable final IPredefinedLocaleTextProvider aChild)
-  {
-    return addChild (aChild);
-  }
-
-  @Nonnull
-  public final THISTYPE addChildren (@Nullable final IPredefinedLocaleTextProvider... aChildren)
-  {
-    if (aChildren != null)
-      for (final IPredefinedLocaleTextProvider aChild : aChildren)
-        addChild (aChild);
     return thisAsT ();
   }
 

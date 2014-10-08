@@ -21,25 +21,17 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.annotations.DevelopersNote;
-import com.helger.commons.text.IPredefinedLocaleTextProvider;
 
 /**
  * Special node interface for objects containing other objects
- * 
+ *
  * @author Philip Helger
  * @param <THISTYPE>
  *        The type of the contained child objects.
  */
-public interface IHCNodeWithChildren <THISTYPE extends IHCNodeWithChildren <THISTYPE>> extends IHCHasChildrenMutable <THISTYPE, IHCNode>
+public interface IHCNodeWithChildren <THISTYPE extends IHCNodeWithChildren <THISTYPE>> extends
+                                                                                       IHCHasChildrenMutable <THISTYPE, IHCNode>
 {
-  /**
-   * @param aTextProvider
-   *        Child text to add. May be <code>null</code>.
-   * @return this
-   */
-  @Nonnull
-  THISTYPE addChild (@Nullable IPredefinedLocaleTextProvider aTextProvider);
-
   /**
    * @param sText
    *        Child text to add. May be <code>null</code>.
@@ -55,16 +47,6 @@ public interface IHCNodeWithChildren <THISTYPE extends IHCNodeWithChildren <THIS
    */
   @Nonnull
   THISTYPE addChild (@Nullable IHCNodeBuilder aNodeBuilder);
-
-  /**
-   * @param nIndex
-   *        The index to where the element should be inserted.
-   * @param aTextProvider
-   *        Child text to add. May be <code>null</code>.
-   * @return this
-   */
-  @Nonnull
-  THISTYPE addChild (@Nonnegative int nIndex, @Nullable IPredefinedLocaleTextProvider aTextProvider);
 
   /**
    * @param nIndex
@@ -87,32 +69,14 @@ public interface IHCNodeWithChildren <THISTYPE extends IHCNodeWithChildren <THIS
   THISTYPE addChild (@Nonnegative int nIndex, @Nullable IHCNodeBuilder aNodeBuilder);
 
   /**
-   * Use {@link #addChild(IPredefinedLocaleTextProvider)} instead
-   * 
-   * @param aChild
-   *        Child to add. May be <code>null</code>.
-   * @return this
-   */
-  @Nonnull
-  @Deprecated
-  THISTYPE addChildren (@Nullable IPredefinedLocaleTextProvider aChild);
-
-  /**
-   * @param aChildren
-   *        Children to add. May be <code>null</code>.
-   * @return this
-   */
-  @Nonnull
-  THISTYPE addChildren (@Nullable IPredefinedLocaleTextProvider... aChildren);
-
-  /**
    * Use {@link #addChild(String)} instead
-   * 
+   *
    * @param sChild
    *        Child to add. May be <code>null</code>.
    * @return this
    */
   @Nonnull
+  @DevelopersNote ("Use addChild instead")
   @Deprecated
   THISTYPE addChildren (@Nullable String sChild);
 
@@ -126,7 +90,7 @@ public interface IHCNodeWithChildren <THISTYPE extends IHCNodeWithChildren <THIS
 
   /**
    * Use {@link #addChild(IHCNodeBuilder)} instead.
-   * 
+   *
    * @param aChild
    *        The child to add. May be <code>null</code>.
    * @return this

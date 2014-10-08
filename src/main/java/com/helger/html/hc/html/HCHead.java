@@ -140,36 +140,6 @@ public class HCHead extends AbstractHCElement <HCHead>
     return m_aMetaElements;
   }
 
-  @Nonnull
-  @Deprecated
-  public HCHead addMetaElement (@Nonnull final IMetaElement aMetaElement)
-  {
-    m_aMetaElements.addMetaElement (aMetaElement);
-    return this;
-  }
-
-  @Nonnull
-  @Deprecated
-  public EChange removeMetaElement (@Nullable final String sMetaElementName)
-  {
-    return m_aMetaElements.removeMetaElement (sMetaElementName);
-  }
-
-  @Nonnull
-  @ReturnsMutableCopy
-  @Deprecated
-  public List <IMetaElement> getAllMetaElements ()
-  {
-    return m_aMetaElements.getAllMetaElements ();
-  }
-
-  @Nonnegative
-  @Deprecated
-  public int getMetaElementCount ()
-  {
-    return m_aMetaElements.getMetaElementCount ();
-  }
-
   //
   // Link handling
   //

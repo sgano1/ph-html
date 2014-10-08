@@ -19,7 +19,6 @@ package com.helger.html.hc.html5;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.text.IPredefinedLocaleTextProvider;
 import com.helger.html.EHTMLElement;
 import com.helger.html.annotations.SinceHTML5;
 import com.helger.html.hc.IHCNode;
@@ -34,33 +33,7 @@ public class HCRP extends AbstractHCRubyChild <HCRP>
 
   /**
    * Create a new RP element with the passed child text
-   * 
-   * @param aChild
-   *        The child text provider to be appended. May be <code>null</code>
-   * @return The created HCRP element and never <code>null</code>
-   */
-  @Nonnull
-  public static HCRP create (@Nullable final IPredefinedLocaleTextProvider aChild)
-  {
-    return new HCRP ().addChild (aChild);
-  }
-
-  /**
-   * Create a new RP element with the passed child texts
-   * 
-   * @param aChildren
-   *        The child texts to be appended. May be <code>null</code>
-   * @return The created HCRP element and never <code>null</code>
-   */
-  @Nonnull
-  public static HCRP create (@Nullable final IPredefinedLocaleTextProvider... aChildren)
-  {
-    return new HCRP ().addChildren (aChildren);
-  }
-
-  /**
-   * Create a new RP element with the passed child text
-   * 
+   *
    * @param sChild
    *        The child to be appended. May be <code>null</code>
    * @return The created HCRP element and never <code>null</code>
@@ -73,7 +46,7 @@ public class HCRP extends AbstractHCRubyChild <HCRP>
 
   /**
    * Create a new RP element with the passed child texts
-   * 
+   *
    * @param aChildren
    *        The child texts to be appended. May be <code>null</code>
    * @return The created HCRP element and never <code>null</code>
@@ -86,7 +59,7 @@ public class HCRP extends AbstractHCRubyChild <HCRP>
 
   /**
    * Create a new RP element with the passed child node
-   * 
+   *
    * @param aChild
    *        The child node to be appended. May be <code>null</code>
    * @return The created HCRP element and never <code>null</code>
@@ -99,7 +72,7 @@ public class HCRP extends AbstractHCRubyChild <HCRP>
 
   /**
    * Create a new RP element with the passed child nodes
-   * 
+   *
    * @param aChildren
    *        The child nodes to be appended. May be <code>null</code>
    * @return The created HCRP element and never <code>null</code>
@@ -112,7 +85,7 @@ public class HCRP extends AbstractHCRubyChild <HCRP>
 
   /**
    * Create a new RP element with the passed child nodes
-   * 
+   *
    * @param aChildren
    *        The child nodes to be appended. May be <code>null</code>
    * @return The created HCRP element and never <code>null</code>

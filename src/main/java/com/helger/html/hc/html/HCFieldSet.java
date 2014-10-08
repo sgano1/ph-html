@@ -16,10 +16,8 @@
  */
 package com.helger.html.hc.html;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.text.IPredefinedLocaleTextProvider;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 
@@ -33,11 +31,6 @@ public class HCFieldSet extends AbstractHCElementWithChildren <HCFieldSet>
   public HCFieldSet ()
   {
     super (EHTMLElement.FIELDSET);
-  }
-
-  public HCFieldSet (@Nonnull final IPredefinedLocaleTextProvider aChild)
-  {
-    this (aChild.getText ());
   }
 
   public HCFieldSet (@Nullable final String sLabel)

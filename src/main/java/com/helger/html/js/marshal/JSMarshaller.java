@@ -34,7 +34,6 @@ import com.helger.commons.collections.ArrayHelper;
 import com.helger.commons.collections.ContainerHelper;
 import com.helger.commons.lang.ClassHelper;
 import com.helger.commons.string.StringHelper;
-import com.helger.commons.text.IPredefinedLocaleTextProvider;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.conversion.HCSettings;
 import com.helger.html.js.CJS;
@@ -242,7 +241,7 @@ public final class JSMarshaller
   @Nullable
   private static JSType _autoDetectJSType (final Class <?> aClass)
   {
-    if (ClassHelper.isStringClass (aClass) || IPredefinedLocaleTextProvider.class.isAssignableFrom (aClass))
+    if (ClassHelper.isStringClass (aClass))
       return JSType.STRING;
     if (ClassHelper.isCharacterClass (aClass))
       return JSType.STRING;
@@ -323,8 +322,7 @@ public final class JSMarshaller
           break;
         case STRING:
           // Note: use single quotes for use in HTML attributes!
-          final String sValue = aObject instanceof IPredefinedLocaleTextProvider ? ((IPredefinedLocaleTextProvider) aObject).getText ()
-                                                                                : String.valueOf (aObject);
+          final String sValue = String.valueOf (aObject);
           aSB.append ('\'').append (javaScriptEscape (sValue)).append ('\'');
           break;
         case ARRAY:

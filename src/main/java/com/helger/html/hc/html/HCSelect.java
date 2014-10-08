@@ -34,7 +34,6 @@ import com.helger.commons.collections.ContainerHelper;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.commons.text.IPredefinedLocaleTextProvider;
 import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
@@ -186,13 +185,6 @@ public class HCSelect extends AbstractHCControl <HCSelect>
   {
     final HCOption aOption = new HCOption ().setValue (sValue).addChild (HCTextNode.createOnDemand (sText));
     return addOption (aOption);
-  }
-
-  @Nonnull
-  public final HCOption addOption (@Nullable final String sValue,
-                                   @Nonnull final IPredefinedLocaleTextProvider aTextProvider)
-  {
-    return addOption (sValue, aTextProvider.getText ());
   }
 
   @Nonnull

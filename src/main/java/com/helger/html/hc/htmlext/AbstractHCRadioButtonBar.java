@@ -23,7 +23,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.collections.ContainerHelper;
-import com.helger.commons.text.IPredefinedLocaleTextProvider;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.html.AbstractHCSpan;
 import com.helger.html.hc.html.HCRadioButton;
@@ -46,22 +45,6 @@ public abstract class AbstractHCRadioButtonBar extends AbstractHCSpan <AbstractH
   public final AbstractHCRadioButtonBar addRadioButton (final int nValue, final String sLabel, final boolean bChecked)
   {
     return addRadioButton (Integer.toString (nValue), sLabel, bChecked);
-  }
-
-  @Nonnull
-  public final AbstractHCRadioButtonBar addRadioButton (final int nValue,
-                                                        @Nonnull final IPredefinedLocaleTextProvider aTextProvider,
-                                                        final boolean bChecked)
-  {
-    return addRadioButton (nValue, aTextProvider.getText (), bChecked);
-  }
-
-  @Nonnull
-  public final AbstractHCRadioButtonBar addRadioButton (final String sValue,
-                                                        final IPredefinedLocaleTextProvider aTextProvider,
-                                                        final boolean bChecked)
-  {
-    return addRadioButton (sValue, aTextProvider.getText (), bChecked);
   }
 
   @Nonnull

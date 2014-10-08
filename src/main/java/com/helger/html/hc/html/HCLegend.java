@@ -19,7 +19,6 @@ package com.helger.html.hc.html;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.text.IPredefinedLocaleTextProvider;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.impl.AbstractHCElementWithChildren;
@@ -34,32 +33,6 @@ public class HCLegend extends AbstractHCElementWithChildren <HCLegend>
   public HCLegend ()
   {
     super (EHTMLElement.LEGEND);
-  }
-
-  /**
-   * Create a new LEGEND element with the passed child text
-   *
-   * @param aChild
-   *        The child text provider to be appended. May be <code>null</code>
-   * @return The created HCLegend element and never <code>null</code>
-   */
-  @Nonnull
-  public static HCLegend create (@Nullable final IPredefinedLocaleTextProvider aChild)
-  {
-    return new HCLegend ().addChild (aChild);
-  }
-
-  /**
-   * Create a new LEGEND element with the passed child texts
-   *
-   * @param aChildren
-   *        The child texts to be appended. May be <code>null</code>
-   * @return The created HCLegend element and never <code>null</code>
-   */
-  @Nonnull
-  public static HCLegend create (@Nullable final IPredefinedLocaleTextProvider... aChildren)
-  {
-    return new HCLegend ().addChildren (aChildren);
   }
 
   /**

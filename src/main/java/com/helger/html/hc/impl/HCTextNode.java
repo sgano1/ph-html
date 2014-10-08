@@ -25,7 +25,6 @@ import com.helger.commons.microdom.IMicroText;
 import com.helger.commons.microdom.impl.MicroText;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.commons.text.IPredefinedLocaleTextProvider;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
 /**
@@ -37,11 +36,6 @@ public class HCTextNode extends AbstractHCNode
 {
   private String m_sText;
   private boolean m_bEscape = MicroText.DEFAULT_ESCAPE;
-
-  public HCTextNode (@Nonnull final IPredefinedLocaleTextProvider aTextProvider)
-  {
-    this (aTextProvider.getText ());
-  }
 
   public HCTextNode (@Nullable final String sText)
   {

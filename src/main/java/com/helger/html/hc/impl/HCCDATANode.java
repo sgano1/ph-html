@@ -22,22 +22,16 @@ import javax.annotation.Nullable;
 import com.helger.commons.microdom.IMicroCDATA;
 import com.helger.commons.microdom.impl.MicroCDATA;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.commons.text.IPredefinedLocaleTextProvider;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
 /**
  * Represents a single CDATA node as HC node.
- * 
+ *
  * @author Philip Helger
  */
 public class HCCDATANode extends AbstractHCNode
 {
   private final String m_sText;
-
-  public HCCDATANode (@Nonnull final IPredefinedLocaleTextProvider aTextProvider)
-  {
-    this (aTextProvider.getText ());
-  }
 
   public HCCDATANode (@Nullable final String sText)
   {

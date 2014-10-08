@@ -31,6 +31,7 @@ import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.CGlobal;
 import com.helger.commons.ValueEnforcer;
+import com.helger.commons.annotations.DevelopersNote;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.OverrideOnDemand;
 import com.helger.commons.annotations.ReturnsMutableCopy;
@@ -47,7 +48,7 @@ import com.helger.html.hc.htmlext.HCUtils;
 
 /**
  * Base class for elements with special children.
- * 
+ *
  * @author Philip Helger
  * @param <THISTYPE>
  *        Implementation type
@@ -55,7 +56,9 @@ import com.helger.html.hc.htmlext.HCUtils;
  *        Contained child type
  */
 @NotThreadSafe
-public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends AbstractHCElementWithInternalChildren <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode> extends AbstractHCElement <THISTYPE> implements IHCHasChildrenMutable <THISTYPE, CHILDTYPE>
+public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends AbstractHCElementWithInternalChildren <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode> extends
+                                                                                                                                                                      AbstractHCElement <THISTYPE> implements
+                                                                                                                                                                                                  IHCHasChildrenMutable <THISTYPE, CHILDTYPE>
 {
   private List <CHILDTYPE> m_aChildren;
 
@@ -71,7 +74,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
 
   /**
    * Callback
-   * 
+   *
    * @param aChild
    *        The child that was added
    */
@@ -81,7 +84,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
 
   /**
    * Callback
-   * 
+   *
    * @param nIndex
    *        Index where the child was added. Always &ge; 0.
    * @param aChild
@@ -135,6 +138,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
   }
 
   @Nonnull
+  @DevelopersNote ("Use addChild instead!")
   @Deprecated
   public final THISTYPE addChildren (@Nullable final CHILDTYPE aChild)
   {
@@ -177,7 +181,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
 
   /**
    * Invoked after an element was removed.
-   * 
+   *
    * @param nIndex
    *        The index of the child relative to the parent.
    * @param aChild
@@ -310,7 +314,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
   /**
    * Helper method that returns the elements in the correct order for emitting.
    * This can e.g. be used for sorting or ordering.
-   * 
+   *
    * @param aChildren
    *        The children to be emitted. Is a direct reference to the container
    *        where the children are stored. So handle with care!

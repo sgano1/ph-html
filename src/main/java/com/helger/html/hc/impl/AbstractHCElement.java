@@ -34,6 +34,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.helger.commons.ValueEnforcer;
+import com.helger.commons.annotations.DevelopersNote;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.OverrideOnDemand;
 import com.helger.commons.annotations.ReturnsMutableCopy;
@@ -47,7 +48,6 @@ import com.helger.commons.microdom.impl.MicroElement;
 import com.helger.commons.regex.RegExHelper;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.commons.text.IPredefinedLocaleTextProvider;
 import com.helger.commons.xml.CXML;
 import com.helger.css.ICSSWriterSettings;
 import com.helger.css.property.CSSPropertyFree;
@@ -70,7 +70,8 @@ import com.helger.html.js.IJSCodeProvider;
 import com.helger.html.js.JSEventMap;
 
 @NotThreadSafe
-public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THISTYPE>> extends AbstractHCNode implements IHCElement <THISTYPE>
+public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THISTYPE>> extends AbstractHCNode implements
+                                                                                                              IHCElement <THISTYPE>
 {
   /** By default an element is not unfocusable */
   public static final boolean DEFAULT_UNFOCUSABLE = false;
@@ -192,12 +193,6 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
   }
 
   @Nonnull
-  public final THISTYPE setTitle (@Nonnull final IPredefinedLocaleTextProvider aTextProvider)
-  {
-    return setTitle (aTextProvider.getText ());
-  }
-
-  @Nonnull
   public final THISTYPE setTitle (@Nullable final String sTitle)
   {
     m_sTitle = sTitle;
@@ -224,6 +219,7 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
   }
 
   @Deprecated
+  @DevelopersNote ("Use addClass - singular")
   @Nonnull
   public final THISTYPE addClasses (@Nullable final ICSSClassProvider aCSSClassProvider)
   {
@@ -370,6 +366,7 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
   }
 
   @Nonnull
+  @DevelopersNote ("Use addStyle - singular")
   @Deprecated
   public final THISTYPE addStyles (@Nullable final ICSSValue aValue)
   {
@@ -774,7 +771,7 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
 
   /**
    * Set all attributes and child elements of this object
-   * 
+   *
    * @param aElement
    *        The current micro element to be filled
    * @param aConversionSettings
@@ -866,7 +863,7 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
    * This method is called after the element itself was created and filled.
    * Overwrite this method to perform actions that can only be done after the
    * element was build finally.
-   * 
+   *
    * @param eElement
    *        The created micro element
    * @param aConversionSettings

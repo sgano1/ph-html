@@ -22,7 +22,6 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.OverrideOnDemand;
-import com.helger.commons.text.IPredefinedLocaleTextProvider;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeBuilder;
@@ -35,7 +34,8 @@ import com.helger.html.hc.impl.AbstractHCElementWithInternalChildren;
  * @param <THISTYPE>
  *        The real implementation type.
  */
-public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>> extends AbstractHCElementWithInternalChildren <THISTYPE, HCLI>
+public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>> extends
+                                                                                  AbstractHCElementWithInternalChildren <THISTYPE, HCLI>
 {
   protected AbstractHCList (@Nonnull @Nonempty final EHTMLElement aElement)
   {
@@ -68,20 +68,6 @@ public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>
   public final HCLI addItem ()
   {
     return _addItem (new HCLI ());
-  }
-
-  @Nonnull
-  @CheckReturnValue
-  public final HCLI addAndReturnItem (@Nullable final IPredefinedLocaleTextProvider aChild)
-  {
-    return addItem ().addChild (aChild);
-  }
-
-  @Nonnull
-  @CheckReturnValue
-  public final HCLI addAndReturnItem (@Nullable final IPredefinedLocaleTextProvider... aChildren)
-  {
-    return addItem ().addChildren (aChildren);
   }
 
   @Nonnull
@@ -148,20 +134,6 @@ public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>
   public final HCLI addAndReturnItem (@Nullable final HCLI aItem)
   {
     return _addItem (aItem);
-  }
-
-  @Nonnull
-  public final THISTYPE addItem (@Nullable final IPredefinedLocaleTextProvider aChild)
-  {
-    addItem ().addChild (aChild);
-    return thisAsT ();
-  }
-
-  @Nonnull
-  public final THISTYPE addItem (@Nullable final IPredefinedLocaleTextProvider... aChildren)
-  {
-    addItem ().addChildren (aChildren);
-    return thisAsT ();
   }
 
   @Nonnull

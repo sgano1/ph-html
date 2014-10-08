@@ -16,10 +16,8 @@
  */
 package com.helger.html.hc.html;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.text.IPredefinedLocaleTextProvider;
 import com.helger.html.js.IJSCodeProvider;
 
 /**
@@ -31,11 +29,6 @@ public class HCButton extends AbstractHCButton <HCButton>
 {
   public HCButton ()
   {}
-
-  public HCButton (@Nonnull final IPredefinedLocaleTextProvider aLabel)
-  {
-    super (aLabel.getText ());
-  }
 
   public HCButton (@Nullable final String sLabel)
   {

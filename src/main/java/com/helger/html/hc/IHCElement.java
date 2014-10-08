@@ -25,7 +25,6 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.text.IPredefinedLocaleTextProvider;
 import com.helger.html.EHTMLElement;
 import com.helger.html.EHTMLRole;
 import com.helger.html.hc.api.EHCTextDirection;
@@ -42,7 +41,10 @@ import com.helger.html.js.IJSCodeProvider;
  * @param <THISTYPE>
  *        The implementation type
  */
-public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends IHCNode, IHCHasCSSStyles <THISTYPE>, IHCHasCSSClasses <THISTYPE>
+public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
+                                                                     IHCNode,
+                                                                     IHCHasCSSStyles <THISTYPE>,
+                                                                     IHCHasCSSClasses <THISTYPE>
 {
   /** The default value for an unset tab index, as -1 is used for "none" */
   public static final long DEFAULT_TABINDEX = -5l;
@@ -104,9 +106,6 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends IHC
    */
   @Nonnull
   THISTYPE ensureID ();
-
-  @Nonnull
-  THISTYPE setTitle (IPredefinedLocaleTextProvider aTextProvider);
 
   @Nonnull
   THISTYPE setTitle (String sTitle);

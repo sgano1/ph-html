@@ -21,7 +21,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
 
-import com.helger.commons.text.IPredefinedLocaleTextProvider;
+import com.helger.commons.annotations.DevelopersNote;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeBuilder;
 import com.helger.html.hc.IHCNodeWithChildren;
@@ -35,18 +35,12 @@ import com.helger.html.hc.IHCNodeWithChildren;
  *        Implementation type
  */
 @NotThreadSafe
-public abstract class AbstractHCNodeList <THISTYPE extends AbstractHCNodeList <THISTYPE>> extends AbstractHCHasChildrenMutable <THISTYPE, IHCNode> implements IHCNodeWithChildren <THISTYPE>
+public abstract class AbstractHCNodeList <THISTYPE extends AbstractHCNodeList <THISTYPE>> extends
+                                                                                          AbstractHCHasChildrenMutable <THISTYPE, IHCNode> implements
+                                                                                                                                          IHCNodeWithChildren <THISTYPE>
 {
   public AbstractHCNodeList ()
   {}
-
-  @Nonnull
-  public THISTYPE addChild (@Nullable final IPredefinedLocaleTextProvider aTextProvider)
-  {
-    if (aTextProvider != null)
-      addChild (new HCTextNode (aTextProvider));
-    return thisAsT ();
-  }
 
   @Nonnull
   public THISTYPE addChild (@Nullable final String sText)
@@ -62,15 +56,6 @@ public abstract class AbstractHCNodeList <THISTYPE extends AbstractHCNodeList <T
   {
     if (aNodeBuilder != null)
       addChild (aNodeBuilder.build ());
-    return thisAsT ();
-  }
-
-  @Nonnull
-  public final THISTYPE addChild (@Nonnegative final int nIndex,
-                                  @Nullable final IPredefinedLocaleTextProvider aTextProvider)
-  {
-    if (aTextProvider != null)
-      return addChild (nIndex, aTextProvider.getText ());
     return thisAsT ();
   }
 
@@ -92,22 +77,7 @@ public abstract class AbstractHCNodeList <THISTYPE extends AbstractHCNodeList <T
   }
 
   @Deprecated
-  @Nonnull
-  public THISTYPE addChildren (@Nullable final IPredefinedLocaleTextProvider aChild)
-  {
-    return addChild (aChild);
-  }
-
-  @Nonnull
-  public THISTYPE addChildren (@Nullable final IPredefinedLocaleTextProvider... aChildren)
-  {
-    if (aChildren != null)
-      for (final IPredefinedLocaleTextProvider aChild : aChildren)
-        addChild (aChild);
-    return thisAsT ();
-  }
-
-  @Deprecated
+  @DevelopersNote ("Use addChild instead")
   @Nonnull
   public THISTYPE addChildren (@Nullable final String sChild)
   {
@@ -124,6 +94,7 @@ public abstract class AbstractHCNodeList <THISTYPE extends AbstractHCNodeList <T
   }
 
   @Deprecated
+  @DevelopersNote ("Use addChild instead")
   @Nonnull
   public THISTYPE addChildren (@Nullable final IHCNodeBuilder aChild)
   {
