@@ -73,7 +73,7 @@ final class MarkdownHTML
 
   static
   {
-    for (final IURLProtocol element : URLProtocolRegistry.getAllProtocols ())
+    for (final IURLProtocol element : URLProtocolRegistry.getInstance ().getAllProtocols ())
     {
       final String sProtocol = element.getProtocol ();
       final int i = sProtocol.indexOf (':');
