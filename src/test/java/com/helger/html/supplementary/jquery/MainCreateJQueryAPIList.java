@@ -49,10 +49,10 @@ public class MainCreateJQueryAPIList extends AbstractCreateJQueryAPIList
               aLines.add ("// Deprecated since jQuery " + aEntry.getDeprecated ().getAsString (false));
             }
             aLines.add ("public static final IJQuerySelector " +
-                aEntry.getIdentifier () +
-                " = new JQuerySelector (\":" +
-                aEntry.getName () +
-                "\");");
+                        aEntry.getIdentifier () +
+                        " = new JQuerySelector (\":" +
+                        aEntry.getName () +
+                        "\");");
           }
         }
 
@@ -60,7 +60,7 @@ public class MainCreateJQueryAPIList extends AbstractCreateJQueryAPIList
     if (false)
       for (final Entry aEntry : aAllEntries)
         if (aEntry.getAPIType () == EAPIType.SELECTOR &&
-        (aEntry.getSignatureCount () > 1 || aEntry.getSignatureAtIndex (0).getArgumentCount () > 0))
+            (aEntry.getSignatureCount () > 1 || aEntry.getSignatureAtIndex (0).getArgumentCount () > 0))
         {
           final String sPrefix = "public static IJQuerySelector " + aEntry.getIdentifier ();
           for (final Signature aSignature : aEntry.getAllSignatures ())
@@ -70,9 +70,9 @@ public class MainCreateJQueryAPIList extends AbstractCreateJQueryAPIList
               sRealPrefix = "// Removed in jQuery " + aEntry.getRemoved ().getAsString (false) + "\n" + sRealPrefix;
             if (aEntry.isDeprecated ())
               sRealPrefix = "// @deprecated\n// Deprecated since jQuery " +
-                  aEntry.getDeprecated ().getAsString (false) +
-                  "\n" +
-                  sRealPrefix;
+                            aEntry.getDeprecated ().getAsString (false) +
+                            "\n" +
+                            sRealPrefix;
             if (aSignature.isAddedAfter10 ())
               sRealPrefix = "// @since jQuery " + aSignature.getAdded ().getAsString (false) + "\n" + sRealPrefix;
 
@@ -109,9 +109,9 @@ public class MainCreateJQueryAPIList extends AbstractCreateJQueryAPIList
               sLine = "// Removed in jQuery " + aEntry.getRemoved ().getAsString (false) + "\n" + sLine;
             if (aEntry.isDeprecated ())
               sLine = "// @deprecated Deprecated since jQuery " +
-                  aEntry.getDeprecated ().getAsString (false) +
-                  "\n" +
-                  sLine;
+                      aEntry.getDeprecated ().getAsString (false) +
+                      "\n" +
+                      sLine;
             if (aSignature.isAddedAfter10 ())
               sLine = "// @since jQuery " + aSignature.getAdded ().getAsString (false) + "\n" + sLine;
 
@@ -169,14 +169,14 @@ public class MainCreateJQueryAPIList extends AbstractCreateJQueryAPIList
             aLines.add ("/**");
             if (!bIsDeprecated && bIsPartiallyDeprecated)
               aLines.add ("* Certain versions of this method are deprecated since jQuery " +
-                  StringHelper.getImploded (" or ", aDeprecatedVersions));
+                          StringHelper.getImploded (" or ", aDeprecatedVersions));
             aLines.add (" * @return The invocation of the static jQuery function <code>" +
-                aEntry.getName () +
-                "()</code> with return type " +
-                StringHelper.getImploded (" or ", aReturnTypes));
+                        aEntry.getName () +
+                        "()</code> with return type " +
+                        StringHelper.getImploded (" or ", aReturnTypes));
             if (bIsDeprecated)
               aLines.add ("* @deprecated Deprecated since jQuery " +
-                  StringHelper.getImploded (" or ", aDeprecatedVersions));
+                          StringHelper.getImploded (" or ", aDeprecatedVersions));
             if (sSince != null)
               aLines.add (" * @since jQuery " + sSince);
             aLines.add (" */");
@@ -184,11 +184,11 @@ public class MainCreateJQueryAPIList extends AbstractCreateJQueryAPIList
             if (bIsDeprecated)
               aLines.add ("@Deprecated");
             aLines.add ("public static JQueryInvocation " +
-                StringHelper.trimStart (aEntry.getIdentifier (), "jQuery_") +
-                " ()");
+                        StringHelper.trimStart (aEntry.getIdentifier (), "jQuery_") +
+                        " ()");
             aLines.add ("{ return new JQueryInvocation (JQueryProperty.jQueryField (), \"" +
-                aEntry.getName ().substring ("jQuery.".length ()) +
-                "\"); }");
+                        aEntry.getName ().substring ("jQuery.".length ()) +
+                        "\"); }");
           }
         }
     }

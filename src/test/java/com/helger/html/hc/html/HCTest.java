@@ -181,6 +181,6 @@ public final class HCTest
     aDiv.setRole (EHTMLRole.DIALOG);
     assertEquals (EHTMLRole.DIALOG, aDiv.getRole ());
     assertEquals ("<div role=\"dialog\" xmlns=\"http://www.w3.org/1999/xhtml\"></div>",
-                  HCSettings.getAsHTMLString (aDiv));
+                  HCSettings.getAsHTMLString (aDiv, false));
   }
 }

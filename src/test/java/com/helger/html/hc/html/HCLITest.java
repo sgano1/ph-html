@@ -52,7 +52,7 @@ public final class HCLITest
     assertEquals (0, HCLI.create (new IHCNode [0]).getChildCount ());
     assertEquals (0, HCLI.create ((IHCNode []) null).getChildCount ());
     assertEquals (2, HCLI.create (ContainerHelper.newList (HCB.create ("Bold"), HCI.create ("Italic")))
-                  .getChildCount ());
+                         .getChildCount ());
     assertEquals (0, HCLI.create (new ArrayList <IHCNode> ()).getChildCount ());
   }
 }

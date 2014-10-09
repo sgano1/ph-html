@@ -65,9 +65,9 @@ public final class HCNodeListTest
     final HCRow tr = table.addBodyRow ();
     tr.addCell (new HCNodeList ().addChild (new HCDiv ().addChild ("dd2")).addChild (new HCDiv ().addChild ("dd1")));
     assertEquals ("<table xmlns=\"http://www.w3.org/1999/xhtml\"><tbody><tr><td>"
-        + "<div>dd2</div>"
-        + "<div>dd1</div>"
-        + "</td></tr></tbody></table>", HCSettings.getAsHTMLString (table, false));
+                  + "<div>dd2</div>"
+                  + "<div>dd1</div>"
+                  + "</td></tr></tbody></table>", HCSettings.getAsHTMLString (table, false));
   }
 
   @Test
@@ -78,8 +78,8 @@ public final class HCNodeListTest
     x.addChild (new HCDiv ().addChild ("aber auch"));
     assertNotNull (HCSettings.getAsNode (x, true));
     assertEquals ("<div xmlns=\"http://www.w3.org/1999/xhtml\">Na so was</div>" +
-        CGlobal.LINE_SEPARATOR +
-        "<div xmlns=\"http://www.w3.org/1999/xhtml\">aber auch</div>" +
-        CGlobal.LINE_SEPARATOR, HCSettings.getAsHTMLString (x, true));
+                  CGlobal.LINE_SEPARATOR +
+                  "<div xmlns=\"http://www.w3.org/1999/xhtml\">aber auch</div>" +
+                  CGlobal.LINE_SEPARATOR, HCSettings.getAsHTMLString (x, true));
   }
 }

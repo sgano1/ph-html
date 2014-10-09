@@ -59,9 +59,7 @@ import com.helger.html.hc.htmlext.HCUtils;
  *        Child type
  */
 @NotThreadSafe
-public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCHasChildrenMutable <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode> extends
-                                                                                                                                                    AbstractHCNode implements
-                                                                                                                                                                  IHCHasChildrenMutable <THISTYPE, CHILDTYPE>
+public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCHasChildrenMutable <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode> extends AbstractHCNode implements IHCHasChildrenMutable <THISTYPE, CHILDTYPE>
 {
   private List <CHILDTYPE> m_aChildren;
 

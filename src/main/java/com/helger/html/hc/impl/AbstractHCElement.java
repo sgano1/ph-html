@@ -70,8 +70,7 @@ import com.helger.html.js.IJSCodeProvider;
 import com.helger.html.js.JSEventMap;
 
 @NotThreadSafe
-public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THISTYPE>> extends AbstractHCNode implements
-                                                                                                              IHCElement <THISTYPE>
+public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THISTYPE>> extends AbstractHCNode implements IHCElement <THISTYPE>
 {
   /** By default an element is not unfocusable */
   public static final boolean DEFAULT_UNFOCUSABLE = false;

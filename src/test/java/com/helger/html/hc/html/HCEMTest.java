@@ -52,7 +52,7 @@ public final class HCEMTest
     assertEquals (0, HCEM.create (new IHCNode [0]).getChildCount ());
     assertEquals (0, HCEM.create ((IHCNode []) null).getChildCount ());
     assertEquals (2, HCEM.create (ContainerHelper.newList (HCB.create ("Bold"), HCI.create ("Italic")))
-                  .getChildCount ());
+                         .getChildCount ());
     assertEquals (0, HCEM.create (new ArrayList <IHCNode> ()).getChildCount ());
   }
 }

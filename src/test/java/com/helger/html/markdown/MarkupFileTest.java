@@ -82,9 +82,9 @@ import com.helger.html.markdown.MarkdownConfiguration.Builder;
 public final class MarkupFileTest
 {
   private final static String [] TEST_FILENAMES = new String [] { "/dingus.txt",
-                                                                  "/paragraphs.txt",
-                                                                  "/snippets.txt",
-  "/lists.txt" };
+                                                                 "/paragraphs.txt",
+                                                                 "/snippets.txt",
+                                                                 "/lists.txt" };
 
   private static void _addTestResultPair (final List <String []> list,
                                           @Nonnull final File aFile,
@@ -150,12 +150,12 @@ public final class MarkupFileTest
             if (!testNumber.equals (resultNumber))
             {
               throw new RuntimeException ("Result " +
-                  resultNumber +
-                  " test " +
-                  testNumber +
-                  " (line " +
-                  lineNumber +
-                  ")");
+                                          resultNumber +
+                                          " test " +
+                                          testNumber +
+                                          " (line " +
+                                          lineNumber +
+                                          ")");
             }
 
             curbuf = result;
@@ -207,6 +207,6 @@ public final class MarkupFileTest
       aBuilder.setExtendedProfile (true);
     assertEquals (m_sTestName,
                   m_sExpectedResult.trim (),
-                  new MarkdownProcessor (aBuilder.build ()).process (m_sTestString).getAsHTMLString ());
+                  new MarkdownProcessor (aBuilder.build ()).process (m_sTestString).getAsHTMLString (false));
   }
 }

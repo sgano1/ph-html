@@ -52,7 +52,7 @@ public final class HCH3Test
     assertEquals (0, HCH3.create (new IHCNode [0]).getChildCount ());
     assertEquals (0, HCH3.create ((IHCNode []) null).getChildCount ());
     assertEquals (2, HCH3.create (ContainerHelper.newList (HCB.create ("Bold"), HCI.create ("Italic")))
-                  .getChildCount ());
+                         .getChildCount ());
     assertEquals (0, HCH3.create (new ArrayList <IHCNode> ()).getChildCount ());
   }
 }

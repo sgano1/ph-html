@@ -29,8 +29,7 @@ import com.helger.commons.annotations.DevelopersNote;
  * @param <THISTYPE>
  *        The type of the contained child objects.
  */
-public interface IHCNodeWithChildren <THISTYPE extends IHCNodeWithChildren <THISTYPE>> extends
-                                                                                       IHCHasChildrenMutable <THISTYPE, IHCNode>
+public interface IHCNodeWithChildren <THISTYPE extends IHCNodeWithChildren <THISTYPE>> extends IHCHasChildrenMutable <THISTYPE, IHCNode>
 {
   /**
    * @param sText

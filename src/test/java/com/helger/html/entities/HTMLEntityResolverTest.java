@@ -48,13 +48,13 @@ public final class HTMLEntityResolverTest
   {
     final String sHTML = "\n<html><head><title>foo</title></head><body><p>Hallöle&nbsp;B&ouml;ris!</p></body></html>";
     final IMicroDocument doc = MicroReader.readMicroXML (sPrefix +
-                                                         XMLEmitter.getDocTypeHTMLRepresentation (EXMLSerializeVersion.XML_10,
-                                                                                                  EXMLIncorrectCharacterHandling.DEFAULT,
-                                                                                                  aDocType) +
-                                                                                                  sHTML,
-                                                                                                  new SAXReaderSettings ().setEntityResolver (HTMLEntityResolver.getInstance ())
-                                                                                                  .setFeatureValue (EXMLParserFeature.VALIDATION,
-                                                                                                                    true));
+                                                             XMLEmitter.getDocTypeHTMLRepresentation (EXMLSerializeVersion.XML_10,
+                                                                                                      EXMLIncorrectCharacterHandling.DEFAULT,
+                                                                                                      aDocType) +
+                                                             sHTML,
+                                                         new SAXReaderSettings ().setEntityResolver (HTMLEntityResolver.getInstance ())
+                                                                                 .setFeatureValue (EXMLParserFeature.VALIDATION,
+                                                                                                   true));
     return doc != null;
   }
 
@@ -73,8 +73,8 @@ public final class HTMLEntityResolverTest
   {
     // because of standalone="yes"!!!
     assertFalse (_testResolve ("<?xml version=\"1.0\" encoding=\"" +
-        XMLWriterSettings.DEFAULT_XML_CHARSET +
-        "\" standalone=\"yes\"?>", CHTMLDocTypes.DOCTYPE_XHTML11));
+                               XMLWriterSettings.DEFAULT_XML_CHARSET +
+                               "\" standalone=\"yes\"?>", CHTMLDocTypes.DOCTYPE_XHTML11));
   }
 
   @Test

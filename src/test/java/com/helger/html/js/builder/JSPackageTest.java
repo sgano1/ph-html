@@ -67,9 +67,9 @@ public final class JSPackageTest
       {
         final JSVar aAdd2 = aFuncMain.body ().var ("add2",
                                                    JSPrimitiveType.FUNCTION._new ()
-                                                   .arg ("x")
-                                                   .arg ("y")
-                                                   .arg ("return x+y"));
+                                                                           .arg ("x")
+                                                                           .arg ("y")
+                                                                           .arg ("return x+y"));
         aFuncMain.body ().invoke (aAdd2.name ()).arg (1).arg (2);
       }
 
@@ -110,22 +110,22 @@ public final class JSPackageTest
       // Associative Array
       final JSVar aArray2 = aFuncMain.body ().var ("array2",
                                                    new JSAssocArray ().add ("num", 1)
-                                                   .add ("array", aArray1)
-                                                   .add ("assocarray",
-                                                         new JSAssocArray ().add ("key", "value")
-                                                         .add ("key2",
-                                                             "anything else")));
+                                                                      .add ("array", aArray1)
+                                                                      .add ("assocarray",
+                                                                            new JSAssocArray ().add ("key", "value")
+                                                                                               .add ("key2",
+                                                                                                     "anything else")));
       aFuncMain.body ().assign (aArray2.component ("num"), 6);
 
       // concatenate misc things
       aFuncMain.body ()._return (m1.plus (JSExpr.lit ("abc").ref ("length"))
-                                 .plus (aRoot)
-                                 .plus (aFunc.invoke ().arg (2).arg (4))
-                                 .plus (7)
-                                 .mul (1.5)
-                                 .plus (5)
-                                 .minus (3)
-                                 .div (2));
+                                   .plus (aRoot)
+                                   .plus (aFunc.invoke ().arg (2).arg (4))
+                                   .plus (7)
+                                   .mul (1.5)
+                                   .plus (5)
+                                   .minus (3)
+                                   .div (2));
     }
 
     {
@@ -154,8 +154,8 @@ public final class JSPackageTest
       anonFunction.body ()._return (JSExpr.lit (""));
       aFuncMain.body ().assign (sHTML,
                                 sHTML.invoke ("replace")
-                                .arg (JSExpr.regex ("<!--([\\s\\S]*?)-->").global (true))
-                                .arg (anonFunction));
+                                     .arg (JSExpr.regex ("<!--([\\s\\S]*?)-->").global (true))
+                                     .arg (anonFunction));
       aFuncMain.body ().comment ("Remaining HTML + comments content");
       aFuncMain.body ()._return (new JSAssocArray ().add ("html", sHTML).add ("comments", sComments));
 
@@ -212,53 +212,53 @@ public final class JSPackageTest
     System.out.println ("--------");
     final String sCompressedCode = aPkg.getJSCode ();
     assertEquals ("var g_aRoot=0;"
-        + "function mainAdd(m1){"
-        + "var root=5;"
-        + "function add(s1,s2){return (s1+s2);}"
-        + "add(32,-4);"
-        + "var add2=new Function('x','y','return x+y');"
-        + "add2(1,2);"
-        + "if(typeof m1==='String')"
-        + "{try{return 5;}catch (ex){throw new Error(ex);}finally{root.substring(0,1);}}"
-        + "/water(mark)?/gim.test('waterMark');"
-        + "/water(mark)?/i.test('Water');"
-        + "'string'.search(/expression/);"
-        + "'string'.replace(/expression/,'replacement');"
-        + "(function(a){return (a+0.5);})(7.5);"
-        + "var array1=[5];"
-        + "array1[0]=6;"
-        + "var array1a=new Array(5);"
-        + "array1a[0]=7;"
-        + "array1a.push('pushed');"
-        + "var array2={num:1,array:array1,assocarray:{key:'value',key2:'anything else'}};"
-        + "array2['num']=6;"
-        + "return (((((m1+'abc'.length+root+add(2,4)+7)*1.5)+5)-3)/2);}"
-        + "function sajax_extract_htmlcomments(sHTML){"
-        + "var sComments='';"
-        + "sHTML=sHTML.replace(/<!--([\\s\\S]*?)-->/g,function(all,sComment){sComments+=(sComment+'\\n');return '';});"
-        + "return {html:sHTML,comments:sComments};}"
-        + "sajax_extract_htmlcomments('<div>Test<\\/div>');"
-        + "loop:for(var i in [1,2,4]){"
-        + "if(i==2){break;}"
-        + "else{continue loop;}"
-        + "}"
-        + "for(var i=0;(i<5);i++){"
-        + "continue;"
-        + "}"
-        + "for(var i=5;(i>0);i--);"
-        + "for(var i=0;(i<5);i++);"
-        + "do{"
-        + "i++;"
-        + "}while(i<1000);"
-        + "while(i>0){"
-        + "i--;"
-        + "}",
-        sCompressedCode);
+                      + "function mainAdd(m1){"
+                      + "var root=5;"
+                      + "function add(s1,s2){return (s1+s2);}"
+                      + "add(32,-4);"
+                      + "var add2=new Function('x','y','return x+y');"
+                      + "add2(1,2);"
+                      + "if(typeof m1==='String')"
+                      + "{try{return 5;}catch (ex){throw new Error(ex);}finally{root.substring(0,1);}}"
+                      + "/water(mark)?/gim.test('waterMark');"
+                      + "/water(mark)?/i.test('Water');"
+                      + "'string'.search(/expression/);"
+                      + "'string'.replace(/expression/,'replacement');"
+                      + "(function(a){return (a+0.5);})(7.5);"
+                      + "var array1=[5];"
+                      + "array1[0]=6;"
+                      + "var array1a=new Array(5);"
+                      + "array1a[0]=7;"
+                      + "array1a.push('pushed');"
+                      + "var array2={num:1,array:array1,assocarray:{key:'value',key2:'anything else'}};"
+                      + "array2['num']=6;"
+                      + "return (((((m1+'abc'.length+root+add(2,4)+7)*1.5)+5)-3)/2);}"
+                      + "function sajax_extract_htmlcomments(sHTML){"
+                      + "var sComments='';"
+                      + "sHTML=sHTML.replace(/<!--([\\s\\S]*?)-->/g,function(all,sComment){sComments+=(sComment+'\\n');return '';});"
+                      + "return {html:sHTML,comments:sComments};}"
+                      + "sajax_extract_htmlcomments('<div>Test<\\/div>');"
+                      + "loop:for(var i in [1,2,4]){"
+                      + "if(i==2){break;}"
+                      + "else{continue loop;}"
+                      + "}"
+                      + "for(var i=0;(i<5);i++){"
+                      + "continue;"
+                      + "}"
+                      + "for(var i=5;(i>0);i--);"
+                      + "for(var i=0;(i<5);i++);"
+                      + "do{"
+                      + "i++;"
+                      + "}while(i<1000);"
+                      + "while(i>0){"
+                      + "i--;"
+                      + "}",
+                  sCompressedCode);
     System.out.println ("Saved " +
-        (sCode.length () - sCompressedCode.length ()) +
-        " chars. " +
-        sCompressedCode.length () +
-        " chars are left");
+                        (sCode.length () - sCompressedCode.length ()) +
+                        " chars. " +
+                        sCompressedCode.length () +
+                        " chars are left");
     System.out.println ("--------");
     JSPrinter.setToDefault ();
   }
@@ -290,9 +290,9 @@ public final class JSPackageTest
       {
         final JSAnonymousFunction fEDEach = new JSAnonymousFunction ();
         fEDEach.body ()
-        ._if (JSExpr.refThis ("disabled").isNotUndefined ())
-        ._then ()
-        .assign (JSExpr.refThis ("disabled"), aDisabled);
+               ._if (JSExpr.refThis ("disabled").isNotUndefined ())
+               ._then ()
+               .assign (JSExpr.refThis ("disabled"), aDisabled);
         fED.body ()._return (JSExpr.invokeThis ("each").arg (fEDEach));
       }
       f.body ().assign (JSExpr.ref (aDollar, "fn", "setDisabled"), fED);

@@ -67,35 +67,35 @@ public class HCSpecialNodeHandlerTest
     aHtml.getBody ().addChild (new HCH1 ().addChild ("root"));
     final String sCRLF = XMLWriterSettings.DEFAULT_NEWLINE_STRING;
     assertEquals ("<!DOCTYPE html>" +
-        sCRLF +
-        "<html dir=\"ltr\">" +
-        sCRLF +
-        "<head>" +
-        sCRLF +
-        "<title>Test</title>" +
-        sCRLF +
-        "</head>" +
-        sCRLF +
-        "<body>" +
-        sCRLF +
-        "<h1>root</h1>" +
-        sCRLF +
-        "<script type=\"text/javascript\">" +
-        sCRLF +
-        "<!--" +
-        sCRLF +
-        "var y=0;" +
-        sCRLF +
-        "//-->" +
-        sCRLF +
-        "</script>" +
-        sCRLF +
-        "</body>" +
-        sCRLF +
-        "</html>" +
-        sCRLF,
-        aHtml.getAsHTMLString (new HCConversionSettings (EHTMLVersion.HTML5).setXMLWriterSettings (new XMLWriterSettings ().setEmitNamespaces (false)
-                                                                                                   .setFormat (EXMLSerializeFormat.HTML)
-                                                                                                   .setIndent (EXMLSerializeIndent.ALIGN_ONLY))));
+                      sCRLF +
+                      "<html dir=\"ltr\">" +
+                      sCRLF +
+                      "<head>" +
+                      sCRLF +
+                      "<title>Test</title>" +
+                      sCRLF +
+                      "</head>" +
+                      sCRLF +
+                      "<body>" +
+                      sCRLF +
+                      "<h1>root</h1>" +
+                      sCRLF +
+                      "<script type=\"text/javascript\">" +
+                      sCRLF +
+                      "<!--" +
+                      sCRLF +
+                      "var y=0;" +
+                      sCRLF +
+                      "//-->" +
+                      sCRLF +
+                      "</script>" +
+                      sCRLF +
+                      "</body>" +
+                      sCRLF +
+                      "</html>" +
+                      sCRLF,
+                  aHtml.getAsHTMLString (new HCConversionSettings (EHTMLVersion.HTML5).setXMLWriterSettings (new XMLWriterSettings ().setEmitNamespaces (false)
+                                                                                                                                     .setFormat (EXMLSerializeFormat.HTML)
+                                                                                                                                     .setIndent (EXMLSerializeIndent.ALIGN_ONLY))));
   }
 }

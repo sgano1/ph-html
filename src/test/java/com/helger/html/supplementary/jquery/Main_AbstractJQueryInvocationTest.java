@@ -74,23 +74,23 @@ public class Main_AbstractJQueryInvocationTest extends AbstractCreateJQueryAPILi
     }
 
     final StringBuilder aFull = new StringBuilder ("package com.helger.html.js.builder.jquery;\n" +
-        "\n" +
-        "import static org.junit.Assert.assertNotNull;\n" +
-        "\n" +
-        "import org.junit.Test;\n" +
-        "\n" +
-        "/**\n" +
-        " * Unit test class for class @{link AbstractJQueryInvocation}\n" +
-        " * \n" +
-        " * This file is generated - do NOT edit!\n" +
-        " * @author " +
-        Main_AbstractJQueryInvocationTest.class.getName () +
-        "\n" +
-        " */\n" +
-        "public class AbstractJQueryInvocationTest\n" +
-        "{\n" +
-        "  // Methods start here\n" +
-        "\n");
+                                                   "\n" +
+                                                   "import static org.junit.Assert.assertNotNull;\n" +
+                                                   "\n" +
+                                                   "import org.junit.Test;\n" +
+                                                   "\n" +
+                                                   "/**\n" +
+                                                   " * Unit test class for class @{link AbstractJQueryInvocation}\n" +
+                                                   " * \n" +
+                                                   " * This file is generated - do NOT edit!\n" +
+                                                   " * @author " +
+                                                   Main_AbstractJQueryInvocationTest.class.getName () +
+                                                   "\n" +
+                                                   " */\n" +
+                                                   "public class AbstractJQueryInvocationTest\n" +
+                                                   "{\n" +
+                                                   "  // Methods start here\n" +
+                                                   "\n");
 
     for (final String sLine : aLines)
       if (sLine.length () > 0)

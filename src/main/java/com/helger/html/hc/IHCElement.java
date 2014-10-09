@@ -41,10 +41,7 @@ import com.helger.html.js.IJSCodeProvider;
  * @param <THISTYPE>
  *        The implementation type
  */
-public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
-                                                                     IHCNode,
-                                                                     IHCHasCSSStyles <THISTYPE>,
-                                                                     IHCHasCSSClasses <THISTYPE>
+public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends IHCNode, IHCHasCSSStyles <THISTYPE>, IHCHasCSSClasses <THISTYPE>
 {
   /** The default value for an unset tab index, as -1 is used for "none" */
   public static final long DEFAULT_TABINDEX = -5l;

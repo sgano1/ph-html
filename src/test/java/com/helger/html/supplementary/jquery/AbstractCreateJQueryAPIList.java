@@ -119,10 +119,10 @@ abstract class AbstractCreateJQueryAPIList
         return new String [] { "IJSExpression", "int", "long", "BigInteger", "double", "BigDecimal" };
       if (sType.equals ("Selector"))
         return new String [] { "IJSExpression",
-                               "IJQuerySelector",
-                               "JQuerySelectorList",
-                               "EHTMLElement",
-      "ICSSClassProvider" };
+                              "IJQuerySelector",
+                              "JQuerySelectorList",
+                              "EHTMLElement",
+                              "ICSSClassProvider" };
       if (sType.equals ("Function"))
         return new String [] { "IJSExpression", "JSAnonymousFunction" };
       if (sType.equals ("Object"))
@@ -574,7 +574,7 @@ abstract class AbstractCreateJQueryAPIList
     if (false)
       SAXReaderDefaultSettings.setFeatureValue (EXMLParserFeature.XINCLUDE, Boolean.TRUE);
     SystemProperties.setPropertyValue ("org.apache.xerces.xni.parser.XMLParserConfiguration",
-        "org.apache.xerces.parsers.XIncludeParserConfiguration");
+                                       "org.apache.xerces.parsers.XIncludeParserConfiguration");
 
     for (final File aFile : FileSystemIterator.create (new File ("src/test/resources/jquery/api"),
                                                        new FilenameFilterEndsWith (".xml")))
@@ -615,7 +615,7 @@ abstract class AbstractCreateJQueryAPIList
             final String sOrigArgName = eArg.getAttribute ("name");
             final String sArgType = eArg.getAttribute ("type");
             final boolean bIsOptional = eArg.hasAttribute ("optional") ? StringParser.parseBool (eArg.getAttribute ("optional"))
-                                                                       : false;
+                                                                      : false;
 
             final List <String> aTypes = new ArrayList <String> ();
             if (StringHelper.hasNoTextAfterTrim (sArgType))
@@ -666,12 +666,12 @@ abstract class AbstractCreateJQueryAPIList
     }
 
     Collections.sort (aAllEntries, new Comparator <Entry> ()
-                      {
+    {
       public int compare (final Entry o1, final Entry o2)
       {
         return o1.getName ().compareTo (o2.getName ());
       }
-                      });
+    });
 
     // Build unique signatures where optional arguments are present
     for (final Entry aEntry : aAllEntries)
@@ -700,14 +700,14 @@ abstract class AbstractCreateJQueryAPIList
     }
 
     System.out.println ("Scanned " +
-        nFiles +
-        " files, " +
-        aAllEntries.size () +
-        " entries, " +
-        nSignatures +
-        " signatures and " +
-        nArguments +
-        " arguments");
+                        nFiles +
+                        " files, " +
+                        aAllEntries.size () +
+                        " entries, " +
+                        nSignatures +
+                        " signatures and " +
+                        nArguments +
+                        " arguments");
     if (false)
     {
       System.out.println ("Returns: " + aAllReturnTypes);
