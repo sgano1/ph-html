@@ -56,6 +56,7 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
 
   private String m_sValue;
   private boolean m_bEmitHiddenField = DEFAULT_EMIT_HIDDEN_FIELD;
+  private boolean m_bEmittedHiddenField = false;
 
   /**
    * Constructor
@@ -192,14 +193,22 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
     return getHiddenFieldName (sFieldName);
   }
 
+  public final boolean didEmitHiddenField ()
+  {
+    return m_bEmittedHiddenField;
+  }
+
   @Override
   public void onAdded (@Nonnegative final int nIndex, @Nonnull final IHCHasChildrenMutable <?, ?> aParent)
   {
-    if (m_bEmitHiddenField)
+    if (m_bEmitHiddenField && !m_bEmittedHiddenField)
     {
       final String sHiddenFieldName = getHiddenFieldName ();
       if (sHiddenFieldName != null)
+      {
         ((IHCNodeWithChildren <?>) aParent).addChild (new HCHiddenField (sHiddenFieldName, getValue ()));
+        m_bEmittedHiddenField = true;
+      }
     }
   }
 
@@ -207,7 +216,11 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
   public void onRemoved (@Nonnegative final int nIndex, @Nonnull final IHCHasChildrenMutable <?, ?> aParent)
   {
     if (m_bEmitHiddenField && getHiddenFieldName () != null)
-      ((IHCNodeWithChildren <?>) aParent).removeChild (nIndex);
+      if (m_bEmittedHiddenField)
+      {
+        ((IHCNodeWithChildren <?>) aParent).removeChild (nIndex);
+        m_bEmittedHiddenField = false;
+      }
   }
 
   @Override
