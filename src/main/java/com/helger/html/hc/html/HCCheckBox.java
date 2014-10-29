@@ -22,15 +22,12 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.CHTMLAttributes;
 import com.helger.html.hc.CHCParam;
 import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCNodeWithChildren;
 import com.helger.html.hc.api.EHCInputType;
-import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCInput;
 import com.helger.html.request.IHCRequestFieldBoolean;
 import com.helger.html.request.IHCRequestFieldBooleanMultiValue;
@@ -54,7 +51,6 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
    */
   public static final String DEFAULT_HIDDEN_FIELD_PREFIX = "__";
 
-  private String m_sValue;
   private boolean m_bEmitHiddenField = DEFAULT_EMIT_HIDDEN_FIELD;
   private boolean m_bEmittedHiddenField = false;
 
@@ -131,29 +127,6 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
   }
 
   /**
-   * @return The field value, maybe <code>null</code>
-   */
-  @Nullable
-  public final String getValue ()
-  {
-    return m_sValue;
-  }
-
-  /**
-   * Sets the passed field value
-   *
-   * @param sValue
-   *        Value to use.
-   * @return This object for chaining
-   */
-  @Nonnull
-  public final HCCheckBox setValue (@Nullable final String sValue)
-  {
-    m_sValue = sValue;
-    return this;
-  }
-
-  /**
    * @return Whether or not hidden fields will be emitted
    */
   public final boolean isEmitHiddenField ()
@@ -224,20 +197,9 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
   }
 
   @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
-  {
-    super.applyProperties (aElement, aConversionSettings);
-    if (m_sValue != null)
-      aElement.setAttribute (CHTMLAttributes.VALUE, m_sValue);
-  }
-
-  @Override
   public String toString ()
   {
-    return ToStringGenerator.getDerived (super.toString ())
-                            .appendIfNotNull ("value", m_sValue)
-                            .append ("emitHiddenField", m_bEmitHiddenField)
-                            .toString ();
+    return ToStringGenerator.getDerived (super.toString ()).append ("emitHiddenField", m_bEmitHiddenField).toString ();
   }
 
   /**

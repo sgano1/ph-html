@@ -24,13 +24,14 @@ import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.hc.api.EHCInputType;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
+import com.helger.html.hc.impl.AbstractHCInput;
 
 /**
  * Represents an HTML &lt;input&gt; element with type "file"
  *
  * @author Philip Helger
  */
-public class HCEditFile extends AbstractHCEdit <HCEditFile>
+public class HCEditFile extends AbstractHCInput <HCEditFile>
 {
   /** By default a single file can be selected */
   public static final boolean DEFAULT_MULTIPLE = false;
@@ -44,7 +45,8 @@ public class HCEditFile extends AbstractHCEdit <HCEditFile>
 
   public HCEditFile (@Nullable final String sName)
   {
-    super (EHCInputType.FILE, sName);
+    this ();
+    setName (sName);
   }
 
   public boolean isMultiple ()

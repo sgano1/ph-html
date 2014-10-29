@@ -21,6 +21,7 @@ import javax.annotation.Nullable;
 import javax.annotation.OverridingMethodsMustInvokeSuper;
 import javax.annotation.concurrent.NotThreadSafe;
 
+import com.helger.commons.CGlobal;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.mime.CMimeType;
@@ -77,21 +78,21 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   // TODO inputmode
   // TODO list
   // TODO max
-  // TODO maxlength
+  private int m_nMaxLength = CGlobal.ILLEGAL_UINT;
   // TODO min
   // TODO minlength
   // TODO multiple
   // name is inherited
   // TODO pattern
   private String m_sPlaceholder;
-
   // readonly is inherited
   // TODO required
-  // TODO size
+  private int m_nSize = CGlobal.ILLEGAL_UINT;
   // TODO src
   // TODO step
   // TODO type
-  // TODO value
+  private String m_sValue;
+
   // TODO width
 
   /**
@@ -353,6 +354,28 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
     return thisAsT ();
   }
 
+  /**
+   * @return The currently set max length.
+   */
+  public final int getMaxLength ()
+  {
+    return m_nMaxLength;
+  }
+
+  /**
+   * Set the maximum number of characters to be entered.
+   *
+   * @param nMaxLength
+   *        The max length. Should be &gt; 0.
+   * @return this
+   */
+  @Nonnull
+  public final IMPLTYPE setMaxLength (final int nMaxLength)
+  {
+    m_nMaxLength = nMaxLength;
+    return thisAsT ();
+  }
+
   @Nullable
   public final String getPlaceholder ()
   {
@@ -364,6 +387,85 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   {
     m_sPlaceholder = sPlaceholder;
     return thisAsT ();
+  }
+
+  /**
+   * @return The currently set max length.
+   */
+  public final int getSize ()
+  {
+    return m_nSize;
+  }
+
+  /**
+   * Sets the visible size of the edit. Should not be necessary in most cases,
+   * as styling via CSS is the preferred way. If you want to limit the number of
+   * available characters use {@link #setMaxLength(int)} instead.
+   *
+   * @param nSize
+   *        The width of the edit in characters.
+   * @return this
+   */
+  @Nonnull
+  public final IMPLTYPE setSize (final int nSize)
+  {
+    m_nSize = nSize;
+    return thisAsT ();
+  }
+
+  /**
+   * @return The field value, maybe <code>null</code>
+   */
+  @Nullable
+  public final String getValue ()
+  {
+    return m_sValue;
+  }
+
+  /**
+   * Sets the passed field value
+   *
+   * @param nValue
+   *        Value to use.
+   * @return This object for chaining
+   */
+  @Nonnull
+  public final IMPLTYPE setValue (final int nValue)
+  {
+    return setValue (Integer.toString (nValue));
+  }
+
+  /**
+   * Sets the passed field value
+   *
+   * @param nValue
+   *        Value to use.
+   * @return This object for chaining
+   */
+  @Nonnull
+  public final IMPLTYPE setValue (final long nValue)
+  {
+    return setValue (Long.toString (nValue));
+  }
+
+  /**
+   * Sets the passed field value
+   *
+   * @param sValue
+   *        Value to use.
+   * @return This object for chaining
+   */
+  @Nonnull
+  public final IMPLTYPE setValue (@Nullable final String sValue)
+  {
+    m_sValue = sValue;
+    return thisAsT ();
+  }
+
+  @Override
+  public String getPlainText ()
+  {
+    return StringHelper.getNotNull (getValue ());
   }
 
   @Override
@@ -397,8 +499,14 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
       aElement.setAttribute (CHTMLAttributes.FORMNOVALIDATE, CHTMLAttributeValues.FORMNOVALIDATE);
     if (m_aFormTarget != null)
       aElement.setAttribute (CHTMLAttributes.FORMTARGET, m_aFormTarget);
+    if (m_nMaxLength > 0)
+      aElement.setAttribute (CHTMLAttributes.MAXLENGTH, m_nMaxLength);
     if (StringHelper.hasText (m_sPlaceholder))
       aElement.setAttribute (CHTMLAttributes.PLACEHOLDER, m_sPlaceholder);
+    if (m_nSize > 0)
+      aElement.setAttribute (CHTMLAttributes.SIZE, m_nSize);
+    if (m_sValue != null)
+      aElement.setAttribute (CHTMLAttributes.VALUE, m_sValue);
   }
 
   @Override
@@ -418,7 +526,10 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
                             .appendIfNotNull ("formmethod", m_eFormMethod)
                             .append ("formnovalidate", m_bFormNoValidate)
                             .appendIfNotNull ("formtarget", m_aFormTarget)
+                            .append ("maxLength", m_nMaxLength)
                             .appendIfNotNull ("placeholder", m_sPlaceholder)
+                            .append ("size", m_nSize)
+                            .appendIfNotNull ("value", m_sValue)
                             .toString ();
   }
 }

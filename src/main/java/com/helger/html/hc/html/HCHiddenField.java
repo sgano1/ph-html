@@ -21,12 +21,8 @@ import java.util.Locale;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.microdom.IMicroElement;
-import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.CHTMLAttributes;
 import com.helger.html.hc.CHCParam;
 import com.helger.html.hc.api.EHCInputType;
-import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCInput;
 import com.helger.html.request.IHCRequestField;
 
@@ -37,8 +33,6 @@ import com.helger.html.request.IHCRequestField;
  */
 public class HCHiddenField extends AbstractHCInput <HCHiddenField>
 {
-  private String m_sValue;
-
   public HCHiddenField ()
   {
     super (EHCInputType.HIDDEN);
@@ -78,44 +72,5 @@ public class HCHiddenField extends AbstractHCInput <HCHiddenField>
   public HCHiddenField (@Nonnull final IHCRequestField aRF)
   {
     this (aRF.getFieldName (), aRF.getRequestValue ());
-  }
-
-  @Nullable
-  public final String getValue ()
-  {
-    return m_sValue;
-  }
-
-  @Nonnull
-  public final HCHiddenField setValue (final int nValue)
-  {
-    return setValue (Integer.toString (nValue));
-  }
-
-  @Nonnull
-  public final HCHiddenField setValue (final long nValue)
-  {
-    return setValue (Long.toString (nValue));
-  }
-
-  @Nonnull
-  public final HCHiddenField setValue (@Nullable final String sValue)
-  {
-    m_sValue = sValue;
-    return this;
-  }
-
-  @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
-  {
-    super.applyProperties (aElement, aConversionSettings);
-    if (m_sValue != null)
-      aElement.setAttribute (CHTMLAttributes.VALUE, m_sValue);
-  }
-
-  @Override
-  public String toString ()
-  {
-    return ToStringGenerator.getDerived (super.toString ()).appendIfNotNull ("value", m_sValue).toString ();
   }
 }

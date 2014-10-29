@@ -19,12 +19,8 @@ package com.helger.html.hc.html;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.microdom.IMicroElement;
-import com.helger.commons.string.StringHelper;
-import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.CHTMLAttributes;
 import com.helger.html.hc.api.EHCInputType;
-import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
+import com.helger.html.hc.impl.AbstractHCInput;
 import com.helger.html.request.IHCRequestField;
 
 /**
@@ -32,10 +28,8 @@ import com.helger.html.request.IHCRequestField;
  *
  * @author Philip Helger
  */
-public class HCEdit extends AbstractHCEdit <HCEdit>
+public class HCEdit extends AbstractHCInput <HCEdit>
 {
-  private String m_sValue;
-
   public HCEdit ()
   {
     super (EHCInputType.TEXT);
@@ -43,21 +37,25 @@ public class HCEdit extends AbstractHCEdit <HCEdit>
 
   public HCEdit (@Nullable final String sName)
   {
-    super (EHCInputType.TEXT, sName);
+    this ();
+    setName (sName);
   }
 
+  @Deprecated
   public HCEdit (@Nullable final String sName, @Nullable final String sValue)
   {
     this (sName);
     setValue (sValue);
   }
 
+  @Deprecated
   public HCEdit (@Nullable final String sName, final int nValue)
   {
     this (sName);
     setValue (nValue);
   }
 
+  @Deprecated
   public HCEdit (@Nullable final String sName, final long nValue)
   {
     this (sName);
@@ -66,51 +64,7 @@ public class HCEdit extends AbstractHCEdit <HCEdit>
 
   public HCEdit (@Nonnull final IHCRequestField aRF)
   {
-    this (aRF.getFieldName (), aRF.getRequestValue ());
-  }
-
-  @Nullable
-  public final String getValue ()
-  {
-    return m_sValue;
-  }
-
-  @Nonnull
-  public final HCEdit setValue (final int nValue)
-  {
-    return setValue (Integer.toString (nValue));
-  }
-
-  @Nonnull
-  public final HCEdit setValue (final long nValue)
-  {
-    return setValue (Long.toString (nValue));
-  }
-
-  @Nonnull
-  public final HCEdit setValue (@Nullable final String sValue)
-  {
-    m_sValue = sValue;
-    return this;
-  }
-
-  @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
-  {
-    super.applyProperties (aElement, aConversionSettings);
-    if (m_sValue != null)
-      aElement.setAttribute (CHTMLAttributes.VALUE, m_sValue);
-  }
-
-  @Override
-  public String getPlainText ()
-  {
-    return StringHelper.getNotNull (m_sValue);
-  }
-
-  @Override
-  public String toString ()
-  {
-    return ToStringGenerator.getDerived (super.toString ()).appendIfNotNull ("value", m_sValue).toString ();
+    this (aRF.getFieldName ());
+    setValue (aRF.getRequestValue ());
   }
 }

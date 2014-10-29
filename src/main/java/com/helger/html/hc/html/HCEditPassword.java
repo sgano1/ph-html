@@ -20,13 +20,14 @@ import javax.annotation.Nullable;
 
 import com.helger.html.hc.api.EHCInputType;
 import com.helger.html.hc.customize.HCDefaultSettings;
+import com.helger.html.hc.impl.AbstractHCInput;
 
 /**
  * Represents an HTML &lt;input&gt; element with type "password"
  *
  * @author Philip Helger
  */
-public class HCEditPassword extends AbstractHCEdit <HCEditPassword>
+public class HCEditPassword extends AbstractHCInput <HCEditPassword>
 {
   public HCEditPassword ()
   {
@@ -37,8 +38,7 @@ public class HCEditPassword extends AbstractHCEdit <HCEditPassword>
 
   public HCEditPassword (@Nullable final String sName)
   {
-    super (EHCInputType.PASSWORD, sName);
-    if (HCDefaultSettings.isAutoCompleteOffForPasswordEdits ())
-      setAutoComplete (false);
+    this ();
+    setName (sName);
   }
 }

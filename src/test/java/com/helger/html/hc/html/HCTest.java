@@ -70,7 +70,7 @@ public final class HCTest
     b.addChild (new HCDel ().addChild ("gelöscht"));
     b.addChild (new HCDiv ());
     b.addChild (new HCDiv ().addChild ("Absatz"));
-    b.addChild (new HCEdit ("filename", "autoexec.bat"));
+    b.addChild (new HCEdit ("filename").setValue ("autoexec.bat"));
     b.addChild (new HCEditFile ("upload"));
     b.addChild (new HCEditPassword ("password"));
     b.addChild (new HCEM ());
