@@ -75,6 +75,7 @@ public final class CHTMLAttributes
   public static final String DEFAULT = "default";
   public static final String DEFER = "defer";
   public static final String DIR = "dir";
+  public static final String DIRNAME = "dirname";
   public static final String DISABLED = "disabled";
   public static final String DRAGGABLE = "draggable";
   public static final String DROPZONE = "dropzone";
@@ -83,6 +84,11 @@ public final class CHTMLAttributes
   public static final String FACE = "face";
   public static final String FOR = "for";
   public static final String FORM = "form";
+  public static final String FORMACTION = "formaction";
+  public static final String FORMENCTYPE = "formenctype";
+  public static final String FORMMETHOD = "formmethod";
+  public static final String FORMNOVALIDATE = "formnovalidate";
+  public static final String FORMTARGET = "formtarget";
   public static final String FRAME = "frame";
   public static final String FRAMEBORDER = "frameborder";
   public static final String HEADERS = "headers";
@@ -119,6 +125,7 @@ public final class CHTMLAttributes
   public static final String NOHREF = "nohref";
   public static final String NORESIZE = "noresize";
   public static final String NOSHADE = "noshade";
+  public static final String NOVALIDATE = "novalidate";
   public static final String NOWRAP = "nowrap";
   public static final String OBJECT = "object";
   public static final String OPEN = "open";

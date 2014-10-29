@@ -36,7 +36,7 @@ import com.helger.html.hc.impl.AbstractHCElement;
 public class HCBase extends AbstractHCElement <HCBase>
 {
   private String m_sHref;
-  private HCA_Target m_aTarget;
+  private HC_Target m_aTarget;
 
   public HCBase ()
   {
@@ -63,13 +63,13 @@ public class HCBase extends AbstractHCElement <HCBase>
   }
 
   @Nullable
-  public HCA_Target getTarget ()
+  public HC_Target getTarget ()
   {
     return m_aTarget;
   }
 
   @Nonnull
-  public HCBase setTarget (@Nullable final HCA_Target aTarget)
+  public HCBase setTarget (@Nullable final HC_Target aTarget)
   {
     m_aTarget = aTarget;
     return this;

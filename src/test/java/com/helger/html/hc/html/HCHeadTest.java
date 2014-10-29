@@ -68,8 +68,8 @@ public final class HCHeadTest
     assertEquals ("<head profile=\"any\" xmlns=\"http://www.w3.org/1999/xhtml\"><title>Title</title><base href=\"/\" /></head>",
                   HCSettings.getAsHTMLString (aHead, false));
 
-    assertSame (aHead, aHead.setBaseTarget (HCA_Target.BLANK));
-    assertEquals (HCA_Target.BLANK, aHead.getBaseTarget ());
+    assertSame (aHead, aHead.setBaseTarget (HC_Target.BLANK));
+    assertEquals (HC_Target.BLANK, aHead.getBaseTarget ());
     assertEquals ("<head profile=\"any\" xmlns=\"http://www.w3.org/1999/xhtml\"><title>Title</title><base href=\"/\" target=\"_blank\" /></head>",
                   HCSettings.getAsHTMLString (aHead, false));
     assertNotNull (aHead.toString ());
@@ -125,7 +125,7 @@ public final class HCHeadTest
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>test</title><base href=\"/root\" /></head>",
                   HCSettings.getAsHTMLString (aHead, false));
     aHead.setBaseHref (null);
-    aHead.setBaseTarget (HCA_Target.BLANK);
+    aHead.setBaseTarget (HC_Target.BLANK);
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>test</title><base target=\"_blank\" /></head>",
                   HCSettings.getAsHTMLString (aHead, false));
     aHead.setBaseTarget (null);

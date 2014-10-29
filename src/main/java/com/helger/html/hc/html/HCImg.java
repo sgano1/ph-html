@@ -69,6 +69,21 @@ public class HCImg extends AbstractHCElement <HCImg>
     return this;
   }
 
+  public final boolean hasExtent ()
+  {
+    return m_aExtent != null;
+  }
+
+  public final int getWidth (final int nDefaultValue)
+  {
+    return m_aExtent != null ? m_aExtent.getWidth () : nDefaultValue;
+  }
+
+  public final int getHeight (final int nDefaultValue)
+  {
+    return m_aExtent != null ? m_aExtent.getHeight () : nDefaultValue;
+  }
+
   @Nullable
   public final ScalableSize getExtent ()
   {

@@ -20,9 +20,11 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.CGlobal;
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.mime.CMimeType;
 import com.helger.commons.mime.IMimeType;
+import com.helger.commons.state.ETriState;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.ISimpleURL;
@@ -32,7 +34,6 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.hc.api.EHCFormMethod;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElementWithChildren;
-import com.helger.html.js.CJS;
 import com.helger.html.js.IJSCodeProvider;
 import com.helger.html.js.builder.IJSStatement;
 
@@ -43,22 +44,22 @@ import com.helger.html.js.builder.IJSStatement;
  * @param <IMPLTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>> extends AbstractHCElementWithChildren <IMPLTYPE>
+public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>> extends
+                                                                                  AbstractHCElementWithChildren <IMPLTYPE>
 {
   /** Default form submission method is POST */
   public static final EHCFormMethod DEFAULT_METHOD = EHCFormMethod.POST;
-  /** By default auto complete is not disabled */
-  public static final boolean DEFAULT_DISABLE_AUTO_COMPLETE = false;
+  /** By default no auto complete setting is active */
+  public static final ETriState DEFAULT_AUTO_COMPLETE = ETriState.UNDEFINED;
   /** By default form are not submitted by pressing Enter key */
   public static final boolean DEFAULT_SUBMIT_PRESSING_ENTER = false;
 
-  private String m_sAction;
-  private IJSCodeProvider m_aAction;
+  private final HC_Action m_aAction = new HC_Action ();
   private EHCFormMethod m_eMethod = DEFAULT_METHOD;
   private String m_sName;
   private String m_sAcceptCharset;
-  private HCA_Target m_aLinkTarget;
-  private boolean m_bDisableAutoComplete = DEFAULT_DISABLE_AUTO_COMPLETE;
+  private HC_Target m_aTarget;
+  private ETriState m_eAutoComplete = DEFAULT_AUTO_COMPLETE;
   private IMimeType m_aEncType;
 
   // Must be handled externally!
@@ -91,34 +92,33 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
   @Nullable
   public final String getActionURL ()
   {
-    return m_sAction;
+    return m_aAction.getActionURL ();
   }
 
   @Nullable
   public final IJSCodeProvider getActionJS ()
   {
-    return m_aAction;
+    return m_aAction.getActionJS ();
   }
 
   @Nonnull
   public final IMPLTYPE setAction (@Nullable final ISimpleURL aAction)
   {
-    return setAction (aAction == null ? null : aAction.getAsString ());
+    m_aAction.setAction (aAction);
+    return thisAsT ();
   }
 
   @Nonnull
   public final IMPLTYPE setAction (@Nullable final String sAction)
   {
-    m_sAction = sAction;
-    m_aAction = null;
+    m_aAction.setAction (sAction);
     return thisAsT ();
   }
 
   @Nonnull
   public final IMPLTYPE setAction (@Nullable final IJSStatement aAction)
   {
-    m_sAction = null;
-    m_aAction = aAction;
+    m_aAction.setAction (aAction);
     return thisAsT ();
   }
 
@@ -149,15 +149,15 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
   }
 
   @Nullable
-  public final HCA_Target getTarget ()
+  public final HC_Target getTarget ()
   {
-    return m_aLinkTarget;
+    return m_aTarget;
   }
 
   @Nonnull
-  public final IMPLTYPE setTarget (@Nullable final HCA_Target aTarget)
+  public final IMPLTYPE setTarget (@Nullable final HC_Target aTarget)
   {
-    m_aLinkTarget = aTarget;
+    m_aTarget = aTarget;
     return thisAsT ();
   }
 
@@ -174,15 +174,31 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
     return thisAsT ();
   }
 
-  public final boolean isDisableAutoComplete ()
+  public final boolean isAutoCompleteOn ()
   {
-    return m_bDisableAutoComplete;
+    return m_eAutoComplete.isTrue ();
+  }
+
+  public final boolean isAutoCompleteOff ()
+  {
+    return m_eAutoComplete.isFalse ();
+  }
+
+  public final boolean isAutoCompleteUndefined ()
+  {
+    return m_eAutoComplete.isUndefined ();
   }
 
   @Nonnull
-  public final IMPLTYPE setDisableAutoComplete (final boolean bDisableAutoComplete)
+  public final IMPLTYPE setAutoComplete (final boolean bAutoComplete)
   {
-    m_bDisableAutoComplete = bDisableAutoComplete;
+    return setAutoComplete (ETriState.valueOf (bAutoComplete));
+  }
+
+  @Nonnull
+  public final IMPLTYPE setAutoComplete (@Nonnull final ETriState eAutoComplete)
+  {
+    m_eAutoComplete = ValueEnforcer.notNull (eAutoComplete, "AutoComplete");
     return thisAsT ();
   }
 
@@ -222,9 +238,32 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
    * @return this
    */
   @Nonnull
+  @Deprecated
   public IMPLTYPE setFileUploadEncType ()
   {
+    return setEncTypeFileUpload ();
+  }
+
+  /**
+   * Make this form a file-upload form.
+   *
+   * @return this
+   */
+  @Nonnull
+  public IMPLTYPE setEncTypeFileUpload ()
+  {
     return setEncType (CMimeType.MULTIPART_FORMDATA);
+  }
+
+  /**
+   * Set the enctype to text/plain
+   *
+   * @return this
+   */
+  @Nonnull
+  public IMPLTYPE setEncTypeTextPlain ()
+  {
+    return setEncType (CMimeType.TEXT_PLAIN);
   }
 
   @Nonnull
@@ -235,26 +274,23 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
   }
 
   @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void applyProperties (@Nonnull final IMicroElement aElement,
+                                  final IHCConversionSettingsToNode aConversionSettings)
   {
     super.applyProperties (aElement, aConversionSettings);
 
-    if (m_aAction != null)
-      aElement.setAttribute (CHTMLAttributes.ACTION, CJS.JS_PREFIX + m_aAction.getJSCode ());
-    else
-      if (StringHelper.hasText (m_sAction))
-        aElement.setAttribute (CHTMLAttributes.ACTION, m_sAction);
-
+    m_aAction.applyProperties (CHTMLAttributes.ACTION, aElement);
     if (m_eMethod != null)
       aElement.setAttribute (CHTMLAttributes.METHOD, m_eMethod);
     if (StringHelper.hasText (m_sName))
       aElement.setAttribute (CHTMLAttributes.NAME, m_sName);
     if (StringHelper.hasText (m_sAcceptCharset))
       aElement.setAttribute (CHTMLAttributes.ACCEPTCHARSET, m_sAcceptCharset);
-    if (m_aLinkTarget != null)
-      aElement.setAttribute (CHTMLAttributes.TARGET, m_aLinkTarget);
-    if (m_bDisableAutoComplete)
-      aElement.setAttribute (CHTMLAttributes.AUTOCOMPLETE, CHTMLAttributeValues.OFF);
+    if (m_aTarget != null)
+      aElement.setAttribute (CHTMLAttributes.TARGET, m_aTarget);
+    if (m_eAutoComplete.isDefined ())
+      aElement.setAttribute (CHTMLAttributes.AUTOCOMPLETE, m_eAutoComplete.isTrue () ? CHTMLAttributeValues.ON
+                                                                                    : CHTMLAttributeValues.OFF);
     if (m_aEncType != null)
       aElement.setAttribute (CHTMLAttributes.ENCTYPE, m_aEncType.getAsString ());
   }
@@ -263,13 +299,12 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
   public String toString ()
   {
     return ToStringGenerator.getDerived (super.toString ())
-                            .appendIfNotNull ("action", m_sAction)
-                            .appendIfNotNull ("actionJS", m_aAction)
+                            .append ("action", m_aAction)
                             .appendIfNotNull ("method", m_eMethod)
                             .appendIfNotNull ("name", m_sName)
                             .appendIfNotNull ("acceptCharset", m_sAcceptCharset)
-                            .appendIfNotNull ("linkTarget", m_aLinkTarget)
-                            .append ("disableAutoComplete", m_bDisableAutoComplete)
+                            .appendIfNotNull ("linkTarget", m_aTarget)
+                            .append ("autoComplete", m_eAutoComplete)
                             .append ("submitPressingEnter", m_bSubmitPressingEnter)
                             .append ("submitButtonTabIndex", m_nSubmitButtonTabIndex)
                             .appendIfNotNull ("encType", m_aEncType)

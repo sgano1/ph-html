@@ -43,7 +43,7 @@ public final class HCTest
   {
     final HCHtml h = new HCHtml ();
     final HCBody b = h.getBody ();
-    b.addChild (new HCA (new SimpleURL ("http://www.helger.com")).setTarget (HCA_Target.SELF).addChild ("helger"));
+    b.addChild (new HCA (new SimpleURL ("http://www.helger.com")).setTarget (HC_Target.SELF).addChild ("helger"));
     b.addChild (new HCAbbr ().addChild ("abbr"));
     b.addChild (new HCAddress ().addChild ("address"));
     b.addChild (new HCB ().addChild ("echt fett"));

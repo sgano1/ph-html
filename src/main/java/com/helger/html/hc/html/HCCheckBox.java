@@ -25,7 +25,6 @@ import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.hc.CHCParam;
 import com.helger.html.hc.IHCHasChildrenMutable;
@@ -46,9 +45,6 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
   /** The default value of the "value" attribute in HTML */
   public static final String DEFAULT_VALUE = CHCParam.VALUE_CHECKED;
 
-  /** Check-box is not checked by default */
-  public static final boolean DEFAULT_CHECKED = false;
-
   /** Emit a hidden field that indicates that the check-box was in the request. */
   public static final boolean DEFAULT_EMIT_HIDDEN_FIELD = true;
 
@@ -59,7 +55,6 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
   public static final String DEFAULT_HIDDEN_FIELD_PREFIX = "__";
 
   private String m_sValue;
-  private boolean m_bChecked;
   private boolean m_bEmitHiddenField = DEFAULT_EMIT_HIDDEN_FIELD;
 
   /**
@@ -158,28 +153,6 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
   }
 
   /**
-   * @return Whether or not the check-box is currently checked
-   */
-  public final boolean isChecked ()
-  {
-    return m_bChecked;
-  }
-
-  /**
-   * Set the checked state according to the passed value
-   *
-   * @param bChecked
-   *        new checked state
-   * @return This object for chaining
-   */
-  @Nonnull
-  public final HCCheckBox setChecked (final boolean bChecked)
-  {
-    m_bChecked = bChecked;
-    return this;
-  }
-
-  /**
    * @return Whether or not hidden fields will be emitted
    */
   public final boolean isEmitHiddenField ()
@@ -243,8 +216,6 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
     super.applyProperties (aElement, aConversionSettings);
     if (m_sValue != null)
       aElement.setAttribute (CHTMLAttributes.VALUE, m_sValue);
-    if (m_bChecked)
-      aElement.setAttribute (CHTMLAttributes.CHECKED, CHTMLAttributeValues.CHECKED);
   }
 
   @Override
@@ -252,7 +223,6 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
   {
     return ToStringGenerator.getDerived (super.toString ())
                             .appendIfNotNull ("value", m_sValue)
-                            .append ("checked", m_bChecked)
                             .append ("emitHiddenField", m_bEmitHiddenField)
                             .toString ();
   }

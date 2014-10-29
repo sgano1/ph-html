@@ -22,7 +22,6 @@ import javax.annotation.Nullable;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.hc.api.EHCInputType;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
@@ -35,11 +34,7 @@ import com.helger.html.request.IHCRequestField;
  */
 public class HCEdit extends AbstractHCEdit <HCEdit>
 {
-  /** By default auto complete is not disabled */
-  public static final boolean DEFAULT_DISABLE_AUTO_COMPLETE = false;
-
   private String m_sValue;
-  private boolean m_bDisableAutoComplete = DEFAULT_DISABLE_AUTO_COMPLETE;
 
   public HCEdit ()
   {
@@ -99,26 +94,12 @@ public class HCEdit extends AbstractHCEdit <HCEdit>
     return this;
   }
 
-  public final boolean isDisableAutoComplete ()
-  {
-    return m_bDisableAutoComplete;
-  }
-
-  @Nonnull
-  public final HCEdit setDisableAutoComplete (final boolean bDisableAutoComplete)
-  {
-    m_bDisableAutoComplete = bDisableAutoComplete;
-    return this;
-  }
-
   @Override
   protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
     super.applyProperties (aElement, aConversionSettings);
     if (m_sValue != null)
       aElement.setAttribute (CHTMLAttributes.VALUE, m_sValue);
-    if (m_bDisableAutoComplete)
-      aElement.setAttribute (CHTMLAttributes.AUTOCOMPLETE, CHTMLAttributeValues.OFF);
   }
 
   @Override
@@ -130,9 +111,6 @@ public class HCEdit extends AbstractHCEdit <HCEdit>
   @Override
   public String toString ()
   {
-    return ToStringGenerator.getDerived (super.toString ())
-                            .appendIfNotNull ("value", m_sValue)
-                            .append ("disableAutoComplete", m_bDisableAutoComplete)
-                            .toString ();
+    return ToStringGenerator.getDerived (super.toString ()).appendIfNotNull ("value", m_sValue).toString ();
   }
 }

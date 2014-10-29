@@ -21,7 +21,6 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.hc.api.EHCInputType;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
@@ -36,11 +35,7 @@ import com.helger.html.request.IHCRequestFieldBooleanMultiValue;
  */
 public class HCRadioButton extends AbstractHCInput <HCRadioButton>
 {
-  /** By default the radio button is not checked */
-  public static final boolean DEFAULT_CHECKED = false;
-
   private String m_sValue;
-  private boolean m_bChecked = DEFAULT_CHECKED;
 
   public HCRadioButton (@Nullable final String sName)
   {
@@ -88,34 +83,17 @@ public class HCRadioButton extends AbstractHCInput <HCRadioButton>
     return this;
   }
 
-  public final boolean isChecked ()
-  {
-    return m_bChecked;
-  }
-
-  @Nonnull
-  public final HCRadioButton setChecked (final boolean bChecked)
-  {
-    m_bChecked = bChecked;
-    return this;
-  }
-
   @Override
   protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
     super.applyProperties (aElement, aConversionSettings);
     if (m_sValue != null)
       aElement.setAttribute (CHTMLAttributes.VALUE, m_sValue);
-    if (m_bChecked)
-      aElement.setAttribute (CHTMLAttributes.CHECKED, CHTMLAttributeValues.CHECKED);
   }
 
   @Override
   public String toString ()
   {
-    return ToStringGenerator.getDerived (super.toString ())
-                            .appendIfNotNull ("value", m_sValue)
-                            .append ("checked", m_bChecked)
-                            .toString ();
+    return ToStringGenerator.getDerived (super.toString ()).appendIfNotNull ("value", m_sValue).toString ();
   }
 }

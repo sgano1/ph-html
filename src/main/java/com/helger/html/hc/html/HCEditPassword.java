@@ -16,15 +16,9 @@
  */
 package com.helger.html.hc.html;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.microdom.IMicroElement;
-import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.CHTMLAttributeValues;
-import com.helger.html.CHTMLAttributes;
 import com.helger.html.hc.api.EHCInputType;
-import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.customize.HCDefaultSettings;
 
 /**
@@ -34,43 +28,17 @@ import com.helger.html.hc.customize.HCDefaultSettings;
  */
 public class HCEditPassword extends AbstractHCEdit <HCEditPassword>
 {
-  private boolean m_bDisableAutoComplete = HCDefaultSettings.isAutoCompleteOffForPasswordEdits ();
-
   public HCEditPassword ()
   {
     super (EHCInputType.PASSWORD);
+    if (HCDefaultSettings.isAutoCompleteOffForPasswordEdits ())
+      setAutoComplete (false);
   }
 
   public HCEditPassword (@Nullable final String sName)
   {
     super (EHCInputType.PASSWORD, sName);
-  }
-
-  public final boolean isDisableAutoComplete ()
-  {
-    return m_bDisableAutoComplete;
-  }
-
-  @Nonnull
-  public final HCEditPassword setDisableAutoComplete (final boolean bDisableAutoComplete)
-  {
-    m_bDisableAutoComplete = bDisableAutoComplete;
-    return this;
-  }
-
-  @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
-  {
-    super.applyProperties (aElement, aConversionSettings);
-    if (m_bDisableAutoComplete)
-      aElement.setAttribute (CHTMLAttributes.AUTOCOMPLETE, CHTMLAttributeValues.OFF);
-  }
-
-  @Override
-  public String toString ()
-  {
-    return ToStringGenerator.getDerived (super.toString ())
-                            .append ("disableAutoComplete", m_bDisableAutoComplete)
-                            .toString ();
+    if (HCDefaultSettings.isAutoCompleteOffForPasswordEdits ())
+      setAutoComplete (false);
   }
 }

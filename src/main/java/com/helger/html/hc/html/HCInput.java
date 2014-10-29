@@ -16,6 +16,9 @@
  */
 package com.helger.html.hc.html;
 
+import javax.annotation.Nonnull;
+
+import com.helger.html.hc.api.EHCInputType;
 import com.helger.html.hc.impl.AbstractHCInput;
 
 /**
@@ -29,4 +32,9 @@ public class HCInput extends AbstractHCInput <HCInput>
 {
   public HCInput ()
   {}
+
+  public HCInput (@Nonnull final EHCInputType eType)
+  {
+    super (eType);
+  }
 }

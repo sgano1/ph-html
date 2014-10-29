@@ -50,7 +50,7 @@ public class HCLink extends AbstractHCElement <HCLink> implements IHCCSSNode
   private IMimeType m_aType;
   private ISimpleURL m_aHref;
   private String m_sHrefLang;
-  private HCA_Target m_aTarget;
+  private HC_Target m_aTarget;
   private String m_sCharset;
   private CSSMediaList m_aMediaList;
 
@@ -151,13 +151,13 @@ public class HCLink extends AbstractHCElement <HCLink> implements IHCCSSNode
   }
 
   @Nullable
-  public HCA_Target getTarget ()
+  public HC_Target getTarget ()
   {
     return m_aTarget;
   }
 
   @Nonnull
-  public HCLink setTarget (@Nullable final HCA_Target aTarget)
+  public HCLink setTarget (@Nullable final HC_Target aTarget)
   {
     m_aTarget = aTarget;
     return this;

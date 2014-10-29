@@ -43,10 +43,11 @@ import com.helger.html.js.IJSCodeProvider;
  * @param <THISTYPE>
  *        Implementation type
  */
-public class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE> implements IHCHasMedia <THISTYPE>
+public class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE> implements
+                                                                                                                   IHCHasMedia <THISTYPE>
 {
   private ISimpleURL m_aHref;
-  private HCA_Target m_aTarget;
+  private HC_Target m_aTarget;
   private String m_sName;
   private IMimeType m_aType;
   private String m_sMediaQuery;
@@ -90,7 +91,7 @@ public class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>> extends Abstr
   }
 
   @Nullable
-  public HCA_Target getTarget ()
+  public HC_Target getTarget ()
   {
     return m_aTarget;
   }
@@ -101,7 +102,7 @@ public class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>> extends Abstr
   }
 
   @Nonnull
-  public THISTYPE setTarget (@Nullable final HCA_Target aTarget)
+  public THISTYPE setTarget (@Nullable final HC_Target aTarget)
   {
     m_aTarget = aTarget;
     return thisAsT ();
@@ -110,7 +111,7 @@ public class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>> extends Abstr
   @Nonnull
   public THISTYPE setTargetBlank ()
   {
-    return setTarget (HCA_Target.BLANK);
+    return setTarget (HC_Target.BLANK);
   }
 
   @Nullable

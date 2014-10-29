@@ -117,13 +117,13 @@ public class HCHead extends AbstractHCElement <HCHead>
   }
 
   @Nullable
-  public HCA_Target getBaseTarget ()
+  public HC_Target getBaseTarget ()
   {
     return m_aBase.getTarget ();
   }
 
   @Nonnull
-  public HCHead setBaseTarget (@Nullable final HCA_Target aTarget)
+  public HCHead setBaseTarget (@Nullable final HC_Target aTarget)
   {
     m_aBase.setTarget (aTarget);
     return this;
