@@ -70,6 +70,7 @@ public final class HCSpecialNodeHandler
   private static final AnnotationUsageCache s_aOOBNAnnotationCache = new AnnotationUsageCache (OutOfBandNode.class);
   private static final AnnotationUsageCache s_aSNLMAnnotationCache = new AnnotationUsageCache (SpecialNodeListModifier.class);
   private static final AtomicBoolean s_aOOBDebugging = new AtomicBoolean (false);
+  private static final Map <String, IHCSpecialNodeListModifier> s_aModifiers = new HashMap <String, IHCSpecialNodeListModifier> ();
 
   @PresentForCodeCoverage
   @SuppressWarnings ("unused")
@@ -343,11 +344,11 @@ public final class HCSpecialNodeHandler
     return aTargetList;
   }
 
-  private static final Map <String, IHCSpecialNodeListModifier> s_aModifiers = new HashMap <String, IHCSpecialNodeListModifier> ();
-
   @Nonnull
-  private static Iterable <? extends IHCNode> _applyModifiers (@Nonnull final Iterable <? extends IHCNode> aNodes)
+  public static Iterable <? extends IHCNode> applyModifiers (@Nonnull final Iterable <? extends IHCNode> aNodes)
   {
+    ValueEnforcer.notNull (aNodes, "Nodes");
+
     final Set <Class <? extends IHCSpecialNodeListModifier>> aModifiersToApply = new LinkedHashSet <Class <? extends IHCSpecialNodeListModifier>> ();
     for (final IHCNode aNode : aNodes)
       if (s_aSNLMAnnotationCache.hasAnnotation (aNode))
@@ -404,7 +405,7 @@ public final class HCSpecialNodeHandler
     ValueEnforcer.notNull (aNodes, "Nodes");
 
     // Apply all modifiers
-    final Iterable <? extends IHCNode> aRealSpecialNodes = _applyModifiers (aNodes);
+    final Iterable <? extends IHCNode> aRealSpecialNodes = applyModifiers (aNodes);
 
     // Do standard aggregations of CSS and JS
     final List <IHCNode> ret = new ArrayList <IHCNode> ();
