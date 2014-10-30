@@ -58,7 +58,10 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   public static final boolean DEFAULT_CHECKED = false;
 
   /** Default value */
-  public static final boolean DEFAULT_NOFORMVALIDATE = false;
+  public static final boolean DEFAULT_FORMNOVALIDATE = false;
+
+  /** By default multi select is disabled */
+  public static final boolean DEFAULT_MULTIPLE = false;
 
   private EHCInputType m_eType;
   private String m_sAccept;
@@ -72,18 +75,18 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   private final HC_Action m_aFormAction = new HC_Action ();
   private IMimeType m_aFormEncType;
   private EHCFormMethod m_eFormMethod;
-  private boolean m_bFormNoValidate = DEFAULT_NOFORMVALIDATE;
+  private boolean m_bFormNoValidate = DEFAULT_FORMNOVALIDATE;
   private HC_Target m_aFormTarget;
-  // TODO height
+  private int m_nHeight = CGlobal.ILLEGAL_UINT;
   // TODO inputmode
-  // TODO list
-  // TODO max
+  private String m_sList;
+  private String m_sMaxValue;
   private int m_nMaxLength = CGlobal.ILLEGAL_UINT;
-  // TODO min
-  // TODO minlength
-  // TODO multiple
+  private String m_sMinValue;
+  private int m_nMinLength = CGlobal.ILLEGAL_UINT;
+  private boolean m_bMultiple = DEFAULT_MULTIPLE;
   // name is inherited
-  // TODO pattern
+  private String m_sPattern;
   private String m_sPlaceholder;
   // readonly is inherited
   // TODO required
@@ -92,8 +95,7 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   // TODO step
   // TODO type
   private String m_sValue;
-
-  // TODO width
+  private int m_nWidth = CGlobal.ILLEGAL_UINT;
 
   /**
    * Default ctor
@@ -354,8 +356,46 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
     return thisAsT ();
   }
 
+  public final int getHeight ()
+  {
+    return m_nHeight;
+  }
+
+  @Nonnull
+  public final IMPLTYPE setHeight (final int nHeight)
+  {
+    m_nHeight = nHeight;
+    return thisAsT ();
+  }
+
+  @Nullable
+  public final String getList ()
+  {
+    return m_sList;
+  }
+
+  @Nonnull
+  public final IMPLTYPE setList (@Nullable final String sList)
+  {
+    m_sList = sList;
+    return thisAsT ();
+  }
+
+  @Nullable
+  public final String getMaxValue ()
+  {
+    return m_sMaxValue;
+  }
+
+  @Nonnull
+  public final IMPLTYPE setMaxValue (@Nullable final String sMaxValue)
+  {
+    m_sMaxValue = sMaxValue;
+    return thisAsT ();
+  }
+
   /**
-   * @return The currently set max length.
+   * @return The currently set max length or -1.
    */
   public final int getMaxLength ()
   {
@@ -373,6 +413,66 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   public final IMPLTYPE setMaxLength (final int nMaxLength)
   {
     m_nMaxLength = nMaxLength;
+    return thisAsT ();
+  }
+
+  @Nullable
+  public final String getMinValue ()
+  {
+    return m_sMinValue;
+  }
+
+  @Nonnull
+  public final IMPLTYPE setMinValue (@Nullable final String sMinValue)
+  {
+    m_sMinValue = sMinValue;
+    return thisAsT ();
+  }
+
+  /**
+   * @return The currently set min length or -1.
+   */
+  public final int getMinLength ()
+  {
+    return m_nMinLength;
+  }
+
+  /**
+   * Set the minimum number of characters to be entered.
+   *
+   * @param nMinLength
+   *        The min length. Should be &gt; 0.
+   * @return this
+   */
+  @Nonnull
+  public final IMPLTYPE setMinLength (final int nMinLength)
+  {
+    m_nMinLength = nMinLength;
+    return thisAsT ();
+  }
+
+  public final boolean isMultiple ()
+  {
+    return m_bMultiple;
+  }
+
+  @Nonnull
+  public final IMPLTYPE setMultiple (final boolean bMultiple)
+  {
+    m_bMultiple = bMultiple;
+    return thisAsT ();
+  }
+
+  @Nullable
+  public final String getPattern ()
+  {
+    return m_sPattern;
+  }
+
+  @Nonnull
+  public final IMPLTYPE setPattern (@Nullable final String sPattern)
+  {
+    m_sPattern = sPattern;
     return thisAsT ();
   }
 
@@ -462,6 +562,18 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
     return thisAsT ();
   }
 
+  public final int getWidth ()
+  {
+    return m_nWidth;
+  }
+
+  @Nonnull
+  public final IMPLTYPE setWidth (final int nWidth)
+  {
+    m_nWidth = nWidth;
+    return thisAsT ();
+  }
+
   @Override
   public String getPlainText ()
   {
@@ -499,14 +611,30 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
       aElement.setAttribute (CHTMLAttributes.FORMNOVALIDATE, CHTMLAttributeValues.FORMNOVALIDATE);
     if (m_aFormTarget != null)
       aElement.setAttribute (CHTMLAttributes.FORMTARGET, m_aFormTarget);
+    if (m_nHeight > 0)
+      aElement.setAttribute (CHTMLAttributes.HEIGHT, m_nHeight);
+    if (StringHelper.hasText (m_sList))
+      aElement.setAttribute (CHTMLAttributes.LIST, m_sList);
+    if (StringHelper.hasText (m_sMaxValue))
+      aElement.setAttribute (CHTMLAttributes.MAX, m_sMaxValue);
     if (m_nMaxLength > 0)
       aElement.setAttribute (CHTMLAttributes.MAXLENGTH, m_nMaxLength);
+    if (StringHelper.hasText (m_sMinValue))
+      aElement.setAttribute (CHTMLAttributes.MIN, m_sMinValue);
+    if (m_nMinLength > 0)
+      aElement.setAttribute (CHTMLAttributes.MINLENGTH, m_nMinLength);
+    if (m_bMultiple)
+      aElement.setAttribute (CHTMLAttributes.MULTIPLE, CHTMLAttributeValues.MULTIPLE);
+    if (StringHelper.hasText (m_sPattern))
+      aElement.setAttribute (CHTMLAttributes.PATTERN, m_sPattern);
     if (StringHelper.hasText (m_sPlaceholder))
       aElement.setAttribute (CHTMLAttributes.PLACEHOLDER, m_sPlaceholder);
     if (m_nSize > 0)
       aElement.setAttribute (CHTMLAttributes.SIZE, m_nSize);
     if (m_sValue != null)
       aElement.setAttribute (CHTMLAttributes.VALUE, m_sValue);
+    if (m_nWidth > 0)
+      aElement.setAttribute (CHTMLAttributes.WIDTH, m_nWidth);
   }
 
   @Override
@@ -526,10 +654,18 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
                             .appendIfNotNull ("formmethod", m_eFormMethod)
                             .append ("formnovalidate", m_bFormNoValidate)
                             .appendIfNotNull ("formtarget", m_aFormTarget)
+                            .append ("height", m_nHeight)
+                            .appendIfNotNull ("list", m_sList)
+                            .appendIfNotNull ("maxValue", m_sMaxValue)
                             .append ("maxLength", m_nMaxLength)
+                            .appendIfNotNull ("minValue", m_sMinValue)
+                            .append ("minLength", m_nMinLength)
+                            .append ("multiple", m_bMultiple)
+                            .appendIfNotNull ("pattern", m_sPattern)
                             .appendIfNotNull ("placeholder", m_sPlaceholder)
                             .append ("size", m_nSize)
                             .appendIfNotNull ("value", m_sValue)
+                            .append ("width", m_nWidth)
                             .toString ();
   }
 }

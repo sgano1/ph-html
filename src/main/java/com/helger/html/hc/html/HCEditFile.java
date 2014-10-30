@@ -16,14 +16,9 @@
  */
 package com.helger.html.hc.html;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.microdom.IMicroElement;
-import com.helger.html.CHTMLAttributeValues;
-import com.helger.html.CHTMLAttributes;
 import com.helger.html.hc.api.EHCInputType;
-import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCInput;
 
 /**
@@ -33,11 +28,6 @@ import com.helger.html.hc.impl.AbstractHCInput;
  */
 public class HCEditFile extends AbstractHCInput <HCEditFile>
 {
-  /** By default a single file can be selected */
-  public static final boolean DEFAULT_MULTIPLE = false;
-
-  private boolean m_bMultiple = DEFAULT_MULTIPLE;
-
   public HCEditFile ()
   {
     super (EHCInputType.FILE);
@@ -47,25 +37,5 @@ public class HCEditFile extends AbstractHCInput <HCEditFile>
   {
     this ();
     setName (sName);
-  }
-
-  public boolean isMultiple ()
-  {
-    return m_bMultiple;
-  }
-
-  @Nonnull
-  public HCEditFile setMultiple (final boolean bMultiple)
-  {
-    m_bMultiple = bMultiple;
-    return this;
-  }
-
-  @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
-  {
-    super.applyProperties (aElement, aConversionSettings);
-    if (m_bMultiple)
-      aElement.setAttribute (CHTMLAttributes.MULTIPLE, CHTMLAttributeValues.MULTIPLE);
   }
 }

@@ -19,38 +19,43 @@ package com.helger.html.hc.api;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotations.Nonempty;
+import com.helger.html.annotations.SinceHTML5;
 
 /**
  * The type of an {@link com.helger.html.hc.impl.AbstractHCInput} element.
- * 
+ *
  * @author Philip Helger
  */
 public enum EHCInputType implements IHCHasHTMLAttributeValue
 {
+  HIDDEN ("hidden"),
   TEXT ("text"),
+  @SinceHTML5
+  SEARCH ("search"),
+  @SinceHTML5
+  TEL ("tel"),
+  @SinceHTML5
+  URL ("url"),
+  @SinceHTML5
+  EMAIL ("email"),
   PASSWORD ("password"),
+  @SinceHTML5
+  DATE ("date"),
+  @SinceHTML5
+  TIME ("time"),
+  @SinceHTML5
+  NUMBER ("number"),
+  @SinceHTML5
+  RANGE ("range"),
+  @SinceHTML5
+  COLOR ("color"),
   CHECKBOX ("checkbox"),
   RADIO ("radio"),
-  BUTTON ("button"),
-  SUBMIT ("submit"),
-  RESET ("reset"),
   FILE ("file"),
-  HIDDEN ("hidden"),
+  SUBMIT ("submit"),
   IMAGE ("image"),
-  // HTML5 new:
-  DATETIME ("datetime"),
-  DATETIME_LOCAL ("datetime-local"),
-  DATE ("date"),
-  MONTH ("month"),
-  TIME ("time"),
-  WEEK ("week"),
-  NUMBER ("number"),
-  RANGE ("range"),
-  EMAIL ("email"),
-  URL ("url"),
-  SEARCH ("search"),
-  TEL ("tel"),
-  COLOR ("color");
+  RESET ("reset"),
+  BUTTON ("button");
 
   private final String m_sAttrValue;
 

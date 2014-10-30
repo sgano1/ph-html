@@ -101,12 +101,14 @@ public final class CHTMLAttributes
   public static final String HTTP_EQUIV = "http-equiv";
   public static final String ICON = "icon";
   public static final String ID = "id";
+  public static final String INPUTMODE = "inputmode";
   public static final String ISMAP = "ismap";
   public static final String KEYTYPE = "keytype";
   public static final String KIND = "kind";
   public static final String LABEL = "label";
   public static final String LANG = "lang";
   public static final String LANGUAGE = "language";
+  public static final String LIST = "list";
   public static final String LOOP = "loop";
   public static final String LONGDESC = "longdesc";
   public static final String LOW = "low";
@@ -119,6 +121,7 @@ public final class CHTMLAttributes
   public static final String MENU = "menu";
   public static final String METHOD = "method";
   public static final String MIN = "min";
+  public static final String MINLENGTH = "minlength";
   public static final String MULTIPLE = "multiple";
   public static final String MUTED = "muted";
   public static final String NAME = "name";
@@ -131,6 +134,7 @@ public final class CHTMLAttributes
   public static final String OPEN = "open";
   public static final String OPTIMUM = "optimum";
   public static final String PALETTE = "palette";
+  public static final String PATTERN = "pattern";
   public static final String PLACEHOLDER = "placeholder";
   public static final String PLAYCOUNT = "playcount";
   public static final String PLUGINSPAGE = "pluginspage";
