@@ -44,23 +44,28 @@ import com.helger.html.js.builder.IJSStatement;
  * @param <IMPLTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>> extends
-                                                                                  AbstractHCElementWithChildren <IMPLTYPE>
+public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>> extends AbstractHCElementWithChildren <IMPLTYPE>
 {
-  /** Default form submission method is POST */
-  public static final EHCFormMethod DEFAULT_METHOD = EHCFormMethod.POST;
   /** By default no auto complete setting is active */
   public static final ETriState DEFAULT_AUTO_COMPLETE = ETriState.UNDEFINED;
+
+  /** Default form submission method is POST */
+  public static final EHCFormMethod DEFAULT_METHOD = EHCFormMethod.POST;
+
+  /** Default value */
+  public static final boolean DEFAULT_NOVALIDATE = false;
+
   /** By default form are not submitted by pressing Enter key */
   public static final boolean DEFAULT_SUBMIT_PRESSING_ENTER = false;
 
-  private final HC_Action m_aAction = new HC_Action ();
-  private EHCFormMethod m_eMethod = DEFAULT_METHOD;
-  private String m_sName;
   private String m_sAcceptCharset;
-  private HC_Target m_aTarget;
+  private final HC_Action m_aAction = new HC_Action ();
   private ETriState m_eAutoComplete = DEFAULT_AUTO_COMPLETE;
   private IMimeType m_aEncType;
+  private EHCFormMethod m_eMethod = DEFAULT_METHOD;
+  private String m_sName;
+  private boolean m_bNoValidate = DEFAULT_NOVALIDATE;
+  private HC_Target m_aTarget;
 
   // Must be handled externally!
   private boolean m_bSubmitPressingEnter = DEFAULT_SUBMIT_PRESSING_ENTER;
@@ -87,6 +92,19 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
   {
     this ();
     setAction (aAction);
+  }
+
+  @Nullable
+  public final String getAcceptCharset ()
+  {
+    return m_sAcceptCharset;
+  }
+
+  @Nonnull
+  public final IMPLTYPE setAcceptCharset (@Nullable final String sAcceptCharset)
+  {
+    m_sAcceptCharset = sAcceptCharset;
+    return thisAsT ();
   }
 
   @Nullable
@@ -122,58 +140,6 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
     return thisAsT ();
   }
 
-  @Nullable
-  public final EHCFormMethod getMethod ()
-  {
-    return m_eMethod;
-  }
-
-  @Nonnull
-  public final IMPLTYPE setMethod (@Nullable final EHCFormMethod eMethod)
-  {
-    m_eMethod = eMethod;
-    return thisAsT ();
-  }
-
-  @Nullable
-  public final String getName ()
-  {
-    return m_sName;
-  }
-
-  @Nonnull
-  public final IMPLTYPE setName (@Nullable final String sName)
-  {
-    m_sName = sName;
-    return thisAsT ();
-  }
-
-  @Nullable
-  public final HC_Target getTarget ()
-  {
-    return m_aTarget;
-  }
-
-  @Nonnull
-  public final IMPLTYPE setTarget (@Nullable final HC_Target aTarget)
-  {
-    m_aTarget = aTarget;
-    return thisAsT ();
-  }
-
-  @Nullable
-  public final String getAcceptCharset ()
-  {
-    return m_sAcceptCharset;
-  }
-
-  @Nonnull
-  public final IMPLTYPE setAcceptCharset (@Nullable final String sAcceptCharset)
-  {
-    m_sAcceptCharset = sAcceptCharset;
-    return thisAsT ();
-  }
-
   public final boolean isAutoCompleteOn ()
   {
     return m_eAutoComplete.isTrue ();
@@ -199,30 +165,6 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
   public final IMPLTYPE setAutoComplete (@Nonnull final ETriState eAutoComplete)
   {
     m_eAutoComplete = ValueEnforcer.notNull (eAutoComplete, "AutoComplete");
-    return thisAsT ();
-  }
-
-  public final boolean isSubmitPressingEnter ()
-  {
-    return m_bSubmitPressingEnter;
-  }
-
-  public final int getSubmitButtonTabIndex ()
-  {
-    return m_nSubmitButtonTabIndex;
-  }
-
-  @Nonnull
-  public final IMPLTYPE setSubmitPressingEnter (final boolean bSubmitPressingEnter)
-  {
-    return setSubmitPressingEnter (bSubmitPressingEnter, CGlobal.ILLEGAL_UINT);
-  }
-
-  @Nonnull
-  public final IMPLTYPE setSubmitPressingEnter (final boolean bSubmitPressingEnter, final int nSubmitButtonTabIndex)
-  {
-    m_bSubmitPressingEnter = bSubmitPressingEnter;
-    m_nSubmitButtonTabIndex = nSubmitButtonTabIndex;
     return thisAsT ();
   }
 
@@ -273,41 +215,116 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
     return thisAsT ();
   }
 
+  @Nullable
+  public final EHCFormMethod getMethod ()
+  {
+    return m_eMethod;
+  }
+
+  @Nonnull
+  public final IMPLTYPE setMethod (@Nullable final EHCFormMethod eMethod)
+  {
+    m_eMethod = eMethod;
+    return thisAsT ();
+  }
+
+  @Nullable
+  public final String getName ()
+  {
+    return m_sName;
+  }
+
+  @Nonnull
+  public final IMPLTYPE setName (@Nullable final String sName)
+  {
+    m_sName = sName;
+    return thisAsT ();
+  }
+
+  public final boolean isNoValidate ()
+  {
+    return m_bNoValidate;
+  }
+
+  @Nonnull
+  public final IMPLTYPE setNoValidate (final boolean bNoValidate)
+  {
+    m_bNoValidate = bNoValidate;
+    return thisAsT ();
+  }
+
+  @Nullable
+  public final HC_Target getTarget ()
+  {
+    return m_aTarget;
+  }
+
+  @Nonnull
+  public final IMPLTYPE setTarget (@Nullable final HC_Target aTarget)
+  {
+    m_aTarget = aTarget;
+    return thisAsT ();
+  }
+
+  public final boolean isSubmitPressingEnter ()
+  {
+    return m_bSubmitPressingEnter;
+  }
+
+  public final int getSubmitButtonTabIndex ()
+  {
+    return m_nSubmitButtonTabIndex;
+  }
+
+  @Nonnull
+  public final IMPLTYPE setSubmitPressingEnter (final boolean bSubmitPressingEnter)
+  {
+    return setSubmitPressingEnter (bSubmitPressingEnter, CGlobal.ILLEGAL_UINT);
+  }
+
+  @Nonnull
+  public final IMPLTYPE setSubmitPressingEnter (final boolean bSubmitPressingEnter, final int nSubmitButtonTabIndex)
+  {
+    m_bSubmitPressingEnter = bSubmitPressingEnter;
+    m_nSubmitButtonTabIndex = nSubmitButtonTabIndex;
+    return thisAsT ();
+  }
+
   @Override
   protected void applyProperties (@Nonnull final IMicroElement aElement,
                                   final IHCConversionSettingsToNode aConversionSettings)
   {
     super.applyProperties (aElement, aConversionSettings);
 
-    m_aAction.applyProperties (CHTMLAttributes.ACTION, aElement);
-    if (m_eMethod != null)
-      aElement.setAttribute (CHTMLAttributes.METHOD, m_eMethod);
-    if (StringHelper.hasText (m_sName))
-      aElement.setAttribute (CHTMLAttributes.NAME, m_sName);
     if (StringHelper.hasText (m_sAcceptCharset))
       aElement.setAttribute (CHTMLAttributes.ACCEPTCHARSET, m_sAcceptCharset);
-    if (m_aTarget != null)
-      aElement.setAttribute (CHTMLAttributes.TARGET, m_aTarget);
+    m_aAction.applyProperties (CHTMLAttributes.ACTION, aElement);
     if (m_eAutoComplete.isDefined ())
       aElement.setAttribute (CHTMLAttributes.AUTOCOMPLETE, m_eAutoComplete.isTrue () ? CHTMLAttributeValues.ON
                                                                                     : CHTMLAttributeValues.OFF);
     if (m_aEncType != null)
       aElement.setAttribute (CHTMLAttributes.ENCTYPE, m_aEncType.getAsString ());
+    if (m_eMethod != null)
+      aElement.setAttribute (CHTMLAttributes.METHOD, m_eMethod);
+    if (StringHelper.hasText (m_sName))
+      aElement.setAttribute (CHTMLAttributes.NAME, m_sName);
+    if (m_aTarget != null)
+      aElement.setAttribute (CHTMLAttributes.TARGET, m_aTarget);
   }
 
   @Override
   public String toString ()
   {
     return ToStringGenerator.getDerived (super.toString ())
+                            .appendIfNotNull ("acceptCharset", m_sAcceptCharset)
                             .append ("action", m_aAction)
+                            .append ("autoComplete", m_eAutoComplete)
+                            .appendIfNotNull ("encType", m_aEncType)
                             .appendIfNotNull ("method", m_eMethod)
                             .appendIfNotNull ("name", m_sName)
-                            .appendIfNotNull ("acceptCharset", m_sAcceptCharset)
-                            .appendIfNotNull ("linkTarget", m_aTarget)
-                            .append ("autoComplete", m_eAutoComplete)
+                            .appendIfNotNull ("target", m_aTarget)
                             .append ("submitPressingEnter", m_bSubmitPressingEnter)
                             .append ("submitButtonTabIndex", m_nSubmitButtonTabIndex)
-                            .appendIfNotNull ("encType", m_aEncType)
                             .toString ();
   }
 }

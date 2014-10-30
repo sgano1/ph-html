@@ -29,11 +29,21 @@ import com.helger.html.annotations.SinceHTML5;
 
 /**
  * This enumeration contains all known java script events.
- * 
+ *
  * @author boris, philip
  */
 public enum EJSEvent
 {
+  // For all elements
+  ONBLUR ("onblur", EJSEventType.WINDOW, EJSEventType.FORM),
+  ONERROR ("onerror", EJSEventType.WINDOW, EJSEventType.MEDIA),
+  ONFOCUS ("onfocus", EJSEventType.WINDOW, EJSEventType.FORM),
+  ONLOAD ("onload", EJSEventType.WINDOW),
+  @SinceHTML5
+  ONRESIZE ("onresize", EJSEventType.WINDOW),
+  @SinceHTML5
+  ONSCROLL ("onscroll", EJSEventType.MOUSE),
+
   // Window events
   @SinceHTML5
   ONAFTERPRINT ("onafterprint", EJSEventType.WINDOW),
@@ -41,12 +51,8 @@ public enum EJSEvent
   ONBEFOREPRINT ("onbeforeprint", EJSEventType.WINDOW),
   @SinceHTML5
   ONBEFOREUNLOAD ("onbeforeunload", EJSEventType.WINDOW),
-  ONBLUR ("onblur", EJSEventType.WINDOW, EJSEventType.FORM),
-  ONERROR ("onerror", EJSEventType.WINDOW, EJSEventType.MEDIA),
-  ONFOCUS ("onfocus", EJSEventType.WINDOW, EJSEventType.FORM),
   @SinceHTML5
-  ONHASCHANGE ("onhaschange", EJSEventType.WINDOW),
-  ONLOAD ("onload", EJSEventType.WINDOW),
+  ONHASHCHANGE ("onhashchange", EJSEventType.WINDOW),
   @SinceHTML5
   ONMESSAGE ("onmessage", EJSEventType.WINDOW),
   @SinceHTML5
@@ -60,14 +66,12 @@ public enum EJSEvent
   @SinceHTML5
   ONPOPSTATE ("onpopstate", EJSEventType.WINDOW),
   @SinceHTML5
-  ONREDO ("onredo", EJSEventType.WINDOW),
-  @SinceHTML5
-  ONRESIZE ("onresize", EJSEventType.WINDOW),
-  @SinceHTML5
   ONSTORAGE ("onstorage", EJSEventType.WINDOW),
-  @SinceHTML5
-  ONUNDO ("onundo", EJSEventType.WINDOW),
   ONUNLOAD ("onunload", EJSEventType.WINDOW),
+
+  // Document events
+  @SinceHTML5
+  ONREADYSTATECHANGE ("onreadystatechange", EJSEventType.MEDIA),
 
   // Form events
   // also onblur
@@ -117,8 +121,6 @@ public enum EJSEvent
   ONMOUSEUP ("onmouseup", EJSEventType.MOUSE),
   @SinceHTML5
   ONMOUSEWHEEL ("onmousewheel", EJSEventType.MOUSE),
-  @SinceHTML5
-  ONSCROLL ("onscroll", EJSEventType.MOUSE),
 
   // Media events
   ONABORT ("onabort", EJSEventType.MEDIA),
@@ -150,8 +152,6 @@ public enum EJSEvent
   @SinceHTML5
   ONRATECHANGE ("onratechange", EJSEventType.MEDIA),
   @SinceHTML5
-  ONREADYSTATECHANGE ("onreadystatechange", EJSEventType.MEDIA),
-  @SinceHTML5
   ONSEEKEND ("onseekend", EJSEventType.MEDIA),
   @SinceHTML5
   ONSEEKING ("onseeking", EJSEventType.MEDIA),
@@ -172,7 +172,14 @@ public enum EJSEvent
   TOUCHEND ("touchend", EJSEventType.TOUCH),
   GESTURESTART ("gesturestart", EJSEventType.TOUCH),
   GESTUREMOVE ("gesturemove", EJSEventType.TOUCH),
-  GESTUREEND ("gestureend", EJSEventType.TOUCH);
+  GESTUREEND ("gestureend", EJSEventType.TOUCH),
+
+  // rest
+
+  @SinceHTML5
+  ONCANCEL ("oncancel", EJSEventType.FORM),
+  @SinceHTML5
+  ONCUECHANGE ("oncuechange", EJSEventType.FORM), ;
 
   private final String m_sEvent;
   private final Set <EJSEventType> m_aJSEventTypes;

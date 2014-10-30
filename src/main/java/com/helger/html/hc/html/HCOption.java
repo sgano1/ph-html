@@ -42,9 +42,9 @@ public class HCOption extends AbstractHCElementWithInternalChildren <HCOption, H
   public static final boolean DEFAULT_SELECTED = false;
 
   private boolean m_bDisabled = DEFAULT_DISABLED;
+  private String m_sLabel;
   private boolean m_bSelected = DEFAULT_SELECTED;
   private String m_sValue;
-  private String m_sLabel;
 
   // Check if a selection was defined or not
   private boolean m_bSelectionDefined = false;
@@ -63,6 +63,19 @@ public class HCOption extends AbstractHCElementWithInternalChildren <HCOption, H
   public HCOption setDisabled (final boolean bDisabled)
   {
     m_bDisabled = bDisabled;
+    return this;
+  }
+
+  @Nullable
+  public String getLabel ()
+  {
+    return m_sLabel;
+  }
+
+  @Nonnull
+  public HCOption setLabel (final String sLabel)
+  {
+    m_sLabel = sLabel;
     return this;
   }
 
@@ -101,31 +114,18 @@ public class HCOption extends AbstractHCElementWithInternalChildren <HCOption, H
     return this;
   }
 
-  @Nullable
-  public String getLabel ()
-  {
-    return m_sLabel;
-  }
-
-  @Nonnull
-  public HCOption setLabel (final String sLabel)
-  {
-    m_sLabel = sLabel;
-    return this;
-  }
-
   @Override
   protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
     super.applyProperties (aElement, aConversionSettings);
     if (m_bDisabled)
       aElement.setAttribute (CHTMLAttributes.DISABLED, CHTMLAttributeValues.DISABLED);
+    if (m_sLabel != null)
+      aElement.setAttribute (CHTMLAttributes.LABEL, m_sLabel);
     if (m_bSelected)
       aElement.setAttribute (CHTMLAttributes.SELECTED, CHTMLAttributeValues.SELECTED);
     if (m_sValue != null)
       aElement.setAttribute (CHTMLAttributes.VALUE, m_sValue);
-    if (m_sLabel != null)
-      aElement.setAttribute (CHTMLAttributes.LABEL, m_sLabel);
   }
 
   @Override
@@ -133,9 +133,9 @@ public class HCOption extends AbstractHCElementWithInternalChildren <HCOption, H
   {
     return ToStringGenerator.getDerived (super.toString ())
                             .append ("disabled", m_bDisabled)
+                            .appendIfNotNull ("label", m_sLabel)
                             .append ("selected", m_bSelected)
                             .appendIfNotNull ("value", m_sValue)
-                            .appendIfNotNull ("label", m_sLabel)
                             .toString ();
   }
 }

@@ -25,7 +25,7 @@ import com.helger.commons.lang.EnumHelper;
 
 /**
  * Grouping of JS events
- * 
+ *
  * @author Philip Helger
  */
 public enum EJSEventType implements IHasID <String>
