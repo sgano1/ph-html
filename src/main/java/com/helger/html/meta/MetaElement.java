@@ -26,6 +26,7 @@ import java.util.Set;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
+import javax.xml.XMLConstants;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,7 +47,6 @@ import com.helger.commons.microdom.impl.MicroContainer;
 import com.helger.commons.state.EChange;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.commons.xml.CXML;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
@@ -264,7 +264,7 @@ public class MetaElement implements IMetaElement
       if (aContentLocale != null && !LocaleUtils.isSpecialLocale (aContentLocale))
       {
         final String sLang = aContentLocale.toString ();
-        aMeta.setAttribute (CXML.XML_ATTR_LANG, sLang);
+        aMeta.setAttribute (XMLConstants.XML_NS_URI, CHTMLAttributes.LANG, sLang);
         if (bAtLeastHTML5)
         {
           // When the attribute xml:lang in no namespace is specified, the

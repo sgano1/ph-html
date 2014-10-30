@@ -39,7 +39,7 @@ public final class HCBodyTest
     // With prefix
     aBody.setEventHandler (EJSEvent.ONCLICK, JSExpr.invoke ("onClick"));
     aBody.setCustomAttr ("bla", "foo");
-    assertEquals ("<body onload=\"javascript:onLoad();\" onclick=\"javascript:onClick();\" bla=\"foo\" xmlns=\"http://www.w3.org/1999/xhtml\"></body>",
+    assertEquals ("<body xmlns=\"http://www.w3.org/1999/xhtml\" onload=\"javascript:onLoad();\" onclick=\"javascript:onClick();\" bla=\"foo\"></body>",
                   HCSettings.getAsHTMLString (aBody, false));
   }
 }

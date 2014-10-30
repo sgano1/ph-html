@@ -55,22 +55,22 @@ public final class HCHeadTest
 
     assertSame (aHead, aHead.setProfile ("any"));
     assertEquals ("any", aHead.getProfile ());
-    assertEquals ("<head profile=\"any\" xmlns=\"http://www.w3.org/1999/xhtml\"></head>",
+    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\" profile=\"any\"></head>",
                   HCSettings.getAsHTMLString (aHead, false));
 
     assertSame (aHead, aHead.setPageTitle ("Title"));
     assertEquals ("Title", aHead.getPageTitle ());
-    assertEquals ("<head profile=\"any\" xmlns=\"http://www.w3.org/1999/xhtml\"><title>Title</title></head>",
+    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\" profile=\"any\"><title>Title</title></head>",
                   HCSettings.getAsHTMLString (aHead, false));
 
     assertSame (aHead, aHead.setBaseHref ("/"));
     assertEquals ("/", aHead.getBaseHref ());
-    assertEquals ("<head profile=\"any\" xmlns=\"http://www.w3.org/1999/xhtml\"><title>Title</title><base href=\"/\" /></head>",
+    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\" profile=\"any\"><title>Title</title><base href=\"/\" /></head>",
                   HCSettings.getAsHTMLString (aHead, false));
 
     assertSame (aHead, aHead.setBaseTarget (HC_Target.BLANK));
     assertEquals (HC_Target.BLANK, aHead.getBaseTarget ());
-    assertEquals ("<head profile=\"any\" xmlns=\"http://www.w3.org/1999/xhtml\"><title>Title</title><base href=\"/\" target=\"_blank\" /></head>",
+    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\" profile=\"any\"><title>Title</title><base href=\"/\" target=\"_blank\" /></head>",
                   HCSettings.getAsHTMLString (aHead, false));
     assertNotNull (aHead.toString ());
   }

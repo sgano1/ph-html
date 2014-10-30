@@ -36,7 +36,7 @@ import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
 /**
  * Default implementation of the {@link IHCNode} interface.
- * 
+ *
  * @author Philip Helger
  */
 @NotThreadSafe
@@ -72,7 +72,7 @@ public abstract class AbstractHCNode implements IHCNode
 
       if (this instanceof IHCHasChildren)
       {
-        final List <? extends IHCNode> aChildNodes = ((IHCHasChildren) this).getChildren ();
+        final List <? extends IHCNode> aChildNodes = ((IHCHasChildren) this).getAllChildren ();
         if (aChildNodes != null)
           for (final IHCNode aChildNode : aChildNodes)
             aChildNode.applyCustomization (aConversionSettings, aParentNode);
@@ -109,7 +109,7 @@ public abstract class AbstractHCNode implements IHCNode
    * String! Use {@link #onAdded(int, IHCHasChildrenMutable)} instead to
    * register external resources.</li>
    * </ul>
-   * 
+   *
    * @param aConversionSettings
    *        The conversion settings to be used
    */
@@ -137,7 +137,7 @@ public abstract class AbstractHCNode implements IHCNode
   /**
    * Called after the main conversion. Can be used to modify the created micro
    * node somehow. The default implementation just returns the passed node.
-   * 
+   *
    * @param aConversionSettings
    *        The conversion settings to be used. May not be <code>null</code>.
    * @param aCreatedNode

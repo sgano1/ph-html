@@ -161,12 +161,20 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
 
   @Nonnull
   @ReturnsMutableCopy
+  @Deprecated
   public final List <IHCNode> getChildren ()
   {
+    return getAllChildren ();
+  }
+
+  @Nonnull
+  @ReturnsMutableCopy
+  public final List <IHCNode> getAllChildren ()
+  {
     final List <IHCNode> ret = new ArrayList <IHCNode> ();
-    ret.addAll (m_aHead.getChildren ());
-    ret.addAll (m_aBody.getChildren ());
-    ret.addAll (m_aFoot.getChildren ());
+    ret.addAll (m_aHead.getAllChildren ());
+    ret.addAll (m_aBody.getAllChildren ());
+    ret.addAll (m_aFoot.getAllChildren ());
     return ret;
   }
 
@@ -389,7 +397,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
   @ReturnsMutableCopy
   public final List <HCRow> getAllHeaderRows ()
   {
-    return m_aHead.getChildren ();
+    return m_aHead.getAllChildren ();
   }
 
   @Nonnull
@@ -538,7 +546,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
   @ReturnsMutableCopy
   public final List <HCRow> getAllFooterRows ()
   {
-    return m_aFoot.getChildren ();
+    return m_aFoot.getAllChildren ();
   }
 
   @Nonnull
@@ -688,7 +696,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
   @ReturnsMutableCopy
   public final List <HCRow> getAllBodyRows ()
   {
-    return m_aBody.getChildren ();
+    return m_aBody.getAllChildren ();
   }
 
   @Nonnull
@@ -843,7 +851,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
   private static int _getEffectiveCellCount (@Nonnull final HCRow aRow, @Nullable final List <int []> aRowSpans)
   {
     int nCellIndex = 0;
-    for (final IHCCell <?> aCell : aRow.getChildren ())
+    for (final IHCCell <?> aCell : aRow.getAllChildren ())
       nCellIndex += _getApplicableRowspan (nCellIndex, aRowSpans) + aCell.getColspan ();
     // Any rowspan after the last cell?
     nCellIndex += _getApplicableRowspan (nCellIndex, aRowSpans);
@@ -876,7 +884,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
           final int [] aRowRowSpans = new int [aBodyRow.getCellCount ()];
           int nCellIndex = 0;
           boolean bRowHasRowSpans = false;
-          for (final IHCCell <?> aCell : aBodyRow.getChildren ())
+          for (final IHCCell <?> aCell : aBodyRow.getAllChildren ())
           {
             final int nRowSpan = aCell.getRowspan ();
             aRowRowSpans[nCellIndex++] = nRowSpan;

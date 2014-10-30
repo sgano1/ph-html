@@ -219,7 +219,7 @@ public final class XHTMLParser
         {
           // Make a copy of the list, because it is modified in
           // detachFromParent!
-          for (final IMicroNode aChildNode : ContainerHelper.newList (eBody.getChildren ()))
+          for (final IMicroNode aChildNode : ContainerHelper.newList (eBody.getAllChildren ()))
             ret.appendChild (aChildNode.detachFromParent ());
         }
         return ret;

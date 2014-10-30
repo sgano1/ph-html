@@ -246,7 +246,15 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
 
   @Nonnull
   @ReturnsMutableCopy
+  @Deprecated
   public final List <CHILDTYPE> getChildren ()
+  {
+    return getAllChildren ();
+  }
+
+  @Nonnull
+  @ReturnsMutableCopy
+  public final List <CHILDTYPE> getAllChildren ()
   {
     return ContainerHelper.newList (m_aChildren);
   }

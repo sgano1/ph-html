@@ -29,6 +29,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.OverridingMethodsMustInvokeSuper;
 import javax.annotation.concurrent.NotThreadSafe;
+import javax.xml.XMLConstants;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -49,7 +50,6 @@ import com.helger.commons.regex.RegExHelper;
 import com.helger.commons.state.ETriState;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.commons.xml.CXML;
 import com.helger.css.ICSSWriterSettings;
 import com.helger.css.property.CSSPropertyFree;
 import com.helger.css.property.ECSSProperty;
@@ -825,7 +825,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
     if (StringHelper.hasText (m_sLanguage))
     {
       // Both "xml:lang" and "lang"
-      aElement.setAttribute (CXML.XML_ATTR_LANG, m_sLanguage);
+      aElement.setAttribute (XMLConstants.XML_NS_URI, CHTMLAttributes.LANG, m_sLanguage);
       aElement.setAttribute (CHTMLAttributes.LANG, m_sLanguage);
     }
 

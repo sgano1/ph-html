@@ -589,13 +589,13 @@ abstract class AbstractCreateJQueryAPIList
 
       for (final IMicroElement eEntry : aEntries)
       {
-        final String sAPIType = eEntry.getAttribute ("type");
+        final String sAPIType = eEntry.getAttributeValue ("type");
         final EAPIType eAPIType = EAPIType.getFromNameOrThrow (sAPIType);
-        final String sName = eEntry.getAttribute ("name");
-        final String sReturn = eEntry.getAttribute ("return");
-        final String sDeprecated = eEntry.getAttribute ("deprecated");
+        final String sName = eEntry.getAttributeValue ("name");
+        final String sReturn = eEntry.getAttributeValue ("return");
+        final String sDeprecated = eEntry.getAttributeValue ("deprecated");
         final Version aDeprecated = sDeprecated == null ? null : new Version (sDeprecated);
-        final String sRemoved = eEntry.getAttribute ("removed");
+        final String sRemoved = eEntry.getAttributeValue ("removed");
         final Version aRemoved = sRemoved == null ? null : new Version (sRemoved);
 
         final Entry aEntry = new Entry (eAPIType, sName, sReturn, aDeprecated, aRemoved);
@@ -612,16 +612,16 @@ abstract class AbstractCreateJQueryAPIList
 
           for (final IMicroElement eArg : eSignature.getAllChildElements ("argument"))
           {
-            final String sOrigArgName = eArg.getAttribute ("name");
-            final String sArgType = eArg.getAttribute ("type");
-            final boolean bIsOptional = eArg.hasAttribute ("optional") ? StringParser.parseBool (eArg.getAttribute ("optional"))
+            final String sOrigArgName = eArg.getAttributeValue ("name");
+            final String sArgType = eArg.getAttributeValue ("type");
+            final boolean bIsOptional = eArg.hasAttribute ("optional") ? StringParser.parseBool (eArg.getAttributeValue ("optional"))
                                                                       : false;
 
             final List <String> aTypes = new ArrayList <String> ();
             if (StringHelper.hasNoTextAfterTrim (sArgType))
             {
               for (final IMicroElement eArgType : eArg.getAllChildElements ("type"))
-                for (final String sRealArgType : StringHelper.getExploded ('/', eArgType.getAttribute ("name")))
+                for (final String sRealArgType : StringHelper.getExploded ('/', eArgType.getAttributeValue ("name")))
                   aTypes.add (sRealArgType);
             }
             else

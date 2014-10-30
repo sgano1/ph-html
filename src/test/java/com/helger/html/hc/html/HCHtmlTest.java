@@ -41,14 +41,14 @@ public final class HCHtmlTest
     aHtml.getBody ().addChild (new HCStyle ("h1{color:red;}"));
 
     assertEquals ("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">"
-                      + "<html dir=\"ltr\" xmlns=\"http://www.w3.org/1999/xhtml\">"
+                      + "<html xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">"
                       + "<head><style type=\"text/css\">h1{color:red;}</style></head>"
                       + "<body><h1>Test</h1></body>"
                       + "</html>",
                   aHtml.getAsHTMLString (aCS));
     // Do it again and check for node consistency
     assertEquals ("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">"
-                      + "<html dir=\"ltr\" xmlns=\"http://www.w3.org/1999/xhtml\">"
+                      + "<html xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">"
                       + "<head><style type=\"text/css\">h1{color:red;}</style></head>"
                       + "<body><h1>Test</h1></body>"
                       + "</html>",
@@ -66,7 +66,7 @@ public final class HCHtmlTest
     aHtml.getBody ().addChild (new HCScriptOnDocumentReady (new UnparsedJSCodeProvider ("c=d;")));
     final String sCRLF = HCScript.getDefaultLineSeparator ();
     assertEquals ("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">" +
-                      "<html dir=\"ltr\" xmlns=\"http://www.w3.org/1999/xhtml\">" +
+                      "<html xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">" +
                       "<head><meta name=\"foo\" content=\"bar\" /></head>" +
                       "<body><h1>Test</h1>" +
                       "<script type=\"text/javascript\"><!--" +
@@ -79,7 +79,7 @@ public final class HCHtmlTest
                   aHtml.getAsHTMLString (aCS));
     // Do it again and check for node consistency
     assertEquals ("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">" +
-                      "<html dir=\"ltr\" xmlns=\"http://www.w3.org/1999/xhtml\">" +
+                      "<html xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">" +
                       "<head><meta name=\"foo\" content=\"bar\" /></head>" +
                       "<body><h1>Test</h1>" +
                       "<script type=\"text/javascript\"><!--" +

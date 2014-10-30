@@ -447,7 +447,7 @@ public final class HCUtils
   {
     if (aNode.hasChildren ())
     {
-      for (final IHCNode aChild : aNode.getChildren ())
+      for (final IHCNode aChild : aNode.getAllChildren ())
       {
         // call callback
         if (aCallback.call (aNode, aChild).isFinished ())
@@ -559,7 +559,7 @@ public final class HCUtils
       {
         final AbstractHCNodeList <?> aNodeList = (AbstractHCNodeList <?>) aNode;
         if (aNodeList.hasChildren ())
-          for (final IHCNode aChild : aNodeList.getChildren ())
+          for (final IHCNode aChild : aNodeList.getAllChildren ())
             _recursiveAddFlattened (aChild, aRealList);
       }
       else
@@ -660,7 +660,7 @@ public final class HCUtils
       // E.g. HCNodeList
       final IHCHasChildren aParent = (IHCHasChildren) aNode;
       if (aParent.hasChildren ())
-        for (final IHCNode aChild : aParent.getChildren ())
+        for (final IHCNode aChild : aParent.getAllChildren ())
         {
           final IHCControl <?> aNestedCtrl = getFirstHCControl (aChild);
           if (aNestedCtrl != null)
@@ -693,7 +693,7 @@ public final class HCUtils
       // E.g. HCNodeList
       final IHCHasChildren aParent = (IHCHasChildren) aNode;
       if (aParent.hasChildren ())
-        for (final IHCNode aChild : aParent.getChildren ())
+        for (final IHCNode aChild : aParent.getAllChildren ())
           getAllHCControls (aChild, aTargetList);
     }
   }

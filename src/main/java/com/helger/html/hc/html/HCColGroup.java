@@ -120,7 +120,7 @@ public class HCColGroup extends AbstractHCElementWithInternalChildren <HCColGrou
   @ReturnsImmutableObject
   public List <HCCol> getAllColumns ()
   {
-    return getChildren ();
+    return getAllChildren ();
   }
 
   /**

@@ -290,7 +290,7 @@ public final class HCSpecialNodeHandler
       final boolean bDebug = isOutOfBandDebuggingEnabled ();
       int nNodeIndex = 0;
 
-      for (final IHCNode aChild : aParentElement.getChildren ())
+      for (final IHCNode aChild : aParentElement.getAllChildren ())
       {
         if (bDebug)
           s_aLogger.info (StringHelper.getRepeated ("  ", nLevel) +

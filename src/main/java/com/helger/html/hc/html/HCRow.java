@@ -623,7 +623,7 @@ public class HCRow extends AbstractHCElementWithInternalChildren <HCRow, IHCCell
   @ReturnsMutableCopy
   public List <IHCCell <?>> getAllCells ()
   {
-    return getChildren ();
+    return getAllChildren ();
   }
 
   /**
