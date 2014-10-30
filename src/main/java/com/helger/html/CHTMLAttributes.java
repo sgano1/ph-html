@@ -182,6 +182,7 @@ public final class CHTMLAttributes
   public static final String VALUETYPE = "valuetype";
   public static final String VOLUME = "volume";
   public static final String WIDTH = "width";
+  public static final String WRAP = "wrap";
 
   /** The standard prefix for HTML5 custom attributes */
   public static final String HTML5_PREFIX_DATA = "data-";
