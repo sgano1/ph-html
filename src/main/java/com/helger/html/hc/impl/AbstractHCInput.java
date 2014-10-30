@@ -30,6 +30,7 @@ import com.helger.commons.state.ETriState;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.ISimpleURL;
+import com.helger.commons.url.SimpleURL;
 import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
@@ -42,11 +43,8 @@ import com.helger.html.hc.html.HC_Target;
 import com.helger.html.js.IJSCodeProvider;
 import com.helger.html.js.builder.IJSStatement;
 
-// TODO change to http://dev.w3.org/html5/markup/input.text.html#input.text
 @NotThreadSafe
-public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYPE>> extends
-                                                                                    AbstractHCControl <IMPLTYPE> implements
-                                                                                                                IHCInput <IMPLTYPE>
+public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYPE>> extends AbstractHCControl <IMPLTYPE> implements IHCInput <IMPLTYPE>
 {
   /** By default no auto complete setting is active */
   public static final ETriState DEFAULT_AUTO_COMPLETE = ETriState.UNDEFINED;
@@ -62,6 +60,9 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
 
   /** By default multi select is disabled */
   public static final boolean DEFAULT_MULTIPLE = false;
+
+  /** By default required is disabled */
+  public static final boolean DEFAULT_REQUIRED = false;
 
   private EHCInputType m_eType;
   private String m_sAccept;
@@ -89,11 +90,10 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   private String m_sPattern;
   private String m_sPlaceholder;
   // readonly is inherited
-  // TODO required
+  private boolean m_bRequired = DEFAULT_REQUIRED;
   private int m_nSize = CGlobal.ILLEGAL_UINT;
-  // TODO src
-  // TODO step
-  // TODO type
+  private ISimpleURL m_aSrc;
+  private String m_sStep;
   private String m_sValue;
   private int m_nWidth = CGlobal.ILLEGAL_UINT;
 
@@ -489,6 +489,18 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
     return thisAsT ();
   }
 
+  public final boolean isRequired ()
+  {
+    return m_bRequired;
+  }
+
+  @Nonnull
+  public final IMPLTYPE setRequired (final boolean bRequired)
+  {
+    m_bRequired = bRequired;
+    return thisAsT ();
+  }
+
   /**
    * @return The currently set max length.
    */
@@ -510,6 +522,44 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   public final IMPLTYPE setSize (final int nSize)
   {
     m_nSize = nSize;
+    return thisAsT ();
+  }
+
+  @Nullable
+  public final ISimpleURL getSrc ()
+  {
+    return m_aSrc;
+  }
+
+  @Nullable
+  public final String getSrcAsString ()
+  {
+    return m_aSrc == null ? null : m_aSrc.getAsString ();
+  }
+
+  @Nonnull
+  public final IMPLTYPE setSrc (@Nullable final String sSrc)
+  {
+    return setSrc (sSrc == null ? null : new SimpleURL (sSrc));
+  }
+
+  @Nonnull
+  public final IMPLTYPE setSrc (@Nullable final ISimpleURL aSrc)
+  {
+    m_aSrc = aSrc;
+    return thisAsT ();
+  }
+
+  @Nullable
+  public final String getStep ()
+  {
+    return m_sStep;
+  }
+
+  @Nonnull
+  public final IMPLTYPE setStep (@Nullable final String sStep)
+  {
+    m_sStep = sStep;
     return thisAsT ();
   }
 
@@ -629,8 +679,14 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
       aElement.setAttribute (CHTMLAttributes.PATTERN, m_sPattern);
     if (StringHelper.hasText (m_sPlaceholder))
       aElement.setAttribute (CHTMLAttributes.PLACEHOLDER, m_sPlaceholder);
+    if (m_bRequired)
+      aElement.setAttribute (CHTMLAttributes.REQUIRED, CHTMLAttributeValues.REQUIRED);
     if (m_nSize > 0)
       aElement.setAttribute (CHTMLAttributes.SIZE, m_nSize);
+    if (m_aSrc != null)
+      aElement.setAttribute (CHTMLAttributes.SRC, m_aSrc.getAsString ());
+    if (StringHelper.hasText (m_sStep))
+      aElement.setAttribute (CHTMLAttributes.STEP, m_sStep);
     if (m_sValue != null)
       aElement.setAttribute (CHTMLAttributes.VALUE, m_sValue);
     if (m_nWidth > 0)
@@ -663,7 +719,10 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
                             .append ("multiple", m_bMultiple)
                             .appendIfNotNull ("pattern", m_sPattern)
                             .appendIfNotNull ("placeholder", m_sPlaceholder)
+                            .append ("required", m_bRequired)
                             .append ("size", m_nSize)
+                            .appendIfNotNull ("src", m_aSrc)
+                            .appendIfNotNull ("step", m_sStep)
                             .appendIfNotNull ("value", m_sValue)
                             .append ("width", m_nWidth)
                             .toString ();

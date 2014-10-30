@@ -51,6 +51,7 @@ public final class CHTMLAttributeValues
   public static final String MUTED = CHTMLAttributes.MUTED;
   public static final String NOVALIDATE = CHTMLAttributes.NOVALIDATE;
   public static final String OPEN = CHTMLAttributes.OPEN;
+  public static final String REQUIRED = CHTMLAttributes.REQUIRED;
   public static final String REVERSED = CHTMLAttributes.REVERSED;
   public static final String SPELLCHECK = CHTMLAttributes.SPELLCHECK;
 

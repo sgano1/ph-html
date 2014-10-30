@@ -38,6 +38,7 @@ import com.helger.html.hc.impl.AbstractHCElement;
  */
 public class HCImg extends AbstractHCElement <HCImg>
 {
+  // Must be a String to allow for inline images
   private String m_sSrc;
   private ScalableSize m_aExtent;
   private String m_sAlt;
@@ -56,8 +57,7 @@ public class HCImg extends AbstractHCElement <HCImg>
   @Nonnull
   public HCImg setSrc (@Nullable final ISimpleURL aSrc)
   {
-    if (aSrc != null)
-      setSrc (aSrc.getAsString ());
+    setSrc (aSrc == null ? null : aSrc.getAsString ());
     return this;
   }
 

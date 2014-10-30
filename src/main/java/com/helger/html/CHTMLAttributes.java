@@ -144,6 +144,7 @@ public final class CHTMLAttributes
   public static final String QUALITY = "quality";
   public static final String RADIOGROUP = "radiogroup";
   public static final String READONLY = "readonly";
+  public static final String REQUIRED = "required";
   public static final String REL = "rel";
   public static final String REV = "rev";
   public static final String REVERSED = "reversed";
@@ -165,6 +166,7 @@ public final class CHTMLAttributes
   public static final String STANDBY = "standby";
   public static final String START = "start";
   public static final String STARTTIME = "starttime";
+  public static final String STEP = "step";
   public static final String STYLE = "style";
   public static final String SUMMARY = "summary";
   public static final String SWLIVECONNECT = "swliveconnect";
