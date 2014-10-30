@@ -32,33 +32,24 @@ import com.helger.html.hc.IHCControl;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
 @NotThreadSafe
-public abstract class AbstractHCControl <THISTYPE extends AbstractHCControl <THISTYPE>> extends AbstractHCElement <THISTYPE> implements IHCControl <THISTYPE>
+public abstract class AbstractHCControl <IMPLTYPE extends AbstractHCControl <IMPLTYPE>> extends AbstractHCElement <IMPLTYPE> implements IHCControl <IMPLTYPE>
 {
   public static final boolean DEFAULT_DISABLED = false;
-  public static final boolean DEFAULT_READONLY = false;
   public static final boolean DEFAULT_FOCUSED = false;
+  public static final boolean DEFAULT_READONLY = false;
 
-  private String m_sName;
+  /** By default required is disabled */
+  public static final boolean DEFAULT_REQUIRED = false;
+
   private boolean m_bDisabled = DEFAULT_DISABLED;
-  private boolean m_bReadOnly = DEFAULT_READONLY;
   private boolean m_bFocused = DEFAULT_FOCUSED;
+  private String m_sName;
+  private boolean m_bReadOnly = DEFAULT_READONLY;
+  private boolean m_bRequired = DEFAULT_REQUIRED;
 
   public AbstractHCControl (@Nonnull @Nonempty final EHTMLElement aElement)
   {
     super (aElement);
-  }
-
-  @Nullable
-  public final String getName ()
-  {
-    return m_sName;
-  }
-
-  @Nonnull
-  public final THISTYPE setName (@Nullable final String sName)
-  {
-    m_sName = sName;
-    return thisAsT ();
   }
 
   public final boolean isDisabled ()
@@ -67,21 +58,9 @@ public abstract class AbstractHCControl <THISTYPE extends AbstractHCControl <THI
   }
 
   @Nonnull
-  public final THISTYPE setDisabled (final boolean bDisabled)
+  public final IMPLTYPE setDisabled (final boolean bDisabled)
   {
     m_bDisabled = bDisabled;
-    return thisAsT ();
-  }
-
-  public final boolean isReadonly ()
-  {
-    return m_bReadOnly;
-  }
-
-  @Nonnull
-  public final THISTYPE setReadonly (final boolean bReadOnly)
-  {
-    m_bReadOnly = bReadOnly;
     return thisAsT ();
   }
 
@@ -91,9 +70,45 @@ public abstract class AbstractHCControl <THISTYPE extends AbstractHCControl <THI
   }
 
   @Nonnull
-  public final THISTYPE setFocused (final boolean bFocused)
+  public final IMPLTYPE setFocused (final boolean bFocused)
   {
     m_bFocused = bFocused;
+    return thisAsT ();
+  }
+
+  public final String getName ()
+  {
+    return m_sName;
+  }
+
+  @Nonnull
+  public final IMPLTYPE setName (@Nullable final String sName)
+  {
+    m_sName = sName;
+    return thisAsT ();
+  }
+
+  public final boolean isReadonly ()
+  {
+    return m_bReadOnly;
+  }
+
+  @Nonnull
+  public final IMPLTYPE setReadonly (final boolean bReadOnly)
+  {
+    m_bReadOnly = bReadOnly;
+    return thisAsT ();
+  }
+
+  public final boolean isRequired ()
+  {
+    return m_bRequired;
+  }
+
+  @Nonnull
+  public final IMPLTYPE setRequired (final boolean bRequired)
+  {
+    m_bRequired = bRequired;
     return thisAsT ();
   }
 
@@ -102,23 +117,26 @@ public abstract class AbstractHCControl <THISTYPE extends AbstractHCControl <THI
   protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
     super.applyProperties (aElement, aConversionSettings);
-    if (StringHelper.hasText (m_sName))
-      aElement.setAttribute (CHTMLAttributes.NAME, m_sName);
     if (m_bDisabled)
       aElement.setAttribute (CHTMLAttributes.DISABLED, CHTMLAttributeValues.DISABLED);
+    // focus handling is performed in HCDefaultCustomizer!
+    if (StringHelper.hasText (m_sName))
+      aElement.setAttribute (CHTMLAttributes.NAME, m_sName);
     if (m_bReadOnly)
       aElement.setAttribute (CHTMLAttributes.READONLY, CHTMLAttributeValues.READONLY);
-    // focus handling is performed in HCDefaultCustomizer!
+    if (m_bRequired)
+      aElement.setAttribute (CHTMLAttributes.REQUIRED, CHTMLAttributeValues.REQUIRED);
   }
 
   @Override
   public String toString ()
   {
     return ToStringGenerator.getDerived (super.toString ())
-                            .appendIfNotNull ("name", m_sName)
                             .append ("disabled", m_bDisabled)
-                            .append ("readOnly", m_bReadOnly)
                             .append ("focused", m_bFocused)
+                            .appendIfNotNull ("name", m_sName)
+                            .append ("readOnly", m_bReadOnly)
+                            .append ("required", m_bRequired)
                             .toString ();
   }
 }

@@ -57,15 +57,12 @@ public class HCSelect extends AbstractHCControl <HCSelect>
   /** By default multi select is disabled */
   public static final boolean DEFAULT_MULTIPLE = false;
 
-  /** By default required is disabled */
-  public static final boolean DEFAULT_REQUIRED = false;
-
   private boolean m_bAutoFocus = DEFAULT_AUTO_FOCUS;
   // disabled is inherited
   private String m_sForm;
   private boolean m_bMultiple = DEFAULT_MULTIPLE;
   // name is inherited
-  private boolean m_bRequired = DEFAULT_REQUIRED;
+  // required is inherited
   private int m_nSize = CGlobal.ILLEGAL_UINT;
 
   private List <IHCNode> m_aOptions;
@@ -133,18 +130,6 @@ public class HCSelect extends AbstractHCControl <HCSelect>
   {
     m_bMultiple = bMultiple;
     return this;
-  }
-
-  public final boolean isRequired ()
-  {
-    return m_bRequired;
-  }
-
-  @Nonnull
-  public final HCSelect setRequired (final boolean bRequired)
-  {
-    m_bRequired = bRequired;
-    return thisAsT ();
   }
 
   public final int getSize ()
@@ -535,8 +520,6 @@ public class HCSelect extends AbstractHCControl <HCSelect>
       aElement.setAttribute (CHTMLAttributes.FORM, m_sForm);
     if (m_bMultiple)
       aElement.setAttribute (CHTMLAttributes.MULTIPLE, CHTMLAttributeValues.MULTIPLE);
-    if (m_bRequired)
-      aElement.setAttribute (CHTMLAttributes.REQUIRED, CHTMLAttributeValues.REQUIRED);
     if (m_nSize > 1)
       aElement.setAttribute (CHTMLAttributes.SIZE, m_nSize);
 
@@ -561,7 +544,6 @@ public class HCSelect extends AbstractHCControl <HCSelect>
                             .append ("autoFocus", m_bAutoFocus)
                             .appendIfNotNull ("form", m_sForm)
                             .append ("multiple", m_bMultiple)
-                            .append ("required", m_bRequired)
                             .append ("size", m_nSize)
                             .appendIfNotNull ("options", m_aOptions)
                             .appendIfNotNull ("preselectedValues", m_aPreselectedValues)

@@ -127,6 +127,7 @@ import com.helger.html.hc.html5.HCAudio;
 import com.helger.html.hc.html5.HCBDI;
 import com.helger.html.hc.html5.HCCanvas;
 import com.helger.html.hc.html5.HCCommand;
+import com.helger.html.hc.html5.HCDataList;
 import com.helger.html.hc.html5.HCDetails;
 import com.helger.html.hc.html5.HCFigCaption;
 import com.helger.html.hc.html5.HCFigure;
@@ -845,7 +846,7 @@ public final class HCUtils
       case COMMAND:
         return new HCCommand ();
       case DATALIST:
-        return new HCGenericElementWithChildren (eElement);
+        return new HCDataList ();
       case DD:
         return new HCDD ();
       case DEL:

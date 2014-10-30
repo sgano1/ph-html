@@ -61,9 +61,6 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   /** By default multi select is disabled */
   public static final boolean DEFAULT_MULTIPLE = false;
 
-  /** By default required is disabled */
-  public static final boolean DEFAULT_REQUIRED = false;
-
   private EHCInputType m_eType;
   private String m_sAccept;
   private String m_sAlt;
@@ -90,7 +87,7 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   private String m_sPattern;
   private String m_sPlaceholder;
   // readonly is inherited
-  private boolean m_bRequired = DEFAULT_REQUIRED;
+  // required is inherited
   private int m_nSize = CGlobal.ILLEGAL_UINT;
   private ISimpleURL m_aSrc;
   private String m_sStep;
@@ -489,18 +486,6 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
     return thisAsT ();
   }
 
-  public final boolean isRequired ()
-  {
-    return m_bRequired;
-  }
-
-  @Nonnull
-  public final IMPLTYPE setRequired (final boolean bRequired)
-  {
-    m_bRequired = bRequired;
-    return thisAsT ();
-  }
-
   /**
    * @return The currently set max length.
    */
@@ -679,8 +664,6 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
       aElement.setAttribute (CHTMLAttributes.PATTERN, m_sPattern);
     if (StringHelper.hasText (m_sPlaceholder))
       aElement.setAttribute (CHTMLAttributes.PLACEHOLDER, m_sPlaceholder);
-    if (m_bRequired)
-      aElement.setAttribute (CHTMLAttributes.REQUIRED, CHTMLAttributeValues.REQUIRED);
     if (m_nSize > 0)
       aElement.setAttribute (CHTMLAttributes.SIZE, m_nSize);
     if (m_aSrc != null)
@@ -719,7 +702,6 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
                             .append ("multiple", m_bMultiple)
                             .appendIfNotNull ("pattern", m_sPattern)
                             .appendIfNotNull ("placeholder", m_sPlaceholder)
-                            .append ("required", m_bRequired)
                             .append ("size", m_nSize)
                             .appendIfNotNull ("src", m_aSrc)
                             .appendIfNotNull ("step", m_sStep)

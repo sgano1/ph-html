@@ -47,9 +47,6 @@ public class HCTextArea extends AbstractHCControl <HCTextArea>
   /** By default auto focus is disabled */
   public static final boolean DEFAULT_AUTO_FOCUS = false;
 
-  /** By default required is disabled */
-  public static final boolean DEFAULT_REQUIRED = false;
-
   private ETriState m_eAutoComplete = DEFAULT_AUTO_COMPLETE;
   private boolean m_bAutoFocus = DEFAULT_AUTO_FOCUS;
   private int m_nCols = CGlobal.ILLEGAL_UINT;
@@ -61,7 +58,7 @@ public class HCTextArea extends AbstractHCControl <HCTextArea>
   // name is inherited
   private String m_sPlaceholder;
   // readonly is inherited
-  private boolean m_bRequired = DEFAULT_REQUIRED;
+  // required is inherited
   private int m_nRows = CGlobal.ILLEGAL_UINT;
   private String m_sValue;
   private EHCTextAreaWrap m_eWrap;
@@ -223,18 +220,6 @@ public class HCTextArea extends AbstractHCControl <HCTextArea>
     return thisAsT ();
   }
 
-  public final boolean isRequired ()
-  {
-    return m_bRequired;
-  }
-
-  @Nonnull
-  public final HCTextArea setRequired (final boolean bRequired)
-  {
-    m_bRequired = bRequired;
-    return thisAsT ();
-  }
-
   public final int getRows ()
   {
     return m_nRows;
@@ -302,8 +287,6 @@ public class HCTextArea extends AbstractHCControl <HCTextArea>
       aElement.setAttribute (CHTMLAttributes.MINLENGTH, m_nMinLength);
     if (StringHelper.hasText (m_sPlaceholder))
       aElement.setAttribute (CHTMLAttributes.PLACEHOLDER, m_sPlaceholder);
-    if (m_bRequired)
-      aElement.setAttribute (CHTMLAttributes.REQUIRED, CHTMLAttributeValues.REQUIRED);
     if (m_nRows > 0)
       aElement.setAttribute (CHTMLAttributes.ROWS, m_nRows);
     if (m_eWrap != null)
@@ -326,7 +309,6 @@ public class HCTextArea extends AbstractHCControl <HCTextArea>
                             .append ("maxLength", m_nMaxLength)
                             .append ("minLength", m_nMinLength)
                             .appendIfNotNull ("placeholder", m_sPlaceholder)
-                            .append ("required", m_bRequired)
                             .append ("rows", m_nRows)
                             .appendIfNotNull ("value", m_sValue)
                             .appendIfNotNull ("wrap", m_eWrap)
