@@ -48,7 +48,6 @@ import com.helger.html.request.IHCRequestField;
  *
  * @author Philip Helger
  */
-// TODO change hierarchy to http://dev.w3.org/html5/markup/select.html#select
 public class HCSelect extends AbstractHCControl <HCSelect>
 {
   /** By default auto focus is disabled */
