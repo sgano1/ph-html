@@ -28,11 +28,11 @@ import javax.annotation.Nullable;
 import com.helger.commons.CGlobal;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.OverrideOnDemand;
-import com.helger.commons.annotations.ReturnsImmutableObject;
 import com.helger.commons.annotations.ReturnsMutableCopy;
 import com.helger.commons.collections.ContainerHelper;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.microdom.IMicroElement;
+import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
@@ -51,11 +51,23 @@ import com.helger.html.request.IHCRequestField;
 // TODO change hierarchy to http://dev.w3.org/html5/markup/select.html#select
 public class HCSelect extends AbstractHCControl <HCSelect>
 {
+  /** By default auto focus is disabled */
+  public static final boolean DEFAULT_AUTO_FOCUS = false;
+
   /** By default multi select is disabled */
   public static final boolean DEFAULT_MULTIPLE = false;
 
+  /** By default required is disabled */
+  public static final boolean DEFAULT_REQUIRED = false;
+
+  private boolean m_bAutoFocus = DEFAULT_AUTO_FOCUS;
+  // disabled is inherited
+  private String m_sForm;
   private boolean m_bMultiple = DEFAULT_MULTIPLE;
+  // name is inherited
+  private boolean m_bRequired = DEFAULT_REQUIRED;
   private int m_nSize = CGlobal.ILLEGAL_UINT;
+
   private List <IHCNode> m_aOptions;
   private Set <String> m_aPreselectedValues;
 
@@ -86,6 +98,31 @@ public class HCSelect extends AbstractHCControl <HCSelect>
     this (aRF.getFieldName (), aRF.getRequestValues ());
   }
 
+  public final boolean isAutoFocus ()
+  {
+    return m_bAutoFocus;
+  }
+
+  @Nonnull
+  public final HCSelect setAutoFocus (final boolean bAutoFocus)
+  {
+    m_bAutoFocus = bAutoFocus;
+    return thisAsT ();
+  }
+
+  @Nullable
+  public final String getForm ()
+  {
+    return m_sForm;
+  }
+
+  @Nonnull
+  public final HCSelect setForm (@Nullable final String sForm)
+  {
+    m_sForm = sForm;
+    return thisAsT ();
+  }
+
   public final boolean isMultiple ()
   {
     return m_bMultiple;
@@ -96,6 +133,18 @@ public class HCSelect extends AbstractHCControl <HCSelect>
   {
     m_bMultiple = bMultiple;
     return this;
+  }
+
+  public final boolean isRequired ()
+  {
+    return m_bRequired;
+  }
+
+  @Nonnull
+  public final HCSelect setRequired (final boolean bRequired)
+  {
+    m_bRequired = bRequired;
+    return thisAsT ();
   }
 
   public final int getSize ()
@@ -111,10 +160,18 @@ public class HCSelect extends AbstractHCControl <HCSelect>
   }
 
   @Nonnull
-  @ReturnsImmutableObject
+  @ReturnsMutableCopy
+  @Deprecated
   public Set <String> getPreselectedValues ()
   {
-    return ContainerHelper.makeUnmodifiableNotNull (m_aPreselectedValues);
+    return getAllPreselectedValues ();
+  }
+
+  @Nonnull
+  @ReturnsMutableCopy
+  public Set <String> getAllPreselectedValues ()
+  {
+    return ContainerHelper.newSet (m_aPreselectedValues);
   }
 
   public boolean isPreselectedValue (@Nullable final String sValue)
@@ -472,8 +529,14 @@ public class HCSelect extends AbstractHCControl <HCSelect>
   protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
     super.applyProperties (aElement, aConversionSettings);
+    if (m_bAutoFocus)
+      aElement.setAttribute (CHTMLAttributes.AUTOFOCUS, CHTMLAttributeValues.AUTOFOCUS);
+    if (StringHelper.hasText (m_sForm))
+      aElement.setAttribute (CHTMLAttributes.FORM, m_sForm);
     if (m_bMultiple)
       aElement.setAttribute (CHTMLAttributes.MULTIPLE, CHTMLAttributeValues.MULTIPLE);
+    if (m_bRequired)
+      aElement.setAttribute (CHTMLAttributes.REQUIRED, CHTMLAttributeValues.REQUIRED);
     if (m_nSize > 1)
       aElement.setAttribute (CHTMLAttributes.SIZE, m_nSize);
 
@@ -495,7 +558,10 @@ public class HCSelect extends AbstractHCControl <HCSelect>
   public String toString ()
   {
     return ToStringGenerator.getDerived (super.toString ())
+                            .append ("autoFocus", m_bAutoFocus)
+                            .appendIfNotNull ("form", m_sForm)
                             .append ("multiple", m_bMultiple)
+                            .append ("required", m_bRequired)
                             .append ("size", m_nSize)
                             .appendIfNotNull ("options", m_aOptions)
                             .appendIfNotNull ("preselectedValues", m_aPreselectedValues)
