@@ -16,26 +16,34 @@
  */
 package com.helger.html;
 
-import javax.annotation.concurrent.Immutable;
-
-import com.helger.commons.annotations.PresentForCodeCoverage;
+import javax.annotation.Nonnegative;
 
 /**
- * See http://dev.w3.org/html5/markup/common-models.html#common-models
- * 
+ * Source:
+ * http://www.w3.org/TR/2014/REC-html5-20141028/dom.html#kinds-of-content
+ *
  * @author Philip Helger
  */
-@Immutable
-public final class CHTMLContentModel
+public enum EHTMLContentKind
 {
-  public static final int VALUE_METADATA = CHTMLContentKind.VALUE_METADATA;
-  public static final int VALUE_FLOW = CHTMLContentKind.VALUE_FLOW;
-  public static final int VALUE_PHRASING = CHTMLContentKind.VALUE_PHRASING;
+  METADATA (0x01),
+  FLOW (0x02),
+  SECTIONING (0x04),
+  HEADING (0x08),
+  PHRASING (0x10),
+  EMBEDDED (0x20),
+  INTERACTIVE (0x40);
 
-  @SuppressWarnings ("unused")
-  @PresentForCodeCoverage
-  private static final CHTMLContentModel s_aInstance = new CHTMLContentModel ();
+  private final int m_nValue;
 
-  private CHTMLContentModel ()
-  {}
+  private EHTMLContentKind (@Nonnegative final int nValue)
+  {
+    m_nValue = nValue;
+  }
+
+  @Nonnegative
+  public int getValue ()
+  {
+    return m_nValue;
+  }
 }

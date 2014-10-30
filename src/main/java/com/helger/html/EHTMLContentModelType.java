@@ -19,21 +19,23 @@ package com.helger.html;
 /**
  * Contains the potential element meta types.<br>
  * See http://dev.w3.org/html5/markup/common-models.html#common-models
- * 
+ *
  * @author Philip Helger
  */
 public enum EHTMLContentModelType
 {
-  FLOW (CHTMLContentModel.VALUE_FLOW | CHTMLContentModel.VALUE_PHRASING),
-  FLOW_METADATA (CHTMLContentModel.VALUE_METADATA | CHTMLContentModel.VALUE_FLOW | CHTMLContentModel.VALUE_PHRASING),
-  PHRASING_METADATA (CHTMLContentModel.VALUE_METADATA | CHTMLContentModel.VALUE_PHRASING),
-  METADATA (CHTMLContentModel.VALUE_METADATA),
-  PHRASING (CHTMLContentModel.VALUE_PHRASING),
+  FLOW (EHTMLContentKind.FLOW.getValue () | EHTMLContentKind.PHRASING.getValue ()),
+  FLOW_METADATA (EHTMLContentKind.METADATA.getValue () |
+                 EHTMLContentKind.FLOW.getValue () |
+                 EHTMLContentKind.PHRASING.getValue ()),
+  PHRASING_METADATA (EHTMLContentKind.METADATA.getValue () | EHTMLContentKind.PHRASING.getValue ()),
+  METADATA (EHTMLContentKind.METADATA.getValue ()),
+  PHRASING (EHTMLContentKind.PHRASING.getValue ()),
   EMPTY (0),
   CHILD (0),
   SPECIAL (0),
   UNDEFINED (0),
-  LEGACY_PHRASING (CHTMLContentModel.VALUE_PHRASING);
+  LEGACY_PHRASING (EHTMLContentKind.PHRASING.getValue ());
 
   private final int m_nValue;
 
@@ -44,16 +46,16 @@ public enum EHTMLContentModelType
 
   public boolean isFlowElement ()
   {
-    return (m_nValue & CHTMLContentModel.VALUE_FLOW) > 0;
+    return (m_nValue & EHTMLContentKind.FLOW.getValue ()) > 0;
   }
 
   public boolean isMetadataElement ()
   {
-    return (m_nValue & CHTMLContentModel.VALUE_METADATA) > 0;
+    return (m_nValue & EHTMLContentKind.METADATA.getValue ()) > 0;
   }
 
   public boolean isPhrasingElement ()
   {
-    return (m_nValue & CHTMLContentModel.VALUE_PHRASING) > 0;
+    return (m_nValue & EHTMLContentKind.PHRASING.getValue ()) > 0;
   }
 }
