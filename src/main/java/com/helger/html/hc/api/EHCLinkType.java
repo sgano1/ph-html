@@ -24,7 +24,7 @@ import com.helger.commons.annotations.Nonempty;
  * The possible values of the <code>rel</code> attribute of a
  * {@link com.helger.html.hc.html.HCLink} element.<br>
  * Source: http://de.selfhtml.org/html/kopfdaten/beziehungen.htm
- * 
+ *
  * @author Philip Helger
  */
 public enum EHCLinkType implements IHCLinkType
@@ -53,6 +53,11 @@ public enum EHCLinkType implements IHCLinkType
   ALTERNATE_STYLESHEET ("alternate stylesheet", true),
   SHORTCUT_ICON ("shortcut icon"),
   ICON ("icon"),
+  LICENSE ("license"),
+  NOFOLLOW ("nofollow"),
+  NOREFERRER ("noreferrer"),
+  PREFETCH ("prefetch"),
+  TAG ("tag"),
   // Apple iOS
   // (http://developer.apple.com/library/IOs/#documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
   APPLE_TOUCH_ICON ("apple-touch-icon"),

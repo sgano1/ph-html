@@ -40,6 +40,8 @@ public final class CHTMLAttributeValues
   public static final String STAR = "*";
   public static final String OFF = "off";
   public static final String ON = "on";
+  public static final String YES = "yes";
+  public static final String NO = "no";
 
   // HTML5
   public static final String ASYNC = CHTMLAttributes.ASYNC;

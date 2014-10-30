@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.ReturnsMutableCopy;
+import com.helger.commons.state.ETriState;
 import com.helger.html.EHTMLElement;
 import com.helger.html.EHTMLRole;
 import com.helger.html.hc.api.EHCTextDirection;
@@ -268,6 +269,18 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends IHC
    */
   @Nonnull
   THISTYPE setDropZone (@Nullable EHCDropZone eDropZone);
+
+  boolean isTranslateOn ();
+
+  boolean isTranslateOff ();
+
+  boolean isTranslateUndefined ();
+
+  @Nonnull
+  THISTYPE setTranslate (boolean bTranslate);
+
+  @Nonnull
+  THISTYPE setTranslate (@Nonnull ETriState eTranslate);
 
   /**
    * @return The current state of content editable

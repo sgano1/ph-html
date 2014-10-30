@@ -173,6 +173,7 @@ public final class CHTMLAttributes
   public static final String TABINDEX = "tabindex";
   public static final String TARGET = "target";
   public static final String TITLE = "title";
+  public static final String TRANSLATE = "translate";
   public static final String TYPE = "type";
   public static final String UNITS = "units";
   public static final String USEMAP = "usemap";
