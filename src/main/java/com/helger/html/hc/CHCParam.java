@@ -21,7 +21,7 @@ import javax.annotation.concurrent.Immutable;
 // ESCA-JAVA0116:
 /**
  * Contains default request parameters for typical use cases.
- * 
+ *
  * @author Philip Helger
  */
 @Immutable
@@ -70,15 +70,19 @@ public final class CHCParam
   public static final String ACTION_ACCEPT = "accept";
   public static final String ACTION_REJECT = "reject";
   // Misc
+  public static final String ACTION_CANCEL = "cancel";
   public static final String ACTION_CREATE = "create";
   public static final String ACTION_EDIT = "edit";
   public static final String ACTION_DELETE = "delete";
+  public static final String ACTION_DELETE_ALL = "delete-all";
   public static final String ACTION_RESTORE = "restore";
   public static final String ACTION_PERFORM = "perform";
   public static final String ACTION_RENAME = "rename";
   public static final String ACTION_SAVE = "save";
   public static final String ACTION_SETDEFAULT = "setdef";
   public static final String ACTION_VIEW = "view";
+  public static final String ACTION_UNDELETE = "undelete";
+  public static final String ACTION_UNDELETE_ALL = "undelete-all";
 
   // for yes/no queries
   public static final String STATE_CONFIRMED = "confirmed";
