@@ -138,49 +138,49 @@ public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>
   @Nonnull
   public final THISTYPE addItem (@Nullable final String sChild)
   {
-    addItem ().addChild (sChild);
+    addAndReturnItem (sChild);
     return thisAsT ();
   }
 
   @Nonnull
   public final THISTYPE addItem (@Nullable final String... aChildren)
   {
-    addItem ().addChildren (aChildren);
+    addAndReturnItem (aChildren);
     return thisAsT ();
   }
 
   @Nonnull
   public final THISTYPE addItem (@Nullable final IHCNodeBuilder aChild)
   {
-    addItem ().addChild (aChild);
+    addAndReturnItem (aChild);
     return thisAsT ();
   }
 
   @Nonnull
   public final THISTYPE addItem (@Nullable final IHCNodeBuilder... aChildren)
   {
-    addItem ().addChildren (aChildren);
+    addAndReturnItem (aChildren);
     return thisAsT ();
   }
 
   @Nonnull
   public final THISTYPE addItem (@Nullable final IHCNode aChild)
   {
-    addItem ().addChild (aChild);
+    addAndReturnItem (aChild);
     return thisAsT ();
   }
 
   @Nonnull
   public final THISTYPE addItem (@Nullable final IHCNode... aChildren)
   {
-    addItem ().addChildren (aChildren);
+    addAndReturnItem (aChildren);
     return thisAsT ();
   }
 
   @Nonnull
   public final THISTYPE addItem (@Nullable final Iterable <? extends IHCNode> aChildren)
   {
-    addItem ().addChildren (aChildren);
+    addAndReturnItem (aChildren);
     return thisAsT ();
   }
 
