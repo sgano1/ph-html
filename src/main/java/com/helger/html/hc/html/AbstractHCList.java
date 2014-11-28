@@ -27,6 +27,8 @@ import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeBuilder;
 import com.helger.html.hc.impl.AbstractHCElementWithInternalChildren;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+
 /**
  * Abstract base class for UL and OL elements.
  *
@@ -136,6 +138,7 @@ public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>
   }
 
   @Nonnull
+  @SuppressFBWarnings ("RV_RETURN_VALUE_IGNORED")
   public final THISTYPE addItem (@Nullable final String sChild)
   {
     addAndReturnItem (sChild);
@@ -143,6 +146,7 @@ public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>
   }
 
   @Nonnull
+  @SuppressFBWarnings ("RV_RETURN_VALUE_IGNORED")
   public final THISTYPE addItem (@Nullable final String... aChildren)
   {
     addAndReturnItem (aChildren);
@@ -150,6 +154,7 @@ public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>
   }
 
   @Nonnull
+  @SuppressFBWarnings ("RV_RETURN_VALUE_IGNORED")
   public final THISTYPE addItem (@Nullable final IHCNodeBuilder aChild)
   {
     addAndReturnItem (aChild);
@@ -157,6 +162,7 @@ public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>
   }
 
   @Nonnull
+  @SuppressFBWarnings ("RV_RETURN_VALUE_IGNORED")
   public final THISTYPE addItem (@Nullable final IHCNodeBuilder... aChildren)
   {
     addAndReturnItem (aChildren);
@@ -164,6 +170,7 @@ public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>
   }
 
   @Nonnull
+  @SuppressFBWarnings ("RV_RETURN_VALUE_IGNORED")
   public final THISTYPE addItem (@Nullable final IHCNode aChild)
   {
     addAndReturnItem (aChild);
@@ -171,6 +178,7 @@ public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>
   }
 
   @Nonnull
+  @SuppressFBWarnings ("RV_RETURN_VALUE_IGNORED")
   public final THISTYPE addItem (@Nullable final IHCNode... aChildren)
   {
     addAndReturnItem (aChildren);
@@ -178,6 +186,7 @@ public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>
   }
 
   @Nonnull
+  @SuppressFBWarnings ("RV_RETURN_VALUE_IGNORED")
   public final THISTYPE addItem (@Nullable final Iterable <? extends IHCNode> aChildren)
   {
     addAndReturnItem (aChildren);
