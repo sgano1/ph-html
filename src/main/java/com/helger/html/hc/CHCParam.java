@@ -71,6 +71,7 @@ public final class CHCParam
   public static final String ACTION_REJECT = "reject";
   // Misc
   public static final String ACTION_CANCEL = "cancel";
+  public static final String ACTION_COPY = "copy";
   public static final String ACTION_CREATE = "create";
   public static final String ACTION_EDIT = "edit";
   public static final String ACTION_DELETE = "delete";
