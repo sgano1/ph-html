@@ -1,7 +1,6 @@
 #ph-html
 
-Java library to dynamically create HTML and JavaScript content using an XML tree.
-
+Java library to dynamically create HTML and JavaScript content using an XML tree. Base interface is IHCNode and start class for creation is HCHtml.
 
 #Maven usage
 Add the following to your pom.xml to use this artifact:
@@ -9,7 +8,7 @@ Add the following to your pom.xml to use this artifact:
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-html</artifactId>
-  <version>4.5.0</version>
+  <version>4.5.1</version>
 </dependency>
 ```
 
