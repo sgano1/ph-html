@@ -19,6 +19,7 @@ package com.helger.html.hc.html;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.mime.CMimeType;
 import com.helger.commons.mime.IMimeType;
@@ -28,6 +29,7 @@ import com.helger.commons.url.ISimpleURL;
 import com.helger.commons.url.SimpleURL;
 import com.helger.css.media.CSSMediaList;
 import com.helger.css.media.ECSSMedium;
+import com.helger.css.media.ICSSMediaList;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.annotations.OutOfBandNode;
@@ -195,6 +197,39 @@ public class HCLink extends AbstractHCElement <HCLink> implements IHCCSSNode
     if (m_aMediaList == null)
       m_aMediaList = new CSSMediaList ();
     m_aMediaList.addMedium (eMedium);
+    return this;
+  }
+
+  @Nonnull
+  public HCLink addMedia (@Nonnull final ICSSMediaList aMediaList)
+  {
+    ValueEnforcer.notNull (aMediaList, "MediaList");
+    if (m_aMediaList == null)
+      m_aMediaList = new CSSMediaList ();
+    for (final ECSSMedium eMedium : aMediaList.getAllMedia ())
+      m_aMediaList.addMedium (eMedium);
+    return this;
+  }
+
+  @Nonnull
+  public HCLink addMedia (@Nonnull final Iterable <ECSSMedium> aMediaList)
+  {
+    ValueEnforcer.notNull (aMediaList, "MediaList");
+    if (m_aMediaList == null)
+      m_aMediaList = new CSSMediaList ();
+    for (final ECSSMedium eMedium : aMediaList)
+      m_aMediaList.addMedium (eMedium);
+    return this;
+  }
+
+  @Nonnull
+  public HCLink addMedia (@Nonnull final ECSSMedium... aMediaList)
+  {
+    ValueEnforcer.notNull (aMediaList, "MediaList");
+    if (m_aMediaList == null)
+      m_aMediaList = new CSSMediaList ();
+    for (final ECSSMedium eMedium : aMediaList)
+      m_aMediaList.addMedium (eMedium);
     return this;
   }
 
