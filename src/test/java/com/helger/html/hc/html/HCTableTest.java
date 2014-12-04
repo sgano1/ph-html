@@ -23,13 +23,10 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestRule;
 
-import com.helger.commons.GlobalDebug;
 import com.helger.commons.mock.DebugModeTestRule;
 import com.helger.html.hc.conversion.HCSettings;
 
@@ -42,20 +39,6 @@ public final class HCTableTest
 {
   @Rule
   public final TestRule m_aRule = new DebugModeTestRule ();
-  private static boolean s_bDebug;
-
-  @BeforeClass
-  public static void before ()
-  {
-    s_bDebug = GlobalDebug.isDebugMode ();
-    GlobalDebug.setDebugModeDirect (true);
-  }
-
-  @AfterClass
-  public static void after ()
-  {
-    GlobalDebug.setDebugModeDirect (s_bDebug);
-  }
 
   @Test
   public void testConsistencySimple ()
