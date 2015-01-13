@@ -28,6 +28,11 @@ import com.helger.html.js.CJS;
 import com.helger.html.js.IJSCodeProvider;
 import com.helger.html.js.builder.IJSStatement;
 
+/**
+ * Represents the action to be used with button and form.
+ *
+ * @author Philip Helger
+ */
 @NotThreadSafe
 public final class HC_Action
 {
