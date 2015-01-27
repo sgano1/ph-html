@@ -128,6 +128,12 @@ public final class JSExpr
   }
 
   @Nonnull
+  public static JSInvocation invoke (@Nonnull final JSVar aVar)
+  {
+    return new JSInvocation ((IJSExpression) null, aVar.name ());
+  }
+
+  @Nonnull
   public static JSInvocation invoke (@Nonnull @Nonempty final String sMethod)
   {
     return new JSInvocation ((IJSExpression) null, sMethod);
@@ -319,7 +325,7 @@ public final class JSExpr
    * <p>
    * Be warned that there is a danger in using this method, as it obfuscates the
    * object model.
-   * 
+   *
    * @param sSource
    *        direct JS code
    * @return Direct expression
