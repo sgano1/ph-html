@@ -51,7 +51,24 @@ public final class JSMarshaller
 {
   private static final Logger s_aLogger = LoggerFactory.getLogger (JSMarshaller.class);
   private static final char [] CHARS_TO_MASK = new char [] { '"', '\'', '\\', '/', '\t', '\r', '\n', '\f' };
+  private static final char [] CHARS_TO_MASK_REGEX = new char [] { '\\',
+                                                                  '^',
+                                                                  '$',
+                                                                  '*',
+                                                                  '+',
+                                                                  '?',
+                                                                  '|',
+                                                                  '.',
+                                                                  '-',
+                                                                  '[',
+                                                                  ']',
+                                                                  '(',
+                                                                  ')',
+                                                                  '{',
+                                                                  '}' };
   private static final char MASK_CHAR = '\\';
+  private static final char MASK_CHAR_REGEX = '\\';
+
   /**
    * All reserved keywords of JS. see <a href=
    * "https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Reserved_Words"
@@ -160,6 +177,41 @@ public final class JSMarshaller
       }
       cPrevChar = cCurrent;
     }
+
+    return new String (ret, 0, nIndex);
+  }
+
+  /**
+   * Turn special regular expression characters into escaped characters
+   * conforming to JavaScript.<br>
+   * Reference: <a href=
+   * "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions"
+   * >MDN Regular Expressions</a>
+   *
+   * @param sInput
+   *        the input string
+   * @return the escaped string
+   */
+  @Nullable
+  public static String javaScriptEscapeForRegEx (@Nullable final String sInput)
+  {
+    if (StringHelper.hasNoText (sInput))
+      return sInput;
+
+    final char [] aInput = sInput.toCharArray ();
+    if (!StringHelper.containsAny (aInput, CHARS_TO_MASK_REGEX))
+      return sInput;
+
+    final char [] ret = new char [aInput.length * 2];
+    int nIndex = 0;
+    for (final char cCurrent : aInput)
+      if (ArrayHelper.contains (CHARS_TO_MASK_REGEX, cCurrent))
+      {
+        ret[nIndex++] = MASK_CHAR_REGEX;
+        ret[nIndex++] = cCurrent;
+      }
+      else
+        ret[nIndex++] = cCurrent;
 
     return new String (ret, 0, nIndex);
   }

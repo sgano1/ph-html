@@ -19,6 +19,7 @@ package com.helger.html.js.marshal;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
@@ -400,5 +401,18 @@ public final class JSMarshallerTest
     assertFalse (JSMarshaller.isJSIdentifier ("abc.def"));
     assertFalse (JSMarshaller.isJSIdentifier (".def"));
     assertFalse (JSMarshaller.isJSIdentifier ("abc."));
+  }
+
+  @Test
+  public void testJavaScriptEscapeForRegEx ()
+  {
+    assertNull (JSMarshaller.javaScriptEscapeForRegEx (null));
+    assertEquals ("", JSMarshaller.javaScriptEscapeForRegEx (""));
+    assertEquals ("abc", JSMarshaller.javaScriptEscapeForRegEx ("abc"));
+    assertEquals ("\\.", JSMarshaller.javaScriptEscapeForRegEx ("."));
+    assertEquals ("\\.\\.", JSMarshaller.javaScriptEscapeForRegEx (".."));
+    assertEquals ("\\[\\+5\\]", JSMarshaller.javaScriptEscapeForRegEx ("[+5]"));
+    assertEquals ("All of these should be escaped: \\\\ \\^ \\$ \\* \\+ \\? \\. \\( \\) \\| \\{ \\} \\[ \\]",
+                  JSMarshaller.javaScriptEscapeForRegEx ("All of these should be escaped: \\ ^ $ * + ? . ( ) | { } [ ]"));
   }
 }
