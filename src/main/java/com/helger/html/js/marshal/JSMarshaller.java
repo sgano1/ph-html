@@ -202,6 +202,7 @@ public final class JSMarshaller
     if (!StringHelper.containsAny (aInput, CHARS_TO_MASK_REGEX))
       return sInput;
 
+    // At last each character has one masking character
     final char [] ret = new char [aInput.length * 2];
     int nIndex = 0;
     for (final char cCurrent : aInput)
