@@ -125,4 +125,13 @@ public class HCEntityNode extends AbstractHCNode
   {
     return new HCEntityNode (EHTMLEntity.shy, "");
   }
+
+  /**
+   * @return per mille sign
+   */
+  @Nonnull
+  public static HCEntityNode newPerMille ()
+  {
+    return new HCEntityNode (EHTMLEntity.permil, "‰");
+  }
 }
