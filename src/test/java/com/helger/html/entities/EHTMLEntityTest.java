@@ -17,6 +17,7 @@
 package com.helger.html.entities;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
@@ -46,5 +47,18 @@ public final class EHTMLEntityTest
     assertEquals (EHTMLEntity.values ().length, EHTMLEntity.getEntityRefToCharMap ().size ());
     assertEquals (EHTMLEntity.values ().length, EHTMLEntity.getEntityRefToCharStringMap ().size ());
     assertEquals (EHTMLEntity.values ().length, EHTMLEntity.getCharToEntityRefMap ().size ());
+  }
+
+  @Test
+  public void testHTMLEscape ()
+  {
+    assertNull (EHTMLEntity.htmlEscape (null));
+    assertEquals ("", EHTMLEntity.htmlEscape (""));
+    assertEquals ("abc", EHTMLEntity.htmlEscape ("abc"));
+    assertEquals ("abc&auml;&ouml;&uuml;", EHTMLEntity.htmlEscape ("abcäöü"));
+    assertEquals ("&auml;&ouml;&uuml;&auml;&ouml;&uuml;", EHTMLEntity.htmlEscape ("äöüäöü"));
+    assertEquals ("&auml;&ouml;&uuml;&Auml;&Ouml;&Uuml;", EHTMLEntity.htmlEscape ("äöüÄÖÜ"));
+    assertEquals ("p&amp;h", EHTMLEntity.htmlEscape ("p&h"));
+    assertEquals ("&auml;&amp;&ouml;", EHTMLEntity.htmlEscape ("ä&ö"));
   }
 }

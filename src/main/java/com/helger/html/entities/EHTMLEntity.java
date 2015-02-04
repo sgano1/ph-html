@@ -16,7 +16,7 @@
  */
 package com.helger.html.entities;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import javax.annotation.Nonnull;
@@ -31,13 +31,14 @@ import com.helger.commons.string.ToStringGenerator;
 
 /**
  * Contains some predefined entities.
- * 
+ *
  * @author Philip Helger
  */
 @CodingStyleguideUnaware
 public enum EHTMLEntity implements IHTMLEntity
 {
   // Reserved chars:
+  // amp must be first!
   amp ("amp", '&', "ampersand"),
   gt ("gt", '>', "greater-than"),
   lt ("lt", '<', "less-than"),
@@ -309,12 +310,12 @@ public enum EHTMLEntity implements IHTMLEntity
   lang ("lang", '\u2329', "left-pointing angle bracket = bra"),
   rang ("rang", '\u232a', "right-pointing angle bracket = ket");
 
-  private static final Map <String, EHTMLEntity> s_aEntityRefToEntityMap = new HashMap <String, EHTMLEntity> ();
-  private static final Map <Character, EHTMLEntity> s_aCharToEntityMap = new HashMap <Character, EHTMLEntity> ();
-  private static final Map <String, Character> s_aEntityRefToCharMap = new HashMap <String, Character> ();
-  private static final Map <String, String> s_aEntityRefToCharStringMap = new HashMap <String, String> ();
-  private static final Map <Character, String> s_aCharToEntityRefMap = new HashMap <Character, String> ();
-  private static final Map <String, String> s_aCharStringToEntityRefMap = new HashMap <String, String> ();
+  private static final Map <String, EHTMLEntity> s_aEntityRefToEntityMap = new LinkedHashMap <String, EHTMLEntity> ();
+  private static final Map <Character, EHTMLEntity> s_aCharToEntityMap = new LinkedHashMap <Character, EHTMLEntity> ();
+  private static final Map <String, Character> s_aEntityRefToCharMap = new LinkedHashMap <String, Character> ();
+  private static final Map <String, String> s_aEntityRefToCharStringMap = new LinkedHashMap <String, String> ();
+  private static final Map <Character, String> s_aCharToEntityRefMap = new LinkedHashMap <Character, String> ();
+  private static final Map <String, String> s_aCharStringToEntityRefMap = new LinkedHashMap <String, String> ();
 
   static
   {
@@ -424,7 +425,7 @@ public enum EHTMLEntity implements IHTMLEntity
 
   /**
    * Check if the passed entity reference string is valid.
-   * 
+   *
    * @param sEntityReference
    *        The string to be checked (e.g. <code>"&amp;ndash;"</code>)
    * @return <code>true</code> if it is valid, <code>false</code> if not
@@ -437,7 +438,7 @@ public enum EHTMLEntity implements IHTMLEntity
   /**
    * Get the predefined HTML entity for the specified entity reference string is
    * valid.
-   * 
+   *
    * @param sEntityReference
    *        The string to be checked (e.g. <code>"&amp;ndash;"</code>)
    * @return <code>null</code> if no such HTML entity is present
@@ -451,7 +452,7 @@ public enum EHTMLEntity implements IHTMLEntity
   /**
    * Check if the passed character can be presented by an entity reference
    * string.
-   * 
+   *
    * @param c
    *        The char to be checked (e.g. <code>'–'</code>)
    * @return <code>true</code> if an entity representation is present,
@@ -465,7 +466,7 @@ public enum EHTMLEntity implements IHTMLEntity
   /**
    * Get the predefined HTML entity to be used to represent the passed
    * character.
-   * 
+   *
    * @param c
    *        The char to be checked (e.g. <code>'–'</code>)
    * @return <code>null</code> if no such HTML entity is present
@@ -486,7 +487,7 @@ public enum EHTMLEntity implements IHTMLEntity
   @ReturnsMutableCopy
   public static final Map <String, EHTMLEntity> getEntityRefToEntityMap ()
   {
-    return ContainerHelper.newMap (s_aEntityRefToEntityMap);
+    return ContainerHelper.newOrderedMap (s_aEntityRefToEntityMap);
   }
 
   /**
@@ -499,7 +500,7 @@ public enum EHTMLEntity implements IHTMLEntity
   @ReturnsMutableCopy
   public static final Map <Character, EHTMLEntity> getCharToEntityMap ()
   {
-    return ContainerHelper.newMap (s_aCharToEntityMap);
+    return ContainerHelper.newOrderedMap (s_aCharToEntityMap);
   }
 
   /**
@@ -512,7 +513,7 @@ public enum EHTMLEntity implements IHTMLEntity
   @ReturnsMutableCopy
   public static final Map <String, Character> getEntityRefToCharMap ()
   {
-    return ContainerHelper.newMap (s_aEntityRefToCharMap);
+    return ContainerHelper.newOrderedMap (s_aEntityRefToCharMap);
   }
 
   /**
@@ -525,7 +526,7 @@ public enum EHTMLEntity implements IHTMLEntity
   @ReturnsMutableCopy
   public static final Map <String, String> getEntityRefToCharStringMap ()
   {
-    return ContainerHelper.newMap (s_aEntityRefToCharStringMap);
+    return ContainerHelper.newOrderedMap (s_aEntityRefToCharStringMap);
   }
 
   /**
@@ -538,7 +539,7 @@ public enum EHTMLEntity implements IHTMLEntity
   @ReturnsMutableCopy
   public static final Map <Character, String> getCharToEntityRefMap ()
   {
-    return ContainerHelper.newMap (s_aCharToEntityRefMap);
+    return ContainerHelper.newOrderedMap (s_aCharToEntityRefMap);
   }
 
   /**
@@ -551,6 +552,27 @@ public enum EHTMLEntity implements IHTMLEntity
   @ReturnsMutableCopy
   public static final Map <String, String> getCharStringToEntityRefMap ()
   {
-    return ContainerHelper.newMap (s_aCharStringToEntityRefMap);
+    return ContainerHelper.newOrderedMap (s_aCharStringToEntityRefMap);
+  }
+
+  /**
+   * Perform an HTML escape on the passed string. For example the string
+   * "abcäöü" is translated to "abc&amp;auml;&amp;ouml;&amp;uuml;"
+   *
+   * @param sSource
+   *        The source string. May be <code>null</code>.
+   * @return <code>null</code> if the source string is <code>null</code>.
+   */
+  @Nullable
+  public static String htmlEscape (@Nullable final String sSource)
+  {
+    if (StringHelper.hasNoText (sSource))
+      return sSource;
+
+    String ret = sSource;
+    // Keep the order!
+    for (final Map.Entry <String, String> aEntry : s_aCharStringToEntityRefMap.entrySet ())
+      ret = ret.replace (aEntry.getKey (), aEntry.getValue ());
+    return ret;
   }
 }
