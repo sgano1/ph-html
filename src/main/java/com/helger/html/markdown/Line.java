@@ -20,6 +20,7 @@ import java.util.LinkedList;
 
 import javax.annotation.Nonnull;
 
+import com.helger.commons.annotations.CodingStyleguideUnaware;
 import com.helger.html.EHTMLElement;
 
 /**
@@ -30,6 +31,7 @@ import com.helger.html.EHTMLElement;
  *
  * @author René Jeschke &lt;rene_jeschke@yahoo.de&gt
  */
+@CodingStyleguideUnaware
 final class Line
 {
   /** Current cursor position. */

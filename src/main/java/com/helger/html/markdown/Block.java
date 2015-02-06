@@ -16,11 +16,14 @@
  */
 package com.helger.html.markdown;
 
+import com.helger.commons.annotations.CodingStyleguideUnaware;
+
 /**
  * This class represents a block of lines.
  *
  * @author René Jeschke &lt;rene_jeschke@yahoo.de&gt
  */
+@CodingStyleguideUnaware
 final class Block
 {
   /** This block's type. */
