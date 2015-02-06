@@ -58,19 +58,19 @@ final class Emitter
   /** The configuration. */
   private final MarkdownConfiguration m_aConfig;
   /** Extension flag. */
-  public boolean m_bUseExtensions = false;
+  private boolean m_bUseExtensions = false;
   /** Newline flag. */
-  public boolean m_bConvertNewline2Br = false;
+  private boolean m_bConvertNewline2Br = false;
   /** Plugins references **/
   private final Map <String, AbstractMarkdownPlugin> m_aPlugins = new HashMap <String, AbstractMarkdownPlugin> ();
 
   /**
    * Constructor.
-   * 
+   *
    * @param aConfig
    *        config to use
    */
-  public Emitter (final MarkdownConfiguration aConfig)
+  public Emitter (@Nonnull final MarkdownConfiguration aConfig)
   {
     m_aConfig = aConfig;
     m_bUseExtensions = aConfig.isExtendedProfile ();
@@ -79,7 +79,12 @@ final class Emitter
       register (plugin);
   }
 
-  public void register (final AbstractMarkdownPlugin plugin)
+  void setUseExtensions (final boolean bUseExtensions)
+  {
+    m_bUseExtensions = bUseExtensions;
+  }
+
+  public void register (@Nonnull final AbstractMarkdownPlugin plugin)
   {
     m_aPlugins.put (plugin.getPluginID (), plugin);
   }
@@ -92,7 +97,7 @@ final class Emitter
    * @param linkRef
    *        The LinkRef.
    */
-  public void addLinkRef (final String key, final LinkRef linkRef)
+  public void addLinkRef (@Nonnull final String key, final LinkRef linkRef)
   {
     m_aLinkRefs.put (key.toLowerCase (Locale.US), linkRef);
   }

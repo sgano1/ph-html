@@ -192,7 +192,8 @@ public class MarkdownProcessor
       {
         if (sID.toLowerCase (Locale.US).equals ("$profile$"))
         {
-          m_aEmitter.m_bUseExtensions = m_bUseExtensions = sLink.toLowerCase (Locale.US).equals ("extended");
+          m_bUseExtensions = sLink.toLowerCase (Locale.US).equals ("extended");
+          m_aEmitter.setUseExtensions (m_bUseExtensions);
           aLastLinkRef = null;
         }
         else

@@ -33,23 +33,23 @@ import com.helger.html.EHTMLElement;
 final class Line
 {
   /** Current cursor position. */
-  public int m_nPos;
+  int m_nPos;
   /** Leading spaces. */
-  public int m_nLeading = 0;
+  int m_nLeading = 0;
   /** Trailing spaces. */
-  public int m_nTrailing = 0;
+  int m_nTrailing = 0;
   /** Is this line empty? */
-  public boolean m_bIsEmpty = true;
+  boolean m_bIsEmpty = true;
   /** This line's value. */
-  public String m_sValue = null;
+  String m_sValue = null;
   /** Previous line. */
-  public Line m_aPrevious = null;
+  Line m_aPrevious = null;
   /** Next line. */
-  public Line m_aNext = null;
+  Line m_aNext = null;
   /** Is previous line empty? */
-  public boolean m_bPrevEmpty;
+  boolean m_bPrevEmpty;
   /** Final line of a XML block. */
-  public Line m_aXmlEndLine;
+  Line m_aXmlEndLine;
 
   /** Constructor. */
   public Line ()
