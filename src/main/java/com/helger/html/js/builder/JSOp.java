@@ -31,7 +31,6 @@ import com.helger.commons.annotations.PresentForCodeCoverage;
 @Immutable
 public final class JSOp
 {
-  @SuppressWarnings ("unused")
   @PresentForCodeCoverage
   private static final JSOp s_aInstance = new JSOp ();
 
@@ -70,7 +69,7 @@ public final class JSOp
 
   /**
    * Logical not <tt>'!x'</tt>.
-   * 
+   *
    * @param aExpr
    *        Expression to negate
    * @return ![this]

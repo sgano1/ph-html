@@ -99,7 +99,6 @@ public final class JSPrinter
     setGenerateComments (!bMinimumCodeSize);
   }
 
-  @SuppressWarnings ("resource")
   @Nonnull
   public static JSFormatter createFormatter (@Nonnull @WillNotClose final Writer aWriter)
   {

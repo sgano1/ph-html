@@ -68,7 +68,6 @@ public final class JSExpr
       INT_CACHE[i] = new JSAtomInt (i);
   }
 
-  @SuppressWarnings ("unused")
   @PresentForCodeCoverage
   private static final JSExpr s_aInstance = new JSExpr ();
 

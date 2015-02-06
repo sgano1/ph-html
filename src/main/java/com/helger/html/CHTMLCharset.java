@@ -28,7 +28,7 @@ import com.helger.commons.xml.serialize.XMLWriterSettings;
 
 /**
  * Contains the preferred charsets to be used for HTML/JS and CSS.
- * 
+ *
  * @author Philip Helger
  */
 @Immutable
@@ -51,7 +51,6 @@ public final class CHTMLCharset
   public static final Locale LOCALE = CGlobal.DEFAULT_LOCALE;
 
   @PresentForCodeCoverage
-  @SuppressWarnings ("unused")
   private static final CHTMLCharset s_aInstance = new CHTMLCharset ();
 
   private CHTMLCharset ()

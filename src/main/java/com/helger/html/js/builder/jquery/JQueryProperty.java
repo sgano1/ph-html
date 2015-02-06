@@ -36,7 +36,6 @@ public final class JQueryProperty
 {
   public static final AtomicBoolean s_aUseDollar = new AtomicBoolean (true);
 
-  @SuppressWarnings ("unused")
   @PresentForCodeCoverage
   private static final JQueryProperty s_aInstance = new JQueryProperty ();
 

@@ -62,7 +62,6 @@ public final class JQuery
 {
   public static final AtomicBoolean s_aUseDollar = new AtomicBoolean (true);
 
-  @SuppressWarnings ("unused")
   @PresentForCodeCoverage
   private static final JQuery s_aInstance = new JQuery ();
 

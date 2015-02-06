@@ -73,7 +73,6 @@ public final class HCSpecialNodeHandler
   private static final Map <String, IHCSpecialNodeListModifier> s_aModifiers = new HashMap <String, IHCSpecialNodeListModifier> ();
 
   @PresentForCodeCoverage
-  @SuppressWarnings ("unused")
   private static final HCSpecialNodeHandler s_aInstance = new HCSpecialNodeHandler ();
 
   private HCSpecialNodeHandler ()

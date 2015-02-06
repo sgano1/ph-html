@@ -43,7 +43,6 @@ import com.helger.html.js.builder.JSVar;
 public final class JSHtml
 {
   @PresentForCodeCoverage
-  @SuppressWarnings ("unused")
   private static final JSHtml s_aInstance = new JSHtml ();
 
   private JSHtml ()

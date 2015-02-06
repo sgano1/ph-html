@@ -26,7 +26,7 @@ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 /**
  * This contains global JS function wrappers.<br>
  * Source: http://www.w3schools.com/jsref/jsref_obj_global.asp
- * 
+ *
  * @author Philip Helger
  */
 @Immutable
@@ -34,7 +34,6 @@ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 public final class JSGlobal
 {
   @PresentForCodeCoverage
-  @SuppressWarnings ("unused")
   private static final JSGlobal s_aInstance = new JSGlobal ();
 
   private JSGlobal ()

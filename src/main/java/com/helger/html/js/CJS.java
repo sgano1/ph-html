@@ -23,7 +23,7 @@ import com.helger.commons.url.EURLProtocol;
 
 /**
  * JavaScript constants.
- * 
+ *
  * @author Philip Helger
  */
 @Immutable
@@ -43,7 +43,6 @@ public final class CJS
   public static final String FILE_EXTENSION_MIN_JS = ".min.js";
 
   @PresentForCodeCoverage
-  @SuppressWarnings ("unused")
   private static final CJS s_aInstance = new CJS ();
 
   private CJS ()

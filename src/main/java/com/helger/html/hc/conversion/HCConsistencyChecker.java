@@ -54,7 +54,7 @@ import com.helger.html.hc.htmlext.IHCIteratorCallback;
 
 /**
  * This class performs some consistency checks on HCNodes
- * 
+ *
  * @author Philip Helger
  */
 @Immutable
@@ -67,7 +67,6 @@ public final class HCConsistencyChecker
   private static final AnnotationUsageCache s_aAUC_D_HTML5 = new AnnotationUsageCache (DeprecatedInHTML5.class);
   private static final AnnotationUsageCache s_aAUC_S_HTML5 = new AnnotationUsageCache (SinceHTML5.class);
 
-  @SuppressWarnings ("unused")
   @PresentForCodeCoverage
   private static final HCConsistencyChecker s_aInstance = new HCConsistencyChecker ();
 
@@ -227,7 +226,7 @@ public final class HCConsistencyChecker
   /**
    * Check all nodes inside the passed HTML body whether they have unique IDs or
    * not.
-   * 
+   *
    * @param aBody
    *        The HTML body to check. May not be <code>null</code>.
    * @return A set with all IDs used more than once. Never <code>null</code> but
