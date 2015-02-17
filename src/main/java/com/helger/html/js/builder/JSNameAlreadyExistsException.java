@@ -31,6 +31,7 @@ public class JSNameAlreadyExistsException extends RuntimeException
 
   public JSNameAlreadyExistsException (@Nonnull final IJSDeclaration aExisting)
   {
+    super ("JS name '" + aExisting.name () + "' is already in use!");
     m_aExisting = ValueEnforcer.notNull (aExisting, "Existing");
   }
 
