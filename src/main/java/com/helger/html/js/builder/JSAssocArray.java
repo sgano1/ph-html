@@ -26,6 +26,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
+import com.helger.commons.annotations.ReturnsMutableCopy;
+import com.helger.commons.collections.ContainerHelper;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
@@ -128,7 +130,7 @@ public class JSAssocArray extends AbstractJSExpression
   {
     if (aValues != null)
       for (final Map.Entry <String, String> aEntry : aValues.entrySet ())
-        add (aEntry.getKey (), JSExpr.lit (aEntry.getValue ()));
+        add (aEntry.getKey (), aEntry.getValue ());
     return this;
   }
 
@@ -186,6 +188,27 @@ public class JSAssocArray extends AbstractJSExpression
     if (m_aExprs != null)
       m_aExprs.remove (aKey);
     return this;
+  }
+
+  @Nullable
+  public IJSExpression get (@Nullable final String sKey)
+  {
+    return get (JSExpr.lit (sKey));
+  }
+
+  @Nullable
+  public IJSExpression get (@Nullable final IJSExpression aKey)
+  {
+    if (m_aExprs == null)
+      return null;
+    return m_aExprs.get (aKey);
+  }
+
+  @Nonnull
+  @ReturnsMutableCopy
+  public Map <IJSExpression, IJSExpression> getAll ()
+  {
+    return ContainerHelper.newOrderedMap (m_aExprs);
   }
 
   public void generate (@Nonnull final JSFormatter aFormatter)

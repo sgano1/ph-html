@@ -26,6 +26,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
+import com.helger.commons.annotations.ReturnsMutableCopy;
+import com.helger.commons.collections.ContainerHelper;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
@@ -242,6 +244,13 @@ public class JSArray extends AbstractJSExpression
     if (m_aExprs != null)
       m_aExprs.remove (nIndex);
     return this;
+  }
+
+  @Nonnull
+  @ReturnsMutableCopy
+  public List <IJSExpression> getAll ()
+  {
+    return ContainerHelper.newList (m_aExprs);
   }
 
   public void generate (@Nonnull final JSFormatter aFormatter)
