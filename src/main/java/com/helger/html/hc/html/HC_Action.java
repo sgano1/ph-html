@@ -20,6 +20,9 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
 
+import com.helger.commons.ICloneable;
+import com.helger.commons.ValueEnforcer;
+import com.helger.commons.annotations.ReturnsMutableCopy;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
@@ -34,19 +37,29 @@ import com.helger.html.js.builder.IJSStatement;
  * @author Philip Helger
  */
 @NotThreadSafe
-public final class HC_Action
+public final class HC_Action implements ICloneable <HC_Action>
 {
   private String m_sAction;
   private IJSCodeProvider m_aAction;
 
+  public HC_Action ()
+  {}
+
+  public HC_Action (@Nonnull final HC_Action aOther)
+  {
+    ValueEnforcer.notNull (aOther, "Other");
+    m_sAction = aOther.m_sAction;
+    m_aAction = aOther.m_aAction;
+  }
+
   @Nullable
-  public final String getActionURL ()
+  public String getActionURL ()
   {
     return m_sAction;
   }
 
   @Nullable
-  public final IJSCodeProvider getActionJS ()
+  public IJSCodeProvider getActionJS ()
   {
     return m_aAction;
   }
@@ -75,6 +88,13 @@ public final class HC_Action
     else
       if (StringHelper.hasText (m_sAction))
         aElement.setAttribute (sAttributeName, m_sAction);
+  }
+
+  @Nonnull
+  @ReturnsMutableCopy
+  public HC_Action getClone ()
+  {
+    return new HC_Action (this);
   }
 
   @Override
