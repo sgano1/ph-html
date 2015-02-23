@@ -36,7 +36,7 @@ import com.helger.commons.string.ToStringGenerator;
  * Default implementation of the {@link ICSSClassProvider} interface. Uses an
  * internal cache to reuse existing objects. Use
  * {@link DefaultCSSClassProvider#create(String)} to create objects!
- * 
+ *
  * @author Philip Helger
  */
 @Immutable
@@ -78,7 +78,7 @@ public final class DefaultCSSClassProvider implements ICSSClassProvider, Seriali
   {
     if (o == this)
       return true;
-    if (!(o instanceof DefaultCSSClassProvider))
+    if (o == null || !getClass ().equals (o.getClass ()))
       return false;
     final DefaultCSSClassProvider rhs = (DefaultCSSClassProvider) o;
     return m_sCSSClass.equals (rhs.m_sCSSClass);
