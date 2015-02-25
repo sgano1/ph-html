@@ -16,11 +16,14 @@
  */
 package com.helger.html.hc.html;
 
+import javax.annotation.CheckForSigned;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.annotation.OverridingMethodsMustInvokeSuper;
 
 import com.helger.commons.CGlobal;
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
@@ -49,9 +52,7 @@ public class HCCol extends AbstractHCElement <HCCol>
   public HCCol (@Nonnegative final int nWidth)
   {
     this ();
-    if (nWidth < 0)
-      throw new IllegalArgumentException ("The passed width is too small: " + nWidth);
-    m_sWidth = Integer.toString (nWidth);
+    setWidth (nWidth);
   }
 
   /**
@@ -72,12 +73,20 @@ public class HCCol extends AbstractHCElement <HCCol>
   }
 
   @Nonnull
+  public HCCol setWidth (@Nonnegative final int nWidth)
+  {
+    ValueEnforcer.isGE0 (nWidth, "Width");
+    return setWidth (Integer.toString (nWidth));
+  }
+
+  @Nonnull
   public HCCol setWidth (@Nullable final String sWidth)
   {
     m_sWidth = sWidth;
     return this;
   }
 
+  @CheckForSigned
   public int getSpan ()
   {
     return m_nSpan;
@@ -91,6 +100,7 @@ public class HCCol extends AbstractHCElement <HCCol>
   }
 
   @Override
+  @OverridingMethodsMustInvokeSuper
   protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
     super.applyProperties (aElement, aConversionSettings);
