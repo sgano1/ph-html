@@ -17,11 +17,14 @@
 package com.helger.html.js.builder;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import com.helger.commons.annotations.CodingStyleguideUnaware;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSPrinter;
 import com.helger.json.IJson;
 
 /**
@@ -788,9 +791,15 @@ public abstract class AbstractJSExpression implements IJSExpression
   }
 
   @Nonnull
-  public String getJSCode ()
+  public final String getJSCode ()
   {
-    return JSPrinter.getAsString (this);
+    return getJSCode ((IJSFormatterSettings) null);
+  }
+
+  @Nonnull
+  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
+  {
+    return JSPrinter.getAsString (aSettings, this);
   }
 
   @Override

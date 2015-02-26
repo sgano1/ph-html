@@ -29,6 +29,9 @@ import com.helger.commons.collections.ContainerHelper;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.html.js.builder.output.JSPrinter;
 import com.helger.html.js.marshal.JSMarshaller;
 
 /**
@@ -121,7 +124,7 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
 
   /**
    * Changes the name of the function.
-   * 
+   *
    * @param sName
    *        new function name
    * @return this
@@ -243,10 +246,7 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
     if (m_aJSDoc != null)
       aFormatter.generatable (m_aJSDoc);
 
-    aFormatter.plain ("function ");
-    if (m_aType != null && aFormatter.generateTypeNames ())
-      aFormatter.plain ("/*").generatable (m_aType).plain ("*/");
-    aFormatter.plain (m_sName).plain ('(');
+    aFormatter.plain ("function ").typename (m_aType).plain (m_sName).plain ('(');
     boolean bFirst = true;
     for (final JSVar aParam : m_aParams)
     {
@@ -259,10 +259,16 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
     aFormatter.plain (')').stmt (body ());
   }
 
-  @Nullable
-  public String getJSCode ()
+  @Nonnull
+  public final String getJSCode ()
   {
-    return JSPrinter.getAsString (this);
+    return getJSCode ((IJSFormatterSettings) null);
+  }
+
+  @Nullable
+  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
+  {
+    return JSPrinter.getAsString (aSettings, this);
   }
 
   @Override

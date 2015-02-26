@@ -59,12 +59,15 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import javax.annotation.Nonnull;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 import com.helger.commons.charset.CCharset;
+import com.helger.commons.io.file.FilenameHelper;
 import com.helger.commons.io.file.SimpleFileIO;
 import com.helger.commons.io.file.iterate.FileSystemRecursiveIterator;
 
@@ -74,39 +77,48 @@ public final class MarkdownTest
   @Parameters
   public static Collection <Object []> markdownTests ()
   {
-    final List <Object []> list = new ArrayList <Object []> ();
+    final List <Object []> ret = new ArrayList <Object []> ();
     for (final File aFile : new FileSystemRecursiveIterator (new File ("src/test/resources/MarkdownTest")))
     {
-      final String fileName = aFile.getName ();
-      if (fileName.endsWith (".text"))
+      final String sFilename = aFile.getName ();
+      if (sFilename.endsWith (".text"))
       {
-        final String testName = fileName.substring (0, fileName.lastIndexOf ('.'));
-        list.add (new Object [] { aFile.getParentFile ().getAbsolutePath (), testName });
+        final String sTestName = FilenameHelper.getWithoutExtension (sFilename);
+        ret.add (new Object [] { aFile.getParentFile ().getAbsolutePath (), sTestName });
       }
     }
-    return list;
+    return ret;
   }
 
-  private final String m_sTest;
   private final String m_sDir;
+  private final String m_sTestName;
 
-  public MarkdownTest (final String dir, final String test)
+  public MarkdownTest (final String sDir, final String sTestName)
   {
-    m_sDir = dir;
-    m_sTest = test;
+    m_sDir = sDir;
+    m_sTestName = sTestName;
   }
 
-  private static String _slurp (final String fileName)
+  @Nonnull
+  private static String _slurp (final String sFilename)
   {
-    return SimpleFileIO.readFileAsString (new File (fileName), CCharset.CHARSET_UTF_8_OBJ);
+    // Avoid differences in newlines
+    return SimpleFileIO.readFileAsString (new File (sFilename), CCharset.CHARSET_UTF_8_OBJ).replaceAll ("\r", "");
   }
 
   @Test
   public void runTest () throws IOException
   {
-    final String testText = _slurp (m_sDir + File.separator + m_sTest + ".text");
-    final String htmlText = _slurp (m_sDir + File.separator + m_sTest + ".html");
-    final String markdownText = new MarkdownProcessor ().process (testText).getAsHTMLString (false);
-    assertEquals (m_sTest, htmlText.trim (), markdownText.trim ());
+    final String testText = _slurp (m_sDir + File.separator + m_sTestName + ".text");
+    final String htmlText = _slurp (m_sDir + File.separator + m_sTestName + ".html");
+    try
+    {
+      final String markdownText = new MarkdownProcessor ().process (testText).getAsHTMLString (false);
+      assertEquals (m_sTestName, htmlText.trim (), markdownText.trim ());
+    }
+    catch (final MarkdownException ex)
+    {
+      throw new RuntimeException ("Error processing test file '" + m_sTestName + "'", ex);
+    }
   }
 }

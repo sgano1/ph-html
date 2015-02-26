@@ -22,13 +22,16 @@ import javax.annotation.Nullable;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.html.js.builder.output.JSPrinter;
 
 /**
  * A return statement
- * 
+ *
  * @author Philip Helger
  */
-public class JSReturn implements IJSStatement
+public class JSReturn extends AbstractJSStatement
 {
   /**
    * Expression to return; may be null.
@@ -45,7 +48,7 @@ public class JSReturn implements IJSStatement
 
   /**
    * Return constructor
-   * 
+   *
    * @param aExpr
    *        JExpression which evaluates to return value
    */
@@ -69,9 +72,9 @@ public class JSReturn implements IJSStatement
   }
 
   @Nullable
-  public String getJSCode ()
+  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
   {
-    return JSPrinter.getAsString (this);
+    return JSPrinter.getAsString (aSettings, this);
   }
 
   @Override

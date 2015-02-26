@@ -18,16 +18,13 @@ package com.helger.html.js.builder;
 
 import javax.annotation.Nonnull;
 
-import com.helger.html.js.builder.output.IJSFormattedCodeProvider;
-import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
 
-/**
- * Common interface for code components that can generate uses of themselves as
- * statements.
- *
- * @author Philip Helger
- */
-public interface IJSStatement extends IJSFormattedCodeProvider
+public abstract class AbstractJSStatement implements IJSStatement
 {
-  void state (@Nonnull JSFormatter aFormatter);
+  @Nonnull
+  public final String getJSCode ()
+  {
+    return getJSCode ((IJSFormatterSettings) null);
+  }
 }

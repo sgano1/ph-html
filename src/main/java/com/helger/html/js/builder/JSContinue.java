@@ -16,24 +16,28 @@
  */
 package com.helger.html.js.builder;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.html.js.builder.output.JSPrinter;
 
 /**
  * Continue statement
- * 
+ *
  * @author Philip Helger
  */
-public class JSContinue implements IJSStatement
+public class JSContinue extends AbstractJSStatement
 {
   private final JSLabel m_aLabel;
 
   /**
    * constructor.
-   * 
+   *
    * @param aLabel
    *        a valid label or null.
    */
@@ -53,7 +57,7 @@ public class JSContinue implements IJSStatement
     return m_aLabel != null;
   }
 
-  public void state (final JSFormatter aFormatter)
+  public void state (@Nonnull final JSFormatter aFormatter)
   {
     if (m_aLabel == null)
       aFormatter.plain ("continue;").nl ();
@@ -62,9 +66,9 @@ public class JSContinue implements IJSStatement
   }
 
   @Nullable
-  public String getJSCode ()
+  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
   {
-    return JSPrinter.getAsString (this);
+    return JSPrinter.getAsString (aSettings, this);
   }
 
   @Override

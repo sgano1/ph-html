@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.js.builder;
+package com.helger.html.js.builder.output;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -23,9 +23,17 @@ import java.io.Writer;
 import java.util.Collection;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.annotation.WillCloseWhenClosed;
 
 import com.helger.commons.ValueEnforcer;
+import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.builder.AbstractJSType;
+import com.helger.html.js.builder.IJSDeclaration;
+import com.helger.html.js.builder.IJSGeneratable;
+import com.helger.html.js.builder.IJSStatement;
+import com.helger.html.js.builder.JSPackage;
+import com.helger.html.js.builder.JSVar;
 
 /**
  * This is a utility class for managing indentation and other basic formatting
@@ -35,47 +43,50 @@ import com.helger.commons.ValueEnforcer;
  */
 public class JSFormatter implements Closeable
 {
-  public static final String DEFAULT_INDENT = "  ";
-
-  /**
-   * String to be used for each indentation. Defaults to four spaces.
-   */
-  private final String m_sIndentSpace;
-
   /**
    * Stream associated with this JFormatter
    */
   private final PrintWriter m_aPW;
+  private final IJSFormatterSettings m_aSettings;
+
   /**
    * Current number of indentation strings to print
    */
   private int m_nIndentLevel;
   private String m_sIndentCache = "";
   private boolean m_bAtBeginningOfLine = true;
-  private boolean m_bIndentAndAlign = true;
-  private boolean m_bGenerateTypeNames = true;
-  private boolean m_bGenerateComments = true;
 
   /**
-   * Creates a formatter with default incremental indentations of 2 spaces.
+   * Creates a formatter with default settings.
    *
    * @param aWriter
    *        Writer to use
    */
   public JSFormatter (@Nonnull @WillCloseWhenClosed final Writer aWriter)
   {
-    this (aWriter instanceof PrintWriter ? (PrintWriter) aWriter : new PrintWriter (aWriter));
+    this (aWriter, (IJSFormatterSettings) null);
   }
 
   /**
-   * Creates a formatter with default incremental indentations of 2 spaces.
+   * Creates a formatter with default settings.
    *
    * @param aPrintWriter
    *        {@link PrintWriter} to be used
    */
   public JSFormatter (@Nonnull @WillCloseWhenClosed final PrintWriter aPrintWriter)
   {
-    this (aPrintWriter, DEFAULT_INDENT);
+    this (aPrintWriter, (IJSFormatterSettings) null);
+  }
+
+  /**
+   * Creates a formatter with default settings.
+   *
+   * @param aWriter
+   *        Writer to use
+   */
+  public JSFormatter (@Nonnull @WillCloseWhenClosed final Writer aWriter, @Nullable final IJSFormatterSettings aSettings)
+  {
+    this (aWriter instanceof PrintWriter ? (PrintWriter) aWriter : new PrintWriter (aWriter), aSettings);
   }
 
   /**
@@ -83,49 +94,20 @@ public class JSFormatter implements Closeable
    *
    * @param aPrintWriter
    *        PrintWriter to use.
-   * @param sIndentSpace
-   *        Incremental indentation string, similar to tab value.
+   * @param aSettings
+   *        The settings to be used.
    */
-  public JSFormatter (@Nonnull @WillCloseWhenClosed final PrintWriter aPrintWriter, @Nonnull final String sIndentSpace)
+  public JSFormatter (@Nonnull @WillCloseWhenClosed final PrintWriter aPrintWriter,
+                      @Nullable final IJSFormatterSettings aSettings)
   {
     m_aPW = ValueEnforcer.notNull (aPrintWriter, "PrintWriter");
-    m_sIndentSpace = ValueEnforcer.notNull (sIndentSpace, "IndentSpace");
-  }
-
-  public boolean indentAndAlign ()
-  {
-    return m_bIndentAndAlign;
+    m_aSettings = aSettings == null ? new JSFormatterSettings () : new JSFormatterSettings (aSettings);
   }
 
   @Nonnull
-  public JSFormatter indentAndAlign (final boolean bIndentAndAlign)
+  public IJSFormatterSettings getSettings ()
   {
-    m_bIndentAndAlign = bIndentAndAlign;
-    return this;
-  }
-
-  public boolean generateTypeNames ()
-  {
-    return m_bGenerateTypeNames;
-  }
-
-  @Nonnull
-  public JSFormatter generateTypeNames (final boolean bGenerateTypeNames)
-  {
-    m_bGenerateTypeNames = bGenerateTypeNames;
-    return this;
-  }
-
-  public boolean generateComments ()
-  {
-    return m_bGenerateComments;
-  }
-
-  @Nonnull
-  public JSFormatter generateComments (final boolean bGenerateComments)
-  {
-    m_bGenerateComments = bGenerateComments;
-    return this;
+    return m_aSettings;
   }
 
   /**
@@ -137,15 +119,15 @@ public class JSFormatter implements Closeable
   }
 
   /**
-   * Decrement the indentation level if {@link #indentAndAlign()} is on
+   * Decrement the indentation level if indent and align is active
    *
    * @return this
    */
   @Nonnull
   public JSFormatter outdent ()
   {
-    if (m_bIndentAndAlign)
-      outdentFix ();
+    if (m_aSettings.isIndentAndAlign ())
+      outdentAlways ();
     return this;
   }
 
@@ -155,25 +137,25 @@ public class JSFormatter implements Closeable
    * @return this
    */
   @Nonnull
-  public JSFormatter outdentFix ()
+  public JSFormatter outdentAlways ()
   {
     if (m_nIndentLevel == 0)
       throw new IllegalStateException ("Nothing left to outdent!");
     m_nIndentLevel--;
-    m_sIndentCache = m_sIndentCache.substring (0, m_nIndentLevel * m_sIndentSpace.length ());
+    m_sIndentCache = m_sIndentCache.substring (0, m_nIndentLevel * m_aSettings.getIndent ().length ());
     return this;
   }
 
   /**
-   * Increment the indentation level if {@link #indentAndAlign()} is on
+   * Increment the indentation level if indent and align is active
    *
    * @return this
    */
   @Nonnull
   public JSFormatter indent ()
   {
-    if (m_bIndentAndAlign)
-      indentFix ();
+    if (m_aSettings.isIndentAndAlign ())
+      indentAlways ();
     return this;
   }
 
@@ -183,10 +165,10 @@ public class JSFormatter implements Closeable
    * @return this
    */
   @Nonnull
-  public JSFormatter indentFix ()
+  public JSFormatter indentAlways ()
   {
     m_nIndentLevel++;
-    m_sIndentCache += m_sIndentSpace;
+    m_sIndentCache += m_aSettings.getIndent ();
     return this;
   }
 
@@ -245,14 +227,14 @@ public class JSFormatter implements Closeable
   }
 
   /**
-   * Print a new line into the stream if {@link #indentAndAlign()} is on
+   * Print a new line into the stream if indent and align is active
    *
    * @return this
    */
   @Nonnull
   public JSFormatter nl ()
   {
-    if (m_bIndentAndAlign)
+    if (m_aSettings.isIndentAndAlign ())
       nlFix ();
     return this;
   }
@@ -346,5 +328,32 @@ public class JSFormatter implements Closeable
   {
     aVar.bind (this);
     return this;
+  }
+
+  @Nonnull
+  public JSFormatter typename (@Nonnull final AbstractJSType aType)
+  {
+    if (aType != null && m_aSettings.isGenerateTypeNames ())
+      plain ("/*").generatable (aType).plain ("*/");
+    return this;
+  }
+
+  public void pkg (@Nonnull final JSPackage aPackage)
+  {
+    // for all declarations in the current package
+    for (final IJSCodeProvider aObj : aPackage.members ())
+      if (aObj instanceof IJSDeclaration)
+        decl ((IJSDeclaration) aObj);
+      else
+        if (aObj instanceof IJSStatement)
+          stmt ((IJSStatement) aObj);
+        else
+          if (aObj instanceof JSPackage)
+          {
+            // Nested package
+            pkg ((JSPackage) aObj);
+          }
+          else
+            plain (aObj.getJSCode ());
   }
 }

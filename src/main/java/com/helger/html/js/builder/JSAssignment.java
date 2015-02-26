@@ -23,6 +23,9 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.html.js.builder.output.JSPrinter;
 
 /**
  * Assignment statements, which are also expressions.
@@ -75,9 +78,9 @@ public class JSAssignment extends AbstractJSExpression implements IJSStatement
 
   @Override
   @Nullable
-  public String getJSCode ()
+  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
   {
-    return JSPrinter.getAsString ((IJSStatement) this);
+    return JSPrinter.getAsString (aSettings, (IJSStatement) this);
   }
 
   @Override

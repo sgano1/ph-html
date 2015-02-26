@@ -23,13 +23,16 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.regex.RegExHelper;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.html.js.builder.output.JSPrinter;
 
 /**
  * Single line comments
  *
  * @author Philip Helger
  */
-public class JSCommentSingleLine implements IJSStatement
+public class JSCommentSingleLine extends AbstractJSStatement
 {
   private final String m_sComment;
 
@@ -38,21 +41,30 @@ public class JSCommentSingleLine implements IJSStatement
     m_sComment = ValueEnforcer.notNull (sComment, "Comment");
   }
 
+  @Nonnull
+  public String getComment ()
+  {
+    return m_sComment;
+  }
+
   @Override
   public void state (@Nonnull final JSFormatter aFormatter)
   {
-    if (aFormatter.generateComments ())
+    if (aFormatter.getSettings ().isGenerateComments ())
+    {
+      final boolean bIndentAndAlign = aFormatter.getSettings ().isIndentAndAlign ();
       for (final String sLine : RegExHelper.getSplitToArray (m_sComment, "(\\r\\n|\\r|\\n)"))
-        if (aFormatter.indentAndAlign ())
+        if (bIndentAndAlign)
           aFormatter.plain ("// ").plain (sLine).nl ();
         else
           aFormatter.plain ("/*").plain (sLine).plain ("*/");
+    }
   }
 
   @Nullable
-  public String getJSCode ()
+  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
   {
-    return JSPrinter.getAsString (this);
+    return JSPrinter.getAsString (aSettings, this);
   }
 
   @Override

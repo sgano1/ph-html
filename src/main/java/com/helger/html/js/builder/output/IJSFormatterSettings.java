@@ -14,20 +14,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.js.builder;
+package com.helger.html.js.builder.output;
 
 import javax.annotation.Nonnull;
 
-import com.helger.html.js.builder.output.IJSFormattedCodeProvider;
-import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.commons.annotations.Nonempty;
 
-/**
- * Common interface for code components that can generate uses of themselves as
- * statements.
- *
- * @author Philip Helger
- */
-public interface IJSStatement extends IJSFormattedCodeProvider
+public interface IJSFormatterSettings
 {
-  void state (@Nonnull JSFormatter aFormatter);
+  /**
+   * @return <code>true</code> if the code should be idented and aligned.
+   */
+  boolean isIndentAndAlign ();
+
+  /**
+   * @return <code>true</code> if type names should be generated as inline
+   *         comments.
+   */
+  boolean isGenerateTypeNames ();
+
+  /**
+   * @return <code>true</code> if comments should be generated at all.
+   */
+  boolean isGenerateComments ();
+
+  /**
+   * @return The string used for indenting a single level. By default it is 2
+   *         spaces.
+   */
+  @Nonnull
+  @Nonempty
+  String getIndent ();
 }

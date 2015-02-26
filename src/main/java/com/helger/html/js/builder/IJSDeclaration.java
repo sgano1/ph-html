@@ -19,15 +19,16 @@ package com.helger.html.js.builder;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotations.Nonempty;
-import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.builder.output.IJSFormattedCodeProvider;
+import com.helger.html.js.builder.output.JSFormatter;
 
 /**
  * Common interface for code components that can generate declarations of
  * themselves.
- * 
+ *
  * @author Philip Helger
  */
-public interface IJSDeclaration extends IJSCodeProvider
+public interface IJSDeclaration extends IJSFormattedCodeProvider
 {
   /**
    * @return The name of the declared object. Neither <code>null</code> nor

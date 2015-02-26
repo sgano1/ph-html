@@ -20,14 +20,14 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.annotations.Nonempty;
-import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.builder.output.IJSFormattedCodeProvider;
 
 /**
  * The common aspect of a package and a function.
  *
  * @author Philip Helger
  */
-public interface IJSFunctionContainer extends IJSCodeProvider
+public interface IJSFunctionContainer extends IJSFormattedCodeProvider
 {
   /**
    * Add a new function to this container

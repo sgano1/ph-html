@@ -23,6 +23,8 @@ import javax.annotation.Nonnull;
 import org.junit.Test;
 
 import com.helger.commons.mock.PHTestUtils;
+import com.helger.html.js.builder.output.JSFormatterSettings;
+import com.helger.html.js.builder.output.JSPrinter;
 import com.helger.html.js.provider.UnparsedJSCodeProvider;
 
 /**
@@ -200,17 +202,15 @@ public final class JSPackageTest
   }
 
   @Test
-  public void test () throws Exception
+  public void testMinimumCodeSize () throws Exception
   {
     final JSPackage aPkg = _createMockPackage ();
     PHTestUtils.testDefaultImplementationWithEqualContentObject (aPkg, _createMockPackage ());
 
-    JSPrinter.setMinimumCodeSize (false);
-    final String sCode = aPkg.getJSCode ();
+    final String sCode = aPkg.getJSCode (new JSFormatterSettings ().setMinimumCodeSize (false));
     System.out.print (sCode);
-    JSPrinter.setMinimumCodeSize (true);
     System.out.println ("--------");
-    final String sCompressedCode = aPkg.getJSCode ();
+    final String sCompressedCode = aPkg.getJSCode (new JSFormatterSettings ().setMinimumCodeSize (true));
     assertEquals ("var g_aRoot=0;"
                       + "function mainAdd(m1){"
                       + "var root=5;"
@@ -260,7 +260,6 @@ public final class JSPackageTest
                         sCompressedCode.length () +
                         " chars are left");
     System.out.println ("--------");
-    JSPrinter.setToDefault ();
   }
 
   @Test
@@ -302,13 +301,14 @@ public final class JSPackageTest
 
     // Use an unparsed JS code inside a block
     assertEquals ("{a=b;}",
-                  JSPrinter.getAsString ((IJSGeneratable) new JSBlock ().add (new UnparsedJSCodeProvider ("a=b;"))));
+                  JSPrinter.getAsString (null,
+                                         (IJSGeneratable) new JSBlock ().add (new UnparsedJSCodeProvider ("a=b;"))));
   }
 
   @Test
   public void testEmpty ()
   {
     final JSPackage aPkg = new JSPackage ();
-    assertEquals ("", JSPrinter.getAsString (aPkg));
+    assertEquals ("", aPkg.getJSCode ());
   }
 }

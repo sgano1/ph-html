@@ -23,13 +23,16 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.html.js.builder.output.JSPrinter;
 
 /**
  * Label that can be used for continue and break.
  *
  * @author Philip Helger
  */
-public class JSLabel implements IJSStatement
+public class JSLabel extends AbstractJSStatement
 {
   private final String m_sLabel;
 
@@ -57,9 +60,9 @@ public class JSLabel implements IJSStatement
   }
 
   @Nullable
-  public String getJSCode ()
+  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
   {
-    return JSPrinter.getAsString (this);
+    return JSPrinter.getAsString (aSettings, this);
   }
 
   @Override

@@ -25,6 +25,7 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.output.JSFormatter;
 
 /**
  * An atomic BigDecimal number

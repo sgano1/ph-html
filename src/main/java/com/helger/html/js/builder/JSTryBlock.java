@@ -24,13 +24,16 @@ import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.html.js.builder.output.JSPrinter;
 
 /**
  * Try statement with Catch and/or Finally clause
- * 
+ *
  * @author Philip Helger
  */
-public class JSTryBlock implements IJSStatement
+public class JSTryBlock extends AbstractJSStatement
 {
   private final JSBlock m_aBody = new JSBlock ();
   private JSCatchBlock m_aCatch;
@@ -101,9 +104,9 @@ public class JSTryBlock implements IJSStatement
   }
 
   @Nullable
-  public String getJSCode ()
+  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
   {
-    return JSPrinter.getAsString (this);
+    return JSPrinter.getAsString (aSettings, this);
   }
 
   @Override

@@ -22,13 +22,16 @@ import javax.annotation.Nullable;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.html.js.builder.output.JSPrinter;
 
 /**
  * Break statement
- * 
+ *
  * @author Philip Helger
  */
-public class JSBreak implements IJSStatement
+public class JSBreak extends AbstractJSStatement
 {
   private final JSLabel m_aLabel;
 
@@ -42,7 +45,7 @@ public class JSBreak implements IJSStatement
 
   /**
    * Constructor
-   * 
+   *
    * @param aLabel
    *        break label or <code>null</code>.
    */
@@ -71,9 +74,9 @@ public class JSBreak implements IJSStatement
   }
 
   @Nullable
-  public String getJSCode ()
+  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
   {
-    return JSPrinter.getAsString (this);
+    return JSPrinter.getAsString (aSettings, this);
   }
 
   @Override

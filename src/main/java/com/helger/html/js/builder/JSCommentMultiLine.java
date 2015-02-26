@@ -27,6 +27,9 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.html.js.builder.output.JSPrinter;
 
 /**
  * JSDoc comment.
@@ -181,50 +184,56 @@ public class JSCommentMultiLine extends JSCommentPart implements IJSGeneratable
 
   public void generate (@Nonnull final JSFormatter aFormatter)
   {
-    if (!aFormatter.generateComments ())
-      return;
-
-    aFormatter.plain ("/**").nlFix ();
-
-    // Main content start
-    format (aFormatter, " * ");
-
-    if (!m_aParams.isEmpty () || m_aReturn != null || m_aDeprecated != null || !m_aXDoclets.isEmpty ())
+    if (aFormatter.getSettings ().isGenerateComments ())
     {
-      aFormatter.plain (" * ").nlFix ();
-      for (final Map.Entry <String, JSCommentPart> aEntry : m_aParams.entrySet ())
+      aFormatter.plain ("/**").nlFix ();
+
+      // Main content start
+      format (aFormatter, " * ");
+
+      if (!m_aParams.isEmpty () || m_aReturn != null || m_aDeprecated != null || !m_aXDoclets.isEmpty ())
       {
-        aFormatter.plain (" * @param ").plain (aEntry.getKey ()).nlFix ();
-        aEntry.getValue ().format (aFormatter, INDENT);
-      }
-      if (m_aReturn != null)
-      {
-        aFormatter.plain (" * @return").nlFix ();
-        m_aReturn.format (aFormatter, INDENT);
-      }
-      if (m_aDeprecated != null)
-      {
-        aFormatter.plain (" * @deprecated").nlFix ();
-        m_aDeprecated.format (aFormatter, INDENT);
-      }
-      for (final Map.Entry <String, Map <String, String>> aEntry : m_aXDoclets.entrySet ())
-      {
-        aFormatter.plain (" * @").plain (aEntry.getKey ());
-        if (aEntry.getValue () != null)
+        aFormatter.plain (" * ").nlFix ();
+        for (final Map.Entry <String, JSCommentPart> aEntry : m_aParams.entrySet ())
         {
-          for (final Map.Entry <String, String> aEntry2 : aEntry.getValue ().entrySet ())
-            aFormatter.plain (" ").plain (aEntry2.getKey ()).plain ("= \"").plain (aEntry2.getValue ()).plain ("\"");
+          aFormatter.plain (" * @param ").plain (aEntry.getKey ()).nlFix ();
+          aEntry.getValue ().format (aFormatter, INDENT);
         }
-        aFormatter.nlFix ();
+        if (m_aReturn != null)
+        {
+          aFormatter.plain (" * @return").nlFix ();
+          m_aReturn.format (aFormatter, INDENT);
+        }
+        if (m_aDeprecated != null)
+        {
+          aFormatter.plain (" * @deprecated").nlFix ();
+          m_aDeprecated.format (aFormatter, INDENT);
+        }
+        for (final Map.Entry <String, Map <String, String>> aEntry : m_aXDoclets.entrySet ())
+        {
+          aFormatter.plain (" * @").plain (aEntry.getKey ());
+          if (aEntry.getValue () != null)
+          {
+            for (final Map.Entry <String, String> aEntry2 : aEntry.getValue ().entrySet ())
+              aFormatter.plain (" ").plain (aEntry2.getKey ()).plain ("= \"").plain (aEntry2.getValue ()).plain ("\"");
+          }
+          aFormatter.nlFix ();
+        }
       }
+      aFormatter.plain (" */").nlFix ();
     }
-    aFormatter.plain (" */").nlFix ();
   }
 
   @Nonnull
-  public String getJSCode ()
+  public final String getJSCode ()
   {
-    return JSPrinter.getAsString (this);
+    return getJSCode ((IJSFormatterSettings) null);
+  }
+
+  @Nonnull
+  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
+  {
+    return JSPrinter.getAsString (aSettings, this);
   }
 
   @Override

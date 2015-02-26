@@ -21,16 +21,19 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.html.js.builder.output.JSPrinter;
 
 /**
  * Debugger statement.<br>
  * <a href=
  * "https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Statements/debugger"
  * >Source</a>
- * 
+ *
  * @author boris
  */
-public class JSDebugger implements IJSStatement
+public class JSDebugger extends AbstractJSStatement
 {
   public void state (@Nonnull final JSFormatter aFormatter)
   {
@@ -38,9 +41,9 @@ public class JSDebugger implements IJSStatement
   }
 
   @Nullable
-  public String getJSCode ()
+  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
   {
-    return JSPrinter.getAsString (this);
+    return JSPrinter.getAsString (aSettings, this);
   }
 
   @Override

@@ -36,6 +36,9 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.conversion.HCSettings;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.html.js.builder.output.JSPrinter;
 import com.helger.html.js.marshal.JSMarshaller;
 import com.helger.json.IJson;
 
@@ -578,7 +581,7 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
 
   /**
    * Adds a null argument. Short for {@code arg(nIndex, JSExpr.THIS)}
-   * 
+   *
    * @param nIndex
    *        Index to insert
    * @return this
@@ -747,9 +750,9 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
 
   @Override
   @Nullable
-  public String getJSCode ()
+  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
   {
-    return JSPrinter.getAsString ((IJSStatement) this);
+    return JSPrinter.getAsString (aSettings, (IJSStatement) this);
   }
 
   @Override

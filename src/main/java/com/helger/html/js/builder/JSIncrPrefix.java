@@ -22,13 +22,16 @@ import javax.annotation.Nullable;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.html.js.builder.output.JSPrinter;
 
 /**
  * Prefix increment (++x) statement
  *
  * @author Philip Helger
  */
-public class JSIncrPrefix implements IJSStatement
+public class JSIncrPrefix extends AbstractJSStatement
 {
   private final IJSAssignmentTarget m_aExpr;
 
@@ -55,9 +58,9 @@ public class JSIncrPrefix implements IJSStatement
   }
 
   @Nullable
-  public String getJSCode ()
+  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
   {
-    return JSPrinter.getAsString (this);
+    return JSPrinter.getAsString (aSettings, this);
   }
 
   @Override

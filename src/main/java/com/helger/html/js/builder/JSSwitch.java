@@ -29,13 +29,16 @@ import com.helger.commons.collections.ContainerHelper;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.html.js.builder.output.JSPrinter;
 
 /**
  * Switch statement
  *
  * @author Philip Helger
  */
-public class JSSwitch implements IJSStatement
+public class JSSwitch extends AbstractJSStatement
 {
   /**
    * Test part of switch statement.
@@ -54,7 +57,7 @@ public class JSSwitch implements IJSStatement
 
   /**
    * Construct a switch statement
-   * 
+   *
    * @param aTest
    *        Test expression
    */
@@ -108,9 +111,9 @@ public class JSSwitch implements IJSStatement
   }
 
   @Nullable
-  public String getJSCode ()
+  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
   {
-    return JSPrinter.getAsString (this);
+    return JSPrinter.getAsString (aSettings, this);
   }
 
   @Override

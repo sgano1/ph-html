@@ -22,13 +22,16 @@ import javax.annotation.Nullable;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.html.js.builder.output.JSPrinter;
 
 /**
  * delete statement
  *
  * @author Philip Helger
  */
-public class JSDelete implements IJSStatement
+public class JSDelete extends AbstractJSStatement
 {
   private final IJSExpression m_aExpr;
 
@@ -43,15 +46,21 @@ public class JSDelete implements IJSStatement
     m_aExpr = ValueEnforcer.notNull (aExpr, "Expr");
   }
 
+  @Nonnull
+  public IJSExpression expr ()
+  {
+    return m_aExpr;
+  }
+
   public void state (@Nonnull final JSFormatter aFormatter)
   {
     aFormatter.plain ("delete ").generatable (m_aExpr).plain (';').nl ();
   }
 
   @Nullable
-  public String getJSCode ()
+  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
   {
-    return JSPrinter.getAsString (this);
+    return JSPrinter.getAsString (aSettings, this);
   }
 
   @Override

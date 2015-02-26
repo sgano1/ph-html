@@ -14,20 +14,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.js.builder;
+package com.helger.html.js.builder.output;
 
-import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
-import com.helger.html.js.builder.output.IJSFormattedCodeProvider;
-import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.commons.annotations.MustImplementEqualsAndHashcode;
+import com.helger.html.js.IJSCodeProvider;
 
 /**
- * Common interface for code components that can generate uses of themselves as
- * statements.
+ * Basic interface for object providing JavaScript code.
  *
  * @author Philip Helger
  */
-public interface IJSStatement extends IJSFormattedCodeProvider
+@MustImplementEqualsAndHashcode
+public interface IJSFormattedCodeProvider extends IJSCodeProvider
 {
-  void state (@Nonnull JSFormatter aFormatter);
+  /**
+   * @param aSettings
+   *        The formatter settings to be used. May be <code>null</code> for the
+   *        default settings.
+   * @return The JavaScript code representation. May be <code>null</code> to
+   *         indicate no JS code.
+   */
+  @Nullable
+  String getJSCode (@Nullable IJSFormatterSettings aSettings);
 }

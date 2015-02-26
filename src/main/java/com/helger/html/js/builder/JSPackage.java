@@ -17,10 +17,14 @@
 package com.helger.html.js.builder;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSPrinter;
 
 /**
  * A JS package. This is the entry point for all functions, declarations etc.
- * 
+ *
  * @author Philip Helger
  */
 public class JSPackage extends AbstractJSBlock
@@ -32,8 +36,8 @@ public class JSPackage extends AbstractJSBlock
   {}
 
   @Nonnull
-  public String getJSCode ()
+  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
   {
-    return JSPrinter.getAsString (this);
+    return JSPrinter.getAsString (aSettings, this);
   }
 }

@@ -42,6 +42,7 @@ import com.helger.commons.math.MathHelper;
 import com.helger.commons.state.EChange;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
 import com.helger.html.js.provider.CollectingJSCodeProvider;
 import com.helger.json.IJson;
 
@@ -1097,7 +1098,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
 
   /**
    * Create a return statement and add it to this block
-   * 
+   *
    * @param aExpr
    *        Expression to return
    * @return this
@@ -1160,6 +1161,12 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   {
     addStatement (aStatement);
     return this;
+  }
+
+  @Nonnull
+  public final String getJSCode ()
+  {
+    return getJSCode ((IJSFormatterSettings) null);
   }
 
   @Override

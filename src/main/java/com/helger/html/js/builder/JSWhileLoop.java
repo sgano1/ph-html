@@ -23,13 +23,16 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.html.js.builder.output.JSPrinter;
 
 /**
  * While statement
  *
  * @author Philip Helger
  */
-public class JSWhileLoop implements IJSStatement
+public class JSWhileLoop extends AbstractJSStatement
 {
   /**
    * Test part of While statement for determining exit state
@@ -43,7 +46,7 @@ public class JSWhileLoop implements IJSStatement
 
   /**
    * Construct a While statement
-   * 
+   *
    * @param aTest
    *        Test expression
    */
@@ -79,9 +82,9 @@ public class JSWhileLoop implements IJSStatement
   }
 
   @Nullable
-  public String getJSCode ()
+  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
   {
-    return JSPrinter.getAsString (this);
+    return JSPrinter.getAsString (aSettings, this);
   }
 
   @Override

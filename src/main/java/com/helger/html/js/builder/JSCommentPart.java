@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.output.JSFormatter;
 
 /**
  * A part is a part of a JSDoc comment, and it is a list of values.

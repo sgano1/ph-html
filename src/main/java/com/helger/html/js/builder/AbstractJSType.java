@@ -23,17 +23,18 @@ import com.helger.commons.annotations.CodingStyleguideUnaware;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
 
 /**
  * A representation of a type in JS.
- * 
+ *
  * @author Philip Helger
  */
 public abstract class AbstractJSType implements IJSGeneratable
 {
   /**
    * Gets the name of this type.
-   * 
+   *
    * @return Names like "int", "void", "BigInteger".
    */
   @Nonnull
@@ -75,7 +76,7 @@ public abstract class AbstractJSType implements IJSGeneratable
 
   /**
    * Create a cast from the passed expression to this type
-   * 
+   *
    * @param aExpr
    *        The expression to be casted. May not be <code>null</code>.
    * @return The {@link JSCast} object
@@ -84,6 +85,12 @@ public abstract class AbstractJSType implements IJSGeneratable
   public JSCast casted (@Nonnull final IJSExpression aExpr)
   {
     return JSExpr.cast (this, aExpr);
+  }
+
+  @Nonnull
+  public final String getJSCode ()
+  {
+    return getJSCode ((IJSFormatterSettings) null);
   }
 
   @Override

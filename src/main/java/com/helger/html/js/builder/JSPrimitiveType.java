@@ -17,16 +17,20 @@
 package com.helger.html.js.builder;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.html.js.builder.output.JSPrinter;
 import com.helger.html.js.marshal.JSMarshaller;
 
 // ESCA-JAVA0116:
 /**
  * Contains the JS built-in primitive types
- * 
+ *
  * @author Philip Helger
  */
 public class JSPrimitiveType extends AbstractJSType
@@ -75,9 +79,9 @@ public class JSPrimitiveType extends AbstractJSType
   }
 
   @Nonnull
-  public String getJSCode ()
+  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
   {
-    return JSPrinter.getAsString (this);
+    return JSPrinter.getAsString (aSettings, this);
   }
 
   @Override

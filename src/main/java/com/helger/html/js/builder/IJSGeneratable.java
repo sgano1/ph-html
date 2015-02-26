@@ -18,14 +18,15 @@ package com.helger.html.js.builder;
 
 import javax.annotation.Nonnull;
 
-import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.builder.output.IJSFormattedCodeProvider;
+import com.helger.html.js.builder.output.JSFormatter;
 
 /**
  * Common interface for code components that can generate uses of themselves.
- * 
+ *
  * @author Philip Helger
  */
-public interface IJSGeneratable extends IJSCodeProvider
+public interface IJSGeneratable extends IJSFormattedCodeProvider
 {
   void generate (@Nonnull JSFormatter aFormatter);
 }

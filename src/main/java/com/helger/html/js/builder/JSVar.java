@@ -23,6 +23,9 @@ import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.html.js.builder.output.JSPrinter;
 import com.helger.html.js.marshal.JSMarshaller;
 
 /**
@@ -190,11 +193,9 @@ public class JSVar extends AbstractJSAssignmentTarget implements IJSDeclaration
     return this;
   }
 
-  void bind (@Nonnull final JSFormatter aFormatter)
+  public void bind (@Nonnull final JSFormatter aFormatter)
   {
-    if (m_aType != null && aFormatter.generateTypeNames ())
-      aFormatter.plain ("/*").generatable (m_aType).plain ("*/");
-    aFormatter.plain (m_sName);
+    aFormatter.typename (m_aType).plain (m_sName);
     if (m_aInit != null)
       aFormatter.plain ('=').generatable (m_aInit);
   }
@@ -213,9 +214,9 @@ public class JSVar extends AbstractJSAssignmentTarget implements IJSDeclaration
 
   @Override
   @Nonnull
-  public String getJSCode ()
+  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
   {
-    return JSPrinter.getAsString ((IJSDeclaration) this);
+    return JSPrinter.getAsString (aSettings, (IJSDeclaration) this);
   }
 
   @Override

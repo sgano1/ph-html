@@ -35,6 +35,9 @@ import com.helger.commons.collections.ContainerHelper;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.html.js.builder.output.JSPrinter;
 import com.helger.html.js.marshal.JSMarshaller;
 
 /**
@@ -343,9 +346,9 @@ public class JSDefinedClass extends AbstractJSClass implements IJSDeclaration, I
   }
 
   @Nullable
-  public String getJSCode ()
+  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
   {
-    return JSPrinter.getAsString ((IJSDeclaration) this);
+    return JSPrinter.getAsString (aSettings, (IJSDeclaration) this);
   }
 
   @Override
