@@ -23,9 +23,10 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.OverrideOnDemand;
 import com.helger.commons.xml.serialize.EXMLSerializeIndent;
 import com.helger.commons.xml.serialize.IXMLWriterSettings;
-import com.helger.css.writer.CSSWriterSettings;
+import com.helger.css.ICSSWriterSettings;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.customize.IHCCustomizer;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
 
 /**
  * Default implementation of {@link IHCConversionSettingsProvider} using a
@@ -61,6 +62,7 @@ public class HCConversionSettingsProvider implements IHCConversionSettingsProvid
   {
     aCSOptimized.getXMLWriterSettings ().setIndent (EXMLSerializeIndent.NONE);
     aCSOptimized.getCSSWriterSettings ().setOptimizedOutput (true).setRemoveUnnecessaryCode (true);
+    aCSOptimized.getJSFormatterSettings ().setIndentAndAlign (false);
     aCSOptimized.setConsistencyChecksEnabled (false);
   }
 
@@ -98,9 +100,17 @@ public class HCConversionSettingsProvider implements IHCConversionSettingsProvid
   }
 
   @Nonnull
-  public HCConversionSettingsProvider setCSSWriterSettings (@Nonnull final CSSWriterSettings aCSSWriterSettings)
+  public HCConversionSettingsProvider setCSSWriterSettings (@Nonnull final ICSSWriterSettings aCSSWriterSettings)
   {
     m_aCSPrettyPrint.setCSSWriterSettings (aCSSWriterSettings);
+    m_aCSOptimized = null;
+    return this;
+  }
+
+  @Nonnull
+  public HCConversionSettingsProvider setJSFormatterSettings (@Nonnull final IJSFormatterSettings aJSFormatterSettings)
+  {
+    m_aCSPrettyPrint.setJSFormatterSettings (aJSFormatterSettings);
     m_aCSOptimized = null;
     return this;
   }

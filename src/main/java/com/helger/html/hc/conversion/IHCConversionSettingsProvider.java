@@ -19,9 +19,10 @@ package com.helger.html.hc.conversion;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.xml.serialize.IXMLWriterSettings;
-import com.helger.css.writer.CSSWriterSettings;
+import com.helger.css.ICSSWriterSettings;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.customize.IHCCustomizer;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
 
 /**
  * Provider interface for {@link HCConversionSettings} objects.
@@ -58,7 +59,10 @@ public interface IHCConversionSettingsProvider
   IHCConversionSettingsProvider setXMLWriterSettings (@Nonnull IXMLWriterSettings aXMLWriterSettings);
 
   @Nonnull
-  IHCConversionSettingsProvider setCSSWriterSettings (@Nonnull CSSWriterSettings aCSSWriterSettings);
+  IHCConversionSettingsProvider setCSSWriterSettings (@Nonnull ICSSWriterSettings aCSSWriterSettings);
+
+  @Nonnull
+  IHCConversionSettingsProvider setJSFormatterSettings (@Nonnull IJSFormatterSettings aJSFormatterSettings);
 
   @Nonnull
   IHCConversionSettingsProvider setConsistencyChecksEnabled (boolean bConsistencyChecksEnabled);
