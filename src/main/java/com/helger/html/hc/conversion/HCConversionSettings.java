@@ -35,6 +35,8 @@ import com.helger.css.writer.CSSWriterSettings;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.customize.HCDefaultCustomizer;
 import com.helger.html.hc.customize.IHCCustomizer;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSFormatterSettings;
 
 @NotThreadSafe
 public class HCConversionSettings implements IHCConversionSettings
@@ -46,6 +48,8 @@ public class HCConversionSettings implements IHCConversionSettings
   public static final ECSSVersion DEFAULT_CSS_VERSION = ECSSVersion.CSS30;
   /** Default indent and align CSS: true */
   public static final boolean DEFAULT_INDENT_AND_ALIGN_CSS = true;
+  /** Default indent and align JS: true */
+  public static final boolean DEFAULT_INDENT_AND_ALIGN_JS = true;
   /** Default consistency checks: true */
   public static final boolean DEFAULT_CONSISTENCY_CHECKS = true;
   /** Default extract out-of-band nodes: true */
@@ -55,6 +59,7 @@ public class HCConversionSettings implements IHCConversionSettings
   private final String m_sHTMLNamespaceURI;
   private XMLWriterSettings m_aXMLWriterSettings;
   private CSSWriterSettings m_aCSSWriterSettings;
+  private JSFormatterSettings m_aJSFormatterSettings;
   private boolean m_bConsistencyChecksEnabled;
   private boolean m_bExtractOutOfBandNodes;
   private IHCCustomizer m_aCustomizer;
@@ -72,6 +77,12 @@ public class HCConversionSettings implements IHCConversionSettings
   public static CSSWriterSettings createDefaultCSSWriterSettings ()
   {
     return new CSSWriterSettings (DEFAULT_CSS_VERSION, !DEFAULT_INDENT_AND_ALIGN_CSS);
+  }
+
+  @Nonnull
+  public static JSFormatterSettings createDefaultJSFormatterSettings ()
+  {
+    return new JSFormatterSettings ().setIndentAndAlign (DEFAULT_INDENT_AND_ALIGN_JS);
   }
 
   @Nonnull
@@ -95,6 +106,7 @@ public class HCConversionSettings implements IHCConversionSettings
     m_sHTMLNamespaceURI = eHTMLVersion.getNamespaceURI ();
     m_aXMLWriterSettings = createDefaultXMLWriterSettings ();
     m_aCSSWriterSettings = createDefaultCSSWriterSettings ();
+    m_aJSFormatterSettings = createDefaultJSFormatterSettings ();
     m_bConsistencyChecksEnabled = DEFAULT_CONSISTENCY_CHECKS;
     m_bExtractOutOfBandNodes = DEFAULT_EXTRACT_OUT_OF_BAND_NODES;
     m_aCustomizer = createDefaultCustomizer ();
@@ -130,6 +142,7 @@ public class HCConversionSettings implements IHCConversionSettings
     m_sHTMLNamespaceURI = eHTMLVersion.getNamespaceURI ();
     m_aXMLWriterSettings = new XMLWriterSettings (aBase.getXMLWriterSettings ());
     m_aCSSWriterSettings = new CSSWriterSettings (aBase.getCSSWriterSettings ());
+    m_aJSFormatterSettings = new JSFormatterSettings (aBase.getJSFormatterSettings ());
     m_bConsistencyChecksEnabled = aBase.areConsistencyChecksEnabled ();
     m_bExtractOutOfBandNodes = aBase.isExtractOutOfBandNodes ();
     m_aCustomizer = aBase.getCustomizer ();
@@ -207,6 +220,36 @@ public class HCConversionSettings implements IHCConversionSettings
   public CSSWriterSettings getMutableCSSWriterSettings ()
   {
     return new CSSWriterSettings (m_aCSSWriterSettings);
+  }
+
+  /**
+   * Set the JS formatter settings to be used.
+   *
+   * @param aJSFormatterSettings
+   *        The settings. May not be <code>null</code>.
+   * @return this
+   */
+  @Nonnull
+  public HCConversionSettings setJSFormatterSettings (@Nonnull final IJSFormatterSettings aJSFormatterSettings)
+  {
+    ValueEnforcer.notNull (aJSFormatterSettings, "JSFormatterSettings");
+
+    m_aJSFormatterSettings = new JSFormatterSettings (aJSFormatterSettings);
+    return this;
+  }
+
+  @Nonnull
+  @ReturnsMutableObject (reason = "Design")
+  public JSFormatterSettings getJSFormatterSettings ()
+  {
+    return m_aJSFormatterSettings;
+  }
+
+  @Nonnull
+  @ReturnsMutableCopy
+  public JSFormatterSettings getMutableJSFormatterSettings ()
+  {
+    return new JSFormatterSettings (m_aJSFormatterSettings);
   }
 
   /**
@@ -293,6 +336,7 @@ public class HCConversionSettings implements IHCConversionSettings
     return new ToStringGenerator (this).append ("htmlVersion", m_eHTMLVersion)
                                        .append ("XMLWriterSettings", m_aXMLWriterSettings)
                                        .append ("CSSWriterSettings", m_aCSSWriterSettings)
+                                       .append ("JSFormatteSettings", m_aJSFormatterSettings)
                                        .append ("consistencyChecksEnabled", m_bConsistencyChecksEnabled)
                                        .append ("extractOutOfBandNodes", m_bExtractOutOfBandNodes)
                                        .append ("customizer", m_aCustomizer)

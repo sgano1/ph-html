@@ -101,7 +101,7 @@ public class JSFormatter implements Closeable
                       @Nullable final IJSFormatterSettings aSettings)
   {
     m_aPW = ValueEnforcer.notNull (aPrintWriter, "PrintWriter");
-    m_aSettings = aSettings == null ? new JSFormatterSettings () : new JSFormatterSettings (aSettings);
+    m_aSettings = JSFormatterSettings.createCloneOnDemand (aSettings);
   }
 
   @Nonnull

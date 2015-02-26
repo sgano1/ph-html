@@ -26,6 +26,8 @@ import com.helger.css.ICSSWriterSettings;
 import com.helger.css.writer.CSSWriterSettings;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.customize.IHCCustomizer;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.builder.output.JSFormatterSettings;
 
 /**
  * Settings interface that is used to convert HC* nodes to micro nodes.
@@ -74,6 +76,19 @@ public interface IHCConversionSettingsToNode
    */
   @Nonnull
   CSSWriterSettings getMutableCSSWriterSettings ();
+
+  /**
+   * @return The JS formatter settings to be used. Never <code>null</code>.
+   */
+  @Nonnull
+  IJSFormatterSettings getJSFormatterSettings ();
+
+  /**
+   * @return A mutable copy of the JS formatter settings to be used. Never
+   *         <code>null</code>.
+   */
+  @Nonnull
+  JSFormatterSettings getMutableJSFormatterSettings ();
 
   /**
    * @return <code>true</code> if the consistency checks are enabled,

@@ -40,6 +40,8 @@ import com.helger.commons.xml.serialize.XMLWriterSettings;
 import com.helger.html.annotations.OutOfBandNode;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.builder.output.IJSFormattedCodeProvider;
+import com.helger.html.js.builder.output.IJSFormatterSettings;
 import com.helger.html.js.provider.UnparsedJSCodeProvider;
 
 /**
@@ -50,7 +52,7 @@ import com.helger.html.js.provider.UnparsedJSCodeProvider;
  * @see HCScriptOnDocumentReady
  */
 @OutOfBandNode
-public class HCScript extends AbstractHCScript <HCScript> implements IJSCodeProvider
+public class HCScript extends AbstractHCScript <HCScript>
 {
   public static enum EMode
   {
@@ -176,8 +178,10 @@ public class HCScript extends AbstractHCScript <HCScript> implements IJSCodeProv
    *         May be <code>null</code>.
    */
   @Nullable
-  public String getJSCode ()
+  public String getJSCode (@Nonnull final IJSFormatterSettings aSettings)
   {
+    if (m_aProvider instanceof IJSFormattedCodeProvider)
+      return ((IJSFormattedCodeProvider) m_aProvider).getJSCode (aSettings);
     return m_aProvider.getJSCode ();
   }
 
@@ -271,7 +275,7 @@ public class HCScript extends AbstractHCScript <HCScript> implements IJSCodeProv
   @Override
   public boolean canConvertToNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
-    m_sJSCode = StringHelper.trim (getJSCode ());
+    m_sJSCode = StringHelper.trim (getJSCode (aConversionSettings.getJSFormatterSettings ()));
     // Don't create script elements with empty content....
     return StringHelper.hasText (m_sJSCode);
   }

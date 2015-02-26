@@ -17,12 +17,14 @@
 package com.helger.html.js.builder.output;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.ICloneable;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.ReturnsMutableCopy;
+import com.helger.commons.string.ToStringGenerator;
 
 /**
  * Settings for the textual representation of JSDOM objects
@@ -60,7 +62,7 @@ public final class JSFormatterSettings implements IJSFormatterSettings, ICloneab
   }
 
   @Nonnull
-  public IJSFormatterSettings setIndentAndAlign (final boolean bIndentAndAlign)
+  public JSFormatterSettings setIndentAndAlign (final boolean bIndentAndAlign)
   {
     m_bIndentAndAlign = bIndentAndAlign;
     return this;
@@ -72,7 +74,7 @@ public final class JSFormatterSettings implements IJSFormatterSettings, ICloneab
   }
 
   @Nonnull
-  public IJSFormatterSettings setGenerateTypeNames (final boolean bGenerateTypeNames)
+  public JSFormatterSettings setGenerateTypeNames (final boolean bGenerateTypeNames)
   {
     m_bGenerateTypeNames = bGenerateTypeNames;
     return this;
@@ -84,7 +86,7 @@ public final class JSFormatterSettings implements IJSFormatterSettings, ICloneab
   }
 
   @Nonnull
-  public IJSFormatterSettings setGenerateComments (final boolean bGenerateComments)
+  public JSFormatterSettings setGenerateComments (final boolean bGenerateComments)
   {
     m_bGenerateComments = bGenerateComments;
     return this;
@@ -100,7 +102,7 @@ public final class JSFormatterSettings implements IJSFormatterSettings, ICloneab
    * @return this
    */
   @Nonnull
-  public IJSFormatterSettings setMinimumCodeSize (final boolean bMinimumCodeSize)
+  public JSFormatterSettings setMinimumCodeSize (final boolean bMinimumCodeSize)
   {
     setIndentAndAlign (!bMinimumCodeSize);
     setGenerateTypeNames (!bMinimumCodeSize);
@@ -116,7 +118,7 @@ public final class JSFormatterSettings implements IJSFormatterSettings, ICloneab
   }
 
   @Nonnull
-  public IJSFormatterSettings setIndent (@Nonnull @Nonempty final String sIndent)
+  public JSFormatterSettings setIndent (@Nonnull @Nonempty final String sIndent)
   {
     m_sIndent = ValueEnforcer.notEmpty (sIndent, "Indent");
     return this;
@@ -127,5 +129,22 @@ public final class JSFormatterSettings implements IJSFormatterSettings, ICloneab
   public JSFormatterSettings getClone ()
   {
     return new JSFormatterSettings (this);
+  }
+
+  @Override
+  public String toString ()
+  {
+    return new ToStringGenerator (this).append ("IndentAndAlign", m_bIndentAndAlign)
+                                       .append ("GenerateTypeNames", m_bGenerateTypeNames)
+                                       .append ("GenerateComments", m_bGenerateComments)
+                                       .append ("Indent", m_sIndent)
+                                       .toString ();
+  }
+
+  @Nonnull
+  @ReturnsMutableCopy
+  public static JSFormatterSettings createCloneOnDemand (@Nullable final IJSFormatterSettings aSettings)
+  {
+    return aSettings == null ? new JSFormatterSettings () : new JSFormatterSettings (aSettings);
   }
 }
