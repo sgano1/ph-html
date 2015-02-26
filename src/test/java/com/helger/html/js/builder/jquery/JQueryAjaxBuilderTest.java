@@ -20,6 +20,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import com.helger.html.js.builder.output.JSFormatterSettings;
+
 /**
  * Test class for class {@link JQueryAjaxBuilder}.
  *
@@ -30,9 +32,11 @@ public final class JQueryAjaxBuilderTest
   @Test
   public void testBasic ()
   {
+    final JSFormatterSettings aSettings = new JSFormatterSettings ().setIndentAndAlign (false);
+
     final JQueryAjaxBuilder aJAB = new JQueryAjaxBuilder ();
-    assertEquals ("$.ajax({});", aJAB.build ().getJSCode ());
+    assertEquals ("$.ajax({});", aJAB.build ().getJSCode (aSettings));
     aJAB.async (false);
-    assertEquals ("$.ajax({async:false});", aJAB.build ().getJSCode ());
+    assertEquals ("$.ajax({async:false});", aJAB.build ().getJSCode (aSettings));
   }
 }

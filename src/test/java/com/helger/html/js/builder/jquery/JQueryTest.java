@@ -27,6 +27,7 @@ import com.helger.html.css.DefaultCSSClassProvider;
 import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.js.builder.JSAnonymousFunction;
 import com.helger.html.js.builder.JSExpr;
+import com.helger.html.js.builder.output.JSFormatterSettings;
 
 /**
  * Test class for class {@link JQuery}.
@@ -38,15 +39,17 @@ public final class JQueryTest
   @Test
   public void testBasic ()
   {
+    final JSFormatterSettings aSettings = new JSFormatterSettings ().setIndentAndAlign (false);
+
     JQueryInvocation aJQI = JQuery.idRef ("id4711").focus ();
-    assertEquals ("$('#id4711').focus();", aJQI.getJSCode ());
+    assertEquals ("$('#id4711').focus();", aJQI.getJSCode (aSettings));
 
     final IReadonlyPair <JQueryInvocation, JSAnonymousFunction> aPair = JQuery.onDocumentReady ();
     aPair.getSecond ().body ()._return (0);
-    assertEquals ("$(document).ready(function(){return 0;});", aPair.getFirst ().getJSCode ());
+    assertEquals ("$(document).ready(function(){return 0;});", aPair.getFirst ().getJSCode (aSettings));
 
     aJQI = JQuery.onDocumentReady (JSExpr.ref ("i").assign (5));
-    assertEquals ("$(document).ready(function(){i=5;});", aJQI.getJSCode ());
+    assertEquals ("$(document).ready(function(){i=5;});", aJQI.getJSCode (aSettings));
   }
 
   @Test

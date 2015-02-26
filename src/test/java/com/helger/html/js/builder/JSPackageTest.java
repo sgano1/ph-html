@@ -301,7 +301,7 @@ public final class JSPackageTest
 
     // Use an unparsed JS code inside a block
     assertEquals ("{a=b;}",
-                  JSPrinter.getAsString (null,
+                  JSPrinter.getAsString (new JSFormatterSettings ().setIndentAndAlign (false),
                                          (IJSGeneratable) new JSBlock ().add (new UnparsedJSCodeProvider ("a=b;"))));
   }
 

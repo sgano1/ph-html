@@ -30,9 +30,9 @@ import com.helger.commons.annotations.Nonempty;
 @NotThreadSafe
 public final class JSFormatterDefaultSettings
 {
-  public static final boolean DEFAULT_INDENT_AND_ALIGN = false;
+  public static final boolean DEFAULT_INDENT_AND_ALIGN = true;
   public static final boolean DEFAULT_GENERATE_TYPE_NAMES = false;
-  public static final boolean DEFAULT_GENERATE_COMMENTS = true;
+  public static final boolean DEFAULT_GENERATE_COMMENTS = false;
   public static final String DEFAULT_INDENT = "  ";
 
   private static boolean s_bIndentAndAlign = DEFAULT_INDENT_AND_ALIGN;
