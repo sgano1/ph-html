@@ -18,13 +18,13 @@ package com.helger.html.js.builder;
 
 import javax.annotation.Nonnull;
 
-import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.writer.IJSWriterSettings;
 
 public abstract class AbstractJSStatement implements IJSStatement
 {
   @Nonnull
   public final String getJSCode ()
   {
-    return getJSCode ((IJSFormatterSettings) null);
+    return getJSCode ((IJSWriterSettings) null);
   }
 }

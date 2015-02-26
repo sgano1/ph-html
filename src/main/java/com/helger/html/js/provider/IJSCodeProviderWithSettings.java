@@ -14,12 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.js.builder.output;
+package com.helger.html.js.provider;
 
 import javax.annotation.Nullable;
 
 import com.helger.commons.annotations.MustImplementEqualsAndHashcode;
 import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
  * Basic interface for object providing JavaScript code.
@@ -27,7 +28,7 @@ import com.helger.html.js.IJSCodeProvider;
  * @author Philip Helger
  */
 @MustImplementEqualsAndHashcode
-public interface IJSFormattedCodeProvider extends IJSCodeProvider
+public interface IJSCodeProviderWithSettings extends IJSCodeProvider
 {
   /**
    * @param aSettings
@@ -37,5 +38,5 @@ public interface IJSFormattedCodeProvider extends IJSCodeProvider
    *         indicate no JS code.
    */
   @Nullable
-  String getJSCode (@Nullable IJSFormatterSettings aSettings);
+  String getJSCode (@Nullable IJSWriterSettings aSettings);
 }

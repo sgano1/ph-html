@@ -35,8 +35,8 @@ import com.helger.css.writer.CSSWriterSettings;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.customize.HCDefaultCustomizer;
 import com.helger.html.hc.customize.IHCCustomizer;
-import com.helger.html.js.builder.output.IJSFormatterSettings;
-import com.helger.html.js.builder.output.JSFormatterSettings;
+import com.helger.html.js.writer.IJSWriterSettings;
+import com.helger.html.js.writer.JSWriterSettings;
 
 @NotThreadSafe
 public class HCConversionSettings implements IHCConversionSettings
@@ -59,7 +59,7 @@ public class HCConversionSettings implements IHCConversionSettings
   private final String m_sHTMLNamespaceURI;
   private XMLWriterSettings m_aXMLWriterSettings;
   private CSSWriterSettings m_aCSSWriterSettings;
-  private JSFormatterSettings m_aJSFormatterSettings;
+  private JSWriterSettings m_aJSWriterSettings;
   private boolean m_bConsistencyChecksEnabled;
   private boolean m_bExtractOutOfBandNodes;
   private IHCCustomizer m_aCustomizer;
@@ -80,9 +80,9 @@ public class HCConversionSettings implements IHCConversionSettings
   }
 
   @Nonnull
-  public static JSFormatterSettings createDefaultJSFormatterSettings ()
+  public static JSWriterSettings createDefaultJSWriterSettings ()
   {
-    return new JSFormatterSettings ().setIndentAndAlign (DEFAULT_INDENT_AND_ALIGN_JS);
+    return new JSWriterSettings ().setIndentAndAlign (DEFAULT_INDENT_AND_ALIGN_JS);
   }
 
   @Nonnull
@@ -106,7 +106,7 @@ public class HCConversionSettings implements IHCConversionSettings
     m_sHTMLNamespaceURI = eHTMLVersion.getNamespaceURI ();
     m_aXMLWriterSettings = createDefaultXMLWriterSettings ();
     m_aCSSWriterSettings = createDefaultCSSWriterSettings ();
-    m_aJSFormatterSettings = createDefaultJSFormatterSettings ();
+    m_aJSWriterSettings = createDefaultJSWriterSettings ();
     m_bConsistencyChecksEnabled = DEFAULT_CONSISTENCY_CHECKS;
     m_bExtractOutOfBandNodes = DEFAULT_EXTRACT_OUT_OF_BAND_NODES;
     m_aCustomizer = createDefaultCustomizer ();
@@ -142,7 +142,7 @@ public class HCConversionSettings implements IHCConversionSettings
     m_sHTMLNamespaceURI = eHTMLVersion.getNamespaceURI ();
     m_aXMLWriterSettings = new XMLWriterSettings (aBase.getXMLWriterSettings ());
     m_aCSSWriterSettings = new CSSWriterSettings (aBase.getCSSWriterSettings ());
-    m_aJSFormatterSettings = new JSFormatterSettings (aBase.getJSFormatterSettings ());
+    m_aJSWriterSettings = new JSWriterSettings (aBase.getJSWriterSettings ());
     m_bConsistencyChecksEnabled = aBase.areConsistencyChecksEnabled ();
     m_bExtractOutOfBandNodes = aBase.isExtractOutOfBandNodes ();
     m_aCustomizer = aBase.getCustomizer ();
@@ -225,31 +225,31 @@ public class HCConversionSettings implements IHCConversionSettings
   /**
    * Set the JS formatter settings to be used.
    *
-   * @param aJSFormatterSettings
+   * @param aJSWriterSettings
    *        The settings. May not be <code>null</code>.
    * @return this
    */
   @Nonnull
-  public HCConversionSettings setJSFormatterSettings (@Nonnull final IJSFormatterSettings aJSFormatterSettings)
+  public HCConversionSettings setJSWriterSettings (@Nonnull final IJSWriterSettings aJSWriterSettings)
   {
-    ValueEnforcer.notNull (aJSFormatterSettings, "JSFormatterSettings");
+    ValueEnforcer.notNull (aJSWriterSettings, "JSWriterSettings");
 
-    m_aJSFormatterSettings = new JSFormatterSettings (aJSFormatterSettings);
+    m_aJSWriterSettings = new JSWriterSettings (aJSWriterSettings);
     return this;
   }
 
   @Nonnull
   @ReturnsMutableObject (reason = "Design")
-  public JSFormatterSettings getJSFormatterSettings ()
+  public JSWriterSettings getJSWriterSettings ()
   {
-    return m_aJSFormatterSettings;
+    return m_aJSWriterSettings;
   }
 
   @Nonnull
   @ReturnsMutableCopy
-  public JSFormatterSettings getMutableJSFormatterSettings ()
+  public JSWriterSettings getMutableJSWriterSettings ()
   {
-    return new JSFormatterSettings (m_aJSFormatterSettings);
+    return new JSWriterSettings (m_aJSWriterSettings);
   }
 
   /**
@@ -336,7 +336,7 @@ public class HCConversionSettings implements IHCConversionSettings
     return new ToStringGenerator (this).append ("htmlVersion", m_eHTMLVersion)
                                        .append ("XMLWriterSettings", m_aXMLWriterSettings)
                                        .append ("CSSWriterSettings", m_aCSSWriterSettings)
-                                       .append ("JSFormatteSettings", m_aJSFormatterSettings)
+                                       .append ("JSWriterSettings", m_aJSWriterSettings)
                                        .append ("consistencyChecksEnabled", m_bConsistencyChecksEnabled)
                                        .append ("extractOutOfBandNodes", m_bExtractOutOfBandNodes)
                                        .append ("customizer", m_aCustomizer)

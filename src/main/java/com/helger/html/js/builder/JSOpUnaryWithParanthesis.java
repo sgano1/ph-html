@@ -19,7 +19,6 @@ package com.helger.html.js.builder;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotations.Nonempty;
-import com.helger.html.js.builder.output.JSFormatter;
 
 public class JSOpUnaryWithParanthesis extends JSOpUnary
 {

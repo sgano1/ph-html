@@ -27,7 +27,7 @@ import com.helger.html.css.DefaultCSSClassProvider;
 import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.js.builder.JSAnonymousFunction;
 import com.helger.html.js.builder.JSExpr;
-import com.helger.html.js.builder.output.JSFormatterSettings;
+import com.helger.html.js.writer.JSWriterSettings;
 
 /**
  * Test class for class {@link JQuery}.
@@ -39,7 +39,7 @@ public final class JQueryTest
   @Test
   public void testBasic ()
   {
-    final JSFormatterSettings aSettings = new JSFormatterSettings ().setIndentAndAlign (false);
+    final JSWriterSettings aSettings = new JSWriterSettings ().setIndentAndAlign (false);
 
     JQueryInvocation aJQI = JQuery.idRef ("id4711").focus ();
     assertEquals ("$('#id4711').focus();", aJQI.getJSCode (aSettings));

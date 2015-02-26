@@ -23,9 +23,7 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.js.builder.output.IJSFormatterSettings;
-import com.helger.html.js.builder.output.JSFormatter;
-import com.helger.html.js.builder.output.JSPrinter;
+import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
  * While statement
@@ -82,7 +80,7 @@ public class JSWhileLoop extends AbstractJSStatement
   }
 
   @Nullable
-  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
+  public String getJSCode (@Nullable final IJSWriterSettings aSettings)
   {
     return JSPrinter.getAsString (aSettings, this);
   }

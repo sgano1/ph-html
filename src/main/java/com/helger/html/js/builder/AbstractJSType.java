@@ -23,7 +23,7 @@ import com.helger.commons.annotations.CodingStyleguideUnaware;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
  * A representation of a type in JS.
@@ -90,7 +90,7 @@ public abstract class AbstractJSType implements IJSGeneratable
   @Nonnull
   public final String getJSCode ()
   {
-    return getJSCode ((IJSFormatterSettings) null);
+    return getJSCode ((IJSWriterSettings) null);
   }
 
   @Override

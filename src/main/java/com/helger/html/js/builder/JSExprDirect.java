@@ -22,7 +22,6 @@ import javax.annotation.concurrent.Immutable;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.js.builder.output.JSFormatter;
 
 @Immutable
 public final class JSExprDirect extends AbstractJSExpression

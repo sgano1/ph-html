@@ -22,10 +22,8 @@ import javax.annotation.Nullable;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.js.builder.output.IJSFormatterSettings;
-import com.helger.html.js.builder.output.JSFormatter;
-import com.helger.html.js.builder.output.JSPrinter;
 import com.helger.html.js.marshal.JSMarshaller;
+import com.helger.html.js.writer.IJSWriterSettings;
 
 // ESCA-JAVA0116:
 /**
@@ -79,7 +77,7 @@ public class JSPrimitiveType extends AbstractJSType
   }
 
   @Nonnull
-  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
+  public String getJSCode (@Nullable final IJSWriterSettings aSettings)
   {
     return JSPrinter.getAsString (aSettings, this);
   }

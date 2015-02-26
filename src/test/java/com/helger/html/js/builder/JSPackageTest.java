@@ -23,9 +23,8 @@ import javax.annotation.Nonnull;
 import org.junit.Test;
 
 import com.helger.commons.mock.PHTestUtils;
-import com.helger.html.js.builder.output.JSFormatterSettings;
-import com.helger.html.js.builder.output.JSPrinter;
 import com.helger.html.js.provider.UnparsedJSCodeProvider;
+import com.helger.html.js.writer.JSWriterSettings;
 
 /**
  * Test class for class {@link JSPackage}
@@ -207,10 +206,10 @@ public final class JSPackageTest
     final JSPackage aPkg = _createMockPackage ();
     PHTestUtils.testDefaultImplementationWithEqualContentObject (aPkg, _createMockPackage ());
 
-    final String sCode = aPkg.getJSCode (new JSFormatterSettings ().setMinimumCodeSize (false));
+    final String sCode = aPkg.getJSCode (new JSWriterSettings ().setMinimumCodeSize (false));
     System.out.print (sCode);
     System.out.println ("--------");
-    final String sCompressedCode = aPkg.getJSCode (new JSFormatterSettings ().setMinimumCodeSize (true));
+    final String sCompressedCode = aPkg.getJSCode (new JSWriterSettings ().setMinimumCodeSize (true));
     assertEquals ("var g_aRoot=0;"
                       + "function mainAdd(m1){"
                       + "var root=5;"
@@ -301,7 +300,7 @@ public final class JSPackageTest
 
     // Use an unparsed JS code inside a block
     assertEquals ("{a=b;}",
-                  JSPrinter.getAsString (new JSFormatterSettings ().setIndentAndAlign (false),
+                  JSPrinter.getAsString (new JSWriterSettings ().setIndentAndAlign (false),
                                          (IJSGeneratable) new JSBlock ().add (new UnparsedJSCodeProvider ("a=b;"))));
   }
 

@@ -14,16 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.js.builder.output;
+package com.helger.html.js.writer;
+
+import java.io.Serializable;
 
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotations.Nonempty;
 
-public interface IJSFormatterSettings
+public interface IJSWriterSettings extends Serializable
 {
   /**
-   * @return <code>true</code> if the code should be idented and aligned.
+   * @return <code>true</code> if the code should be indented and aligned.
    */
   boolean isIndentAndAlign ();
 

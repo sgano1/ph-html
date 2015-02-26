@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.js.builder.output;
+package com.helger.html.js.builder;
 
 import java.io.Writer;
 
@@ -26,10 +26,7 @@ import javax.annotation.concurrent.Immutable;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.io.streams.NonBlockingStringWriter;
 import com.helger.commons.io.streams.StreamUtils;
-import com.helger.html.js.builder.IJSDeclaration;
-import com.helger.html.js.builder.IJSGeneratable;
-import com.helger.html.js.builder.IJSStatement;
-import com.helger.html.js.builder.JSPackage;
+import com.helger.html.js.writer.IJSWriterSettings;
 
 @Immutable
 public final class JSPrinter
@@ -38,7 +35,7 @@ public final class JSPrinter
   {}
 
   public static void writeGeneratable (@Nonnull @WillClose final Writer aWriter,
-                                       @Nullable final IJSFormatterSettings aSettings,
+                                       @Nullable final IJSWriterSettings aSettings,
                                        @Nonnull final IJSGeneratable aGeneratable)
   {
     ValueEnforcer.notNull (aGeneratable, "Generatable");
@@ -54,7 +51,7 @@ public final class JSPrinter
   }
 
   public static void writeDeclaration (@Nonnull @WillClose final Writer aWriter,
-                                       @Nullable final IJSFormatterSettings aSettings,
+                                       @Nullable final IJSWriterSettings aSettings,
                                        @Nonnull final IJSDeclaration aDeclaration)
   {
     ValueEnforcer.notNull (aDeclaration, "Declaration");
@@ -70,7 +67,7 @@ public final class JSPrinter
   }
 
   public static void writeStatement (@Nonnull @WillClose final Writer aWriter,
-                                     @Nullable final IJSFormatterSettings aSettings,
+                                     @Nullable final IJSWriterSettings aSettings,
                                      @Nonnull final IJSStatement aStatement)
   {
     ValueEnforcer.notNull (aStatement, "Statement");
@@ -86,7 +83,7 @@ public final class JSPrinter
   }
 
   public static void writePackage (@Nonnull @WillClose final Writer aWriter,
-                                   @Nullable final IJSFormatterSettings aSettings,
+                                   @Nullable final IJSWriterSettings aSettings,
                                    @Nonnull final JSPackage aPackage)
   {
     ValueEnforcer.notNull (aPackage, "Package");
@@ -102,7 +99,7 @@ public final class JSPrinter
   }
 
   @Nonnull
-  public static String getAsString (@Nullable final IJSFormatterSettings aSettings,
+  public static String getAsString (@Nullable final IJSWriterSettings aSettings,
                                     @Nonnull final IJSGeneratable aGeneratable)
   {
     final NonBlockingStringWriter aSW = new NonBlockingStringWriter ();
@@ -111,7 +108,7 @@ public final class JSPrinter
   }
 
   @Nonnull
-  public static String getAsString (@Nullable final IJSFormatterSettings aSettings, @Nonnull final IJSDeclaration aDecl)
+  public static String getAsString (@Nullable final IJSWriterSettings aSettings, @Nonnull final IJSDeclaration aDecl)
   {
     final NonBlockingStringWriter aSW = new NonBlockingStringWriter ();
     writeDeclaration (aSW, aSettings, aDecl);
@@ -119,7 +116,7 @@ public final class JSPrinter
   }
 
   @Nonnull
-  public static String getAsString (@Nullable final IJSFormatterSettings aSettings,
+  public static String getAsString (@Nullable final IJSWriterSettings aSettings,
                                     @Nonnull final IJSStatement aStatement)
   {
     final NonBlockingStringWriter aSW = new NonBlockingStringWriter ();
@@ -128,7 +125,7 @@ public final class JSPrinter
   }
 
   @Nonnull
-  public static String getAsString (@Nullable final IJSFormatterSettings aSettings, @Nonnull final JSPackage aPackage)
+  public static String getAsString (@Nullable final IJSWriterSettings aSettings, @Nonnull final JSPackage aPackage)
   {
     ValueEnforcer.notNull (aPackage, "Package");
     if (aPackage.memberCount () == 0)

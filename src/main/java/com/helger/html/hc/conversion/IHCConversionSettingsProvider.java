@@ -22,7 +22,7 @@ import com.helger.commons.xml.serialize.IXMLWriterSettings;
 import com.helger.css.ICSSWriterSettings;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.customize.IHCCustomizer;
-import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
  * Provider interface for {@link HCConversionSettings} objects.
@@ -62,7 +62,7 @@ public interface IHCConversionSettingsProvider
   IHCConversionSettingsProvider setCSSWriterSettings (@Nonnull ICSSWriterSettings aCSSWriterSettings);
 
   @Nonnull
-  IHCConversionSettingsProvider setJSFormatterSettings (@Nonnull IJSFormatterSettings aJSFormatterSettings);
+  IHCConversionSettingsProvider setJSWriterSettings (@Nonnull IJSWriterSettings aJSWriterSettings);
 
   @Nonnull
   IHCConversionSettingsProvider setConsistencyChecksEnabled (boolean bConsistencyChecksEnabled);

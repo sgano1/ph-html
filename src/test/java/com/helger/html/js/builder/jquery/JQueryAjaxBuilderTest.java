@@ -20,7 +20,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.helger.html.js.builder.output.JSFormatterSettings;
+import com.helger.html.js.writer.JSWriterSettings;
 
 /**
  * Test class for class {@link JQueryAjaxBuilder}.
@@ -32,7 +32,7 @@ public final class JQueryAjaxBuilderTest
   @Test
   public void testBasic ()
   {
-    final JSFormatterSettings aSettings = new JSFormatterSettings ().setIndentAndAlign (false);
+    final JSWriterSettings aSettings = new JSWriterSettings ().setIndentAndAlign (false);
 
     final JQueryAjaxBuilder aJAB = new JQueryAjaxBuilder ();
     assertEquals ("$.ajax({});", aJAB.build ().getJSCode (aSettings));

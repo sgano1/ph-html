@@ -22,9 +22,7 @@ import javax.annotation.Nullable;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.js.builder.output.IJSFormatterSettings;
-import com.helger.html.js.builder.output.JSFormatter;
-import com.helger.html.js.builder.output.JSPrinter;
+import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
  * Catch block for a try/catch/finally statement
@@ -77,11 +75,11 @@ public class JSCatchBlock implements IJSGeneratable
   @Nonnull
   public final String getJSCode ()
   {
-    return getJSCode ((IJSFormatterSettings) null);
+    return getJSCode ((IJSWriterSettings) null);
   }
 
   @Nonnull
-  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
+  public String getJSCode (@Nullable final IJSWriterSettings aSettings)
   {
     return JSPrinter.getAsString (aSettings, this);
   }

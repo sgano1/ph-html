@@ -21,7 +21,6 @@ import javax.annotation.Nonnull;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.js.builder.output.JSFormatter;
 
 public class JSExprParanthesis extends AbstractJSExpression
 {

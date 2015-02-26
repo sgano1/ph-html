@@ -33,7 +33,6 @@ import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.conversion.HCSettings;
-import com.helger.html.js.builder.output.JSFormatter;
 import com.helger.json.IJson;
 
 /**

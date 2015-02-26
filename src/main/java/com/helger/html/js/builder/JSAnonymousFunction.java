@@ -29,7 +29,6 @@ import com.helger.commons.collections.ContainerHelper;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.js.builder.output.JSFormatter;
 
 /**
  * An anonymous function (a function without a name)

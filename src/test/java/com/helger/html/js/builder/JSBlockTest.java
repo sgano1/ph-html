@@ -23,7 +23,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import com.helger.html.js.builder.output.JSFormatterSettings;
+import com.helger.html.js.writer.JSWriterSettings;
 
 /**
  * Test class for class {@link JSBlock}
@@ -35,7 +35,7 @@ public final class JSBlockTest
   @Test
   public void test () throws Exception
   {
-    final JSFormatterSettings aSettings = new JSFormatterSettings ().setIndentAndAlign (false);
+    final JSWriterSettings aSettings = new JSWriterSettings ().setIndentAndAlign (false);
 
     final JSBlock aBlock = new JSBlock ();
     assertEquals (0, aBlock.pos ());

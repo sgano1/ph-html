@@ -38,12 +38,14 @@ import com.helger.commons.annotations.ReturnsMutableObject;
 import com.helger.commons.collections.ContainerHelper;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.lang.CGStringHelper;
 import com.helger.commons.math.MathHelper;
 import com.helger.commons.state.EChange;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.IJSCodeProvider;
-import com.helger.html.js.builder.output.IJSFormatterSettings;
 import com.helger.html.js.provider.CollectingJSCodeProvider;
+import com.helger.html.js.provider.IJSCodeProviderWithSettings;
+import com.helger.html.js.writer.IJSWriterSettings;
 import com.helger.json.IJson;
 
 /**
@@ -1147,8 +1149,11 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
       else
       {
         if (GlobalDebug.isDebugMode ())
-          if (!(aJSCode instanceof IJSDeclaration) && !(aJSCode instanceof IJSStatement))
-            s_aLogger.warn ("Adding untyped IJSCodeProvider of class " + aJSCode.getClass ().getName () + " to JSBlock");
+          if (!(aJSCode instanceof IJSCodeProviderWithSettings))
+            s_aLogger.warn ("Adding untyped IJSCodeProvider of class " +
+                            aJSCode.getClass ().getName () +
+                            " to " +
+                            CGStringHelper.getClassLocalName (this));
 
         m_aObjs.add (m_nPos, aJSCode);
         m_nPos++;
@@ -1166,7 +1171,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   @Nonnull
   public final String getJSCode ()
   {
-    return getJSCode ((IJSFormatterSettings) null);
+    return getJSCode ((IJSWriterSettings) null);
   }
 
   @Override

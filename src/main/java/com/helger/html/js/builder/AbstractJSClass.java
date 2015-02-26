@@ -22,7 +22,6 @@ import javax.annotation.Nullable;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.CodingStyleguideUnaware;
 import com.helger.commons.annotations.Nonempty;
-import com.helger.html.js.builder.output.JSFormatter;
 
 /**
  * Represents an abstract JS class.

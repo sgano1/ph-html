@@ -71,9 +71,7 @@ public final class HCHtmlTest
                       "<body><h1>Test</h1>" +
                       "<script type=\"text/javascript\"><!--" +
                       sCRLF +
-                      "$(document).ready(function(){" +
-                      sCRLF +
-                      "  a=b;c=d;});" +
+                      "$(document).ready(function(){a=b;c=d;});" +
                       sCRLF +
                       "//--></script>" +
                       "</body>" +

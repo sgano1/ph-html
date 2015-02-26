@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.js.builder.output;
+package com.helger.html.js.builder;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -28,12 +28,8 @@ import javax.annotation.WillCloseWhenClosed;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.html.js.IJSCodeProvider;
-import com.helger.html.js.builder.AbstractJSType;
-import com.helger.html.js.builder.IJSDeclaration;
-import com.helger.html.js.builder.IJSGeneratable;
-import com.helger.html.js.builder.IJSStatement;
-import com.helger.html.js.builder.JSPackage;
-import com.helger.html.js.builder.JSVar;
+import com.helger.html.js.writer.IJSWriterSettings;
+import com.helger.html.js.writer.JSWriterSettings;
 
 /**
  * This is a utility class for managing indentation and other basic formatting
@@ -47,7 +43,7 @@ public class JSFormatter implements Closeable
    * Stream associated with this JFormatter
    */
   private final PrintWriter m_aPW;
-  private final IJSFormatterSettings m_aSettings;
+  private final IJSWriterSettings m_aSettings;
 
   /**
    * Current number of indentation strings to print
@@ -64,7 +60,7 @@ public class JSFormatter implements Closeable
    */
   public JSFormatter (@Nonnull @WillCloseWhenClosed final Writer aWriter)
   {
-    this (aWriter, (IJSFormatterSettings) null);
+    this (aWriter, (IJSWriterSettings) null);
   }
 
   /**
@@ -75,7 +71,7 @@ public class JSFormatter implements Closeable
    */
   public JSFormatter (@Nonnull @WillCloseWhenClosed final PrintWriter aPrintWriter)
   {
-    this (aPrintWriter, (IJSFormatterSettings) null);
+    this (aPrintWriter, (IJSWriterSettings) null);
   }
 
   /**
@@ -84,7 +80,7 @@ public class JSFormatter implements Closeable
    * @param aWriter
    *        Writer to use
    */
-  public JSFormatter (@Nonnull @WillCloseWhenClosed final Writer aWriter, @Nullable final IJSFormatterSettings aSettings)
+  public JSFormatter (@Nonnull @WillCloseWhenClosed final Writer aWriter, @Nullable final IJSWriterSettings aSettings)
   {
     this (aWriter instanceof PrintWriter ? (PrintWriter) aWriter : new PrintWriter (aWriter), aSettings);
   }
@@ -98,14 +94,14 @@ public class JSFormatter implements Closeable
    *        The settings to be used.
    */
   public JSFormatter (@Nonnull @WillCloseWhenClosed final PrintWriter aPrintWriter,
-                      @Nullable final IJSFormatterSettings aSettings)
+                      @Nullable final IJSWriterSettings aSettings)
   {
     m_aPW = ValueEnforcer.notNull (aPrintWriter, "PrintWriter");
-    m_aSettings = JSFormatterSettings.createCloneOnDemand (aSettings);
+    m_aSettings = JSWriterSettings.createCloneOnDemand (aSettings);
   }
 
   @Nonnull
-  public IJSFormatterSettings getSettings ()
+  public IJSWriterSettings getSettings ()
   {
     return m_aSettings;
   }

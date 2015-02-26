@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.js.builder.output;
+package com.helger.html.js.writer;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -32,22 +32,22 @@ import com.helger.commons.string.ToStringGenerator;
  * @author Philip Helger
  */
 @NotThreadSafe
-public final class JSFormatterSettings implements IJSFormatterSettings, ICloneable <JSFormatterSettings>
+public final class JSWriterSettings implements IJSWriterSettings, ICloneable <JSWriterSettings>
 {
   private boolean m_bIndentAndAlign;
   private boolean m_bGenerateTypeNames;
   private boolean m_bGenerateComments;
   private String m_sIndent;
 
-  public JSFormatterSettings ()
+  public JSWriterSettings ()
   {
-    m_bIndentAndAlign = JSFormatterDefaultSettings.isIndentAndAlign ();
-    m_bGenerateTypeNames = JSFormatterDefaultSettings.isGenerateTypeNames ();
-    m_bGenerateComments = JSFormatterDefaultSettings.isGenerateComments ();
-    m_sIndent = JSFormatterDefaultSettings.getIndent ();
+    m_bIndentAndAlign = JSWriterDefaultSettings.isIndentAndAlign ();
+    m_bGenerateTypeNames = JSWriterDefaultSettings.isGenerateTypeNames ();
+    m_bGenerateComments = JSWriterDefaultSettings.isGenerateComments ();
+    m_sIndent = JSWriterDefaultSettings.getIndent ();
   }
 
-  public JSFormatterSettings (@Nonnull final IJSFormatterSettings aOther)
+  public JSWriterSettings (@Nonnull final IJSWriterSettings aOther)
   {
     ValueEnforcer.notNull (aOther, "Other");
     m_bIndentAndAlign = aOther.isIndentAndAlign ();
@@ -62,7 +62,7 @@ public final class JSFormatterSettings implements IJSFormatterSettings, ICloneab
   }
 
   @Nonnull
-  public JSFormatterSettings setIndentAndAlign (final boolean bIndentAndAlign)
+  public JSWriterSettings setIndentAndAlign (final boolean bIndentAndAlign)
   {
     m_bIndentAndAlign = bIndentAndAlign;
     return this;
@@ -74,7 +74,7 @@ public final class JSFormatterSettings implements IJSFormatterSettings, ICloneab
   }
 
   @Nonnull
-  public JSFormatterSettings setGenerateTypeNames (final boolean bGenerateTypeNames)
+  public JSWriterSettings setGenerateTypeNames (final boolean bGenerateTypeNames)
   {
     m_bGenerateTypeNames = bGenerateTypeNames;
     return this;
@@ -86,7 +86,7 @@ public final class JSFormatterSettings implements IJSFormatterSettings, ICloneab
   }
 
   @Nonnull
-  public JSFormatterSettings setGenerateComments (final boolean bGenerateComments)
+  public JSWriterSettings setGenerateComments (final boolean bGenerateComments)
   {
     m_bGenerateComments = bGenerateComments;
     return this;
@@ -102,7 +102,7 @@ public final class JSFormatterSettings implements IJSFormatterSettings, ICloneab
    * @return this
    */
   @Nonnull
-  public JSFormatterSettings setMinimumCodeSize (final boolean bMinimumCodeSize)
+  public JSWriterSettings setMinimumCodeSize (final boolean bMinimumCodeSize)
   {
     setIndentAndAlign (!bMinimumCodeSize);
     setGenerateTypeNames (!bMinimumCodeSize);
@@ -118,7 +118,7 @@ public final class JSFormatterSettings implements IJSFormatterSettings, ICloneab
   }
 
   @Nonnull
-  public JSFormatterSettings setIndent (@Nonnull @Nonempty final String sIndent)
+  public JSWriterSettings setIndent (@Nonnull @Nonempty final String sIndent)
   {
     m_sIndent = ValueEnforcer.notEmpty (sIndent, "Indent");
     return this;
@@ -126,9 +126,9 @@ public final class JSFormatterSettings implements IJSFormatterSettings, ICloneab
 
   @Nonnull
   @ReturnsMutableCopy
-  public JSFormatterSettings getClone ()
+  public JSWriterSettings getClone ()
   {
-    return new JSFormatterSettings (this);
+    return new JSWriterSettings (this);
   }
 
   @Override
@@ -143,8 +143,8 @@ public final class JSFormatterSettings implements IJSFormatterSettings, ICloneab
 
   @Nonnull
   @ReturnsMutableCopy
-  public static JSFormatterSettings createCloneOnDemand (@Nullable final IJSFormatterSettings aSettings)
+  public static JSWriterSettings createCloneOnDemand (@Nullable final IJSWriterSettings aSettings)
   {
-    return aSettings == null ? new JSFormatterSettings () : new JSFormatterSettings (aSettings);
+    return aSettings == null ? new JSWriterSettings () : new JSWriterSettings (aSettings);
   }
 }

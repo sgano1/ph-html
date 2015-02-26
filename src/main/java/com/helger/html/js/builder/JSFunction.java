@@ -29,10 +29,8 @@ import com.helger.commons.collections.ContainerHelper;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.js.builder.output.IJSFormatterSettings;
-import com.helger.html.js.builder.output.JSFormatter;
-import com.helger.html.js.builder.output.JSPrinter;
 import com.helger.html.js.marshal.JSMarshaller;
+import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
  * JS function
@@ -262,11 +260,11 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
   @Nonnull
   public final String getJSCode ()
   {
-    return getJSCode ((IJSFormatterSettings) null);
+    return getJSCode ((IJSWriterSettings) null);
   }
 
   @Nullable
-  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
+  public String getJSCode (@Nullable final IJSWriterSettings aSettings)
   {
     return JSPrinter.getAsString (aSettings, this);
   }

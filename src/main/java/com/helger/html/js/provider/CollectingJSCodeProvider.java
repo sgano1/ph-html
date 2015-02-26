@@ -31,6 +31,7 @@ import com.helger.commons.collections.ContainerHelper;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
  * A JSCode provider that encapsulates a list of {@link IJSCodeProvider}
@@ -39,7 +40,7 @@ import com.helger.html.js.IJSCodeProvider;
  * @author Philip Helger
  */
 @NotThreadSafe
-public final class CollectingJSCodeProvider implements IJSCodeProvider, IHasSize, ICloneable <CollectingJSCodeProvider>
+public final class CollectingJSCodeProvider implements IJSCodeProviderWithSettings, IHasSize, ICloneable <CollectingJSCodeProvider>
 {
   private final List <IJSCodeProvider> m_aList = new ArrayList <IJSCodeProvider> ();
 
@@ -152,9 +153,22 @@ public final class CollectingJSCodeProvider implements IJSCodeProvider, IHasSize
   @Nonnull
   public String getJSCode ()
   {
+    return getJSCode ((IJSWriterSettings) null);
+  }
+
+  @Nonnull
+  public String getJSCode (@Nullable final IJSWriterSettings aSettings)
+  {
     final StringBuilder aSB = new StringBuilder ();
     for (final IJSCodeProvider aJSCodeProvider : m_aList)
-      aSB.append (aJSCodeProvider.getJSCode ());
+    {
+      String sJSCode;
+      if (aJSCodeProvider instanceof IJSCodeProviderWithSettings)
+        sJSCode = ((IJSCodeProviderWithSettings) aJSCodeProvider).getJSCode (aSettings);
+      else
+        sJSCode = aJSCodeProvider.getJSCode ();
+      aSB.append (sJSCode);
+    }
     return aSB.toString ();
   }
 

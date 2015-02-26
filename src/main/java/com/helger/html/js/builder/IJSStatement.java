@@ -18,8 +18,7 @@ package com.helger.html.js.builder;
 
 import javax.annotation.Nonnull;
 
-import com.helger.html.js.builder.output.IJSFormattedCodeProvider;
-import com.helger.html.js.builder.output.JSFormatter;
+import com.helger.html.js.provider.IJSCodeProviderWithSettings;
 
 /**
  * Common interface for code components that can generate uses of themselves as
@@ -27,7 +26,7 @@ import com.helger.html.js.builder.output.JSFormatter;
  *
  * @author Philip Helger
  */
-public interface IJSStatement extends IJSFormattedCodeProvider
+public interface IJSStatement extends IJSCodeProviderWithSettings
 {
   void state (@Nonnull JSFormatter aFormatter);
 }

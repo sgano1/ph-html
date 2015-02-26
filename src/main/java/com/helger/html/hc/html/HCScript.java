@@ -40,9 +40,9 @@ import com.helger.commons.xml.serialize.XMLWriterSettings;
 import com.helger.html.annotations.OutOfBandNode;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.js.IJSCodeProvider;
-import com.helger.html.js.builder.output.IJSFormattedCodeProvider;
-import com.helger.html.js.builder.output.IJSFormatterSettings;
+import com.helger.html.js.provider.IJSCodeProviderWithSettings;
 import com.helger.html.js.provider.UnparsedJSCodeProvider;
+import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
  * This class represents an HTML &lt;script&gt; element with inline JS content.
@@ -174,14 +174,17 @@ public class HCScript extends AbstractHCScript <HCScript>
   }
 
   /**
+   * @param aSettings
+   *        The settings to be used. May be <code>null</code> to use the
+   *        default.
    * @return The text representation of the JS code passed in the constructor.
    *         May be <code>null</code>.
    */
   @Nullable
-  public String getJSCode (@Nonnull final IJSFormatterSettings aSettings)
+  public String getJSCode (@Nonnull final IJSWriterSettings aSettings)
   {
-    if (m_aProvider instanceof IJSFormattedCodeProvider)
-      return ((IJSFormattedCodeProvider) m_aProvider).getJSCode (aSettings);
+    if (m_aProvider instanceof IJSCodeProviderWithSettings)
+      return ((IJSCodeProviderWithSettings) m_aProvider).getJSCode (aSettings);
     return m_aProvider.getJSCode ();
   }
 
@@ -275,7 +278,7 @@ public class HCScript extends AbstractHCScript <HCScript>
   @Override
   public boolean canConvertToNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
-    m_sJSCode = StringHelper.trim (getJSCode (aConversionSettings.getJSFormatterSettings ()));
+    m_sJSCode = StringHelper.trim (getJSCode (aConversionSettings.getJSWriterSettings ()));
     // Don't create script elements with empty content....
     return StringHelper.hasText (m_sJSCode);
   }

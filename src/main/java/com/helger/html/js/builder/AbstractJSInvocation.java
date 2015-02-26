@@ -36,10 +36,8 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.conversion.HCSettings;
-import com.helger.html.js.builder.output.IJSFormatterSettings;
-import com.helger.html.js.builder.output.JSFormatter;
-import com.helger.html.js.builder.output.JSPrinter;
 import com.helger.html.js.marshal.JSMarshaller;
+import com.helger.html.js.writer.IJSWriterSettings;
 import com.helger.json.IJson;
 
 /**
@@ -750,7 +748,7 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
 
   @Override
   @Nullable
-  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
+  public String getJSCode (@Nullable final IJSWriterSettings aSettings)
   {
     return JSPrinter.getAsString (aSettings, (IJSStatement) this);
   }

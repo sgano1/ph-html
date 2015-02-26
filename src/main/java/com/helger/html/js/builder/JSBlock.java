@@ -23,9 +23,7 @@ import com.helger.commons.annotations.CodingStyleguideUnaware;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.IJSCodeProvider;
-import com.helger.html.js.builder.output.IJSFormatterSettings;
-import com.helger.html.js.builder.output.JSFormatter;
-import com.helger.html.js.builder.output.JSPrinter;
+import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
  * A block of JS code, which may contain statements and local declarations.
@@ -178,7 +176,7 @@ public class JSBlock extends AbstractJSBlock implements IJSGeneratable, IJSState
   }
 
   @Nullable
-  public String getJSCode (@Nullable final IJSFormatterSettings aSettings)
+  public String getJSCode (@Nullable final IJSWriterSettings aSettings)
   {
     return JSPrinter.getAsString (aSettings, (IJSGeneratable) this);
   }

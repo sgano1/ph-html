@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.js.builder.output;
+package com.helger.html.js.writer;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.NotThreadSafe;
@@ -28,7 +28,7 @@ import com.helger.commons.annotations.Nonempty;
  * @author Philip Helger
  */
 @NotThreadSafe
-public final class JSFormatterDefaultSettings
+public final class JSWriterDefaultSettings
 {
   public static final boolean DEFAULT_INDENT_AND_ALIGN = true;
   public static final boolean DEFAULT_GENERATE_TYPE_NAMES = false;
@@ -40,7 +40,7 @@ public final class JSFormatterDefaultSettings
   private static boolean s_bGenerateComments = DEFAULT_GENERATE_COMMENTS;
   private static String s_sIndent = DEFAULT_INDENT;
 
-  private JSFormatterDefaultSettings ()
+  private JSWriterDefaultSettings ()
   {}
 
   public static void setToDefault ()
