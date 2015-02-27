@@ -79,6 +79,8 @@ public class JSFormatter implements Closeable
    *
    * @param aWriter
    *        Writer to use
+   * @param aSettings
+   *        The settings to be used.
    */
   public JSFormatter (@Nonnull @WillCloseWhenClosed final Writer aWriter, @Nullable final IJSWriterSettings aSettings)
   {
