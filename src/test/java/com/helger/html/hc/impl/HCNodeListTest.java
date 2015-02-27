@@ -23,8 +23,8 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import com.helger.commons.CGlobal;
 import com.helger.commons.microdom.IMicroContainer;
+import com.helger.commons.system.ENewLineMode;
 import com.helger.html.hc.conversion.HCSettings;
 import com.helger.html.hc.html.HCDiv;
 import com.helger.html.hc.html.HCRow;
@@ -73,13 +73,14 @@ public final class HCNodeListTest
   @Test
   public void testGetAsNode ()
   {
+    final String sCRLF = ENewLineMode.DEFAULT.getText ();
     final HCNodeList x = new HCNodeList ();
     x.addChild (new HCDiv ().addChild ("Na so was"));
     x.addChild (new HCDiv ().addChild ("aber auch"));
     assertNotNull (HCSettings.getAsNode (x, true));
     assertEquals ("<div xmlns=\"http://www.w3.org/1999/xhtml\">Na so was</div>" +
-                  CGlobal.LINE_SEPARATOR +
+                  sCRLF +
                   "<div xmlns=\"http://www.w3.org/1999/xhtml\">aber auch</div>" +
-                  CGlobal.LINE_SEPARATOR, HCSettings.getAsHTMLString (x, true));
+                  sCRLF, HCSettings.getAsHTMLString (x, true));
   }
 }

@@ -103,10 +103,10 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
     aChild.onAdded (nIndex, this);
   }
 
-  private void _addChild (@CheckForSigned final int nIndex, @Nullable final CHILDTYPE aChild)
+  private void _internalAddChild (@CheckForSigned final int nIndex, @Nullable final CHILDTYPE aChild)
   {
     if (aChild == this)
-      throw new IllegalArgumentException ("Cannot append to self!");
+      throw new IllegalArgumentException ("Cannot append child to self: " + aChild);
 
     if (aChild != null)
     {
@@ -131,7 +131,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
   @Nonnull
   public final THISTYPE addChild (@Nullable final CHILDTYPE aChild)
   {
-    _addChild (CGlobal.ILLEGAL_UINT, aChild);
+    _internalAddChild (CGlobal.ILLEGAL_UINT, aChild);
     return thisAsT ();
   }
 
@@ -139,7 +139,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
   public final THISTYPE addChild (@Nonnegative final int nIndex, @Nullable final CHILDTYPE aChild)
   {
     ValueEnforcer.isBetweenInclusive (nIndex, "Index", 0, getChildCount ());
-    _addChild (nIndex, aChild);
+    _internalAddChild (nIndex, aChild);
     return thisAsT ();
   }
 
