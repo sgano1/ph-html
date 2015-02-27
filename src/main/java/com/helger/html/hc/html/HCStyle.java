@@ -37,6 +37,7 @@ import com.helger.css.decl.CSSDeclarationList;
 import com.helger.css.decl.CascadingStyleSheet;
 import com.helger.css.media.CSSMediaList;
 import com.helger.css.media.ECSSMedium;
+import com.helger.css.media.ICSSMediaList;
 import com.helger.css.writer.CSSWriter;
 import com.helger.css.writer.CSSWriterSettings;
 import com.helger.html.CHTMLAttributes;
@@ -126,24 +127,30 @@ public class HCStyle extends AbstractHCElement <HCStyle> implements IHCCSSNode
   }
 
   @Nullable
-  public CSSMediaList getMedia ()
+  public ICSSMediaList getMedia ()
   {
     return m_aMediaList;
   }
 
   @Nonnull
-  public HCStyle setMedia (@Nullable final CSSMediaList aMediaList)
+  public HCStyle setMedia (@Nullable final ICSSMediaList aMediaList)
   {
-    m_aMediaList = aMediaList;
+    m_aMediaList = aMediaList == null ? null : new CSSMediaList (aMediaList);
     return this;
+  }
+
+  @Nonnull
+  private CSSMediaList _ensureMediaListPresent ()
+  {
+    if (m_aMediaList == null)
+      m_aMediaList = new CSSMediaList ();
+    return m_aMediaList;
   }
 
   @Nonnull
   public HCStyle addMedium (@Nonnull final ECSSMedium eMedium)
   {
-    if (m_aMediaList == null)
-      m_aMediaList = new CSSMediaList ();
-    m_aMediaList.addMedium (eMedium);
+    _ensureMediaListPresent ().addMedium (eMedium);
     return this;
   }
 

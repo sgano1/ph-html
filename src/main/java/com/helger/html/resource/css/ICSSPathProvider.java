@@ -24,7 +24,7 @@ import javax.annotation.Nullable;
 import com.helger.commons.annotations.MustImplementEqualsAndHashcode;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.css.media.CSSMediaList;
+import com.helger.css.media.ICSSMediaList;
 
 /**
  * Provides a path to an external CSS object.
@@ -58,5 +58,5 @@ public interface ICSSPathProvider extends Serializable
    */
   @Nonnull
   @ReturnsMutableCopy
-  CSSMediaList getMediaList ();
+  ICSSMediaList getMediaList ();
 }

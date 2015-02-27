@@ -179,24 +179,30 @@ public class HCLink extends AbstractHCElement <HCLink> implements IHCCSSNode
   }
 
   @Nullable
-  public CSSMediaList getMedia ()
+  public ICSSMediaList getMedia ()
   {
     return m_aMediaList;
   }
 
   @Nonnull
-  public HCLink setMedia (@Nullable final CSSMediaList aMediaList)
+  public HCLink setMedia (@Nullable final ICSSMediaList aMediaList)
   {
-    m_aMediaList = aMediaList;
+    m_aMediaList = aMediaList == null ? null : new CSSMediaList (aMediaList);
     return this;
+  }
+
+  @Nonnull
+  private CSSMediaList _ensureMediaListPresent ()
+  {
+    if (m_aMediaList == null)
+      m_aMediaList = new CSSMediaList ();
+    return m_aMediaList;
   }
 
   @Nonnull
   public HCLink addMedium (@Nonnull final ECSSMedium eMedium)
   {
-    if (m_aMediaList == null)
-      m_aMediaList = new CSSMediaList ();
-    m_aMediaList.addMedium (eMedium);
+    _ensureMediaListPresent ().addMedium (eMedium);
     return this;
   }
 
@@ -204,8 +210,7 @@ public class HCLink extends AbstractHCElement <HCLink> implements IHCCSSNode
   public HCLink addMedia (@Nonnull final ICSSMediaList aMediaList)
   {
     ValueEnforcer.notNull (aMediaList, "MediaList");
-    if (m_aMediaList == null)
-      m_aMediaList = new CSSMediaList ();
+    _ensureMediaListPresent ();
     for (final ECSSMedium eMedium : aMediaList.getAllMedia ())
       m_aMediaList.addMedium (eMedium);
     return this;
@@ -215,8 +220,7 @@ public class HCLink extends AbstractHCElement <HCLink> implements IHCCSSNode
   public HCLink addMedia (@Nonnull final Iterable <ECSSMedium> aMediaList)
   {
     ValueEnforcer.notNull (aMediaList, "MediaList");
-    if (m_aMediaList == null)
-      m_aMediaList = new CSSMediaList ();
+    _ensureMediaListPresent ();
     for (final ECSSMedium eMedium : aMediaList)
       m_aMediaList.addMedium (eMedium);
     return this;
@@ -226,8 +230,7 @@ public class HCLink extends AbstractHCElement <HCLink> implements IHCCSSNode
   public HCLink addMedia (@Nonnull final ECSSMedium... aMediaList)
   {
     ValueEnforcer.notNull (aMediaList, "MediaList");
-    if (m_aMediaList == null)
-      m_aMediaList = new CSSMediaList ();
+    _ensureMediaListPresent ();
     for (final ECSSMedium eMedium : aMediaList)
       m_aMediaList.addMedium (eMedium);
     return this;

@@ -26,6 +26,7 @@ import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.css.CSSFilenameHelper;
 import com.helger.css.media.CSSMediaList;
+import com.helger.css.media.ICSSMediaList;
 
 /**
  * Implementation of {@link ICSSPathProvider} with constant paths.
@@ -35,7 +36,7 @@ import com.helger.css.media.CSSMediaList;
 public final class ConstantCSSPathProvider implements ICSSPathProvider
 {
   private static final String DEFAULT_CONDITIONAL_COMMENT = null;
-  private static final CSSMediaList DEFAULT_CSS_MEDIA_LIST = null;
+  private static final ICSSMediaList DEFAULT_CSS_MEDIA_LIST = null;
 
   private final String m_sPath;
   private final String m_sMinifiedPath;
@@ -47,14 +48,14 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
     this (sPath, DEFAULT_CONDITIONAL_COMMENT, DEFAULT_CSS_MEDIA_LIST);
   }
 
-  public ConstantCSSPathProvider (@Nonnull @Nonempty final String sPath, @Nullable final CSSMediaList aMediaList)
+  public ConstantCSSPathProvider (@Nonnull @Nonempty final String sPath, @Nullable final ICSSMediaList aMediaList)
   {
     this (sPath, DEFAULT_CONDITIONAL_COMMENT, aMediaList);
   }
 
   public ConstantCSSPathProvider (@Nonnull @Nonempty final String sPath,
                                   @Nullable final String sConditionalComment,
-                                  @Nullable final CSSMediaList aMediaList)
+                                  @Nullable final ICSSMediaList aMediaList)
   {
     this (sPath, CSSFilenameHelper.getMinifiedCSSFilename (sPath), sConditionalComment, aMediaList);
   }
@@ -67,7 +68,7 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
   public ConstantCSSPathProvider (@Nonnull @Nonempty final String sPath,
                                   @Nonnull @Nonempty final String sMinifiedPath,
                                   @Nullable final String sConditionalComment,
-                                  @Nullable final CSSMediaList aMediaList)
+                                  @Nullable final ICSSMediaList aMediaList)
   {
     ValueEnforcer.notEmpty (sPath, "Path");
     if (!CSSFilenameHelper.isCSSFilename (sPath))
@@ -78,8 +79,7 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
     m_sPath = sPath;
     m_sMinifiedPath = sMinifiedPath;
     m_sConditionalComment = sConditionalComment;
-    // Use clone in ph-css > 3.8.0
-    m_aCSSMediaList = aMediaList == null ? new CSSMediaList () : new CSSMediaList (aMediaList.getAllMedia ());
+    m_aCSSMediaList = aMediaList == null ? new CSSMediaList () : new CSSMediaList (aMediaList);
   }
 
   @Nonnull
@@ -97,10 +97,9 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
 
   @Nonnull
   @ReturnsMutableCopy
-  public CSSMediaList getMediaList ()
+  public ICSSMediaList getMediaList ()
   {
-    // Use clone in ph-css > 3.8.0
-    return new CSSMediaList (m_aCSSMediaList.getAllMedia ());
+    return m_aCSSMediaList.getClone ();
   }
 
   @Override
