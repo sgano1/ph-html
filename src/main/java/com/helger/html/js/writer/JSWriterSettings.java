@@ -25,6 +25,7 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.ReturnsMutableCopy;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.commons.system.ENewLineMode;
 
 /**
  * Settings for the textual representation of JSDOM objects
@@ -38,6 +39,7 @@ public final class JSWriterSettings implements IJSWriterSettings, ICloneable <JS
   private boolean m_bGenerateTypeNames;
   private boolean m_bGenerateComments;
   private String m_sIndent;
+  private ENewLineMode m_eNewLineMode;
 
   public JSWriterSettings ()
   {
@@ -45,6 +47,7 @@ public final class JSWriterSettings implements IJSWriterSettings, ICloneable <JS
     m_bGenerateTypeNames = JSWriterDefaultSettings.isGenerateTypeNames ();
     m_bGenerateComments = JSWriterDefaultSettings.isGenerateComments ();
     m_sIndent = JSWriterDefaultSettings.getIndent ();
+    m_eNewLineMode = JSWriterDefaultSettings.getNewLineMode ();
   }
 
   public JSWriterSettings (@Nonnull final IJSWriterSettings aOther)
@@ -54,6 +57,7 @@ public final class JSWriterSettings implements IJSWriterSettings, ICloneable <JS
     m_bGenerateTypeNames = aOther.isGenerateTypeNames ();
     m_bGenerateComments = aOther.isGenerateComments ();
     m_sIndent = aOther.getIndent ();
+    m_eNewLineMode = aOther.getNewLineMode ();
   }
 
   public boolean isIndentAndAlign ()
@@ -125,6 +129,26 @@ public final class JSWriterSettings implements IJSWriterSettings, ICloneable <JS
   }
 
   @Nonnull
+  public JSWriterSettings setNewLineMode (@Nonnull final ENewLineMode eNewLineMode)
+  {
+    m_eNewLineMode = ValueEnforcer.notNull (eNewLineMode, "NewLineMode");
+    return this;
+  }
+
+  @Nonnull
+  public ENewLineMode getNewLineMode ()
+  {
+    return m_eNewLineMode;
+  }
+
+  @Nonnull
+  @Nonempty
+  public String getNewLineString ()
+  {
+    return m_eNewLineMode.getText ();
+  }
+
+  @Nonnull
   @ReturnsMutableCopy
   public JSWriterSettings getClone ()
   {
@@ -138,6 +162,7 @@ public final class JSWriterSettings implements IJSWriterSettings, ICloneable <JS
                                        .append ("GenerateTypeNames", m_bGenerateTypeNames)
                                        .append ("GenerateComments", m_bGenerateComments)
                                        .append ("Indent", m_sIndent)
+                                       .append ("NewLineMode", m_eNewLineMode)
                                        .toString ();
   }
 

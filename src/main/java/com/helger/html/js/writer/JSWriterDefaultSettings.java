@@ -21,6 +21,7 @@ import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.system.ENewLineMode;
 
 /**
  * Default settings for the textual representation of JSDOM objects
@@ -39,6 +40,7 @@ public final class JSWriterDefaultSettings
   private static boolean s_bGenerateTypeNames = DEFAULT_GENERATE_TYPE_NAMES;
   private static boolean s_bGenerateComments = DEFAULT_GENERATE_COMMENTS;
   private static String s_sIndent = DEFAULT_INDENT;
+  private static ENewLineMode s_eNewLineMode = ENewLineMode.DEFAULT;
 
   private JSWriterDefaultSettings ()
   {}
@@ -49,6 +51,7 @@ public final class JSWriterDefaultSettings
     s_bGenerateTypeNames = DEFAULT_GENERATE_TYPE_NAMES;
     s_bGenerateComments = DEFAULT_GENERATE_COMMENTS;
     s_sIndent = DEFAULT_INDENT;
+    s_eNewLineMode = ENewLineMode.DEFAULT;
   }
 
   public static void setIndentAndAlign (final boolean bIndentAndAlign)
@@ -106,5 +109,16 @@ public final class JSWriterDefaultSettings
   public static String getIndent ()
   {
     return s_sIndent;
+  }
+
+  public static void setNewLineMode (@Nonnull final ENewLineMode eNewLineMode)
+  {
+    s_eNewLineMode = ValueEnforcer.notNull (eNewLineMode, "NewLineMode");
+  }
+
+  @Nonnull
+  public static ENewLineMode getNewLineMode ()
+  {
+    return s_eNewLineMode;
   }
 }

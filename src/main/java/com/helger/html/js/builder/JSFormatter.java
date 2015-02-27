@@ -243,7 +243,7 @@ public class JSFormatter implements Closeable
   @Nonnull
   public JSFormatter nlFix ()
   {
-    m_aPW.print ('\n');
+    m_aPW.print (m_aSettings.getNewLineString ());
     m_bAtBeginningOfLine = true;
     return this;
   }

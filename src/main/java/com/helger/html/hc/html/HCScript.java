@@ -30,12 +30,12 @@ import org.slf4j.LoggerFactory;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.DevelopersNote;
 import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.charset.CCharset;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.microdom.IMicroNodeWithChildren;
 import com.helger.commons.microdom.impl.MicroText;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.commons.system.ENewLineMode;
 import com.helger.commons.xml.serialize.XMLWriterSettings;
 import com.helger.html.annotations.OutOfBandNode;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
@@ -110,6 +110,7 @@ public class HCScript extends AbstractHCScript <HCScript>
   /** By default place inline JS after script files */
   public static final boolean DEFAULT_EMIT_AFTER_FILES = true;
 
+  @Deprecated
   public static final String DEFAULT_LINE_SEPARATOR = XMLWriterSettings.DEFAULT_NEWLINE_STRING;
 
   private static final Logger s_aLogger = LoggerFactory.getLogger (HCScript.class);
@@ -118,13 +119,13 @@ public class HCScript extends AbstractHCScript <HCScript>
   @GuardedBy ("s_aRWLock")
   private static EMode s_eDefaultMode = DEFAULT_MODE;
   @GuardedBy ("s_aRWLock")
-  private static String s_sDefaultLineSeparator = DEFAULT_LINE_SEPARATOR;
+  private static ENewLineMode s_eDefaultNewLineMode = ENewLineMode.DEFAULT;
 
   private IJSCodeProvider m_aProvider;
   private String m_sJSCode;
   private EMode m_eMode;
   private boolean m_bEmitAfterFiles = DEFAULT_EMIT_AFTER_FILES;
-  private String m_sLineSeparator = s_sDefaultLineSeparator;
+  private ENewLineMode m_eNewLineMode = s_eDefaultNewLineMode;
 
   public HCScript ()
   {
@@ -224,18 +225,38 @@ public class HCScript extends AbstractHCScript <HCScript>
   }
 
   @Nonnull
-  @Nonempty
-  public String getLineSeparator ()
+  public ENewLineMode getNewLineMode ()
   {
-    return m_sLineSeparator;
+    return m_eNewLineMode;
   }
 
   @Nonnull
+  @Nonempty
+  public String getNewLineString ()
+  {
+    return m_eNewLineMode.getText ();
+  }
+
+  @Nonnull
+  public HCScript setNewLineMode (@Nonnull final ENewLineMode eNewLineMode)
+  {
+    m_eNewLineMode = ValueEnforcer.notNull (eNewLineMode, "NewLineMode");
+    return this;
+  }
+
+  @Nonnull
+  @Nonempty
+  @Deprecated
+  public String getLineSeparator ()
+  {
+    return getNewLineString ();
+  }
+
+  @Nonnull
+  @Deprecated
   public HCScript setLineSeparator (@Nonnull @Nonempty final String sLineSeparator)
   {
-    ValueEnforcer.notEmpty (sLineSeparator, "LineSeparator");
-    m_sLineSeparator = sLineSeparator;
-    return this;
+    return setNewLineMode (ENewLineMode.getFromTextOrDefault (sLineSeparator, ENewLineMode.DEFAULT));
   }
 
   public static void setInlineScript (@Nonnull final IMicroNodeWithChildren aElement,
@@ -289,7 +310,7 @@ public class HCScript extends AbstractHCScript <HCScript>
     super.applyProperties (aElement, aConversionSettings);
 
     // m_sJSCode is set in canConvertToNode which is called before this method!
-    setInlineScript (aElement, m_sJSCode, m_eMode, m_sLineSeparator);
+    setInlineScript (aElement, m_sJSCode, m_eMode, getNewLineString ());
   }
 
   @Override
@@ -300,8 +321,7 @@ public class HCScript extends AbstractHCScript <HCScript>
                             .append ("jsCode", m_sJSCode)
                             .append ("mode", m_eMode)
                             .append ("emitAfterFiles", m_bEmitAfterFiles)
-                            .append ("lineSeparator",
-                                     StringHelper.getHexEncoded (m_sLineSeparator, CCharset.CHARSET_ISO_8859_1_OBJ))
+                            .append ("NewLineMode", m_eNewLineMode)
                             .toString ();
   }
 
@@ -351,13 +371,12 @@ public class HCScript extends AbstractHCScript <HCScript>
   }
 
   @Nonnull
-  @Nonempty
-  public static String getDefaultLineSeparator ()
+  public static ENewLineMode getDefaultNewLineMode ()
   {
     s_aRWLock.readLock ().lock ();
     try
     {
-      return s_sDefaultLineSeparator;
+      return s_eDefaultNewLineMode;
     }
     finally
     {
@@ -365,18 +384,32 @@ public class HCScript extends AbstractHCScript <HCScript>
     }
   }
 
-  public static void setDefaultLineSeparator (@Nonnull @Nonempty final String sDefaultLineSeparator)
+  public static void setDefaultNewLineMode (@Nonnull final ENewLineMode eNewLineMode)
   {
-    ValueEnforcer.notEmpty (sDefaultLineSeparator, "DefaultLineSeparator");
+    ValueEnforcer.notNull (eNewLineMode, "NewLineMode");
 
     s_aRWLock.writeLock ().lock ();
     try
     {
-      s_sDefaultLineSeparator = sDefaultLineSeparator;
+      s_eDefaultNewLineMode = eNewLineMode;
     }
     finally
     {
       s_aRWLock.writeLock ().unlock ();
     }
+  }
+
+  @Nonnull
+  @Nonempty
+  @Deprecated
+  public static String getDefaultLineSeparator ()
+  {
+    return getDefaultNewLineMode ().getText ();
+  }
+
+  @Deprecated
+  public static void setDefaultLineSeparator (@Nonnull @Nonempty final String sDefaultLineSeparator)
+  {
+    setDefaultNewLineMode (ENewLineMode.getFromTextOrDefault (sDefaultLineSeparator, ENewLineMode.DEFAULT));
   }
 }

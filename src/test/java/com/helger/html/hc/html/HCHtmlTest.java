@@ -64,7 +64,7 @@ public final class HCHtmlTest
     aHtml.getBody ().addChild (new HCH1 ().addChild ("Test"));
     aHtml.getBody ().addChild (new HCScriptOnDocumentReady (new UnparsedJSCodeProvider ("a=b;")));
     aHtml.getBody ().addChild (new HCScriptOnDocumentReady (new UnparsedJSCodeProvider ("c=d;")));
-    final String sCRLF = HCScript.getDefaultLineSeparator ();
+    final String sCRLF = HCScript.getDefaultNewLineMode ().getText ();
     assertEquals ("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">" +
                       "<html xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">" +
                       "<head><meta name=\"foo\" content=\"bar\" /></head>" +

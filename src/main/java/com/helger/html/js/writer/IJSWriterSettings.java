@@ -21,6 +21,7 @@ import java.io.Serializable;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.system.ENewLineMode;
 
 public interface IJSWriterSettings extends Serializable
 {
@@ -47,4 +48,19 @@ public interface IJSWriterSettings extends Serializable
   @Nonnull
   @Nonempty
   String getIndent ();
+
+  /**
+   * @return The newline mode to be used. By default it is the platform specific
+   *         new line mode. Never <code>null</code>.
+   */
+  @Nonnull
+  ENewLineMode getNewLineMode ();
+
+  /**
+   * @return The string representing the new line mode. A shortcut for
+   *         <code>{@link #getNewLineMode()}.getText()</code>.
+   */
+  @Nonnull
+  @Nonempty
+  String getNewLineString ();
 }
