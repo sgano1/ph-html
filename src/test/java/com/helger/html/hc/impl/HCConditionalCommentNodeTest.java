@@ -23,6 +23,7 @@ import org.junit.Test;
 import org.junit.rules.TestRule;
 
 import com.helger.commons.mock.DebugModeTestRule;
+import com.helger.commons.system.ENewLineMode;
 import com.helger.commons.xml.serialize.EXMLSerializeIndent;
 import com.helger.commons.xml.serialize.IXMLWriterSettings;
 import com.helger.html.hc.conversion.HCConversionSettings;
@@ -43,7 +44,7 @@ public final class HCConditionalCommentNodeTest
   @Test
   public void testAll ()
   {
-    HCConditionalCommentNode.setDefaultLineSeparator ("\n");
+    HCConditionalCommentNode.setDefaultNewLineMode (ENewLineMode.UNIX);
     HCSettings.getConversionSettingsProvider ()
               .setXMLWriterSettings (HCConversionSettings.createDefaultXMLWriterSettings ()
                                                          .setIndent (EXMLSerializeIndent.NONE));

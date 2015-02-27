@@ -123,14 +123,13 @@ public class HCScript extends AbstractHCScript <HCScript>
 
   private IJSCodeProvider m_aProvider;
   private String m_sJSCode;
-  private EMode m_eMode;
+  private EMode m_eMode = getDefaultMode ();
   private boolean m_bEmitAfterFiles = DEFAULT_EMIT_AFTER_FILES;
-  private ENewLineMode m_eNewLineMode = s_eDefaultNewLineMode;
+  private ENewLineMode m_eNewLineMode = getDefaultNewLineMode ();
 
   public HCScript ()
   {
     super ();
-    m_eMode = getDefaultMode ();
   }
 
   public HCScript (@Nonnull final IJSCodeProvider aProvider)

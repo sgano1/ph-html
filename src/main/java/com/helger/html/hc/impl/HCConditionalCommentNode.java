@@ -26,11 +26,11 @@ import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.charset.CCharset;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.commons.microdom.serialize.MicroWriter;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.commons.system.ENewLineMode;
 import com.helger.commons.version.Version;
 import com.helger.commons.xml.serialize.IXMLWriterSettings;
 import com.helger.commons.xml.serialize.XMLWriterSettings;
@@ -51,6 +51,7 @@ import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 @Immutable
 public class HCConditionalCommentNode extends AbstractHCWrappingNode
 {
+  @Deprecated
   public static final String DEFAULT_LINE_SEPARATOR = XMLWriterSettings.DEFAULT_NEWLINE_STRING;
   public static final Version IE5 = new Version (5);
   public static final Version IE6 = new Version (6);
@@ -70,11 +71,11 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
   private static final ReadWriteLock s_aRWLock = new ReentrantReadWriteLock ();
 
   @GuardedBy ("s_aRWLock")
-  private static String s_sDefaultLineSeparator = DEFAULT_LINE_SEPARATOR;
+  private static ENewLineMode s_eDefaultNewLineMode = ENewLineMode.DEFAULT;
 
   private String m_sCondition;
   private final IHCNode m_aWrappedNode;
-  private String m_sLineSeparator = getDefaultLineSeparator ();
+  private ENewLineMode m_eNewLineMode = getDefaultNewLineMode ();
 
   public HCConditionalCommentNode (@Nonnull @Nonempty final String sCondition, @Nonnull final IHCNode aWrappedNode)
   {
@@ -113,18 +114,31 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
   }
 
   @Nonnull
-  @Nonempty
-  public String getLineSeparator ()
+  public ENewLineMode getNewLineMode ()
   {
-    return m_sLineSeparator;
+    return m_eNewLineMode;
   }
 
   @Nonnull
+  public HCConditionalCommentNode setNewLineMode (@Nonnull final ENewLineMode eNewLineMode)
+  {
+    m_eNewLineMode = ValueEnforcer.notNull (eNewLineMode, "NewLineMode");
+    return this;
+  }
+
+  @Nonnull
+  @Nonempty
+  @Deprecated
+  public String getLineSeparator ()
+  {
+    return m_eNewLineMode.getText ();
+  }
+
+  @Nonnull
+  @Deprecated
   public HCConditionalCommentNode setLineSeparator (@Nonnull @Nonempty final String sLineSeparator)
   {
-    ValueEnforcer.notEmpty (sLineSeparator, "LineSeparator");
-    m_sLineSeparator = sLineSeparator;
-    return this;
+    return setNewLineMode (ENewLineMode.getFromTextOrDefault (sLineSeparator, ENewLineMode.DEFAULT));
   }
 
   @Nonnull
@@ -132,7 +146,7 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
   private String _getCommentText (@Nonnull final IMicroNode aNode, @Nonnull final IXMLWriterSettings aXMLWriterSettings)
   {
     // Only create a newline when alignment is enabled
-    final String sLineSeparator = aXMLWriterSettings.getIndent ().isAlign () ? m_sLineSeparator : "";
+    final String sLineSeparator = aXMLWriterSettings.getIndent ().isAlign () ? m_eNewLineMode.getText () : "";
     return '[' +
            m_sCondition +
            "]>" +
@@ -172,21 +186,18 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
   public String toString ()
   {
     return new ToStringGenerator (this).append ("condition", m_sCondition)
-                                       .append ("lineSeparator",
-                                                StringHelper.getHexEncoded (m_sLineSeparator,
-                                                                            CCharset.CHARSET_ISO_8859_1_OBJ))
+                                       .append ("NewLineMode", m_eNewLineMode)
                                        .append ("wrappedNode", m_aWrappedNode)
                                        .toString ();
   }
 
   @Nonnull
-  @Nonempty
-  public static String getDefaultLineSeparator ()
+  public static ENewLineMode getDefaultNewLineMode ()
   {
     s_aRWLock.readLock ().lock ();
     try
     {
-      return s_sDefaultLineSeparator;
+      return s_eDefaultNewLineMode;
     }
     finally
     {
@@ -194,20 +205,33 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
     }
   }
 
-  public static void setDefaultLineSeparator (@Nonnull @Nonempty final String sDefaultLineSeparator)
+  public static void setDefaultNewLineMode (@Nonnull final ENewLineMode eNewLineMode)
   {
-    if (StringHelper.hasNoText (sDefaultLineSeparator))
-      throw new IllegalArgumentException ("defaultLineSeparator");
+    ValueEnforcer.notNull (eNewLineMode, "NewLineMode");
 
     s_aRWLock.writeLock ().lock ();
     try
     {
-      s_sDefaultLineSeparator = sDefaultLineSeparator;
+      s_eDefaultNewLineMode = eNewLineMode;
     }
     finally
     {
       s_aRWLock.writeLock ().unlock ();
     }
+  }
+
+  @Nonnull
+  @Nonempty
+  @Deprecated
+  public static String getDefaultLineSeparator ()
+  {
+    return getDefaultNewLineMode ().getText ();
+  }
+
+  @Deprecated
+  public static void setDefaultLineSeparator (@Nonnull @Nonempty final String sDefaultLineSeparator)
+  {
+    setDefaultNewLineMode (ENewLineMode.getFromTextOrDefault (sDefaultLineSeparator, ENewLineMode.DEFAULT));
   }
 
   @Nonnull
