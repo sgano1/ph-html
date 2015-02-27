@@ -78,5 +78,6 @@ public final class HCConditionalCommentNodeTest
     // Restore default settings
     HCSettings.getConversionSettingsProvider ()
               .setXMLWriterSettings (HCConversionSettings.createDefaultXMLWriterSettings ());
+    HCConditionalCommentNode.setDefaultNewLineMode (ENewLineMode.DEFAULT);
   }
 }
