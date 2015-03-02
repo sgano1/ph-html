@@ -181,6 +181,14 @@ public final class JSMarshaller
     return new String (ret, 0, nIndex);
   }
 
+  @Nonnull
+  public static String javaScriptEscapeForRegEx (final char cInput)
+  {
+    if (ArrayHelper.contains (CHARS_TO_MASK_REGEX, cInput))
+      return new StringBuilder (2).append (MASK_CHAR_REGEX).append (cInput).toString ();
+    return Character.toString (cInput);
+  }
+
   /**
    * Turn special regular expression characters into escaped characters
    * conforming to JavaScript.<br>
