@@ -47,9 +47,6 @@ public class HCTextArea extends AbstractHCControl <HCTextArea>
   /** By default auto focus is disabled */
   public static final boolean DEFAULT_AUTO_FOCUS = false;
 
-  /** By default 5 rows are shown */
-  public static final int DEFAULT_ROWS = 5;
-
   private ETriState m_eAutoComplete = DEFAULT_AUTO_COMPLETE;
   private boolean m_bAutoFocus = DEFAULT_AUTO_FOCUS;
   private int m_nCols = CGlobal.ILLEGAL_UINT;
@@ -62,7 +59,7 @@ public class HCTextArea extends AbstractHCControl <HCTextArea>
   private String m_sPlaceholder;
   // readonly is inherited
   // required is inherited
-  private int m_nRows = DEFAULT_ROWS;
+  private int m_nRows = CGlobal.ILLEGAL_UINT;
   private String m_sValue;
   private EHCTextAreaWrap m_eWrap;
 
