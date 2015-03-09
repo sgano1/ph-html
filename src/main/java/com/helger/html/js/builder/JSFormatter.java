@@ -28,6 +28,7 @@ import javax.annotation.WillCloseWhenClosed;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.provider.IJSCodeProviderWithSettings;
 import com.helger.html.js.writer.IJSWriterSettings;
 import com.helger.html.js.writer.JSWriterSettings;
 
@@ -352,6 +353,9 @@ public class JSFormatter implements Closeable
             pkg ((JSPackage) aObj);
           }
           else
-            plain (aObj.getJSCode ());
+            if (aObj instanceof IJSCodeProviderWithSettings)
+              plain (((IJSCodeProviderWithSettings) aObj).getJSCode (m_aSettings));
+            else
+              plain (aObj.getJSCode ());
   }
 }

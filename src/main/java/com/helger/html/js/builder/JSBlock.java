@@ -23,6 +23,7 @@ import com.helger.commons.annotations.CodingStyleguideUnaware;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.provider.IJSCodeProviderWithSettings;
 import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
@@ -164,7 +165,10 @@ public class JSBlock extends AbstractJSBlock implements IJSGeneratable, IJSState
         if (aJSCode instanceof IJSStatement)
           aFormatter.stmt ((IJSStatement) aJSCode);
         else
-          aFormatter.plain (aJSCode.getJSCode ());
+          if (aJSCode instanceof IJSCodeProviderWithSettings)
+            aFormatter.plain (((IJSCodeProviderWithSettings) aJSCode).getJSCode (aFormatter.getSettings ()));
+          else
+            aFormatter.plain (aJSCode.getJSCode ());
     }
   }
 

@@ -37,6 +37,7 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
 import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.hc.IHCElement;
+import com.helger.html.hc.conversion.HCSettings;
 import com.helger.html.js.builder.IJSExpression;
 import com.helger.html.js.builder.JSExpr;
 import com.helger.html.js.builder.JSStringLiteral;
@@ -99,7 +100,10 @@ public final class JQuerySelector implements IJQuerySelector
   private JQuerySelector (@Nonnull @Nonempty final String sSelectorName, @Nonnull final IJSExpression aSelectorExpr)
   {
     // Is used as a literal!!
-    this (sSelectorName + '(' + aSelectorExpr.getJSCode () + ')');
+    this (sSelectorName +
+          '(' +
+          aSelectorExpr.getJSCode (HCSettings.getConversionSettings ().getJSWriterSettings ()) +
+          ')');
     ValueEnforcer.notEmpty (sSelectorName, "SelectorName");
   }
 
