@@ -30,6 +30,8 @@ import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.state.EChange;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.provider.CollectingJSCodeProvider;
+import com.helger.html.js.provider.IJSCodeProviderWithSettings;
+import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
  * This class represents a map from an {@link EJSEvent} to an
@@ -127,7 +129,7 @@ public final class JSEventMap implements Serializable
     return eJSEvent != null && m_aEvents.containsKey (eJSEvent);
   }
 
-  public void applyToElement (@Nonnull final IMicroElement aElement)
+  public void applyToElement (@Nonnull final IMicroElement aElement, @Nonnull final IJSWriterSettings aSettings)
   {
     // Loop over all events in the defined order for consistent results
     for (final EJSEvent eEvent : EJSEvent.values ())
@@ -135,7 +137,11 @@ public final class JSEventMap implements Serializable
       final IJSCodeProvider aProvider = m_aEvents.get (eEvent);
       if (aProvider != null)
       {
-        final String sJSCode = aProvider.getJSCode ();
+        String sJSCode;
+        if (aProvider instanceof IJSCodeProviderWithSettings)
+          sJSCode = ((IJSCodeProviderWithSettings) aProvider).getJSCode (aSettings);
+        else
+          sJSCode = aProvider.getJSCode ();
         aElement.setAttribute (eEvent.getEvent (), CJS.JS_PREFIX + sJSCode);
       }
     }

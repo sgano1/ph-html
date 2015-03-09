@@ -30,6 +30,8 @@ import com.helger.commons.url.ISimpleURL;
 import com.helger.html.js.CJS;
 import com.helger.html.js.IJSCodeProvider;
 import com.helger.html.js.builder.IJSStatement;
+import com.helger.html.js.provider.IJSCodeProviderWithSettings;
+import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
  * Represents the action to be used with button and form.
@@ -81,10 +83,20 @@ public final class HC_Action implements ICloneable <HC_Action>
     m_aAction = aAction;
   }
 
-  public void applyProperties (@Nonnull final String sAttributeName, @Nonnull final IMicroElement aElement)
+  public void applyProperties (@Nonnull final String sAttributeName,
+                               @Nonnull final IMicroElement aElement,
+                               @Nonnull final IJSWriterSettings aSettings)
   {
     if (m_aAction != null)
-      aElement.setAttribute (sAttributeName, CJS.JS_PREFIX + m_aAction.getJSCode ());
+    {
+      String sJSCode;
+      if (m_aAction instanceof IJSCodeProviderWithSettings)
+        sJSCode = ((IJSCodeProviderWithSettings) m_aAction).getJSCode (aSettings);
+      else
+        sJSCode = m_aAction.getJSCode ();
+
+      aElement.setAttribute (sAttributeName, CJS.JS_PREFIX + sJSCode);
+    }
     else
       if (StringHelper.hasText (m_sAction))
         aElement.setAttribute (sAttributeName, m_sAction);

@@ -838,7 +838,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
 
     // Emit all JS events
     if (m_aJSHandler != null)
-      m_aJSHandler.applyToElement (aElement);
+      m_aJSHandler.applyToElement (aElement, aConversionSettings.getJSWriterSettings ());
 
     // unfocusable is handled by the customizer as it is non-standard
 

@@ -637,7 +637,7 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
       aElement.setAttribute (CHTMLAttributes.DIRNAME, m_sDirName);
     if (StringHelper.hasText (m_sForm))
       aElement.setAttribute (CHTMLAttributes.FORM, m_sForm);
-    m_aFormAction.applyProperties (CHTMLAttributes.FORMACTION, aElement);
+    m_aFormAction.applyProperties (CHTMLAttributes.FORMACTION, aElement, aConversionSettings.getJSWriterSettings ());
     if (m_aFormEncType != null)
       aElement.setAttribute (CHTMLAttributes.FORMENCTYPE, m_aFormEncType.getAsString ());
     if (m_eFormMethod != null)
