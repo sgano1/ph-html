@@ -19,15 +19,15 @@ package com.helger.html.js.builder.jquery;
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
 
-import com.helger.html.js.IJSCodeProvider;
 import com.helger.html.js.builder.IJSExpression;
+import com.helger.html.js.provider.IJSCodeProviderWithSettings;
 
 /**
  * A single jQuery selector
  *
  * @author Philip Helger
  */
-public interface IJQuerySelector extends IJSCodeProvider
+public interface IJQuerySelector extends IJSCodeProviderWithSettings
 {
   /**
    * @return The contained expression that was used as the parameter to this

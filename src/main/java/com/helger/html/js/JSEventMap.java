@@ -30,7 +30,6 @@ import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.state.EChange;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.provider.CollectingJSCodeProvider;
-import com.helger.html.js.provider.IJSCodeProviderWithSettings;
 import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
@@ -134,14 +133,10 @@ public final class JSEventMap implements Serializable
     // Loop over all events in the defined order for consistent results
     for (final EJSEvent eEvent : EJSEvent.values ())
     {
-      final IJSCodeProvider aProvider = m_aEvents.get (eEvent);
+      final CollectingJSCodeProvider aProvider = m_aEvents.get (eEvent);
       if (aProvider != null)
       {
-        String sJSCode;
-        if (aProvider instanceof IJSCodeProviderWithSettings)
-          sJSCode = ((IJSCodeProviderWithSettings) aProvider).getJSCode (aSettings);
-        else
-          sJSCode = aProvider.getJSCode ();
+        final String sJSCode = aProvider.getJSCode (aSettings);
         aElement.setAttribute (eEvent.getEvent (), CJS.JS_PREFIX + sJSCode);
       }
     }

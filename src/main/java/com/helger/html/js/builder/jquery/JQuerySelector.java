@@ -22,6 +22,7 @@ import java.util.List;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.ValueEnforcer;
@@ -39,6 +40,7 @@ import com.helger.html.hc.IHCElement;
 import com.helger.html.js.builder.IJSExpression;
 import com.helger.html.js.builder.JSExpr;
 import com.helger.html.js.builder.JSStringLiteral;
+import com.helger.html.js.writer.IJSWriterSettings;
 
 @Immutable
 @CodingStyleguideUnaware
@@ -122,7 +124,13 @@ public final class JQuerySelector implements IJQuerySelector
   @Nonnull
   public String getJSCode ()
   {
-    return m_aExpr.getJSCode ();
+    return getJSCode (null);
+  }
+
+  @Nonnull
+  public String getJSCode (@Nullable final IJSWriterSettings aSettings)
+  {
+    return m_aExpr.getJSCode (aSettings);
   }
 
   @Override

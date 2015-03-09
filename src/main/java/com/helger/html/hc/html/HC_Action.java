@@ -30,7 +30,6 @@ import com.helger.commons.url.ISimpleURL;
 import com.helger.html.js.CJS;
 import com.helger.html.js.IJSCodeProvider;
 import com.helger.html.js.builder.IJSStatement;
-import com.helger.html.js.provider.IJSCodeProviderWithSettings;
 import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
@@ -42,7 +41,7 @@ import com.helger.html.js.writer.IJSWriterSettings;
 public final class HC_Action implements ICloneable <HC_Action>
 {
   private String m_sAction;
-  private IJSCodeProvider m_aAction;
+  private IJSStatement m_aAction;
 
   public HC_Action ()
   {}
@@ -89,12 +88,7 @@ public final class HC_Action implements ICloneable <HC_Action>
   {
     if (m_aAction != null)
     {
-      String sJSCode;
-      if (m_aAction instanceof IJSCodeProviderWithSettings)
-        sJSCode = ((IJSCodeProviderWithSettings) m_aAction).getJSCode (aSettings);
-      else
-        sJSCode = m_aAction.getJSCode ();
-
+      final String sJSCode = m_aAction.getJSCode (aSettings);
       aElement.setAttribute (sAttributeName, CJS.JS_PREFIX + sJSCode);
     }
     else

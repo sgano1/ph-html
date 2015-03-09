@@ -27,15 +27,16 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.ReturnsMutableCopy;
 import com.helger.commons.collections.ContainerHelper;
 import com.helger.commons.state.EChange;
-import com.helger.html.js.IJSCodeProvider;
 import com.helger.html.js.builder.IJSExpression;
+import com.helger.html.js.provider.IJSCodeProviderWithSettings;
+import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
  * A list of jQuery selectors that are chained with ' ' (space)
  *
  * @author Philip Helger
  */
-public class JQuerySelectorList implements IJSCodeProvider
+public class JQuerySelectorList implements IJSCodeProviderWithSettings
 {
   private final List <IJQuerySelector> m_aElements = new ArrayList <IJQuerySelector> ();
 
@@ -137,6 +138,12 @@ public class JQuerySelectorList implements IJSCodeProvider
   @Nonnull
   public String getJSCode ()
   {
-    return getAsExpression ().getJSCode ();
+    return getJSCode (null);
+  }
+
+  @Nonnull
+  public String getJSCode (@Nullable final IJSWriterSettings aSettings)
+  {
+    return getAsExpression ().getJSCode (aSettings);
   }
 }
