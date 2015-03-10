@@ -189,7 +189,6 @@ public class Main_AbstractJQueryInvocationExtendedTest extends AbstractCreateJQu
                                                    "import java.math.BigInteger;\n" +
                                                    "\n" +
                                                    "\n" +
-                                                   "import com.helger.commons.collections.ContainerHelper;\n" +
                                                    "import com.helger.html.EHTMLElement;\n" +
                                                    "import com.helger.html.css.DefaultCSSClassProvider;\n" +
                                                    "import com.helger.html.hc.html.HCDiv;\n" +

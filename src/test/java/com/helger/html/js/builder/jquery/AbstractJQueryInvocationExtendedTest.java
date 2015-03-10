@@ -24,7 +24,6 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 
 
-import com.helger.commons.collections.ContainerHelper;
 import com.helger.html.EHTMLElement;
 import com.helger.html.css.DefaultCSSClassProvider;
 import com.helger.html.hc.html.HCDiv;
