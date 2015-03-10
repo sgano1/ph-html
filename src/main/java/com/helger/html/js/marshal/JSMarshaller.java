@@ -236,7 +236,6 @@ public final class JSMarshaller
    * @return The unescaped string.
    * @see #javaScriptEscape(String)
    */
-  // ESCA-JAVA0119:
   @Nullable
   public static String javaScriptUnescape (@Nullable final String sInput)
   {

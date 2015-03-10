@@ -147,7 +147,6 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   @ReturnsMutableObject (reason = "speed")
   List <IJSCodeProvider> directMembers ()
   {
-    // ESCA-JAVA0259:
     return m_aObjs;
   }
 

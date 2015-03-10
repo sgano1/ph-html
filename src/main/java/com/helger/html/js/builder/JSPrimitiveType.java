@@ -25,7 +25,6 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.marshal.JSMarshaller;
 import com.helger.html.js.writer.IJSWriterSettings;
 
-// ESCA-JAVA0116:
 /**
  * Contains the JS built-in primitive types
  *

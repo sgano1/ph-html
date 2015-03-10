@@ -65,7 +65,6 @@ import com.helger.html.js.builder.JSExpr;
 import com.helger.html.js.builder.JSInvocation;
 import com.helger.html.js.builder.jquery.JQuery;
 
-// ESCA-JAVA0116:
 /**
  * The default implementation of {@link IHCCustomizer} performing some default
  * class assignments etc.

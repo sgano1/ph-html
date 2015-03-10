@@ -23,10 +23,9 @@ import com.helger.commons.microdom.impl.MicroDocumentType;
 import com.helger.html.annotations.SinceHTML5;
 import com.helger.html.hc.html5.HTML5DocumentType;
 
-// ESCA-JAVA0116:
 /**
  * Contains a list of predefined (X)HTML document types.
- * 
+ *
  * @author Philip Helger
  */
 @Immutable

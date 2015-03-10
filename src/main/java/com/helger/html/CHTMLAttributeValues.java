@@ -18,7 +18,6 @@ package com.helger.html;
 
 import javax.annotation.concurrent.Immutable;
 
-// ESCA-JAVA0116:
 /**
  * List of constant HTML attribute values.
  *
@@ -27,9 +26,7 @@ import javax.annotation.concurrent.Immutable;
 @Immutable
 public final class CHTMLAttributeValues
 {
-  /*
-   * Generic values:
-   */
+  // Generic values:
   public static final String CHECKED = CHTMLAttributes.CHECKED;
   public static final String DISABLED = CHTMLAttributes.DISABLED;
   public static final String MULTIPLE = CHTMLAttributes.MULTIPLE;

@@ -18,7 +18,6 @@ package com.helger.html;
 
 import javax.annotation.concurrent.Immutable;
 
-// ESCA-JAVA0116:
 /**
  * Contains constant HTML attribute names.
  *
