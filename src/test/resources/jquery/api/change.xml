@@ -4,17 +4,19 @@
   <desc>Bind an event handler to the "change" JavaScript event, or trigger that event on an element.</desc>
   <signature>
     <added>1.0</added>
-    <argument name="handler(eventObject)" type="Function">
+    <argument name="handler" type="Function">
       <desc>A function to execute each time the event is triggered.</desc>
+      <argument name="eventObject" type="Event" />
     </argument>
   </signature>
   <signature>
     <added>1.4.3</added>
-    <argument name="eventData" type="Object" optional="true">
+    <argument name="eventData" type="Anything" optional="true">
       <desc>An object containing data that will be passed to the event handler.</desc>
     </argument>
-    <argument name="handler(eventObject)" type="Function">
+    <argument name="handler" type="Function">
       <desc>A function to execute each time the event is triggered.</desc>
+      <argument name="eventObject" type="Event" />
     </argument>
   </signature>
   <signature>
@@ -50,6 +52,9 @@ $( "#other" ).click(function() {
     </code></pre>
     <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message. The message will display twice, because the handler has been bound to the <code>change</code> event on both of the form elements.</p>
     <p>As of jQuery 1.4, the <code>change</code> event bubbles in Internet Explorer, behaving consistently with the event in other modern browsers.</p>
+    <div class="warning">
+	  <p><strong>Note: </strong>Changing the value of an input element using JavaScript, using <a href="/val"><code>.val()</code></a> for example, won't fire the event.</p>
+    </div>
   </longdesc>
   <example>
     <desc>Attaches a change event to the select that gets the text for each selected option and writes them in the div.  It then triggers the event for the initial text draw.</desc>

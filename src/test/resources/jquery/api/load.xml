@@ -11,7 +11,10 @@
       <type name="String"/>
       <desc>A plain object or string that is sent to the server with the request.</desc>
     </argument>
-    <argument name="complete(responseText, textStatus, XMLHttpRequest)" type="Function" optional="true">
+    <argument name="complete" type="Function" optional="true">
+      <argument name="responseText" type="String" />
+      <argument name="textStatus" type="String"/>
+      <argument name="jqXHR" type="jqXHR"/>       
       <desc>A callback function that is executed when the request completes.</desc>
     </argument>
   </signature>
@@ -56,9 +59,9 @@ $( "#b" ).load( "article.html #target" );
   </longdesc>
   <note id="same-origin-policy" type="additional"/>
   <example>
-    <desc>Load the main page's footer navigation into an ordered list.</desc>
+    <desc>Load another page's list items into an ordered list.</desc>
     <code><![CDATA[
-$( "#new-nav" ).load( "/ #jq-footerNavigation li" );
+$( "#new-projects" ).load( "/resources/load.html #projects li" );
 ]]></code>
     <css><![CDATA[
   body {
@@ -67,8 +70,8 @@ $( "#new-nav" ).load( "/ #jq-footerNavigation li" );
   }
 ]]></css>
     <html><![CDATA[
-<b>Footer navigation:</b>
-<ol id="new-nav"></ol>
+<b>Projects:</b>
+<ol id="new-projects"></ol>
 ]]></html>
   </example>
   <example>

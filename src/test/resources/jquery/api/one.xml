@@ -10,8 +10,9 @@
     <argument name="data" type="PlainObject" optional="true">
       <desc>An object containing data that will be passed to the event handler.</desc>
     </argument>
-    <argument name="handler(eventObject)" type="Function">
+    <argument name="handler" type="Function">
       <desc>A function to execute at the time the event is triggered.</desc>
+      <argument name="eventObject" type="Event" />
     </argument>
   </signature>
   <signature>
@@ -25,8 +26,9 @@
     <argument name="data" type="Anything" optional="true">
       <desc>Data to be passed to the handler in <a href="/event.data/"><code>event.data</code></a> when an event is triggered.</desc>
     </argument>
-    <argument name="handler(eventObject)" type="Function">
+    <argument name="handler" type="Function">
       <desc>A function to execute when the event is triggered. The value <code>false</code> is also allowed as a shorthand for a function that simply does <code>return false</code>.</desc>
+      <argument name="eventObject" type="Event" />
     </argument>
   </signature>
   <signature>
@@ -42,13 +44,10 @@
     </argument>
   </signature>
   <longdesc>
-    <p>The first form of this method is identical to <code>.bind()</code>, except that the handler is unbound after its first invocation. The second two forms, introduced in jQuery 1.7, are identical to <code>.on()</code> except that the handler is removed after the first time the event occurs at the delegated element, whether the selector matched anything or not. For example:</p>
+    <p>The  <code>.one()</code> method is identical to  <code>.on()</code>, except that the handler is unbound after its first invocation. For example:</p>
     <pre><code>
 $( "#foo" ).one( "click", function() {
   alert( "This will be displayed only once." );
-});
-$( "body" ).one( "click", "#foo", function() {
-  alert( "This displays if #foo is the first thing clicked in the body." );
 });
     </code></pre>
     <p>After the code is executed, a click on the element with ID <code>foo</code> will display the alert. Subsequent clicks will do nothing. This code is equivalent to:</p>

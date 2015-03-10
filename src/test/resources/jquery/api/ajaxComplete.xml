@@ -3,7 +3,10 @@
   <title>.ajaxComplete()</title>
   <signature>
     <added>1.0</added>
-    <argument name="handler(event, XMLHttpRequest, ajaxOptions)" type="Function">
+    <argument name="handler" type="Function">      
+      <argument name="event" type="Event" />
+      <argument name="jqXHR" type="jqXHR" />
+      <argument name="ajaxOptions" type="PlainObject" />
       <desc>The function to be invoked.</desc>
     </argument>
   </signature>
@@ -35,11 +38,11 @@ $( ".trigger" ).click(function() {
 $( document ).ajaxComplete(function( event, xhr, settings ) {
   if ( settings.url === "ajax/test.html" ) {
     $( ".log" ).text( "Triggered ajaxComplete handler. The result is " +
-      xhr.responseHTML );
+      xhr.responseText );
   }
 });
     </code></pre>
-    <p><strong>Note:</strong> You can get the returned ajax contents by looking at <code>xhr.responseXML</code> or <code>xhr.responseHTML</code> for xml and html respectively.</p>
+    <p><strong>Note:</strong> You can get the returned ajax contents by looking at <code>xhr.responseText</code>.</p>
   </longdesc>
   <note id="ajax-global-false" type="additional" data-title=".ajaxComplete()"/>
   <example>

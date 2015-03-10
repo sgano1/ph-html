@@ -76,21 +76,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
 * @return this
 */
-@Nonnull IMPLTYPE add(@Nonnull EHTMLElement... elements);
-
-/**
-* @param elements One or more elements to add to the set of matched elements.
-
-* @return this
-*/
-@Nonnull IMPLTYPE add(@Nonnull Iterable<EHTMLElement> elements);
-
-/**
-* @param elements One or more elements to add to the set of matched elements.
-
-* @return this
-*/
-@Nonnull IMPLTYPE add(@Nonnull String... elements);
+@Nonnull IMPLTYPE add(@Nonnull String elements);
 
 /**
 * @param html An HTML fragment to add to the set of matched elements.
@@ -100,19 +86,12 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 @Nonnull IMPLTYPE add(@Nonnull IHCNode html);
 
 /**
-* @param html An HTML fragment to add to the set of matched elements.
-
-* @return this
-*/
-@Nonnull IMPLTYPE add(@Nonnull String html);
-
-/**
-* @param jQuery_object An existing jQuery object to add to the set of matched elements.
+* @param selection An existing jQuery object to add to the set of matched elements.
 
 * @return this
 * @since jQuery 1.3.2
 */
-@Nonnull IMPLTYPE add(@Nonnull JQueryInvocation jQuery_object);
+@Nonnull IMPLTYPE add(@Nonnull JQueryInvocation selection);
 
 /**
 * @param selector A string representing a selector expression to find additional elements to add to the set of matched elements.
@@ -2120,6 +2099,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
 @Nonnull IMPLTYPE callbacks_fired();
 
+@Nonnull IMPLTYPE callbacks_has();
+
 /**
 * @param callback The callback to search for.
 
@@ -2531,12 +2512,12 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 @Nonnull IMPLTYPE closest(@Nonnull ICSSClassProvider selector, @Nonnull String context);
 
 /**
-* @param jQuery_object A jQuery object to match elements against.
+* @param selection A jQuery object to match elements against.
 
 * @return this
 * @since jQuery 1.6
 */
-@Nonnull IMPLTYPE closest(@Nonnull JQueryInvocation jQuery_object);
+@Nonnull IMPLTYPE closest(@Nonnull JQueryInvocation selection);
 
 /**
 * @param element An element to match elements against.
@@ -2953,7 +2934,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
 /**
 * @param key A string naming the piece of data to set.
-* @param value The new data value; it can be any Javascript type including Array or Object.
+* @param value The new data value; this can be any Javascript type except undefined.
 
 * @return this
 * @since jQuery 1.2.3
@@ -2962,7 +2943,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
 /**
 * @param key A string naming the piece of data to set.
-* @param value The new data value; it can be any Javascript type including Array or Object.
+* @param value The new data value; this can be any Javascript type except undefined.
 
 * @return this
 * @since jQuery 1.2.3
@@ -2971,7 +2952,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
 /**
 * @param key A string naming the piece of data to set.
-* @param value The new data value; it can be any Javascript type including Array or Object.
+* @param value The new data value; this can be any Javascript type except undefined.
 
 * @return this
 * @since jQuery 1.2.3
@@ -2980,7 +2961,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
 /**
 * @param key A string naming the piece of data to set.
-* @param value The new data value; it can be any Javascript type including Array or Object.
+* @param value The new data value; this can be any Javascript type except undefined.
 
 * @return this
 * @since jQuery 1.2.3
@@ -3302,13 +3283,26 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
         Context passed to the progressCallbacks as the this object.
       
 * @param args 
-        Optional arguments that are passed to the progressCallbacks.
+        An optional array of arguments that are passed to the progressCallbacks.
       
 
 * @return this
 * @since jQuery 1.7
 */
 @Nonnull IMPLTYPE deferred_notifyWith(@Nonnull IJSExpression context, @Nonnull IJSExpression args);
+
+/**
+* @param context 
+        Context passed to the progressCallbacks as the this object.
+      
+* @param args 
+        An optional array of arguments that are passed to the progressCallbacks.
+      
+
+* @return this
+* @since jQuery 1.7
+*/
+@Nonnull IMPLTYPE deferred_notifyWith(@Nonnull IJSExpression context, @Nonnull JSArray args);
 
 @Deprecated
 @Nonnull IMPLTYPE deferred_pipe();
@@ -3545,31 +3539,118 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 * @param progressCallbacks 
         A function, or array of functions, to be called when the Deferred generates progress notifications.
       
-
-* @return this
-* @since jQuery 1.7
-*/
-@Nonnull IMPLTYPE deferred_progress(@Nonnull IJSExpression progressCallbacks);
-
-/**
-* @param progressCallbacks 
-        A function, or array of functions, to be called when the Deferred generates progress notifications.
+* @param progressCallbacks1 
+        Optional additional function, or array of functions, to be called when the Deferred generates progress notifications.
       
 
 * @return this
 * @since jQuery 1.7
 */
-@Nonnull IMPLTYPE deferred_progress(@Nonnull JSAnonymousFunction progressCallbacks);
+@Nonnull IMPLTYPE deferred_progress(@Nonnull IJSExpression progressCallbacks, @Nonnull IJSExpression progressCallbacks1);
 
 /**
 * @param progressCallbacks 
         A function, or array of functions, to be called when the Deferred generates progress notifications.
       
+* @param progressCallbacks1 
+        Optional additional function, or array of functions, to be called when the Deferred generates progress notifications.
+      
 
 * @return this
 * @since jQuery 1.7
 */
-@Nonnull IMPLTYPE deferred_progress(@Nonnull JSArray progressCallbacks);
+@Nonnull IMPLTYPE deferred_progress(@Nonnull JSAnonymousFunction progressCallbacks, @Nonnull IJSExpression progressCallbacks1);
+
+/**
+* @param progressCallbacks 
+        A function, or array of functions, to be called when the Deferred generates progress notifications.
+      
+* @param progressCallbacks1 
+        Optional additional function, or array of functions, to be called when the Deferred generates progress notifications.
+      
+
+* @return this
+* @since jQuery 1.7
+*/
+@Nonnull IMPLTYPE deferred_progress(@Nonnull JSArray progressCallbacks, @Nonnull IJSExpression progressCallbacks1);
+
+/**
+* @param progressCallbacks 
+        A function, or array of functions, to be called when the Deferred generates progress notifications.
+      
+* @param progressCallbacks1 
+        Optional additional function, or array of functions, to be called when the Deferred generates progress notifications.
+      
+
+* @return this
+* @since jQuery 1.7
+*/
+@Nonnull IMPLTYPE deferred_progress(@Nonnull IJSExpression progressCallbacks, @Nonnull JSAnonymousFunction progressCallbacks1);
+
+/**
+* @param progressCallbacks 
+        A function, or array of functions, to be called when the Deferred generates progress notifications.
+      
+* @param progressCallbacks1 
+        Optional additional function, or array of functions, to be called when the Deferred generates progress notifications.
+      
+
+* @return this
+* @since jQuery 1.7
+*/
+@Nonnull IMPLTYPE deferred_progress(@Nonnull JSAnonymousFunction progressCallbacks, @Nonnull JSAnonymousFunction progressCallbacks1);
+
+/**
+* @param progressCallbacks 
+        A function, or array of functions, to be called when the Deferred generates progress notifications.
+      
+* @param progressCallbacks1 
+        Optional additional function, or array of functions, to be called when the Deferred generates progress notifications.
+      
+
+* @return this
+* @since jQuery 1.7
+*/
+@Nonnull IMPLTYPE deferred_progress(@Nonnull JSArray progressCallbacks, @Nonnull JSAnonymousFunction progressCallbacks1);
+
+/**
+* @param progressCallbacks 
+        A function, or array of functions, to be called when the Deferred generates progress notifications.
+      
+* @param progressCallbacks1 
+        Optional additional function, or array of functions, to be called when the Deferred generates progress notifications.
+      
+
+* @return this
+* @since jQuery 1.7
+*/
+@Nonnull IMPLTYPE deferred_progress(@Nonnull IJSExpression progressCallbacks, @Nonnull JSArray progressCallbacks1);
+
+/**
+* @param progressCallbacks 
+        A function, or array of functions, to be called when the Deferred generates progress notifications.
+      
+* @param progressCallbacks1 
+        Optional additional function, or array of functions, to be called when the Deferred generates progress notifications.
+      
+
+* @return this
+* @since jQuery 1.7
+*/
+@Nonnull IMPLTYPE deferred_progress(@Nonnull JSAnonymousFunction progressCallbacks, @Nonnull JSArray progressCallbacks1);
+
+/**
+* @param progressCallbacks 
+        A function, or array of functions, to be called when the Deferred generates progress notifications.
+      
+* @param progressCallbacks1 
+        Optional additional function, or array of functions, to be called when the Deferred generates progress notifications.
+      
+
+* @return this
+* @since jQuery 1.7
+*/
+@Nonnull IMPLTYPE deferred_progress(@Nonnull JSArray progressCallbacks, @Nonnull JSArray progressCallbacks1);
 
 @Nonnull IMPLTYPE deferred_promise();
 
@@ -12985,12 +13066,20 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 @Nonnull IMPLTYPE filter(@Nonnull JSAnonymousFunction function);
 
 /**
-* @param element An element to match the current set of elements against.
+* @param elements One or more DOM elements to match the current set of elements against.
 
 * @return this
 * @since jQuery 1.4
 */
-@Nonnull IMPLTYPE filter(@Nonnull String element);
+@Nonnull IMPLTYPE filter(@Nonnull String elements);
+
+/**
+* @param selection An existing jQuery object to match the current set of elements against.
+
+* @return this
+* @since jQuery 1.4
+*/
+@Nonnull IMPLTYPE filter(@Nonnull JQueryInvocation selection);
 
 /**
 * @param selector A string containing a selector expression to match elements against.
@@ -13028,12 +13117,20 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 @Nonnull IMPLTYPE find(@Nonnull ICSSClassProvider selector);
 
 /**
-* @param element An element to match elements against.
+* @param element An element or a jQuery object to match elements against.
 
 * @return this
 * @since jQuery 1.6
 */
 @Nonnull IMPLTYPE find(@Nonnull String element);
+
+/**
+* @param element An element or a jQuery object to match elements against.
+
+* @return this
+* @since jQuery 1.6
+*/
+@Nonnull IMPLTYPE find(@Nonnull JQueryInvocation element);
 
 @Nonnull IMPLTYPE finish();
 
@@ -13563,6 +13660,86 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
 @Nonnull IMPLTYPE innerHeight();
 
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE innerHeight(@Nonnull IJSExpression value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE innerHeight(@Nonnull IJson value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE innerHeight(@Nonnull IHCNode value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE innerHeight(@Nonnull String value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE innerHeight(int value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE innerHeight(long value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE innerHeight(@Nonnull BigInteger value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE innerHeight(double value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE innerHeight(@Nonnull BigDecimal value);
+
+/**
+* @param function A function returning the inner height (including padding but not border) to set. Receives the index position of the element in the set and the old inner height as arguments. Within the function, this refers to the current element in the set.
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE innerHeight(@Nonnull JSAnonymousFunction function);
+
 @Nonnull IMPLTYPE innerWidth();
 
 /**
@@ -13807,12 +13984,20 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 @Nonnull IMPLTYPE is(@Nonnull ICSSClassProvider selector);
 
 /**
-* @param function A function used as a test for the set of elements. It accepts one argument, index, which is the element's index in the jQuery collection.Within the function, this refers to the current DOM element. 
+* @param function A function used as a test for every element in the set. It accepts two arguments, index, which is the element's index in the jQuery collection, and element, which is the DOM element. Within the function, this refers to the current DOM element.
 
 * @return this
 * @since jQuery 1.6
 */
 @Nonnull IMPLTYPE is(@Nonnull JSAnonymousFunction function);
+
+/**
+* @param selection An existing jQuery object to match the current set of elements against.
+
+* @return this
+* @since jQuery 1.6
+*/
+@Nonnull IMPLTYPE is(@Nonnull JQueryInvocation selection);
 
 /**
 * @param elements One or more elements to match the current set of elements against.
@@ -15191,12 +15376,29 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
 /**
 * @param element A DOM node or jQuery object indicating where to stop matching following sibling elements.
+
+* @return this
+* @since jQuery 1.6
+*/
+@Nonnull IMPLTYPE nextUntil(@Nonnull JQueryInvocation element);
+
+/**
+* @param element A DOM node or jQuery object indicating where to stop matching following sibling elements.
 * @param filter A string containing a selector expression to match elements against.
 
 * @return this
 * @since jQuery 1.6
 */
 @Nonnull IMPLTYPE nextUntil(@Nonnull String element, @Nonnull IJSExpression filter);
+
+/**
+* @param element A DOM node or jQuery object indicating where to stop matching following sibling elements.
+* @param filter A string containing a selector expression to match elements against.
+
+* @return this
+* @since jQuery 1.6
+*/
+@Nonnull IMPLTYPE nextUntil(@Nonnull JQueryInvocation element, @Nonnull IJSExpression filter);
 
 /**
 * @param element A DOM node or jQuery object indicating where to stop matching following sibling elements.
@@ -15214,7 +15416,25 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 * @return this
 * @since jQuery 1.6
 */
+@Nonnull IMPLTYPE nextUntil(@Nonnull JQueryInvocation element, @Nonnull IJQuerySelector filter);
+
+/**
+* @param element A DOM node or jQuery object indicating where to stop matching following sibling elements.
+* @param filter A string containing a selector expression to match elements against.
+
+* @return this
+* @since jQuery 1.6
+*/
 @Nonnull IMPLTYPE nextUntil(@Nonnull String element, @Nonnull JQuerySelectorList filter);
+
+/**
+* @param element A DOM node or jQuery object indicating where to stop matching following sibling elements.
+* @param filter A string containing a selector expression to match elements against.
+
+* @return this
+* @since jQuery 1.6
+*/
+@Nonnull IMPLTYPE nextUntil(@Nonnull JQueryInvocation element, @Nonnull JQuerySelectorList filter);
 
 /**
 * @param element A DOM node or jQuery object indicating where to stop matching following sibling elements.
@@ -15232,71 +15452,90 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 * @return this
 * @since jQuery 1.6
 */
+@Nonnull IMPLTYPE nextUntil(@Nonnull JQueryInvocation element, @Nonnull EHTMLElement filter);
+
+/**
+* @param element A DOM node or jQuery object indicating where to stop matching following sibling elements.
+* @param filter A string containing a selector expression to match elements against.
+
+* @return this
+* @since jQuery 1.6
+*/
 @Nonnull IMPLTYPE nextUntil(@Nonnull String element, @Nonnull ICSSClassProvider filter);
 
 /**
-* @param selector A string containing a selector expression to match elements against.
+* @param element A DOM node or jQuery object indicating where to stop matching following sibling elements.
+* @param filter A string containing a selector expression to match elements against.
+
+* @return this
+* @since jQuery 1.6
+*/
+@Nonnull IMPLTYPE nextUntil(@Nonnull JQueryInvocation element, @Nonnull ICSSClassProvider filter);
+
+/**
+* @param selector A string containing a selector expression, a DOM element, or an array of elements to match against the set.
 
 * @return this
 */
 @Nonnull IMPLTYPE _not(@Nonnull IJSExpression selector);
 
 /**
-* @param selector A string containing a selector expression to match elements against.
+* @param selector A string containing a selector expression, a DOM element, or an array of elements to match against the set.
 
 * @return this
 */
 @Nonnull IMPLTYPE _not(@Nonnull IJQuerySelector selector);
 
 /**
-* @param selector A string containing a selector expression to match elements against.
+* @param selector A string containing a selector expression, a DOM element, or an array of elements to match against the set.
 
 * @return this
 */
 @Nonnull IMPLTYPE _not(@Nonnull JQuerySelectorList selector);
 
 /**
-* @param selector A string containing a selector expression to match elements against.
+* @param selector A string containing a selector expression, a DOM element, or an array of elements to match against the set.
 
 * @return this
 */
 @Nonnull IMPLTYPE _not(@Nonnull EHTMLElement selector);
 
 /**
-* @param selector A string containing a selector expression to match elements against.
+* @param selector A string containing a selector expression, a DOM element, or an array of elements to match against the set.
 
 * @return this
 */
 @Nonnull IMPLTYPE _not(@Nonnull ICSSClassProvider selector);
 
 /**
-* @param elements One or more DOM elements to remove from the matched set.
+* @param selector A string containing a selector expression, a DOM element, or an array of elements to match against the set.
 
 * @return this
 */
-@Nonnull IMPLTYPE _not(@Nonnull EHTMLElement... elements);
+@Nonnull IMPLTYPE _not(@Nonnull String selector);
 
 /**
-* @param elements One or more DOM elements to remove from the matched set.
+* @param selector A string containing a selector expression, a DOM element, or an array of elements to match against the set.
 
 * @return this
 */
-@Nonnull IMPLTYPE _not(@Nonnull Iterable<EHTMLElement> elements);
+@Nonnull IMPLTYPE _not(@Nonnull JSArray selector);
 
 /**
-* @param elements One or more DOM elements to remove from the matched set.
-
-* @return this
-*/
-@Nonnull IMPLTYPE _not(@Nonnull String... elements);
-
-/**
-* @param function A function used as a test for each element in the set. this is the current DOM element.
+* @param function A function used as a test for each element in the set. It accepts two arguments, index, which is the element's index in the jQuery collection, and element, which is the DOM element. Within the function, this refers to the current DOM element.
 
 * @return this
 * @since jQuery 1.4
 */
 @Nonnull IMPLTYPE _not(@Nonnull JSAnonymousFunction function);
+
+/**
+* @param selection An existing jQuery object to match the current set of elements against.
+
+* @return this
+* @since jQuery 1.4
+*/
+@Nonnull IMPLTYPE _not(@Nonnull JQueryInvocation selection);
 
 /**
 * @param events One or more space-separated event types and optional namespaces, or just namespaces, such as "click", "keydown.myPlugin", or ".myPlugin".
@@ -17202,6 +17441,78 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 */
 @Nonnull IMPLTYPE outerHeight(boolean includeMargin);
 
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE outerHeight(@Nonnull IJson value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE outerHeight(@Nonnull IHCNode value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE outerHeight(@Nonnull String value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE outerHeight(int value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE outerHeight(long value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE outerHeight(@Nonnull BigInteger value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE outerHeight(double value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE outerHeight(@Nonnull BigDecimal value);
+
+/**
+* @param function A function returning the outer height to set. Receives the index position of the element in the set and the old outer height as arguments. Within the function, this refers to the current element in the set.
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE outerHeight(@Nonnull JSAnonymousFunction function);
+
 @Nonnull IMPLTYPE outerWidth();
 
 /**
@@ -17219,6 +17530,78 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 * @since jQuery 1.2.6
 */
 @Nonnull IMPLTYPE outerWidth(boolean includeMargin);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE outerWidth(@Nonnull IJson value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE outerWidth(@Nonnull IHCNode value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE outerWidth(@Nonnull String value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE outerWidth(int value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE outerWidth(long value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE outerWidth(@Nonnull BigInteger value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE outerWidth(double value);
+
+/**
+* @param value A number representing the number of pixels, or a number along with an optional unit of measure appended (as a string).
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE outerWidth(@Nonnull BigDecimal value);
+
+/**
+* @param function A function returning the outer width to set. Receives the index position of the element in the set and the old outer width as arguments. Within the function, this refers to the current element in the set.
+
+* @return this
+* @since jQuery 1.8
+*/
+@Nonnull IMPLTYPE outerWidth(@Nonnull JSAnonymousFunction function);
 
 @Nonnull IMPLTYPE parent();
 
@@ -17571,12 +17954,29 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
 /**
 * @param element A DOM node or jQuery object indicating where to stop matching ancestor elements.
+
+* @return this
+* @since jQuery 1.6
+*/
+@Nonnull IMPLTYPE parentsUntil(@Nonnull JQueryInvocation element);
+
+/**
+* @param element A DOM node or jQuery object indicating where to stop matching ancestor elements.
 * @param filter A string containing a selector expression to match elements against.
 
 * @return this
 * @since jQuery 1.6
 */
 @Nonnull IMPLTYPE parentsUntil(@Nonnull String element, @Nonnull IJSExpression filter);
+
+/**
+* @param element A DOM node or jQuery object indicating where to stop matching ancestor elements.
+* @param filter A string containing a selector expression to match elements against.
+
+* @return this
+* @since jQuery 1.6
+*/
+@Nonnull IMPLTYPE parentsUntil(@Nonnull JQueryInvocation element, @Nonnull IJSExpression filter);
 
 /**
 * @param element A DOM node or jQuery object indicating where to stop matching ancestor elements.
@@ -17594,7 +17994,25 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 * @return this
 * @since jQuery 1.6
 */
+@Nonnull IMPLTYPE parentsUntil(@Nonnull JQueryInvocation element, @Nonnull IJQuerySelector filter);
+
+/**
+* @param element A DOM node or jQuery object indicating where to stop matching ancestor elements.
+* @param filter A string containing a selector expression to match elements against.
+
+* @return this
+* @since jQuery 1.6
+*/
 @Nonnull IMPLTYPE parentsUntil(@Nonnull String element, @Nonnull JQuerySelectorList filter);
+
+/**
+* @param element A DOM node or jQuery object indicating where to stop matching ancestor elements.
+* @param filter A string containing a selector expression to match elements against.
+
+* @return this
+* @since jQuery 1.6
+*/
+@Nonnull IMPLTYPE parentsUntil(@Nonnull JQueryInvocation element, @Nonnull JQuerySelectorList filter);
 
 /**
 * @param element A DOM node or jQuery object indicating where to stop matching ancestor elements.
@@ -17612,7 +18030,25 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 * @return this
 * @since jQuery 1.6
 */
+@Nonnull IMPLTYPE parentsUntil(@Nonnull JQueryInvocation element, @Nonnull EHTMLElement filter);
+
+/**
+* @param element A DOM node or jQuery object indicating where to stop matching ancestor elements.
+* @param filter A string containing a selector expression to match elements against.
+
+* @return this
+* @since jQuery 1.6
+*/
 @Nonnull IMPLTYPE parentsUntil(@Nonnull String element, @Nonnull ICSSClassProvider filter);
+
+/**
+* @param element A DOM node or jQuery object indicating where to stop matching ancestor elements.
+* @param filter A string containing a selector expression to match elements against.
+
+* @return this
+* @since jQuery 1.6
+*/
+@Nonnull IMPLTYPE parentsUntil(@Nonnull JQueryInvocation element, @Nonnull ICSSClassProvider filter);
 
 @Nonnull IMPLTYPE position();
 
@@ -18373,12 +18809,29 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
 /**
 * @param element A DOM node or jQuery object indicating where to stop matching preceding sibling elements.
+
+* @return this
+* @since jQuery 1.6
+*/
+@Nonnull IMPLTYPE prevUntil(@Nonnull JQueryInvocation element);
+
+/**
+* @param element A DOM node or jQuery object indicating where to stop matching preceding sibling elements.
 * @param filter A string containing a selector expression to match elements against.
 
 * @return this
 * @since jQuery 1.6
 */
 @Nonnull IMPLTYPE prevUntil(@Nonnull String element, @Nonnull IJSExpression filter);
+
+/**
+* @param element A DOM node or jQuery object indicating where to stop matching preceding sibling elements.
+* @param filter A string containing a selector expression to match elements against.
+
+* @return this
+* @since jQuery 1.6
+*/
+@Nonnull IMPLTYPE prevUntil(@Nonnull JQueryInvocation element, @Nonnull IJSExpression filter);
 
 /**
 * @param element A DOM node or jQuery object indicating where to stop matching preceding sibling elements.
@@ -18396,7 +18849,25 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 * @return this
 * @since jQuery 1.6
 */
+@Nonnull IMPLTYPE prevUntil(@Nonnull JQueryInvocation element, @Nonnull IJQuerySelector filter);
+
+/**
+* @param element A DOM node or jQuery object indicating where to stop matching preceding sibling elements.
+* @param filter A string containing a selector expression to match elements against.
+
+* @return this
+* @since jQuery 1.6
+*/
 @Nonnull IMPLTYPE prevUntil(@Nonnull String element, @Nonnull JQuerySelectorList filter);
+
+/**
+* @param element A DOM node or jQuery object indicating where to stop matching preceding sibling elements.
+* @param filter A string containing a selector expression to match elements against.
+
+* @return this
+* @since jQuery 1.6
+*/
+@Nonnull IMPLTYPE prevUntil(@Nonnull JQueryInvocation element, @Nonnull JQuerySelectorList filter);
 
 /**
 * @param element A DOM node or jQuery object indicating where to stop matching preceding sibling elements.
@@ -18414,7 +18885,25 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 * @return this
 * @since jQuery 1.6
 */
+@Nonnull IMPLTYPE prevUntil(@Nonnull JQueryInvocation element, @Nonnull EHTMLElement filter);
+
+/**
+* @param element A DOM node or jQuery object indicating where to stop matching preceding sibling elements.
+* @param filter A string containing a selector expression to match elements against.
+
+* @return this
+* @since jQuery 1.6
+*/
 @Nonnull IMPLTYPE prevUntil(@Nonnull String element, @Nonnull ICSSClassProvider filter);
+
+/**
+* @param element A DOM node or jQuery object indicating where to stop matching preceding sibling elements.
+* @param filter A string containing a selector expression to match elements against.
+
+* @return this
+* @since jQuery 1.6
+*/
+@Nonnull IMPLTYPE prevUntil(@Nonnull JQueryInvocation element, @Nonnull ICSSClassProvider filter);
 
 @Nonnull IMPLTYPE promise();
 
@@ -18553,330 +19042,6 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 * @since jQuery 1.6
 */
 @Nonnull IMPLTYPE prop(@Nonnull String propertyName, @Nonnull IJSExpression value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IJSExpression propertyName, @Nonnull IJson value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IJson propertyName, @Nonnull IJson value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IHCNode propertyName, @Nonnull IJson value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull String propertyName, @Nonnull IJson value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IJSExpression propertyName, @Nonnull IHCNode value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IJson propertyName, @Nonnull IHCNode value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IHCNode propertyName, @Nonnull IHCNode value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull String propertyName, @Nonnull IHCNode value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IJSExpression propertyName, @Nonnull String value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IJson propertyName, @Nonnull String value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IHCNode propertyName, @Nonnull String value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull String propertyName, @Nonnull String value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IJSExpression propertyName, int value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IJson propertyName, int value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IHCNode propertyName, int value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull String propertyName, int value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IJSExpression propertyName, long value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IJson propertyName, long value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IHCNode propertyName, long value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull String propertyName, long value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IJSExpression propertyName, @Nonnull BigInteger value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IJson propertyName, @Nonnull BigInteger value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IHCNode propertyName, @Nonnull BigInteger value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull String propertyName, @Nonnull BigInteger value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IJSExpression propertyName, double value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IJson propertyName, double value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IHCNode propertyName, double value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull String propertyName, double value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IJSExpression propertyName, @Nonnull BigDecimal value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IJson propertyName, @Nonnull BigDecimal value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IHCNode propertyName, @Nonnull BigDecimal value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull String propertyName, @Nonnull BigDecimal value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IJSExpression propertyName, boolean value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IJson propertyName, boolean value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull IHCNode propertyName, boolean value);
-
-/**
-* @param propertyName The name of the property to set.
-* @param value A value to set for the property.
-
-* @return this
-* @since jQuery 1.6
-*/
-@Nonnull IMPLTYPE prop(@Nonnull String propertyName, boolean value);
 
 /**
 * @param propertyName The name of the property to set.
@@ -20365,32 +20530,74 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 @Nonnull IMPLTYPE text();
 
 /**
-* @param textString A string of text to set as the content of each matched element.
+* @param text The text to set as the content of each matched element. When Number or Boolean is supplied, it will be converted to a String representation.
 
 * @return this
 */
-@Nonnull IMPLTYPE text(@Nonnull IJSExpression textString);
+@Nonnull IMPLTYPE text(@Nonnull IJSExpression text);
 
 /**
-* @param textString A string of text to set as the content of each matched element.
+* @param text The text to set as the content of each matched element. When Number or Boolean is supplied, it will be converted to a String representation.
 
 * @return this
 */
-@Nonnull IMPLTYPE text(@Nonnull IJson textString);
+@Nonnull IMPLTYPE text(@Nonnull IJson text);
 
 /**
-* @param textString A string of text to set as the content of each matched element.
+* @param text The text to set as the content of each matched element. When Number or Boolean is supplied, it will be converted to a String representation.
 
 * @return this
 */
-@Nonnull IMPLTYPE text(@Nonnull IHCNode textString);
+@Nonnull IMPLTYPE text(@Nonnull IHCNode text);
 
 /**
-* @param textString A string of text to set as the content of each matched element.
+* @param text The text to set as the content of each matched element. When Number or Boolean is supplied, it will be converted to a String representation.
 
 * @return this
 */
-@Nonnull IMPLTYPE text(@Nonnull String textString);
+@Nonnull IMPLTYPE text(@Nonnull String text);
+
+/**
+* @param text The text to set as the content of each matched element. When Number or Boolean is supplied, it will be converted to a String representation.
+
+* @return this
+*/
+@Nonnull IMPLTYPE text(int text);
+
+/**
+* @param text The text to set as the content of each matched element. When Number or Boolean is supplied, it will be converted to a String representation.
+
+* @return this
+*/
+@Nonnull IMPLTYPE text(long text);
+
+/**
+* @param text The text to set as the content of each matched element. When Number or Boolean is supplied, it will be converted to a String representation.
+
+* @return this
+*/
+@Nonnull IMPLTYPE text(@Nonnull BigInteger text);
+
+/**
+* @param text The text to set as the content of each matched element. When Number or Boolean is supplied, it will be converted to a String representation.
+
+* @return this
+*/
+@Nonnull IMPLTYPE text(double text);
+
+/**
+* @param text The text to set as the content of each matched element. When Number or Boolean is supplied, it will be converted to a String representation.
+
+* @return this
+*/
+@Nonnull IMPLTYPE text(@Nonnull BigDecimal text);
+
+/**
+* @param text The text to set as the content of each matched element. When Number or Boolean is supplied, it will be converted to a String representation.
+
+* @return this
+*/
+@Nonnull IMPLTYPE text(boolean text);
 
 /**
 * @param function A function returning the text content to set. Receives the index position of the element in the set and the old text value as arguments.
@@ -20404,131 +20611,131 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
 /**
 * @param handler A function to execute every even time the element is clicked.
-* @param handler_eventObject_1 A function to execute every odd time the element is clicked.
+* @param handler1 A function to execute every odd time the element is clicked.
 
 * @return this
 * @deprecated Deprecated since jQuery 1.8
 */
 @Deprecated
-@Nonnull IMPLTYPE toggle(@Nonnull IJSExpression handler, @Nonnull IJSExpression handler_eventObject_1);
+@Nonnull IMPLTYPE toggle(@Nonnull IJSExpression handler, @Nonnull IJSExpression handler1);
 
 /**
 * @param handler A function to execute every even time the element is clicked.
-* @param handler_eventObject_1 A function to execute every odd time the element is clicked.
+* @param handler1 A function to execute every odd time the element is clicked.
 
 * @return this
 * @deprecated Deprecated since jQuery 1.8
 */
 @Deprecated
-@Nonnull IMPLTYPE toggle(@Nonnull JSAnonymousFunction handler, @Nonnull IJSExpression handler_eventObject_1);
+@Nonnull IMPLTYPE toggle(@Nonnull JSAnonymousFunction handler, @Nonnull IJSExpression handler1);
 
 /**
 * @param handler A function to execute every even time the element is clicked.
-* @param handler_eventObject_1 A function to execute every odd time the element is clicked.
+* @param handler1 A function to execute every odd time the element is clicked.
 
 * @return this
 * @deprecated Deprecated since jQuery 1.8
 */
 @Deprecated
-@Nonnull IMPLTYPE toggle(@Nonnull IJSExpression handler, @Nonnull JSAnonymousFunction handler_eventObject_1);
+@Nonnull IMPLTYPE toggle(@Nonnull IJSExpression handler, @Nonnull JSAnonymousFunction handler1);
 
 /**
 * @param handler A function to execute every even time the element is clicked.
-* @param handler_eventObject_1 A function to execute every odd time the element is clicked.
+* @param handler1 A function to execute every odd time the element is clicked.
 
 * @return this
 * @deprecated Deprecated since jQuery 1.8
 */
 @Deprecated
-@Nonnull IMPLTYPE toggle(@Nonnull JSAnonymousFunction handler, @Nonnull JSAnonymousFunction handler_eventObject_1);
+@Nonnull IMPLTYPE toggle(@Nonnull JSAnonymousFunction handler, @Nonnull JSAnonymousFunction handler1);
 
 /**
 * @param handler A function to execute every even time the element is clicked.
-* @param handler_eventObject_1 A function to execute every odd time the element is clicked.
-* @param handler_eventObject_2 Additional handlers to cycle through after clicks.
+* @param handler1 A function to execute every odd time the element is clicked.
+* @param handler2 Additional handlers to cycle through after clicks.
 
 * @return this
 * @deprecated Deprecated since jQuery 1.8
 */
 @Deprecated
-@Nonnull IMPLTYPE toggle(@Nonnull IJSExpression handler, @Nonnull IJSExpression handler_eventObject_1, @Nonnull IJSExpression handler_eventObject_2);
+@Nonnull IMPLTYPE toggle(@Nonnull IJSExpression handler, @Nonnull IJSExpression handler1, @Nonnull IJSExpression handler2);
 
 /**
 * @param handler A function to execute every even time the element is clicked.
-* @param handler_eventObject_1 A function to execute every odd time the element is clicked.
-* @param handler_eventObject_2 Additional handlers to cycle through after clicks.
+* @param handler1 A function to execute every odd time the element is clicked.
+* @param handler2 Additional handlers to cycle through after clicks.
 
 * @return this
 * @deprecated Deprecated since jQuery 1.8
 */
 @Deprecated
-@Nonnull IMPLTYPE toggle(@Nonnull JSAnonymousFunction handler, @Nonnull IJSExpression handler_eventObject_1, @Nonnull IJSExpression handler_eventObject_2);
+@Nonnull IMPLTYPE toggle(@Nonnull JSAnonymousFunction handler, @Nonnull IJSExpression handler1, @Nonnull IJSExpression handler2);
 
 /**
 * @param handler A function to execute every even time the element is clicked.
-* @param handler_eventObject_1 A function to execute every odd time the element is clicked.
-* @param handler_eventObject_2 Additional handlers to cycle through after clicks.
+* @param handler1 A function to execute every odd time the element is clicked.
+* @param handler2 Additional handlers to cycle through after clicks.
 
 * @return this
 * @deprecated Deprecated since jQuery 1.8
 */
 @Deprecated
-@Nonnull IMPLTYPE toggle(@Nonnull IJSExpression handler, @Nonnull JSAnonymousFunction handler_eventObject_1, @Nonnull IJSExpression handler_eventObject_2);
+@Nonnull IMPLTYPE toggle(@Nonnull IJSExpression handler, @Nonnull JSAnonymousFunction handler1, @Nonnull IJSExpression handler2);
 
 /**
 * @param handler A function to execute every even time the element is clicked.
-* @param handler_eventObject_1 A function to execute every odd time the element is clicked.
-* @param handler_eventObject_2 Additional handlers to cycle through after clicks.
+* @param handler1 A function to execute every odd time the element is clicked.
+* @param handler2 Additional handlers to cycle through after clicks.
 
 * @return this
 * @deprecated Deprecated since jQuery 1.8
 */
 @Deprecated
-@Nonnull IMPLTYPE toggle(@Nonnull JSAnonymousFunction handler, @Nonnull JSAnonymousFunction handler_eventObject_1, @Nonnull IJSExpression handler_eventObject_2);
+@Nonnull IMPLTYPE toggle(@Nonnull JSAnonymousFunction handler, @Nonnull JSAnonymousFunction handler1, @Nonnull IJSExpression handler2);
 
 /**
 * @param handler A function to execute every even time the element is clicked.
-* @param handler_eventObject_1 A function to execute every odd time the element is clicked.
-* @param handler_eventObject_2 Additional handlers to cycle through after clicks.
+* @param handler1 A function to execute every odd time the element is clicked.
+* @param handler2 Additional handlers to cycle through after clicks.
 
 * @return this
 * @deprecated Deprecated since jQuery 1.8
 */
 @Deprecated
-@Nonnull IMPLTYPE toggle(@Nonnull IJSExpression handler, @Nonnull IJSExpression handler_eventObject_1, @Nonnull JSAnonymousFunction handler_eventObject_2);
+@Nonnull IMPLTYPE toggle(@Nonnull IJSExpression handler, @Nonnull IJSExpression handler1, @Nonnull JSAnonymousFunction handler2);
 
 /**
 * @param handler A function to execute every even time the element is clicked.
-* @param handler_eventObject_1 A function to execute every odd time the element is clicked.
-* @param handler_eventObject_2 Additional handlers to cycle through after clicks.
+* @param handler1 A function to execute every odd time the element is clicked.
+* @param handler2 Additional handlers to cycle through after clicks.
 
 * @return this
 * @deprecated Deprecated since jQuery 1.8
 */
 @Deprecated
-@Nonnull IMPLTYPE toggle(@Nonnull JSAnonymousFunction handler, @Nonnull IJSExpression handler_eventObject_1, @Nonnull JSAnonymousFunction handler_eventObject_2);
+@Nonnull IMPLTYPE toggle(@Nonnull JSAnonymousFunction handler, @Nonnull IJSExpression handler1, @Nonnull JSAnonymousFunction handler2);
 
 /**
 * @param handler A function to execute every even time the element is clicked.
-* @param handler_eventObject_1 A function to execute every odd time the element is clicked.
-* @param handler_eventObject_2 Additional handlers to cycle through after clicks.
+* @param handler1 A function to execute every odd time the element is clicked.
+* @param handler2 Additional handlers to cycle through after clicks.
 
 * @return this
 * @deprecated Deprecated since jQuery 1.8
 */
 @Deprecated
-@Nonnull IMPLTYPE toggle(@Nonnull IJSExpression handler, @Nonnull JSAnonymousFunction handler_eventObject_1, @Nonnull JSAnonymousFunction handler_eventObject_2);
+@Nonnull IMPLTYPE toggle(@Nonnull IJSExpression handler, @Nonnull JSAnonymousFunction handler1, @Nonnull JSAnonymousFunction handler2);
 
 /**
 * @param handler A function to execute every even time the element is clicked.
-* @param handler_eventObject_1 A function to execute every odd time the element is clicked.
-* @param handler_eventObject_2 Additional handlers to cycle through after clicks.
+* @param handler1 A function to execute every odd time the element is clicked.
+* @param handler2 Additional handlers to cycle through after clicks.
 
 * @return this
 * @deprecated Deprecated since jQuery 1.8
 */
 @Deprecated
-@Nonnull IMPLTYPE toggle(@Nonnull JSAnonymousFunction handler, @Nonnull JSAnonymousFunction handler_eventObject_1, @Nonnull JSAnonymousFunction handler_eventObject_2);
+@Nonnull IMPLTYPE toggle(@Nonnull JSAnonymousFunction handler, @Nonnull JSAnonymousFunction handler1, @Nonnull JSAnonymousFunction handler2);
 
 @Nonnull IMPLTYPE toggle();
 
@@ -20605,12 +20812,12 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 @Nonnull IMPLTYPE toggle(@Nonnull String duration);
 
 /**
-* @param showOrHide A Boolean indicating whether to show or hide the elements.
+* @param display Use true to show the element or false to hide it.
 
 * @return this
 * @since jQuery 1.3
 */
-@Nonnull IMPLTYPE toggle(boolean showOrHide);
+@Nonnull IMPLTYPE toggle(boolean display);
 
 /**
 * @param className One or more class names (separated by spaces) to be toggled for each element in the matched set.
@@ -20642,88 +20849,88 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
 /**
 * @param className One or more class names (separated by spaces) to be toggled for each element in the matched set.
-* @param _switch A Boolean (not just truthy/falsy) value to determine whether the class should be added or removed.
+* @param state A Boolean (not just truthy/falsy) value to determine whether the class should be added or removed.
 
 * @return this
 * @since jQuery 1.3
 */
-@Nonnull IMPLTYPE toggleClass(@Nonnull IJSExpression className, @Nonnull IJSExpression _switch);
+@Nonnull IMPLTYPE toggleClass(@Nonnull IJSExpression className, @Nonnull IJSExpression state);
 
 /**
 * @param className One or more class names (separated by spaces) to be toggled for each element in the matched set.
-* @param _switch A Boolean (not just truthy/falsy) value to determine whether the class should be added or removed.
+* @param state A Boolean (not just truthy/falsy) value to determine whether the class should be added or removed.
 
 * @return this
 * @since jQuery 1.3
 */
-@Nonnull IMPLTYPE toggleClass(@Nonnull IJson className, @Nonnull IJSExpression _switch);
+@Nonnull IMPLTYPE toggleClass(@Nonnull IJson className, @Nonnull IJSExpression state);
 
 /**
 * @param className One or more class names (separated by spaces) to be toggled for each element in the matched set.
-* @param _switch A Boolean (not just truthy/falsy) value to determine whether the class should be added or removed.
+* @param state A Boolean (not just truthy/falsy) value to determine whether the class should be added or removed.
 
 * @return this
 * @since jQuery 1.3
 */
-@Nonnull IMPLTYPE toggleClass(@Nonnull IHCNode className, @Nonnull IJSExpression _switch);
+@Nonnull IMPLTYPE toggleClass(@Nonnull IHCNode className, @Nonnull IJSExpression state);
 
 /**
 * @param className One or more class names (separated by spaces) to be toggled for each element in the matched set.
-* @param _switch A Boolean (not just truthy/falsy) value to determine whether the class should be added or removed.
+* @param state A Boolean (not just truthy/falsy) value to determine whether the class should be added or removed.
 
 * @return this
 * @since jQuery 1.3
 */
-@Nonnull IMPLTYPE toggleClass(@Nonnull String className, @Nonnull IJSExpression _switch);
+@Nonnull IMPLTYPE toggleClass(@Nonnull String className, @Nonnull IJSExpression state);
 
 /**
 * @param className One or more class names (separated by spaces) to be toggled for each element in the matched set.
-* @param _switch A Boolean (not just truthy/falsy) value to determine whether the class should be added or removed.
+* @param state A Boolean (not just truthy/falsy) value to determine whether the class should be added or removed.
 
 * @return this
 * @since jQuery 1.3
 */
-@Nonnull IMPLTYPE toggleClass(@Nonnull IJSExpression className, boolean _switch);
+@Nonnull IMPLTYPE toggleClass(@Nonnull IJSExpression className, boolean state);
 
 /**
 * @param className One or more class names (separated by spaces) to be toggled for each element in the matched set.
-* @param _switch A Boolean (not just truthy/falsy) value to determine whether the class should be added or removed.
+* @param state A Boolean (not just truthy/falsy) value to determine whether the class should be added or removed.
 
 * @return this
 * @since jQuery 1.3
 */
-@Nonnull IMPLTYPE toggleClass(@Nonnull IJson className, boolean _switch);
+@Nonnull IMPLTYPE toggleClass(@Nonnull IJson className, boolean state);
 
 /**
 * @param className One or more class names (separated by spaces) to be toggled for each element in the matched set.
-* @param _switch A Boolean (not just truthy/falsy) value to determine whether the class should be added or removed.
+* @param state A Boolean (not just truthy/falsy) value to determine whether the class should be added or removed.
 
 * @return this
 * @since jQuery 1.3
 */
-@Nonnull IMPLTYPE toggleClass(@Nonnull IHCNode className, boolean _switch);
+@Nonnull IMPLTYPE toggleClass(@Nonnull IHCNode className, boolean state);
 
 /**
 * @param className One or more class names (separated by spaces) to be toggled for each element in the matched set.
-* @param _switch A Boolean (not just truthy/falsy) value to determine whether the class should be added or removed.
+* @param state A Boolean (not just truthy/falsy) value to determine whether the class should be added or removed.
 
 * @return this
 * @since jQuery 1.3
 */
-@Nonnull IMPLTYPE toggleClass(@Nonnull String className, boolean _switch);
+@Nonnull IMPLTYPE toggleClass(@Nonnull String className, boolean state);
 
 @Nonnull IMPLTYPE toggleClass();
 
 /**
-* @param _switch A boolean value to determine whether the class should be added or removed.
+* @param state A boolean value to determine whether the class should be added or removed.
 
 * @return this
 * @since jQuery 1.4
 */
-@Nonnull IMPLTYPE toggleClass(boolean _switch);
+@Nonnull IMPLTYPE toggleClass(boolean state);
 
 /**
-* @param function A function that returns class names to be toggled in the class attribute of each element in the matched set. Receives the index position of the element in the set, the old class value, and the switch as arguments.
+* @param function A function that returns class names to be toggled in the class attribute of each element in the matched set. Receives the index position of the element in the set, the old class value, and the state as arguments.
 
 * @return this
 * @since jQuery 1.4
@@ -20731,22 +20938,22 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 @Nonnull IMPLTYPE toggleClass(@Nonnull JSAnonymousFunction function);
 
 /**
-* @param function A function that returns class names to be toggled in the class attribute of each element in the matched set. Receives the index position of the element in the set, the old class value, and the switch as arguments.
-* @param _switch A boolean value to determine whether the class should be added or removed.
+* @param function A function that returns class names to be toggled in the class attribute of each element in the matched set. Receives the index position of the element in the set, the old class value, and the state as arguments.
+* @param state A boolean value to determine whether the class should be added or removed.
 
 * @return this
 * @since jQuery 1.4
 */
-@Nonnull IMPLTYPE toggleClass(@Nonnull JSAnonymousFunction function, @Nonnull IJSExpression _switch);
+@Nonnull IMPLTYPE toggleClass(@Nonnull JSAnonymousFunction function, @Nonnull IJSExpression state);
 
 /**
-* @param function A function that returns class names to be toggled in the class attribute of each element in the matched set. Receives the index position of the element in the set, the old class value, and the switch as arguments.
-* @param _switch A boolean value to determine whether the class should be added or removed.
+* @param function A function that returns class names to be toggled in the class attribute of each element in the matched set. Receives the index position of the element in the set, the old class value, and the state as arguments.
+* @param state A boolean value to determine whether the class should be added or removed.
 
 * @return this
 * @since jQuery 1.4
 */
-@Nonnull IMPLTYPE toggleClass(@Nonnull JSAnonymousFunction function, boolean _switch);
+@Nonnull IMPLTYPE toggleClass(@Nonnull JSAnonymousFunction function, boolean state);
 
 /**
 * @param eventType A string containing a JavaScript event type, such as click or submit.
@@ -20874,7 +21081,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
 /**
 * @param eventType A string containing a JavaScript event type, such as click or submit.
-* @param extraParameters An array of additional parameters to pass along to the event handler.
+* @param extraParameters Additional parameters to pass along to the event handler.
 
 * @return this
 * @since jQuery 1.2
@@ -20883,7 +21090,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
 /**
 * @param eventType A string containing a JavaScript event type, such as click or submit.
-* @param extraParameters An array of additional parameters to pass along to the event handler.
+* @param extraParameters Additional parameters to pass along to the event handler.
 
 * @return this
 * @since jQuery 1.2
@@ -20892,7 +21099,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
 /**
 * @param eventType A string containing a JavaScript event type, such as click or submit.
-* @param extraParameters An array of additional parameters to pass along to the event handler.
+* @param extraParameters Additional parameters to pass along to the event handler.
 
 * @return this
 * @since jQuery 1.2
@@ -20901,7 +21108,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
 /**
 * @param eventType A string containing a JavaScript event type, such as click or submit.
-* @param extraParameters An array of additional parameters to pass along to the event handler.
+* @param extraParameters Additional parameters to pass along to the event handler.
 
 * @return this
 * @since jQuery 1.2
@@ -20910,7 +21117,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
 /**
 * @param eventType A string containing a JavaScript event type, such as click or submit.
-* @param extraParameters An array of additional parameters to pass along to the event handler.
+* @param extraParameters Additional parameters to pass along to the event handler.
 
 * @return this
 * @since jQuery 1.2
@@ -20919,7 +21126,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
 /**
 * @param eventType A string containing a JavaScript event type, such as click or submit.
-* @param extraParameters An array of additional parameters to pass along to the event handler.
+* @param extraParameters Additional parameters to pass along to the event handler.
 
 * @return this
 * @since jQuery 1.2
@@ -20928,7 +21135,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
 /**
 * @param eventType A string containing a JavaScript event type, such as click or submit.
-* @param extraParameters An array of additional parameters to pass along to the event handler.
+* @param extraParameters Additional parameters to pass along to the event handler.
 
 * @return this
 * @since jQuery 1.2
@@ -20937,7 +21144,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 
 /**
 * @param eventType A string containing a JavaScript event type, such as click or submit.
-* @param extraParameters An array of additional parameters to pass along to the event handler.
+* @param extraParameters Additional parameters to pass along to the event handler.
 
 * @return this
 * @since jQuery 1.2
@@ -21617,35 +21824,70 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 @Nonnull IMPLTYPE val();
 
 /**
-* @param value A string of text or an array of strings corresponding to the value of each matched element to set as selected/checked.
+* @param value A string of text, a number, or an array of strings corresponding to the value of each matched element to set as selected/checked.
 
 * @return this
 */
 @Nonnull IMPLTYPE val(@Nonnull IJSExpression value);
 
 /**
-* @param value A string of text or an array of strings corresponding to the value of each matched element to set as selected/checked.
+* @param value A string of text, a number, or an array of strings corresponding to the value of each matched element to set as selected/checked.
 
 * @return this
 */
 @Nonnull IMPLTYPE val(@Nonnull IJson value);
 
 /**
-* @param value A string of text or an array of strings corresponding to the value of each matched element to set as selected/checked.
+* @param value A string of text, a number, or an array of strings corresponding to the value of each matched element to set as selected/checked.
 
 * @return this
 */
 @Nonnull IMPLTYPE val(@Nonnull IHCNode value);
 
 /**
-* @param value A string of text or an array of strings corresponding to the value of each matched element to set as selected/checked.
+* @param value A string of text, a number, or an array of strings corresponding to the value of each matched element to set as selected/checked.
 
 * @return this
 */
 @Nonnull IMPLTYPE val(@Nonnull String value);
 
 /**
-* @param value A string of text or an array of strings corresponding to the value of each matched element to set as selected/checked.
+* @param value A string of text, a number, or an array of strings corresponding to the value of each matched element to set as selected/checked.
+
+* @return this
+*/
+@Nonnull IMPLTYPE val(int value);
+
+/**
+* @param value A string of text, a number, or an array of strings corresponding to the value of each matched element to set as selected/checked.
+
+* @return this
+*/
+@Nonnull IMPLTYPE val(long value);
+
+/**
+* @param value A string of text, a number, or an array of strings corresponding to the value of each matched element to set as selected/checked.
+
+* @return this
+*/
+@Nonnull IMPLTYPE val(@Nonnull BigInteger value);
+
+/**
+* @param value A string of text, a number, or an array of strings corresponding to the value of each matched element to set as selected/checked.
+
+* @return this
+*/
+@Nonnull IMPLTYPE val(double value);
+
+/**
+* @param value A string of text, a number, or an array of strings corresponding to the value of each matched element to set as selected/checked.
+
+* @return this
+*/
+@Nonnull IMPLTYPE val(@Nonnull BigDecimal value);
+
+/**
+* @param value A string of text, a number, or an array of strings corresponding to the value of each matched element to set as selected/checked.
 
 * @return this
 */
@@ -21861,12 +22103,12 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 @Nonnull IMPLTYPE wrapAll(@Nonnull JQueryInvocation wrappingElement);
 
 /**
-* @param wrappingElement An HTML snippet, selector expression, jQuery object, or DOM element specifying the structure to wrap around the content of the matched elements.
+* @param function A function that returns a structure to wrap around the matched elements. Receives the index position of the element in the set as an argument. Within the function, this refers to the current element in the set.
 
 * @return this
-* @since jQuery 1.2
+* @since jQuery 1.4
 */
-@Nonnull IMPLTYPE wrapInner(@Nonnull IJSExpression wrappingElement);
+@Nonnull IMPLTYPE wrapAll(@Nonnull JSAnonymousFunction function);
 
 /**
 * @param wrappingElement An HTML snippet, selector expression, jQuery object, or DOM element specifying the structure to wrap around the content of the matched elements.
@@ -21874,7 +22116,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 * @return this
 * @since jQuery 1.2
 */
-@Nonnull IMPLTYPE wrapInner(@Nonnull IJson wrappingElement);
+@Nonnull IMPLTYPE wrapInner(@Nonnull IJSExpression wrappingElement);
 
 /**
 * @param wrappingElement An HTML snippet, selector expression, jQuery object, or DOM element specifying the structure to wrap around the content of the matched elements.
@@ -21891,6 +22133,46 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 * @since jQuery 1.2
 */
 @Nonnull IMPLTYPE wrapInner(@Nonnull String wrappingElement);
+
+/**
+* @param wrappingElement An HTML snippet, selector expression, jQuery object, or DOM element specifying the structure to wrap around the content of the matched elements.
+
+* @return this
+* @since jQuery 1.2
+*/
+@Nonnull IMPLTYPE wrapInner(@Nonnull IJQuerySelector wrappingElement);
+
+/**
+* @param wrappingElement An HTML snippet, selector expression, jQuery object, or DOM element specifying the structure to wrap around the content of the matched elements.
+
+* @return this
+* @since jQuery 1.2
+*/
+@Nonnull IMPLTYPE wrapInner(@Nonnull JQuerySelectorList wrappingElement);
+
+/**
+* @param wrappingElement An HTML snippet, selector expression, jQuery object, or DOM element specifying the structure to wrap around the content of the matched elements.
+
+* @return this
+* @since jQuery 1.2
+*/
+@Nonnull IMPLTYPE wrapInner(@Nonnull EHTMLElement wrappingElement);
+
+/**
+* @param wrappingElement An HTML snippet, selector expression, jQuery object, or DOM element specifying the structure to wrap around the content of the matched elements.
+
+* @return this
+* @since jQuery 1.2
+*/
+@Nonnull IMPLTYPE wrapInner(@Nonnull ICSSClassProvider wrappingElement);
+
+/**
+* @param wrappingElement An HTML snippet, selector expression, jQuery object, or DOM element specifying the structure to wrap around the content of the matched elements.
+
+* @return this
+* @since jQuery 1.2
+*/
+@Nonnull IMPLTYPE wrapInner(@Nonnull JQueryInvocation wrappingElement);
 
 /**
 * @param function A callback function which generates a structure to wrap around the content of the matched elements. Receives the index position of the element in the set as an argument. Within the function, this refers to the current element in the set.

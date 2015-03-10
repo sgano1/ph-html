@@ -3,17 +3,19 @@
   <title>.unload()</title>
   <signature>
     <added>1.0</added>
-    <argument name="handler(eventObject)" type="Function">
+    <argument name="handler" type="Function">
       <desc>A function to execute when the event is triggered.</desc>
+      <argument name="eventObject" type="Event" />
     </argument>
   </signature>
   <signature>
     <added>1.4.3</added>
-    <argument name="eventData" type="Object" optional="true">
+    <argument name="eventData" type="Anything" optional="true">
       <desc>A plain object of data that will be passed to the event handler.</desc>
     </argument>
-    <argument name="handler(eventObject)" type="Function">
+    <argument name="handler" type="Function">
       <desc>A function to execute each time the event is triggered.</desc>
+      <argument name="eventObject" type="Event" />
     </argument>
   </signature>
   <desc>Bind an event handler to the "unload" JavaScript event.</desc>
@@ -26,18 +28,16 @@
     <p>Any <code>unload</code> event handler should be bound to the <code>window</code> object:</p>
     <pre><code>
 $( window ).unload(function() {
-  alert( "Handler for .unload() called." );
+  return "Handler for .unload() called.";
 });
     </code></pre>
-    <p>After this code executes, the alert will be displayed whenever the browser leaves the current page.
-It is not possible to cancel the <code>unload</code> event with <code>.preventDefault()</code>. This event is available so that scripts can perform cleanup when the user leaves the page.
-    </p>
+    <p>This event is available so that scripts can perform cleanup when the user leaves the page. Most browsers will ignore calls to <code>alert()</code>, <code>confirm()</code> and <code>prompt()</code> inside the event handler. The string you return may be used in a confirmation dialog, but not all browsers support this. It is not possible to cancel the <code>unload</code> event with <code>.preventDefault()</code>.</p>
   </longdesc>
   <example>
     <desc>To display an alert when a page is unloaded:</desc>
     <code><![CDATA[
 $( window ).unload(function() {
-  alert( "Bye now!" );
+  return "Bye now!";
 });
   ]]></code>
   </example>

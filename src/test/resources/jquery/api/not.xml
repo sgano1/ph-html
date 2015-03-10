@@ -3,25 +3,25 @@
   <title>.not()</title>
   <signature>
     <added>1.0</added>
-    <argument name="selector" type="Selector">
-      <desc>A string containing a selector expression to match elements against.</desc>
-    </argument>
-  </signature>
-  <signature>
-    <added>1.0</added>
-    <argument name="elements" type="Elements">
-      <desc>One or more DOM elements to remove from the matched set.</desc>
-    </argument>
-  </signature>
-  <signature>
-    <added>1.4</added>
-    <argument name="function(index)" type="Function">
-      <desc>A function used as a test for each element in the set. <code>this</code> is the current DOM element.</desc>
+    <argument name="selector">
+      <desc>A string containing a selector expression, a DOM element, or an array of elements to match against the set.</desc>
+      <type name="Selector"/>
+      <type name="Element"/>
+      <type name="Array"/>
     </argument>
   </signature>
   <signature>
     <added>1.4</added>
-    <argument name="jQuery object" type="PlainObject">
+    <argument name="function" type="Function">
+      <desc>A function used as a test for each element in the set. It accepts two arguments, <code>index</code>, which is the element's index in the jQuery collection, and <code>element</code>, which is the DOM element. Within the function, <code>this</code> refers to the current DOM element.</desc>
+      <argument name="index" type="Integer" />
+      <argument name="element" type="Element" />
+      <return type="Boolean" />      
+    </argument>
+  </signature>
+  <signature>
+    <added>1.4</added>
+    <argument name="selection" type="jQuery">
       <desc>An existing jQuery object to match the current set of elements against.</desc>
     </argument>
   </signature>

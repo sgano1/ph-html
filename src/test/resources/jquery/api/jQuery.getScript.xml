@@ -6,7 +6,10 @@
     <argument name="url" type="String">
       <desc>A string containing the URL to which the request is sent.</desc>
     </argument>
-    <argument name="success(script, textStatus, jqXHR)" optional="true" type="Function">
+    <argument name="success" optional="true" type="Function">
+      <argument name="script" type="String" />
+      <argument name="textStatus" type="String"/>
+      <argument name="jqXHR" type="jqXHR"/>
       <desc>A callback function that is executed if the request succeeds.</desc>
     </argument>
   </signature>
@@ -25,9 +28,6 @@ $.ajax({
         Success Callback
       </h4>
     <p>The callback is fired once the script has been loaded but not necessarily executed.</p>
-    <pre><code>
-$( ".result" ).html( "&lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;" );
-    </code></pre>
     <p>Scripts are included and run by referencing the file name:</p>
     <pre><code>
 $.getScript( "ajax/test.js", function( data, textStatus, jqxhr ) {
@@ -91,7 +91,7 @@ $.cachedScript( "ajax/test.js" ).done(function( script, textStatus ) {
   <example>
     <desc>Load the <a href="https://github.com/jquery/jquery-color">official jQuery Color Animation plugin</a> dynamically and bind some color animations to occur once the new functionality is loaded.</desc>
     <code><![CDATA[
-var url = "https://raw.github.com/jquery/jquery-color/master/jquery.color.js";
+var url = "https://code.jquery.com/color/jquery.color.js";
 $.getScript( url, function() {
   $( "#go" ).click(function() {
     $( ".block" )

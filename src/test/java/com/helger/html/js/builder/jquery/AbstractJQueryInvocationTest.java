@@ -21,11 +21,10 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 
 /**
- * Unit test class for class @{link AbstractJQueryInvocation} This file is
- * generated - do NOT edit!
+ * Unit test class for class @{link AbstractJQueryInvocation}
  * 
- * @author 
- *         com.helger.html.supplementary.jquery.Main_AbstractJQueryInvocationTest
+ * This file is generated - do NOT edit!
+ * @author com.helger.html.supplementary.jquery.Main_AbstractJQueryInvocationTest
  */
 public class AbstractJQueryInvocationTest
 {
