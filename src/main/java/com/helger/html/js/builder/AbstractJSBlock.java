@@ -35,7 +35,7 @@ import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.OverrideOnDemand;
 import com.helger.commons.annotations.ReturnsMutableCopy;
 import com.helger.commons.annotations.ReturnsMutableObject;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.lang.CGStringHelper;
@@ -100,7 +100,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   @ReturnsMutableCopy
   public List <IJSDeclaration> declarations ()
   {
-    return ContainerHelper.newList (m_aDecls.values ());
+    return CollectionHelper.newList (m_aDecls.values ());
   }
 
   /**
@@ -154,7 +154,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   @ReturnsMutableCopy
   public List <IJSCodeProvider> members ()
   {
-    return ContainerHelper.newList (m_aObjs);
+    return CollectionHelper.newList (m_aObjs);
   }
 
   /**

@@ -60,7 +60,7 @@ public final class HCConditionalCommentNodeTest
     // But if enabling alignment mode, the newline is printer!
     final IXMLWriterSettings aXWS = HCConversionSettings.createDefaultXMLWriterSettings ()
                                                         .setIndent (EXMLSerializeIndent.ALIGN_ONLY);
-    final String sCRLF = aXWS.getNewlineString ();
+    final String sCRLF = aXWS.getNewLineString ();
     HCSettings.getConversionSettingsProvider ().setXMLWriterSettings (aXWS);
 
     assertEquals ("<!--[if IE]>\n" + "abc" + "<![endif]-->" + sCRLF,

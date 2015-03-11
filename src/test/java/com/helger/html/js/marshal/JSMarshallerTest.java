@@ -35,7 +35,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.helger.commons.charset.CCharset;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.io.file.SimpleFileIO;
 import com.helger.commons.regex.RegExHelper;
 import com.helger.commons.string.StringHelper;
@@ -148,15 +148,15 @@ public final class JSMarshallerTest
     assertEquals ("[]",
                   JSMarshaller.objectToJSString (new ArrayList <String> (), new JSListType (JSType.STRING), false));
     assertEquals ("['x']",
-                  JSMarshaller.objectToJSString (ContainerHelper.newList ("x"), new JSListType (JSType.STRING), false));
-    assertEquals ("['x','y']", JSMarshaller.objectToJSString (ContainerHelper.newList ("x", "y"),
+                  JSMarshaller.objectToJSString (CollectionHelper.newList ("x"), new JSListType (JSType.STRING), false));
+    assertEquals ("['x','y']", JSMarshaller.objectToJSString (CollectionHelper.newList ("x", "y"),
                                                               new JSListType (JSType.STRING),
                                                               false));
-    assertEquals ("[1,9]", JSMarshaller.objectToJSString (ContainerHelper.newList (Integer.valueOf (1),
+    assertEquals ("[1,9]", JSMarshaller.objectToJSString (CollectionHelper.newList (Integer.valueOf (1),
                                                                                    Integer.valueOf (9)),
                                                           new JSListType (JSType.INT),
                                                           false));
-    assertEquals ("[1.1,9.8]", JSMarshaller.objectToJSString (ContainerHelper.newList (Double.valueOf (1.1),
+    assertEquals ("[1.1,9.8]", JSMarshaller.objectToJSString (CollectionHelper.newList (Double.valueOf (1.1),
                                                                                        Double.valueOf (9.8)),
                                                               new JSListType (JSType.DOUBLE),
                                                               false));
@@ -191,7 +191,7 @@ public final class JSMarshallerTest
 
     // Collections
     assertEquals ("[1,'xx','y']",
-                  JSMarshaller.objectToJSString (ContainerHelper.<Object> newList (Integer.valueOf (1),
+                  JSMarshaller.objectToJSString (CollectionHelper.<Object> newList (Integer.valueOf (1),
                                                                                    "xx",
                                                                                    Character.valueOf ('y'))));
     Map <Object, Object> aMap = new LinkedHashMap <Object, Object> ();
@@ -201,7 +201,7 @@ public final class JSMarshallerTest
 
     aMap = new LinkedHashMap <Object, Object> ();
     aMap.put (Integer.valueOf (1),
-              ContainerHelper.<Object> newList (Integer.valueOf (1), "xx", Character.valueOf ('y')));
+              CollectionHelper.<Object> newList (Integer.valueOf (1), "xx", Character.valueOf ('y')));
     aMap.put (Integer.valueOf (2), Character.valueOf ('y'));
     assertEquals ("{1:[1,'xx','y'],2:'y'}", JSMarshaller.objectToJSString (aMap));
   }

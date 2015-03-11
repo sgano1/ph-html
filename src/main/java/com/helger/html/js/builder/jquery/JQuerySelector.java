@@ -29,7 +29,7 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.CodingStyleguideUnaware;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.collections.ArrayHelper;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.id.IHasID;
 import com.helger.commons.regex.RegExHelper;
 import com.helger.commons.string.StringHelper;
@@ -917,14 +917,14 @@ public final class JQuerySelector implements IJQuerySelector
   @Nonnull
   public static IJQuerySelector multiple (@Nonnull @Nonempty final List <IJQuerySelector> aSelectors)
   {
-    final int nSize = ContainerHelper.getSize (aSelectors);
+    final int nSize = CollectionHelper.getSize (aSelectors);
     if (nSize == 0)
       throw new IllegalArgumentException ("empty selectors");
-    if (ContainerHelper.containsAnyNullElement (aSelectors))
+    if (CollectionHelper.containsAnyNullElement (aSelectors))
       throw new IllegalArgumentException ("selectors collection contains null element");
 
     if (nSize == 1)
-      return ContainerHelper.getFirstElement (aSelectors);
+      return CollectionHelper.getFirstElement (aSelectors);
 
     // Concatenate with ','
     IJSExpression ret = aSelectors.get (0).getExpression ();

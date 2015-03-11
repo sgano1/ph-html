@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.writer.IJSWriterSettings;
@@ -68,7 +68,7 @@ public final class JSStatementList extends AbstractJSStatement
   @ReturnsMutableCopy
   public List <IJSStatement> getAllStatements ()
   {
-    return ContainerHelper.newList (m_aStatements);
+    return CollectionHelper.newList (m_aStatements);
   }
 
   @Nonnegative

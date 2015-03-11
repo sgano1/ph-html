@@ -22,7 +22,7 @@ import java.util.List;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.html.AbstractHCSpan;
 import com.helger.html.hc.html.HCRadioButton;
@@ -70,6 +70,6 @@ public abstract class AbstractHCRadioButtonBar extends AbstractHCSpan <AbstractH
   @Nullable
   public final HCRadioButton getRadioButtonAtIndex (final int nIndex)
   {
-    return ContainerHelper.getSafe (m_aButtons, nIndex);
+    return CollectionHelper.getSafe (m_aButtons, nIndex);
   }
 }

@@ -23,7 +23,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.css.ICSSClassProvider;
@@ -104,7 +104,7 @@ public class HCHasCSSClasses implements IHCHasCSSClasses <HCHasCSSClasses>
   @ReturnsMutableCopy
   public Set <ICSSClassProvider> getAllClasses ()
   {
-    return ContainerHelper.newOrderedSet (m_aCSSClassProviders);
+    return CollectionHelper.newOrderedSet (m_aCSSClassProviders);
   }
 
   @Nonnull

@@ -29,7 +29,7 @@ import org.xml.sax.InputSource;
 
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.commons.io.streams.StreamUtils;
 import com.helger.commons.xml.sax.InputSourceFactory;
@@ -37,7 +37,7 @@ import com.helger.html.CHTMLDocTypes;
 
 /**
  * The SAX entity resolver for XHTML resources.
- * 
+ *
  * @author Philip Helger
  */
 public final class HTMLEntityResolver implements EntityResolver
@@ -119,7 +119,7 @@ public final class HTMLEntityResolver implements EntityResolver
   @ReturnsMutableCopy
   public Set <String> getAllPublicIds ()
   {
-    return ContainerHelper.newSet (m_aResolveMap.keySet ());
+    return CollectionHelper.newSet (m_aResolveMap.keySet ());
   }
 
   @Nullable

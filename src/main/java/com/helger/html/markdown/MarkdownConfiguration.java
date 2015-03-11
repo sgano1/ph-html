@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.ReturnsMutableCopy;
 import com.helger.commons.charset.CCharset;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 
 /**
  * Txtmark configuration.
@@ -142,7 +142,7 @@ public class MarkdownConfiguration
     m_bForceExtendedProfile = bForceExtendedProfile;
     m_bConvertNewline2Br = bConvertNewline2Br;
     m_aSpecialLinkEmitter = aSpecialLinkEmitter;
-    m_aPlugins = ContainerHelper.newList (aPlugins);
+    m_aPlugins = CollectionHelper.newList (aPlugins);
   }
 
   public boolean isSafeMode ()
@@ -188,7 +188,7 @@ public class MarkdownConfiguration
   @ReturnsMutableCopy
   public List <AbstractMarkdownPlugin> getAllPlugins ()
   {
-    return ContainerHelper.newList (m_aPlugins);
+    return CollectionHelper.newList (m_aPlugins);
   }
 
   /**

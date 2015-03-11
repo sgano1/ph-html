@@ -36,7 +36,7 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.PresentForCodeCoverage;
 import com.helger.commons.annotations.ReturnsMutableCopy;
 import com.helger.commons.cache.AnnotationUsageCache;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.lang.CGStringHelper;
 import com.helger.commons.lang.GenericReflection;
 import com.helger.commons.string.StringHelper;
@@ -368,7 +368,7 @@ public final class HCSpecialNodeHandler
     }
 
     // Apply all modifiers
-    List <? extends IHCNode> ret = ContainerHelper.newList (aNodes);
+    List <? extends IHCNode> ret = CollectionHelper.newList (aNodes);
     for (final Class <? extends IHCSpecialNodeListModifier> aModifierClass : aModifiersToApply)
     {
       final IHCSpecialNodeListModifier aModifier = s_aModifiers.get (aModifierClass.getName ());

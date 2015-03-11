@@ -31,7 +31,7 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.OverrideOnDemand;
 import com.helger.commons.annotations.ReturnsMutableCopy;
 import com.helger.commons.annotations.ReturnsMutableObject;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.mime.CMimeType;
 import com.helger.commons.state.EChange;
@@ -215,7 +215,7 @@ public class HCHead extends AbstractHCElement <HCHead>
   @ReturnsMutableCopy
   public List <HCLink> getAllLinks ()
   {
-    return ContainerHelper.newList (m_aLinks);
+    return CollectionHelper.newList (m_aLinks);
   }
 
   @Nonnegative
@@ -258,14 +258,14 @@ public class HCHead extends AbstractHCElement <HCHead>
   @ReturnsMutableCopy
   public List <IHCNode> getAllCSSNodes ()
   {
-    return ContainerHelper.newList (m_aCSS);
+    return CollectionHelper.newList (m_aCSS);
   }
 
   @Nonnull
   @ReturnsMutableCopy
   public List <IHCNode> getAllAndRemoveAllCSSNodes ()
   {
-    final List <IHCNode> ret = ContainerHelper.newList (m_aCSS);
+    final List <IHCNode> ret = CollectionHelper.newList (m_aCSS);
     m_aCSS.clear ();
     return ret;
   }
@@ -330,14 +330,14 @@ public class HCHead extends AbstractHCElement <HCHead>
   @ReturnsMutableCopy
   public List <IHCNode> getAllJSNodes ()
   {
-    return ContainerHelper.newList (m_aJS);
+    return CollectionHelper.newList (m_aJS);
   }
 
   @Nonnull
   @ReturnsMutableCopy
   public List <IHCNode> getAllAndRemoveAllJSNodes ()
   {
-    final List <IHCNode> ret = ContainerHelper.newList (m_aJS);
+    final List <IHCNode> ret = CollectionHelper.newList (m_aJS);
     m_aJS.clear ();
     return ret;
   }

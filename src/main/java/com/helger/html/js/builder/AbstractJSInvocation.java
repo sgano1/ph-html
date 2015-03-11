@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.microdom.IHasElementName;
@@ -663,7 +663,7 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
   @ReturnsMutableCopy
   public List <IJSExpression> args ()
   {
-    return ContainerHelper.newList (m_aArgs);
+    return CollectionHelper.newList (m_aArgs);
   }
 
   /**
@@ -687,7 +687,7 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
   @Nullable
   public IJSExpression getArgAtIndex (final int nIndex)
   {
-    return ContainerHelper.getSafe (m_aArgs, nIndex);
+    return CollectionHelper.getSafe (m_aArgs, nIndex);
   }
 
   /**

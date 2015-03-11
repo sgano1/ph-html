@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.helger.commons.charset.CCharset;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.io.file.SimpleFileIO;
 import com.helger.commons.string.StringHelper;
 
@@ -140,8 +140,8 @@ public class Main_AbstractJQueryInvocationExtendedTest extends AbstractCreateJQu
                 ++nArgIndex;
               }
 
-              List <String> aAllParams = ContainerHelper.newList (sTemplate);
-              List <String> aAllJavaKeys = ContainerHelper.newList (StringHelper.getImploded (',', aJavaTypeKey));
+              List <String> aAllParams = CollectionHelper.newList (sTemplate);
+              List <String> aAllJavaKeys = CollectionHelper.newList (StringHelper.getImploded (',', aJavaTypeKey));
 
               for (int i = 0; i < nArgCount; ++i)
                 if (aMultiJavaTypeArgs[i] != null)

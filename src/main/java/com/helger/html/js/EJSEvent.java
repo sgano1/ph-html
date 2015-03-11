@@ -23,7 +23,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.ReturnsImmutableObject;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.html.annotations.DeprecatedInHTML5;
 import com.helger.html.annotations.SinceHTML5;
 
@@ -187,7 +187,7 @@ public enum EJSEvent
   private EJSEvent (@Nonnull @Nonempty final String sEvent, @Nonnull @Nonempty final EJSEventType... aTypes)
   {
     m_sEvent = sEvent;
-    m_aJSEventTypes = ContainerHelper.newUnmodifiableSet (aTypes);
+    m_aJSEventTypes = CollectionHelper.newUnmodifiableSet (aTypes);
   }
 
   /**

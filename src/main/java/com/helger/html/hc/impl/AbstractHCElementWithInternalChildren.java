@@ -36,7 +36,7 @@ import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.OverrideOnDemand;
 import com.helger.commons.annotations.ReturnsMutableCopy;
 import com.helger.commons.annotations.ReturnsMutableObject;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
@@ -67,7 +67,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
 
   public final boolean hasChildren ()
   {
-    return ContainerHelper.isNotEmpty (m_aChildren);
+    return CollectionHelper.isNotEmpty (m_aChildren);
   }
 
   /**
@@ -207,7 +207,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
   @Nonnull
   public final THISTYPE removeChild (@Nonnegative final int nIndex)
   {
-    final CHILDTYPE aRemovedChild = ContainerHelper.removeAndReturnElementAtIndex (m_aChildren, nIndex);
+    final CHILDTYPE aRemovedChild = CollectionHelper.removeAndReturnElementAtIndex (m_aChildren, nIndex);
     if (aRemovedChild != null)
       afterRemoveChild (nIndex, aRemovedChild);
     return thisAsT ();
@@ -228,13 +228,13 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
   @Nullable
   public final CHILDTYPE getChild (final int nIndex)
   {
-    return ContainerHelper.getSafe (m_aChildren, nIndex, null);
+    return CollectionHelper.getSafe (m_aChildren, nIndex, null);
   }
 
   @Nonnegative
   public final int getChildCount ()
   {
-    return ContainerHelper.getSize (m_aChildren);
+    return CollectionHelper.getSize (m_aChildren);
   }
 
   @Nullable
@@ -256,25 +256,25 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
   @ReturnsMutableCopy
   public final List <CHILDTYPE> getAllChildren ()
   {
-    return ContainerHelper.newList (m_aChildren);
+    return CollectionHelper.newList (m_aChildren);
   }
 
   @Nullable
   public final CHILDTYPE getChildAtIndex (@Nonnegative final int nIndex)
   {
-    return ContainerHelper.getSafe (m_aChildren, nIndex);
+    return CollectionHelper.getSafe (m_aChildren, nIndex);
   }
 
   @Nullable
   public final CHILDTYPE getFirstChild ()
   {
-    return ContainerHelper.getFirstElement (m_aChildren);
+    return CollectionHelper.getFirstElement (m_aChildren);
   }
 
   @Nullable
   public final CHILDTYPE getLastChild ()
   {
-    return ContainerHelper.getLastElement (m_aChildren);
+    return CollectionHelper.getLastElement (m_aChildren);
   }
 
   public final boolean recursiveContainsChildWithTagName (@Nonnull @Nonempty final EHTMLElement... aElements)

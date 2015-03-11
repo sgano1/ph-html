@@ -29,7 +29,7 @@ import com.helger.commons.CGlobal;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.OverrideOnDemand;
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.StringHelper;
@@ -155,7 +155,7 @@ public class HCSelect extends AbstractHCControl <HCSelect>
   @ReturnsMutableCopy
   public Set <String> getAllPreselectedValues ()
   {
-    return ContainerHelper.newSet (m_aPreselectedValues);
+    return CollectionHelper.newSet (m_aPreselectedValues);
   }
 
   public boolean isPreselectedValue (@Nullable final String sValue)
@@ -522,7 +522,7 @@ public class HCSelect extends AbstractHCControl <HCSelect>
     if (m_nSize > 1)
       aElement.setAttribute (CHTMLAttributes.SIZE, m_nSize);
 
-    if (ContainerHelper.isNotEmpty (m_aOptions))
+    if (CollectionHelper.isNotEmpty (m_aOptions))
     {
       for (final IHCNode aOption : m_aOptions)
         aElement.appendChild (aOption.convertToNode (aConversionSettings));

@@ -39,7 +39,7 @@ import com.helger.commons.annotations.DevelopersNote;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.OverrideOnDemand;
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.idfactory.GlobalIDFactory;
 import com.helger.commons.lang.GenericReflection;
@@ -268,7 +268,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   @ReturnsMutableCopy
   public final Set <ICSSClassProvider> getAllClasses ()
   {
-    return ContainerHelper.newOrderedSet (m_aCSSClassProviders);
+    return CollectionHelper.newOrderedSet (m_aCSSClassProviders);
   }
 
   @Nonnull
@@ -315,14 +315,14 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   @ReturnsMutableCopy
   public final Map <ECSSProperty, ICSSValue> getAllStyles ()
   {
-    return ContainerHelper.newMap (m_aStyles);
+    return CollectionHelper.newMap (m_aStyles);
   }
 
   @Nonnull
   @ReturnsMutableCopy
   public final Collection <ICSSValue> getAllStyleValues ()
   {
-    return m_aStyles == null ? new ArrayList <ICSSValue> () : ContainerHelper.newList (m_aStyles.values ());
+    return m_aStyles == null ? new ArrayList <ICSSValue> () : CollectionHelper.newList (m_aStyles.values ());
   }
 
   @Nullable
@@ -662,13 +662,13 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
 
   public boolean hasCustomAttrs ()
   {
-    return ContainerHelper.isNotEmpty (m_aCustomAttrs);
+    return CollectionHelper.isNotEmpty (m_aCustomAttrs);
   }
 
   @Nonnegative
   public int getCustomAttrCount ()
   {
-    return ContainerHelper.getSize (m_aCustomAttrs);
+    return CollectionHelper.getSize (m_aCustomAttrs);
   }
 
   public boolean containsCustomAttr (@Nullable final String sName)
@@ -686,7 +686,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   @ReturnsMutableCopy
   public final Map <String, String> getAllCustomAttrs ()
   {
-    return ContainerHelper.newOrderedMap (m_aCustomAttrs);
+    return CollectionHelper.newOrderedMap (m_aCustomAttrs);
   }
 
   @Nonnull

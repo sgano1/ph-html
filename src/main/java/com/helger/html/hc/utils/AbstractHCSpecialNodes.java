@@ -29,7 +29,7 @@ import org.slf4j.LoggerFactory;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
@@ -93,7 +93,7 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
   @ReturnsMutableCopy
   public List <String> getAllExternalCSSs ()
   {
-    return ContainerHelper.newList (m_aExternalCSSs);
+    return CollectionHelper.newList (m_aExternalCSSs);
   }
 
   @Nonnull
@@ -136,7 +136,7 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
   @ReturnsMutableCopy
   public List <String> getAllExternalJSs ()
   {
-    return ContainerHelper.newList (m_aExternalJSs);
+    return CollectionHelper.newList (m_aExternalJSs);
   }
 
   @Nonnull

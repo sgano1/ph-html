@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 import com.helger.commons.annotations.CodingStyleguideUnaware;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 
@@ -487,7 +487,7 @@ public enum EHTMLEntity implements IHTMLEntity
   @ReturnsMutableCopy
   public static final Map <String, EHTMLEntity> getEntityRefToEntityMap ()
   {
-    return ContainerHelper.newOrderedMap (s_aEntityRefToEntityMap);
+    return CollectionHelper.newOrderedMap (s_aEntityRefToEntityMap);
   }
 
   /**
@@ -500,7 +500,7 @@ public enum EHTMLEntity implements IHTMLEntity
   @ReturnsMutableCopy
   public static final Map <Character, EHTMLEntity> getCharToEntityMap ()
   {
-    return ContainerHelper.newOrderedMap (s_aCharToEntityMap);
+    return CollectionHelper.newOrderedMap (s_aCharToEntityMap);
   }
 
   /**
@@ -513,7 +513,7 @@ public enum EHTMLEntity implements IHTMLEntity
   @ReturnsMutableCopy
   public static final Map <String, Character> getEntityRefToCharMap ()
   {
-    return ContainerHelper.newOrderedMap (s_aEntityRefToCharMap);
+    return CollectionHelper.newOrderedMap (s_aEntityRefToCharMap);
   }
 
   /**
@@ -526,7 +526,7 @@ public enum EHTMLEntity implements IHTMLEntity
   @ReturnsMutableCopy
   public static final Map <String, String> getEntityRefToCharStringMap ()
   {
-    return ContainerHelper.newOrderedMap (s_aEntityRefToCharStringMap);
+    return CollectionHelper.newOrderedMap (s_aEntityRefToCharStringMap);
   }
 
   /**
@@ -539,7 +539,7 @@ public enum EHTMLEntity implements IHTMLEntity
   @ReturnsMutableCopy
   public static final Map <Character, String> getCharToEntityRefMap ()
   {
-    return ContainerHelper.newOrderedMap (s_aCharToEntityRefMap);
+    return CollectionHelper.newOrderedMap (s_aCharToEntityRefMap);
   }
 
   /**
@@ -552,7 +552,7 @@ public enum EHTMLEntity implements IHTMLEntity
   @ReturnsMutableCopy
   public static final Map <String, String> getCharStringToEntityRefMap ()
   {
-    return ContainerHelper.newOrderedMap (s_aCharStringToEntityRefMap);
+    return CollectionHelper.newOrderedMap (s_aCharStringToEntityRefMap);
   }
 
   /**

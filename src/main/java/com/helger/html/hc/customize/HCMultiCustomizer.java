@@ -26,7 +26,7 @@ import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.state.EChange;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLVersion;
@@ -37,7 +37,7 @@ import com.helger.html.hc.html.HCHead;
 
 /**
  * An implementation of {@link IHCCustomizer} that handles multiple customizers.
- * 
+ *
  * @author Philip Helger
  */
 @NotThreadSafe
@@ -83,7 +83,7 @@ public class HCMultiCustomizer implements IHCCustomizer
   @ReturnsMutableCopy
   public List <IHCCustomizer> getAllCustomizers ()
   {
-    return ContainerHelper.newList (m_aCustomizers);
+    return CollectionHelper.newList (m_aCustomizers);
   }
 
   public void customizeNode (@Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aParentElement,

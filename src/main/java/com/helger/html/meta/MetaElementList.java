@@ -30,7 +30,7 @@ import javax.annotation.concurrent.NotThreadSafe;
 import com.helger.commons.ICloneable;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.state.EChange;
 import com.helger.commons.string.ToStringGenerator;
 
@@ -88,14 +88,14 @@ public class MetaElementList implements ICloneable <MetaElementList>, Serializab
   @ReturnsMutableCopy
   public Set <String> getAllMetaElementNames ()
   {
-    return ContainerHelper.newOrderedSet (m_aMetaElements.keySet ());
+    return CollectionHelper.newOrderedSet (m_aMetaElements.keySet ());
   }
 
   @Nonnull
   @ReturnsMutableCopy
   public List <IMetaElement> getAllMetaElements ()
   {
-    return ContainerHelper.newList (m_aMetaElements.values ());
+    return CollectionHelper.newList (m_aMetaElements.values ());
   }
 
   @Nullable

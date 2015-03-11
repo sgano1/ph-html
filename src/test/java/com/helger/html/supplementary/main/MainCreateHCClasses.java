@@ -140,7 +140,7 @@ public class MainCreateHCClasses
                                               + "\r\n"
                                               + "import org.junit.Test;\r\n"
                                               + "\r\n"
-                                              + "import com.helger.commons.collections.ContainerHelper;\r\n"
+                                              + "import com.helger.commons.collections.CollectionHelper;\r\n"
                                               + "import com.helger.html.hc.IHCNode;\r\n"
                                               + "import com.helger.html.hc.IHCNodeBuilder;\r\n"
                                               + "\r\n"
@@ -170,7 +170,7 @@ public class MainCreateHCClasses
                                               "    assertEquals (2, HC$$.create (HCB.create (\"Bold\"), HCI.create (\"Italic\")).getChildCount ());\r\n" +
                                               "    assertEquals (0, HC$$.create (new IHCNode [0]).getChildCount ());\r\n" +
                                               "    assertEquals (0, HC$$.create ((IHCNode []) null).getChildCount ());\r\n" +
-                                              "    assertEquals (2, HC$$.create (ContainerHelper.newList (HCB.create (\"Bold\"), HCI.create (\"Italic\")))\r\n" +
+                                              "    assertEquals (2, HC$$.create (CollectionHelper.newList (HCB.create (\"Bold\"), HCI.create (\"Italic\")))\r\n" +
                                               "                         .getChildCount ());\r\n" +
                                               "    assertEquals (0, HC$$.create (new ArrayList <IHCNode> ()).getChildCount ());\r\n" +
                                               "  }\r\n" +

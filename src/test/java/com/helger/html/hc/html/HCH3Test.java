@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeBuilder;
 
@@ -51,7 +51,7 @@ public final class HCH3Test
     assertEquals (2, HCH3.create (HCB.create ("Bold"), HCI.create ("Italic")).getChildCount ());
     assertEquals (0, HCH3.create (new IHCNode [0]).getChildCount ());
     assertEquals (0, HCH3.create ((IHCNode []) null).getChildCount ());
-    assertEquals (2, HCH3.create (ContainerHelper.newList (HCB.create ("Bold"), HCI.create ("Italic")))
+    assertEquals (2, HCH3.create (CollectionHelper.newList (HCB.create ("Bold"), HCI.create ("Italic")))
                          .getChildCount ());
     assertEquals (0, HCH3.create (new ArrayList <IHCNode> ()).getChildCount ());
   }

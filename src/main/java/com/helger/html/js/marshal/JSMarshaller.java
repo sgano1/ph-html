@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.collections.ArrayHelper;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.lang.ClassHelper;
 import com.helger.commons.string.StringHelper;
 import com.helger.html.hc.IHCNode;
@@ -76,7 +76,7 @@ public final class JSMarshaller
    * technically the last few are not reserved words but they cannot be used as
    * identifiers.
    */
-  private static final Set <String> RESERVED_KEYWORDS = ContainerHelper.newSet ("break",
+  private static final Set <String> RESERVED_KEYWORDS = CollectionHelper.newSet ("break",
                                                                                 "case",
                                                                                 "catch",
                                                                                 "continue",

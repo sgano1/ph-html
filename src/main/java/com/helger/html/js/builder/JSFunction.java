@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
@@ -145,7 +145,7 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
   @ReturnsMutableCopy
   public List <JSVar> params ()
   {
-    return ContainerHelper.newList (m_aParams);
+    return CollectionHelper.newList (m_aParams);
   }
 
   /**
@@ -189,7 +189,7 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
   @Nullable
   public JSVar getParamAtIndex (final int nIndex)
   {
-    return ContainerHelper.getSafe (m_aParams, nIndex);
+    return CollectionHelper.getSafe (m_aParams, nIndex);
   }
 
   @Nonnull

@@ -22,7 +22,8 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
+import com.helger.commons.system.ENewLineMode;
 import com.helger.commons.xml.serialize.EXMLSerializeFormat;
 import com.helger.commons.xml.serialize.EXMLSerializeIndent;
 import com.helger.commons.xml.serialize.XMLWriterSettings;
@@ -40,7 +41,7 @@ public class HCSpecialNodeHandlerTest
   {
     public List <? extends IHCNode> modifySpecialNodes (final List <? extends IHCNode> aNodes)
     {
-      final List <IHCNode> ret = ContainerHelper.newList (aNodes);
+      final List <IHCNode> ret = CollectionHelper.newList (aNodes);
       if (!ret.isEmpty ())
         ret.remove (0);
       return ret;
@@ -65,7 +66,7 @@ public class HCSpecialNodeHandlerTest
     aHtml.getHead ().addJS (new MockScript ("var x=0;"));
     aHtml.getHead ().addJS (new MockScript ("var y=0;"));
     aHtml.getBody ().addChild (new HCH1 ().addChild ("root"));
-    final String sCRLF = XMLWriterSettings.DEFAULT_NEWLINE_STRING;
+    final String sCRLF = ENewLineMode.DEFAULT.getText ();
     assertEquals ("<!DOCTYPE html>" +
                       sCRLF +
                       "<html dir=\"ltr\">" +

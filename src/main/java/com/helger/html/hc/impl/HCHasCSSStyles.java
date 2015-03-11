@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 import com.helger.commons.annotations.DevelopersNote;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.css.ICSSWriterSettings;
@@ -51,14 +51,14 @@ public class HCHasCSSStyles implements IHCHasCSSStyles <HCHasCSSStyles>
   @ReturnsMutableCopy
   public final Map <ECSSProperty, ICSSValue> getAllStyles ()
   {
-    return ContainerHelper.newMap (m_aStyles);
+    return CollectionHelper.newMap (m_aStyles);
   }
 
   @Nonnull
   @ReturnsMutableCopy
   public final Collection <ICSSValue> getAllStyleValues ()
   {
-    return m_aStyles == null ? new ArrayList <ICSSValue> () : ContainerHelper.newList (m_aStyles.values ());
+    return m_aStyles == null ? new ArrayList <ICSSValue> () : CollectionHelper.newList (m_aStyles.values ());
   }
 
   @Nullable

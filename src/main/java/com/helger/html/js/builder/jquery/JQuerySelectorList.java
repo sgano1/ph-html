@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.state.EChange;
 import com.helger.html.js.builder.IJSExpression;
 import com.helger.html.js.provider.IJSCodeProviderWithSettings;
@@ -97,7 +97,7 @@ public class JQuerySelectorList implements IJSCodeProviderWithSettings
   @ReturnsMutableCopy
   public List <IJQuerySelector> getAllSelectors ()
   {
-    return ContainerHelper.newList (m_aElements);
+    return CollectionHelper.newList (m_aElements);
   }
 
   @Nonnull

@@ -27,7 +27,7 @@ import javax.annotation.concurrent.NotThreadSafe;
 import com.helger.commons.ICloneable;
 import com.helger.commons.IHasSize;
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.IJSCodeProvider;
@@ -67,7 +67,7 @@ public final class CollectingJSCodeProvider implements IJSCodeProviderWithSettin
   @ReturnsMutableCopy
   public List <IJSCodeProvider> getAll ()
   {
-    return ContainerHelper.newList (m_aList);
+    return CollectionHelper.newList (m_aList);
   }
 
   @Nonnull

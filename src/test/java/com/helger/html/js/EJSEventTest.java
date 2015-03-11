@@ -23,7 +23,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.string.StringHelper;
 
 /**
@@ -40,7 +40,7 @@ public final class EJSEventTest
     {
       assertTrue (StringHelper.hasText (e.getEvent ()));
       assertNotNull (e.getAllTypes ());
-      assertFalse (ContainerHelper.isEmpty (e.getAllTypes ()));
+      assertFalse (CollectionHelper.isEmpty (e.getAllTypes ()));
       for (final EJSEventType eType : e.getAllTypes ())
         assertTrue (e.isForType (eType));
       assertSame (e, EJSEvent.valueOf (e.name ()));

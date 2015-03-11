@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
@@ -208,7 +208,7 @@ public class JSAssocArray extends AbstractJSExpression
   @ReturnsMutableCopy
   public Map <IJSExpression, IJSExpression> getAll ()
   {
-    return ContainerHelper.newOrderedMap (m_aExprs);
+    return CollectionHelper.newOrderedMap (m_aExprs);
   }
 
   public void generate (@Nonnull final JSFormatter aFormatter)

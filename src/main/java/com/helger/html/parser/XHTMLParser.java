@@ -25,7 +25,7 @@ import org.slf4j.LoggerFactory;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.microdom.IMicroContainer;
 import com.helger.commons.microdom.IMicroDocument;
 import com.helger.commons.microdom.IMicroElement;
@@ -219,7 +219,7 @@ public final class XHTMLParser
         {
           // Make a copy of the list, because it is modified in
           // detachFromParent!
-          for (final IMicroNode aChildNode : ContainerHelper.newList (eBody.getAllChildren ()))
+          for (final IMicroNode aChildNode : CollectionHelper.newList (eBody.getAllChildren ()))
             ret.appendChild (aChildNode.detachFromParent ());
         }
         return ret;

@@ -33,7 +33,7 @@ import com.helger.commons.SystemProperties;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.io.file.filter.FilenameFilterEndsWith;
 import com.helger.commons.io.file.iterate.FileSystemIterator;
@@ -82,7 +82,7 @@ abstract class AbstractCreateJQueryAPIList
     }
   }
 
-  private static final Set <String> FORBIDDEN_NAMES = ContainerHelper.newSet ("true", "false", "switch");
+  private static final Set <String> FORBIDDEN_NAMES = CollectionHelper.newSet ("true", "false", "switch");
 
   static String _makeIdentifier (final String sName)
   {
@@ -165,7 +165,7 @@ abstract class AbstractCreateJQueryAPIList
     {
       if (StringHelper.hasNoText (sName))
         throw new IllegalArgumentException ("name");
-      if (ContainerHelper.isEmpty (aTypes))
+      if (CollectionHelper.isEmpty (aTypes))
         throw new IllegalArgumentException ("types");
       m_sName = sName;
       m_sIdentifier = _makeIdentifier (sName);
@@ -209,7 +209,7 @@ abstract class AbstractCreateJQueryAPIList
     @ReturnsMutableCopy
     public List <String> getAllTypes ()
     {
-      return ContainerHelper.newList (m_aTypes);
+      return CollectionHelper.newList (m_aTypes);
     }
 
     @Nonnegative
@@ -223,13 +223,13 @@ abstract class AbstractCreateJQueryAPIList
     @ReturnsMutableCopy
     public Set <String> getAllJavaTypes ()
     {
-      return ContainerHelper.newOrderedSet (m_aJavaTypes);
+      return CollectionHelper.newOrderedSet (m_aJavaTypes);
     }
 
     @Nonnull
     public String getFirstJavaType ()
     {
-      return ContainerHelper.getFirstElement (m_aJavaTypes);
+      return CollectionHelper.getFirstElement (m_aJavaTypes);
     }
 
     public boolean isOptional ()
@@ -312,7 +312,7 @@ abstract class AbstractCreateJQueryAPIList
     @ReturnsMutableCopy
     public List <Argument> getAllArguments ()
     {
-      return ContainerHelper.newList (m_aArgs);
+      return CollectionHelper.newList (m_aArgs);
     }
 
     @Nonnegative
@@ -369,7 +369,7 @@ abstract class AbstractCreateJQueryAPIList
 
   protected static final class Entry
   {
-    private static final Set <String> PARENT_CLASS_NAMES = ContainerHelper.newSet ("clone", "eq", "not");
+    private static final Set <String> PARENT_CLASS_NAMES = CollectionHelper.newSet ("clone", "eq", "not");
 
     private final EAPIType m_eAPIType;
     private final String m_sName;
@@ -486,7 +486,7 @@ abstract class AbstractCreateJQueryAPIList
     @ReturnsMutableCopy
     public List <Signature> getAllSignatures ()
     {
-      return ContainerHelper.newList (m_aSignatures);
+      return CollectionHelper.newList (m_aSignatures);
     }
 
     public boolean isStaticMethod ()
@@ -538,7 +538,7 @@ abstract class AbstractCreateJQueryAPIList
     if (sJavaType.equals ("EHTMLElement..."))
       return "EHTMLElement.DIV, EHTMLElement.SPAN";
     if (sJavaType.equals ("Iterable<EHTMLElement>"))
-      return "ContainerHelper.newList (EHTMLElement.DIV, EHTMLElement.SPAN)";
+      return "CollectionHelper.newList (EHTMLElement.DIV, EHTMLElement.SPAN)";
     if (sJavaType.equals ("ICSSClassProvider"))
       return "DefaultCSSClassProvider.create (\"cssclass\")";
     if (sJavaType.equals ("IHCNode"))
@@ -585,7 +585,7 @@ abstract class AbstractCreateJQueryAPIList
       if (eRoot.getTagName ().equals ("entries"))
         aEntries = eRoot.getAllChildElements ("entry");
       else
-        aEntries = ContainerHelper.newList (eRoot);
+        aEntries = CollectionHelper.newList (eRoot);
 
       for (final IMicroElement eEntry : aEntries)
       {

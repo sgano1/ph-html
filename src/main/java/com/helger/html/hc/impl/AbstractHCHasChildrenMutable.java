@@ -36,7 +36,7 @@ import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.OverrideOnDemand;
 import com.helger.commons.annotations.ReturnsMutableCopy;
 import com.helger.commons.annotations.ReturnsMutableObject;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.lang.GenericReflection;
 import com.helger.commons.microdom.IMicroContainer;
 import com.helger.commons.microdom.impl.MicroContainer;
@@ -75,7 +75,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
 
   public final boolean hasChildren ()
   {
-    return ContainerHelper.isNotEmpty (m_aChildren);
+    return CollectionHelper.isNotEmpty (m_aChildren);
   }
 
   /**
@@ -216,7 +216,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
   @Nonnull
   public final THISTYPE removeChild (@Nonnegative final int nIndex)
   {
-    final CHILDTYPE aRemovedChild = ContainerHelper.removeAndReturnElementAtIndex (m_aChildren, nIndex);
+    final CHILDTYPE aRemovedChild = CollectionHelper.removeAndReturnElementAtIndex (m_aChildren, nIndex);
     if (aRemovedChild != null)
       afterRemoveChild (nIndex, aRemovedChild);
     return thisAsT ();
@@ -237,7 +237,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
   @Nonnegative
   public final int getChildCount ()
   {
-    return ContainerHelper.getSize (m_aChildren);
+    return CollectionHelper.getSize (m_aChildren);
   }
 
   @Nullable
@@ -259,25 +259,25 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
   @ReturnsMutableCopy
   public final List <CHILDTYPE> getAllChildren ()
   {
-    return ContainerHelper.newList (m_aChildren);
+    return CollectionHelper.newList (m_aChildren);
   }
 
   @Nullable
   public final CHILDTYPE getChildAtIndex (@Nonnegative final int nIndex)
   {
-    return ContainerHelper.getSafe (m_aChildren, nIndex);
+    return CollectionHelper.getSafe (m_aChildren, nIndex);
   }
 
   @Nullable
   public final CHILDTYPE getFirstChild ()
   {
-    return ContainerHelper.getFirstElement (m_aChildren);
+    return CollectionHelper.getFirstElement (m_aChildren);
   }
 
   @Nullable
   public final CHILDTYPE getLastChild ()
   {
-    return ContainerHelper.getLastElement (m_aChildren);
+    return CollectionHelper.getLastElement (m_aChildren);
   }
 
   public final boolean recursiveContainsChildWithTagName (@Nonnull @Nonempty final EHTMLElement... aElements)
@@ -315,7 +315,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
       return null;
 
     if (m_aChildren.size () == 1)
-      return ContainerHelper.getFirstElement (m_aChildren);
+      return CollectionHelper.getFirstElement (m_aChildren);
 
     // Return as-is
     return this;
