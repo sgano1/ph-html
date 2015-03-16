@@ -18,12 +18,13 @@ package com.helger.html.hc.html;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Rule;
 import org.junit.Test;
 
 import com.helger.html.hc.conversion.HCSettings;
-import com.helger.html.hc.conversion.IHCConversionSettings;
 import com.helger.html.js.provider.UnparsedJSCodeProvider;
 import com.helger.html.meta.MetaElement;
+import com.helger.html.mock.HCTestRuleOptimized;
 
 /**
  * Test class for class {@link HCHtml}
@@ -32,10 +33,12 @@ import com.helger.html.meta.MetaElement;
  */
 public final class HCHtmlTest
 {
+  @Rule
+  public final HCTestRuleOptimized m_aRule = new HCTestRuleOptimized ();
+
   @Test
   public void testOutOfBandNodes1 ()
   {
-    final IHCConversionSettings aCS = HCSettings.getConversionSettings (false);
     final HCHtml aHtml = new HCHtml ();
     aHtml.getBody ().addChild (new HCH1 ().addChild ("Test"));
     aHtml.getBody ().addChild (new HCStyle ("h1{color:red;}"));
@@ -45,20 +48,19 @@ public final class HCHtmlTest
                       + "<head><style type=\"text/css\">h1{color:red;}</style></head>"
                       + "<body><h1>Test</h1></body>"
                       + "</html>",
-                  aHtml.getAsHTMLString (aCS));
+                  HCSettings.getAsHTMLString (aHtml));
     // Do it again and check for node consistency
     assertEquals ("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">"
                       + "<html xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">"
                       + "<head><style type=\"text/css\">h1{color:red;}</style></head>"
                       + "<body><h1>Test</h1></body>"
                       + "</html>",
-                  aHtml.getAsHTMLString (aCS));
+                  HCSettings.getAsHTMLString (aHtml));
   }
 
   @Test
   public void testOutOfBandNodes2 ()
   {
-    final IHCConversionSettings aCS = HCSettings.getConversionSettings (false);
     final HCHtml aHtml = new HCHtml ();
     aHtml.getHead ().getMetaElementList ().addMetaElement (new MetaElement ("foo", "bar"));
     aHtml.getBody ().addChild (new HCH1 ().addChild ("Test"));
@@ -76,7 +78,7 @@ public final class HCHtmlTest
                       "//--></script>" +
                       "</body>" +
                       "</html>",
-                  aHtml.getAsHTMLString (aCS));
+                  HCSettings.getAsHTMLString (aHtml));
     // Do it again and check for node consistency
     assertEquals ("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">" +
                       "<html xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">" +
@@ -89,6 +91,6 @@ public final class HCHtmlTest
                       "//--></script>" +
                       "</body>" +
                       "</html>",
-                  aHtml.getAsHTMLString (aCS));
+                  HCSettings.getAsHTMLString (aHtml));
   }
 }

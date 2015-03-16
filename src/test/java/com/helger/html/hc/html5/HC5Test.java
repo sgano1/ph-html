@@ -88,7 +88,7 @@ public final class HC5Test
     b.addChild (aVideo);
     b.addChild (new HCWBR ());
 
-    final IHCConversionSettings aCS = HCSettings.getConversionSettings (true).getClone (EHTMLVersion.HTML5);
+    final IHCConversionSettings aCS = HCSettings.getConversionSettings ().getCloneIfNecessary (EHTMLVersion.HTML5);
     assertNotNull (h.convertToNode (aCS));
     if (false)
       System.out.print (h.getAsHTMLString (aCS));

@@ -61,6 +61,7 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -70,6 +71,7 @@ import com.helger.commons.charset.CCharset;
 import com.helger.commons.io.file.FilenameHelper;
 import com.helger.commons.io.file.SimpleFileIO;
 import com.helger.commons.io.file.iterate.FileSystemRecursiveIterator;
+import com.helger.html.mock.HCTestRuleOptimized;
 
 @RunWith (value = Parameterized.class)
 public final class MarkdownTest
@@ -89,6 +91,9 @@ public final class MarkdownTest
     }
     return ret;
   }
+
+  @Rule
+  public final HCTestRuleOptimized m_aRule = new HCTestRuleOptimized ();
 
   private final String m_sDir;
   private final String m_sTestName;
@@ -113,7 +118,7 @@ public final class MarkdownTest
     final String htmlText = _slurp (m_sDir + File.separator + m_sTestName + ".html");
     try
     {
-      final String markdownText = new MarkdownProcessor ().process (testText).getAsHTMLString (false);
+      final String markdownText = new MarkdownProcessor ().process (testText).getAsHTMLString ();
       assertEquals (m_sTestName, htmlText.trim (), markdownText.trim ());
     }
     catch (final MarkdownException ex)

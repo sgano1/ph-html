@@ -20,13 +20,17 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.OverrideOnDemand;
+import com.helger.commons.annotations.ReturnsMutableObject;
+import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.xml.serialize.EXMLSerializeIndent;
 import com.helger.commons.xml.serialize.IXMLWriterSettings;
+import com.helger.commons.xml.serialize.XMLWriterSettings;
 import com.helger.css.ICSSWriterSettings;
+import com.helger.css.writer.CSSWriterSettings;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.customize.IHCCustomizer;
 import com.helger.html.js.writer.IJSWriterSettings;
+import com.helger.html.js.writer.JSWriterSettings;
 
 /**
  * Default implementation of {@link IHCConversionSettingsProvider} using a
@@ -37,105 +41,125 @@ import com.helger.html.js.writer.IJSWriterSettings;
 @NotThreadSafe
 public class HCConversionSettingsProvider implements IHCConversionSettingsProvider
 {
-  private final HCConversionSettings m_aCSPrettyPrint;
-  private HCConversionSettings m_aCSOptimized;
+  private final HCConversionSettings m_aConversionSettings;
 
   public HCConversionSettingsProvider (@Nonnull final EHTMLVersion eHTMLVersion)
   {
     ValueEnforcer.notNull (eHTMLVersion, "HTMLVersion");
-    m_aCSPrettyPrint = new HCConversionSettings (eHTMLVersion);
+    m_aConversionSettings = new HCConversionSettings (eHTMLVersion);
   }
 
   @Nonnull
   public EHTMLVersion getHTMLVersion ()
   {
-    return m_aCSPrettyPrint.getHTMLVersion ();
-  }
-
-  /**
-   * @param aCSOptimized
-   *        The settings to be modified for optimized output. Never
-   *        <code>null</code>.
-   */
-  @OverrideOnDemand
-  protected void modifyOptimizedConversionSettings (@Nonnull final HCConversionSettings aCSOptimized)
-  {
-    aCSOptimized.getXMLWriterSettings ().setIndent (EXMLSerializeIndent.NONE);
-    aCSOptimized.getCSSWriterSettings ().setOptimizedOutput (true).setRemoveUnnecessaryCode (true);
-    aCSOptimized.getJSWriterSettings ().setIndentAndAlign (false);
-    aCSOptimized.setConsistencyChecksEnabled (false);
-  }
-
-  @Nonnull
-  private HCConversionSettings _getOrCreateOptimized ()
-  {
-    if (m_aCSOptimized == null)
-    {
-      // Lazily create optimized version
-      m_aCSOptimized = m_aCSPrettyPrint.getClone ();
-      // Modify settings
-      modifyOptimizedConversionSettings (m_aCSOptimized);
-    }
-    return m_aCSOptimized;
+    return m_aConversionSettings.getHTMLVersion ();
   }
 
   @Nonnull
   public HCConversionSettings getConversionSettings ()
   {
-    return getConversionSettings (HCSettings.isDefaultPrettyPrint ());
+    return m_aConversionSettings;
   }
 
   @Nonnull
-  public HCConversionSettings getConversionSettings (final boolean bPrettyPrint)
+  @ReturnsMutableObject (reason = "Design")
+  public XMLWriterSettings getXMLWriterSettings ()
   {
-    return bPrettyPrint ? m_aCSPrettyPrint : _getOrCreateOptimized ();
+    return m_aConversionSettings.getXMLWriterSettings ();
   }
 
   @Nonnull
   public HCConversionSettingsProvider setXMLWriterSettings (@Nonnull final IXMLWriterSettings aXMLWriterSettings)
   {
-    m_aCSPrettyPrint.setXMLWriterSettings (aXMLWriterSettings);
-    m_aCSOptimized = null;
+    m_aConversionSettings.setXMLWriterSettings (aXMLWriterSettings);
     return this;
+  }
+
+  @Nonnull
+  @ReturnsMutableObject (reason = "Design")
+  public CSSWriterSettings getCSSWriterSettings ()
+  {
+    return m_aConversionSettings.getCSSWriterSettings ();
   }
 
   @Nonnull
   public HCConversionSettingsProvider setCSSWriterSettings (@Nonnull final ICSSWriterSettings aCSSWriterSettings)
   {
-    m_aCSPrettyPrint.setCSSWriterSettings (aCSSWriterSettings);
-    m_aCSOptimized = null;
+    m_aConversionSettings.setCSSWriterSettings (aCSSWriterSettings);
     return this;
+  }
+
+  @Nonnull
+  @ReturnsMutableObject (reason = "Design")
+  public JSWriterSettings getJSWriterSettings ()
+  {
+    return m_aConversionSettings.getJSWriterSettings ();
   }
 
   @Nonnull
   public HCConversionSettingsProvider setJSWriterSettings (@Nonnull final IJSWriterSettings aJSWriterSettings)
   {
-    m_aCSPrettyPrint.setJSWriterSettings (aJSWriterSettings);
-    m_aCSOptimized = null;
+    m_aConversionSettings.setJSWriterSettings (aJSWriterSettings);
     return this;
+  }
+
+  public boolean areConsistencyChecksEnabled ()
+  {
+    return m_aConversionSettings.areConsistencyChecksEnabled ();
   }
 
   @Nonnull
   public HCConversionSettingsProvider setConsistencyChecksEnabled (final boolean bConsistencyChecksEnabled)
   {
-    m_aCSPrettyPrint.setConsistencyChecksEnabled (bConsistencyChecksEnabled);
-    m_aCSOptimized = null;
+    m_aConversionSettings.setConsistencyChecksEnabled (bConsistencyChecksEnabled);
     return this;
+  }
+
+  public boolean isExtractOutOfBandNodes ()
+  {
+    return m_aConversionSettings.isExtractOutOfBandNodes ();
   }
 
   @Nonnull
   public HCConversionSettingsProvider setExtractOutOfBandNodes (final boolean bExtractOutOfBandNodes)
   {
-    m_aCSPrettyPrint.setExtractOutOfBandNodes (bExtractOutOfBandNodes);
-    m_aCSOptimized = null;
+    m_aConversionSettings.setExtractOutOfBandNodes (bExtractOutOfBandNodes);
     return this;
+  }
+
+  @Nonnull
+  public IHCCustomizer getCustomizer ()
+  {
+    return m_aConversionSettings.getCustomizer ();
   }
 
   @Nonnull
   public HCConversionSettingsProvider setCustomizer (@Nonnull final IHCCustomizer aCustomizer)
   {
-    m_aCSPrettyPrint.setCustomizer (aCustomizer);
-    m_aCSOptimized = null;
+    m_aConversionSettings.setCustomizer (aCustomizer);
     return this;
+  }
+
+  @Nonnull
+  public HCConversionSettingsProvider setToDefault ()
+  {
+    m_aConversionSettings.setToDefault ();
+    return this;
+  }
+
+  @Nonnull
+  public HCConversionSettingsProvider setToOptimized ()
+  {
+    m_aConversionSettings.getXMLWriterSettings ().setIndent (EXMLSerializeIndent.NONE);
+    m_aConversionSettings.getCSSWriterSettings ().setOptimizedOutput (true).setRemoveUnnecessaryCode (true);
+    m_aConversionSettings.getJSWriterSettings ().setMinimumCodeSize (true);
+    m_aConversionSettings.setConsistencyChecksEnabled (false);
+    return this;
+  }
+
+  @Override
+  public String toString ()
+  {
+    return new ToStringGenerator (this).append ("conversionSettings", m_aConversionSettings).toString ();
   }
 }

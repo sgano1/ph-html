@@ -18,9 +18,11 @@ package com.helger.html.hc.impl;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Rule;
 import org.junit.Test;
 
 import com.helger.html.hc.conversion.HCSettings;
+import com.helger.html.mock.HCTestRuleOptimized;
 
 /**
  * Test class for class {@link HCCommentNode}
@@ -29,15 +31,18 @@ import com.helger.html.hc.conversion.HCSettings;
  */
 public final class HCCommentNodeTest
 {
+  @Rule
+  public final HCTestRuleOptimized m_aRule = new HCTestRuleOptimized ();
+
   @Test
   public void testAll ()
   {
-    assertEquals ("", HCSettings.getAsHTMLString (new HCCommentNode (""), false));
-    assertEquals ("<!--x-->", HCSettings.getAsHTMLString (new HCCommentNode ("x"), false));
-    assertEquals ("<!-- -->", HCSettings.getAsHTMLString (new HCCommentNode (" "), false));
-    assertEquals ("<!-- \t -->", HCSettings.getAsHTMLString (new HCCommentNode (" \t "), false));
-    assertEquals ("<!--abc\ndef-->", HCSettings.getAsHTMLString (new HCCommentNode ("abc\ndef"), false));
+    assertEquals ("", HCSettings.getAsHTMLString (new HCCommentNode ("")));
+    assertEquals ("<!--x-->", HCSettings.getAsHTMLString (new HCCommentNode ("x")));
+    assertEquals ("<!-- -->", HCSettings.getAsHTMLString (new HCCommentNode (" ")));
+    assertEquals ("<!-- \t -->", HCSettings.getAsHTMLString (new HCCommentNode (" \t ")));
+    assertEquals ("<!--abc\ndef-->", HCSettings.getAsHTMLString (new HCCommentNode ("abc\ndef")));
     // Emits a warning
-    assertEquals ("<!------>", HCSettings.getAsHTMLString (new HCCommentNode ("--"), false));
+    assertEquals ("<!------>", HCSettings.getAsHTMLString (new HCCommentNode ("--")));
   }
 }

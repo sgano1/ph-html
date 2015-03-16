@@ -21,15 +21,16 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Rule;
 import org.junit.Test;
 
 import com.helger.commons.microdom.IMicroContainer;
-import com.helger.commons.system.ENewLineMode;
 import com.helger.html.hc.conversion.HCSettings;
 import com.helger.html.hc.html.HCDiv;
 import com.helger.html.hc.html.HCRow;
 import com.helger.html.hc.html.HCSpan;
 import com.helger.html.hc.html.HCTable;
+import com.helger.html.mock.HCTestRuleOptimized;
 
 /**
  * Test class for class {@link HCNodeList}
@@ -38,6 +39,9 @@ import com.helger.html.hc.html.HCTable;
  */
 public final class HCNodeListTest
 {
+  @Rule
+  public final HCTestRuleOptimized m_aRule = new HCTestRuleOptimized ();
+
   @Test
   public void testAll ()
   {
@@ -46,7 +50,7 @@ public final class HCNodeListTest
     x.addChild (new HCDiv ().addChild ("d1"));
     x.addChild (new HCDiv ().addChild ("d2"));
     assertTrue (x.hasChildren ());
-    final IMicroContainer aNode = (IMicroContainer) HCSettings.getAsNode (x, true);
+    final IMicroContainer aNode = (IMicroContainer) HCSettings.getAsNode (x);
     assertNotNull (aNode);
     assertEquals (2, x.getChildCount ());
 
@@ -54,7 +58,7 @@ public final class HCNodeListTest
     x.addChild (new HCSpan ().addChild ("span"));
     final HCDiv div = x.addAndReturnChild (new HCDiv ().addChild ("d3"));
     assertNotNull (div);
-    assertEquals ("<div xmlns=\"http://www.w3.org/1999/xhtml\">d3</div>", HCSettings.getAsHTMLString (div, false));
+    assertEquals ("<div xmlns=\"http://www.w3.org/1999/xhtml\">d3</div>", HCSettings.getAsHTMLString (div));
     assertEquals (2, x.getChildCount ());
   }
 
@@ -67,20 +71,17 @@ public final class HCNodeListTest
     assertEquals ("<table xmlns=\"http://www.w3.org/1999/xhtml\"><tbody><tr><td>"
                   + "<div>dd2</div>"
                   + "<div>dd1</div>"
-                  + "</td></tr></tbody></table>", HCSettings.getAsHTMLString (table, false));
+                  + "</td></tr></tbody></table>", HCSettings.getAsHTMLString (table));
   }
 
   @Test
   public void testGetAsNode ()
   {
-    final String sCRLF = ENewLineMode.DEFAULT.getText ();
     final HCNodeList x = new HCNodeList ();
     x.addChild (new HCDiv ().addChild ("Na so was"));
     x.addChild (new HCDiv ().addChild ("aber auch"));
-    assertNotNull (HCSettings.getAsNode (x, true));
-    assertEquals ("<div xmlns=\"http://www.w3.org/1999/xhtml\">Na so was</div>" +
-                  sCRLF +
-                  "<div xmlns=\"http://www.w3.org/1999/xhtml\">aber auch</div>" +
-                  sCRLF, HCSettings.getAsHTMLString (x, true));
+    assertNotNull (HCSettings.getAsNode (x));
+    assertEquals ("<div xmlns=\"http://www.w3.org/1999/xhtml\">Na so was</div>"
+                  + "<div xmlns=\"http://www.w3.org/1999/xhtml\">aber auch</div>", HCSettings.getAsHTMLString (x));
   }
 }

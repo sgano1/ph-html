@@ -19,9 +19,11 @@ package com.helger.html.hc.conversion;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import org.junit.Rule;
 import org.junit.Test;
 
 import com.helger.html.hc.html.HCBR;
+import com.helger.html.mock.HCTestRuleOptimized;
 
 /**
  * Test class for class {final @link HCSettings}.
@@ -30,11 +32,14 @@ import com.helger.html.hc.html.HCBR;
  */
 public final class HCSettingsTest
 {
+  @Rule
+  public final HCTestRuleOptimized m_aRule = new HCTestRuleOptimized ();
+
   @Test
   public void testGetAsString ()
   {
     final HCBR aBR = new HCBR ();
-    final String s = HCSettings.getAsHTMLString (aBR, false);
+    final String s = HCSettings.getAsHTMLString (aBR);
     assertNotNull (s);
     assertEquals ("<br xmlns=\"http://www.w3.org/1999/xhtml\" />", s);
   }
@@ -43,7 +48,7 @@ public final class HCSettingsTest
   public void testGetAsStringWithoutNamespaces ()
   {
     final HCBR aBR = new HCBR ();
-    final String s = HCSettings.getAsHTMLStringWithoutNamespaces (aBR, false);
+    final String s = HCSettings.getAsHTMLStringWithoutNamespaces (aBR);
     assertNotNull (s);
     assertEquals ("<br />", s);
   }

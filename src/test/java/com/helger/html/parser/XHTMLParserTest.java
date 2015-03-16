@@ -346,13 +346,13 @@ public final class XHTMLParserTest
 
     IHCNode aNode = aParser.convertToXHTMLFragmentOnDemand ("<b>Hallo</b>");
     assertTrue (aNode instanceof HCDOMWrapper);
-    IMicroNode aMicroNode = HCSettings.getAsNode (aNode, true);
+    IMicroNode aMicroNode = HCSettings.getAsNode (aNode);
     assertTrue (aMicroNode instanceof IMicroContainer);
     assertTrue (((IMicroContainer) aMicroNode).getChildAtIndex (0) instanceof IMicroElement);
 
     aNode = aParser.convertToXHTMLFragmentOnDemand ("<b>Hallo<br/>helger</b>");
     assertTrue (aNode instanceof HCDOMWrapper);
-    aMicroNode = HCSettings.getAsNode (aNode, true);
+    aMicroNode = HCSettings.getAsNode (aNode);
     assertTrue (aMicroNode instanceof IMicroContainer);
     assertTrue (((IMicroContainer) aMicroNode).getChildAtIndex (0) instanceof IMicroElement);
 

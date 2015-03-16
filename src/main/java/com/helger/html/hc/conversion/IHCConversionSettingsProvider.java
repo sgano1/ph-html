@@ -18,11 +18,15 @@ package com.helger.html.hc.conversion;
 
 import javax.annotation.Nonnull;
 
+import com.helger.commons.annotations.ReturnsMutableObject;
 import com.helger.commons.xml.serialize.IXMLWriterSettings;
+import com.helger.commons.xml.serialize.XMLWriterSettings;
 import com.helger.css.ICSSWriterSettings;
+import com.helger.css.writer.CSSWriterSettings;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.customize.IHCCustomizer;
 import com.helger.html.js.writer.IJSWriterSettings;
+import com.helger.html.js.writer.JSWriterSettings;
 
 /**
  * Provider interface for {@link HCConversionSettings} objects.
@@ -45,31 +49,56 @@ public interface IHCConversionSettingsProvider
   @Nonnull
   IHCConversionSettings getConversionSettings ();
 
-  /**
-   * Get the conversion settings.
-   *
-   * @param bPrettyPrint
-   *        Should the output be indented and aligned (pretty printed)?
-   * @return The non-<code>null</code> conversion settings object.
-   */
   @Nonnull
-  IHCConversionSettings getConversionSettings (boolean bPrettyPrint);
+  @ReturnsMutableObject (reason = "Design")
+  XMLWriterSettings getXMLWriterSettings ();
 
   @Nonnull
   IHCConversionSettingsProvider setXMLWriterSettings (@Nonnull IXMLWriterSettings aXMLWriterSettings);
 
   @Nonnull
+  @ReturnsMutableObject (reason = "Design")
+  CSSWriterSettings getCSSWriterSettings ();
+
+  @Nonnull
   IHCConversionSettingsProvider setCSSWriterSettings (@Nonnull ICSSWriterSettings aCSSWriterSettings);
+
+  @Nonnull
+  @ReturnsMutableObject (reason = "Design")
+  JSWriterSettings getJSWriterSettings ();
 
   @Nonnull
   IHCConversionSettingsProvider setJSWriterSettings (@Nonnull IJSWriterSettings aJSWriterSettings);
 
+  boolean areConsistencyChecksEnabled ();
+
   @Nonnull
   IHCConversionSettingsProvider setConsistencyChecksEnabled (boolean bConsistencyChecksEnabled);
+
+  boolean isExtractOutOfBandNodes ();
 
   @Nonnull
   IHCConversionSettingsProvider setExtractOutOfBandNodes (boolean bExtractOutOfBandNodes);
 
   @Nonnull
+  IHCCustomizer getCustomizer ();
+
+  @Nonnull
   IHCConversionSettingsProvider setCustomizer (@Nonnull IHCCustomizer aCustomizer);
+
+  /**
+   * Set all settings to create debug output (default).
+   *
+   * @return this
+   */
+  @Nonnull
+  IHCConversionSettingsProvider setToDefault ();
+
+  /**
+   * Set all settings to create optimized output.
+   *
+   * @return this
+   */
+  @Nonnull
+  IHCConversionSettingsProvider setToOptimized ();
 }

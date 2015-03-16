@@ -50,12 +50,11 @@ public final class HCConditionalCommentNodeTest
                                                          .setIndent (EXMLSerializeIndent.NONE));
 
     assertEquals ("<!--[if IE]>" + "abc" + "<![endif]-->",
-                  HCSettings.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCTextNode ("abc")), true));
+                  HCSettings.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCTextNode ("abc"))));
     assertEquals ("<!--[if IE]>" + "<b xmlns=\"http://www.w3.org/1999/xhtml\">bold</b>" + "<![endif]-->",
-                  HCSettings.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCB ().addChild ("bold")), true));
+                  HCSettings.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCB ().addChild ("bold"))));
     assertEquals ("<!--[if IE 7]>" + "<b>bold</b>" + "<![endif]-->",
-                  HCSettings.getAsHTMLStringWithoutNamespaces (HCConditionalCommentNode.createForIEExactVersion7 (new HCB ().addChild ("bold")),
-                                                               true));
+                  HCSettings.getAsHTMLStringWithoutNamespaces (HCConditionalCommentNode.createForIEExactVersion7 (new HCB ().addChild ("bold"))));
 
     // But if enabling alignment mode, the newline is printer!
     final IXMLWriterSettings aXWS = HCConversionSettings.createDefaultXMLWriterSettings ()
@@ -64,16 +63,15 @@ public final class HCConditionalCommentNodeTest
     HCSettings.getConversionSettingsProvider ().setXMLWriterSettings (aXWS);
 
     assertEquals ("<!--[if IE]>\n" + "abc" + "<![endif]-->" + sCRLF,
-                  HCSettings.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCTextNode ("abc")), true));
+                  HCSettings.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCTextNode ("abc"))));
     assertEquals ("<!--[if IE]>\n" +
                       "<b xmlns=\"http://www.w3.org/1999/xhtml\">bold</b>" +
                       sCRLF +
                       "<![endif]-->" +
                       sCRLF,
-                  HCSettings.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCB ().addChild ("bold")), true));
+                  HCSettings.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCB ().addChild ("bold"))));
     assertEquals ("<!--[if IE]>\n" + "<b>bold</b>" + sCRLF + "<![endif]-->" + sCRLF,
-                  HCSettings.getAsHTMLStringWithoutNamespaces (HCConditionalCommentNode.createForIE (new HCB ().addChild ("bold")),
-                                                               true));
+                  HCSettings.getAsHTMLStringWithoutNamespaces (HCConditionalCommentNode.createForIE (new HCB ().addChild ("bold"))));
 
     // Restore default settings
     HCSettings.getConversionSettingsProvider ()

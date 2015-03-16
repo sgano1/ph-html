@@ -65,6 +65,7 @@ import java.util.regex.Pattern;
 
 import javax.annotation.Nonnull;
 
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -77,10 +78,14 @@ import com.helger.commons.io.streams.StreamUtils;
 import com.helger.commons.regex.RegExPool;
 import com.helger.commons.string.StringHelper;
 import com.helger.html.markdown.MarkdownConfiguration.Builder;
+import com.helger.html.mock.HCTestRuleOptimized;
 
 @RunWith (Parameterized.class)
 public final class MarkupFileTest
 {
+  @Rule
+  public final HCTestRuleOptimized m_aRule = new HCTestRuleOptimized ();
+
   private final static String [] TEST_FILENAMES = new String [] { "/dingus.txt",
                                                                  "/paragraphs.txt",
                                                                  "/snippets.txt",
@@ -207,6 +212,6 @@ public final class MarkupFileTest
       aBuilder.setExtendedProfile (true);
     assertEquals (m_sTestName,
                   m_sExpectedResult.trim (),
-                  new MarkdownProcessor (aBuilder.build ()).process (m_sTestString).getAsHTMLString (false));
+                  new MarkdownProcessor (aBuilder.build ()).process (m_sTestString).getAsHTMLString ());
   }
 }

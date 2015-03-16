@@ -42,17 +42,8 @@ public final class HCSettings
   {}
 
   /**
-   * @return <code>true</code> if default mode is pretty print,
-   *         <code>false</code> if optimized version is the default
-   */
-  public static boolean isDefaultPrettyPrint ()
-  {
-    return GlobalDebug.isDebugMode ();
-  }
-
-  /**
    * Set the global conversion settings provider.
-   * 
+   *
    * @param aConversionSettingsProvider
    *        The object to be used. May not be <code>null</code>.
    */
@@ -93,7 +84,7 @@ public final class HCSettings
   /**
    * Get the conversion settings from the current conversion settings provider
    * using default pretty print mode
-   * 
+   *
    * @return The non-<code>null</code> conversion settings
    */
   @Nonnull
@@ -103,22 +94,9 @@ public final class HCSettings
   }
 
   /**
-   * Get the conversion settings from the current conversion settings provider
-   * 
-   * @param bPrettyPrint
-   *        For pretty printed output?
-   * @return The non-<code>null</code> conversion settings
-   */
-  @Nonnull
-  public static IHCConversionSettings getConversionSettings (final boolean bPrettyPrint)
-  {
-    return getConversionSettingsProvider ().getConversionSettings (bPrettyPrint);
-  }
-
-  /**
    * Convert the passed HC node builder to a micro node using the conversion
    * settings provider.
-   * 
+   *
    * @param aNodeBuilder
    *        The node to be converted. May not be <code>null</code>.
    * @return The fully created HTML node
@@ -132,23 +110,7 @@ public final class HCSettings
   /**
    * Convert the passed HC node builder to a micro node using the conversion
    * settings provider.
-   * 
-   * @param aNodeBuilder
-   *        The node to be converted. May not be <code>null</code>.
-   * @param bPrettyPrint
-   *        For pretty printed output?
-   * @return The fully created HTML node
-   */
-  @Nullable
-  public static IMicroNode getAsNode (@Nonnull final IHCNodeBuilder aNodeBuilder, final boolean bPrettyPrint)
-  {
-    return getAsNode (aNodeBuilder.build (), getConversionSettings (bPrettyPrint));
-  }
-
-  /**
-   * Convert the passed HC node builder to a micro node using the conversion
-   * settings provider.
-   * 
+   *
    * @param aNodeBuilder
    *        The node to be converted. May not be <code>null</code>.
    * @param aConversionSettings
@@ -165,7 +127,7 @@ public final class HCSettings
   /**
    * Convert the passed HC node to a micro node using the conversion settings
    * provider.
-   * 
+   *
    * @param aHCNode
    *        The node to be converted. May not be <code>null</code>.
    * @return The fully created HTML node
@@ -174,22 +136,6 @@ public final class HCSettings
   public static IMicroNode getAsNode (@Nonnull final IHCNode aHCNode)
   {
     return getAsNode (aHCNode, getConversionSettings ());
-  }
-
-  /**
-   * Convert the passed HC node to a micro node using the conversion settings
-   * provider.
-   * 
-   * @param aHCNode
-   *        The node to be converted. May not be <code>null</code>.
-   * @param bPrettyPrint
-   *        For pretty printed output?
-   * @return The fully created HTML node
-   */
-  @Nullable
-  public static IMicroNode getAsNode (@Nonnull final IHCNode aHCNode, final boolean bPrettyPrint)
-  {
-    return getAsNode (aHCNode, getConversionSettings (bPrettyPrint));
   }
 
   /**
@@ -209,7 +155,7 @@ public final class HCSettings
   /**
    * Convert the passed HC node builder to an HTML string using default pretty
    * print mode.
-   * 
+   *
    * @param aNodeBuilder
    *        The node to be converted. May not be <code>null</code>.
    * @return The node as HTML.
@@ -221,25 +167,9 @@ public final class HCSettings
   }
 
   /**
-   * Convert the passed HC node builder to an HTML string using the conversion
-   * settings factory.
-   * 
-   * @param aNodeBuilder
-   *        The node to be converted. May not be <code>null</code>.
-   * @param bPrettyPrint
-   *        For pretty printed output?
-   * @return The node as HTML.
-   */
-  @Nonnull
-  public static String getAsHTMLString (@Nonnull final IHCNodeBuilder aNodeBuilder, final boolean bPrettyPrint)
-  {
-    return getAsHTMLString (aNodeBuilder.build (), getConversionSettings (bPrettyPrint));
-  }
-
-  /**
    * Convert the passed HC node builder to an HTML string using the passed
    * conversion settings.
-   * 
+   *
    * @param aNodeBuilder
    *        The node to be converted. May not be <code>null</code>.
    * @param aConversionSettings
@@ -256,7 +186,7 @@ public final class HCSettings
   /**
    * Convert the passed HC node to an HTML string. Indent and align status is
    * determined from {@link GlobalDebug#isDebugMode()}
-   * 
+   *
    * @param aHCNode
    *        The node to be converted. May not be <code>null</code>.
    * @return The node as XML with or without indentation.
@@ -268,25 +198,9 @@ public final class HCSettings
   }
 
   /**
-   * Convert the passed HC node to an HTML string using the conversion settings
-   * factory.
-   * 
-   * @param aHCNode
-   *        The node to be converted. May not be <code>null</code>.
-   * @param bPrettyPrint
-   *        For pretty printed output?
-   * @return The node as XML with or without indentation.
-   */
-  @Nonnull
-  public static String getAsHTMLString (@Nonnull final IHCNode aHCNode, final boolean bPrettyPrint)
-  {
-    return getAsHTMLString (aHCNode, getConversionSettings (bPrettyPrint));
-  }
-
-  /**
    * Convert the passed HC node to an HTML string using the passed conversion
    * settings.
-   * 
+   *
    * @param aHCNode
    *        The node to be converted. May not be <code>null</code>.
    * @param aConversionSettings
@@ -303,7 +217,7 @@ public final class HCSettings
   /**
    * Convert the passed HC node to an HTML string without namespaces. Indent and
    * align status is determined from {@link GlobalDebug#isDebugMode()}
-   * 
+   *
    * @param aHCNode
    *        The node to be converted. May not be <code>null</code>.
    * @return The node as XML with or without indentation.
@@ -316,22 +230,7 @@ public final class HCSettings
 
   /**
    * Convert the passed HC node to an HTML string without namespaces.
-   * 
-   * @param aHCNode
-   *        The node to be converted. May not be <code>null</code>.
-   * @param bPrettyPrint
-   *        For pretty printed output?
-   * @return The node as XML with or without indentation.
-   */
-  @Nonnull
-  public static String getAsHTMLStringWithoutNamespaces (@Nonnull final IHCNode aHCNode, final boolean bPrettyPrint)
-  {
-    return getAsHTMLStringWithoutNamespaces (aHCNode, getConversionSettings (bPrettyPrint));
-  }
-
-  /**
-   * Convert the passed HC node to an HTML string without namespaces.
-   * 
+   *
    * @param aHCNode
    *        The node to be converted. May not be <code>null</code>.
    * @param aConversionSettings
@@ -350,51 +249,24 @@ public final class HCSettings
   }
 
   /**
-   * Get the {@link Charset} that is used to create the HTML code in default
-   * pretty print mode.
+   * Get the {@link Charset} that is used to create the HTML code.
    * 
    * @return The non-<code>null</code> Charset object
    */
   @Nonnull
   public static Charset getHTMLCharset ()
   {
-    return getHTMLCharset (isDefaultPrettyPrint ());
+    return getConversionSettings ().getXMLWriterSettings ().getCharsetObj ();
   }
 
   /**
-   * Get the {@link Charset} that is used to create the HTML code.
-   * 
-   * @param bPrettyPrint
-   *        For pretty printed output?
-   * @return The non-<code>null</code> Charset object
-   */
-  @Nonnull
-  public static Charset getHTMLCharset (final boolean bPrettyPrint)
-  {
-    return getConversionSettings (bPrettyPrint).getXMLWriterSettings ().getCharsetObj ();
-  }
-
-  /**
-   * Get the customizer currently used in default pretty print mode.
+   * Get the customizer currently used.
    * 
    * @return The customizer to use. May be <code>null</code>.
    */
   @Nullable
   public static IHCCustomizer getCustomizer ()
   {
-    return getCustomizer (isDefaultPrettyPrint ());
-  }
-
-  /**
-   * Get the customizer currently used.
-   * 
-   * @param bPrettyPrint
-   *        For pretty printed output?
-   * @return The customizer to use. May be <code>null</code>.
-   */
-  @Nullable
-  public static IHCCustomizer getCustomizer (final boolean bPrettyPrint)
-  {
-    return getConversionSettings (bPrettyPrint).getCustomizer ();
+    return getConversionSettings ().getCustomizer ();
   }
 }

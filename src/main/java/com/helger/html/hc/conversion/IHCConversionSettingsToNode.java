@@ -75,6 +75,7 @@ public interface IHCConversionSettingsToNode
    *         <code>null</code>.
    */
   @Nonnull
+  @ReturnsMutableCopy
   CSSWriterSettings getMutableCSSWriterSettings ();
 
   /**
@@ -88,6 +89,7 @@ public interface IHCConversionSettingsToNode
    *         <code>null</code>.
    */
   @Nonnull
+  @ReturnsMutableCopy
   JSWriterSettings getMutableJSWriterSettings ();
 
   /**

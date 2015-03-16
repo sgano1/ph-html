@@ -57,34 +57,39 @@ import static org.junit.Assert.assertTrue;
 import java.io.IOException;
 import java.util.regex.Pattern;
 
+import org.junit.Rule;
 import org.junit.Test;
 
 import com.helger.commons.regex.RegExPool;
+import com.helger.html.mock.HCTestRuleOptimized;
 
 public final class EdgeCasesTest
 {
+  @Rule
+  public final HCTestRuleOptimized m_aRule = new HCTestRuleOptimized ();
+
   @Test
   public void testEdgeCases () throws IOException
   {
     final MarkdownProcessor p = new MarkdownProcessor ();
     assertEquals ("", p.process ("").getAsHTMLString ());
     assertEquals ("", p.process ("  ").getAsHTMLString ());
-    assertEquals ("", p.process ((String) null).getAsHTMLString (false));
+    assertEquals ("", p.process ((String) null).getAsHTMLString ());
     assertEquals ("<p>First line<table><tbody><tr><td><td>Block level</td></td></tr></tbody></table>.</p>",
-                  p.process ("First line<table><tr><td>Block level</td></tr></table>.").getAsHTMLString (false));
+                  p.process ("First line<table><tr><td>Block level</td></tr></table>.").getAsHTMLString ());
     assertEquals ("<p>First line<table><tbody><tr><td><td>Block level</td></td></tr></tbody></table>.</p>",
                   p.process ("First line<table><tbody><tr><td>Block level</td></tr></tbody></table>.")
-                   .getAsHTMLString (false));
+                   .getAsHTMLString ());
     assertEquals ("<p>First line<table><thead><tr><td><td>Block level</td></td></tr></thead></table>.</p>",
                   p.process ("First line<table><thead><tr><td>Block level</td></tr></thead></table>.")
-                   .getAsHTMLString (false));
+                   .getAsHTMLString ());
     assertEquals ("<p>First line<table><tfoot><tr><td><td>Block level</td></td></tr></tfoot></table>.</p>",
                   p.process ("First line<table><tfoot><tr><td>Block level</td></tr></tfoot></table>.")
-                   .getAsHTMLString (false));
-    assertEquals ("<p>First line *unclosed</p>", p.process ("First line *unclosed").getAsHTMLString (false));
-    assertEquals ("<p>First line **unclosed</p>", p.process ("First line **unclosed").getAsHTMLString (false));
-    assertEquals ("<p>First line unclosed*</p>", p.process ("First line unclosed*").getAsHTMLString (false));
-    assertEquals ("<p>First line unclosed**</p>", p.process ("First line unclosed**").getAsHTMLString (false));
+                   .getAsHTMLString ());
+    assertEquals ("<p>First line *unclosed</p>", p.process ("First line *unclosed").getAsHTMLString ());
+    assertEquals ("<p>First line **unclosed</p>", p.process ("First line **unclosed").getAsHTMLString ());
+    assertEquals ("<p>First line unclosed*</p>", p.process ("First line unclosed*").getAsHTMLString ());
+    assertEquals ("<p>First line unclosed**</p>", p.process ("First line unclosed**").getAsHTMLString ());
   }
 
   @Test
@@ -111,7 +116,7 @@ public final class EdgeCasesTest
   public void testImages () throws IOException
   {
     final String url = "![an *image*](/images/an_image_with_underscores.jpg \"An_image_title\")";
-    final String processed = new MarkdownProcessor ().process (url).getAsHTMLString (false);
+    final String processed = new MarkdownProcessor ().process (url).getAsHTMLString ();
     final String output = "<p><img title=\"An_image_title\" src=\"/images/an_image_with_underscores.jpg\" alt=\"an *image*\" /></p>";
     assertEquals (output, processed);
   }
@@ -120,7 +125,7 @@ public final class EdgeCasesTest
   public void testAutoLinks () throws IOException
   {
     final String url = "[a _link_](http://url.com/a_tale_of_two_cities?var1=a_query_&var2=string \"A_link_title\")";
-    final String processed = new MarkdownProcessor ().process (url).getAsHTMLString (false);
+    final String processed = new MarkdownProcessor ().process (url).getAsHTMLString ();
     final String output = "<p><a title=\"A_link_title\" href=\"http://url.com/a_tale_of_two_cities?var1=a_query_&amp;var2=string\">a <em>link</em></a></p>";
     assertEquals (output, processed);
   }

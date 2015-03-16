@@ -50,13 +50,13 @@ public final class HCTableTest
     aTable.addFooterRow ().addCells ("f1", "f2");
     aTable.addBodyRow ().addCells ("a", "b");
     aTable.addBodyRow ().addCells ("c", "d");
-    assertNotNull (HCSettings.getAsNode (aTable, true));
+    assertNotNull (HCSettings.getAsNode (aTable));
 
     aTable = new HCTable (new HCCol (170), HCCol.star ());
     aTable.setID ("testConsistencySimple2");
     aTable.addBodyRow ().addCells ("a", "b");
     aTable.addBodyRow ().addCells ("c", "d");
-    assertNotNull (HCSettings.getAsNode (aTable, true));
+    assertNotNull (HCSettings.getAsNode (aTable));
   }
 
   @Test
@@ -69,7 +69,7 @@ public final class HCTableTest
     aTable.addFooterRow ().addAndReturnCell ("f1").setColspan (2);
     aTable.addBodyRow ().addAndReturnCell ("a").setColspan (2);
     aTable.addBodyRow ().addCells ("c", "d");
-    assertNotNull (HCSettings.getAsNode (aTable, true));
+    assertNotNull (HCSettings.getAsNode (aTable));
   }
 
   @Test
@@ -88,7 +88,7 @@ public final class HCTableTest
     aTable.addBodyRow ().addCell ("d");
     // row 3
     aTable.addBodyRow ().addCells ("e", "f");
-    assertNotNull (HCSettings.getAsNode (aTable, true));
+    assertNotNull (HCSettings.getAsNode (aTable));
 
     // Use rowspan=3 on first column
     aTable = new HCTable (new HCCol (170), HCCol.star ());
@@ -101,7 +101,7 @@ public final class HCTableTest
     aTable.addBodyRow ().addCell ("d");
     // row 3
     aTable.addBodyRow ().addCell ("f");
-    assertNotNull (HCSettings.getAsNode (aTable, true));
+    assertNotNull (HCSettings.getAsNode (aTable));
 
     // Use rowspan=3 on last column
     aTable = new HCTable (new HCCol (170), HCCol.star ());
@@ -114,7 +114,7 @@ public final class HCTableTest
     aTable.addBodyRow ().addCell ("c");
     // row 3
     aTable.addBodyRow ().addCell ("e");
-    assertNotNull (HCSettings.getAsNode (aTable, true));
+    assertNotNull (HCSettings.getAsNode (aTable));
 
     // Use rowspan=3 on middle column
     aTable = new HCTable (new HCCol (170), new HCCol (170), HCCol.star ());
@@ -128,7 +128,7 @@ public final class HCTableTest
     aTable.addBodyRow ().addCells ("c", "e0");
     // row 3
     aTable.addBodyRow ().addCells ("e", "g0");
-    assertNotNull (HCSettings.getAsNode (aTable, true));
+    assertNotNull (HCSettings.getAsNode (aTable));
 
     // Use rowspan=2 on first column
     aTable = new HCTable (new HCCol (170), new HCCol (170), HCCol.star ());
@@ -141,7 +141,7 @@ public final class HCTableTest
     aTable.addBodyRow ().addCells ("d", "e0");
     // row 3
     aTable.addBodyRow ().addCells ("e", "f", "g0");
-    assertNotNull (HCSettings.getAsNode (aTable, true));
+    assertNotNull (HCSettings.getAsNode (aTable));
 
     // Use rowspan=2 on middle column
     aTable = new HCTable (new HCCol (170), new HCCol (170), HCCol.star ());
@@ -155,7 +155,7 @@ public final class HCTableTest
     aTable.addBodyRow ().addCells ("c", "e0");
     // row 3
     aTable.addBodyRow ().addCells ("e", "f", "g0");
-    assertNotNull (HCSettings.getAsNode (aTable, true));
+    assertNotNull (HCSettings.getAsNode (aTable));
 
     // Use rowspan=2 on last column
     aTable = new HCTable (new HCCol (170), new HCCol (170), HCCol.star ());
@@ -168,23 +168,19 @@ public final class HCTableTest
     aTable.addBodyRow ().addCells ("c", "d");
     // row 3
     aTable.addBodyRow ().addCells ("e", "f", "g0");
-    assertNotNull (HCSettings.getAsNode (aTable, true));
+    assertNotNull (HCSettings.getAsNode (aTable));
   }
 
   @Test
   public void testEmpty ()
   {
-    assertNull (HCSettings.getAsNode (new HCTable (), true));
-    assertNotNull (HCSettings.getAsNode (new HCTable ().setBodyID ("any"), true));
-    assertNotNull (HCSettings.getAsNode (new HCTable (new HCCol (), new HCCol (), new HCCol ()).setBodyID ("any"), true));
-    assertNotNull (HCSettings.getAsNode (new HCTable (new HCCol (15), new HCCol (), new HCCol ()).setBodyID ("any"),
-                                         true));
-    assertNotNull (HCSettings.getAsNode (new HCTable (new HCCol (), new HCCol (), new HCCol (27)).setBodyID ("any"),
-                                         true));
-    assertNotNull (HCSettings.getAsNode (new HCTable (HCCol.star (), new HCCol (), new HCCol ()).setBodyID ("any"),
-                                         true));
-    assertNotNull (HCSettings.getAsNode (new HCTable (new HCCol (), new HCCol (), HCCol.star ()).setBodyID ("any"),
-                                         true));
+    assertNull (HCSettings.getAsNode (new HCTable ()));
+    assertNotNull (HCSettings.getAsNode (new HCTable ().setBodyID ("any")));
+    assertNotNull (HCSettings.getAsNode (new HCTable (new HCCol (), new HCCol (), new HCCol ()).setBodyID ("any")));
+    assertNotNull (HCSettings.getAsNode (new HCTable (new HCCol (15), new HCCol (), new HCCol ()).setBodyID ("any")));
+    assertNotNull (HCSettings.getAsNode (new HCTable (new HCCol (), new HCCol (), new HCCol (27)).setBodyID ("any")));
+    assertNotNull (HCSettings.getAsNode (new HCTable (HCCol.star (), new HCCol (), new HCCol ()).setBodyID ("any")));
+    assertNotNull (HCSettings.getAsNode (new HCTable (new HCCol (), new HCCol (), HCCol.star ()).setBodyID ("any")));
   }
 
   @Test

@@ -18,19 +18,24 @@ package com.helger.html.hc.html;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Rule;
 import org.junit.Test;
 
 import com.helger.html.hc.conversion.HCSettings;
 import com.helger.html.js.EJSEvent;
 import com.helger.html.js.builder.JSExpr;
+import com.helger.html.mock.HCTestRuleOptimized;
 
 public final class HCBodyTest
 {
+  @Rule
+  public final HCTestRuleOptimized m_aRule = new HCTestRuleOptimized ();
+
   @Test
   public void testBody ()
   {
     final HCBody aBody = new HCBody ();
-    assertEquals ("<body xmlns=\"http://www.w3.org/1999/xhtml\"></body>", HCSettings.getAsHTMLString (aBody, false));
+    assertEquals ("<body xmlns=\"http://www.w3.org/1999/xhtml\"></body>", HCSettings.getAsHTMLString (aBody));
 
     // With semicolon at the end
     aBody.addEventHandler (EJSEvent.ONLOAD, JSExpr.invoke ("onLoad"));
@@ -40,6 +45,6 @@ public final class HCBodyTest
     aBody.setEventHandler (EJSEvent.ONCLICK, JSExpr.invoke ("onClick"));
     aBody.setCustomAttr ("bla", "foo");
     assertEquals ("<body xmlns=\"http://www.w3.org/1999/xhtml\" onload=\"javascript:onLoad();\" onclick=\"javascript:onClick();\" bla=\"foo\"></body>",
-                  HCSettings.getAsHTMLString (aBody, false));
+                  HCSettings.getAsHTMLString (aBody));
   }
 }

@@ -18,6 +18,7 @@ package com.helger.html.hc.conversion;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.annotation.OverridingMethodsMustInvokeSuper;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.ValueEnforcer;
@@ -38,10 +39,15 @@ import com.helger.html.hc.customize.IHCCustomizer;
 import com.helger.html.js.writer.IJSWriterSettings;
 import com.helger.html.js.writer.JSWriterSettings;
 
+/**
+ * The default implementation of {@link IHCConversionSettings} containing the
+ * real settings for HTML output.
+ * 
+ * @author Philip Helger
+ */
 @NotThreadSafe
 public class HCConversionSettings implements IHCConversionSettings
 {
-  // Is implied from default XMLWriter settings
   /** Default indent and align HTML: true */
   public static final boolean DEFAULT_INDENT_AND_ALIGN_HTML = true;
   /** Default CSS version 3.0 */
@@ -76,7 +82,7 @@ public class HCConversionSettings implements IHCConversionSettings
   @Nonnull
   public static CSSWriterSettings createDefaultCSSWriterSettings ()
   {
-    return new CSSWriterSettings (DEFAULT_CSS_VERSION, !DEFAULT_INDENT_AND_ALIGN_CSS);
+    return new CSSWriterSettings (DEFAULT_CSS_VERSION).setOptimizedOutput (!DEFAULT_INDENT_AND_ALIGN_CSS);
   }
 
   @Nonnull
@@ -104,17 +110,12 @@ public class HCConversionSettings implements IHCConversionSettings
 
     m_eHTMLVersion = eHTMLVersion;
     m_sHTMLNamespaceURI = eHTMLVersion.getNamespaceURI ();
-    m_aXMLWriterSettings = createDefaultXMLWriterSettings ();
-    m_aCSSWriterSettings = createDefaultCSSWriterSettings ();
-    m_aJSWriterSettings = createDefaultJSWriterSettings ();
-    m_bConsistencyChecksEnabled = DEFAULT_CONSISTENCY_CHECKS;
-    m_bExtractOutOfBandNodes = DEFAULT_EXTRACT_OUT_OF_BAND_NODES;
-    m_aCustomizer = createDefaultCustomizer ();
+    setToDefault ();
   }
 
   /**
-   * Copy ctor. Also creates a copy of the {@link XMLWriterSettings} and the
-   * {@link CSSWriterSettings}.
+   * Copy constructor. Also creates a copy of the {@link XMLWriterSettings} and
+   * the {@link CSSWriterSettings}.
    *
    * @param aBase
    *        Object to copy the settings from. May not be <code>null</code>.
@@ -125,8 +126,8 @@ public class HCConversionSettings implements IHCConversionSettings
   }
 
   /**
-   * Kind of copy ctor. Also creates a copy of the {@link XMLWriterSettings} and
-   * the {@link CSSWriterSettings}.
+   * Kind of copy constructor. Also creates a copy of the
+   * {@link XMLWriterSettings} and the {@link CSSWriterSettings}.
    *
    * @param aBase
    *        Object to copy the settings from. May not be <code>null</code>.
@@ -140,9 +141,9 @@ public class HCConversionSettings implements IHCConversionSettings
 
     m_eHTMLVersion = eHTMLVersion;
     m_sHTMLNamespaceURI = eHTMLVersion.getNamespaceURI ();
-    m_aXMLWriterSettings = new XMLWriterSettings (aBase.getXMLWriterSettings ());
-    m_aCSSWriterSettings = new CSSWriterSettings (aBase.getCSSWriterSettings ());
-    m_aJSWriterSettings = new JSWriterSettings (aBase.getJSWriterSettings ());
+    m_aXMLWriterSettings = aBase.getMutableXMLWriterSettings ();
+    m_aCSSWriterSettings = aBase.getMutableCSSWriterSettings ();
+    m_aJSWriterSettings = aBase.getMutableJSWriterSettings ();
     m_bConsistencyChecksEnabled = aBase.areConsistencyChecksEnabled ();
     m_bExtractOutOfBandNodes = aBase.isExtractOutOfBandNodes ();
     m_aCustomizer = aBase.getCustomizer ();
@@ -249,7 +250,7 @@ public class HCConversionSettings implements IHCConversionSettings
   @ReturnsMutableCopy
   public JSWriterSettings getMutableJSWriterSettings ()
   {
-    return new JSWriterSettings (m_aJSWriterSettings);
+    return m_aJSWriterSettings.getClone ();
   }
 
   /**
@@ -310,6 +311,17 @@ public class HCConversionSettings implements IHCConversionSettings
   public IHCCustomizer getCustomizer ()
   {
     return m_aCustomizer;
+  }
+
+  @OverridingMethodsMustInvokeSuper
+  public void setToDefault ()
+  {
+    m_aXMLWriterSettings = createDefaultXMLWriterSettings ();
+    m_aCSSWriterSettings = createDefaultCSSWriterSettings ();
+    m_aJSWriterSettings = createDefaultJSWriterSettings ();
+    m_bConsistencyChecksEnabled = DEFAULT_CONSISTENCY_CHECKS;
+    m_bExtractOutOfBandNodes = DEFAULT_EXTRACT_OUT_OF_BAND_NODES;
+    m_aCustomizer = createDefaultCustomizer ();
   }
 
   @Nonnull

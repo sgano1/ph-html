@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
+import org.junit.Rule;
 import org.junit.Test;
 
 import com.helger.commons.mime.CMimeType;
@@ -30,6 +31,7 @@ import com.helger.html.hc.api.EHCLinkType;
 import com.helger.html.hc.conversion.HCSettings;
 import com.helger.html.hc.conversion.IHCConversionSettings;
 import com.helger.html.js.builder.JSExpr;
+import com.helger.html.mock.HCTestRuleOptimized;
 
 /**
  * Instantiate and generate code for all HTML elements available
@@ -38,6 +40,9 @@ import com.helger.html.js.builder.JSExpr;
  */
 public final class HCTest
 {
+  @Rule
+  public final HCTestRuleOptimized m_aRule = new HCTestRuleOptimized ();
+
   @Test
   public void testMainHC ()
   {
@@ -167,7 +172,7 @@ public final class HCTest
     b.addChild (new HCVar ());
     b.addChild (new HCVar ().addChild ("zzz"));
 
-    final IHCConversionSettings aCS = HCSettings.getConversionSettings (true).getClone (EHTMLVersion.DEFAULT);
+    final IHCConversionSettings aCS = HCSettings.getConversionSettings ().getCloneIfNecessary (EHTMLVersion.DEFAULT);
     assertNotNull (h.convertToNode (aCS));
     if (false)
       System.out.print (h.getAsHTMLString (aCS));
@@ -181,6 +186,6 @@ public final class HCTest
     aDiv.setRole (EHTMLRole.DIALOG);
     assertEquals (EHTMLRole.DIALOG, aDiv.getRole ());
     assertEquals ("<div xmlns=\"http://www.w3.org/1999/xhtml\" role=\"dialog\"></div>",
-                  HCSettings.getAsHTMLString (aDiv, false));
+                  HCSettings.getAsHTMLString (aDiv));
   }
 }
