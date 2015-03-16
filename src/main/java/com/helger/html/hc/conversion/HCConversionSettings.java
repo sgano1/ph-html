@@ -42,7 +42,7 @@ import com.helger.html.js.writer.JSWriterSettings;
 /**
  * The default implementation of {@link IHCConversionSettings} containing the
  * real settings for HTML output.
- * 
+ *
  * @author Philip Helger
  */
 @NotThreadSafe
@@ -161,6 +161,15 @@ public class HCConversionSettings implements IHCConversionSettings
     return m_sHTMLNamespaceURI;
   }
 
+  @Nonnull
+  public HCConversionSettings setXMLWriterSettingsOptimized (final boolean bOptimized)
+  {
+    m_aXMLWriterSettings.setIndent (bOptimized ? EXMLSerializeIndent.NONE
+                                              : DEFAULT_INDENT_AND_ALIGN_HTML ? EXMLSerializeIndent.INDENT_AND_ALIGN
+                                                                             : EXMLSerializeIndent.NONE);
+    return this;
+  }
+
   /**
    * Set the XML writer settings to be used. By default values equivalent to
    * {@link XMLWriterSettings#DEFAULT_XML_SETTINGS} are used.
@@ -193,6 +202,13 @@ public class HCConversionSettings implements IHCConversionSettings
     return m_aXMLWriterSettings.getClone ();
   }
 
+  @Nonnull
+  public HCConversionSettings setCSSWriterSettingsOptimized (final boolean bOptimized)
+  {
+    m_aCSSWriterSettings.setOptimizedOutput (bOptimized).setRemoveUnnecessaryCode (bOptimized);
+    return this;
+  }
+
   /**
    * Set the CSS writer settings to be used.
    *
@@ -221,6 +237,13 @@ public class HCConversionSettings implements IHCConversionSettings
   public CSSWriterSettings getMutableCSSWriterSettings ()
   {
     return new CSSWriterSettings (m_aCSSWriterSettings);
+  }
+
+  @Nonnull
+  public HCConversionSettings setJSWriterSettingsOptimized (final boolean bOptimized)
+  {
+    m_aJSWriterSettings.setMinimumCodeSize (bOptimized);
+    return this;
   }
 
   /**
@@ -314,7 +337,8 @@ public class HCConversionSettings implements IHCConversionSettings
   }
 
   @OverridingMethodsMustInvokeSuper
-  public void setToDefault ()
+  @Nonnull
+  public HCConversionSettings setToDefault ()
   {
     m_aXMLWriterSettings = createDefaultXMLWriterSettings ();
     m_aCSSWriterSettings = createDefaultCSSWriterSettings ();
@@ -322,6 +346,17 @@ public class HCConversionSettings implements IHCConversionSettings
     m_bConsistencyChecksEnabled = DEFAULT_CONSISTENCY_CHECKS;
     m_bExtractOutOfBandNodes = DEFAULT_EXTRACT_OUT_OF_BAND_NODES;
     m_aCustomizer = createDefaultCustomizer ();
+    return this;
+  }
+
+  @OverridingMethodsMustInvokeSuper
+  public HCConversionSettings setToOptimized ()
+  {
+    setXMLWriterSettingsOptimized (true);
+    setCSSWriterSettingsOptimized (true);
+    setJSWriterSettingsOptimized (true);
+    m_bConsistencyChecksEnabled = false;
+    return this;
   }
 
   @Nonnull

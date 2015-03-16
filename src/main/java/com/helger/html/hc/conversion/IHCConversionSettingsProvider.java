@@ -54,6 +54,9 @@ public interface IHCConversionSettingsProvider
   XMLWriterSettings getXMLWriterSettings ();
 
   @Nonnull
+  IHCConversionSettingsProvider setXMLWriterSettingsOptimized (boolean bOptimized);
+
+  @Nonnull
   IHCConversionSettingsProvider setXMLWriterSettings (@Nonnull IXMLWriterSettings aXMLWriterSettings);
 
   @Nonnull
@@ -61,11 +64,17 @@ public interface IHCConversionSettingsProvider
   CSSWriterSettings getCSSWriterSettings ();
 
   @Nonnull
+  IHCConversionSettingsProvider setCSSWriterSettingsOptimized (boolean bOptimized);
+
+  @Nonnull
   IHCConversionSettingsProvider setCSSWriterSettings (@Nonnull ICSSWriterSettings aCSSWriterSettings);
 
   @Nonnull
   @ReturnsMutableObject (reason = "Design")
   JSWriterSettings getJSWriterSettings ();
+
+  @Nonnull
+  IHCConversionSettingsProvider setJSWriterSettingsOptimized (boolean bOptimized);
 
   @Nonnull
   IHCConversionSettingsProvider setJSWriterSettings (@Nonnull IJSWriterSettings aJSWriterSettings);

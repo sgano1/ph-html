@@ -22,7 +22,6 @@ import javax.annotation.concurrent.NotThreadSafe;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.ReturnsMutableObject;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.commons.xml.serialize.EXMLSerializeIndent;
 import com.helger.commons.xml.serialize.IXMLWriterSettings;
 import com.helger.commons.xml.serialize.XMLWriterSettings;
 import com.helger.css.ICSSWriterSettings;
@@ -69,6 +68,13 @@ public class HCConversionSettingsProvider implements IHCConversionSettingsProvid
   }
 
   @Nonnull
+  public IHCConversionSettingsProvider setXMLWriterSettingsOptimized (final boolean bOptimized)
+  {
+    m_aConversionSettings.setXMLWriterSettingsOptimized (bOptimized);
+    return this;
+  }
+
+  @Nonnull
   public HCConversionSettingsProvider setXMLWriterSettings (@Nonnull final IXMLWriterSettings aXMLWriterSettings)
   {
     m_aConversionSettings.setXMLWriterSettings (aXMLWriterSettings);
@@ -83,6 +89,13 @@ public class HCConversionSettingsProvider implements IHCConversionSettingsProvid
   }
 
   @Nonnull
+  public IHCConversionSettingsProvider setCSSWriterSettingsOptimized (final boolean bOptimized)
+  {
+    m_aConversionSettings.setCSSWriterSettingsOptimized (bOptimized);
+    return this;
+  }
+
+  @Nonnull
   public HCConversionSettingsProvider setCSSWriterSettings (@Nonnull final ICSSWriterSettings aCSSWriterSettings)
   {
     m_aConversionSettings.setCSSWriterSettings (aCSSWriterSettings);
@@ -94,6 +107,13 @@ public class HCConversionSettingsProvider implements IHCConversionSettingsProvid
   public JSWriterSettings getJSWriterSettings ()
   {
     return m_aConversionSettings.getJSWriterSettings ();
+  }
+
+  @Nonnull
+  public IHCConversionSettingsProvider setJSWriterSettingsOptimized (final boolean bOptimized)
+  {
+    m_aConversionSettings.setJSWriterSettingsOptimized (bOptimized);
+    return this;
   }
 
   @Nonnull
@@ -150,10 +170,7 @@ public class HCConversionSettingsProvider implements IHCConversionSettingsProvid
   @Nonnull
   public HCConversionSettingsProvider setToOptimized ()
   {
-    m_aConversionSettings.getXMLWriterSettings ().setIndent (EXMLSerializeIndent.NONE);
-    m_aConversionSettings.getCSSWriterSettings ().setOptimizedOutput (true).setRemoveUnnecessaryCode (true);
-    m_aConversionSettings.getJSWriterSettings ().setMinimumCodeSize (true);
-    m_aConversionSettings.setConsistencyChecksEnabled (false);
+    m_aConversionSettings.setToOptimized ();
     return this;
   }
 
