@@ -36,18 +36,21 @@ import com.helger.html.js.writer.JSWriterSettings;
 public interface IHCConversionSettingsProvider
 {
   /**
-   * @return The HTML version to use. May not be <code>null</code>.
-   */
-  @Nonnull
-  EHTMLVersion getHTMLVersion ();
-
-  /**
-   * Get the conversion settings using default pretty print mode.
+   * Get the conversion settings used.
    *
    * @return The non-<code>null</code> conversion settings object.
    */
   @Nonnull
   IHCConversionSettings getConversionSettings ();
+
+  /**
+   * @return The HTML version to use. May not be <code>null</code>.
+   */
+  @Nonnull
+  EHTMLVersion getHTMLVersion ();
+
+  @Nonnull
+  IHCConversionSettingsProvider setHTMLVersion (@Nonnull EHTMLVersion eHTMLVersion);
 
   @Nonnull
   @ReturnsMutableObject (reason = "Design")

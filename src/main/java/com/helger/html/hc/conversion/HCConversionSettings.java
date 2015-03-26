@@ -61,8 +61,8 @@ public class HCConversionSettings implements IHCConversionSettings
   /** Default extract out-of-band nodes: true */
   public static final boolean DEFAULT_EXTRACT_OUT_OF_BAND_NODES = true;
 
-  private final EHTMLVersion m_eHTMLVersion;
-  private final String m_sHTMLNamespaceURI;
+  private EHTMLVersion m_eHTMLVersion;
+  private String m_sHTMLNamespaceURI;
   private XMLWriterSettings m_aXMLWriterSettings;
   private CSSWriterSettings m_aCSSWriterSettings;
   private JSWriterSettings m_aJSWriterSettings;
@@ -106,10 +106,7 @@ public class HCConversionSettings implements IHCConversionSettings
    */
   public HCConversionSettings (@Nonnull final EHTMLVersion eHTMLVersion)
   {
-    ValueEnforcer.notNull (eHTMLVersion, "HTMLVersion");
-
-    m_eHTMLVersion = eHTMLVersion;
-    m_sHTMLNamespaceURI = eHTMLVersion.getNamespaceURI ();
+    setHTMLVersion (eHTMLVersion);
     setToDefault ();
   }
 
@@ -139,14 +136,22 @@ public class HCConversionSettings implements IHCConversionSettings
     ValueEnforcer.notNull (aBase, "Base");
     ValueEnforcer.notNull (eHTMLVersion, "HTMLVersion");
 
-    m_eHTMLVersion = eHTMLVersion;
-    m_sHTMLNamespaceURI = eHTMLVersion.getNamespaceURI ();
+    setHTMLVersion (eHTMLVersion);
     m_aXMLWriterSettings = aBase.getMutableXMLWriterSettings ();
     m_aCSSWriterSettings = aBase.getMutableCSSWriterSettings ();
     m_aJSWriterSettings = aBase.getMutableJSWriterSettings ();
     m_bConsistencyChecksEnabled = aBase.areConsistencyChecksEnabled ();
     m_bExtractOutOfBandNodes = aBase.isExtractOutOfBandNodes ();
     m_aCustomizer = aBase.getCustomizer ();
+  }
+
+  @Nonnull
+  public HCConversionSettings setHTMLVersion (@Nonnull final EHTMLVersion eHTMLVersion)
+  {
+    ValueEnforcer.notNull (eHTMLVersion, "HTMLVersion");
+    m_eHTMLVersion = eHTMLVersion;
+    m_sHTMLNamespaceURI = eHTMLVersion.getNamespaceURI ();
+    return this;
   }
 
   @Nonnull

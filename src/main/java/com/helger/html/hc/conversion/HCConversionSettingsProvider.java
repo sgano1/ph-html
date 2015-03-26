@@ -49,15 +49,22 @@ public class HCConversionSettingsProvider implements IHCConversionSettingsProvid
   }
 
   @Nonnull
+  public HCConversionSettings getConversionSettings ()
+  {
+    return m_aConversionSettings;
+  }
+
+  @Nonnull
   public EHTMLVersion getHTMLVersion ()
   {
     return m_aConversionSettings.getHTMLVersion ();
   }
 
   @Nonnull
-  public HCConversionSettings getConversionSettings ()
+  public IHCConversionSettingsProvider setHTMLVersion (@Nonnull final EHTMLVersion eHTMLVersion)
   {
-    return m_aConversionSettings;
+    m_aConversionSettings.setHTMLVersion (eHTMLVersion);
+    return this;
   }
 
   @Nonnull
