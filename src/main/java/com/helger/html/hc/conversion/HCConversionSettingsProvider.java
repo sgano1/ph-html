@@ -44,8 +44,13 @@ public class HCConversionSettingsProvider implements IHCConversionSettingsProvid
 
   public HCConversionSettingsProvider (@Nonnull final EHTMLVersion eHTMLVersion)
   {
-    ValueEnforcer.notNull (eHTMLVersion, "HTMLVersion");
-    m_aConversionSettings = new HCConversionSettings (eHTMLVersion);
+    this (new HCConversionSettings (eHTMLVersion));
+  }
+
+  public HCConversionSettingsProvider (@Nonnull final HCConversionSettings aConversionSettings)
+  {
+    ValueEnforcer.notNull (aConversionSettings, "ConversionSettings");
+    m_aConversionSettings = aConversionSettings;
   }
 
   @Nonnull
