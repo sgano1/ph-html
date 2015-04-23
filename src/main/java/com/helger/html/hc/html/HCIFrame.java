@@ -22,6 +22,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.CGlobal;
+import com.helger.commons.annotations.ReturnsMutableCopy;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
@@ -220,6 +221,13 @@ public class HCIFrame extends AbstractHCElementWithChildren <HCIFrame>
   public final boolean isSandbox ()
   {
     return m_bSandbox;
+  }
+
+  @Nonnull
+  @ReturnsMutableCopy
+  public final EnumSet <EHCSandboxAllow> getSandboxAllow ()
+  {
+    return EnumSet.copyOf (m_aSandboxAllows);
   }
 
   @Nonnull
