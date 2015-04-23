@@ -151,6 +151,7 @@ public final class CHTMLAttributes
   public static final String ROWS = "rows";
   public static final String ROWSPAN = "rowspan";
   public static final String RULES = "rules";
+  public static final String SANDBOX = "sandbox";
   public static final String SCALE = "scale";
   public static final String SCHEME = "scheme";
   public static final String SCOPE = "scope";

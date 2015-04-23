@@ -16,6 +16,8 @@
  */
 package com.helger.html.hc.html;
 
+import java.util.EnumSet;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -29,6 +31,7 @@ import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.api.EHCIFrameAlign;
 import com.helger.html.hc.api.EHCScrolling;
+import com.helger.html.hc.api5.EHCSandboxAllow;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 
@@ -43,6 +46,8 @@ public class HCIFrame extends AbstractHCElementWithChildren <HCIFrame>
   public static final EHCScrolling DEFAULT_SCROLLING = EHCScrolling.AUTO;
   /** By default a frame border is visible */
   public static final boolean DEFAULT_FRAME_BORDER = true;
+  /** By default sandbox is disabled */
+  public static final boolean DEFAULT_SANDBOX = false;
 
   private ISimpleURL m_aSrc;
   private String m_sName;
@@ -54,6 +59,8 @@ public class HCIFrame extends AbstractHCElementWithChildren <HCIFrame>
   private String m_sHeight;
   private int m_nMarginWidth = CGlobal.ILLEGAL_UINT;
   private int m_nMarginHeight = CGlobal.ILLEGAL_UINT;
+  private boolean m_bSandbox = DEFAULT_SANDBOX;
+  private final EnumSet <EHCSandboxAllow> m_aSandboxAllows = EnumSet.noneOf (EHCSandboxAllow.class);
 
   public HCIFrame ()
   {
@@ -210,6 +217,22 @@ public class HCIFrame extends AbstractHCElementWithChildren <HCIFrame>
     return this;
   }
 
+  public final boolean isSandbox ()
+  {
+    return m_bSandbox;
+  }
+
+  @Nonnull
+  public final HCIFrame setSandbox (final boolean bSandbox, @Nullable final EHCSandboxAllow... aSandboxAllows)
+  {
+    m_bSandbox = bSandbox;
+    m_aSandboxAllows.clear ();
+    if (aSandboxAllows != null)
+      for (final EHCSandboxAllow eAllow : aSandboxAllows)
+        m_aSandboxAllows.add (eAllow);
+    return this;
+  }
+
   @Override
   protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
@@ -233,6 +256,17 @@ public class HCIFrame extends AbstractHCElementWithChildren <HCIFrame>
       aElement.setAttribute (CHTMLAttributes.MARGINWIDTH, m_nMarginWidth);
     if (m_nMarginHeight >= 0)
       aElement.setAttribute (CHTMLAttributes.MARGINHEIGHT, m_nMarginHeight);
+    if (m_bSandbox)
+    {
+      final StringBuilder aValue = new StringBuilder ();
+      for (final EHCSandboxAllow eAllow : m_aSandboxAllows)
+      {
+        if (aValue.length () > 0)
+          aValue.append (' ');
+        aValue.append (eAllow.getAttrValue ());
+      }
+      aElement.setAttribute (CHTMLAttributes.SANDBOX, aValue.toString ());
+    }
   }
 
   @Override
