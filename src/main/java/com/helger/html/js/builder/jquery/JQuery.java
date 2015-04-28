@@ -144,6 +144,16 @@ public final class JQuery
   }
 
   /**
+   * @return a {@link JQueryInvocation} with an HTML document element.
+   *         <code>$(window)</code>
+   */
+  @Nonnull
+  public static JQueryInvocation jQueryWindow ()
+  {
+    return jQuery (JSHtml.window ());
+  }
+
+  /**
    * @return a {@link JQueryInvocation} with <code>this</code>:
    *         <code>$(this)</code>
    */
