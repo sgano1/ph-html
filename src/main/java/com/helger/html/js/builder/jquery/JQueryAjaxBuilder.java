@@ -40,6 +40,10 @@ public class JQueryAjaxBuilder implements Serializable
   public static final boolean DEFAULT_CACHE = true;
   /** By default global events are triggered */
   public static final boolean DEFAULT_GLOBAL_EVENTS = true;
+  /** By default processData is enabled */
+  public static final boolean DEFAULT_PROCESS_DATA = true;
+  /** By default traditional processing is disabled */
+  public static final boolean DEFAULT_TRADITIONAL = false;
 
   // modifier
   private IJSExpression m_aAsync;
@@ -47,7 +51,9 @@ public class JQueryAjaxBuilder implements Serializable
   private IJSExpression m_aData;
   private IJSExpression m_aDataType;
   private IJSExpression m_aGlobalEvents;
+  private IJSExpression m_aProcessData;
   private IJSExpression m_aURL;
+  private IJSExpression m_aTraditional;
   private IJSExpression m_aType;
 
   // Callbacks
@@ -150,6 +156,63 @@ public class JQueryAjaxBuilder implements Serializable
   }
 
   @Nullable
+  public IJSExpression processData ()
+  {
+    return m_aProcessData;
+  }
+
+  @Nonnull
+  public JQueryAjaxBuilder processData (final boolean bProcessData)
+  {
+    return processData (JSExpr.lit (bProcessData));
+  }
+
+  @Nonnull
+  public JQueryAjaxBuilder processData (@Nullable final IJSExpression aProcessData)
+  {
+    m_aProcessData = aProcessData;
+    return this;
+  }
+
+  @Nullable
+  public IJSExpression traditional ()
+  {
+    return m_aTraditional;
+  }
+
+  @Nonnull
+  public JQueryAjaxBuilder traditional (final boolean bTraditional)
+  {
+    return traditional (JSExpr.lit (bTraditional));
+  }
+
+  @Nonnull
+  public JQueryAjaxBuilder traditional (@Nullable final IJSExpression aTraditional)
+  {
+    m_aTraditional = aTraditional;
+    return this;
+  }
+
+  @Nullable
+  public IJSExpression type ()
+  {
+    return m_aType;
+  }
+
+  @Nonnull
+  public JQueryAjaxBuilder type (@Nullable final String sType)
+  {
+    return type (sType == null ? null : JSExpr.lit (sType));
+  }
+
+  @Nonnull
+  public JQueryAjaxBuilder type (@Nullable final IJSExpression aType)
+  {
+    m_aType = aType;
+    return this;
+  }
+
+  @Nullable
   public IJSExpression url ()
   {
     return m_aURL;
@@ -171,25 +234,6 @@ public class JQueryAjaxBuilder implements Serializable
   public JQueryAjaxBuilder url (@Nullable final IJSExpression aURL)
   {
     m_aURL = aURL;
-    return this;
-  }
-
-  @Nullable
-  public IJSExpression type ()
-  {
-    return m_aType;
-  }
-
-  @Nonnull
-  public JQueryAjaxBuilder type (@Nullable final String sType)
-  {
-    return type (sType == null ? null : JSExpr.lit (sType));
-  }
-
-  @Nonnull
-  public JQueryAjaxBuilder type (@Nullable final IJSExpression aType)
-  {
-    m_aType = aType;
     return this;
   }
 
@@ -306,10 +350,14 @@ public class JQueryAjaxBuilder implements Serializable
       aSettings.add ("dataType", m_aDataType);
     if (m_aGlobalEvents != null)
       aSettings.add ("global", m_aGlobalEvents);
-    if (m_aURL != null)
-      aSettings.add ("url", m_aURL);
+    if (m_aProcessData != null)
+      aSettings.add ("processData", m_aProcessData);
+    if (m_aTraditional != null)
+      aSettings.add ("traditional", m_aTraditional);
     if (m_aType != null)
       aSettings.add ("type", m_aType);
+    if (m_aURL != null)
+      aSettings.add ("url", m_aURL);
 
     // Callbacks
     if (m_aCallbackContext != null)
