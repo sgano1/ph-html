@@ -1,4 +1,5 @@
 /**
+
  * Copyright (C) 2014-2015 Philip Helger (www.helger.com)
  * philip[at]helger[dot]com
  *
@@ -33,18 +34,17 @@ import com.helger.html.hc.api.IHCHasHTMLAttributeValue;
  * @author Philip Helger
  */
 @Immutable
-@SuppressWarnings ("deprecation")
 public class HC_Target implements IHCHasHTMLAttributeValue, Serializable
 {
   // See http://de.selfhtml.org/html/verweise/definieren.htm#zielfenster
   /** New window */
-  public static final HCA_Target BLANK = new HCA_Target ("_blank");
+  public static final HC_Target BLANK = new HC_Target ("_blank");
   /** This window */
-  public static final HCA_Target SELF = new HCA_Target ("_self");
+  public static final HC_Target SELF = new HC_Target ("_self");
   /** Parent frame */
-  public static final HCA_Target PARENT = new HCA_Target ("_parent");
+  public static final HC_Target PARENT = new HC_Target ("_parent");
   /** Out of frames */
-  public static final HCA_Target TOP = new HCA_Target ("_top");
+  public static final HC_Target TOP = new HC_Target ("_top");
 
   private final String m_sName;
 
