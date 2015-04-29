@@ -28,6 +28,7 @@ import javax.annotation.Nonnull;
 
 import com.helger.commons.microdom.IMicroDocument;
 import com.helger.commons.microdom.IMicroElement;
+import com.helger.commons.microdom.IMicroQName;
 import com.helger.commons.microdom.serialize.MicroReader;
 import com.helger.commons.regex.RegExPool;
 import com.helger.commons.string.StringHelper;
@@ -526,8 +527,8 @@ final class Emitter
 
             // Clone all attributes
             if (eRoot.hasAttributes ())
-              for (final Map.Entry <String, String> aEntry : eRoot.getAllAttributes ().entrySet ())
-                aHC.setCustomAttr (aEntry.getKey (), aEntry.getValue ());
+              for (final Map.Entry <IMicroQName, String> aEntry : eRoot.getAllQAttributes ().entrySet ())
+                aHC.setCustomAttr (aEntry.getKey ().getName (), aEntry.getValue ());
 
             if (aHC.getElement ().mayBeSelfClosed ())
             {

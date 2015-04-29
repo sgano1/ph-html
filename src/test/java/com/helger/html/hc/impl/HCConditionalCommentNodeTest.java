@@ -39,7 +39,7 @@ public final class HCConditionalCommentNodeTest
 {
   // By default, in non-debug mode, no newline is emitted after comment start
   @Rule
-  public final TestRule m_aRule = new DebugModeTestRule (false, false);
+  public final TestRule m_aRule = new DebugModeTestRule (false);
 
   @Test
   public void testAll ()
