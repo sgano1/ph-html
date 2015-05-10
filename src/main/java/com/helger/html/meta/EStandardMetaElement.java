@@ -54,6 +54,7 @@ public enum EStandardMetaElement implements IMetaElementDeclaration
   COPYRIGHT ("Copyright", false),
   LANGUAGE ("Language", false),
   VIEWPORT ("viewport", false),
+  GENERATOR ("generator", false),
   // http://msdn.microsoft.com/en-us/library/ie/dn255024%28v=vs.85%29.aspx
   APPLICATION_NAME ("application-name", false),
   MSAPPLICATION_ALLOW_DOMAIN_API_CALLS ("msapplication-allowDomainApiCalls", false),
