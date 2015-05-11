@@ -1,6 +1,7 @@
 package com.helger.html.meta;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -17,7 +18,7 @@ import com.helger.commons.annotations.ReturnsMutableCopy;
  * @author Philip Helger
  */
 @MustImplementEqualsAndHashcode
-public interface IMetaElementList extends Serializable
+public interface IMetaElementList extends Serializable, Iterable <IMetaElement>
 {
   /**
    * @return A set with used meta element names. Never <code>null</code>.
@@ -32,6 +33,14 @@ public interface IMetaElementList extends Serializable
   @Nonnull
   @ReturnsMutableCopy
   List <IMetaElement> getAllMetaElements ();
+
+  /**
+   * Add all contained meta elements to the passed container.
+   *
+   * @param aTarget
+   *        The target container to be filled. May not be <code>null</code>.
+   */
+  void getAllMetaElements (@Nonnull Collection <? super IMetaElement> aTarget);
 
   /**
    * Find the meta element with the given name.
