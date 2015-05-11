@@ -24,9 +24,9 @@ import java.util.Set;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.helger.commons.annotations.MustImplementEqualsAndHashcode;
 import com.helger.commons.annotations.ReturnsMutableCopy;
 import com.helger.commons.microdom.IMicroNode;
-import com.helger.commons.state.EChange;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
 /**
@@ -34,6 +34,7 @@ import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
  *
  * @author Philip Helger
  */
+@MustImplementEqualsAndHashcode
 public interface IMetaElement extends IMetaElementDeclaration
 {
   /**
@@ -52,44 +53,17 @@ public interface IMetaElement extends IMetaElementDeclaration
   Set <Locale> getAllLocales ();
 
   /**
+   * @return The content which was specified locale independent.
+   */
+  @Nullable
+  String getContentLanguageIndependent ();
+
+  /**
    * @return A non-<code>null</code> map from language to value.
    */
   @Nonnull
   @ReturnsMutableCopy
   Map <Locale, String> getContent ();
-
-  /**
-   * Set the value of the metatag in the given locale.
-   *
-   * @param aContentLocale
-   *        The locale to set. May be <code>null</code>.
-   * @param sContent
-   *        The value to be set. If the content is <code>null</code> the value
-   *        is removed.
-   * @return {@link EChange}
-   */
-  @Nonnull
-  EChange setContent (@Nullable Locale aContentLocale, @Nullable String sContent);
-
-  /**
-   * Remove the value of the given locale.
-   *
-   * @param aContentLocale
-   *        The locale to be removed. May not be <code>null</code>.
-   * @return {@link EChange}
-   */
-  @Nonnull
-  EChange removeContent (Locale aContentLocale);
-
-  /**
-   * Change the definition of "is http-equiv"
-   *
-   * @param bIsHttpEquiv
-   *        the new value
-   * @return {@link EChange}.
-   */
-  @Nonnull
-  EChange setHttpEquiv (boolean bIsHttpEquiv);
 
   /**
    * Get the contents of this meta tag as a self contained list of meta tag

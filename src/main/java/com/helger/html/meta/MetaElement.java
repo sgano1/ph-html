@@ -57,7 +57,7 @@ import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
  * @author Philip Helger
  */
 @NotThreadSafe
-public class MetaElement implements IMetaElement
+public class MetaElement implements IMutableMetaElement
 {
   /** By default the meta element is not an HTTP equivalent */
   public static final boolean DEFAULT_IS_HTTP_EQUIV = false;
@@ -67,56 +67,37 @@ public class MetaElement implements IMetaElement
   private final String m_sName;
 
   /** optional scheme string. */
-  private final String m_sScheme;
-
-  /** locale to value map. */
-  private final Map <Locale, String> m_aContents = new LinkedHashMap <Locale, String> ();
+  private String m_sScheme;
 
   /** HTTP equivalent or not? */
   private boolean m_bIsHttpEquiv;
 
-  /**
-   * Constructor without content!!
-   *
-   * @param sName
-   *        Element name
-   * @param sScheme
-   *        Element scheme
-   * @param bIsHttpEquiv
-   *        <code>true</code> if it is a HTTP equivalent meta element,
-   *        <code>false</code> if not
-   */
-  public MetaElement (@Nonnull final String sName, @Nullable final String sScheme, final boolean bIsHttpEquiv)
-  {
-    m_sName = ValueEnforcer.notNull (sName, "Name");
-    m_sScheme = sScheme;
-    m_bIsHttpEquiv = bIsHttpEquiv;
-  }
+  /** locale to value map. */
+  private final Map <Locale, String> m_aContents = new LinkedHashMap <Locale, String> ();
 
   public MetaElement (@Nonnull final IMetaElementDeclaration aMetaTagDecl, @Nullable final String sContent)
   {
-    this (aMetaTagDecl.getName (), aMetaTagDecl.getScheme (), aMetaTagDecl.isHttpEquiv (), null, sContent);
+    this (aMetaTagDecl.getName (), aMetaTagDecl.isHttpEquiv (), (Locale) null, sContent);
+    setScheme (aMetaTagDecl.getScheme ());
   }
 
   public MetaElement (@Nonnull final String sName, @Nullable final String sContent)
   {
-    this (sName, null, DEFAULT_IS_HTTP_EQUIV, null, sContent);
+    this (sName, DEFAULT_IS_HTTP_EQUIV, (Locale) null, sContent);
   }
 
   public MetaElement (@Nonnull final String sName, final boolean bIsHttpEquiv, @Nullable final String sContent)
   {
-    this (sName, null, bIsHttpEquiv, null, sContent);
+    this (sName, bIsHttpEquiv, (Locale) null, sContent);
   }
 
   public MetaElement (@Nonnull final String sName,
-                      @Nullable final String sScheme,
                       final boolean bIsHttpEquiv,
                       @Nullable final Locale aContentLocale,
                       @Nullable final String sContent)
   {
     m_sName = ValueEnforcer.notNull (sName, "Name");
-    m_sScheme = sScheme;
-    m_bIsHttpEquiv = bIsHttpEquiv;
+    setHttpEquiv (bIsHttpEquiv);
     setContent (aContentLocale, sContent);
   }
 
@@ -132,9 +113,27 @@ public class MetaElement implements IMetaElement
     return m_sScheme;
   }
 
+  @Nonnull
+  public EChange setScheme (@Nullable final String sScheme)
+  {
+    if (EqualsUtils.equals (sScheme, m_sScheme))
+      return EChange.UNCHANGED;
+    m_sScheme = sScheme;
+    return EChange.CHANGED;
+  }
+
   public boolean isHttpEquiv ()
   {
     return m_bIsHttpEquiv;
+  }
+
+  @Nonnull
+  public EChange setHttpEquiv (final boolean bIsHttpEquiv)
+  {
+    if (m_bIsHttpEquiv == bIsHttpEquiv)
+      return EChange.UNCHANGED;
+    m_bIsHttpEquiv = bIsHttpEquiv;
+    return EChange.CHANGED;
   }
 
   public boolean isLanguageIndependent ()
@@ -149,6 +148,12 @@ public class MetaElement implements IMetaElement
     return CollectionHelper.newSet (m_aContents.keySet ());
   }
 
+  @Nullable
+  public String getContentLanguageIndependent ()
+  {
+    return m_aContents.get (CGlobal.LOCALE_INDEPENDENT);
+  }
+
   @Nonnull
   @ReturnsMutableCopy
   public Map <Locale, String> getContent ()
@@ -157,18 +162,25 @@ public class MetaElement implements IMetaElement
   }
 
   @Nonnull
-  private static Locale _getRealContentLocale (@Nullable final Locale aContentLocale)
+  public static Locale getRealContentLocale (@Nullable final Locale aContentLocale)
   {
     return aContentLocale == null ? CGlobal.LOCALE_INDEPENDENT : aContentLocale;
   }
 
   @Nonnull
+  public EChange setContent (@Nullable final String sContent)
+  {
+    return setContent ((Locale) null, sContent);
+  }
+
+  @Nonnull
   public EChange setContent (@Nullable final Locale aContentLocale, @Nullable final String sContent)
   {
-    final Locale aRealContentLocale = _getRealContentLocale (aContentLocale);
+    final Locale aRealContentLocale = getRealContentLocale (aContentLocale);
     final String sOldContent = m_aContents.get (aRealContentLocale);
     if (EqualsUtils.equals (sOldContent, sContent))
       return EChange.UNCHANGED;
+
     if (sContent == null)
       m_aContents.remove (aRealContentLocale);
     else
@@ -177,22 +189,20 @@ public class MetaElement implements IMetaElement
   }
 
   @Nonnull
-  public EChange removeContent (@Nullable final Locale aContentLocale)
+  public EChange removeContent ()
   {
-    final Locale aRealContentLocale = _getRealContentLocale (aContentLocale);
-    // Manually check for key, as the value can be null
-    if (!m_aContents.containsKey (aRealContentLocale))
-      return EChange.UNCHANGED;
-    m_aContents.remove (aRealContentLocale);
-    return EChange.CHANGED;
+    return removeContent ((Locale) null);
   }
 
   @Nonnull
-  public EChange setHttpEquiv (final boolean bIsHttpEquiv)
+  public EChange removeContent (@Nullable final Locale aContentLocale)
   {
-    if (m_bIsHttpEquiv == bIsHttpEquiv)
+    final Locale aRealContentLocale = getRealContentLocale (aContentLocale);
+    // Manually check for key, as the value can be null
+    if (!m_aContents.containsKey (aRealContentLocale))
       return EChange.UNCHANGED;
-    m_bIsHttpEquiv = bIsHttpEquiv;
+
+    m_aContents.remove (aRealContentLocale);
     return EChange.CHANGED;
   }
 

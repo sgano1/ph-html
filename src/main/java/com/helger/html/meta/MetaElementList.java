@@ -16,7 +16,6 @@
  */
 package com.helger.html.meta;
 
-import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,6 +30,7 @@ import com.helger.commons.ICloneable;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.ReturnsMutableCopy;
 import com.helger.commons.collections.CollectionHelper;
+import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.state.EChange;
 import com.helger.commons.string.ToStringGenerator;
 
@@ -40,7 +40,7 @@ import com.helger.commons.string.ToStringGenerator;
  * @author Philip Helger
  */
 @NotThreadSafe
-public class MetaElementList implements ICloneable <MetaElementList>, Serializable
+public class MetaElementList implements ICloneable <MetaElementList>, IMetaElementList
 {
   private final Map <String, IMetaElement> m_aMetaElements = new LinkedHashMap <String, IMetaElement> ();
 
@@ -54,7 +54,7 @@ public class MetaElementList implements ICloneable <MetaElementList>, Serializab
   }
 
   @Nonnull
-  public MetaElementList addMetaElement (@Nonnull final IMetaElement aMetaElement)
+  public IMetaElementList addMetaElement (@Nonnull final IMetaElement aMetaElement)
   {
     ValueEnforcer.notNull (aMetaElement, "MetaElement");
     m_aMetaElements.put (aMetaElement.getName (), aMetaElement);
@@ -62,7 +62,7 @@ public class MetaElementList implements ICloneable <MetaElementList>, Serializab
   }
 
   @Nonnull
-  public MetaElementList addMetaElements (@Nonnull final MetaElementList aMetaElementList)
+  public IMetaElementList addMetaElements (@Nonnull final MetaElementList aMetaElementList)
   {
     ValueEnforcer.notNull (aMetaElementList, "MetaElementList");
     m_aMetaElements.putAll (aMetaElementList.m_aMetaElements);
@@ -98,13 +98,12 @@ public class MetaElementList implements ICloneable <MetaElementList>, Serializab
     return CollectionHelper.newList (m_aMetaElements.values ());
   }
 
-  @Nullable
-  public IMetaElement getMetaElementOfName (@Nullable final String sName)
+  public IMetaElement getMetaElementOfName (final String sName)
   {
     return m_aMetaElements.get (sName);
   }
 
-  public boolean containsMetaElementWithName (@Nullable final String sName)
+  public boolean containsMetaElementWithName (final String sName)
   {
     return m_aMetaElements.containsKey (sName);
   }
@@ -125,6 +124,23 @@ public class MetaElementList implements ICloneable <MetaElementList>, Serializab
   public MetaElementList getClone ()
   {
     return new MetaElementList (this);
+  }
+
+  @Override
+  public boolean equals (final Object o)
+  {
+    if (o == this)
+      return true;
+    if (o == null || !getClass ().equals (o.getClass ()))
+      return false;
+    final MetaElementList rhs = (MetaElementList) o;
+    return m_aMetaElements.equals (rhs.m_aMetaElements);
+  }
+
+  @Override
+  public int hashCode ()
+  {
+    return new HashCodeGenerator (this).append (m_aMetaElements).getHashCode ();
   }
 
   @Override
