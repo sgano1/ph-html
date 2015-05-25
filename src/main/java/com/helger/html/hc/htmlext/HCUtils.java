@@ -140,6 +140,7 @@ import com.helger.html.hc.html5.HCMark;
 import com.helger.html.hc.html5.HCMeter;
 import com.helger.html.hc.html5.HCNav;
 import com.helger.html.hc.html5.HCOutput;
+import com.helger.html.hc.html5.HCPicture;
 import com.helger.html.hc.html5.HCProgress;
 import com.helger.html.hc.html5.HCRP;
 import com.helger.html.hc.html5.HCRT;
@@ -959,6 +960,8 @@ public final class HCUtils
         return new HCP ();
       case PARAM:
         return new HCParam ();
+      case PICTURE:
+        return new HCPicture ();
       case PRE:
         return new HCPre ();
       case PROGRESS:

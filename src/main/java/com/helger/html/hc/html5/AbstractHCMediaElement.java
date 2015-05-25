@@ -135,6 +135,7 @@ public abstract class AbstractHCMediaElement <THISTYPE extends AbstractHCMediaEl
     return thisAsT ();
   }
 
+  @Nullable
   public final EHCCORSSettings getCrossOrigin ()
   {
     return m_eCrossOrigin;
@@ -168,13 +169,15 @@ public abstract class AbstractHCMediaElement <THISTYPE extends AbstractHCMediaEl
   @Nonempty
   protected List <AbstractHCMediaElementChild <?>> getChildrenFormEmitting (@Nonnull @Nonempty final List <AbstractHCMediaElementChild <?>> aChildren)
   {
-    // <source> must be before <track>
+    // <source> must be first
     final List <AbstractHCMediaElementChild <?>> ret = new ArrayList <AbstractHCMediaElementChild <?>> (aChildren.size ());
     for (final AbstractHCMediaElementChild <?> aChild : aChildren)
       if (aChild.getElement ().equals (EHTMLElement.SOURCE))
         ret.add (aChild);
+
+    // Add <track> and <img>
     for (final AbstractHCMediaElementChild <?> aChild : aChildren)
-      if (aChild.getElement ().equals (EHTMLElement.TRACK))
+      if (!aChild.getElement ().equals (EHTMLElement.SOURCE))
         ret.add (aChild);
     return ret;
   }

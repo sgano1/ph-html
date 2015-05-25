@@ -33,26 +33,16 @@ import com.helger.html.hc.html.AbstractHCMediaElementChild;
 @SinceHTML5
 public class HCSource extends AbstractHCMediaElementChild <HCSource> implements IHCHasMedia <HCSource>
 {
-  private String m_sMediaQuery;
   private ISimpleURL m_aSrc;
   private IMimeType m_aType;
+  // For picture
+  private String m_sSrcSet;
+  private String m_sSizes;
+  private String m_sMediaQuery;
 
   public HCSource ()
   {
     super (EHTMLElement.SOURCE);
-  }
-
-  @Nullable
-  public String getMedia ()
-  {
-    return m_sMediaQuery;
-  }
-
-  @Nonnull
-  public HCSource setMedia (@Nullable final String sMediaQuery)
-  {
-    m_sMediaQuery = sMediaQuery;
-    return this;
   }
 
   @Nullable
@@ -81,15 +71,58 @@ public class HCSource extends AbstractHCMediaElementChild <HCSource> implements 
     return this;
   }
 
+  @Nullable
+  public String getSrcSet ()
+  {
+    return m_sSrcSet;
+  }
+
+  @Nonnull
+  public HCSource setSrcSet (@Nullable final String sSrcSet)
+  {
+    m_sSrcSet = sSrcSet;
+    return this;
+  }
+
+  @Nullable
+  public String getSizes ()
+  {
+    return m_sSizes;
+  }
+
+  @Nonnull
+  public HCSource setSizes (@Nullable final String sSizes)
+  {
+    m_sSizes = sSizes;
+    return this;
+  }
+
+  @Nullable
+  public String getMedia ()
+  {
+    return m_sMediaQuery;
+  }
+
+  @Nonnull
+  public HCSource setMedia (@Nullable final String sMediaQuery)
+  {
+    m_sMediaQuery = sMediaQuery;
+    return this;
+  }
+
   @Override
   protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
     super.applyProperties (aElement, aConversionSettings);
-    if (StringHelper.hasText (m_sMediaQuery))
-      aElement.setAttribute (CHTMLAttributes.MEDIA, m_sMediaQuery);
     if (m_aSrc != null)
       aElement.setAttribute (CHTMLAttributes.SRC, m_aSrc.getAsString ());
     if (m_aType != null)
       aElement.setAttribute (CHTMLAttributes.TYPE, m_aType.getAsString ());
+    if (StringHelper.hasText (m_sSrcSet))
+      aElement.setAttribute (CHTMLAttributes.SRCSET, m_sSrcSet);
+    if (StringHelper.hasText (m_sSizes))
+      aElement.setAttribute (CHTMLAttributes.SIZES, m_sSizes);
+    if (StringHelper.hasText (m_sMediaQuery))
+      aElement.setAttribute (CHTMLAttributes.MEDIA, m_sMediaQuery);
   }
 }

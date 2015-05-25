@@ -159,10 +159,12 @@ public final class CHTMLAttributes
   public static final String SELECTED = "selected";
   public static final String SHAPE = "shape";
   public static final String SIZE = "size";
+  public static final String SIZES = "sizes";
   public static final String SPAN = "span";
   public static final String SPELLCHECK = "spellcheck";
   public static final String SRC = "src";
   public static final String SRCLANG = "srclang";
+  public static final String SRCSET = "srcset";
   public static final String STANDBY = "standby";
   public static final String START = "start";
   public static final String STARTTIME = "starttime";
@@ -229,9 +231,6 @@ public final class CHTMLAttributes
 
   // http://msdn.microsoft.com/en-us/library/ie/dn265018%28v=vs.85%29.aspx
   public static final String X_MS_FORMAT_DETECTION = "x-ms-format-detection";
-
-  // https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html
-  public static final String SIZES = "sizes";
 
   private CHTMLAttributes ()
   {}

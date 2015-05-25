@@ -41,6 +41,8 @@ public class AbstractHCImg <IMPLTYPE extends AbstractHCImg <IMPLTYPE>> extends A
 {
   // Must be a String to allow for inline images
   private String m_sSrc;
+  private String m_sSrcSet;
+  private String m_sSizes;
   private ScalableSize m_aExtent;
   private String m_sAlt;
 
@@ -58,8 +60,7 @@ public class AbstractHCImg <IMPLTYPE extends AbstractHCImg <IMPLTYPE>> extends A
   @Nonnull
   public IMPLTYPE setSrc (@Nullable final ISimpleURL aSrc)
   {
-    setSrc (aSrc == null ? null : aSrc.getAsString ());
-    return thisAsT ();
+    return setSrc (aSrc == null ? null : aSrc.getAsString ());
   }
 
   @Nonnull
@@ -67,6 +68,32 @@ public class AbstractHCImg <IMPLTYPE extends AbstractHCImg <IMPLTYPE>> extends A
   {
     HCConsistencyChecker.checkIfLinkIsMasked (sSrc);
     m_sSrc = sSrc;
+    return thisAsT ();
+  }
+
+  @Nullable
+  public String getSrcSet ()
+  {
+    return m_sSrcSet;
+  }
+
+  @Nonnull
+  public IMPLTYPE setSrcSet (@Nullable final String sSrcSet)
+  {
+    m_sSrcSet = sSrcSet;
+    return thisAsT ();
+  }
+
+  @Nullable
+  public String getSizes ()
+  {
+    return m_sSizes;
+  }
+
+  @Nonnull
+  public IMPLTYPE setSizes (@Nullable final String sSizes)
+  {
+    m_sSizes = sSizes;
     return thisAsT ();
   }
 
@@ -157,6 +184,10 @@ public class AbstractHCImg <IMPLTYPE extends AbstractHCImg <IMPLTYPE>> extends A
     super.applyProperties (aElement, aConversionSettings);
     if (StringHelper.hasText (m_sSrc))
       aElement.setAttribute (CHTMLAttributes.SRC, m_sSrc);
+    if (StringHelper.hasText (m_sSrcSet))
+      aElement.setAttribute (CHTMLAttributes.SRCSET, m_sSrcSet);
+    if (StringHelper.hasText (m_sSizes))
+      aElement.setAttribute (CHTMLAttributes.SIZES, m_sSizes);
     if (m_aExtent != null)
     {
       aElement.setAttribute (CHTMLAttributes.WIDTH, m_aExtent.getWidth ());
