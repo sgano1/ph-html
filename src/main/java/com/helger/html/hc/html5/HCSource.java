@@ -28,6 +28,7 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.annotations.SinceHTML5;
 import com.helger.html.hc.api5.IHCHasMedia;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
+import com.helger.html.hc.html.AbstractHCMediaElementChild;
 
 @SinceHTML5
 public class HCSource extends AbstractHCMediaElementChild <HCSource> implements IHCHasMedia <HCSource>

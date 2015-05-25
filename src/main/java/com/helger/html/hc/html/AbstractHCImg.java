@@ -29,7 +29,6 @@ import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.conversion.HCConsistencyChecker;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
-import com.helger.html.hc.impl.AbstractHCElement;
 
 /**
  * Represents an HTML &lt;img&gt; element
@@ -38,7 +37,7 @@ import com.helger.html.hc.impl.AbstractHCElement;
  * @param <IMPLTYPE>
  *        The implementation type.
  */
-public class AbstractHCImg <IMPLTYPE extends AbstractHCImg <IMPLTYPE>> extends AbstractHCElement <IMPLTYPE>
+public class AbstractHCImg <IMPLTYPE extends AbstractHCImg <IMPLTYPE>> extends AbstractHCMediaElementChild <IMPLTYPE>
 {
   // Must be a String to allow for inline images
   private String m_sSrc;

@@ -27,6 +27,7 @@ import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.annotations.SinceHTML5;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
+import com.helger.html.hc.html.AbstractHCMediaElementChild;
 
 @SinceHTML5
 public class HCTrack extends AbstractHCMediaElementChild <HCTrack>

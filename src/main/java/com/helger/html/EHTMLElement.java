@@ -114,6 +114,7 @@ public enum EHTMLElement implements IHasElementName
   OUTPUT ("output", false, EHTMLContentModelType.PHRASING),
   P ("p", false, EHTMLContentModelType.FLOW),
   PARAM ("param", false, EHTMLContentModelType.CHILD),
+  PICTURE ("picture", false, EHTMLContentModelType.FLOW_METADATA),
   PRE ("pre", false, EHTMLContentModelType.FLOW),
   PROGRESS ("progress", false, EHTMLContentModelType.PHRASING),
   RP ("rp", false, EHTMLContentModelType.CHILD),
