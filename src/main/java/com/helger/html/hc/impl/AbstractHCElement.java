@@ -70,6 +70,13 @@ import com.helger.html.js.EJSEvent;
 import com.helger.html.js.IJSCodeProvider;
 import com.helger.html.js.JSEventMap;
 
+/**
+ * Base class for an HC element.
+ * 
+ * @author Philip Helger
+ * @param <IMPLTYPE>
+ *        The implementation type.
+ */
 @NotThreadSafe
 public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMPLTYPE>> extends AbstractHCNode implements IHCElement <IMPLTYPE>
 {
