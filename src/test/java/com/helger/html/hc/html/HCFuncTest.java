@@ -38,7 +38,7 @@ import com.helger.html.mock.HCTestRuleOptimized;
  *
  * @author Philip Helger
  */
-public final class HCTest
+public final class HCFuncTest
 {
   @Rule
   public final HCTestRuleOptimized m_aRule = new HCTestRuleOptimized ();

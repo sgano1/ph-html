@@ -81,7 +81,7 @@ import com.helger.html.markdown.MarkdownConfiguration.Builder;
 import com.helger.html.mock.HCTestRuleOptimized;
 
 @RunWith (Parameterized.class)
-public final class MarkupFileTest
+public final class MarkupFileFuncTest
 {
   @Rule
   public final HCTestRuleOptimized m_aRule = new HCTestRuleOptimized ();

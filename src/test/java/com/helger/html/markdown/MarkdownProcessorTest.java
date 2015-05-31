@@ -74,7 +74,7 @@ import com.helger.commons.io.file.iterate.FileSystemRecursiveIterator;
 import com.helger.html.mock.HCTestRuleOptimized;
 
 @RunWith (value = Parameterized.class)
-public final class MarkdownTest
+public final class MarkdownProcessorTest
 {
   @Parameters
   public static Collection <Object []> markdownTests ()
@@ -98,7 +98,7 @@ public final class MarkdownTest
   private final String m_sDir;
   private final String m_sTestName;
 
-  public MarkdownTest (final String sDir, final String sTestName)
+  public MarkdownProcessorTest (final String sDir, final String sTestName)
   {
     m_sDir = sDir;
     m_sTestName = sTestName;

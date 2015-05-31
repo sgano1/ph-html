@@ -32,7 +32,7 @@ import com.helger.html.hc.html.HCHtml;
  *
  * @author Philip Helger
  */
-public final class HC5Test
+public final class HC5FuncTest
 {
   @Test
   public void testMainHC ()

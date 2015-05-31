@@ -63,7 +63,7 @@ import org.junit.Test;
 import com.helger.commons.regex.RegExPool;
 import com.helger.html.mock.HCTestRuleOptimized;
 
-public final class EdgeCasesTest
+public final class EdgeCasesFuncTest
 {
   @Rule
   public final HCTestRuleOptimized m_aRule = new HCTestRuleOptimized ();
