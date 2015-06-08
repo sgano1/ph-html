@@ -1138,4 +1138,12 @@ public interface IJSExpression extends IJSGeneratable
    */
   @Nonnull
   JSArrayCompRef component (@Nonnull IJSExpression aExpr);
+
+  /**
+   * Get the array component at index 0.
+   *
+   * @return [this]<b>[</b>0<b>]</b>
+   */
+  @Nonnull
+  JSArrayCompRef component0 ();
 }
