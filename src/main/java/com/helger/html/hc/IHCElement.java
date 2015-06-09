@@ -105,18 +105,54 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends IHC
   @Nonnull
   THISTYPE ensureID ();
 
+  /**
+   * @return The value of the HTML <code>title</code> attribute. May be
+   *         <code>null</code>.
+   */
+  @Nullable
+  String getTitle ();
+
+  /**
+   * Set the value of the HTML <code>title</code> attribute.
+   *
+   * @param sTitle
+   *        The new title. May be <code>null</code>.
+   * @return this
+   */
   @Nonnull
   THISTYPE setTitle (String sTitle);
 
+  /**
+   * @return The value of the HTML <code>dir</code> attribute. May be
+   *         <code>null</code>.
+   */
   @Nullable
   EHCTextDirection getDirection ();
 
+  /**
+   * Set the value of the HTML <code>dir</code> attribute.
+   *
+   * @param eDirection
+   *        The new direction. May be <code>null</code>.
+   * @return this
+   */
   @Nonnull
   THISTYPE setDirection (@Nullable EHCTextDirection eDirection);
 
+  /**
+   * @return The value of the HTML <code>lang</code> attribute. May be
+   *         <code>null</code>.
+   */
   @Nullable
   String getLanguage ();
 
+  /**
+   * Set the value of the HTML <code>lang</code> attribute.
+   *
+   * @param sLanguage
+   *        The new language. May be <code>null</code>.
+   * @return this
+   */
   @Nonnull
   THISTYPE setLanguage (@Nullable String sLanguage);
 
@@ -191,8 +227,19 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends IHC
   @Nonnull
   THISTYPE removeAllEventHandler (@Nullable EJSEvent eJSEvent);
 
+  /**
+   * @return <code>true</code> if this element cannot be focused.
+   */
   boolean isUnfocusable ();
 
+  /**
+   * Set the unfocusable state of this element.
+   *
+   * @param bUnfocusable
+   *        <code>true</code> to make it unfocusable, <code>false</code>
+   *        otherwise.
+   * @return this
+   */
   @Nonnull
   THISTYPE setUnfocusable (boolean bUnfocusable);
 
@@ -232,9 +279,20 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends IHC
   @Nonnull
   THISTYPE setTabIndex (long nTabIndex);
 
+  /**
+   * @return The value of the HTML <code>accesskey</code> attribute. May be
+   *         <code>null</code>.
+   */
   @Nullable
   String getAccessKey ();
 
+  /**
+   * Set the value of the HTML <code>accesskey</code> attribute.
+   *
+   * @param sAccessKey
+   *        The new accesskey. May be <code>null</code>.
+   * @return this
+   */
   @Nonnull
   THISTYPE setAccessKey (@Nullable String sAccessKey);
 
@@ -270,15 +328,47 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends IHC
   @Nonnull
   THISTYPE setDropZone (@Nullable EHCDropZone eDropZone);
 
+  /**
+   * @return <code>true</code> if HTML <code>translate</code> is
+   *         <code>true</code>.
+   */
   boolean isTranslateOn ();
 
+  /**
+   * @return <code>true</code> if HTML <code>translate</code> is
+   *         <code>false</code>.
+   */
   boolean isTranslateOff ();
 
+  /**
+   * @return <code>true</code> if HTML <code>translate</code> is not set.
+   */
   boolean isTranslateUndefined ();
 
+  /**
+   * @return The value of the HTML <code>translate</code> attribute. Never
+   *         <code>null</code>.
+   */
+  @Nonnull
+  ETriState getTranslate ();
+
+  /**
+   * Set the value of the HTML <code>translate</code> attribute.
+   *
+   * @param bTranslate
+   *        <code>true</code> to translate, <code>false</code> otherwise.
+   * @return this
+   */
   @Nonnull
   THISTYPE setTranslate (boolean bTranslate);
 
+  /**
+   * Set the value of the HTML <code>translate</code> attribute.
+   *
+   * @param eTranslate
+   *        The new translate state. May not be <code>null</code>.
+   * @return this
+   */
   @Nonnull
   THISTYPE setTranslate (@Nonnull ETriState eTranslate);
 
@@ -292,21 +382,22 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends IHC
    * Change the content editable state
    *
    * @param eContentEditable
-   *        New value
+   *        New value. May be <code>null</code>.
    * @return this
    */
   @Nonnull
   THISTYPE setContentEditable (@Nullable EHCContentEditable eContentEditable);
 
   /**
-   * @return The ID of the &lt;menu&gt; element that should be used as the
+   * @return The ID of the <code>menu</code> element that should be used as the
    *         context menu. May be <code>null</code>.
    */
   @Nullable
   String getContextMenu ();
 
   /**
-   * Set the ID of the &lt;menu&gt; element that should add as a context menu
+   * Set the ID of the <code>menu</code> element that should add as a context
+   * menu
    *
    * @param sContextMenu
    *        The ID of the &lt;menu&gt; element
@@ -315,8 +406,19 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends IHC
   @Nonnull
   THISTYPE setContextMenu (@Nullable String sContextMenu);
 
+  /**
+   * return <code>true</code> if spell check is enabled, <code>false</code>
+   * otherwise.
+   */
   boolean isSpellCheck ();
 
+  /**
+   * Set the value of the HTML <code>spellcheck</code> attribute.
+   *
+   * @param bSpellCheck
+   *        <code>true</code> to enabled, <code>false</code> otherwise.
+   * @return this
+   */
   @Nonnull
   THISTYPE setSpellCheck (boolean bSpellCheck);
 

@@ -27,7 +27,7 @@ import com.helger.html.css.ICSSClassProvider;
 
 /**
  * Base interface for objects having CSS classes
- * 
+ *
  * @author Philip Helger
  * @param <THISTYPE>
  *        Implementation type
@@ -45,7 +45,7 @@ public interface IHCHasCSSClasses <THISTYPE extends IHCHasCSSClasses <THISTYPE>>
   /**
    * Add multiple unique CSS classes at once. Each CSS class that is already
    * present, is ignored.
-   * 
+   *
    * @param aProviders
    *        The CSS classed to add. May neither be <code>null</code> nor empty.
    * @return this
@@ -56,7 +56,7 @@ public interface IHCHasCSSClasses <THISTYPE extends IHCHasCSSClasses <THISTYPE>>
   /**
    * Add multiple unique CSS classes at once. Each CSS class that is already
    * present, is ignored.
-   * 
+   *
    * @param aProviders
    *        The CSS classed to add. May neither be <code>null</code> nor empty.
    * @return this
@@ -64,18 +64,46 @@ public interface IHCHasCSSClasses <THISTYPE extends IHCHasCSSClasses <THISTYPE>>
   @Nonnull
   THISTYPE addClasses (@Nullable Iterable <? extends ICSSClassProvider> aProviders);
 
+  /**
+   * Remove the specified CSS class if present.
+   *
+   * @param aProvider
+   *        The CSS class provider to use. May be <code>null</code>.
+   * @return this
+   */
   @Nonnull
   THISTYPE removeClass (@Nullable ICSSClassProvider aProvider);
 
+  /**
+   * Remove all previously added CSS classes at once.
+   *
+   * @return this
+   */
   @Nonnull
   THISTYPE removeAllClasses ();
 
+  /**
+   * Check if the passed CSS class is present or not.
+   *
+   * @param aProvider
+   *        The CSS class provider to check. May be <code>null</code>.
+   * @return <code>true</code> if the passed CSS class is contained,
+   *         <code>false</code> otherwise.
+   */
   boolean containsClass (@Nullable ICSSClassProvider aProvider);
 
+  /**
+   * @return A sorted set with all registered CSS class providers. Never
+   *         <code>null</code>.
+   */
   @Nonnull
   @ReturnsMutableCopy
   Set <ICSSClassProvider> getAllClasses ();
 
+  /**
+   * @return A set with all CSS class names registered so far. Never
+   *         <code>null</code>.
+   */
   @Nonnull
   @ReturnsMutableCopy
   Set <String> getAllClassNames ();
@@ -88,8 +116,9 @@ public interface IHCHasCSSClasses <THISTYPE extends IHCHasCSSClasses <THISTYPE>>
 
   /**
    * Get the string representation of all contained classes as it should be set
-   * to the HTML class attribute.
-   * 
+   * to the HTML <code>class</code> attribute. A single blank is used as a
+   * separator.
+   *
    * @return <code>null</code> if no classes are present.
    */
   @Nullable

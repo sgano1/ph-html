@@ -21,6 +21,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 
+import javax.annotation.CheckForSigned;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -193,6 +194,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
     return null;
   }
 
+  @CheckForSigned
   public final int getCellSpacing ()
   {
     return m_nCellSpacing;
@@ -205,6 +207,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
     return thisAsT ();
   }
 
+  @CheckForSigned
   public final int getCellPadding ()
   {
     return m_nCellPadding;

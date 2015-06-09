@@ -20,6 +20,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 
+import javax.annotation.CheckForSigned;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -39,35 +40,100 @@ import com.helger.html.hc.html.HCRow;
  */
 public interface IHCTable <IMPLTYPE extends IHCTable <IMPLTYPE>> extends IHCElement <IMPLTYPE>, IHCHasChildren
 {
-  @Nonnegative
+  /**
+   * @return The cell spacing. Values &le; 0 mean undefined.
+   */
+  @CheckForSigned
   int getCellSpacing ();
 
+  /**
+   * Set the cell spacing.
+   *
+   * @param nCellSpacing
+   *        New value. Values &le; 0 mean undefined.
+   * @return this
+   */
   @Nonnull
-  IMPLTYPE setCellSpacing (@Nonnegative int nCellSpacing);
+  IMPLTYPE setCellSpacing (int nCellSpacing);
 
-  @Nonnegative
+  /**
+   * @return The cell padding. Values &le; 0 mean undefined.
+   */
+  @CheckForSigned
   int getCellPadding ();
 
+  /**
+   * Set the cell padding.
+   *
+   * @param nCellPadding
+   *        New value. Values &le; 0 mean undefined.
+   * @return this
+   */
   @Nonnull
-  IMPLTYPE setCellPadding (@Nonnegative int nCellPadding);
+  IMPLTYPE setCellPadding (int nCellPadding);
 
   // Column handling
 
+  /**
+   * @return The column group used for this table. May be <code>null</code> if
+   *         undefined.
+   */
   @Nullable
   HCColGroup getColGroup ();
 
+  /**
+   * Add the specified column.
+   *
+   * @param aCol
+   *        The column to be added. May be <code>null</code>.
+   * @return this
+   */
   @Nonnull
   IMPLTYPE addColumn (@Nullable HCCol aCol);
 
+  /**
+   * Add the specified column at the specified index.
+   *
+   * @param nIndex
+   *        The index where the column should be added. Must be &ge; 0.
+   * @param aCol
+   *        The column to be added. May be <code>null</code>.
+   * @return this
+   */
   @Nonnull
   IMPLTYPE addColumn (@Nonnegative int nIndex, @Nullable HCCol aCol);
 
+  /**
+   * Add a single column.
+   *
+   * @param aCol
+   *        The column to be added. May be <code>null</code>.
+   * @return this
+   * @deprecated Use addColumn instead.
+   */
   @Nonnull
+  @Deprecated
   IMPLTYPE addColumns (@Nullable HCCol aCol);
 
+  /**
+   * Add multiple columns at once.
+   *
+   * @param aCols
+   *        The columns to be added. May be <code>null</code> and may contain
+   *        <code>null</code> elements.
+   * @return this
+   */
   @Nonnull
   IMPLTYPE addColumns (@Nullable HCCol... aCols);
 
+  /**
+   * Add multiple columns at once.
+   *
+   * @param aCols
+   *        The columns to be added. May be <code>null</code> and may contain
+   *        <code>null</code> elements.
+   * @return this
+   */
   @Nonnull
   IMPLTYPE addColumns (@Nullable Iterable <? extends HCCol> aCols);
 
@@ -99,15 +165,25 @@ public interface IHCTable <IMPLTYPE extends IHCTable <IMPLTYPE>> extends IHCElem
 
   // Header rows
 
+  /**
+   * @return The ID of the table head. May be <code>null</code>.
+   */
   @Nullable
   String getHeaderID ();
 
+  /**
+   * Set the ID of the table head.
+   *
+   * @param sID
+   *        The table head ID. May be <code>null</code>-
+   * @return this
+   */
   @Nonnull
   IMPLTYPE setHeaderID (@Nullable String sID);
 
   /**
-   * @return <code>true</code> if a Header ID is present, <code>false</code>
-   *         otherwise
+   * @return <code>true</code> if a table header ID is present,
+   *         <code>false</code> otherwise
    */
   boolean hasHeaderID ();
 

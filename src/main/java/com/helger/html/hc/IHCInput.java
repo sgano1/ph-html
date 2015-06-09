@@ -30,12 +30,26 @@ import com.helger.html.hc.api.EHCInputType;
  */
 public interface IHCInput <IMPLTYPE extends IHCInput <IMPLTYPE>> extends IHCControl <IMPLTYPE>
 {
+  /**
+   * @return The type used for this <code>input</code> element.
+   */
   @Nonnull
   EHCInputType getType ();
 
+  /**
+   * @return The current value of the HTML <code>placeholder</code> attribute.
+   *         May be <code>null</code>.
+   */
   @Nullable
   String getPlaceholder ();
 
+  /**
+   * Set the new value for the HTML <code>placeholder</code> attribute.
+   * 
+   * @param sPlaceholder
+   *        The new value. May be <code>null</code>.
+   * @return this
+   */
   @Nonnull
   IMPLTYPE setPlaceholder (@Nullable String sPlaceholder);
 }

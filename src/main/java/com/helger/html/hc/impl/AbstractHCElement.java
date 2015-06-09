@@ -72,7 +72,7 @@ import com.helger.html.js.JSEventMap;
 
 /**
  * Base class for an HC element.
- * 
+ *
  * @author Philip Helger
  * @param <IMPLTYPE>
  *        The implementation type.
@@ -198,7 +198,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nullable
-  protected final String getTitle ()
+  public final String getTitle ()
   {
     return m_sTitle;
   }
@@ -575,6 +575,12 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   public final boolean isTranslateUndefined ()
   {
     return m_eTranslate.isUndefined ();
+  }
+
+  @Nonnull
+  public final ETriState getTranslate ()
+  {
+    return m_eTranslate;
   }
 
   @Nonnull
