@@ -407,8 +407,8 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends IHC
   THISTYPE setContextMenu (@Nullable String sContextMenu);
 
   /**
-   * return <code>true</code> if spell check is enabled, <code>false</code>
-   * otherwise.
+   * @return <code>true</code> if spell check is enabled, <code>false</code>
+   *         otherwise.
    */
   boolean isSpellCheck ();
 
