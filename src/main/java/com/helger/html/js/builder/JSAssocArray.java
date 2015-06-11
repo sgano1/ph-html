@@ -43,10 +43,25 @@ import com.helger.json.IJson;
  */
 public class JSAssocArray extends AbstractJSExpression
 {
+  public static final boolean DEFAULT_FORCE_QUOTING_NAMES = false;
+
   private Map <IJSExpression, IJSExpression> m_aExprs;
+  private boolean m_bForceQuotingNames = DEFAULT_FORCE_QUOTING_NAMES;
 
   public JSAssocArray ()
   {}
+
+  public boolean isForceQuotingNames ()
+  {
+    return m_bForceQuotingNames;
+  }
+
+  @Nonnull
+  public JSAssocArray setForceQuotingNames (final boolean bForceQuotingNames)
+  {
+    m_bForceQuotingNames = bForceQuotingNames;
+    return this;
+  }
 
   public boolean isEmpty ()
   {
@@ -146,9 +161,12 @@ public class JSAssocArray extends AbstractJSExpression
   @Nonnull
   public JSAssocArray add (@Nonnull final String sKey, @Nonnull final IJSExpression aValue)
   {
-    // Don't quote value identifiers
-    if (JSMarshaller.isJSIdentifier (sKey))
-      return add (new JSAtom (sKey), aValue);
+    if (!m_bForceQuotingNames)
+    {
+      // Don't quote value identifiers
+      if (JSMarshaller.isJSIdentifier (sKey))
+        return add (new JSAtom (sKey), aValue);
+    }
 
     return add (JSExpr.lit (sKey), aValue);
   }
