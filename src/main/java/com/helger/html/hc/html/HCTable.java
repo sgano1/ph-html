@@ -18,6 +18,8 @@ package com.helger.html.hc.html;
 
 import javax.annotation.Nullable;
 
+import com.helger.html.hc.IHCCol;
+
 /**
  * Class for representing a simple HTML &lt;table&gt;.
  *
@@ -30,17 +32,17 @@ public class HCTable extends AbstractHCTable <HCTable>
     super ();
   }
 
-  public HCTable (@Nullable final HCCol aCol)
+  public HCTable (@Nullable final IHCCol <?> aCol)
   {
     super (aCol);
   }
 
-  public HCTable (@Nullable final HCCol... aCols)
+  public HCTable (@Nullable final IHCCol <?>... aCols)
   {
     super (aCols);
   }
 
-  public HCTable (@Nullable final Iterable <? extends HCCol> aCols)
+  public HCTable (@Nullable final Iterable <? extends IHCCol <?>> aCols)
   {
     super (aCols);
   }

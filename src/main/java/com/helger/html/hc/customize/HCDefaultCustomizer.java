@@ -36,6 +36,7 @@ import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.hc.IHCButton;
 import com.helger.html.hc.IHCCanBeDisabled;
 import com.helger.html.hc.IHCCell;
+import com.helger.html.hc.IHCCol;
 import com.helger.html.hc.IHCControl;
 import com.helger.html.hc.IHCElement;
 import com.helger.html.hc.IHCHasChildrenMutable;
@@ -46,7 +47,6 @@ import com.helger.html.hc.html.AbstractHCForm;
 import com.helger.html.hc.html.HCBody;
 import com.helger.html.hc.html.HCButton_Submit;
 import com.helger.html.hc.html.HCCheckBox;
-import com.helger.html.hc.html.HCCol;
 import com.helger.html.hc.html.HCColGroup;
 import com.helger.html.hc.html.HCEdit;
 import com.helger.html.hc.html.HCEditFile;
@@ -180,7 +180,7 @@ public class HCDefaultCustomizer extends HCEmptyCustomizer
           {
             // Create a dummy row with explicit widths
             final HCRow aRow = new HCRow (false).addClass (CSS_FORCE_COLSPAN);
-            for (final HCCol aCol : aColGroup.getAllColumns ())
+            for (final IHCCol <?> aCol : aColGroup.getAllColumns ())
             {
               final IHCCell <?> aCell = aRow.addAndReturnCell (HCEntityNode.newNBSP ());
               final int nWidth = StringParser.parseInt (aCol.getWidth (), -1);

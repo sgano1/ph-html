@@ -27,7 +27,6 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.annotations.ReturnsMutableCopy;
 import com.helger.html.css.ICSSClassProvider;
-import com.helger.html.hc.html.HCCol;
 import com.helger.html.hc.html.HCColGroup;
 import com.helger.html.hc.html.HCRow;
 
@@ -89,7 +88,7 @@ public interface IHCTable <IMPLTYPE extends IHCTable <IMPLTYPE>> extends IHCElem
    * @return this
    */
   @Nonnull
-  IMPLTYPE addColumn (@Nullable HCCol aCol);
+  IMPLTYPE addColumn (@Nullable IHCCol <?> aCol);
 
   /**
    * Add the specified column at the specified index.
@@ -101,7 +100,7 @@ public interface IHCTable <IMPLTYPE extends IHCTable <IMPLTYPE>> extends IHCElem
    * @return this
    */
   @Nonnull
-  IMPLTYPE addColumn (@Nonnegative int nIndex, @Nullable HCCol aCol);
+  IMPLTYPE addColumn (@Nonnegative int nIndex, @Nullable IHCCol <?> aCol);
 
   /**
    * Add a single column.
@@ -113,7 +112,7 @@ public interface IHCTable <IMPLTYPE extends IHCTable <IMPLTYPE>> extends IHCElem
    */
   @Nonnull
   @Deprecated
-  IMPLTYPE addColumns (@Nullable HCCol aCol);
+  IMPLTYPE addColumns (@Nullable IHCCol <?> aCol);
 
   /**
    * Add multiple columns at once.
@@ -124,7 +123,7 @@ public interface IHCTable <IMPLTYPE extends IHCTable <IMPLTYPE>> extends IHCElem
    * @return this
    */
   @Nonnull
-  IMPLTYPE addColumns (@Nullable HCCol... aCols);
+  IMPLTYPE addColumns (@Nullable IHCCol <?>... aCols);
 
   /**
    * Add multiple columns at once.
@@ -135,7 +134,7 @@ public interface IHCTable <IMPLTYPE extends IHCTable <IMPLTYPE>> extends IHCElem
    * @return this
    */
   @Nonnull
-  IMPLTYPE addColumns (@Nullable Iterable <? extends HCCol> aCols);
+  IMPLTYPE addColumns (@Nullable Iterable <? extends IHCCol <?>> aCols);
 
   /**
    * Remove the column definition at the specified index. This does not affect

@@ -108,6 +108,18 @@ public class HCEntityNode extends AbstractHCNode
     return new HCEntityNode (EHTMLEntity.rarr, "->");
   }
 
+  @Nonnull
+  public static HCEntityNode newUpArrow ()
+  {
+    return new HCEntityNode (EHTMLEntity.uarr, "^");
+  }
+
+  @Nonnull
+  public static HCEntityNode newDownArrow ()
+  {
+    return new HCEntityNode (EHTMLEntity.darr, "v");
+  }
+
   /**
    * @return dash of length "n"
    */

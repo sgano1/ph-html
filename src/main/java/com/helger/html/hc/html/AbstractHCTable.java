@@ -26,6 +26,7 @@ import org.slf4j.LoggerFactory;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
+import com.helger.html.hc.IHCCol;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
 /**
@@ -44,19 +45,19 @@ public abstract class AbstractHCTable <THISTYPE extends AbstractHCTable <THISTYP
     super (EHTMLElement.TABLE);
   }
 
-  public AbstractHCTable (@Nullable final HCCol aCol)
+  public AbstractHCTable (@Nullable final IHCCol <?> aCol)
   {
     this ();
     addColumn (aCol);
   }
 
-  public AbstractHCTable (@Nullable final HCCol... aCols)
+  public AbstractHCTable (@Nullable final IHCCol <?>... aCols)
   {
     this ();
     addColumns (aCols);
   }
 
-  public AbstractHCTable (@Nullable final Iterable <? extends HCCol> aCols)
+  public AbstractHCTable (@Nullable final Iterable <? extends IHCCol <?>> aCols)
   {
     this ();
     addColumns (aCols);

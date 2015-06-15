@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.annotations.ReturnsImmutableObject;
 import com.helger.html.EHTMLElement;
+import com.helger.html.hc.IHCCol;
 import com.helger.html.hc.impl.AbstractHCElementWithInternalChildren;
 
 /**
@@ -31,7 +32,7 @@ import com.helger.html.hc.impl.AbstractHCElementWithInternalChildren;
  *
  * @author Philip Helger
  */
-public class HCColGroup extends AbstractHCElementWithInternalChildren <HCColGroup, HCCol>
+public class HCColGroup extends AbstractHCElementWithInternalChildren <HCColGroup, IHCCol <?>>
 {
   public HCColGroup ()
   {
@@ -39,19 +40,19 @@ public class HCColGroup extends AbstractHCElementWithInternalChildren <HCColGrou
   }
 
   @Nonnull
-  public HCColGroup addColumns (@Nullable final HCCol... aCols)
+  public HCColGroup addColumns (@Nullable final IHCCol <?>... aCols)
   {
     if (aCols != null)
-      for (final HCCol aCol : aCols)
+      for (final IHCCol <?> aCol : aCols)
         addColumn (aCol);
     return this;
   }
 
   @Nonnull
-  public HCColGroup addColumns (@Nullable final Iterable <? extends HCCol> aCols)
+  public HCColGroup addColumns (@Nullable final Iterable <? extends IHCCol <?>> aCols)
   {
     if (aCols != null)
-      for (final HCCol aCol : aCols)
+      for (final IHCCol <?> aCol : aCols)
         addColumn (aCol);
     return this;
   }
@@ -64,7 +65,7 @@ public class HCColGroup extends AbstractHCElementWithInternalChildren <HCColGrou
    * @return this
    */
   @Nonnull
-  public HCColGroup addColumn (@Nullable final HCCol aCol)
+  public HCColGroup addColumn (@Nullable final IHCCol <?> aCol)
   {
     if (aCol != null)
       addChild (aCol);
@@ -81,7 +82,7 @@ public class HCColGroup extends AbstractHCElementWithInternalChildren <HCColGrou
    * @return this
    */
   @Nonnull
-  public HCColGroup addColumn (@Nonnegative final int nIndex, @Nullable final HCCol aCol)
+  public HCColGroup addColumn (@Nonnegative final int nIndex, @Nullable final IHCCol <?> aCol)
   {
     if (aCol != null)
       addChild (nIndex, aCol);
@@ -118,7 +119,7 @@ public class HCColGroup extends AbstractHCElementWithInternalChildren <HCColGrou
    */
   @Nonnull
   @ReturnsImmutableObject
-  public List <HCCol> getAllColumns ()
+  public List <IHCCol <?>> getAllColumns ()
   {
     return getAllChildren ();
   }
@@ -131,7 +132,7 @@ public class HCColGroup extends AbstractHCElementWithInternalChildren <HCColGrou
    * @return <code>null</code> if no such column exists
    */
   @Nullable
-  public HCCol getColumnOfIndex (final int nIndex)
+  public IHCCol <?> getColumnOfIndex (final int nIndex)
   {
     return getChildAtIndex (nIndex);
   }

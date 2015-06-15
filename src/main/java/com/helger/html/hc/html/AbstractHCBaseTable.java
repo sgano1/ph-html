@@ -38,6 +38,7 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
 import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.hc.IHCCell;
+import com.helger.html.hc.IHCCol;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCTable;
 import com.helger.html.hc.conversion.HCConsistencyChecker;
@@ -231,7 +232,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
   }
 
   @Nonnull
-  public final IMPLTYPE addColumn (@Nullable final HCCol aCol)
+  public final IMPLTYPE addColumn (@Nullable final IHCCol <?> aCol)
   {
     if (aCol != null)
     {
@@ -243,7 +244,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
   }
 
   @Nonnull
-  public final IMPLTYPE addColumn (@Nonnegative final int nIndex, @Nullable final HCCol aCol)
+  public final IMPLTYPE addColumn (@Nonnegative final int nIndex, @Nullable final IHCCol <?> aCol)
   {
     if (aCol != null)
     {
@@ -256,25 +257,25 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
 
   @Nonnull
   @Deprecated
-  public final IMPLTYPE addColumns (@Nullable final HCCol aCol)
+  public final IMPLTYPE addColumns (@Nullable final IHCCol <?> aCol)
   {
     return addColumn (aCol);
   }
 
   @Nonnull
-  public final IMPLTYPE addColumns (@Nullable final HCCol... aCols)
+  public final IMPLTYPE addColumns (@Nullable final IHCCol <?>... aCols)
   {
     if (aCols != null)
-      for (final HCCol aCol : aCols)
+      for (final IHCCol <?> aCol : aCols)
         addColumn (aCol);
     return thisAsT ();
   }
 
   @Nonnull
-  public final IMPLTYPE addColumns (@Nullable final Iterable <? extends HCCol> aCols)
+  public final IMPLTYPE addColumns (@Nullable final Iterable <? extends IHCCol <?>> aCols)
   {
     if (aCols != null)
-      for (final HCCol aCol : aCols)
+      for (final IHCCol <?> aCol : aCols)
         addColumn (aCol);
     return thisAsT ();
   }

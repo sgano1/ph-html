@@ -16,107 +16,28 @@
  */
 package com.helger.html.hc.html;
 
-import javax.annotation.CheckForSigned;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.annotation.OverridingMethodsMustInvokeSuper;
 
-import com.helger.commons.CGlobal;
-import com.helger.commons.ValueEnforcer;
-import com.helger.commons.microdom.IMicroElement;
-import com.helger.commons.string.StringHelper;
-import com.helger.commons.string.ToStringGenerator;
 import com.helger.css.ECSSUnit;
 import com.helger.html.CHTMLAttributeValues;
-import com.helger.html.CHTMLAttributes;
-import com.helger.html.EHTMLElement;
-import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
-import com.helger.html.hc.impl.AbstractHCElement;
 
 /**
  * Represents an HTML &lt;col&gt; element
  *
  * @author Philip Helger
  */
-public class HCCol extends AbstractHCElement <HCCol>
+public class HCCol extends AbstractHCCol <HCCol>
 {
-  private String m_sWidth;
-  private int m_nSpan = CGlobal.ILLEGAL_UINT;
-
   public HCCol ()
   {
-    super (EHTMLElement.COL);
+    super ();
   }
 
   public HCCol (@Nonnegative final int nWidth)
   {
-    this ();
-    setWidth (nWidth);
-  }
-
-  /**
-   * @return <code>true</code> if this is a star column (width == "*")
-   */
-  public boolean isStar ()
-  {
-    return CHTMLAttributeValues.STAR.equals (m_sWidth);
-  }
-
-  /**
-   * @return The width definition or <code>null</code> if no width is present
-   */
-  @Nullable
-  public String getWidth ()
-  {
-    return m_sWidth;
-  }
-
-  @Nonnull
-  public HCCol setWidth (@Nonnegative final int nWidth)
-  {
-    ValueEnforcer.isGE0 (nWidth, "Width");
-    return setWidth (Integer.toString (nWidth));
-  }
-
-  @Nonnull
-  public HCCol setWidth (@Nullable final String sWidth)
-  {
-    m_sWidth = sWidth;
-    return this;
-  }
-
-  @CheckForSigned
-  public int getSpan ()
-  {
-    return m_nSpan;
-  }
-
-  @Nonnull
-  public HCCol setSpan (final int nSpan)
-  {
-    m_nSpan = nSpan;
-    return this;
-  }
-
-  @Override
-  @OverridingMethodsMustInvokeSuper
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
-  {
-    super.applyProperties (aElement, aConversionSettings);
-    if (StringHelper.hasText (m_sWidth))
-      aElement.setAttribute (CHTMLAttributes.WIDTH, m_sWidth);
-    if (m_nSpan > 0)
-      aElement.setAttribute (CHTMLAttributes.SPAN, m_nSpan);
-  }
-
-  @Override
-  public String toString ()
-  {
-    return ToStringGenerator.getDerived (super.toString ())
-                            .appendIfNotNull ("width", m_sWidth)
-                            .append ("span", m_nSpan)
-                            .toString ();
+    super (nWidth);
   }
 
   /**
