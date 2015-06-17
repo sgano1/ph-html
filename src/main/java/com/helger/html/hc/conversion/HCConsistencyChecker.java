@@ -42,7 +42,6 @@ import com.helger.html.hc.IHCHasChildren;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.html.AbstractHCBaseTable;
 import com.helger.html.hc.html.HCA;
-import com.helger.html.hc.html.HCBody;
 import com.helger.html.hc.html.HCButton;
 import com.helger.html.hc.html.HCForm;
 import com.helger.html.hc.html.HCObject;
@@ -227,18 +226,19 @@ public final class HCConsistencyChecker
    * Check all nodes inside the passed HTML body whether they have unique IDs or
    * not.
    *
-   * @param aBody
-   *        The HTML body to check. May not be <code>null</code>.
+   * @param aStartNode
+   *        The HTML node to check, usually the body element. May not be
+   *        <code>null</code>.
    * @return A set with all IDs used more than once. Never <code>null</code> but
    *         maybe empty.
    */
   @Nonnull
   @ReturnsMutableCopy
-  public static Set <String> checkForUniqueIDs (@Nonnull final HCBody aBody)
+  public static Set <String> checkForUniqueIDs (@Nonnull final IHCHasChildren aStartNode)
   {
     final Set <String> aUsedIDs = new HashSet <String> ();
     final Set <String> aDuplicateIDs = new HashSet <String> ();
-    HCUtils.iterateTree (aBody, new IHCIteratorCallback ()
+    HCUtils.iterateTree (aStartNode, new IHCIteratorCallback ()
     {
       @Nonnull
       public EFinish call (@Nullable final IHCHasChildren aParentNode, @Nonnull final IHCNode aChildNode)
