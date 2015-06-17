@@ -225,12 +225,6 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
     return thisAsT ();
   }
 
-  @Nullable
-  public final CHILDTYPE getChild (final int nIndex)
-  {
-    return CollectionHelper.getSafe (m_aChildren, nIndex, null);
-  }
-
   @Nonnegative
   public final int getChildCount ()
   {
@@ -246,14 +240,6 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
 
   @Nonnull
   @ReturnsMutableCopy
-  @Deprecated
-  public final List <CHILDTYPE> getChildren ()
-  {
-    return getAllChildren ();
-  }
-
-  @Nonnull
-  @ReturnsMutableCopy
   public final List <CHILDTYPE> getAllChildren ()
   {
     return CollectionHelper.newList (m_aChildren);
@@ -262,7 +248,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
   @Nullable
   public final CHILDTYPE getChildAtIndex (@Nonnegative final int nIndex)
   {
-    return CollectionHelper.getSafe (m_aChildren, nIndex);
+    return CollectionHelper.getSafe (m_aChildren, nIndex, null);
   }
 
   @Nullable
