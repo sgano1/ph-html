@@ -36,7 +36,7 @@ import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
 import com.helger.html.css.ICSSClassProvider;
-import com.helger.html.hc.IHCElement;
+import com.helger.html.hc.IHCHasID;
 import com.helger.html.hc.conversion.HCSettings;
 import com.helger.html.js.builder.IJSExpression;
 import com.helger.html.js.builder.JSExpr;
@@ -788,7 +788,7 @@ public final class JQuerySelector implements IJQuerySelector
    * @return <code>#id</code>
    */
   @Nonnull
-  public static IJQuerySelector id (@Nonnull final IHCElement <?> aElement)
+  public static IJQuerySelector id (@Nonnull final IHCHasID <?> aElement)
   {
     // Ensure element has an ID
     return id (aElement.ensureID ().getID ());

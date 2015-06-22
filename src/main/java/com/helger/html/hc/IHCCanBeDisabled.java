@@ -20,15 +20,26 @@ import javax.annotation.Nonnull;
 
 /**
  * Base interface for HC objects that can be disabled.
- * 
+ *
  * @author Philip Helger
  * @param <IMPLTYPE>
  *        Implementation type
  */
 public interface IHCCanBeDisabled <IMPLTYPE extends IHCCanBeDisabled <IMPLTYPE>> extends IHCElement <IMPLTYPE>
 {
+  /**
+   * @return <code>true</code> if the element is disabled, <code>false</code>
+   *         otherwise.
+   */
   boolean isDisabled ();
 
+  /**
+   * Set the disabled state of this element.
+   * 
+   * @param bDisabled
+   *        <code>true</code> to disable, <code>false</code> to enable
+   * @return this
+   */
   @Nonnull
   IMPLTYPE setDisabled (boolean bDisabled);
 }

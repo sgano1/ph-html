@@ -39,6 +39,7 @@ import com.helger.html.annotations.DeprecatedInXHTML1;
 import com.helger.html.annotations.SinceHTML5;
 import com.helger.html.hc.IHCElement;
 import com.helger.html.hc.IHCHasChildren;
+import com.helger.html.hc.IHCHasID;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.html.AbstractHCBaseTable;
 import com.helger.html.hc.html.HCA;
@@ -243,9 +244,9 @@ public final class HCConsistencyChecker
       @Nonnull
       public EFinish call (@Nullable final IHCHasChildren aParentNode, @Nonnull final IHCNode aChildNode)
       {
-        if (aChildNode instanceof IHCElement <?>)
+        if (aChildNode instanceof IHCHasID <?>)
         {
-          final IHCElement <?> aElement = (IHCElement <?>) aChildNode;
+          final IHCHasID <?> aElement = (IHCHasID <?>) aChildNode;
           final String sID = aElement.getID ();
           if (StringHelper.hasText (sID) && !aUsedIDs.add (sID))
           {

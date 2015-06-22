@@ -36,7 +36,7 @@ import com.helger.commons.microdom.serialize.MicroWriter;
 import com.helger.commons.xml.serialize.XMLWriter;
 import com.helger.html.EHTMLElement;
 import com.helger.html.css.ICSSClassProvider;
-import com.helger.html.hc.IHCElement;
+import com.helger.html.hc.IHCHasID;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.conversion.HCSettings;
 import com.helger.html.js.IJSCodeProvider;
@@ -321,7 +321,7 @@ public final class JQuery
    * @return A jQuery invocation with the passed ID: <code>$('#id')</code>
    */
   @Nonnull
-  public static JQueryInvocation idRef (@Nonnull @Nonempty final IHCElement <?> aElement)
+  public static JQueryInvocation idRef (@Nonnull @Nonempty final IHCHasID <?> aElement)
   {
     return JQuerySelector.id (aElement).invoke ();
   }
@@ -392,12 +392,12 @@ public final class JQuery
    *         <code>$('#id1,#id2,#id3')</code>
    */
   @Nonnull
-  public static JQueryInvocation idRefMultiple (@Nonnull @Nonempty final IHCElement <?>... aIDs)
+  public static JQueryInvocation idRefMultiple (@Nonnull @Nonempty final IHCHasID <?>... aIDs)
   {
     ValueEnforcer.notEmptyNoNullValue (aIDs, "IDs");
 
     final List <IJQuerySelector> aSelectors = new ArrayList <IJQuerySelector> ();
-    for (final IHCElement <?> aID : aIDs)
+    for (final IHCHasID <?> aID : aIDs)
       aSelectors.add (JQuerySelector.id (aID));
     return JQuerySelector.multiple (aSelectors).invoke ();
   }

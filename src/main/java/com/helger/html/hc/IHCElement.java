@@ -42,7 +42,7 @@ import com.helger.html.js.IJSCodeProvider;
  * @param <THISTYPE>
  *        The implementation type
  */
-public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends IHCNode, IHCHasCSSStyles <THISTYPE>, IHCHasCSSClasses <THISTYPE>
+public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends IHCNode, IHCHasID <THISTYPE>, IHCHasCSSStyles <THISTYPE>, IHCHasCSSClasses <THISTYPE>
 {
   /** The default value for an unset tab index, as -1 is used for "none" */
   public static final long DEFAULT_TABINDEX = -5l;
@@ -59,51 +59,6 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends IHC
   @Nonnull
   @Nonempty
   String getTagName ();
-
-  /**
-   * @return <code>true</code> if this element has an ID, <code>false</code> if
-   *         not.
-   */
-  boolean hasID ();
-
-  /**
-   * Get the HTML ID of this object.<br>
-   * Note: we cannot use <code>IHasID&lt;String&gt;</code> because the
-   * constraint of IHasID is, that the returned ID may not be <code>null</code>
-   * whereas here the HTML ID can be <code>null</code>!
-   *
-   * @return The HTML ID of this object.
-   */
-  @Nullable
-  String getID ();
-
-  /**
-   * Set the HTML ID of this object.
-   *
-   * @param sID
-   *        The ID to use. Must conform to the HTML rules for an element ID.
-   * @return this
-   */
-  @Nonnull
-  THISTYPE setID (String sID);
-
-  /**
-   * Set a unique HTML ID for this object. Equal to
-   * <code>setID (GlobalIDFactory.getNewStringID ())</code>
-   *
-   * @return this
-   */
-  @Nonnull
-  THISTYPE setUniqueID ();
-
-  /**
-   * Set a new ID if none is present. This is a shortcut for
-   * <code>if (!hasID())setUniqueID ();</code>
-   *
-   * @return this
-   */
-  @Nonnull
-  THISTYPE ensureID ();
 
   /**
    * @return The value of the HTML <code>title</code> attribute. May be

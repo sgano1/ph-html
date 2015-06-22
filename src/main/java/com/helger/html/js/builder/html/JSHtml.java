@@ -24,7 +24,7 @@ import javax.annotation.concurrent.Immutable;
 import com.helger.commons.annotations.PresentForCodeCoverage;
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hc.IHCElement;
+import com.helger.html.hc.IHCHasID;
 import com.helger.html.js.builder.IJSExpression;
 import com.helger.html.js.builder.JSAnonymousFunction;
 import com.helger.html.js.builder.JSAssignment;
@@ -175,7 +175,7 @@ public final class JSHtml
   }
 
   @Nonnull
-  public static JSInvocation documentGetElementById (@Nonnull final IHCElement <?> aElement)
+  public static JSInvocation documentGetElementById (@Nonnull final IHCHasID <?> aElement)
   {
     return documentGetElementById (aElement.ensureID ().getID ());
   }

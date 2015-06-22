@@ -25,13 +25,13 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.annotations.SinceHTML5;
-import com.helger.html.hc.IHCElement;
+import com.helger.html.hc.IHCHasID;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML5 &lt;output&gt; element
- * 
+ *
  * @author Philip Helger
  */
 @SinceHTML5
@@ -55,7 +55,7 @@ public class HCOutput extends AbstractHCElementWithChildren <HCOutput>
   /**
    * Specifies the relationship between the result of the calculation, and the
    * elements used in the calculation
-   * 
+   *
    * @param sFor
    *        The HTML ID of the other object.
    * @return this
@@ -70,13 +70,13 @@ public class HCOutput extends AbstractHCElementWithChildren <HCOutput>
   /**
    * Specifies the relationship between the result of the calculation, and the
    * elements used in the calculation
-   * 
+   *
    * @param aFor
    *        The HTML of the other object.
    * @return this
    */
   @Nonnull
-  public HCOutput setFor (@Nullable final IHCElement <?> aFor)
+  public HCOutput setFor (@Nullable final IHCHasID <?> aFor)
   {
     if (aFor == null)
       m_sFor = null;
@@ -93,7 +93,7 @@ public class HCOutput extends AbstractHCElementWithChildren <HCOutput>
 
   /**
    * Specifies one or more forms the output element belongs to
-   * 
+   *
    * @param sForm
    *        The HTML ID of the form.
    * @return this

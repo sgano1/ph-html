@@ -24,7 +24,7 @@ import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hc.IHCElement;
+import com.helger.html.hc.IHCHasID;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 
@@ -73,7 +73,7 @@ public abstract class AbstractHCLabel <THISTYPE extends AbstractHCLabel <THISTYP
    * @return this
    */
   @Nonnull
-  public THISTYPE setFor (@Nullable final IHCElement <?> aFor)
+  public THISTYPE setFor (@Nullable final IHCHasID <?> aFor)
   {
     if (aFor == null)
       m_sFor = null;
