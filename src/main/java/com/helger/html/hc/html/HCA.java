@@ -21,6 +21,9 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.url.ISimpleURL;
+import com.helger.commons.url.URLValidator;
+import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.impl.HCTextNode;
 
 /**
  * Represents an HTML &lt;a&gt; element
@@ -43,11 +46,20 @@ public class HCA extends AbstractHCA <HCA>
   }
 
   @Nullable
-  public static HCA createLinkedWebsite (@Nullable final String sWebsite)
+  public static IHCNode createLinkedWebsite (@Nullable final String sWebsite)
+  {
+    return createLinkedWebsite (sWebsite, (HC_Target) null);
+  }
+
+  @Nullable
+  public static IHCNode createLinkedWebsite (@Nullable final String sWebsite, @Nullable final HC_Target aTarget)
   {
     if (StringHelper.hasNoText (sWebsite))
       return null;
 
-    return new HCA (sWebsite).addChild (sWebsite);
+    if (!URLValidator.isValid (sWebsite))
+      return new HCTextNode (sWebsite);
+
+    return new HCA (sWebsite).setTarget (aTarget).addChild (sWebsite);
   }
 }
