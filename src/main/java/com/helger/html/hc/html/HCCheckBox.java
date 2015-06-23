@@ -24,7 +24,6 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.hc.CHCParam;
 import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCNodeWithChildren;
 import com.helger.html.hc.api.EHCInputType;
@@ -40,7 +39,7 @@ import com.helger.html.request.IHCRequestFieldBooleanMultiValue;
 public class HCCheckBox extends AbstractHCInput <HCCheckBox>
 {
   /** The default value of the "value" attribute in HTML */
-  public static final String DEFAULT_VALUE = CHCParam.VALUE_CHECKED;
+  public static final String DEFAULT_VALUE = Boolean.TRUE.toString ();
 
   /** Emit a hidden field that indicates that the check-box was in the request. */
   public static final boolean DEFAULT_EMIT_HIDDEN_FIELD = true;

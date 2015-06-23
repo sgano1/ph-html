@@ -21,7 +21,6 @@ import java.util.Locale;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.html.hc.CHCParam;
 import com.helger.html.hc.api.EHCInputType;
 import com.helger.html.hc.impl.AbstractHCInput;
 import com.helger.html.request.IHCRequestField;
@@ -66,7 +65,7 @@ public class HCHiddenField extends AbstractHCInput <HCHiddenField>
 
   public HCHiddenField (@Nullable final String sName, final boolean bValue)
   {
-    this (sName, bValue ? CHCParam.VALUE_CHECKED : CHCParam.VALUE_UNCHECKED);
+    this (sName, Boolean.toString (bValue));
   }
 
   public HCHiddenField (@Nonnull final IHCRequestField aRF)
