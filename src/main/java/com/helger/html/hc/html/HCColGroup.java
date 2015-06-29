@@ -22,7 +22,7 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotations.ReturnsImmutableObject;
+import com.helger.commons.annotation.ReturnsImmutableObject;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCCol;
 import com.helger.html.hc.impl.AbstractHCElementWithInternalChildren;

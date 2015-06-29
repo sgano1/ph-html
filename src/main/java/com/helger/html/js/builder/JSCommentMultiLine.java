@@ -24,8 +24,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.writer.IJSWriterSettings;
 
@@ -244,8 +244,8 @@ public class JSCommentMultiLine extends JSCommentPart implements IJSGeneratable
     final JSCommentMultiLine rhs = (JSCommentMultiLine) o;
     return m_aParams.equals (rhs.m_aParams) &&
            m_aXDoclets.equals (rhs.m_aXDoclets) &&
-           EqualsUtils.equals (m_aReturn, rhs.m_aReturn) &&
-           EqualsUtils.equals (m_aDeprecated, rhs.m_aDeprecated);
+           EqualsHelper.equals (m_aReturn, rhs.m_aReturn) &&
+           EqualsHelper.equals (m_aDeprecated, rhs.m_aDeprecated);
   }
 
   @Override

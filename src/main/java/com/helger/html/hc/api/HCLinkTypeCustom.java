@@ -18,7 +18,7 @@ package com.helger.html.hc.api;
 
 import javax.annotation.Nonnull;
 
-import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 

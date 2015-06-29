@@ -26,7 +26,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.OverrideOnDemand;
+import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.string.StringParser;
 import com.helger.css.ECSSUnit;
 import com.helger.css.property.CCSSProperties;

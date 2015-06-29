@@ -20,9 +20,9 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 
 /**
@@ -113,7 +113,7 @@ public class JSFieldVar extends JSVar implements IJSDocCommentable
     if (!super.equals (o))
       return false;
     final JSFieldVar rhs = (JSFieldVar) o;
-    return m_aOwnerClass.name ().equals (rhs.m_aOwnerClass.name ()) && EqualsUtils.equals (m_aJSDoc, rhs.m_aJSDoc);
+    return m_aOwnerClass.name ().equals (rhs.m_aOwnerClass.name ()) && EqualsHelper.equals (m_aJSDoc, rhs.m_aJSDoc);
   }
 
   @Override

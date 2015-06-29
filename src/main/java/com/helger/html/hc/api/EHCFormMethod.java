@@ -18,7 +18,7 @@ package com.helger.html.hc.api;
 
 import javax.annotation.Nonnull;
 
-import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.annotation.Nonempty;
 
 /**
  * An enumeration that can be used in {@link com.helger.html.hc.html.HCForm}

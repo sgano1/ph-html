@@ -28,17 +28,17 @@ import javax.annotation.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.helger.commons.GlobalDebug;
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.CodingStyleguideUnaware;
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.annotations.OverrideOnDemand;
-import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.annotations.ReturnsMutableObject;
-import com.helger.commons.collections.CollectionHelper;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
-import com.helger.commons.lang.CGStringHelper;
+import com.helger.commons.annotation.CodingStyleguideUnaware;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.annotation.OverrideOnDemand;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.annotation.ReturnsMutableObject;
+import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.debug.GlobalDebug;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
+import com.helger.commons.lang.ClassHelper;
 import com.helger.commons.math.MathHelper;
 import com.helger.commons.state.EChange;
 import com.helger.commons.string.ToStringGenerator;
@@ -144,8 +144,8 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   }
 
   @Nonnull
-  @ReturnsMutableObject (reason = "speed")
-  List <IJSCodeProvider> directMembers ()
+  @ReturnsMutableObject ("speed")
+  final List <IJSCodeProvider> directMembers ()
   {
     return m_aObjs;
   }
@@ -663,7 +663,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   public AbstractJSBlock assignPlus (@Nonnull final IJSAssignmentTarget aLhs, final double dValue)
   {
     // No add with 0
-    if (EqualsUtils.equals (dValue, 0))
+    if (EqualsHelper.equals (dValue, 0))
       return this;
     if (dValue < 0)
       return assignMinus (aLhs, JSExpr.lit (MathHelper.abs (dValue)));
@@ -674,7 +674,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   public AbstractJSBlock assignPlus (@Nonnull final IJSAssignmentTarget aLhs, final float fValue)
   {
     // No add with 0
-    if (EqualsUtils.equals (fValue, 0))
+    if (EqualsHelper.equals (fValue, 0))
       return this;
     if (fValue < 0)
       return assignMinus (aLhs, JSExpr.lit (MathHelper.abs (fValue)));
@@ -685,7 +685,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   public AbstractJSBlock assignPlus (@Nonnull final IJSAssignmentTarget aLhs, final int nValue)
   {
     // No add with 0
-    if (EqualsUtils.equals (nValue, 0))
+    if (EqualsHelper.equals (nValue, 0))
       return this;
     if (nValue < 0)
       return assignMinus (aLhs, JSExpr.lit (MathHelper.abs (nValue)));
@@ -696,7 +696,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   public AbstractJSBlock assignPlus (@Nonnull final IJSAssignmentTarget aLhs, final long nValue)
   {
     // No add with 0
-    if (EqualsUtils.equals (nValue, 0))
+    if (EqualsHelper.equals (nValue, 0))
       return this;
     if (nValue < 0)
       return assignMinus (aLhs, JSExpr.lit (MathHelper.abs (nValue)));
@@ -720,7 +720,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   public AbstractJSBlock assignMinus (@Nonnull final IJSAssignmentTarget aLhs, final double dValue)
   {
     // No subtract with 0
-    if (EqualsUtils.equals (dValue, 0))
+    if (EqualsHelper.equals (dValue, 0))
       return this;
     return assignMinus (aLhs, JSExpr.lit (dValue));
   }
@@ -729,7 +729,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   public AbstractJSBlock assignMinus (@Nonnull final IJSAssignmentTarget aLhs, final float fValue)
   {
     // No subtract with 0
-    if (EqualsUtils.equals (fValue, 0))
+    if (EqualsHelper.equals (fValue, 0))
       return this;
     return assignMinus (aLhs, JSExpr.lit (fValue));
   }
@@ -738,7 +738,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   public AbstractJSBlock assignMinus (@Nonnull final IJSAssignmentTarget aLhs, final int nValue)
   {
     // No subtract with 0
-    if (EqualsUtils.equals (nValue, 0))
+    if (EqualsHelper.equals (nValue, 0))
       return this;
     return assignMinus (aLhs, JSExpr.lit (nValue));
   }
@@ -747,7 +747,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   public AbstractJSBlock assignMinus (@Nonnull final IJSAssignmentTarget aLhs, final long nValue)
   {
     // No subtract with 0
-    if (EqualsUtils.equals (nValue, 0))
+    if (EqualsHelper.equals (nValue, 0))
       return this;
     return assignMinus (aLhs, JSExpr.lit (nValue));
   }
@@ -763,7 +763,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   public AbstractJSBlock assignMultiply (@Nonnull final IJSAssignmentTarget aLhs, final double dValue)
   {
     // No multiply with 1
-    if (EqualsUtils.equals (dValue, 1))
+    if (EqualsHelper.equals (dValue, 1))
       return this;
     return assignMultiply (aLhs, JSExpr.lit (dValue));
   }
@@ -772,7 +772,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   public AbstractJSBlock assignMultiply (@Nonnull final IJSAssignmentTarget aLhs, final float fValue)
   {
     // No multiply with 1
-    if (EqualsUtils.equals (fValue, 1))
+    if (EqualsHelper.equals (fValue, 1))
       return this;
     return assignMultiply (aLhs, JSExpr.lit (fValue));
   }
@@ -781,7 +781,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   public AbstractJSBlock assignMultiply (@Nonnull final IJSAssignmentTarget aLhs, final int nValue)
   {
     // No multiply with 1
-    if (EqualsUtils.equals (nValue, 1))
+    if (EqualsHelper.equals (nValue, 1))
       return this;
     return assignMultiply (aLhs, JSExpr.lit (nValue));
   }
@@ -790,7 +790,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   public AbstractJSBlock assignMultiply (@Nonnull final IJSAssignmentTarget aLhs, final long nValue)
   {
     // No multiply with 1
-    if (EqualsUtils.equals (nValue, 1))
+    if (EqualsHelper.equals (nValue, 1))
       return this;
     return assignMultiply (aLhs, JSExpr.lit (nValue));
   }
@@ -806,7 +806,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   public AbstractJSBlock assignDivide (@Nonnull final IJSAssignmentTarget aLhs, final double dValue)
   {
     // No divide by 1
-    if (EqualsUtils.equals (dValue, 1))
+    if (EqualsHelper.equals (dValue, 1))
       return this;
     return assignDivide (aLhs, JSExpr.lit (dValue));
   }
@@ -815,7 +815,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   public AbstractJSBlock assignDivide (@Nonnull final IJSAssignmentTarget aLhs, final float fValue)
   {
     // No divide by 1
-    if (EqualsUtils.equals (fValue, 1))
+    if (EqualsHelper.equals (fValue, 1))
       return this;
     return assignDivide (aLhs, JSExpr.lit (fValue));
   }
@@ -824,7 +824,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   public AbstractJSBlock assignDivide (@Nonnull final IJSAssignmentTarget aLhs, final int nValue)
   {
     // No divide by 1
-    if (EqualsUtils.equals (nValue, 1))
+    if (EqualsHelper.equals (nValue, 1))
       return this;
     return assignDivide (aLhs, JSExpr.lit (nValue));
   }
@@ -833,7 +833,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   public AbstractJSBlock assignDivide (@Nonnull final IJSAssignmentTarget aLhs, final long nValue)
   {
     // No divide by 1
-    if (EqualsUtils.equals (nValue, 1))
+    if (EqualsHelper.equals (nValue, 1))
       return this;
     return assignDivide (aLhs, JSExpr.lit (nValue));
   }
@@ -1152,7 +1152,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
             s_aLogger.warn ("Adding untyped IJSCodeProvider of class " +
                             aJSCode.getClass ().getName () +
                             " to " +
-                            CGStringHelper.getClassLocalName (this));
+                            ClassHelper.getClassLocalName (this));
 
         m_aObjs.add (m_nPos, aJSCode);
         m_nPos++;

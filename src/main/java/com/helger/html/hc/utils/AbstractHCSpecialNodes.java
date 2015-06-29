@@ -27,11 +27,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.CollectionHelper;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.IJSCodeProvider;
 import com.helger.html.js.provider.CollectingJSCodeProvider;
@@ -187,7 +187,7 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
       return false;
     final AbstractHCSpecialNodes <?> rhs = (AbstractHCSpecialNodes <?>) o;
     return m_aExternalCSSs.equals (rhs.m_aExternalCSSs) &&
-           EqualsUtils.equals (m_aInlineCSS, rhs.m_aInlineCSS) &&
+           EqualsHelper.equals (m_aInlineCSS, rhs.m_aInlineCSS) &&
            m_aExternalJSs.equals (rhs.m_aExternalJSs) &&
            m_aInlineJS.equals (rhs.m_aInlineJS);
   }

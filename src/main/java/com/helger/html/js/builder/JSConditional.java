@@ -20,9 +20,9 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.CodingStyleguideUnaware;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.annotation.CodingStyleguideUnaware;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.writer.IJSWriterSettings;
 
@@ -141,7 +141,7 @@ public class JSConditional extends AbstractJSStatement
     if (o == null || !getClass ().equals (o.getClass ()))
       return false;
     final JSConditional rhs = (JSConditional) o;
-    return m_aTest.equals (rhs.m_aTest) && m_aThen.equals (rhs.m_aThen) && EqualsUtils.equals (m_aElse, rhs.m_aElse);
+    return m_aTest.equals (rhs.m_aTest) && m_aThen.equals (rhs.m_aThen) && EqualsHelper.equals (m_aElse, rhs.m_aElse);
   }
 
   @Override

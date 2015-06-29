@@ -19,7 +19,7 @@ package com.helger.html.hc.html5;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.CGlobal;
-import com.helger.commons.equals.EqualsUtils;
+import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
@@ -75,9 +75,9 @@ public class HCProgress extends AbstractHCElementWithChildren <HCProgress>
      * present, must have a value greater than zero.
      * </pre>
      */
-    if (!EqualsUtils.equals (m_dValue, CGlobal.ILLEGAL_DOUBLE))
+    if (!EqualsHelper.equals (m_dValue, CGlobal.ILLEGAL_DOUBLE))
       aElement.setAttribute (CHTMLAttributes.VALUE, Double.toString (m_dValue));
-    if (!EqualsUtils.equals (m_dMax, CGlobal.ILLEGAL_DOUBLE))
+    if (!EqualsHelper.equals (m_dMax, CGlobal.ILLEGAL_DOUBLE))
       aElement.setAttribute (CHTMLAttributes.MAX, Double.toString (m_dMax));
   }
 }

@@ -23,11 +23,11 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.CollectionHelper;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 
 /**
@@ -250,9 +250,9 @@ public class JSAnonymousFunction extends AbstractJSExpression
     if (!super.equals (o))
       return false;
     final JSAnonymousFunction rhs = (JSAnonymousFunction) o;
-    return EqualsUtils.equals (m_aType, rhs.m_aType) &&
+    return EqualsHelper.equals (m_aType, rhs.m_aType) &&
            m_aParams.equals (rhs.m_aParams) &&
-           EqualsUtils.equals (m_aBody, rhs.m_aBody);
+           EqualsHelper.equals (m_aBody, rhs.m_aBody);
   }
 
   @Override

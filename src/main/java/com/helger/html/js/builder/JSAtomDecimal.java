@@ -19,13 +19,13 @@ package com.helger.html.js.builder;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 
 /**
  * An atomic decimal number
- * 
+ *
  * @author Philip Helger
  */
 @Immutable
@@ -129,7 +129,7 @@ public class JSAtomDecimal extends AbstractJSAtomNumeric
     if (!super.equals (o))
       return false;
     final JSAtomDecimal rhs = (JSAtomDecimal) o;
-    return EqualsUtils.equals (m_dValue, rhs.m_dValue);
+    return EqualsHelper.equals (m_dValue, rhs.m_dValue);
   }
 
   @Override

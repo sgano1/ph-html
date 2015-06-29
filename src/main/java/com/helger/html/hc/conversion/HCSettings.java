@@ -24,8 +24,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.ThreadSafe;
 
-import com.helger.commons.GlobalDebug;
 import com.helger.commons.ValueEnforcer;
+import com.helger.commons.debug.GlobalDebug;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.IHCNode;

@@ -20,7 +20,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.helger.commons.mock.PHTestUtils;
+import com.helger.commons.mock.CommonsTestHelper;
 
 /**
  * Test class for class {@link ConstantJSPathProvider}.
@@ -35,7 +35,7 @@ public final class ConstantJSPathProviderTest
     final ConstantJSPathProvider pp = new ConstantJSPathProvider ("a.js");
     assertEquals ("a.js", pp.getJSItemPath (true));
     assertEquals ("a.min.js", pp.getJSItemPath (false));
-    PHTestUtils.testDefaultImplementationWithEqualContentObject (pp, new ConstantJSPathProvider ("a.js"));
-    PHTestUtils.testDefaultImplementationWithDifferentContentObject (pp, new ConstantJSPathProvider ("b.js"));
+    CommonsTestHelper.testDefaultImplementationWithEqualContentObject (pp, new ConstantJSPathProvider ("a.js"));
+    CommonsTestHelper.testDefaultImplementationWithDifferentContentObject (pp, new ConstantJSPathProvider ("b.js"));
   }
 }

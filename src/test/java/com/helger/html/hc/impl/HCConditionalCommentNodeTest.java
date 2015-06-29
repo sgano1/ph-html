@@ -22,10 +22,10 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestRule;
 
-import com.helger.commons.mock.DebugModeTestRule;
+import com.helger.commons.junit.DebugModeTestRule;
 import com.helger.commons.system.ENewLineMode;
-import com.helger.commons.xml.serialize.EXMLSerializeIndent;
-import com.helger.commons.xml.serialize.IXMLWriterSettings;
+import com.helger.commons.xml.serialize.write.EXMLSerializeIndent;
+import com.helger.commons.xml.serialize.write.XMLWriterSettings;
 import com.helger.html.hc.conversion.HCConversionSettings;
 import com.helger.html.hc.conversion.HCSettings;
 import com.helger.html.hc.html.HCB;
@@ -45,9 +45,7 @@ public final class HCConditionalCommentNodeTest
   public void testAll ()
   {
     HCConditionalCommentNode.setDefaultNewLineMode (ENewLineMode.UNIX);
-    HCSettings.getConversionSettingsProvider ()
-              .setXMLWriterSettings (HCConversionSettings.createDefaultXMLWriterSettings ()
-                                                         .setIndent (EXMLSerializeIndent.NONE));
+    HCSettings.getConversionSettingsProvider ().getXMLWriterSettings ().setIndent (EXMLSerializeIndent.NONE);
 
     assertEquals ("<!--[if IE]>" + "abc" + "<![endif]-->",
                   HCSettings.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCTextNode ("abc"))));
@@ -57,10 +55,9 @@ public final class HCConditionalCommentNodeTest
                   HCSettings.getAsHTMLStringWithoutNamespaces (HCConditionalCommentNode.createForIEExactVersion7 (new HCB ().addChild ("bold"))));
 
     // But if enabling alignment mode, the newline is printer!
-    final IXMLWriterSettings aXWS = HCConversionSettings.createDefaultXMLWriterSettings ()
-                                                        .setIndent (EXMLSerializeIndent.ALIGN_ONLY);
+    final XMLWriterSettings aXWS = HCSettings.getConversionSettingsProvider ().getXMLWriterSettings ();
+    aXWS.setIndent (EXMLSerializeIndent.ALIGN_ONLY);
     final String sCRLF = aXWS.getNewLineString ();
-    HCSettings.getConversionSettingsProvider ().setXMLWriterSettings (aXWS);
 
     assertEquals ("<!--[if IE]>\n" + "abc" + "<![endif]-->" + sCRLF,
                   HCSettings.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCTextNode ("abc"))));
@@ -75,7 +72,8 @@ public final class HCConditionalCommentNodeTest
 
     // Restore default settings
     HCSettings.getConversionSettingsProvider ()
-              .setXMLWriterSettings (HCConversionSettings.createDefaultXMLWriterSettings ());
+              .setXMLWriterSettings (HCConversionSettings.createDefaultXMLWriterSettings (HCSettings.getConversionSettingsProvider ()
+                                                                                                    .getHTMLVersion ()));
     HCConditionalCommentNode.setDefaultNewLineMode (ENewLineMode.DEFAULT);
   }
 }

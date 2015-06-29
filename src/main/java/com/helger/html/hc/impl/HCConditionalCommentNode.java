@@ -25,15 +25,14 @@ import javax.annotation.concurrent.GuardedBy;
 import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.commons.microdom.serialize.MicroWriter;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.system.ENewLineMode;
 import com.helger.commons.version.Version;
-import com.helger.commons.xml.serialize.IXMLWriterSettings;
-import com.helger.commons.xml.serialize.XMLWriterSettings;
+import com.helger.commons.xml.serialize.write.IXMLWriterSettings;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
@@ -51,8 +50,6 @@ import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 @Immutable
 public class HCConditionalCommentNode extends AbstractHCWrappingNode
 {
-  @Deprecated
-  public static final String DEFAULT_LINE_SEPARATOR = XMLWriterSettings.DEFAULT_NEWLINE_STRING;
   public static final Version IE5 = new Version (5);
   public static final Version IE6 = new Version (6);
   public static final Version IE7 = new Version (7);
@@ -124,21 +121,6 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
   {
     m_eNewLineMode = ValueEnforcer.notNull (eNewLineMode, "NewLineMode");
     return this;
-  }
-
-  @Nonnull
-  @Nonempty
-  @Deprecated
-  public String getLineSeparator ()
-  {
-    return m_eNewLineMode.getText ();
-  }
-
-  @Nonnull
-  @Deprecated
-  public HCConditionalCommentNode setLineSeparator (@Nonnull @Nonempty final String sLineSeparator)
-  {
-    return setNewLineMode (ENewLineMode.getFromTextOrDefault (sLineSeparator, ENewLineMode.DEFAULT));
   }
 
   @Nonnull
@@ -218,20 +200,6 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
     {
       s_aRWLock.writeLock ().unlock ();
     }
-  }
-
-  @Nonnull
-  @Nonempty
-  @Deprecated
-  public static String getDefaultLineSeparator ()
-  {
-    return getDefaultNewLineMode ().getText ();
-  }
-
-  @Deprecated
-  public static void setDefaultLineSeparator (@Nonnull @Nonempty final String sDefaultLineSeparator)
-  {
-    setDefaultNewLineMode (ENewLineMode.getFromTextOrDefault (sDefaultLineSeparator, ENewLineMode.DEFAULT));
   }
 
   @Nonnull

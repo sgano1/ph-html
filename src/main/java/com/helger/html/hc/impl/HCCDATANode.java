@@ -20,7 +20,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.microdom.IMicroCDATA;
-import com.helger.commons.microdom.impl.MicroCDATA;
+import com.helger.commons.microdom.MicroCDATA;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 

@@ -18,7 +18,7 @@ package com.helger.html.entities;
 
 import javax.annotation.Nonnull;
 
-import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.annotation.Nonempty;
 
 /**
  * Base interface for a single HTML entity.

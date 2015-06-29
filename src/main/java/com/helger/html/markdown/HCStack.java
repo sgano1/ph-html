@@ -20,7 +20,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.collections.NonBlockingStack;
+import com.helger.commons.collection.impl.NonBlockingStack;
 import com.helger.commons.string.StringHelper;
 import com.helger.html.hc.IHCCell;
 import com.helger.html.hc.IHCNode;

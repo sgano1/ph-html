@@ -72,9 +72,9 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
-import com.helger.commons.annotations.ReturnsMutableCopy;
+import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.io.resource.ClassPathResource;
-import com.helger.commons.io.streams.StreamUtils;
+import com.helger.commons.io.stream.StreamHelper;
 import com.helger.commons.regex.RegExPool;
 import com.helger.commons.string.StringHelper;
 import com.helger.html.markdown.MarkdownConfiguration.Builder;
@@ -181,7 +181,7 @@ public final class MarkupFileFuncTest
     }
     finally
     {
-      StreamUtils.close (in);
+      StreamHelper.close (in);
     }
   }
 

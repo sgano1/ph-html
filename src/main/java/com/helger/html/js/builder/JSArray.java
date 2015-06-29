@@ -26,10 +26,10 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.CollectionHelper;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.conversion.HCSettings;
@@ -269,7 +269,7 @@ public class JSArray extends AbstractJSExpression
     if (!super.equals (o))
       return false;
     final JSArray rhs = (JSArray) o;
-    return EqualsUtils.equals (m_aExprs, rhs.m_aExprs);
+    return EqualsHelper.equals (m_aExprs, rhs.m_aExprs);
   }
 
   @Override

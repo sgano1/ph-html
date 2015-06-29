@@ -16,7 +16,7 @@
  */
 package com.helger.html.resource.css;
 
-import com.helger.commons.annotations.MustImplementEqualsAndHashcode;
+import com.helger.commons.annotation.MustImplementEqualsAndHashcode;
 import com.helger.html.resource.IHasDependencies;
 
 @MustImplementEqualsAndHashcode

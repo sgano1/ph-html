@@ -27,11 +27,11 @@ import javax.annotation.Nullable;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.CollectionHelper;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.io.resource.ClassPathResource;
-import com.helger.commons.io.streams.StreamUtils;
+import com.helger.commons.io.stream.StreamHelper;
 import com.helger.commons.xml.sax.InputSourceFactory;
 import com.helger.html.CHTMLDocTypes;
 
@@ -55,7 +55,7 @@ public final class HTMLEntityResolver implements EntityResolver
     final InputStream aIS = ClassPathResource.getInputStream (sFilePath);
     if (aIS == null)
       throw new IllegalArgumentException ("The passed resource " + sFilePath + " does not exist!");
-    final byte [] aBytes = StreamUtils.getAllBytes (aIS);
+    final byte [] aBytes = StreamHelper.getAllBytes (aIS);
     m_aResolveMap.put (sPublicID, aBytes);
   }
 

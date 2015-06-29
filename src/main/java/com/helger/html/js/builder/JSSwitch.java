@@ -23,11 +23,11 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.CodingStyleguideUnaware;
-import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.CollectionHelper;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.annotation.CodingStyleguideUnaware;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.writer.IJSWriterSettings;
 
@@ -124,7 +124,7 @@ public class JSSwitch extends AbstractJSStatement
     final JSSwitch rhs = (JSSwitch) o;
     return m_aTest.equals (rhs.m_aTest) &&
            m_aCases.equals (rhs.m_aCases) &&
-           EqualsUtils.equals (m_aDefaultCase, rhs.m_aDefaultCase);
+           EqualsHelper.equals (m_aDefaultCase, rhs.m_aDefaultCase);
   }
 
   @Override

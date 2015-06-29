@@ -22,9 +22,9 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.IHasPlainText;
-import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.microdom.IMicroNode;
+import com.helger.commons.text.IHasPlainText;
 import com.helger.html.hc.conversion.IHCConversionSettings;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.HCConditionalCommentNode;

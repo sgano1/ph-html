@@ -28,15 +28,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.DevelopersNote;
-import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.annotation.DevelopersNote;
+import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.microdom.IMicroNodeWithChildren;
-import com.helger.commons.microdom.impl.MicroText;
+import com.helger.commons.microdom.MicroText;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.system.ENewLineMode;
-import com.helger.commons.xml.serialize.XMLWriterSettings;
 import com.helger.html.annotations.OutOfBandNode;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.js.IJSCodeProvider;
@@ -109,9 +108,6 @@ public class HCScript extends AbstractHCScript <HCScript>
 
   /** By default place inline JS after script files */
   public static final boolean DEFAULT_EMIT_AFTER_FILES = true;
-
-  @Deprecated
-  public static final String DEFAULT_LINE_SEPARATOR = XMLWriterSettings.DEFAULT_NEWLINE_STRING;
 
   private static final Logger s_aLogger = LoggerFactory.getLogger (HCScript.class);
   private static final ReadWriteLock s_aRWLock = new ReentrantReadWriteLock ();
@@ -241,21 +237,6 @@ public class HCScript extends AbstractHCScript <HCScript>
   {
     m_eNewLineMode = ValueEnforcer.notNull (eNewLineMode, "NewLineMode");
     return this;
-  }
-
-  @Nonnull
-  @Nonempty
-  @Deprecated
-  public String getLineSeparator ()
-  {
-    return getNewLineString ();
-  }
-
-  @Nonnull
-  @Deprecated
-  public HCScript setLineSeparator (@Nonnull @Nonempty final String sLineSeparator)
-  {
-    return setNewLineMode (ENewLineMode.getFromTextOrDefault (sLineSeparator, ENewLineMode.DEFAULT));
   }
 
   public static void setInlineScript (@Nonnull final IMicroNodeWithChildren aElement,
@@ -396,19 +377,5 @@ public class HCScript extends AbstractHCScript <HCScript>
     {
       s_aRWLock.writeLock ().unlock ();
     }
-  }
-
-  @Nonnull
-  @Nonempty
-  @Deprecated
-  public static String getDefaultLineSeparator ()
-  {
-    return getDefaultNewLineMode ().getText ();
-  }
-
-  @Deprecated
-  public static void setDefaultLineSeparator (@Nonnull @Nonempty final String sDefaultLineSeparator)
-  {
-    setDefaultNewLineMode (ENewLineMode.getFromTextOrDefault (sDefaultLineSeparator, ENewLineMode.DEFAULT));
   }
 }

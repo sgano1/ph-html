@@ -16,7 +16,7 @@
  */
 package com.helger.html.markdown;
 
-import com.helger.commons.annotations.CodingStyleguideUnaware;
+import com.helger.commons.annotation.CodingStyleguideUnaware;
 
 /**
  * This class represents a block of lines.

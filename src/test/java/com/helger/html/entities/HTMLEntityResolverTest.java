@@ -24,17 +24,17 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.xml.sax.InputSource;
 
-import com.helger.commons.io.streams.NonBlockingByteArrayOutputStream;
-import com.helger.commons.io.streams.StreamUtils;
+import com.helger.commons.io.stream.NonBlockingByteArrayOutputStream;
+import com.helger.commons.io.stream.StreamHelper;
 import com.helger.commons.microdom.IMicroDocument;
 import com.helger.commons.microdom.IMicroDocumentType;
 import com.helger.commons.microdom.serialize.MicroReader;
-import com.helger.commons.xml.EXMLIncorrectCharacterHandling;
 import com.helger.commons.xml.EXMLParserFeature;
-import com.helger.commons.xml.serialize.EXMLSerializeVersion;
-import com.helger.commons.xml.serialize.SAXReaderSettings;
-import com.helger.commons.xml.serialize.XMLEmitter;
-import com.helger.commons.xml.serialize.XMLWriterSettings;
+import com.helger.commons.xml.serialize.read.SAXReaderSettings;
+import com.helger.commons.xml.serialize.write.EXMLIncorrectCharacterHandling;
+import com.helger.commons.xml.serialize.write.EXMLSerializeVersion;
+import com.helger.commons.xml.serialize.write.XMLEmitter;
+import com.helger.commons.xml.serialize.write.XMLWriterSettings;
 import com.helger.html.CHTMLDocTypes;
 
 public final class HTMLEntityResolverTest
@@ -91,15 +91,15 @@ public final class HTMLEntityResolverTest
     final InputSource aIS1 = HTMLEntityResolver.getInstance ().resolveEntity ("-//W3C//ENTITIES Latin 1 for XHTML//EN");
     assertNotNull (aIS1);
     final NonBlockingByteArrayOutputStream aBAOS1 = new NonBlockingByteArrayOutputStream ();
-    StreamUtils.copyInputStreamToOutputStream (aIS1.getByteStream (), aBAOS1);
-    assertTrue (aBAOS1.size () > 0);
+    StreamHelper.copyInputStreamToOutputStream (aIS1.getByteStream (), aBAOS1);
+    assertTrue (aBAOS1.getSize () > 0);
 
     // read 2.
     final InputSource aIS2 = HTMLEntityResolver.getInstance ().resolveEntity ("-//W3C//ENTITIES Latin 1 for XHTML//EN");
     assertNotNull (aIS2);
     final NonBlockingByteArrayOutputStream aBAOS2 = new NonBlockingByteArrayOutputStream ();
-    StreamUtils.copyInputStreamToOutputStream (aIS2.getByteStream (), aBAOS2);
-    assertTrue (aBAOS2.size () > 0);
+    StreamHelper.copyInputStreamToOutputStream (aIS2.getByteStream (), aBAOS2);
+    assertTrue (aBAOS2.getSize () > 0);
 
     assertArrayEquals (aBAOS1.toByteArray (), aBAOS2.toByteArray ());
   }

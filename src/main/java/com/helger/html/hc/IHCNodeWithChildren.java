@@ -20,7 +20,7 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotations.DevelopersNote;
+import com.helger.commons.annotation.DevelopersNote;
 
 /**
  * Special node interface for objects containing other objects

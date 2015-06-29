@@ -19,7 +19,7 @@ package com.helger.html.hc.html;
 import javax.annotation.Nonnull;
 import javax.annotation.OverridingMethodsMustInvokeSuper;
 
-import com.helger.commons.annotations.OverrideOnDemand;
+import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.html.EHTMLElement;

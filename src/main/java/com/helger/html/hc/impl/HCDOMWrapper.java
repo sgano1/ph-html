@@ -23,7 +23,7 @@ import com.helger.commons.microdom.EMicroNodeType;
 import com.helger.commons.microdom.IMicroCDATA;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.commons.microdom.IMicroText;
-import com.helger.commons.microdom.utils.MicroRecursiveIterator;
+import com.helger.commons.microdom.util.MicroRecursiveIterator;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;

@@ -35,17 +35,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.DevelopersNote;
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.annotations.OverrideOnDemand;
-import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.CollectionHelper;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.idfactory.GlobalIDFactory;
+import com.helger.commons.annotation.DevelopersNote;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.annotation.OverrideOnDemand;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.id.factory.GlobalIDFactory;
 import com.helger.commons.lang.GenericReflection;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.microdom.IMicroNode;
-import com.helger.commons.microdom.impl.MicroElement;
+import com.helger.commons.microdom.MicroElement;
 import com.helger.commons.regex.RegExHelper;
 import com.helger.commons.state.ETriState;
 import com.helger.commons.string.StringHelper;
@@ -350,7 +350,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
 
     // Contained styles can never have a null value!
     final ECSSProperty eProp = aValue.getProp ();
-    return EqualsUtils.equals (m_aStyles.get (eProp), aValue);
+    return EqualsHelper.equals (m_aStyles.get (eProp), aValue);
   }
 
   public final boolean hasAnyStyle ()

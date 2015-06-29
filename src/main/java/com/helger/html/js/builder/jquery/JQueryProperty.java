@@ -21,7 +21,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 
-import com.helger.commons.annotations.PresentForCodeCoverage;
+import com.helger.commons.annotation.PresentForCodeCoverage;
 import com.helger.html.js.builder.JSExpr;
 import com.helger.html.js.builder.JSFieldRef;
 import com.helger.html.js.builder.JSRef;

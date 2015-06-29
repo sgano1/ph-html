@@ -20,9 +20,9 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.marshal.JSMarshaller;
 
@@ -97,7 +97,7 @@ public class JSRef extends AbstractJSAssignmentTarget
     if (!super.equals (o))
       return false;
     final JSRef rhs = (JSRef) o;
-    return EqualsUtils.equals (m_sName, rhs.m_sName) && EqualsUtils.equals (m_aVar, rhs.m_aVar);
+    return EqualsHelper.equals (m_sName, rhs.m_sName) && EqualsHelper.equals (m_aVar, rhs.m_aVar);
   }
 
   @Override

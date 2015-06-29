@@ -18,7 +18,7 @@ package com.helger.html.hc;
 
 import javax.annotation.Nullable;
 
-import com.helger.commons.parent.IHasChildrenSorted;
+import com.helger.commons.hierarchy.IHasChildrenSorted;
 
 /**
  * Special node interface for objects containing other objects

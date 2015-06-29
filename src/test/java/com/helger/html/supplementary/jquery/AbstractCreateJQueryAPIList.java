@@ -29,27 +29,27 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.SystemProperties;
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.CollectionHelper;
-import com.helger.commons.hash.HashCodeGenerator;
-import com.helger.commons.io.file.filter.FilenameFilterEndsWith;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
+import com.helger.commons.io.file.filter.FileFilterFilenameEndsWith;
 import com.helger.commons.io.file.iterate.FileSystemIterator;
 import com.helger.commons.lang.EnumHelper;
 import com.helger.commons.microdom.IMicroDocument;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.microdom.serialize.MicroReader;
-import com.helger.commons.microdom.utils.MicroUtils;
+import com.helger.commons.microdom.util.MicroHelper;
 import com.helger.commons.name.IHasName;
 import com.helger.commons.regex.RegExHelper;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.StringParser;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.commons.system.SystemProperties;
 import com.helger.commons.version.Version;
 import com.helger.commons.xml.EXMLParserFeature;
-import com.helger.commons.xml.serialize.SAXReaderDefaultSettings;
+import com.helger.commons.xml.serialize.read.SAXReaderDefaultSettings;
 
 abstract class AbstractCreateJQueryAPIList
 {
@@ -577,7 +577,7 @@ abstract class AbstractCreateJQueryAPIList
                                        "org.apache.xerces.parsers.XIncludeParserConfiguration");
 
     for (final File aFile : FileSystemIterator.create (new File ("src/test/resources/jquery/api"),
-                                                       new FilenameFilterEndsWith (".xml")))
+                                                       new FileFilterFilenameEndsWith (".xml")))
     {
       final IMicroDocument aDoc = MicroReader.readMicroXML (aFile);
       final IMicroElement eRoot = aDoc.getDocumentElement ();
@@ -628,7 +628,7 @@ abstract class AbstractCreateJQueryAPIList
               for (final String sRealArgType : StringHelper.getExploded ('/', sArgType.trim ()))
                 aTypes.add (sRealArgType);
 
-            final String sDescription = MicroUtils.getChildTextContent (eArg, "desc");
+            final String sDescription = MicroHelper.getChildTextContent (eArg, "desc");
 
             // Happens in callbacks.fireWith
             if (aTypes.isEmpty ())

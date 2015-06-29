@@ -26,9 +26,9 @@ import javax.annotation.Nullable;
 import javax.annotation.WillClose;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.io.IReadableResource;
-import com.helger.commons.io.streams.NonBlockingStringReader;
-import com.helger.commons.io.streams.StreamUtils;
+import com.helger.commons.io.resource.IReadableResource;
+import com.helger.commons.io.stream.NonBlockingStringReader;
+import com.helger.commons.io.stream.StreamHelper;
 import com.helger.commons.string.StringHelper;
 
 /**
@@ -478,7 +478,7 @@ public class MarkdownProcessor
   {
     ValueEnforcer.notNull (aIS, "InputStream");
 
-    return process (StreamUtils.getBuffered (StreamUtils.createReader (aIS, m_aConfig.getEncoding ())));
+    return process (StreamHelper.getBuffered (StreamHelper.createReader (aIS, m_aConfig.getEncoding ())));
   }
 
   @Nonnull
@@ -516,7 +516,7 @@ public class MarkdownProcessor
     }
     finally
     {
-      StreamUtils.close (aReader);
+      StreamHelper.close (aReader);
     }
   }
 }

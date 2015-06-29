@@ -25,15 +25,15 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import com.helger.commons.io.IReadableResource;
 import com.helger.commons.io.resource.ClassPathResource;
+import com.helger.commons.io.resource.IReadableResource;
 import com.helger.commons.microdom.IMicroContainer;
 import com.helger.commons.microdom.IMicroDocument;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.commons.microdom.serialize.MicroReader;
 import com.helger.commons.string.StringHelper;
-import com.helger.commons.xml.serialize.SAXReaderSettings;
+import com.helger.commons.xml.serialize.read.SAXReaderSettings;
 import com.helger.html.entities.HTMLEntityResolver;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.conversion.HCSettings;

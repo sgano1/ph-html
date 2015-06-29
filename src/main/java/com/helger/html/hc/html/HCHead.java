@@ -26,12 +26,12 @@ import javax.annotation.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.helger.commons.GlobalDebug;
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.OverrideOnDemand;
-import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.annotations.ReturnsMutableObject;
-import com.helger.commons.collections.CollectionHelper;
+import com.helger.commons.annotation.OverrideOnDemand;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.annotation.ReturnsMutableObject;
+import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.debug.GlobalDebug;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.mime.CMimeType;
 import com.helger.commons.state.EChange;
@@ -134,7 +134,7 @@ public class HCHead extends AbstractHCElement <HCHead>
   //
 
   @Nonnull
-  @ReturnsMutableObject (reason = "design")
+  @ReturnsMutableObject ("design")
   public MetaElementList getMetaElementList ()
   {
     return m_aMetaElements;

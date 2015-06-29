@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.ReturnsMutableCopy;
+import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.state.EChange;
 import com.helger.commons.string.ToStringGenerator;

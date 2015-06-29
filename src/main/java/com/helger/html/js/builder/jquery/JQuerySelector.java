@@ -26,10 +26,10 @@ import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.CodingStyleguideUnaware;
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.collections.ArrayHelper;
-import com.helger.commons.collections.CollectionHelper;
+import com.helger.commons.annotation.CodingStyleguideUnaware;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.collection.ArrayHelper;
+import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.id.IHasID;
 import com.helger.commons.regex.RegExHelper;
 import com.helger.commons.string.StringHelper;

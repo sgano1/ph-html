@@ -21,7 +21,7 @@ import java.util.Locale;
 import javax.annotation.CheckForSigned;
 import javax.annotation.Nonnull;
 
-import com.helger.commons.collections.ArrayHelper;
+import com.helger.commons.collection.ArrayHelper;
 import com.helger.commons.random.VerySecureRandom;
 
 /**

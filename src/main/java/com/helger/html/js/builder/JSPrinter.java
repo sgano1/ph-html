@@ -24,8 +24,8 @@ import javax.annotation.WillClose;
 import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.io.streams.NonBlockingStringWriter;
-import com.helger.commons.io.streams.StreamUtils;
+import com.helger.commons.io.stream.NonBlockingStringWriter;
+import com.helger.commons.io.stream.StreamHelper;
 import com.helger.html.js.writer.IJSWriterSettings;
 
 @Immutable
@@ -46,7 +46,7 @@ public final class JSPrinter
     }
     finally
     {
-      StreamUtils.close (aFormatter);
+      StreamHelper.close (aFormatter);
     }
   }
 
@@ -62,7 +62,7 @@ public final class JSPrinter
     }
     finally
     {
-      StreamUtils.close (aFormatter);
+      StreamHelper.close (aFormatter);
     }
   }
 
@@ -78,7 +78,7 @@ public final class JSPrinter
     }
     finally
     {
-      StreamUtils.close (aFormatter);
+      StreamHelper.close (aFormatter);
     }
   }
 
@@ -94,7 +94,7 @@ public final class JSPrinter
     }
     finally
     {
-      StreamUtils.close (aFormatter);
+      StreamHelper.close (aFormatter);
     }
   }
 
@@ -116,8 +116,7 @@ public final class JSPrinter
   }
 
   @Nonnull
-  public static String getAsString (@Nullable final IJSWriterSettings aSettings,
-                                    @Nonnull final IJSStatement aStatement)
+  public static String getAsString (@Nullable final IJSWriterSettings aSettings, @Nonnull final IJSStatement aStatement)
   {
     final NonBlockingStringWriter aSW = new NonBlockingStringWriter ();
     writeStatement (aSW, aSettings, aStatement);

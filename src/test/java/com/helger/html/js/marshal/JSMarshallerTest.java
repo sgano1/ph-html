@@ -35,7 +35,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.helger.commons.charset.CCharset;
-import com.helger.commons.collections.CollectionHelper;
+import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.io.file.SimpleFileIO;
 import com.helger.commons.regex.RegExHelper;
 import com.helger.commons.string.StringHelper;
@@ -153,11 +153,11 @@ public final class JSMarshallerTest
                                                               new JSListType (JSType.STRING),
                                                               false));
     assertEquals ("[1,9]", JSMarshaller.objectToJSString (CollectionHelper.newList (Integer.valueOf (1),
-                                                                                   Integer.valueOf (9)),
+                                                                                    Integer.valueOf (9)),
                                                           new JSListType (JSType.INT),
                                                           false));
     assertEquals ("[1.1,9.8]", JSMarshaller.objectToJSString (CollectionHelper.newList (Double.valueOf (1.1),
-                                                                                       Double.valueOf (9.8)),
+                                                                                        Double.valueOf (9.8)),
                                                               new JSListType (JSType.DOUBLE),
                                                               false));
   }
@@ -192,8 +192,8 @@ public final class JSMarshallerTest
     // Collections
     assertEquals ("[1,'xx','y']",
                   JSMarshaller.objectToJSString (CollectionHelper.<Object> newList (Integer.valueOf (1),
-                                                                                   "xx",
-                                                                                   Character.valueOf ('y'))));
+                                                                                    "xx",
+                                                                                    Character.valueOf ('y'))));
     Map <Object, Object> aMap = new LinkedHashMap <Object, Object> ();
     aMap.put (Integer.valueOf (1), "xx");
     aMap.put (Integer.valueOf (2), Character.valueOf ('y'));
@@ -368,8 +368,8 @@ public final class JSMarshallerTest
     for (int i = 0; i < aStrings.length; ++i)
       aUnescaped[i] = '\'' + JSMarshaller.javaScriptEscape (JSMarshaller.javaScriptUnescape (aStrings[i])) + '\'';
 
-    String sJSFile = SimpleFileIO.readFileAsString (new File ("src/test/resources/test.js"),
-                                                    CCharset.CHARSET_ISO_8859_1_OBJ);
+    String sJSFile = SimpleFileIO.getFileAsString (new File ("src/test/resources/test.js"),
+                                                   CCharset.CHARSET_ISO_8859_1_OBJ);
 
     // Inline all texts
     for (int i = 0; i < aStrings.length; ++i)

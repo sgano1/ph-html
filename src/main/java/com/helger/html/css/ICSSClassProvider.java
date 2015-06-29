@@ -18,7 +18,7 @@ package com.helger.html.css;
 
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotations.MustImplementEqualsAndHashcode;
+import com.helger.commons.annotation.MustImplementEqualsAndHashcode;
 
 /**
  * Interface for a CSS class provider.

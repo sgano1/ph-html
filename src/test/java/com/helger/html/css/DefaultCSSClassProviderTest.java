@@ -22,7 +22,7 @@ import static org.junit.Assert.assertSame;
 
 import org.junit.Test;
 
-import com.helger.commons.mock.PHTestUtils;
+import com.helger.commons.mock.CommonsTestHelper;
 
 /**
  * Test class for class {@link DefaultCSSClassProvider}.
@@ -38,6 +38,7 @@ public final class DefaultCSSClassProviderTest
     assertNotNull (x);
     assertEquals ("any", x.getCSSClass ());
     assertSame (x, DefaultCSSClassProvider.create ("any"));
-    PHTestUtils.testDefaultImplementationWithDifferentContentObject (x, DefaultCSSClassProvider.create ("anyOther"));
+    CommonsTestHelper.testDefaultImplementationWithDifferentContentObject (x,
+                                                                           DefaultCSSClassProvider.create ("anyOther"));
   }
 }

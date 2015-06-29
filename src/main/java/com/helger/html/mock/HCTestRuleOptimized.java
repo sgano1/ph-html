@@ -20,7 +20,7 @@ import javax.annotation.OverridingMethodsMustInvokeSuper;
 
 import org.junit.rules.ExternalResource;
 
-import com.helger.commons.annotations.OverrideOnDemand;
+import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.html.hc.conversion.HCSettings;
 
 /**

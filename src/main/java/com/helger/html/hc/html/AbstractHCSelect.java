@@ -28,10 +28,10 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.CGlobal;
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.OverrideOnDemand;
-import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.CollectionHelper;
-import com.helger.commons.equals.EqualsUtils;
+import com.helger.commons.annotation.OverrideOnDemand;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
@@ -139,14 +139,6 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
 
   @Nonnull
   @ReturnsMutableCopy
-  @Deprecated
-  public Set <String> getPreselectedValues ()
-  {
-    return getAllPreselectedValues ();
-  }
-
-  @Nonnull
-  @ReturnsMutableCopy
   public Set <String> getAllPreselectedValues ()
   {
     return CollectionHelper.newSet (m_aPreselectedValues);
@@ -233,7 +225,7 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
                                    @Nullable final String sText,
                                    @Nullable final String sSelectedValue)
   {
-    return addOption (sValue, sText, EqualsUtils.equals (sValue, sSelectedValue));
+    return addOption (sValue, sText, EqualsHelper.equals (sValue, sSelectedValue));
   }
 
   @Nonnull

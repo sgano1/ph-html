@@ -20,10 +20,10 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.ReturnsMutableObject;
+import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.commons.xml.serialize.IXMLWriterSettings;
-import com.helger.commons.xml.serialize.XMLWriterSettings;
+import com.helger.commons.xml.serialize.write.IXMLWriterSettings;
+import com.helger.commons.xml.serialize.write.XMLWriterSettings;
 import com.helger.css.ICSSWriterSettings;
 import com.helger.css.writer.CSSWriterSettings;
 import com.helger.html.EHTMLVersion;
@@ -73,7 +73,7 @@ public class HCConversionSettingsProvider implements IHCConversionSettingsProvid
   }
 
   @Nonnull
-  @ReturnsMutableObject (reason = "Design")
+  @ReturnsMutableObject ("Design")
   public XMLWriterSettings getXMLWriterSettings ()
   {
     return m_aConversionSettings.getXMLWriterSettings ();
@@ -94,7 +94,7 @@ public class HCConversionSettingsProvider implements IHCConversionSettingsProvid
   }
 
   @Nonnull
-  @ReturnsMutableObject (reason = "Design")
+  @ReturnsMutableObject ("Design")
   public CSSWriterSettings getCSSWriterSettings ()
   {
     return m_aConversionSettings.getCSSWriterSettings ();
@@ -115,7 +115,7 @@ public class HCConversionSettingsProvider implements IHCConversionSettingsProvid
   }
 
   @Nonnull
-  @ReturnsMutableObject (reason = "Design")
+  @ReturnsMutableObject ("Design")
   public JSWriterSettings getJSWriterSettings ()
   {
     return m_aConversionSettings.getJSWriterSettings ();

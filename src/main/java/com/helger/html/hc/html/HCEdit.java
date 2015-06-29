@@ -41,27 +41,6 @@ public class HCEdit extends AbstractHCInput <HCEdit>
     setName (sName);
   }
 
-  @Deprecated
-  public HCEdit (@Nullable final String sName, @Nullable final String sValue)
-  {
-    this (sName);
-    setValue (sValue);
-  }
-
-  @Deprecated
-  public HCEdit (@Nullable final String sName, final int nValue)
-  {
-    this (sName);
-    setValue (nValue);
-  }
-
-  @Deprecated
-  public HCEdit (@Nullable final String sName, final long nValue)
-  {
-    this (sName);
-    setValue (nValue);
-  }
-
   public HCEdit (@Nonnull final IHCRequestField aRF)
   {
     this (aRF.getFieldName ());

@@ -20,8 +20,8 @@ import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.annotations.OverrideOnDemand;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeBuilder;

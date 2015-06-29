@@ -22,11 +22,10 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.helger.commons.collections.CollectionHelper;
+import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.system.ENewLineMode;
-import com.helger.commons.xml.serialize.EXMLSerializeFormat;
-import com.helger.commons.xml.serialize.EXMLSerializeIndent;
-import com.helger.commons.xml.serialize.XMLWriterSettings;
+import com.helger.commons.xml.serialize.write.EXMLSerializeIndent;
+import com.helger.commons.xml.serialize.write.XMLWriterSettings;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.annotations.OutOfBandNode;
 import com.helger.html.hc.IHCNode;
@@ -95,8 +94,8 @@ public class HCSpecialNodeHandlerTest
                       sCRLF +
                       "</html>" +
                       sCRLF,
-                  aHtml.getAsHTMLString (new HCConversionSettings (EHTMLVersion.HTML5).setXMLWriterSettings (new XMLWriterSettings ().setEmitNamespaces (false)
-                                                                                                                                     .setFormat (EXMLSerializeFormat.HTML)
-                                                                                                                                     .setIndent (EXMLSerializeIndent.ALIGN_ONLY))));
+                  aHtml.getAsHTMLString (new HCConversionSettings (EHTMLVersion.HTML5).setXMLWriterSettings (XMLWriterSettings.createForHTML5 ()
+                                                                                                                              .setEmitNamespaces (false)
+                                                                                                                              .setIndent (EXMLSerializeIndent.ALIGN_ONLY))));
   }
 }

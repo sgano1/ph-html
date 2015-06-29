@@ -18,7 +18,7 @@ package com.helger.html.js.builder;
 
 import javax.annotation.Nonnull;
 
-import com.helger.commons.annotations.CodingStyleguideUnaware;
+import com.helger.commons.annotation.CodingStyleguideUnaware;
 import com.helger.json.IJson;
 
 /**

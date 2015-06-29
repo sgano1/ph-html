@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.microdom.IMicroNodeWithChildren;
-import com.helger.commons.microdom.impl.MicroText;
+import com.helger.commons.microdom.MicroText;
 import com.helger.commons.mime.CMimeType;
 import com.helger.commons.mime.IMimeType;
 import com.helger.commons.string.StringHelper;
@@ -176,7 +176,7 @@ public class HCStyle extends AbstractHCElement <HCStyle> implements IHCCSSNode
   @Nonnegative
   public int getMediaCount ()
   {
-    return m_aMediaList == null ? 0 : m_aMediaList.size ();
+    return m_aMediaList == null ? 0 : m_aMediaList.getMediaCount ();
   }
 
   public boolean hasAnyMedia ()

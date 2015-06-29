@@ -180,18 +180,6 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
    * @return this
    */
   @Nonnull
-  @Deprecated
-  public IMPLTYPE setFileUploadEncType ()
-  {
-    return setEncTypeFileUpload ();
-  }
-
-  /**
-   * Make this form a file-upload form.
-   *
-   * @return this
-   */
-  @Nonnull
   public IMPLTYPE setEncTypeFileUpload ()
   {
     return setEncType (CMimeType.MULTIPART_FORMDATA);

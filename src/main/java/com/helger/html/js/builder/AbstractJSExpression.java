@@ -19,9 +19,9 @@ package com.helger.html.js.builder;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotations.CodingStyleguideUnaware;
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.annotation.CodingStyleguideUnaware;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.writer.IJSWriterSettings;
 import com.helger.json.IJson;

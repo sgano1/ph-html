@@ -20,9 +20,9 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 
 /**
@@ -122,7 +122,7 @@ public final class ConstantJSPathProvider implements IJSPathProvider
     final ConstantJSPathProvider rhs = (ConstantJSPathProvider) o;
     return m_sPath.equals (rhs.m_sPath) &&
            m_sMinifiedPath.equals (rhs.m_sMinifiedPath) &&
-           EqualsUtils.equals (m_sConditionalComment, rhs.m_sConditionalComment) &&
+           EqualsHelper.equals (m_sConditionalComment, rhs.m_sConditionalComment) &&
            m_bCanBeBundled == rhs.m_bCanBeBundled;
   }
 

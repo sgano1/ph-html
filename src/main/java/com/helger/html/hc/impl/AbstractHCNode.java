@@ -23,8 +23,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
 
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.annotations.OverrideOnDemand;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.commons.microdom.serialize.MicroWriter;
 import com.helger.commons.string.ToStringGenerator;

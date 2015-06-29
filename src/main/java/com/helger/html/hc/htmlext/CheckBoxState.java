@@ -19,13 +19,13 @@ package com.helger.html.hc.htmlext;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 
 /**
  * Represents the state of a single checkbox.
- * 
+ *
  * @author Philip Helger
  */
 @Immutable
@@ -59,7 +59,7 @@ public final class CheckBoxState
     if (!(o instanceof CheckBoxState))
       return false;
     final CheckBoxState rhs = (CheckBoxState) o;
-    return EqualsUtils.equals (m_sValue, rhs.m_sValue) && m_bChecked == rhs.m_bChecked;
+    return EqualsHelper.equals (m_sValue, rhs.m_sValue) && m_bChecked == rhs.m_bChecked;
   }
 
   @Override

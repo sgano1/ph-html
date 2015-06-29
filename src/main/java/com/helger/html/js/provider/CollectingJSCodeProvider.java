@@ -24,11 +24,11 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
 
-import com.helger.commons.ICloneable;
-import com.helger.commons.IHasSize;
-import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.CollectionHelper;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
+import com.helger.commons.lang.ICloneable;
+import com.helger.commons.lang.IHasSize;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.IJSCodeProvider;
 import com.helger.html.js.writer.IJSWriterSettings;
@@ -145,7 +145,7 @@ public final class CollectingJSCodeProvider implements IJSCodeProviderWithSettin
   }
 
   @Nonnegative
-  public int size ()
+  public int getSize ()
   {
     return m_aList.size ();
   }

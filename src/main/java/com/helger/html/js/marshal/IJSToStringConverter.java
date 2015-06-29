@@ -19,7 +19,7 @@ package com.helger.html.js.marshal;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotations.MustImplementEqualsAndHashcode;
+import com.helger.commons.annotation.MustImplementEqualsAndHashcode;
 
 /**
  * Interface that defines the conversion routines to convert an arbitrary Java

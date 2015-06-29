@@ -19,8 +19,8 @@ package com.helger.html.js.builder;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.writer.IJSWriterSettings;
 
@@ -121,8 +121,8 @@ public class JSCase extends AbstractJSStatement
     if (o == null || !getClass ().equals (o.getClass ()))
       return false;
     final JSCase rhs = (JSCase) o;
-    return EqualsUtils.equals (m_aLabel, rhs.m_aLabel) &&
-           EqualsUtils.equals (m_aBody, rhs.m_aBody) &&
+    return EqualsHelper.equals (m_aLabel, rhs.m_aLabel) &&
+           EqualsHelper.equals (m_aBody, rhs.m_aBody) &&
            m_bIsDefaultCase == rhs.m_bIsDefaultCase;
   }
 

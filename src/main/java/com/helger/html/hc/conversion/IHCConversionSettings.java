@@ -18,8 +18,8 @@ package com.helger.html.hc.conversion;
 
 import javax.annotation.Nonnull;
 
-import com.helger.commons.ICloneable;
-import com.helger.commons.annotations.ReturnsMutableCopy;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.lang.ICloneable;
 import com.helger.html.EHTMLVersion;
 
 /**

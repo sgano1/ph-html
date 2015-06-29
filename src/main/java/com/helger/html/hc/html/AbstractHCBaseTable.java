@@ -29,10 +29,11 @@ import javax.annotation.OverridingMethodsMustInvokeSuper;
 
 import com.helger.commons.CGlobal;
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.annotations.OverrideOnDemand;
-import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.annotations.ReturnsMutableObject;
+import com.helger.commons.annotation.DevelopersNote;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.annotation.OverrideOnDemand;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
@@ -163,14 +164,6 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
 
   @Nonnull
   @ReturnsMutableCopy
-  @Deprecated
-  public final List <IHCNode> getChildren ()
-  {
-    return getAllChildren ();
-  }
-
-  @Nonnull
-  @ReturnsMutableCopy
   public final List <IHCNode> getAllChildren ()
   {
     final List <IHCNode> ret = new ArrayList <IHCNode> ();
@@ -257,6 +250,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
 
   @Nonnull
   @Deprecated
+  @DevelopersNote ("use addColumn instead")
   public final IMPLTYPE addColumns (@Nullable final IHCCol <?> aCol)
   {
     return addColumn (aCol);
@@ -373,7 +367,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
    * @return The contained list object for external row order handling.
    */
   @Nullable
-  @ReturnsMutableObject (reason = "For performance reasons in derived classes")
+  @ReturnsMutableObject ("For performance reasons in derived classes")
   protected final List <HCRow> directGetHeaderRowList ()
   {
     return m_aHead.directGetRowList ();
@@ -522,7 +516,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
    * @return The contained list object for external row order handling.
    */
   @Nullable
-  @ReturnsMutableObject (reason = "For performance reasons in derived classes")
+  @ReturnsMutableObject ("For performance reasons in derived classes")
   protected final List <HCRow> directGetFooterRowList ()
   {
     return m_aFoot.directGetRowList ();
@@ -672,7 +666,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
    * @return The contained list object for external row order handling.
    */
   @Nullable
-  @ReturnsMutableObject (reason = "For performance reasons in derived classes")
+  @ReturnsMutableObject ("For performance reasons in derived classes")
   protected final List <HCRow> directGetBodyRowList ()
   {
     return m_aBody.directGetRowList ();

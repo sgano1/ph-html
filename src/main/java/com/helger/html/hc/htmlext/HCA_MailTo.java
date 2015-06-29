@@ -24,7 +24,7 @@ import com.helger.commons.email.IEmailAddress;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.EURLProtocol;
-import com.helger.commons.url.ReadonlySimpleURL;
+import com.helger.commons.url.ReadOnlySimpleURL;
 import com.helger.html.hc.html.AbstractHCA;
 
 public class HCA_MailTo extends AbstractHCA <HCA_MailTo>
@@ -33,7 +33,7 @@ public class HCA_MailTo extends AbstractHCA <HCA_MailTo>
 
   public HCA_MailTo (@Nonnull final String sEmail)
   {
-    super (new ReadonlySimpleURL (EURLProtocol.MAILTO.getProtocol () + sEmail));
+    super (new ReadOnlySimpleURL (EURLProtocol.MAILTO.getProtocol () + sEmail));
     m_sEmail = ValueEnforcer.notNull (sEmail, "Email");
   }
 

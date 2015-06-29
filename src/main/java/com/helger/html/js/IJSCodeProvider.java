@@ -20,7 +20,7 @@ import java.io.Serializable;
 
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotations.MustImplementEqualsAndHashcode;
+import com.helger.commons.annotation.MustImplementEqualsAndHashcode;
 
 /**
  * Basic interface for object providing JavaScript code.

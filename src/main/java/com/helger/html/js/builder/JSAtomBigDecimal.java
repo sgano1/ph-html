@@ -22,8 +22,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 
 /**
@@ -140,7 +140,7 @@ public class JSAtomBigDecimal extends AbstractJSAtomNumeric
     if (!super.equals (o))
       return false;
     final JSAtomBigDecimal rhs = (JSAtomBigDecimal) o;
-    return EqualsUtils.equals (m_aValue, rhs.m_aValue);
+    return EqualsHelper.equals (m_aValue, rhs.m_aValue);
   }
 
   @Override

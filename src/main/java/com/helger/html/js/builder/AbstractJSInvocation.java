@@ -26,12 +26,11 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.CollectionHelper;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
-import com.helger.commons.microdom.IHasElementName;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCNode;
@@ -319,12 +318,6 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
   }
 
   @Nonnull
-  public IMPLTYPE arg (@Nonnull final IHasElementName aElementNameProvider)
-  {
-    return arg (aElementNameProvider.getElementName ());
-  }
-
-  @Nonnull
   public IMPLTYPE arg (@Nullable final BigDecimal aValue)
   {
     return aValue == null ? argNull () : arg (JSExpr.lit (aValue));
@@ -558,12 +551,6 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
     return aValue == null ? argNull (nIndex) : arg (nIndex, JSExpr.json (aValue));
   }
 
-  @Nonnull
-  public IMPLTYPE arg (@Nonnegative final int nIndex, @Nonnull final IHasElementName aElementNameProvider)
-  {
-    return arg (nIndex, aElementNameProvider.getElementName ());
-  }
-
   /**
    * Adds a null argument. Short for {@code arg(nIndex, JSExpr.NULL)}
    *
@@ -761,10 +748,10 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
     if (!super.equals (o))
       return false;
     final AbstractJSInvocation <?> rhs = (AbstractJSInvocation <?>) o;
-    return EqualsUtils.equals (m_aObject, rhs.m_aObject) &&
-           EqualsUtils.equals (m_aCtorType, rhs.m_aCtorType) &&
-           EqualsUtils.equals (m_aCallee, rhs.m_aCallee) &&
-           EqualsUtils.equals (m_sName, rhs.m_sName) &&
+    return EqualsHelper.equals (m_aObject, rhs.m_aObject) &&
+           EqualsHelper.equals (m_aCtorType, rhs.m_aCtorType) &&
+           EqualsHelper.equals (m_aCallee, rhs.m_aCallee) &&
+           EqualsHelper.equals (m_sName, rhs.m_sName) &&
            m_aArgs.equals (rhs.m_aArgs);
   }
 

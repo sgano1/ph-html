@@ -22,8 +22,7 @@ import java.util.Set;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.microdom.IHasElementName;
+import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.string.StringHelper;
 
 /**
@@ -31,7 +30,7 @@ import com.helger.commons.string.StringHelper;
  *
  * @author Philip Helger
  */
-public enum EHTMLElement implements IHasElementName
+public enum EHTMLElement
 {
   A ("a", false, EHTMLContentModelType.FLOW),
   ABBR ("abbr", false, EHTMLContentModelType.PHRASING),

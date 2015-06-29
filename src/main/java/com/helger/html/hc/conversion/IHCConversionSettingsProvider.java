@@ -18,9 +18,9 @@ package com.helger.html.hc.conversion;
 
 import javax.annotation.Nonnull;
 
-import com.helger.commons.annotations.ReturnsMutableObject;
-import com.helger.commons.xml.serialize.IXMLWriterSettings;
-import com.helger.commons.xml.serialize.XMLWriterSettings;
+import com.helger.commons.annotation.ReturnsMutableObject;
+import com.helger.commons.xml.serialize.write.IXMLWriterSettings;
+import com.helger.commons.xml.serialize.write.XMLWriterSettings;
 import com.helger.css.ICSSWriterSettings;
 import com.helger.css.writer.CSSWriterSettings;
 import com.helger.html.EHTMLVersion;
@@ -53,7 +53,7 @@ public interface IHCConversionSettingsProvider
   IHCConversionSettingsProvider setHTMLVersion (@Nonnull EHTMLVersion eHTMLVersion);
 
   @Nonnull
-  @ReturnsMutableObject (reason = "Design")
+  @ReturnsMutableObject ("Design")
   XMLWriterSettings getXMLWriterSettings ();
 
   @Nonnull
@@ -63,7 +63,7 @@ public interface IHCConversionSettingsProvider
   IHCConversionSettingsProvider setXMLWriterSettings (@Nonnull IXMLWriterSettings aXMLWriterSettings);
 
   @Nonnull
-  @ReturnsMutableObject (reason = "Design")
+  @ReturnsMutableObject ("Design")
   CSSWriterSettings getCSSWriterSettings ();
 
   @Nonnull
@@ -73,7 +73,7 @@ public interface IHCConversionSettingsProvider
   IHCConversionSettingsProvider setCSSWriterSettings (@Nonnull ICSSWriterSettings aCSSWriterSettings);
 
   @Nonnull
-  @ReturnsMutableObject (reason = "Design")
+  @ReturnsMutableObject ("Design")
   JSWriterSettings getJSWriterSettings ();
 
   @Nonnull

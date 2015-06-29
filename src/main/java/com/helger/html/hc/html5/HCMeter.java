@@ -19,7 +19,7 @@ package com.helger.html.hc.html5;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.CGlobal;
-import com.helger.commons.equals.EqualsUtils;
+import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
@@ -120,7 +120,7 @@ public class HCMeter extends AbstractHCElementWithChildren <HCMeter>
     /**
      * <pre>
      * The following inequalities must hold, as applicable:
-     * 
+     *
      * minimum &le; value &le; maximum
      * minimum &le; low &le; maximum (if low is specified)
      * minimum &le; high &le; maximum (if high is specified)
@@ -130,17 +130,17 @@ public class HCMeter extends AbstractHCElementWithChildren <HCMeter>
      */
     super.applyProperties (aElement, aConversionSettings);
 
-    if (!EqualsUtils.equals (m_dValue, CGlobal.ILLEGAL_DOUBLE))
+    if (!EqualsHelper.equals (m_dValue, CGlobal.ILLEGAL_DOUBLE))
       aElement.setAttribute (CHTMLAttributes.VALUE, Double.toString (m_dValue));
-    if (!EqualsUtils.equals (m_dMin, CGlobal.ILLEGAL_DOUBLE))
+    if (!EqualsHelper.equals (m_dMin, CGlobal.ILLEGAL_DOUBLE))
       aElement.setAttribute (CHTMLAttributes.MIN, Double.toString (m_dMin));
-    if (!EqualsUtils.equals (m_dMax, CGlobal.ILLEGAL_DOUBLE))
+    if (!EqualsHelper.equals (m_dMax, CGlobal.ILLEGAL_DOUBLE))
       aElement.setAttribute (CHTMLAttributes.MAX, Double.toString (m_dMax));
-    if (!EqualsUtils.equals (m_dLow, CGlobal.ILLEGAL_DOUBLE))
+    if (!EqualsHelper.equals (m_dLow, CGlobal.ILLEGAL_DOUBLE))
       aElement.setAttribute (CHTMLAttributes.LOW, Double.toString (m_dLow));
-    if (!EqualsUtils.equals (m_dHigh, CGlobal.ILLEGAL_DOUBLE))
+    if (!EqualsHelper.equals (m_dHigh, CGlobal.ILLEGAL_DOUBLE))
       aElement.setAttribute (CHTMLAttributes.HIGH, Double.toString (m_dHigh));
-    if (!EqualsUtils.equals (m_dOptimum, CGlobal.ILLEGAL_DOUBLE))
+    if (!EqualsHelper.equals (m_dOptimum, CGlobal.ILLEGAL_DOUBLE))
       aElement.setAttribute (CHTMLAttributes.OPTIMUM, Double.toString (m_dOptimum));
   }
 }

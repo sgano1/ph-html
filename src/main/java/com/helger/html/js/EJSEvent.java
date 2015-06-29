@@ -21,9 +21,9 @@ import java.util.Set;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.annotations.ReturnsImmutableObject;
-import com.helger.commons.collections.CollectionHelper;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.annotation.ReturnsImmutableObject;
+import com.helger.commons.collection.CollectionHelper;
 import com.helger.html.annotations.DeprecatedInHTML5;
 import com.helger.html.annotations.SinceHTML5;
 

@@ -23,7 +23,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.OverridingMethodsMustInvokeSuper;
 
-import com.helger.commons.annotations.ReturnsMutableObject;
+import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
@@ -74,7 +74,7 @@ public abstract class AbstractHCTablePart <THISTYPE extends AbstractHCTablePart 
    * @return The contained list object. May be <code>null</code>.
    */
   @Nullable
-  @ReturnsMutableObject (reason = "speed")
+  @ReturnsMutableObject ("speed")
   final List <HCRow> directGetRowList ()
   {
     return directGetChildren ();

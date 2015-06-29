@@ -19,10 +19,10 @@ package com.helger.html.js.builder;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotations.CodingStyleguideUnaware;
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.annotation.CodingStyleguideUnaware;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.writer.IJSWriterSettings;
 
@@ -115,9 +115,9 @@ public class JSTryBlock extends AbstractJSStatement
     if (o == null || !getClass ().equals (o.getClass ()))
       return false;
     final JSTryBlock rhs = (JSTryBlock) o;
-    return EqualsUtils.equals (m_aBody, rhs.m_aBody) &&
-           EqualsUtils.equals (m_aCatch, rhs.m_aCatch) &&
-           EqualsUtils.equals (m_aFinally, rhs.m_aFinally);
+    return EqualsHelper.equals (m_aBody, rhs.m_aBody) &&
+           EqualsHelper.equals (m_aCatch, rhs.m_aCatch) &&
+           EqualsHelper.equals (m_aFinally, rhs.m_aFinally);
   }
 
   @Override

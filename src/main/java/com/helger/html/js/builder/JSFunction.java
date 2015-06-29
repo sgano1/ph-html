@@ -23,11 +23,11 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.CollectionHelper;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.marshal.JSMarshaller;
 import com.helger.html.js.writer.IJSWriterSettings;
@@ -277,11 +277,11 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
     if (o == null || !getClass ().equals (o.getClass ()))
       return false;
     final JSFunction rhs = (JSFunction) o;
-    return EqualsUtils.equals (m_aJSDoc, rhs.m_aJSDoc) &&
-           EqualsUtils.equals (m_aType, rhs.m_aType) &&
+    return EqualsHelper.equals (m_aJSDoc, rhs.m_aJSDoc) &&
+           EqualsHelper.equals (m_aType, rhs.m_aType) &&
            m_sName.equals (rhs.m_sName) &&
            m_aParams.equals (rhs.m_aParams) &&
-           EqualsUtils.equals (m_aBody, rhs.m_aBody);
+           EqualsHelper.equals (m_aBody, rhs.m_aBody);
   }
 
   @Override

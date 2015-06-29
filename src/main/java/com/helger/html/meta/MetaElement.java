@@ -33,17 +33,17 @@ import org.slf4j.LoggerFactory;
 
 import com.helger.commons.CGlobal;
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.annotations.OverrideOnDemand;
-import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.CollectionHelper;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
-import com.helger.commons.locale.LocaleUtils;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.annotation.OverrideOnDemand;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
+import com.helger.commons.locale.LocaleHelper;
 import com.helger.commons.microdom.IMicroContainer;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.microdom.IMicroNode;
-import com.helger.commons.microdom.impl.MicroContainer;
+import com.helger.commons.microdom.MicroContainer;
 import com.helger.commons.state.EChange;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
@@ -116,7 +116,7 @@ public class MetaElement implements IMutableMetaElement
   @Nonnull
   public EChange setScheme (@Nullable final String sScheme)
   {
-    if (EqualsUtils.equals (sScheme, m_sScheme))
+    if (EqualsHelper.equals (sScheme, m_sScheme))
       return EChange.UNCHANGED;
     m_sScheme = sScheme;
     return EChange.CHANGED;
@@ -178,7 +178,7 @@ public class MetaElement implements IMutableMetaElement
   {
     final Locale aRealContentLocale = getRealContentLocale (aContentLocale);
     final String sOldContent = m_aContents.get (aRealContentLocale);
-    if (EqualsUtils.equals (sOldContent, sContent))
+    if (EqualsHelper.equals (sOldContent, sContent))
       return EChange.UNCHANGED;
 
     if (sContent == null)
@@ -267,11 +267,11 @@ public class MetaElement implements IMutableMetaElement
     final IMicroContainer ret = new MicroContainer ();
     for (final Map.Entry <Locale, String> aMetaEntry : m_aContents.entrySet ())
     {
-      final IMicroElement aMeta = ret.appendElement (sNamespaceURI, EHTMLElement.META);
+      final IMicroElement aMeta = ret.appendElement (sNamespaceURI, EHTMLElement.META.getElementNameLowerCase ());
       aMeta.setAttribute (bIsHttpEquiv ? CHTMLAttributes.HTTP_EQUIV : getNodeNameAttribute (), m_sName);
       aMeta.setAttribute (getNodeContentAttribute (), aMetaEntry.getValue ());
       final Locale aContentLocale = aMetaEntry.getKey ();
-      if (aContentLocale != null && !LocaleUtils.isSpecialLocale (aContentLocale))
+      if (aContentLocale != null && !LocaleHelper.isSpecialLocale (aContentLocale))
       {
         final String sLang = aContentLocale.toString ();
         aMeta.setAttribute (XMLConstants.XML_NS_URI, CHTMLAttributes.LANG, sLang);
@@ -300,7 +300,7 @@ public class MetaElement implements IMutableMetaElement
       return false;
     final MetaElement rhs = (MetaElement) o;
     return m_sName.equals (rhs.m_sName) &&
-           EqualsUtils.equals (m_sScheme, rhs.m_sScheme) &&
+           EqualsHelper.equals (m_sScheme, rhs.m_sScheme) &&
            m_aContents.equals (rhs.m_aContents) &&
            m_bIsHttpEquiv == rhs.m_bIsHttpEquiv;
   }

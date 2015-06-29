@@ -21,8 +21,8 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.helger.commons.collections.multimap.IMultiMapListBased;
-import com.helger.commons.collections.multimap.MultiTreeMapArrayListBased;
+import com.helger.commons.collection.multimap.IMultiMapListBased;
+import com.helger.commons.collection.multimap.MultiTreeMapArrayListBased;
 import com.helger.commons.string.StringHelper;
 
 public class MainCreateJQueryAPIList extends AbstractCreateJQueryAPIList

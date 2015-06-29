@@ -19,7 +19,7 @@ package com.helger.html.js.builder;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 
 public class JSExprParanthesis extends AbstractJSExpression

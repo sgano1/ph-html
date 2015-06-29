@@ -21,7 +21,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
 
-import com.helger.commons.annotations.DevelopersNote;
+import com.helger.commons.annotation.DevelopersNote;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeBuilder;
 import com.helger.html.hc.IHCNodeWithChildren;

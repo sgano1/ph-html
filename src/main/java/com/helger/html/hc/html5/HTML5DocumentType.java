@@ -20,10 +20,10 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
+import com.helger.commons.microdom.AbstractMicroNode;
 import com.helger.commons.microdom.EMicroNodeType;
 import com.helger.commons.microdom.IMicroDocumentType;
 import com.helger.commons.microdom.IMicroNode;
-import com.helger.commons.microdom.impl.AbstractMicroNode;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
 

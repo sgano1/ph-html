@@ -30,8 +30,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.collections.ArrayHelper;
-import com.helger.commons.collections.CollectionHelper;
+import com.helger.commons.collection.ArrayHelper;
+import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.lang.ClassHelper;
 import com.helger.commons.string.StringHelper;
 import com.helger.html.hc.IHCNode;

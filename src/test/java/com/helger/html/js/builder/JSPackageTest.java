@@ -22,7 +22,7 @@ import javax.annotation.Nonnull;
 
 import org.junit.Test;
 
-import com.helger.commons.mock.PHTestUtils;
+import com.helger.commons.mock.CommonsTestHelper;
 import com.helger.html.js.provider.UnparsedJSCodeProvider;
 import com.helger.html.js.writer.JSWriterSettings;
 
@@ -204,7 +204,7 @@ public final class JSPackageTest
   public void testMinimumCodeSize () throws Exception
   {
     final JSPackage aPkg = _createMockPackage ();
-    PHTestUtils.testDefaultImplementationWithEqualContentObject (aPkg, _createMockPackage ());
+    CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aPkg, _createMockPackage ());
 
     final String sCode = aPkg.getJSCode (new JSWriterSettings ().setMinimumCodeSize (false));
     System.out.print (sCode);

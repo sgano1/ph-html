@@ -27,7 +27,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestRule;
 
-import com.helger.commons.mock.DebugModeTestRule;
+import com.helger.commons.junit.DebugModeTestRule;
 import com.helger.html.hc.conversion.HCSettings;
 
 /**

@@ -108,7 +108,7 @@ public final class MarkdownProcessorTest
   private static String _slurp (final String sFilename)
   {
     // Avoid differences in newlines
-    return SimpleFileIO.readFileAsString (new File (sFilename), CCharset.CHARSET_UTF_8_OBJ).replaceAll ("\r", "");
+    return SimpleFileIO.getFileAsString (new File (sFilename), CCharset.CHARSET_UTF_8_OBJ).replaceAll ("\r", "");
   }
 
   @Test

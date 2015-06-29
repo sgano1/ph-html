@@ -22,14 +22,13 @@ import javax.annotation.OverridingMethodsMustInvokeSuper;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.annotations.ReturnsMutableObject;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.commons.xml.EXMLIncorrectCharacterHandling;
-import com.helger.commons.xml.serialize.EXMLSerializeFormat;
-import com.helger.commons.xml.serialize.EXMLSerializeIndent;
-import com.helger.commons.xml.serialize.IXMLWriterSettings;
-import com.helger.commons.xml.serialize.XMLWriterSettings;
+import com.helger.commons.xml.serialize.write.EXMLIncorrectCharacterHandling;
+import com.helger.commons.xml.serialize.write.EXMLSerializeIndent;
+import com.helger.commons.xml.serialize.write.IXMLWriterSettings;
+import com.helger.commons.xml.serialize.write.XMLWriterSettings;
 import com.helger.css.ECSSVersion;
 import com.helger.css.ICSSWriterSettings;
 import com.helger.css.writer.CSSWriterSettings;
@@ -71,12 +70,13 @@ public class HCConversionSettings implements IHCConversionSettings
   private IHCCustomizer m_aCustomizer;
 
   @Nonnull
-  public static XMLWriterSettings createDefaultXMLWriterSettings ()
+  public static XMLWriterSettings createDefaultXMLWriterSettings (@Nonnull final EHTMLVersion eHTMLVersion)
   {
-    return new XMLWriterSettings ().setFormat (EXMLSerializeFormat.XHTML)
-                                   .setIncorrectCharacterHandling (EXMLIncorrectCharacterHandling.DO_NOT_WRITE_LOG_WARNING)
-                                   .setIndent (DEFAULT_INDENT_AND_ALIGN_HTML ? EXMLSerializeIndent.INDENT_AND_ALIGN
-                                                                            : EXMLSerializeIndent.NONE);
+    final XMLWriterSettings ret = eHTMLVersion.isAtLeastHTML5 () ? XMLWriterSettings.createForHTML5 ()
+                                                                : XMLWriterSettings.createForXHTML ();
+    return ret.setIncorrectCharacterHandling (EXMLIncorrectCharacterHandling.DO_NOT_WRITE_LOG_WARNING)
+              .setIndent (DEFAULT_INDENT_AND_ALIGN_HTML ? EXMLSerializeIndent.INDENT_AND_ALIGN
+                                                       : EXMLSerializeIndent.NONE);
   }
 
   @Nonnull
@@ -194,7 +194,7 @@ public class HCConversionSettings implements IHCConversionSettings
   }
 
   @Nonnull
-  @ReturnsMutableObject (reason = "Design")
+  @ReturnsMutableObject ("Design")
   public XMLWriterSettings getXMLWriterSettings ()
   {
     return m_aXMLWriterSettings;
@@ -231,7 +231,7 @@ public class HCConversionSettings implements IHCConversionSettings
   }
 
   @Nonnull
-  @ReturnsMutableObject (reason = "Design")
+  @ReturnsMutableObject ("Design")
   public CSSWriterSettings getCSSWriterSettings ()
   {
     return m_aCSSWriterSettings;
@@ -268,7 +268,7 @@ public class HCConversionSettings implements IHCConversionSettings
   }
 
   @Nonnull
-  @ReturnsMutableObject (reason = "Design")
+  @ReturnsMutableObject ("Design")
   public JSWriterSettings getJSWriterSettings ()
   {
     return m_aJSWriterSettings;
@@ -345,7 +345,7 @@ public class HCConversionSettings implements IHCConversionSettings
   @Nonnull
   public HCConversionSettings setToDefault ()
   {
-    m_aXMLWriterSettings = createDefaultXMLWriterSettings ();
+    m_aXMLWriterSettings = createDefaultXMLWriterSettings (m_eHTMLVersion);
     m_aCSSWriterSettings = createDefaultCSSWriterSettings ();
     m_aJSWriterSettings = createDefaultJSWriterSettings ();
     m_bConsistencyChecksEnabled = DEFAULT_CONSISTENCY_CHECKS;

@@ -24,13 +24,13 @@ import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.annotations.ReturnsMutableCopy;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.mutable.MutableBoolean;
-import com.helger.commons.mutable.Wrapper;
 import com.helger.commons.state.EFinish;
 import com.helger.commons.string.StringHelper;
+import com.helger.commons.wrapper.Wrapper;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCControl;
 import com.helger.html.hc.IHCElement;

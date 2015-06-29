@@ -19,8 +19,8 @@ package com.helger.html.css;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 
 /**
@@ -53,7 +53,7 @@ public final class UncheckedCSSClassProvider implements ICSSClassProvider
     if (o == null || !getClass ().equals (o.getClass ()))
       return false;
     final UncheckedCSSClassProvider rhs = (UncheckedCSSClassProvider) o;
-    return EqualsUtils.equals (m_sCSSClass, rhs.m_sCSSClass);
+    return EqualsHelper.equals (m_sCSSClass, rhs.m_sCSSClass);
   }
 
   @Override

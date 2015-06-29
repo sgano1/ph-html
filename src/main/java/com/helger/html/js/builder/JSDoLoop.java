@@ -20,8 +20,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.writer.IJSWriterSettings;
 
@@ -96,7 +96,7 @@ public class JSDoLoop extends AbstractJSStatement
     if (o == null || !getClass ().equals (o.getClass ()))
       return false;
     final JSDoLoop rhs = (JSDoLoop) o;
-    return m_aTest.equals (rhs.m_aTest) && EqualsUtils.equals (m_aBody, rhs.m_aBody);
+    return m_aTest.equals (rhs.m_aTest) && EqualsHelper.equals (m_aBody, rhs.m_aBody);
   }
 
   @Override

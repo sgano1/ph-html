@@ -20,9 +20,9 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.writer.IJSWriterSettings;
 
@@ -98,7 +98,7 @@ public class JSForIn extends AbstractJSStatement
     final JSForIn rhs = (JSForIn) o;
     return m_aLoopVar.equals (rhs.m_aLoopVar) &&
            m_aCollection.equals (rhs.m_aCollection) &&
-           EqualsUtils.equals (m_aBody, rhs.m_aBody);
+           EqualsHelper.equals (m_aBody, rhs.m_aBody);
   }
 
   @Override

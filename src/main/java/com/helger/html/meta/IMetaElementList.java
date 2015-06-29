@@ -9,8 +9,8 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotations.MustImplementEqualsAndHashcode;
-import com.helger.commons.annotations.ReturnsMutableCopy;
+import com.helger.commons.annotation.MustImplementEqualsAndHashcode;
+import com.helger.commons.annotation.ReturnsMutableCopy;
 
 /**
  * Read only base interface for a list of {@link IMetaElement} objects.

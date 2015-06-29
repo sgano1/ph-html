@@ -22,9 +22,9 @@ import java.util.Locale;
 import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.CGlobal;
-import com.helger.commons.annotations.PresentForCodeCoverage;
+import com.helger.commons.annotation.PresentForCodeCoverage;
 import com.helger.commons.charset.CCharset;
-import com.helger.commons.xml.serialize.XMLWriterSettings;
+import com.helger.commons.xml.serialize.write.XMLWriterSettings;
 
 /**
  * Contains the preferred charsets to be used for HTML/JS and CSS.

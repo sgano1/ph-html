@@ -19,7 +19,7 @@ package com.helger.html;
 import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.microdom.IMicroDocumentType;
-import com.helger.commons.microdom.impl.MicroDocumentType;
+import com.helger.commons.microdom.MicroDocumentType;
 import com.helger.html.annotations.SinceHTML5;
 import com.helger.html.hc.html5.HTML5DocumentType;
 

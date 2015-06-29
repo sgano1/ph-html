@@ -20,7 +20,7 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.gfx.ScalableSize;
+import com.helger.commons.dimension.SizeInt;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
@@ -43,7 +43,7 @@ public class AbstractHCImg <IMPLTYPE extends AbstractHCImg <IMPLTYPE>> extends A
   private String m_sSrc;
   private String m_sSrcSet;
   private String m_sSizes;
-  private ScalableSize m_aExtent;
+  private SizeInt m_aExtent;
   private String m_sAlt;
 
   public AbstractHCImg ()
@@ -113,13 +113,13 @@ public class AbstractHCImg <IMPLTYPE extends AbstractHCImg <IMPLTYPE>> extends A
   }
 
   @Nullable
-  public final ScalableSize getExtent ()
+  public final SizeInt getExtent ()
   {
     return m_aExtent;
   }
 
   @Nonnull
-  public final IMPLTYPE setExtent (@Nullable final ScalableSize aImageData)
+  public final IMPLTYPE setExtent (@Nullable final SizeInt aImageData)
   {
     m_aExtent = aImageData;
     return thisAsT ();
@@ -128,7 +128,7 @@ public class AbstractHCImg <IMPLTYPE extends AbstractHCImg <IMPLTYPE>> extends A
   @Nonnull
   public final IMPLTYPE setExtent (@Nonnegative final int nWidth, @Nonnegative final int nHeight)
   {
-    return setExtent (new ScalableSize (nWidth, nHeight));
+    return setExtent (new SizeInt (nWidth, nHeight));
   }
 
   @Nonnull

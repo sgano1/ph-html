@@ -19,9 +19,9 @@ package com.helger.html.js.builder;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.marshal.JSMarshaller;
 import com.helger.html.js.writer.IJSWriterSettings;
@@ -225,9 +225,9 @@ public class JSVar extends AbstractJSAssignmentTarget implements IJSDeclaration
     if (!super.equals (o))
       return false;
     final JSVar rhs = (JSVar) o;
-    return EqualsUtils.equals (m_aType, rhs.m_aType) &&
-           EqualsUtils.equals (m_sName, rhs.m_sName) &&
-           EqualsUtils.equals (m_aInit, rhs.m_aInit);
+    return EqualsHelper.equals (m_aType, rhs.m_aType) &&
+           EqualsHelper.equals (m_sName, rhs.m_sName) &&
+           EqualsHelper.equals (m_aInit, rhs.m_aInit);
   }
 
   @Override

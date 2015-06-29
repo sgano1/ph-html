@@ -24,11 +24,11 @@ import java.util.Map;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotations.DevelopersNote;
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.CollectionHelper;
-import com.helger.commons.equals.EqualsUtils;
+import com.helger.commons.annotation.DevelopersNote;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.css.ICSSWriterSettings;
 import com.helger.css.property.CSSPropertyFree;
@@ -79,7 +79,7 @@ public class HCHasCSSStyles implements IHCHasCSSStyles <HCHasCSSStyles>
 
     // Contained styles can never have a null value!
     final ECSSProperty eProp = aValue.getProp ();
-    return EqualsUtils.equals (m_aStyles.get (eProp), aValue);
+    return EqualsHelper.equals (m_aStyles.get (eProp), aValue);
   }
 
   public final boolean hasAnyStyle ()

@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.helger.commons.charset.CCharset;
-import com.helger.commons.collections.CollectionHelper;
+import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.io.file.SimpleFileIO;
 import com.helger.commons.string.StringHelper;
 

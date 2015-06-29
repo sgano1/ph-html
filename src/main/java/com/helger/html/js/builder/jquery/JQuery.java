@@ -26,14 +26,14 @@ import javax.annotation.concurrent.Immutable;
 import org.w3c.dom.Node;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.annotations.PresentForCodeCoverage;
-import com.helger.commons.collections.pair.IReadonlyPair;
-import com.helger.commons.collections.pair.ReadonlyPair;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.annotation.PresentForCodeCoverage;
+import com.helger.commons.collection.pair.IPair;
+import com.helger.commons.collection.pair.Pair;
 import com.helger.commons.id.IHasID;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.commons.microdom.serialize.MicroWriter;
-import com.helger.commons.xml.serialize.XMLWriter;
+import com.helger.commons.xml.serialize.write.XMLWriter;
 import com.helger.html.EHTMLElement;
 import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.hc.IHCHasID;
@@ -611,11 +611,11 @@ public final class JQuery
    *         can be filled with code to be executed.
    */
   @Nonnull
-  public static IReadonlyPair <JQueryInvocation, JSAnonymousFunction> onDocumentReady ()
+  public static IPair <JQueryInvocation, JSAnonymousFunction> onDocumentReady ()
   {
     final JSAnonymousFunction aAnonFunction = new JSAnonymousFunction ();
     final JQueryInvocation aInvocation = jQueryDocument ().ready (aAnonFunction);
-    return ReadonlyPair.create (aInvocation, aAnonFunction);
+    return Pair.create (aInvocation, aAnonFunction);
   }
 
   /**
@@ -628,7 +628,7 @@ public final class JQuery
   @Nonnull
   public static JQueryInvocation onDocumentReady (@Nonnull final IJSCodeProvider aJSCodeProvider)
   {
-    final IReadonlyPair <JQueryInvocation, JSAnonymousFunction> aPair = onDocumentReady ();
+    final IPair <JQueryInvocation, JSAnonymousFunction> aPair = onDocumentReady ();
     aPair.getSecond ().body ().add (aJSCodeProvider);
     return aPair.getFirst ();
   }

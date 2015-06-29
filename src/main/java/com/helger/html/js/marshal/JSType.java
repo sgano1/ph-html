@@ -23,9 +23,9 @@ import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.MustImplementEqualsAndHashcode;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.annotation.MustImplementEqualsAndHashcode;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.IJSCodeProvider;
 
@@ -131,7 +131,7 @@ public class JSType implements Serializable
     if (o == null || !getClass ().equals (o.getClass ()))
       return false;
     final JSType rhs = (JSType) o;
-    return EqualsUtils.equals (m_eType, rhs.m_eType);
+    return EqualsHelper.equals (m_eType, rhs.m_eType);
   }
 
   @Override

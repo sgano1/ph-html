@@ -18,7 +18,7 @@ package com.helger.html.hc.customize;
 
 import javax.annotation.concurrent.NotThreadSafe;
 
-import com.helger.commons.GlobalDebug;
+import com.helger.commons.debug.GlobalDebug;
 
 /**
  * Default settings for HTML controls

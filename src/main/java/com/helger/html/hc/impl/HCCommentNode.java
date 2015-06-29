@@ -20,9 +20,9 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.microdom.IMicroComment;
-import com.helger.commons.microdom.impl.MicroComment;
+import com.helger.commons.microdom.MicroComment;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.commons.xml.serialize.XMLEmitter;
+import com.helger.commons.xml.serialize.write.XMLEmitter;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
 /**

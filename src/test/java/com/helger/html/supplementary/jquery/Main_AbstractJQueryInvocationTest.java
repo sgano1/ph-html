@@ -21,8 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.helger.commons.charset.CCharset;
-import com.helger.commons.collections.multimap.IMultiMapListBased;
-import com.helger.commons.collections.multimap.MultiTreeMapArrayListBased;
+import com.helger.commons.collection.multimap.IMultiMapListBased;
+import com.helger.commons.collection.multimap.MultiTreeMapArrayListBased;
 import com.helger.commons.io.file.SimpleFileIO;
 
 public class Main_AbstractJQueryInvocationTest extends AbstractCreateJQueryAPIList

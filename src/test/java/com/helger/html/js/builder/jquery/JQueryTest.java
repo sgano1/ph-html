@@ -20,8 +20,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.helger.commons.collections.CollectionHelper;
-import com.helger.commons.collections.pair.IReadonlyPair;
+import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.pair.IPair;
 import com.helger.html.EHTMLElement;
 import com.helger.html.css.DefaultCSSClassProvider;
 import com.helger.html.css.ICSSClassProvider;
@@ -44,7 +44,7 @@ public final class JQueryTest
     JQueryInvocation aJQI = JQuery.idRef ("id4711").focus ();
     assertEquals ("$('#id4711').focus();", aJQI.getJSCode (aSettings));
 
-    final IReadonlyPair <JQueryInvocation, JSAnonymousFunction> aPair = JQuery.onDocumentReady ();
+    final IPair <JQueryInvocation, JSAnonymousFunction> aPair = JQuery.onDocumentReady ();
     aPair.getSecond ().body ()._return (0);
     assertEquals ("$(document).ready(function(){return 0;});", aPair.getFirst ().getJSCode (aSettings));
 
@@ -112,7 +112,8 @@ public final class JQueryTest
     assertEquals ("$('.any');", JQuery.classRef (aClass).getJSCode ());
     assertEquals ("$('.any');", JQuery.classRefMultiple (aClass).getJSCode ());
     assertEquals ("$('.any,.other');", JQuery.classRefMultiple (aClass, aClass2).getJSCode ());
-    assertEquals ("$('.any,.other');", JQuery.classRefMultiple (CollectionHelper.newList (aClass, aClass2)).getJSCode ());
+    assertEquals ("$('.any,.other');", JQuery.classRefMultiple (CollectionHelper.newList (aClass, aClass2))
+                                             .getJSCode ());
     assertEquals ("$('div');", JQuery.elementNameRef (EHTMLElement.DIV).getJSCode ());
     assertEquals ("$('bla');", JQuery.elementNameRef ("bla").getJSCode ());
     assertEquals ("$('div#foo');", JQuery.elementNameWithIDRef (EHTMLElement.DIV, "foo").getJSCode ());

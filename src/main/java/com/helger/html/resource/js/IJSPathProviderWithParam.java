@@ -18,8 +18,8 @@ package com.helger.html.resource.js;
 
 import javax.annotation.Nonnull;
 
-import com.helger.commons.annotations.MustImplementEqualsAndHashcode;
-import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.annotation.MustImplementEqualsAndHashcode;
+import com.helger.commons.annotation.Nonempty;
 
 /**
  * An explicit {@link IJSPathProvider} that supports an parameters. This is e.g.

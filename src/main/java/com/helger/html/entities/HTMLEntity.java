@@ -19,7 +19,7 @@ package com.helger.html.entities;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 
-import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.string.ToStringGenerator;
 
 /**

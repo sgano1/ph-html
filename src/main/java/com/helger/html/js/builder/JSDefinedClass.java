@@ -28,12 +28,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.CodingStyleguideUnaware;
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.CollectionHelper;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.annotation.CodingStyleguideUnaware;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.marshal.JSMarshaller;
 import com.helger.html.js.writer.IJSWriterSettings;
@@ -357,11 +357,11 @@ public class JSDefinedClass extends AbstractJSClass implements IJSDeclaration, I
     if (!super.equals (o))
       return false;
     final JSDefinedClass rhs = (JSDefinedClass) o;
-    return EqualsUtils.equals (m_aJSDoc, rhs.m_aJSDoc) &&
+    return EqualsHelper.equals (m_aJSDoc, rhs.m_aJSDoc) &&
            m_sName.equals (rhs.m_sName) &&
-           EqualsUtils.equals (m_aSuperClass, rhs.m_aSuperClass) &&
+           EqualsHelper.equals (m_aSuperClass, rhs.m_aSuperClass) &&
            m_aFields.equals (rhs.m_aFields) &&
-           EqualsUtils.equals (m_aConstructor, rhs.m_aConstructor) &&
+           EqualsHelper.equals (m_aConstructor, rhs.m_aConstructor) &&
            m_aMethods.equals (rhs.m_aMethods);
   }
 

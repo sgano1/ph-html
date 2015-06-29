@@ -18,7 +18,7 @@ package com.helger.html.js.provider;
 
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotations.MustImplementEqualsAndHashcode;
+import com.helger.commons.annotation.MustImplementEqualsAndHashcode;
 import com.helger.html.js.IJSCodeProvider;
 import com.helger.html.js.writer.IJSWriterSettings;
 

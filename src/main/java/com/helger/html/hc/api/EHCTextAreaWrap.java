@@ -18,7 +18,7 @@ package com.helger.html.hc.api;
 
 import javax.annotation.Nonnull;
 
-import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.annotation.Nonempty;
 
 /**
  * Wrapping type of a {@link com.helger.html.hc.html.HCTextArea}

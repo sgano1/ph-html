@@ -20,7 +20,7 @@ import javax.annotation.Nonnull;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.microdom.IMicroEntityReference;
-import com.helger.commons.microdom.impl.MicroEntityReference;
+import com.helger.commons.microdom.MicroEntityReference;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.entities.EHTMLEntity;
 import com.helger.html.entities.IHTMLEntity;

@@ -19,9 +19,9 @@ package com.helger.html.hc.conversion;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.xml.serialize.IXMLWriterSettings;
-import com.helger.commons.xml.serialize.XMLWriterSettings;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.xml.serialize.write.IXMLWriterSettings;
+import com.helger.commons.xml.serialize.write.XMLWriterSettings;
 import com.helger.css.ICSSWriterSettings;
 import com.helger.css.writer.CSSWriterSettings;
 import com.helger.html.EHTMLVersion;

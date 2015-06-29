@@ -21,11 +21,11 @@ import java.util.List;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotations.OverrideOnDemand;
+import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.microdom.IMicroDocument;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.microdom.IMicroNode;
-import com.helger.commons.microdom.impl.MicroDocument;
+import com.helger.commons.microdom.MicroDocument;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;

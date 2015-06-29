@@ -32,7 +32,7 @@ import com.helger.commons.microdom.IMicroQName;
 import com.helger.commons.microdom.serialize.MicroReader;
 import com.helger.commons.regex.RegExPool;
 import com.helger.commons.string.StringHelper;
-import com.helger.commons.xml.serialize.XMLEmitter;
+import com.helger.commons.xml.serialize.write.XMLEmitter;
 import com.helger.html.entities.EHTMLEntity;
 import com.helger.html.entities.HTMLEntity;
 import com.helger.html.hc.html.HCA;
