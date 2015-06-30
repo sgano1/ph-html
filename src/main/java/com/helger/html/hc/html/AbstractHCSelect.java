@@ -79,12 +79,12 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
   {
     this ();
     m_aPreselectedValues = aPreselectedValues == null ? new HashSet <String> ()
-                                                     : new HashSet <String> (aPreselectedValues);
+                                                      : new HashSet <String> (aPreselectedValues);
   }
 
   public AbstractHCSelect (@Nonnull final IHCRequestField aRF)
   {
-    this (aRF.getRequestValues ());
+    this (aRF.getRequestValueAsList ());
     setName (aRF.getFieldName ());
   }
 

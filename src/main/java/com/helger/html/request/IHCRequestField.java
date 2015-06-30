@@ -71,5 +71,5 @@ public interface IHCRequestField extends Serializable
    *         (or an empty) default value was provided.
    */
   @Nullable
-  List <String> getRequestValues ();
+  List <String> getRequestValueAsList ();
 }
