@@ -38,11 +38,11 @@ public final class HCBodyTest
     assertEquals ("<body xmlns=\"http://www.w3.org/1999/xhtml\"></body>", HCSettings.getAsHTMLString (aBody));
 
     // With semicolon at the end
-    aBody.addEventHandler (EJSEvent.ONLOAD, JSExpr.invoke ("onLoad"));
+    aBody.addEventHandler (EJSEvent.LOAD, JSExpr.invoke ("onLoad"));
     // Empty event handler - ignored
-    aBody.addEventHandler (EJSEvent.ONMOUSEDOWN, null);
+    aBody.addEventHandler (EJSEvent.MOUSEDOWN, null);
     // With prefix
-    aBody.setEventHandler (EJSEvent.ONCLICK, JSExpr.invoke ("onClick"));
+    aBody.setEventHandler (EJSEvent.CLICK, JSExpr.invoke ("onClick"));
     aBody.setCustomAttr ("bla", "foo");
     assertEquals ("<body xmlns=\"http://www.w3.org/1999/xhtml\" onload=\"javascript:onLoad();\" onclick=\"javascript:onClick();\" bla=\"foo\"></body>",
                   HCSettings.getAsHTMLString (aBody));

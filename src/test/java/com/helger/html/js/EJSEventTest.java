@@ -16,6 +16,7 @@
  */
 package com.helger.html.js;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
@@ -38,12 +39,16 @@ public final class EJSEventTest
   {
     for (final EJSEvent e : EJSEvent.values ())
     {
-      assertTrue (StringHelper.hasText (e.getEvent ()));
+      assertTrue (StringHelper.hasText (e.getHTMLEventName ()));
+      assertTrue (StringHelper.hasText (e.getJSEventName ()));
       assertNotNull (e.getAllTypes ());
       assertFalse (CollectionHelper.isEmpty (e.getAllTypes ()));
       for (final EJSEventType eType : e.getAllTypes ())
         assertTrue (e.isForType (eType));
       assertSame (e, EJSEvent.valueOf (e.name ()));
     }
+
+    assertEquals ("onclick", EJSEvent.CLICK.getHTMLEventName ());
+    assertEquals ("click", EJSEvent.CLICK.getJSEventName ());
   }
 }

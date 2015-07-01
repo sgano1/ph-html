@@ -137,7 +137,7 @@ public final class JSEventMap implements Serializable
       if (aProvider != null)
       {
         final String sJSCode = aProvider.getJSCode (aSettings);
-        aElement.setAttribute (eEvent.getEvent (), CJS.JS_PREFIX + sJSCode);
+        aElement.setAttribute (eEvent.getHTMLEventName (), CJS.JS_PREFIX + sJSCode);
       }
     }
   }

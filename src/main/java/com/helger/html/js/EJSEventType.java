@@ -30,12 +30,13 @@ import com.helger.commons.lang.EnumHelper;
  */
 public enum EJSEventType implements IHasID <String>
 {
-  WINDOW ("window"),
-  FORM ("form"),
-  KEYBOARD ("keyboard"),
-  MOUSE ("mouse"),
-  MEDIA ("media"),
-  TOUCH ("touch");
+ WINDOW ("window"),
+ FORM ("form"),
+ KEYBOARD ("keyboard"),
+ MOUSE ("mouse"),
+ MEDIA ("media"),
+ TOUCH ("touch"),
+ POINTER ("pointer");
 
   private final String m_sID;
 

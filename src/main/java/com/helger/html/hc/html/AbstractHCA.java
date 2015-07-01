@@ -163,7 +163,7 @@ public class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>> extends Abstr
   @Nonnull
   public THISTYPE setOnClick (@Nullable final IJSCodeProvider aOnClick)
   {
-    return setEventHandler (EJSEvent.ONCLICK, aOnClick);
+    return setEventHandler (EJSEvent.CLICK, aOnClick);
   }
 
   /**
@@ -176,7 +176,7 @@ public class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>> extends Abstr
   @Nonnull
   public THISTYPE addOnClick (@Nullable final IJSCodeProvider aOnClick)
   {
-    return addEventHandler (EJSEvent.ONCLICK, aOnClick);
+    return addEventHandler (EJSEvent.CLICK, aOnClick);
   }
 
   @Override

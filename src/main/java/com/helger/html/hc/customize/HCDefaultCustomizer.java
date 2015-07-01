@@ -193,7 +193,7 @@ public class HCDefaultCustomizer extends HCEmptyCustomizer
 
       // Unfocusable?
       if (aElement.isUnfocusable ())
-        aElement.setEventHandler (EJSEvent.ONFOCUS, JS_BLUR);
+        aElement.setEventHandler (EJSEvent.FOCUS, JS_BLUR);
 
       // Added "disabled" class on disabled element
       if (aElement instanceof IHCCanBeDisabled <?>)

@@ -275,7 +275,7 @@ public abstract class AbstractHCButton <IMPLTYPE extends AbstractHCButton <IMPLT
   @Nonnull
   public IMPLTYPE setOnClick (@Nullable final IJSCodeProvider aOnClick)
   {
-    return setEventHandler (EJSEvent.ONCLICK, aOnClick);
+    return setEventHandler (EJSEvent.CLICK, aOnClick);
   }
 
   @Nonnull
@@ -287,7 +287,7 @@ public abstract class AbstractHCButton <IMPLTYPE extends AbstractHCButton <IMPLT
   @Nonnull
   public IMPLTYPE addOnClick (@Nullable final IJSCodeProvider aOnClick)
   {
-    return addEventHandler (EJSEvent.ONCLICK, aOnClick);
+    return addEventHandler (EJSEvent.CLICK, aOnClick);
   }
 
   @Nonnull

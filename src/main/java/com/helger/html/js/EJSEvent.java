@@ -9,7 +9,7 @@
  *         http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed  an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -34,152 +34,113 @@ import com.helger.html.annotations.SinceHTML5;
  */
 public enum EJSEvent
 {
-  // For all elements
-  ONBLUR ("onblur", EJSEventType.WINDOW, EJSEventType.FORM),
-  ONERROR ("onerror", EJSEventType.WINDOW, EJSEventType.MEDIA),
-  ONFOCUS ("onfocus", EJSEventType.WINDOW, EJSEventType.FORM),
-  ONLOAD ("onload", EJSEventType.WINDOW),
-  @SinceHTML5
-  ONRESIZE ("onresize", EJSEventType.WINDOW),
-  @SinceHTML5
-  ONSCROLL ("onscroll", EJSEventType.MOUSE),
+ // For all elements
+ BLUR ("blur", EJSEventType.WINDOW, EJSEventType.FORM),
+ ERROR ("error", EJSEventType.WINDOW, EJSEventType.MEDIA),
+ FOCUS ("focus", EJSEventType.WINDOW, EJSEventType.FORM),
+ LOAD ("load", EJSEventType.WINDOW),
+ @SinceHTML5 RESIZE ("resize", EJSEventType.WINDOW),
+ @SinceHTML5 SCROLL ("scroll", EJSEventType.MOUSE),
 
-  // Window events
-  @SinceHTML5
-  ONAFTERPRINT ("onafterprint", EJSEventType.WINDOW),
-  @SinceHTML5
-  ONBEFOREPRINT ("onbeforeprint", EJSEventType.WINDOW),
-  @SinceHTML5
-  ONBEFOREUNLOAD ("onbeforeunload", EJSEventType.WINDOW),
-  @SinceHTML5
-  ONHASHCHANGE ("onhashchange", EJSEventType.WINDOW),
-  @SinceHTML5
-  ONMESSAGE ("onmessage", EJSEventType.WINDOW),
-  @SinceHTML5
-  ONOFFLINE ("onoffline", EJSEventType.WINDOW),
-  @SinceHTML5
-  ONONLINE ("ononline", EJSEventType.WINDOW),
-  @SinceHTML5
-  ONPAGEHIDE ("onpagehide", EJSEventType.WINDOW),
-  @SinceHTML5
-  ONPAGESHOW ("onpageshow", EJSEventType.WINDOW),
-  @SinceHTML5
-  ONPOPSTATE ("onpopstate", EJSEventType.WINDOW),
-  @SinceHTML5
-  ONSTORAGE ("onstorage", EJSEventType.WINDOW),
-  ONUNLOAD ("onunload", EJSEventType.WINDOW),
+ // Window events
+ @SinceHTML5 AFTERPRINT ("afterprint", EJSEventType.WINDOW),
+ @SinceHTML5 BEFOREPRINT ("beforeprint", EJSEventType.WINDOW),
+ @SinceHTML5 BEFOREUNLOAD ("beforeunload", EJSEventType.WINDOW),
+ @SinceHTML5 HASHCHANGE ("hashchange", EJSEventType.WINDOW),
+ @SinceHTML5 MESSAGE ("message", EJSEventType.WINDOW),
+ @SinceHTML5 OFFLINE ("offline", EJSEventType.WINDOW),
+ @SinceHTML5 ONLINE ("online", EJSEventType.WINDOW),
+ @SinceHTML5 PAGEHIDE ("pagehide", EJSEventType.WINDOW),
+ @SinceHTML5 PAGESHOW ("pageshow", EJSEventType.WINDOW),
+ @SinceHTML5 POPSTATE ("popstate", EJSEventType.WINDOW),
+ @SinceHTML5 STORAGE ("storage", EJSEventType.WINDOW),
+ UNLOAD ("unload", EJSEventType.WINDOW),
 
-  // Document events
-  @SinceHTML5
-  ONREADYSTATECHANGE ("onreadystatechange", EJSEventType.MEDIA),
+ // Document events
+ @SinceHTML5 READYSTATECHANGE ("readystatechange", EJSEventType.MEDIA),
 
-  // Form events
-  // also onblur
-  ONCHANGE ("onchange", EJSEventType.FORM),
-  @SinceHTML5
-  ONCONTEXTMENU ("oncontextmenu", EJSEventType.FORM),
-  // also onfocus
-  @SinceHTML5
-  ONFORMCHANGE ("onformchange", EJSEventType.FORM),
-  @SinceHTML5
-  ONFORMINPUT ("onforminput", EJSEventType.FORM),
-  @SinceHTML5
-  ONINPUT ("oninput", EJSEventType.FORM),
-  @SinceHTML5
-  ONINVALID ("oninvalid", EJSEventType.FORM),
-  @DeprecatedInHTML5
-  ONRESET ("onreset", EJSEventType.FORM),
-  ONSELECT ("onselect", EJSEventType.FORM),
-  ONSUBMIT ("onsubmit", EJSEventType.FORM),
+ // Form events
+ // also blur
+ CHANGE ("change", EJSEventType.FORM),
+ @SinceHTML5 CONTEXTMENU ("contextmenu", EJSEventType.FORM),
+ // also focus
+ @SinceHTML5 FORMCHANGE ("formchange", EJSEventType.FORM),
+ @SinceHTML5 FORMINPUT ("forminput", EJSEventType.FORM),
+ @SinceHTML5 INPUT ("input", EJSEventType.FORM),
+ @SinceHTML5 INVALID ("invalid", EJSEventType.FORM),
+ @DeprecatedInHTML5 RESET ("reset", EJSEventType.FORM),
+ SELECT ("select", EJSEventType.FORM),
+ SUBMIT ("submit", EJSEventType.FORM),
 
-  // Keyboard events
-  ONKEYDOWN ("onkeydown", EJSEventType.KEYBOARD),
-  ONKEYPRESS ("onkeypress", EJSEventType.KEYBOARD),
-  ONKEYUP ("onkeyup", EJSEventType.KEYBOARD),
+ // Keyboard events
+ KEYDOWN ("keydown", EJSEventType.KEYBOARD),
+ KEYPRESS ("keypress", EJSEventType.KEYBOARD),
+ KEYUP ("keyup", EJSEventType.KEYBOARD),
 
-  // Mouse events
-  ONCLICK ("onclick", EJSEventType.MOUSE),
-  ONDBLCLICK ("ondblclick", EJSEventType.MOUSE),
-  @SinceHTML5
-  ONDRAG ("ondrag", EJSEventType.MOUSE),
-  @SinceHTML5
-  ONDRAGEND ("ondragend", EJSEventType.MOUSE),
-  @SinceHTML5
-  ONDRAGENTER ("ondragenter", EJSEventType.MOUSE),
-  @SinceHTML5
-  ONDRAGLEAVE ("ondragleave", EJSEventType.MOUSE),
-  @SinceHTML5
-  ONDRAGOVER ("ondragover", EJSEventType.MOUSE),
-  @SinceHTML5
-  ONDRAGSTART ("ondragstart", EJSEventType.MOUSE),
-  @SinceHTML5
-  ONDROP ("ondrop", EJSEventType.MOUSE),
-  ONMOUSEDOWN ("onmousedown", EJSEventType.MOUSE),
-  ONMOUSEMOVE ("onmousemove", EJSEventType.MOUSE),
-  ONMOUSEOUT ("onmouseout", EJSEventType.MOUSE),
-  ONMOUSEOVER ("onmouseover", EJSEventType.MOUSE),
-  ONMOUSEUP ("onmouseup", EJSEventType.MOUSE),
-  @SinceHTML5
-  ONMOUSEWHEEL ("onmousewheel", EJSEventType.MOUSE),
+ // Mouse events
+ CLICK ("click", EJSEventType.MOUSE),
+ DBLCLICK ("dblclick", EJSEventType.MOUSE),
+ @SinceHTML5 DRAG ("drag", EJSEventType.MOUSE),
+ @SinceHTML5 DRAGEND ("dragend", EJSEventType.MOUSE),
+ @SinceHTML5 DRAGENTER ("dragenter", EJSEventType.MOUSE),
+ @SinceHTML5 DRAGLEAVE ("dragleave", EJSEventType.MOUSE),
+ @SinceHTML5 DRAGOVER ("dragover", EJSEventType.MOUSE),
+ @SinceHTML5 DRAGSTART ("dragstart", EJSEventType.MOUSE),
+ @SinceHTML5 DROP ("drop", EJSEventType.MOUSE),
+ MOUSEDOWN ("mousedown", EJSEventType.MOUSE),
+ MOUSEMOVE ("mousemove", EJSEventType.MOUSE),
+ MOUSEOUT ("mouseout", EJSEventType.MOUSE),
+ MOUSEOVER ("mouseover", EJSEventType.MOUSE),
+ MOUSEUP ("mouseup", EJSEventType.MOUSE),
+ @SinceHTML5 MOUSEWHEEL ("mousewheel", EJSEventType.MOUSE),
 
-  // Media events
-  ONABORT ("onabort", EJSEventType.MEDIA),
-  @SinceHTML5
-  ONCANPLAY ("oncanplay", EJSEventType.MEDIA),
-  @SinceHTML5
-  ONCANPLAYTHROUGH ("oncanplaythrough", EJSEventType.MEDIA),
-  @SinceHTML5
-  ONDURATIONCHANGE ("ondurationchange", EJSEventType.MEDIA),
-  @SinceHTML5
-  ONEMPTIED ("onemptied", EJSEventType.MEDIA),
-  @SinceHTML5
-  ONENDED ("onended", EJSEventType.MEDIA),
-  // also onerror
-  @SinceHTML5
-  ONLOADEDDATA ("onloadeddata", EJSEventType.MEDIA),
-  @SinceHTML5
-  ONLOADEDMETADATA ("onloadedmetadata", EJSEventType.MEDIA),
-  @SinceHTML5
-  ONLOADSTART ("onloadstart", EJSEventType.MEDIA),
-  @SinceHTML5
-  ONPAUSE ("onpause", EJSEventType.MEDIA),
-  @SinceHTML5
-  ONPLAY ("onplay", EJSEventType.MEDIA),
-  @SinceHTML5
-  ONPLAYING ("onplaying", EJSEventType.MEDIA),
-  @SinceHTML5
-  ONPROGRESS ("onprogress", EJSEventType.MEDIA),
-  @SinceHTML5
-  ONRATECHANGE ("onratechange", EJSEventType.MEDIA),
-  @SinceHTML5
-  ONSEEKEND ("onseekend", EJSEventType.MEDIA),
-  @SinceHTML5
-  ONSEEKING ("onseeking", EJSEventType.MEDIA),
-  @SinceHTML5
-  ONSTALLED ("onstalled", EJSEventType.MEDIA),
-  @SinceHTML5
-  ONSUSPEND ("onsuspend", EJSEventType.MEDIA),
-  @SinceHTML5
-  ONTIMEUPDATE ("ontimeupdate", EJSEventType.MEDIA),
-  @SinceHTML5
-  ONVOLUMECHANGE ("onvolumechange", EJSEventType.MEDIA),
-  @SinceHTML5
-  ONWAITING ("onwaiting", EJSEventType.MEDIA),
+ // Media events
+ ABORT ("abort", EJSEventType.MEDIA),
+ @SinceHTML5 CANPLAY ("canplay", EJSEventType.MEDIA),
+ @SinceHTML5 CANPLAYTHROUGH ("canplaythrough", EJSEventType.MEDIA),
+ @SinceHTML5 DURATIONCHANGE ("durationchange", EJSEventType.MEDIA),
+ @SinceHTML5 EMPTIED ("emptied", EJSEventType.MEDIA),
+ @SinceHTML5 ENDED ("ended", EJSEventType.MEDIA),
+ // also error
+ @SinceHTML5 LOADEDDATA ("loadeddata", EJSEventType.MEDIA),
+ @SinceHTML5 LOADEDMETADATA ("loadedmetadata", EJSEventType.MEDIA),
+ @SinceHTML5 LOADSTART ("loadstart", EJSEventType.MEDIA),
+ @SinceHTML5 PAUSE ("pause", EJSEventType.MEDIA),
+ @SinceHTML5 PLAY ("play", EJSEventType.MEDIA),
+ @SinceHTML5 PLAYING ("playing", EJSEventType.MEDIA),
+ @SinceHTML5 PROGRESS ("progress", EJSEventType.MEDIA),
+ @SinceHTML5 RATECHANGE ("ratechange", EJSEventType.MEDIA),
+ @SinceHTML5 SEEKEND ("seekend", EJSEventType.MEDIA),
+ @SinceHTML5 SEEKING ("seeking", EJSEventType.MEDIA),
+ @SinceHTML5 STALLED ("stalled", EJSEventType.MEDIA),
+ @SinceHTML5 SUSPEND ("suspend", EJSEventType.MEDIA),
+ @SinceHTML5 TIMEUPDATE ("timeupdate", EJSEventType.MEDIA),
+ @SinceHTML5 VOLUMECHANGE ("volumechange", EJSEventType.MEDIA),
+ @SinceHTML5 WAITING ("waiting", EJSEventType.MEDIA),
 
-  // Touch events
-  TOUCHSTART ("touchstart", EJSEventType.TOUCH),
-  TOUCHMOVE ("touchmove", EJSEventType.TOUCH),
-  TOUCHEND ("touchend", EJSEventType.TOUCH),
-  GESTURESTART ("gesturestart", EJSEventType.TOUCH),
-  GESTUREMOVE ("gesturemove", EJSEventType.TOUCH),
-  GESTUREEND ("gestureend", EJSEventType.TOUCH),
+ // Touch events
+ TOUCHSTART ("touchstart", EJSEventType.TOUCH),
+ TOUCHMOVE ("touchmove", EJSEventType.TOUCH),
+ TOUCHEND ("touchend", EJSEventType.TOUCH),
+ GESTURESTART ("gesturestart", EJSEventType.TOUCH),
+ GESTUREMOVE ("gesturemove", EJSEventType.TOUCH),
+ GESTUREEND ("gestureend", EJSEventType.TOUCH),
 
-  // rest
+ // Pointer events
+ POINTEROVER ("pointerover", EJSEventType.POINTER),
+ POINTERENTER ("pointerenter", EJSEventType.POINTER),
+ POINTERDOWN ("pointerdown", EJSEventType.POINTER),
+ POINTERMOVE ("pointermove", EJSEventType.POINTER),
+ POINTERUP ("pointerup", EJSEventType.POINTER),
+ POINTERCANCEL ("pointercancel", EJSEventType.POINTER),
+ POINTEROUT ("pointerout", EJSEventType.POINTER),
+ POINTERLEAVE ("pointerleave", EJSEventType.POINTER),
+ GOTPOINTERCAPTURE ("gotpointercapture", EJSEventType.POINTER),
+ LOSTPOINTERCAPTURE ("lostpointercapture", EJSEventType.POINTER),
+ // rest
 
-  @SinceHTML5
-  ONCANCEL ("oncancel", EJSEventType.FORM),
-  @SinceHTML5
-  ONCUECHANGE ("oncuechange", EJSEventType.FORM), ;
+ @SinceHTML5 CANCEL ("cancel", EJSEventType.FORM),
+ @SinceHTML5 CUECHANGE ("cuechange", EJSEventType.FORM);
 
   private final String m_sEvent;
   private final Set <EJSEventType> m_aJSEventTypes;
@@ -191,13 +152,24 @@ public enum EJSEvent
   }
 
   /**
-   * @return The HTML attribute to be emitted for this event.
+   * @return The JS event name without a leading "on"
    */
   @Nonnull
   @Nonempty
-  public String getEvent ()
+  public String getJSEventName ()
   {
     return m_sEvent;
+  }
+
+  /**
+   * @return The HTML attribute to be emitted for this event (starting with
+   *         "on")
+   */
+  @Nonnull
+  @Nonempty
+  public String getHTMLEventName ()
+  {
+    return "on" + m_sEvent;
   }
 
   @Nonnull
