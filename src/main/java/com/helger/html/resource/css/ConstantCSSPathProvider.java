@@ -107,7 +107,7 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
   {
     if (o == this)
       return true;
-    if (!(o instanceof ConstantCSSPathProvider))
+    if (o == null || !getClass ().equals (o.getClass ()))
       return false;
     final ConstantCSSPathProvider rhs = (ConstantCSSPathProvider) o;
     return m_sPath.equals (rhs.m_sPath) && m_sMinifiedPath.equals (rhs.m_sMinifiedPath);

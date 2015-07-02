@@ -56,7 +56,7 @@ public final class CheckBoxState
   {
     if (o == this)
       return true;
-    if (!(o instanceof CheckBoxState))
+    if (o == null || !getClass ().equals (o.getClass ()))
       return false;
     final CheckBoxState rhs = (CheckBoxState) o;
     return EqualsHelper.equals (m_sValue, rhs.m_sValue) && m_bChecked == rhs.m_bChecked;

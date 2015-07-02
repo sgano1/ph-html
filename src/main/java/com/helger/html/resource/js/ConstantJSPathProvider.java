@@ -117,7 +117,7 @@ public final class ConstantJSPathProvider implements IJSPathProvider
   {
     if (o == this)
       return true;
-    if (!(o instanceof ConstantJSPathProvider))
+    if (o == null || !getClass ().equals (o.getClass ()))
       return false;
     final ConstantJSPathProvider rhs = (ConstantJSPathProvider) o;
     return m_sPath.equals (rhs.m_sPath) &&

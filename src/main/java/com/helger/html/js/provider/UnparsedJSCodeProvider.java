@@ -54,7 +54,7 @@ public final class UnparsedJSCodeProvider implements IJSCodeProvider
   {
     if (o == this)
       return true;
-    if (!(o instanceof UnparsedJSCodeProvider))
+    if (o == null || !getClass ().equals (o.getClass ()))
       return false;
     final UnparsedJSCodeProvider rhs = (UnparsedJSCodeProvider) o;
     return m_sJSCode.equals (rhs.m_sJSCode);

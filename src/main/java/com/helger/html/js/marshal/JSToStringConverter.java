@@ -26,7 +26,7 @@ import com.helger.commons.string.ToStringGenerator;
 /**
  * Default implementation of the {@link IJSToStringConverter} interface, using
  * {@link JSMarshaller} to convert an object to a string representation.
- * 
+ *
  * @author Philip Helger
  */
 @Immutable
@@ -63,7 +63,7 @@ public final class JSToStringConverter implements IJSToStringConverter
   {
     if (o == this)
       return true;
-    if (!(o instanceof JSToStringConverter))
+    if (o == null || !getClass ().equals (o.getClass ()))
       return false;
     final JSToStringConverter rhs = (JSToStringConverter) o;
     return m_bWithSurroundingVar == rhs.m_bWithSurroundingVar;

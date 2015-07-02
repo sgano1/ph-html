@@ -183,7 +183,7 @@ public final class CollectingJSCodeProvider implements IJSCodeProviderWithSettin
   {
     if (o == this)
       return true;
-    if (!(o instanceof CollectingJSCodeProvider))
+    if (o == null || !getClass ().equals (o.getClass ()))
       return false;
     final CollectingJSCodeProvider rhs = (CollectingJSCodeProvider) o;
     return m_aList.equals (rhs.m_aList);

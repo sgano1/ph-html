@@ -85,7 +85,7 @@ public class MetaElementValue implements IMetaElementValue
   {
     if (o == this)
       return true;
-    if (!(o instanceof MetaElementValue))
+    if (o == null || !getClass ().equals (o.getClass ()))
       return false;
     final MetaElementValue rhs = (MetaElementValue) o;
     return m_sName.equals (rhs.m_sName) &&

@@ -57,9 +57,9 @@ abstract class AbstractCreateJQueryAPIList
 
   protected static enum EAPIType implements IHasName
   {
-    METHOD ("method"),
-    PROPERTY ("property"),
-    SELECTOR ("selector");
+   METHOD ("method"),
+   PROPERTY ("property"),
+   SELECTOR ("selector");
 
     private final String m_sName;
 
@@ -119,10 +119,10 @@ abstract class AbstractCreateJQueryAPIList
         return new String [] { "IJSExpression", "int", "long", "BigInteger", "double", "BigDecimal" };
       if (sType.equals ("Selector"))
         return new String [] { "IJSExpression",
-                              "IJQuerySelector",
-                              "JQuerySelectorList",
-                              "EHTMLElement",
-                              "ICSSClassProvider" };
+                               "IJQuerySelector",
+                               "JQuerySelectorList",
+                               "EHTMLElement",
+                               "ICSSClassProvider" };
       if (sType.equals ("Function"))
         return new String [] { "IJSExpression", "JSAnonymousFunction" };
       if (sType.equals ("Object"))
@@ -248,7 +248,7 @@ abstract class AbstractCreateJQueryAPIList
     {
       if (o == this)
         return true;
-      if (!(o instanceof Argument))
+      if (o == null || !getClass ().equals (o.getClass ()))
         return false;
       final Argument rhs = (Argument) o;
       return m_aTypes.equals (rhs.m_aTypes);
@@ -348,7 +348,7 @@ abstract class AbstractCreateJQueryAPIList
     {
       if (o == this)
         return true;
-      if (!(o instanceof Signature))
+      if (o == null || !getClass ().equals (o.getClass ()))
         return false;
       final Signature rhs = (Signature) o;
       return m_aArgs.equals (rhs.m_aArgs);
@@ -615,7 +615,7 @@ abstract class AbstractCreateJQueryAPIList
             final String sOrigArgName = eArg.getAttributeValue ("name");
             final String sArgType = eArg.getAttributeValue ("type");
             final boolean bIsOptional = eArg.hasAttribute ("optional") ? StringParser.parseBool (eArg.getAttributeValue ("optional"))
-                                                                      : false;
+                                                                       : false;
 
             final List <String> aTypes = new ArrayList <String> ();
             if (StringHelper.hasNoTextAfterTrim (sArgType))
