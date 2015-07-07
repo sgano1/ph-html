@@ -29,7 +29,7 @@ import com.helger.html.hc.html.HCDiv;
 import com.helger.html.js.builder.JSAnonymousFunction;
 import com.helger.html.js.builder.JSArray;
 import com.helger.html.js.builder.JSExpr;
-import com.helger.json.impl.JsonObject;
+import com.helger.json.JsonObject;
 
 /**
  * Unit test class for class @{link AbstractJQueryInvocation}
