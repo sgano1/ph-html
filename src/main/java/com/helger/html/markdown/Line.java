@@ -43,11 +43,11 @@ final class Line
   /** Is this line empty? */
   boolean m_bIsEmpty = true;
   /** This line's value. */
-  String m_sValue = null;
+  String m_sValue;
   /** Previous line. */
-  Line m_aPrevious = null;
+  public Line m_aPrevious;
   /** Next line. */
-  Line m_aNext = null;
+  public Line m_aNext;
   /** Is previous line empty? */
   boolean m_bPrevEmpty;
   /** Final line of a XML block. */
@@ -242,7 +242,9 @@ final class Line
     if (bExtendedMode)
     {
       if (m_sValue.length () - m_nLeading - m_nTrailing > 2 &&
-          (m_sValue.charAt (m_nLeading) == '`' || m_sValue.charAt (m_nLeading) == '~' || m_sValue.charAt (m_nLeading) == '%'))
+          (m_sValue.charAt (m_nLeading) == '`' ||
+           m_sValue.charAt (m_nLeading) == '~' ||
+           m_sValue.charAt (m_nLeading) == '%'))
       {
         if (_countCharsStart ('`') >= 3)
           return ELineType.FENCED_CODE;
@@ -256,7 +258,9 @@ final class Line
     }
 
     if (m_sValue.length () - m_nLeading - m_nTrailing > 2 &&
-        (m_sValue.charAt (m_nLeading) == '*' || m_sValue.charAt (m_nLeading) == '-' || m_sValue.charAt (m_nLeading) == '_'))
+        (m_sValue.charAt (m_nLeading) == '*' ||
+         m_sValue.charAt (m_nLeading) == '-' ||
+         m_sValue.charAt (m_nLeading) == '_'))
     {
       if (_countConsecutiveChars (m_sValue.charAt (m_nLeading)) >= 3)
         return ELineType.HR;
@@ -430,9 +434,9 @@ final class Line
 
   private static enum EHTMLElementType
   {
-    NONE,
-    TAG,
-    COMMENT;
+   NONE,
+   TAG,
+   COMMENT;
   }
 
   /**

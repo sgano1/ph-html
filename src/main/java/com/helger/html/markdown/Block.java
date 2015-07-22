@@ -16,6 +16,8 @@
  */
 package com.helger.html.markdown;
 
+import javax.annotation.Nonnull;
+
 import com.helger.commons.annotation.CodingStyleguideUnaware;
 
 /**
@@ -141,21 +143,21 @@ final class Block
    */
   public void removeBlockQuotePrefix ()
   {
-    Line line = m_aLines;
-    while (line != null)
+    Line aLine = m_aLines;
+    while (aLine != null)
     {
-      if (!line.m_bIsEmpty)
+      if (!aLine.m_bIsEmpty)
       {
-        if (line.m_sValue.charAt (line.m_nLeading) == '>')
+        if (aLine.m_sValue.charAt (aLine.m_nLeading) == '>')
         {
-          int rem = line.m_nLeading + 1;
-          if (line.m_nLeading + 1 < line.m_sValue.length () && line.m_sValue.charAt (line.m_nLeading + 1) == ' ')
+          int rem = aLine.m_nLeading + 1;
+          if (aLine.m_nLeading + 1 < aLine.m_sValue.length () && aLine.m_sValue.charAt (aLine.m_nLeading + 1) == ' ')
             rem++;
-          line.m_sValue = line.m_sValue.substring (rem);
-          line.initLeading ();
+          aLine.m_sValue = aLine.m_sValue.substring (rem);
+          aLine.initLeading ();
         }
       }
-      line = line.m_aNext;
+      aLine = aLine.m_aNext;
     }
   }
 
@@ -244,19 +246,19 @@ final class Block
   /**
    * Appends the given line to this block.
    *
-   * @param line
+   * @param aLine
    *        Line to append.
    */
-  public void appendLine (final Line line)
+  public void appendLine (@Nonnull final Line aLine)
   {
     if (m_aLineTail == null)
-      m_aLines = m_aLineTail = line;
+      m_aLines = m_aLineTail = aLine;
     else
     {
-      line.m_bPrevEmpty = m_aLineTail.m_bIsEmpty;
-      line.m_aPrevious = m_aLineTail;
-      m_aLineTail.m_aNext = line;
-      m_aLineTail = line;
+      aLine.m_bPrevEmpty = m_aLineTail.m_bIsEmpty;
+      aLine.m_aPrevious = m_aLineTail;
+      m_aLineTail.m_aNext = aLine;
+      m_aLineTail = aLine;
     }
   }
 
