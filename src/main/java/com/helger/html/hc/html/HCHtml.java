@@ -34,7 +34,7 @@ import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeWithChildren;
 import com.helger.html.hc.api.EHCTextDirection;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
-import com.helger.html.hc.htmlext.HCUtils;
+import com.helger.html.hc.htmlext.HCHelper;
 import com.helger.html.hc.impl.AbstractHCElement;
 import com.helger.html.hc.utils.HCSpecialNodeHandler;
 
@@ -132,7 +132,7 @@ public class HCHtml extends AbstractHCElement <HCHtml>
 
     // Customize element, before extracting out-of-band nodes, in case the
     // customizer adds some out-of-band nodes as well
-    HCUtils.customizeNodes (aBody, aConversionSettings);
+    HCHelper.customizeNodes (aBody, aConversionSettings);
 
     // Prepare head and body before performing the OOB extraction
     aHead.beforeConvertToNode (aConversionSettings);

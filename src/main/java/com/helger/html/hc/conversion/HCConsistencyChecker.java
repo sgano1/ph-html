@@ -49,7 +49,7 @@ import com.helger.html.hc.html.HCObject;
 import com.helger.html.hc.html.HCPre;
 import com.helger.html.hc.html5.HCMeter;
 import com.helger.html.hc.html5.HCProgress;
-import com.helger.html.hc.htmlext.HCUtils;
+import com.helger.html.hc.htmlext.HCHelper;
 import com.helger.html.hc.htmlext.IHCIteratorCallback;
 
 /**
@@ -110,15 +110,15 @@ public final class HCConsistencyChecker
 
   private static void _checkA (final HCA aA)
   {
-    if (HCUtils.recursiveContainsChildWithTagName (aA, EHTMLElement.A))
+    if (HCHelper.recursiveContainsChildWithTagName (aA, EHTMLElement.A))
       consistencyWarning ("A may never contain other links!");
-    if (HCUtils.recursiveContainsChildWithTagName (aA, EHTMLElement.SELECT))
+    if (HCHelper.recursiveContainsChildWithTagName (aA, EHTMLElement.SELECT))
       consistencyWarning ("A contains invalid child element!");
   }
 
   private static void _checkButton (final HCButton aButton)
   {
-    final IHCElement <?> aChild = HCUtils.recursiveGetFirstChildWithTagName (aButton,
+    final IHCElement <?> aChild = HCHelper.recursiveGetFirstChildWithTagName (aButton,
                                                                              EHTMLElement.A,
                                                                              EHTMLElement.INPUT,
                                                                              EHTMLElement.SELECT,
@@ -134,13 +134,13 @@ public final class HCConsistencyChecker
 
   private static void _checkForm (final HCForm aForm)
   {
-    if (HCUtils.recursiveContainsChildWithTagName (aForm, EHTMLElement.FORM))
+    if (HCHelper.recursiveContainsChildWithTagName (aForm, EHTMLElement.FORM))
       consistencyWarning ("FORM contains other nested form");
   }
 
   private static void _checkMeter (final HCMeter aMeter)
   {
-    if (HCUtils.recursiveContainsChildWithTagName (aMeter, EHTMLElement.METER))
+    if (HCHelper.recursiveContainsChildWithTagName (aMeter, EHTMLElement.METER))
       consistencyWarning ("METER contains other nested meter");
   }
 
@@ -152,7 +152,7 @@ public final class HCConsistencyChecker
 
   private static void _checkPre (final HCPre aPre)
   {
-    final IHCElement <?> aChild = HCUtils.recursiveGetFirstChildWithTagName (aPre,
+    final IHCElement <?> aChild = HCHelper.recursiveGetFirstChildWithTagName (aPre,
                                                                              EHTMLElement.IMG,
                                                                              EHTMLElement.OBJECT,
                                                                              EHTMLElement.SMALL,
@@ -164,7 +164,7 @@ public final class HCConsistencyChecker
 
   private static void _checkProgress (final HCProgress aProgress)
   {
-    if (HCUtils.recursiveContainsChildWithTagName (aProgress, EHTMLElement.PROGRESS))
+    if (HCHelper.recursiveContainsChildWithTagName (aProgress, EHTMLElement.PROGRESS))
       consistencyWarning ("PROGRESS contains other nested progress");
   }
 
@@ -239,7 +239,7 @@ public final class HCConsistencyChecker
   {
     final Set <String> aUsedIDs = new HashSet <String> ();
     final Set <String> aDuplicateIDs = new HashSet <String> ();
-    HCUtils.iterateTree (aStartNode, new IHCIteratorCallback ()
+    HCHelper.iterateTree (aStartNode, new IHCIteratorCallback ()
     {
       @Nonnull
       public EFinish call (@Nullable final IHCHasChildren aParentNode, @Nonnull final IHCNode aChildNode)

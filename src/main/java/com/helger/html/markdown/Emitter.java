@@ -40,7 +40,7 @@ import com.helger.html.hc.html.HCAbbr;
 import com.helger.html.hc.html.HCCode;
 import com.helger.html.hc.html.HCImg;
 import com.helger.html.hc.html.HCLI;
-import com.helger.html.hc.htmlext.HCUtils;
+import com.helger.html.hc.htmlext.HCHelper;
 import com.helger.html.hc.impl.AbstractHCElement;
 import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 import com.helger.html.hc.impl.HCCommentNode;
@@ -285,14 +285,14 @@ final class Emitter
     final StringBuilder temp = new StringBuilder ();
 
     temp.setLength (0);
-    pos = Utils.readMdLinkId (temp, in, pos);
+    pos = MarkdownHelper.readMdLinkId (temp, in, pos);
     if (pos < start)
       return -1;
 
     final String name = temp.toString ();
     String link = null, comment = null;
     final int oldPos = pos++;
-    pos = Utils.skipSpaces (in, pos);
+    pos = MarkdownHelper.skipSpaces (in, pos);
     if (pos < start)
     {
       final LinkRef lr = m_aLinkRefs.get (name.toLowerCase (Locale.US));
@@ -307,12 +307,12 @@ final class Emitter
       if (in.charAt (pos) == '(')
       {
         pos++;
-        pos = Utils.skipSpaces (in, pos);
+        pos = MarkdownHelper.skipSpaces (in, pos);
         if (pos < start)
           return -1;
         temp.setLength (0);
         final boolean useLt = in.charAt (pos) == '<';
-        pos = useLt ? Utils.readUntil (temp, in, pos + 1, '>') : Utils.readMdLink (temp, in, pos);
+        pos = useLt ? MarkdownHelper.readUntil (temp, in, pos + 1, '>') : MarkdownHelper.readMdLink (temp, in, pos);
         if (pos < start)
           return -1;
         if (useLt)
@@ -321,17 +321,17 @@ final class Emitter
 
         if (in.charAt (pos) == ' ')
         {
-          pos = Utils.skipSpaces (in, pos);
+          pos = MarkdownHelper.skipSpaces (in, pos);
           if (pos > start && in.charAt (pos) == '"')
           {
             pos++;
             temp.setLength (0);
-            pos = Utils.readUntil (temp, in, pos, '"');
+            pos = MarkdownHelper.readUntil (temp, in, pos, '"');
             if (pos < start)
               return -1;
             comment = temp.toString ();
             pos++;
-            pos = Utils.skipSpaces (in, pos);
+            pos = MarkdownHelper.skipSpaces (in, pos);
             if (pos == -1)
               return -1;
           }
@@ -344,7 +344,7 @@ final class Emitter
         {
           pos++;
           temp.setLength (0);
-          pos = Utils.readRawUntil (temp, in, pos, ']');
+          pos = MarkdownHelper.readRawUntil (temp, in, pos, ']');
           if (pos < start)
             return -1;
           final String id = temp.length () > 0 ? temp.toString () : name;
@@ -419,10 +419,10 @@ final class Emitter
 
     // Check for auto links
     aTemp.setLength (0);
-    int nPos = Utils.readUntil (aTemp, in, nStart + 1, ':', ' ', '>', '\n');
+    int nPos = MarkdownHelper.readUntil (aTemp, in, nStart + 1, ':', ' ', '>', '\n');
     if (nPos != -1 && in.charAt (nPos) == ':' && MarkdownHTML.isLinkPrefix (aTemp.toString ()))
     {
-      nPos = Utils.readUntil (aTemp, in, nPos, '>');
+      nPos = MarkdownHelper.readUntil (aTemp, in, nPos, '>');
       if (nPos != -1)
       {
         final String sLink = aTemp.toString ();
@@ -435,10 +435,10 @@ final class Emitter
 
     // Check for mailto or adress auto link
     aTemp.setLength (0);
-    nPos = Utils.readUntil (aTemp, in, nStart + 1, '@', ' ', '>', '\n');
+    nPos = MarkdownHelper.readUntil (aTemp, in, nStart + 1, '@', ' ', '>', '\n');
     if (nPos != -1 && in.charAt (nPos) == '@')
     {
-      nPos = Utils.readUntil (aTemp, in, nPos, '>');
+      nPos = MarkdownHelper.readUntil (aTemp, in, nPos, '>');
       if (nPos != -1)
       {
         final String sLink = aTemp.toString ();
@@ -492,7 +492,7 @@ final class Emitter
       }
 
       aTemp.setLength (0);
-      final int t = Utils.readXMLElement (aTemp, in, nStart, m_aConfig.isSafeMode ());
+      final int t = MarkdownHelper.readXMLElement (aTemp, in, nStart, m_aConfig.isSafeMode ());
       if (t != -1)
       {
         final String sElement = aTemp.toString ();
@@ -521,7 +521,7 @@ final class Emitter
             final IMicroElement eRoot = aXML.getDocumentElement ();
 
             // And use the root element
-            final AbstractHCElement <?> aHC = HCUtils.createHCElementFromName (eRoot.getTagName ());
+            final AbstractHCElement <?> aHC = HCHelper.createHCElementFromName (eRoot.getTagName ());
             if (aHC == null)
               throw new MarkdownException ("Failed to get HC element: " + eRoot.getTagName ());
 
@@ -562,7 +562,7 @@ final class Emitter
    */
   private static int _checkInlineEntity (final StringBuilder out, final String in, final int start)
   {
-    final int pos = Utils.readUntil (out, in, start, ';');
+    final int pos = MarkdownHelper.readUntil (out, in, start, ';');
     if (pos < 0 || out.length () < 3)
       return -1;
     if (out.charAt (1) == '#')
@@ -893,7 +893,7 @@ final class Emitter
       case '`':
         return c1 == '`' ? EMarkToken.CODE_DOUBLE : EMarkToken.CODE_SINGLE;
       case '\\':
-        if (Utils.isEscapeChar (c1))
+        if (MarkdownHelper.isEscapeChar (c1))
           return EMarkToken.ESCAPE;
         return EMarkToken.NONE;
       case '<':
@@ -999,7 +999,7 @@ final class Emitter
         if (in.charAt (pos) == '<')
         {
           temp.setLength (0);
-          final int t = Utils.readXMLElement (temp, in, pos, m_aConfig.isSafeMode ());
+          final int t = MarkdownHelper.readXMLElement (temp, in, pos, m_aConfig.isSafeMode ());
           if (t != -1)
           {
             // XXX Is this correct???

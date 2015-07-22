@@ -391,7 +391,7 @@ public class MarkdownProcessor
             aLine = aLine.m_aNext;
           aBlock = aRoot.split (aLine != null ? aLine.m_aPrevious : aRoot.m_aLineTail);
           aBlock.m_eType = EBlockType.FENCED_CODE;
-          aBlock.m_sMeta = Utils.getMetaFromFence (aBlock.m_aLines.m_sValue);
+          aBlock.m_sMeta = MarkdownHelper.getMetaFromFence (aBlock.m_aLines.m_sValue);
           aBlock.m_aLines.setEmpty ();
           if (aBlock.m_aLineTail.getLineType (m_bUseExtensions) == ELineType.FENCED_CODE)
             aBlock.m_aLineTail.setEmpty ();
@@ -411,7 +411,7 @@ public class MarkdownProcessor
             aLine = aLine.m_aNext;
           aBlock = aRoot.split (aLine != null ? aLine.m_aPrevious : aRoot.m_aLineTail);
           aBlock.m_eType = EBlockType.PLUGIN;
-          aBlock.m_sMeta = Utils.getMetaFromFence (aBlock.m_aLines.m_sValue);
+          aBlock.m_sMeta = MarkdownHelper.getMetaFromFence (aBlock.m_aLines.m_sValue);
           aBlock.m_aLines.setEmpty ();
           if (aBlock.m_aLineTail.getLineType (m_bUseExtensions) == ELineType.PLUGIN)
             aBlock.m_aLineTail.setEmpty ();

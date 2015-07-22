@@ -44,7 +44,7 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
-import com.helger.html.hc.htmlext.HCUtils;
+import com.helger.html.hc.htmlext.HCHelper;
 
 /**
  * Base class for elements with special children.
@@ -265,7 +265,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
 
   public final boolean recursiveContainsChildWithTagName (@Nonnull @Nonempty final EHTMLElement... aElements)
   {
-    return HCUtils.recursiveGetFirstChildWithTagName (this, aElements) != null;
+    return HCHelper.recursiveGetFirstChildWithTagName (this, aElements) != null;
   }
 
   @Nonnull

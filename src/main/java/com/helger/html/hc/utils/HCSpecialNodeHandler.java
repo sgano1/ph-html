@@ -51,7 +51,7 @@ import com.helger.html.hc.html.HCScript;
 import com.helger.html.hc.html.HCScriptFile;
 import com.helger.html.hc.html.HCScriptOnDocumentReady;
 import com.helger.html.hc.html.HCStyle;
-import com.helger.html.hc.htmlext.HCUtils;
+import com.helger.html.hc.htmlext.HCHelper;
 import com.helger.html.hc.impl.HCConditionalCommentNode;
 import com.helger.html.hc.impl.HCNodeList;
 import com.helger.html.js.builder.jquery.JQuery;
@@ -98,7 +98,7 @@ public final class HCSpecialNodeHandler
    */
   public static boolean isCSSNode (@Nullable final IHCNode aNode)
   {
-    final IHCNode aUnwrappedNode = HCUtils.getUnwrappedNode (aNode);
+    final IHCNode aUnwrappedNode = HCHelper.getUnwrappedNode (aNode);
     return isDirectCSSNode (aUnwrappedNode);
   }
 
@@ -133,7 +133,7 @@ public final class HCSpecialNodeHandler
    */
   public static boolean isCSSInlineNode (@Nullable final IHCNode aNode)
   {
-    final IHCNode aUnwrappedNode = HCUtils.getUnwrappedNode (aNode);
+    final IHCNode aUnwrappedNode = HCHelper.getUnwrappedNode (aNode);
     return isDirectCSSInlineNode (aUnwrappedNode);
   }
 
@@ -159,7 +159,7 @@ public final class HCSpecialNodeHandler
    */
   public static boolean isCSSFileNode (@Nullable final IHCNode aNode)
   {
-    final IHCNode aUnwrappedNode = HCUtils.getUnwrappedNode (aNode);
+    final IHCNode aUnwrappedNode = HCHelper.getUnwrappedNode (aNode);
     return isDirectCSSFileNode (aUnwrappedNode);
   }
 
@@ -185,7 +185,7 @@ public final class HCSpecialNodeHandler
    */
   public static boolean isJSNode (@Nullable final IHCNode aNode)
   {
-    final IHCNode aUnwrappedNode = HCUtils.getUnwrappedNode (aNode);
+    final IHCNode aUnwrappedNode = HCHelper.getUnwrappedNode (aNode);
     return isDirectJSNode (aUnwrappedNode);
   }
 
@@ -211,7 +211,7 @@ public final class HCSpecialNodeHandler
    */
   public static boolean isJSInlineNode (@Nullable final IHCNode aNode)
   {
-    final IHCNode aUnwrappedNode = HCUtils.getUnwrappedNode (aNode);
+    final IHCNode aUnwrappedNode = HCHelper.getUnwrappedNode (aNode);
     return isDirectJSInlineNode (aUnwrappedNode);
   }
 
@@ -237,7 +237,7 @@ public final class HCSpecialNodeHandler
    */
   public static boolean isJSFileNode (@Nullable final IHCNode aNode)
   {
-    final IHCNode aUnwrappedNode = HCUtils.getUnwrappedNode (aNode);
+    final IHCNode aUnwrappedNode = HCHelper.getUnwrappedNode (aNode);
     return isDirectJSFileNode (aUnwrappedNode);
   }
 
@@ -271,8 +271,8 @@ public final class HCSpecialNodeHandler
       return true;
 
     // If it is a wrapped node, look into it
-    if (HCUtils.isWrappedNode (aHCNode))
-      return isOutOfBandNode (HCUtils.getUnwrappedNode (aHCNode));
+    if (HCHelper.isWrappedNode (aHCNode))
+      return isOutOfBandNode (HCHelper.getUnwrappedNode (aHCNode));
 
     // Not an out of band node
     return false;

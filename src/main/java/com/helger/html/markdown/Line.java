@@ -121,7 +121,7 @@ final class Line
       if (ch == '\\' && nPos + 1 < m_sValue.length ())
       {
         final char c = m_sValue.charAt (nPos + 1);
-        if (Utils.isEscapeChar (c))
+        if (MarkdownHelper.isEscapeChar (c))
         {
           aSB.append (c);
           nPos++;
@@ -452,11 +452,11 @@ final class Line
       if (_readXMLComment (this, m_nLeading) > 0)
         return EHTMLElementType.COMMENT;
     }
-    nPos = Utils.readXMLElement (aSB, m_sValue, m_nLeading, false);
+    nPos = MarkdownHelper.readXMLElement (aSB, m_sValue, m_nLeading, false);
     if (nPos > -1)
     {
       String sElement = aSB.toString ();
-      String sTag = Utils.getXMLTag (sElement);
+      String sTag = MarkdownHelper.getXMLTag (sElement);
       if (!MarkdownHTML.isHtmlBlockElement (sTag))
         return EHTMLElementType.NONE;
       if (EHTMLElement.getFromTagNameOrNull (sTag).mayBeSelfClosed ())
@@ -479,11 +479,11 @@ final class Line
         else
         {
           aSB.setLength (0);
-          final int nNewPos = Utils.readXMLElement (aSB, aLine.m_sValue, nPos, false);
+          final int nNewPos = MarkdownHelper.readXMLElement (aSB, aLine.m_sValue, nPos, false);
           if (nNewPos > 0)
           {
             sElement = aSB.toString ();
-            sTag = Utils.getXMLTag (sElement);
+            sTag = MarkdownHelper.getXMLTag (sElement);
             if (MarkdownHTML.isHtmlBlockElement (sTag) && !EHTMLElement.getFromTagNameOrNull (sTag).mayBeSelfClosed ())
             {
               if (sElement.charAt (1) == '/')

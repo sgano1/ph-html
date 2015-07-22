@@ -45,7 +45,7 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.entities.HTMLEntityResolver;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.htmlext.HCUtils;
+import com.helger.html.hc.htmlext.HCHelper;
 import com.helger.html.hc.impl.HCDOMWrapper;
 import com.helger.html.hc.impl.HCTextNode;
 
@@ -211,7 +211,7 @@ public final class XHTMLParser
     if (aDoc != null && aDoc.getDocumentElement () != null)
     {
       // Find "body" case insensitive
-      final IMicroElement eBody = HCUtils.getFirstChildElement (aDoc.getDocumentElement (), EHTMLElement.BODY);
+      final IMicroElement eBody = HCHelper.getFirstChildElement (aDoc.getDocumentElement (), EHTMLElement.BODY);
       if (eBody != null)
       {
         final IMicroContainer ret = new MicroContainer ();

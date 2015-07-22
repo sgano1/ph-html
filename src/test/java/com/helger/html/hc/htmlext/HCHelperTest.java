@@ -31,11 +31,11 @@ import com.helger.html.hc.html.HCDiv;
 import com.helger.html.hc.impl.HCTextNode;
 
 /**
- * Test class for class {@link HCUtils}.
+ * Test class for class {@link HCHelper}.
  *
  * @author Philip Helger
  */
-public final class HCUtilsTest
+public final class HCHelperTest
 {
   private static final String HTML_STRING6 = "this is a \nlinebreak test.";
   private static final String HTML_STRING7 = "\nthis is a \nlinebreak test.\n";
@@ -45,42 +45,42 @@ public final class HCUtilsTest
   @Test
   public void testNl2brList ()
   {
-    final List <IHCNode> ret = HCUtils.nl2brList ("a\nb");
+    final List <IHCNode> ret = HCHelper.nl2brList ("a\nb");
     assertNotNull (ret);
     assertEquals (3, ret.size ());
     assertTrue (ret.get (0) instanceof HCTextNode);
     assertTrue (ret.get (1) instanceof HCBR);
     assertTrue (ret.get (2) instanceof HCTextNode);
 
-    assertEquals (3, HCUtils.nl2brList (HTML_STRING6).size ());
-    assertEquals (5, HCUtils.nl2brList (HTML_STRING7).size ());
-    assertEquals (1, HCUtils.nl2brList (HTML_STRING8).size ());
-    assertEquals (3, HCUtils.nl2brList (HTML_STRING9).size ());
+    assertEquals (3, HCHelper.nl2brList (HTML_STRING6).size ());
+    assertEquals (5, HCHelper.nl2brList (HTML_STRING7).size ());
+    assertEquals (1, HCHelper.nl2brList (HTML_STRING8).size ());
+    assertEquals (3, HCHelper.nl2brList (HTML_STRING9).size ());
   }
 
   @Test
   public void testNl2diveList ()
   {
-    List <HCDiv> ret = HCUtils.nl2divList ("a\nb");
+    List <HCDiv> ret = HCHelper.nl2divList ("a\nb");
     assertNotNull (ret);
     assertEquals (2, ret.size ());
 
-    ret = HCUtils.nl2divList (HTML_STRING6);
+    ret = HCHelper.nl2divList (HTML_STRING6);
     assertEquals (2, ret.size ());
     assertEquals ("this is a ", ret.get (0).getPlainText ());
     assertEquals ("linebreak test.", ret.get (1).getPlainText ());
 
-    ret = HCUtils.nl2divList (HTML_STRING7);
+    ret = HCHelper.nl2divList (HTML_STRING7);
     assertEquals (3, ret.size ());
     assertEquals ("", ret.get (0).getPlainText ());
     assertEquals ("this is a ", ret.get (1).getPlainText ());
     assertEquals ("linebreak test.", ret.get (2).getPlainText ());
 
-    ret = HCUtils.nl2divList (HTML_STRING8);
+    ret = HCHelper.nl2divList (HTML_STRING8);
     assertEquals (1, ret.size ());
     assertEquals ("", ret.get (0).getPlainText ());
 
-    ret = HCUtils.nl2divList (HTML_STRING9);
+    ret = HCHelper.nl2divList (HTML_STRING9);
     assertEquals (3, ret.size ());
     assertEquals ("", ret.get (0).getPlainText ());
     assertEquals ("", ret.get (1).getPlainText ());
@@ -91,6 +91,6 @@ public final class HCUtilsTest
   public void testCreateHCElement ()
   {
     for (final EHTMLElement e : EHTMLElement.values ())
-      assertNotNull (HCUtils.createHCElement (e));
+      assertNotNull (HCHelper.createHCElement (e));
   }
 }

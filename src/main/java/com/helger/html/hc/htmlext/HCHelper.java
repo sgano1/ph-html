@@ -159,12 +159,12 @@ import com.helger.html.hc.impl.HCNodeList;
 import com.helger.html.hc.impl.HCTextNode;
 
 @Immutable
-public final class HCUtils
+public final class HCHelper
 {
   private static final char PATTERN_NEWLINE = '\n';
   private static final int PATTERN_NEWLINE_LENGTH = 1;
 
-  private HCUtils ()
+  private HCHelper ()
   {}
 
   @Nonnull

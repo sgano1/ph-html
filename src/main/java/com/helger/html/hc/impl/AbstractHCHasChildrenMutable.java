@@ -46,7 +46,7 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
-import com.helger.html.hc.htmlext.HCUtils;
+import com.helger.html.hc.htmlext.HCHelper;
 
 /**
  * This class is an abstract HC node that represents a list of nodes without
@@ -274,7 +274,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
 
   public final boolean recursiveContainsChildWithTagName (@Nonnull @Nonempty final EHTMLElement... aElements)
   {
-    return HCUtils.recursiveGetFirstChildWithTagName (this, aElements) != null;
+    return HCHelper.recursiveGetFirstChildWithTagName (this, aElements) != null;
   }
 
   @Nonnull

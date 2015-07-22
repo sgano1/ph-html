@@ -29,7 +29,7 @@ import com.helger.commons.random.VerySecureRandom;
  *
  * @author René Jeschke &lt;rene_jeschke@yahoo.de&gt;
  */
-final class Utils
+final class MarkdownHelper
 {
   private static final char [] ESCAPE_CHARS = new char [] { '\\',
                                                            '[',
