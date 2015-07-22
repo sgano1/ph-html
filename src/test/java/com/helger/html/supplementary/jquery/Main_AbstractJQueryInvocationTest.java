@@ -87,7 +87,7 @@ public class Main_AbstractJQueryInvocationTest extends AbstractCreateJQueryAPILi
                                                    Main_AbstractJQueryInvocationTest.class.getName () +
                                                    "\n" +
                                                    " */\n" +
-                                                   "public class AbstractJQueryInvocationTest\n" +
+                                                   "public final class AbstractJQueryInvocationTest\n" +
                                                    "{\n" +
                                                    "  // Methods start here\n" +
                                                    "\n");

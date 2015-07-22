@@ -34,7 +34,7 @@ import com.helger.html.hc.html.HCH1;
 import com.helger.html.hc.html.HCHtml;
 import com.helger.html.hc.html.HCScript;
 
-public class HCSpecialNodeHandlerTest
+public final class HCSpecialNodeHandlerTest
 {
   public static final class MockSpecialNodeListHandler implements IHCSpecialNodeListModifier
   {
@@ -67,33 +67,33 @@ public class HCSpecialNodeHandlerTest
     aHtml.getBody ().addChild (new HCH1 ().addChild ("root"));
     final String sCRLF = ENewLineMode.DEFAULT.getText ();
     assertEquals ("<!DOCTYPE html>" +
-                      sCRLF +
-                      "<html dir=\"ltr\">" +
-                      sCRLF +
-                      "<head>" +
-                      sCRLF +
-                      "<title>Test</title>" +
-                      sCRLF +
-                      "</head>" +
-                      sCRLF +
-                      "<body>" +
-                      sCRLF +
-                      "<h1>root</h1>" +
-                      sCRLF +
-                      "<script type=\"text/javascript\">" +
-                      sCRLF +
-                      "<!--" +
-                      sCRLF +
-                      "var y=0;" +
-                      sCRLF +
-                      "//-->" +
-                      sCRLF +
-                      "</script>" +
-                      sCRLF +
-                      "</body>" +
-                      sCRLF +
-                      "</html>" +
-                      sCRLF,
+                  sCRLF +
+                  "<html dir=\"ltr\">" +
+                  sCRLF +
+                  "<head>" +
+                  sCRLF +
+                  "<title>Test</title>" +
+                  sCRLF +
+                  "</head>" +
+                  sCRLF +
+                  "<body>" +
+                  sCRLF +
+                  "<h1>root</h1>" +
+                  sCRLF +
+                  "<script type=\"text/javascript\">" +
+                  sCRLF +
+                  "<!--" +
+                  sCRLF +
+                  "var y=0;" +
+                  sCRLF +
+                  "//-->" +
+                  sCRLF +
+                  "</script>" +
+                  sCRLF +
+                  "</body>" +
+                  sCRLF +
+                  "</html>" +
+                  sCRLF,
                   aHtml.getAsHTMLString (new HCConversionSettings (EHTMLVersion.HTML5).setXMLWriterSettings (XMLWriterSettings.createForHTML5 ()
                                                                                                                               .setEmitNamespaces (false)
                                                                                                                               .setIndent (EXMLSerializeIndent.ALIGN_ONLY))));
