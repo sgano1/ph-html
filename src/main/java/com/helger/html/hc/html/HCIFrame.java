@@ -31,8 +31,8 @@ import com.helger.css.ECSSUnit;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.api.EHCIFrameAlign;
+import com.helger.html.hc.api.EHCSandboxAllow;
 import com.helger.html.hc.api.EHCScrolling;
-import com.helger.html.hc.api5.EHCSandboxAllow;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 

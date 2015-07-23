@@ -22,8 +22,8 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.microdom.IMicroEntityReference;
 import com.helger.commons.microdom.MicroEntityReference;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.entities.EHTMLEntity;
-import com.helger.html.entities.IHTMLEntity;
+import com.helger.html.entity.EHTMLEntity;
+import com.helger.html.entity.IHTMLEntity;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
 /**

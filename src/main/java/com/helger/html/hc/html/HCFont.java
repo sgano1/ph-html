@@ -20,7 +20,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.html.EHTMLElement;
-import com.helger.html.annotations.DeprecatedInHTML5;
+import com.helger.html.annotation.DeprecatedInHTML5;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeBuilder;
 import com.helger.html.hc.impl.AbstractHCElementWithChildren;

@@ -32,7 +32,7 @@ import com.helger.css.media.ECSSMedium;
 import com.helger.css.media.ICSSMediaList;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
-import com.helger.html.annotations.OutOfBandNode;
+import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hc.IHCCSSNode;
 import com.helger.html.hc.api.EHCLinkType;
 import com.helger.html.hc.api.IHCLinkType;

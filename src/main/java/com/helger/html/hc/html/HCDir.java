@@ -17,7 +17,7 @@
 package com.helger.html.hc.html;
 
 import com.helger.html.EHTMLElement;
-import com.helger.html.annotations.DeprecatedInHTML5;
+import com.helger.html.annotation.DeprecatedInHTML5;
 
 /**
  * Represents an HTML &lt;dir&gt; element

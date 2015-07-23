@@ -43,7 +43,7 @@ import com.helger.commons.xml.serialize.write.EXMLSerializeVersion;
 import com.helger.commons.xml.serialize.write.XMLEmitter;
 import com.helger.html.EHTMLElement;
 import com.helger.html.EHTMLVersion;
-import com.helger.html.entities.HTMLEntityResolver;
+import com.helger.html.entity.HTMLEntityResolver;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.htmlext.HCHelper;
 import com.helger.html.hc.impl.HCDOMWrapper;

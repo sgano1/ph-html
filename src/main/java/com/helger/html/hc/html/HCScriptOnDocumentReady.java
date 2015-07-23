@@ -19,7 +19,7 @@ package com.helger.html.hc.html;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.DevelopersNote;
-import com.helger.html.annotations.OutOfBandNode;
+import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.js.IJSCodeProvider;
 import com.helger.html.js.builder.jquery.JQuery;
 import com.helger.html.js.provider.UnparsedJSCodeProvider;

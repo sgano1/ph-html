@@ -36,7 +36,7 @@ import com.helger.html.hc.api.EHCTextDirection;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.htmlext.HCHelper;
 import com.helger.html.hc.impl.AbstractHCElement;
-import com.helger.html.hc.utils.HCSpecialNodeHandler;
+import com.helger.html.hc.util.HCSpecialNodeHandler;
 
 /**
  * The node that represents a full HTML document.

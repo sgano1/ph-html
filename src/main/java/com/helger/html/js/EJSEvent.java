@@ -24,8 +24,8 @@ import javax.annotation.Nullable;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.ReturnsImmutableObject;
 import com.helger.commons.collection.CollectionHelper;
-import com.helger.html.annotations.DeprecatedInHTML5;
-import com.helger.html.annotations.SinceHTML5;
+import com.helger.html.annotation.DeprecatedInHTML5;
+import com.helger.html.annotation.SinceHTML5;
 
 /**
  * This enumeration contains all known java script events.

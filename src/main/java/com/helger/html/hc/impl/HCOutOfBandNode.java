@@ -20,7 +20,7 @@ import javax.annotation.Nonnull;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.annotations.OutOfBandNode;
+import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hc.IHCNode;
 
 /**

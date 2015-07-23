@@ -28,10 +28,10 @@ import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.state.ETriState;
 import com.helger.html.EHTMLElement;
 import com.helger.html.EHTMLRole;
+import com.helger.html.hc.api.EHCContentEditable;
+import com.helger.html.hc.api.EHCDraggable;
+import com.helger.html.hc.api.EHCDropZone;
 import com.helger.html.hc.api.EHCTextDirection;
-import com.helger.html.hc.api5.EHCContentEditable;
-import com.helger.html.hc.api5.EHCDraggable;
-import com.helger.html.hc.api5.EHCDropZone;
 import com.helger.html.js.EJSEvent;
 import com.helger.html.js.IJSCodeProvider;
 

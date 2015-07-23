@@ -36,6 +36,7 @@ import com.helger.commons.xml.serialize.write.EXMLSerializeVersion;
 import com.helger.commons.xml.serialize.write.XMLEmitter;
 import com.helger.commons.xml.serialize.write.XMLWriterSettings;
 import com.helger.html.CHTMLDocTypes;
+import com.helger.html.entity.HTMLEntityResolver;
 
 public final class HTMLEntityResolverTest
 {

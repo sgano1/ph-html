@@ -19,7 +19,7 @@ package com.helger.html.hc.api;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.Nonempty;
-import com.helger.html.annotations.SinceHTML5;
+import com.helger.html.annotation.SinceHTML5;
 
 /**
  * Enum for HTML text directions.
