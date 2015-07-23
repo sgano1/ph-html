@@ -34,6 +34,7 @@ import com.helger.commons.id.IHasID;
 import com.helger.commons.regex.RegExHelper;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.hc.IHCHasID;
@@ -931,6 +932,22 @@ public final class JQuerySelector implements IJQuerySelector
     for (int i = 1; i < nSize; ++i)
       ret = ret.plus (',').plus (aSelectors.get (i).getExpression ());
     return new JQuerySelector (ret);
+  }
+
+  /**
+   * Shortcut to select elements with a certain HTML <code>name</code>
+   * attribute.
+   * 
+   * @param sNameAttrValue
+   *        The value of the name attribute to compare
+   * @return <code>[name=<i>nameAttrValue</i>]</code>
+   * @see #attributeEquals(String, String)
+   */
+  @Nonnull
+  public static IJQuerySelector nameAttr (@Nonnull @Nonempty final String sNameAttrValue)
+  {
+    ValueEnforcer.notEmpty (sNameAttrValue, "NameAttrValue");
+    return attributeEquals (CHTMLAttributes.NAME, sNameAttrValue);
   }
 
   /**
