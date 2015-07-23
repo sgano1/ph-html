@@ -34,7 +34,7 @@ import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
  * This class represents a map from an {@link EJSEvent} to an
- * {@link IJSCodeProvider} that represents the code. This is mainly meant for
+ * {@link IHasJSCode} that represents the code. This is mainly meant for
  * managing HTML element JS event handler.
  *
  * @author Philip Helger
@@ -53,7 +53,7 @@ public final class JSEventMap implements Serializable
    * @param aNewHandler
    *        The new handler to be added. May not be <code>null</code>.
    */
-  public void addHandler (@Nonnull final EJSEvent eJSEvent, @Nonnull final IJSCodeProvider aNewHandler)
+  public void addHandler (@Nonnull final EJSEvent eJSEvent, @Nonnull final IHasJSCode aNewHandler)
   {
     ValueEnforcer.notNull (eJSEvent, "JSEvent");
     ValueEnforcer.notNull (aNewHandler, "NewHandler");
@@ -76,7 +76,7 @@ public final class JSEventMap implements Serializable
    * @param aNewHandler
    *        The new handler to be added. May not be <code>null</code>.
    */
-  public void prependHandler (@Nonnull final EJSEvent eJSEvent, @Nonnull final IJSCodeProvider aNewHandler)
+  public void prependHandler (@Nonnull final EJSEvent eJSEvent, @Nonnull final IHasJSCode aNewHandler)
   {
     ValueEnforcer.notNull (eJSEvent, "JSEvent");
     ValueEnforcer.notNull (aNewHandler, "NewHandler");
@@ -99,7 +99,7 @@ public final class JSEventMap implements Serializable
    * @param aNewHandler
    *        The new handler to be added. May not be <code>null</code>.
    */
-  public void setHandler (@Nonnull final EJSEvent eJSEvent, @Nonnull final IJSCodeProvider aNewHandler)
+  public void setHandler (@Nonnull final EJSEvent eJSEvent, @Nonnull final IHasJSCode aNewHandler)
   {
     ValueEnforcer.notNull (eJSEvent, "JSEvent");
     ValueEnforcer.notNull (aNewHandler, "NewHandler");
@@ -118,7 +118,7 @@ public final class JSEventMap implements Serializable
   }
 
   @Nullable
-  public IJSCodeProvider getHandler (@Nullable final EJSEvent eJSEvent)
+  public IHasJSCode getHandler (@Nullable final EJSEvent eJSEvent)
   {
     return eJSEvent == null ? null : m_aEvents.get (eJSEvent);
   }

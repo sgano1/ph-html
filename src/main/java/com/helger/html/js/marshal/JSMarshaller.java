@@ -37,7 +37,7 @@ import com.helger.commons.string.StringHelper;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.conversion.HCSettings;
 import com.helger.html.js.CJS;
-import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.IHasJSCode;
 import com.helger.json.IJson;
 
 /**
@@ -313,7 +313,7 @@ public final class JSMarshaller
       return JSType.INT;
     if (ClassHelper.isArrayClass (aClass))
       return new JSArrayType (JSType.AUTO_DETECT);
-    if (IJSCodeProvider.class.isAssignableFrom (aClass))
+    if (IHasJSCode.class.isAssignableFrom (aClass))
       return JSType.JS;
     if (Map.class.isAssignableFrom (aClass))
       return new JSMapType (JSType.AUTO_DETECT, JSType.AUTO_DETECT);
@@ -372,8 +372,8 @@ public final class JSMarshaller
           break;
         case JS:
           // Use JS as is
-          if (aObject instanceof IJSCodeProvider)
-            aSB.append (((IJSCodeProvider) aObject).getJSCode ());
+          if (aObject instanceof IHasJSCode)
+            aSB.append (((IHasJSCode) aObject).getJSCode ());
           else
             aSB.append ((String) aObject);
           break;

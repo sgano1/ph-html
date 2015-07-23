@@ -28,7 +28,7 @@ import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.js.CJS;
-import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.builder.IJSStatement;
 import com.helger.html.js.writer.IJSWriterSettings;
 
@@ -60,7 +60,7 @@ public final class HC_Action implements ICloneable <HC_Action>
   }
 
   @Nullable
-  public IJSCodeProvider getActionJS ()
+  public IHasJSCode getActionJS ()
   {
     return m_aAction;
   }

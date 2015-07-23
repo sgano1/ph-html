@@ -22,7 +22,7 @@ import java.util.List;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.IHasJSCode;
 
 /**
  * This interface represents all special nodes that can occur in an HTML
@@ -85,5 +85,5 @@ public interface IHCSpecialNodes extends Serializable
    */
   @Nonnull
   @ReturnsMutableCopy
-  IJSCodeProvider getInlineJS ();
+  IHasJSCode getInlineJS ();
 }

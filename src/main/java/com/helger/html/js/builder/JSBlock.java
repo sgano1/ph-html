@@ -22,8 +22,8 @@ import javax.annotation.Nullable;
 import com.helger.commons.annotation.CodingStyleguideUnaware;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.js.IJSCodeProvider;
-import com.helger.html.js.provider.IJSCodeProviderWithSettings;
+import com.helger.html.js.IHasJSCode;
+import com.helger.html.js.writer.IHasJSCodeWithSettings;
 import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
@@ -157,7 +157,7 @@ public class JSBlock extends AbstractJSBlock implements IJSGeneratable, IJSState
 
   void generateBody (@Nonnull final JSFormatter aFormatter)
   {
-    for (final IJSCodeProvider aJSCode : directMembers ())
+    for (final IHasJSCode aJSCode : directMembers ())
     {
       if (aJSCode instanceof IJSDeclaration)
         aFormatter.decl ((IJSDeclaration) aJSCode);
@@ -165,8 +165,8 @@ public class JSBlock extends AbstractJSBlock implements IJSGeneratable, IJSState
         if (aJSCode instanceof IJSStatement)
           aFormatter.stmt ((IJSStatement) aJSCode);
         else
-          if (aJSCode instanceof IJSCodeProviderWithSettings)
-            aFormatter.plain (((IJSCodeProviderWithSettings) aJSCode).getJSCode (aFormatter.getSettings ()));
+          if (aJSCode instanceof IHasJSCodeWithSettings)
+            aFormatter.plain (((IHasJSCodeWithSettings) aJSCode).getJSCode (aFormatter.getSettings ()));
           else
             aFormatter.plain (aJSCode.getJSCode ());
     }

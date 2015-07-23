@@ -34,7 +34,7 @@ import com.helger.html.hc.conversion.HCConsistencyChecker;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 import com.helger.html.js.EJSEvent;
-import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.IHasJSCode;
 
 /**
  * Represents an HTML &lt;a&gt; element
@@ -161,7 +161,7 @@ public class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>> extends Abstr
    * @return this
    */
   @Nonnull
-  public THISTYPE setOnClick (@Nullable final IJSCodeProvider aOnClick)
+  public THISTYPE setOnClick (@Nullable final IHasJSCode aOnClick)
   {
     return setEventHandler (EJSEvent.CLICK, aOnClick);
   }
@@ -174,7 +174,7 @@ public class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>> extends Abstr
    * @return this
    */
   @Nonnull
-  public THISTYPE addOnClick (@Nullable final IJSCodeProvider aOnClick)
+  public THISTYPE addOnClick (@Nullable final IHasJSCode aOnClick)
   {
     return addEventHandler (EJSEvent.CLICK, aOnClick);
   }

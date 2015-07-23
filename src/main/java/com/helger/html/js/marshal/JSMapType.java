@@ -29,7 +29,7 @@ import com.helger.commons.string.ToStringGenerator;
  * @author Philip Helger
  */
 @Immutable
-public final class JSMapType extends JSType
+public class JSMapType extends JSType
 {
   /**
    * The type of the key elements

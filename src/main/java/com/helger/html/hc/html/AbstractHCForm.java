@@ -34,7 +34,7 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.hc.api.EHCFormMethod;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElementWithChildren;
-import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.builder.IJSStatement;
 
 /**
@@ -114,7 +114,7 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
   }
 
   @Nullable
-  public final IJSCodeProvider getActionJS ()
+  public final IHasJSCode getActionJS ()
   {
     return m_aAction.getActionJS ();
   }

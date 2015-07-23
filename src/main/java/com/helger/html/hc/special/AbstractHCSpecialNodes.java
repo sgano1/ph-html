@@ -33,7 +33,7 @@ import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.provider.CollectingJSCodeProvider;
 
 /**
@@ -140,7 +140,7 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
   }
 
   @Nonnull
-  public IMPLTYPE addInlineJS (@Nonnull final IJSCodeProvider aInlineJS)
+  public IMPLTYPE addInlineJS (@Nonnull final IHasJSCode aInlineJS)
   {
     ValueEnforcer.notNull (aInlineJS, "InlineJS");
 

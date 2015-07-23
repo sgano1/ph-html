@@ -27,7 +27,7 @@ import com.helger.commons.annotation.MustImplementEqualsAndHashcode;
 import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.IHasJSCode;
 
 /**
  * Wrapper around JavaScript types.
@@ -78,14 +78,14 @@ public class JSType implements Serializable
   /**
    * Constant basic type for objects already having JS code present.
    *
-   * @see IJSCodeProvider
+   * @see IHasJSCode
    */
   public static final JSType JS = new JSType (EJSType.JS);
 
   /**
    * Constant basic type for objects already having JSON code present.
    *
-   * @see IJSCodeProvider
+   * @see IHasJSCode
    */
   public static final JSType JSON = new JSType (EJSType.JSON);
 

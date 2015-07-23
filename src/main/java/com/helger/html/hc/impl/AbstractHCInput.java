@@ -40,7 +40,7 @@ import com.helger.html.hc.api.EHCInputType;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.html.HC_Action;
 import com.helger.html.hc.html.HC_Target;
-import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.builder.IJSStatement;
 
 @NotThreadSafe
@@ -248,7 +248,7 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   }
 
   @Nullable
-  public final IJSCodeProvider getFormActionJS ()
+  public final IHasJSCode getFormActionJS ()
   {
     return m_aFormAction.getActionJS ();
   }

@@ -33,7 +33,7 @@ import com.helger.html.hc.api.EHCDraggable;
 import com.helger.html.hc.api.EHCDropZone;
 import com.helger.html.hc.api.EHCTextDirection;
 import com.helger.html.js.EJSEvent;
-import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.IHasJSCode;
 
 /**
  * Base interface for an HC element
@@ -119,7 +119,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends IHC
    * @return <code>null</code> if no such event handler is registered.
    */
   @Nullable
-  IJSCodeProvider getEventHandler (@Nullable EJSEvent eJSEvent);
+  IHasJSCode getEventHandler (@Nullable EJSEvent eJSEvent);
 
   /**
    * Check if any event handler is registered for the specified event.
@@ -142,7 +142,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends IHC
    * @return this.
    */
   @Nonnull
-  THISTYPE addEventHandler (@Nonnull EJSEvent eJSEvent, @Nullable IJSCodeProvider aJSHandler);
+  THISTYPE addEventHandler (@Nonnull EJSEvent eJSEvent, @Nullable IHasJSCode aJSHandler);
 
   /**
    * Add a JS event handler at the front.
@@ -155,7 +155,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends IHC
    * @return this.
    */
   @Nonnull
-  THISTYPE prependEventHandler (@Nonnull EJSEvent eJSEvent, @Nullable IJSCodeProvider aJSHandler);
+  THISTYPE prependEventHandler (@Nonnull EJSEvent eJSEvent, @Nullable IHasJSCode aJSHandler);
 
   /**
    * Set a JS event handler. All eventually present event handlers are
@@ -170,7 +170,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends IHC
    * @return this.
    */
   @Nonnull
-  THISTYPE setEventHandler (@Nonnull EJSEvent eJSEvent, @Nullable IJSCodeProvider aJSHandler);
+  THISTYPE setEventHandler (@Nonnull EJSEvent eJSEvent, @Nullable IHasJSCode aJSHandler);
 
   /**
    * Remove all event handler for the specified JS event.

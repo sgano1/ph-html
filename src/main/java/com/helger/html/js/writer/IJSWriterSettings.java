@@ -23,6 +23,11 @@ import javax.annotation.Nonnull;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.system.ENewLineMode;
 
+/**
+ * Read only interface with all JS writer settings.
+ * 
+ * @author Philip Helger
+ */
 public interface IJSWriterSettings extends Serializable
 {
   /**
@@ -57,8 +62,8 @@ public interface IJSWriterSettings extends Serializable
   ENewLineMode getNewLineMode ();
 
   /**
-   * @return The string representing the new line mode. A shortcut for
-   *         <code>{@link #getNewLineMode()}.getText()</code>.
+   * @return The string representing the new line mode. A shortcut for <code>
+   *         {@link #getNewLineMode()}.getText()</code>.
    */
   @Nonnull
   @Nonempty

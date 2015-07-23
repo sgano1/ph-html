@@ -20,14 +20,14 @@ import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
 
 import com.helger.html.js.builder.IJSExpression;
-import com.helger.html.js.provider.IJSCodeProviderWithSettings;
+import com.helger.html.js.writer.IHasJSCodeWithSettings;
 
 /**
  * A single jQuery selector
  *
  * @author Philip Helger
  */
-public interface IJQuerySelector extends IJSCodeProviderWithSettings
+public interface IJQuerySelector extends IHasJSCodeWithSettings
 {
   /**
    * @return The contained expression that was used as the parameter to this

@@ -42,9 +42,9 @@ import com.helger.commons.lang.ClassHelper;
 import com.helger.commons.math.MathHelper;
 import com.helger.commons.state.EChange;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.provider.CollectingJSCodeProvider;
-import com.helger.html.js.provider.IJSCodeProviderWithSettings;
+import com.helger.html.js.writer.IHasJSCodeWithSettings;
 import com.helger.html.js.writer.IJSWriterSettings;
 import com.helger.json.IJson;
 
@@ -61,7 +61,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   /**
    * List of the content of this block
    */
-  private final List <IJSCodeProvider> m_aObjs = new ArrayList <IJSCodeProvider> ();
+  private final List <IHasJSCode> m_aObjs = new ArrayList <IHasJSCode> ();
 
   /**
    * Named map of all declarations
@@ -145,14 +145,14 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
 
   @Nonnull
   @ReturnsMutableObject ("speed")
-  final List <IJSCodeProvider> directMembers ()
+  final List <IHasJSCode> directMembers ()
   {
     return m_aObjs;
   }
 
   @Nonnull
   @ReturnsMutableCopy
-  public List <IJSCodeProvider> members ()
+  public List <IHasJSCode> members ()
   {
     return CollectionHelper.newList (m_aObjs);
   }
@@ -1130,25 +1130,25 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   }
 
   @Nonnull
-  public AbstractJSBlock add (@Nonnull final IJSCodeProvider aJSCode)
+  public AbstractJSBlock add (@Nonnull final IHasJSCode aJSCode)
   {
     if (aJSCode instanceof JSPackage)
     {
       // Avoid nested JSPackage
-      for (final IJSCodeProvider aNestedJSCode : ((JSPackage) aJSCode).members ())
+      for (final IHasJSCode aNestedJSCode : ((JSPackage) aJSCode).members ())
         add (aNestedJSCode);
     }
     else
       if (aJSCode instanceof CollectingJSCodeProvider)
       {
         // Flatten CollectingJSCodeProvider
-        for (final IJSCodeProvider aNestedJSCode : ((CollectingJSCodeProvider) aJSCode).getAll ())
+        for (final IHasJSCode aNestedJSCode : ((CollectingJSCodeProvider) aJSCode).getAll ())
           add (aNestedJSCode);
       }
       else
       {
         if (GlobalDebug.isDebugMode ())
-          if (!(aJSCode instanceof IJSCodeProviderWithSettings))
+          if (!(aJSCode instanceof IHasJSCodeWithSettings))
             s_aLogger.warn ("Adding untyped IJSCodeProvider of class " +
                             aJSCode.getClass ().getName () +
                             " to " +

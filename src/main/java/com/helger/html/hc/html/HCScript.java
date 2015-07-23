@@ -38,9 +38,9 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.system.ENewLineMode;
 import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
-import com.helger.html.js.IJSCodeProvider;
-import com.helger.html.js.provider.IJSCodeProviderWithSettings;
+import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.provider.UnparsedJSCodeProvider;
+import com.helger.html.js.writer.IHasJSCodeWithSettings;
 import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
@@ -117,7 +117,7 @@ public class HCScript extends AbstractHCScript <HCScript>
   @GuardedBy ("s_aRWLock")
   private static ENewLineMode s_eDefaultNewLineMode = ENewLineMode.DEFAULT;
 
-  private IJSCodeProvider m_aProvider;
+  private IHasJSCode m_aProvider;
   private String m_sJSCode;
   private EMode m_eMode = getDefaultMode ();
   private boolean m_bEmitAfterFiles = DEFAULT_EMIT_AFTER_FILES;
@@ -128,7 +128,7 @@ public class HCScript extends AbstractHCScript <HCScript>
     super ();
   }
 
-  public HCScript (@Nonnull final IJSCodeProvider aProvider)
+  public HCScript (@Nonnull final IHasJSCode aProvider)
   {
     this ();
     setJSCodeProvider (aProvider);
@@ -147,7 +147,7 @@ public class HCScript extends AbstractHCScript <HCScript>
   }
 
   @Nonnull
-  public HCScript setJSCodeProvider (@Nonnull final IJSCodeProvider aProvider)
+  public HCScript setJSCodeProvider (@Nonnull final IHasJSCode aProvider)
   {
     m_aProvider = ValueEnforcer.notNull (aProvider, "Provider");
     return this;
@@ -164,7 +164,7 @@ public class HCScript extends AbstractHCScript <HCScript>
    * @return The JS code passed in the constructor. Never <code>null</code>.
    */
   @Nonnull
-  public IJSCodeProvider getJSCodeProvider ()
+  public IHasJSCode getJSCodeProvider ()
   {
     return m_aProvider;
   }
@@ -179,8 +179,8 @@ public class HCScript extends AbstractHCScript <HCScript>
   @Nullable
   public String getJSCode (@Nonnull final IJSWriterSettings aSettings)
   {
-    if (m_aProvider instanceof IJSCodeProviderWithSettings)
-      return ((IJSCodeProviderWithSettings) m_aProvider).getJSCode (aSettings);
+    if (m_aProvider instanceof IHasJSCodeWithSettings)
+      return ((IHasJSCodeWithSettings) m_aProvider).getJSCode (aSettings);
     return m_aProvider.getJSCode ();
   }
 

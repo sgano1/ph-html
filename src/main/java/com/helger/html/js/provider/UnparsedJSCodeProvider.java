@@ -22,16 +22,16 @@ import javax.annotation.concurrent.Immutable;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.IHasJSCode;
 
 /**
- * Implementation of {@link IJSCodeProvider} that takes an arbitrary string from
- * any sources
+ * Implementation of {@link IHasJSCode} that takes an arbitrary string from any
+ * sources
  *
  * @author Philip Helger
  */
 @Immutable
-public final class UnparsedJSCodeProvider implements IJSCodeProvider
+public class UnparsedJSCodeProvider implements IHasJSCode
 {
   private final String m_sJSCode;
 

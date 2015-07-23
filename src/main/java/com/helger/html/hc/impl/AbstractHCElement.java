@@ -67,7 +67,7 @@ import com.helger.html.hc.api.EHCTextDirection;
 import com.helger.html.hc.conversion.HCConsistencyChecker;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.js.EJSEvent;
-import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.JSEventMap;
 
 /**
@@ -455,7 +455,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nullable
-  public final IJSCodeProvider getEventHandler (@Nullable final EJSEvent eJSEvent)
+  public final IHasJSCode getEventHandler (@Nullable final EJSEvent eJSEvent)
   {
     return m_aJSHandler == null ? null : m_aJSHandler.getHandler (eJSEvent);
   }
@@ -466,7 +466,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE addEventHandler (@Nonnull final EJSEvent eJSEvent, @Nullable final IJSCodeProvider aJSCode)
+  public final IMPLTYPE addEventHandler (@Nonnull final EJSEvent eJSEvent, @Nullable final IHasJSCode aJSCode)
   {
     if (aJSCode != null)
     {
@@ -478,7 +478,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE prependEventHandler (@Nonnull final EJSEvent eJSEvent, @Nullable final IJSCodeProvider aJSCode)
+  public final IMPLTYPE prependEventHandler (@Nonnull final EJSEvent eJSEvent, @Nullable final IHasJSCode aJSCode)
   {
     if (aJSCode != null)
     {
@@ -490,7 +490,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setEventHandler (@Nonnull final EJSEvent eJSEvent, @Nullable final IJSCodeProvider aJSCode)
+  public final IMPLTYPE setEventHandler (@Nonnull final EJSEvent eJSEvent, @Nullable final IHasJSCode aJSCode)
   {
     if (aJSCode != null)
     {

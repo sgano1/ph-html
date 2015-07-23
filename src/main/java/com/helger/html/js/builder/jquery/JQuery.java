@@ -39,7 +39,7 @@ import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.hc.IHCHasID;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.conversion.HCSettings;
-import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.builder.IJSExpression;
 import com.helger.html.js.builder.JSAnonymousFunction;
 import com.helger.html.js.builder.JSAssocArray;
@@ -626,7 +626,7 @@ public final class JQuery
    * @return The invocation object
    */
   @Nonnull
-  public static JQueryInvocation onDocumentReady (@Nonnull final IJSCodeProvider aJSCodeProvider)
+  public static JQueryInvocation onDocumentReady (@Nonnull final IHasJSCode aJSCodeProvider)
   {
     final IPair <JQueryInvocation, JSAnonymousFunction> aPair = onDocumentReady ();
     aPair.getSecond ().body ().add (aJSCodeProvider);

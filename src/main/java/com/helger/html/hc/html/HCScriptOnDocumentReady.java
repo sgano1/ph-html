@@ -20,7 +20,7 @@ import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.DevelopersNote;
 import com.helger.html.annotation.OutOfBandNode;
-import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.builder.jquery.JQuery;
 import com.helger.html.js.provider.UnparsedJSCodeProvider;
 
@@ -35,9 +35,9 @@ import com.helger.html.js.provider.UnparsedJSCodeProvider;
 @OutOfBandNode
 public class HCScriptOnDocumentReady extends HCScript
 {
-  private final IJSCodeProvider m_aOnDocumentReadyCode;
+  private final IHasJSCode m_aOnDocumentReadyCode;
 
-  public HCScriptOnDocumentReady (@Nonnull final IJSCodeProvider aOnDocumentReadyCode)
+  public HCScriptOnDocumentReady (@Nonnull final IHasJSCode aOnDocumentReadyCode)
   {
     super (JQuery.onDocumentReady (aOnDocumentReadyCode));
     m_aOnDocumentReadyCode = aOnDocumentReadyCode;
@@ -53,7 +53,7 @@ public class HCScriptOnDocumentReady extends HCScript
    * @return The contained code, to be executed on document.ready
    */
   @Nonnull
-  public IJSCodeProvider getOnDocumentReadyCode ()
+  public IHasJSCode getOnDocumentReadyCode ()
   {
     return m_aOnDocumentReadyCode;
   }

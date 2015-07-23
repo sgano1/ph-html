@@ -30,48 +30,69 @@ import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.lang.ICloneable;
 import com.helger.commons.lang.IHasSize;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.IHasJSCode;
+import com.helger.html.js.writer.IHasJSCodeWithSettings;
 import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
- * A JSCode provider that encapsulates a list of {@link IJSCodeProvider}
- * elements and itself implements {@link IJSCodeProvider}.
+ * A JSCode provider that encapsulates a list of {@link IHasJSCode} elements and
+ * itself implements {@link IHasJSCode}.
  *
  * @author Philip Helger
  */
 @NotThreadSafe
-public final class CollectingJSCodeProvider implements IJSCodeProviderWithSettings, IHasSize, ICloneable <CollectingJSCodeProvider>
+public class CollectingJSCodeProvider implements IHasJSCodeWithSettings, IHasSize, ICloneable <CollectingJSCodeProvider>
 {
-  private final List <IJSCodeProvider> m_aList = new ArrayList <IJSCodeProvider> ();
+  private final List <IHasJSCode> m_aList = new ArrayList <IHasJSCode> ();
 
   public CollectingJSCodeProvider ()
   {}
 
-  public CollectingJSCodeProvider (@Nullable final IJSCodeProvider... aProviders)
+  public CollectingJSCodeProvider (@Nullable final IHasJSCode... aProviders)
   {
     if (aProviders != null)
-      for (final IJSCodeProvider aProvider : aProviders)
+      for (final IHasJSCode aProvider : aProviders)
         if (aProvider != null)
           append (aProvider);
   }
 
-  public CollectingJSCodeProvider (@Nullable final Iterable <? extends IJSCodeProvider> aProviders)
+  public CollectingJSCodeProvider (@Nullable final Iterable <? extends IHasJSCode> aProviders)
   {
     if (aProviders != null)
-      for (final IJSCodeProvider aProvider : aProviders)
+      for (final IHasJSCode aProvider : aProviders)
         if (aProvider != null)
           append (aProvider);
   }
 
   @Nonnull
   @ReturnsMutableCopy
-  public List <IJSCodeProvider> getAll ()
+  public List <IHasJSCode> getAll ()
   {
     return CollectionHelper.newList (m_aList);
   }
 
   @Nonnull
-  public CollectingJSCodeProvider append (@Nullable final IJSCodeProvider aProvider)
+  public CollectingJSCodeProvider addAtIndex (@Nonnegative final int nIndex, @Nullable final IHasJSCode aProvider)
+  {
+    if (aProvider != null)
+      m_aList.add (nIndex, aProvider);
+    return this;
+  }
+
+  @Nonnull
+  public CollectingJSCodeProvider addAtIndexFlattened (@Nonnegative final int nIndex,
+                                                       @Nullable final IHasJSCode aProvider)
+  {
+    if (aProvider != null)
+      if (aProvider instanceof CollectingJSCodeProvider)
+        m_aList.addAll (nIndex, ((CollectingJSCodeProvider) aProvider).m_aList);
+      else
+        m_aList.add (nIndex, aProvider);
+    return this;
+  }
+
+  @Nonnull
+  public CollectingJSCodeProvider append (@Nullable final IHasJSCode aProvider)
   {
     if (aProvider != null)
       m_aList.add (aProvider);
@@ -79,7 +100,7 @@ public final class CollectingJSCodeProvider implements IJSCodeProviderWithSettin
   }
 
   @Nonnull
-  public CollectingJSCodeProvider appendFlattened (@Nullable final IJSCodeProvider aProvider)
+  public CollectingJSCodeProvider appendFlattened (@Nullable final IHasJSCode aProvider)
   {
     if (aProvider != null)
       if (aProvider instanceof CollectingJSCodeProvider)
@@ -90,35 +111,15 @@ public final class CollectingJSCodeProvider implements IJSCodeProviderWithSettin
   }
 
   @Nonnull
-  public CollectingJSCodeProvider prepend (@Nullable final IJSCodeProvider aProvider)
+  public CollectingJSCodeProvider prepend (@Nullable final IHasJSCode aProvider)
   {
     return addAtIndex (0, aProvider);
   }
 
   @Nonnull
-  public CollectingJSCodeProvider prependFlattened (@Nullable final IJSCodeProvider aProvider)
+  public CollectingJSCodeProvider prependFlattened (@Nullable final IHasJSCode aProvider)
   {
     return addAtIndexFlattened (0, aProvider);
-  }
-
-  @Nonnull
-  public CollectingJSCodeProvider addAtIndex (@Nonnegative final int nIndex, @Nullable final IJSCodeProvider aProvider)
-  {
-    if (aProvider != null)
-      m_aList.add (nIndex, aProvider);
-    return this;
-  }
-
-  @Nonnull
-  public CollectingJSCodeProvider addAtIndexFlattened (@Nonnegative final int nIndex,
-                                                       @Nullable final IJSCodeProvider aProvider)
-  {
-    if (aProvider != null)
-      if (aProvider instanceof CollectingJSCodeProvider)
-        m_aList.addAll (nIndex, ((CollectingJSCodeProvider) aProvider).m_aList);
-      else
-        m_aList.add (nIndex, aProvider);
-    return this;
   }
 
   @Nonnull
@@ -160,11 +161,11 @@ public final class CollectingJSCodeProvider implements IJSCodeProviderWithSettin
   public String getJSCode (@Nullable final IJSWriterSettings aSettings)
   {
     final StringBuilder aSB = new StringBuilder ();
-    for (final IJSCodeProvider aJSCodeProvider : m_aList)
+    for (final IHasJSCode aJSCodeProvider : m_aList)
     {
       String sJSCode;
-      if (aJSCodeProvider instanceof IJSCodeProviderWithSettings)
-        sJSCode = ((IJSCodeProviderWithSettings) aJSCodeProvider).getJSCode (aSettings);
+      if (aJSCodeProvider instanceof IHasJSCodeWithSettings)
+        sJSCode = ((IHasJSCodeWithSettings) aJSCodeProvider).getJSCode (aSettings);
       else
         sJSCode = aJSCodeProvider.getJSCode ();
       aSB.append (sJSCode);

@@ -28,7 +28,7 @@ import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.state.EChange;
 import com.helger.html.js.builder.IJSExpression;
-import com.helger.html.js.provider.IJSCodeProviderWithSettings;
+import com.helger.html.js.writer.IHasJSCodeWithSettings;
 import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
@@ -36,7 +36,7 @@ import com.helger.html.js.writer.IJSWriterSettings;
  *
  * @author Philip Helger
  */
-public class JQuerySelectorList implements IJSCodeProviderWithSettings
+public class JQuerySelectorList implements IHasJSCodeWithSettings
 {
   private final List <IJQuerySelector> m_aElements = new ArrayList <IJQuerySelector> ();
 

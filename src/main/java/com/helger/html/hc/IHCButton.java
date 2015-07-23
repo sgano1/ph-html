@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.hc.api.EHCButtonType;
-import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.IHasJSCode;
 
 public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends IHCElementWithChildren <THISTYPE>, IHCCanBeDisabled <THISTYPE>, IHCHasName <THISTYPE>
 {
@@ -66,7 +66,7 @@ public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends IHCEl
    * @return this
    */
   @Nonnull
-  THISTYPE setOnClick (@Nullable IJSCodeProvider aOnClick);
+  THISTYPE setOnClick (@Nullable IHasJSCode aOnClick);
 
   /**
    * Shortcut for <code>setOnClick(JSHtml.windowLocationHref (aURL))</code>
@@ -86,7 +86,7 @@ public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends IHCEl
    * @return this
    */
   @Nonnull
-  THISTYPE addOnClick (@Nullable IJSCodeProvider aOnClick);
+  THISTYPE addOnClick (@Nullable IHasJSCode aOnClick);
 
   /**
    * Shortcut for <code>addOnClick(JSHtml.windowLocationHref (aURL))</code>

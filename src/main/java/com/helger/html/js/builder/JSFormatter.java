@@ -27,8 +27,8 @@ import javax.annotation.Nullable;
 import javax.annotation.WillCloseWhenClosed;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.html.js.IJSCodeProvider;
-import com.helger.html.js.provider.IJSCodeProviderWithSettings;
+import com.helger.html.js.IHasJSCode;
+import com.helger.html.js.writer.IHasJSCodeWithSettings;
 import com.helger.html.js.writer.IJSWriterSettings;
 import com.helger.html.js.writer.JSWriterSettings;
 
@@ -340,7 +340,7 @@ public class JSFormatter implements Closeable
   public void pkg (@Nonnull final JSPackage aPackage)
   {
     // for all declarations in the current package
-    for (final IJSCodeProvider aObj : aPackage.members ())
+    for (final IHasJSCode aObj : aPackage.members ())
       if (aObj instanceof IJSDeclaration)
         decl ((IJSDeclaration) aObj);
       else
@@ -353,8 +353,8 @@ public class JSFormatter implements Closeable
             pkg ((JSPackage) aObj);
           }
           else
-            if (aObj instanceof IJSCodeProviderWithSettings)
-              plain (((IJSCodeProviderWithSettings) aObj).getJSCode (m_aSettings));
+            if (aObj instanceof IHasJSCodeWithSettings)
+              plain (((IHasJSCodeWithSettings) aObj).getJSCode (m_aSettings));
             else
               plain (aObj.getJSCode ());
   }

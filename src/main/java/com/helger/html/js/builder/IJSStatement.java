@@ -18,7 +18,7 @@ package com.helger.html.js.builder;
 
 import javax.annotation.Nonnull;
 
-import com.helger.html.js.provider.IJSCodeProviderWithSettings;
+import com.helger.html.js.writer.IHasJSCodeWithSettings;
 
 /**
  * Common interface for code components that can generate uses of themselves as
@@ -26,7 +26,7 @@ import com.helger.html.js.provider.IJSCodeProviderWithSettings;
  *
  * @author Philip Helger
  */
-public interface IJSStatement extends IJSCodeProviderWithSettings
+public interface IJSStatement extends IHasJSCodeWithSettings
 {
   void state (@Nonnull JSFormatter aFormatter);
 }

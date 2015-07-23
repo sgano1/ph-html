@@ -35,7 +35,7 @@ import com.helger.html.hc.api.EHCFormMethod;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 import com.helger.html.js.EJSEvent;
-import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.builder.IJSStatement;
 import com.helger.html.js.builder.html.JSHtml;
 
@@ -80,7 +80,7 @@ public abstract class AbstractHCButton <IMPLTYPE extends AbstractHCButton <IMPLT
     addChild (sLabel);
   }
 
-  public AbstractHCButton (@Nullable final String sLabel, @Nullable final IJSCodeProvider aOnClick)
+  public AbstractHCButton (@Nullable final String sLabel, @Nullable final IHasJSCode aOnClick)
   {
     this (sLabel);
     setOnClick (aOnClick);
@@ -130,7 +130,7 @@ public abstract class AbstractHCButton <IMPLTYPE extends AbstractHCButton <IMPLT
   }
 
   @Nullable
-  public final IJSCodeProvider getFormActionJS ()
+  public final IHasJSCode getFormActionJS ()
   {
     return m_aFormAction.getActionJS ();
   }
@@ -273,7 +273,7 @@ public abstract class AbstractHCButton <IMPLTYPE extends AbstractHCButton <IMPLT
   }
 
   @Nonnull
-  public IMPLTYPE setOnClick (@Nullable final IJSCodeProvider aOnClick)
+  public IMPLTYPE setOnClick (@Nullable final IHasJSCode aOnClick)
   {
     return setEventHandler (EJSEvent.CLICK, aOnClick);
   }
@@ -285,7 +285,7 @@ public abstract class AbstractHCButton <IMPLTYPE extends AbstractHCButton <IMPLT
   }
 
   @Nonnull
-  public IMPLTYPE addOnClick (@Nullable final IJSCodeProvider aOnClick)
+  public IMPLTYPE addOnClick (@Nullable final IHasJSCode aOnClick)
   {
     return addEventHandler (EJSEvent.CLICK, aOnClick);
   }

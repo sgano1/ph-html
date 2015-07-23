@@ -29,7 +29,7 @@ import com.helger.commons.string.ToStringGenerator;
  * @author Philip Helger
  */
 @Immutable
-public final class JSListType extends JSType implements IHasChildJSType
+public class JSListType extends JSType implements IHasChildJSType
 {
   /**
    * The type of the list elements

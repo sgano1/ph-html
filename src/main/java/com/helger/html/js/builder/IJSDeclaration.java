@@ -19,7 +19,7 @@ package com.helger.html.js.builder;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.Nonempty;
-import com.helger.html.js.provider.IJSCodeProviderWithSettings;
+import com.helger.html.js.writer.IHasJSCodeWithSettings;
 
 /**
  * Common interface for code components that can generate declarations of
@@ -27,7 +27,7 @@ import com.helger.html.js.provider.IJSCodeProviderWithSettings;
  *
  * @author Philip Helger
  */
-public interface IJSDeclaration extends IJSCodeProviderWithSettings
+public interface IJSDeclaration extends IHasJSCodeWithSettings
 {
   /**
    * @return The name of the declared object. Neither <code>null</code> nor

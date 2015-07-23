@@ -14,29 +14,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.js.provider;
+package com.helger.html.js;
+
+import java.io.Serializable;
 
 import javax.annotation.Nullable;
 
 import com.helger.commons.annotation.MustImplementEqualsAndHashcode;
-import com.helger.html.js.IJSCodeProvider;
-import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
  * Basic interface for object providing JavaScript code.
- *
+ * 
  * @author Philip Helger
  */
 @MustImplementEqualsAndHashcode
-public interface IJSCodeProviderWithSettings extends IJSCodeProvider
+public interface IHasJSCode extends Serializable
 {
   /**
-   * @param aSettings
-   *        The formatter settings to be used. May be <code>null</code> for the
-   *        default settings.
    * @return The JavaScript code representation. May be <code>null</code> to
    *         indicate no JS code.
    */
   @Nullable
-  String getJSCode (@Nullable IJSWriterSettings aSettings);
+  String getJSCode ();
 }

@@ -18,7 +18,7 @@ package com.helger.html.hc.html;
 
 import javax.annotation.Nullable;
 
-import com.helger.html.js.IJSCodeProvider;
+import com.helger.html.js.IHasJSCode;
 
 /**
  * Represents an HTML &lt;button&gt; element with type "button"
@@ -35,7 +35,7 @@ public class HCButton extends AbstractHCButton <HCButton>
     super (sLabel);
   }
 
-  public HCButton (@Nullable final String sLabel, @Nullable final IJSCodeProvider aOnClick)
+  public HCButton (@Nullable final String sLabel, @Nullable final IHasJSCode aOnClick)
   {
     super (sLabel, aOnClick);
   }
