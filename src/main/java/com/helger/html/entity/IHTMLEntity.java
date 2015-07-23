@@ -16,16 +16,18 @@
  */
 package com.helger.html.entity;
 
+import java.io.Serializable;
+
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.Nonempty;
 
 /**
  * Base interface for a single HTML entity.
- * 
+ *
  * @author Philip Helger
  */
-public interface IHTMLEntity
+public interface IHTMLEntity extends Serializable
 {
   /**
    * @return The name of the entity. E.g. <code>nbsp</code>

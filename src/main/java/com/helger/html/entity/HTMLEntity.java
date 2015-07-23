@@ -19,12 +19,14 @@ package com.helger.html.entity;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 
 /**
  * Contains an arbitrary entities.
- * 
+ *
  * @author Philip Helger
  */
 @Immutable
@@ -35,6 +37,7 @@ public class HTMLEntity implements IHTMLEntity
 
   public HTMLEntity (@Nonnull @Nonempty final String sName)
   {
+    ValueEnforcer.notEmpty (sName, "Name");
     m_sEntityName = sName;
     m_sEntityReference = '&' + sName + ';';
   }
@@ -51,6 +54,23 @@ public class HTMLEntity implements IHTMLEntity
   public String getEntityReference ()
   {
     return m_sEntityReference;
+  }
+
+  @Override
+  public boolean equals (final Object o)
+  {
+    if (o == this)
+      return true;
+    if (o == null || !getClass ().equals (o.getClass ()))
+      return false;
+    final HTMLEntity rhs = (HTMLEntity) o;
+    return m_sEntityName.equals (rhs.m_sEntityName);
+  }
+
+  @Override
+  public int hashCode ()
+  {
+    return new HashCodeGenerator (this).append (m_sEntityName).getHashCode ();
   }
 
   @Override

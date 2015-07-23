@@ -59,7 +59,7 @@ import com.helger.html.hc.html.HCRow;
 import com.helger.html.hc.html.HCScript;
 import com.helger.html.hc.html.HCStyle;
 import com.helger.html.hc.impl.HCEntityNode;
-import com.helger.html.hc.util.HCSpecialNodeHandler;
+import com.helger.html.hc.special.HCSpecialNodeHandler;
 import com.helger.html.js.EJSEvent;
 import com.helger.html.js.builder.JSExpr;
 import com.helger.html.js.builder.JSInvocation;

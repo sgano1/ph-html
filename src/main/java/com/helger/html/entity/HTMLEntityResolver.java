@@ -29,6 +29,7 @@ import org.xml.sax.InputSource;
 
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.annotation.Singleton;
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.commons.io.stream.StreamHelper;
@@ -40,6 +41,7 @@ import com.helger.html.CHTMLDocTypes;
  *
  * @author Philip Helger
  */
+@Singleton
 public final class HTMLEntityResolver implements EntityResolver
 {
   private static final HTMLEntityResolver s_aInstance = new HTMLEntityResolver ();

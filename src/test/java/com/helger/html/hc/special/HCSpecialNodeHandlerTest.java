@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.util;
+package com.helger.html.hc.special;
 
 import static org.junit.Assert.assertEquals;
 
@@ -33,8 +33,8 @@ import com.helger.html.hc.conversion.HCConversionSettings;
 import com.helger.html.hc.html.HCH1;
 import com.helger.html.hc.html.HCHtml;
 import com.helger.html.hc.html.HCScript;
-import com.helger.html.hc.util.IHCSpecialNodeListModifier;
-import com.helger.html.hc.util.SpecialNodeListModifier;
+import com.helger.html.hc.special.IHCSpecialNodeListModifier;
+import com.helger.html.hc.special.SpecialNodeListModifier;
 
 public final class HCSpecialNodeHandlerTest
 {

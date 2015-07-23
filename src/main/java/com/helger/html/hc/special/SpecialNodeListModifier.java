@@ -14,25 +14,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.util;
+package com.helger.html.hc.special;
 
-import java.util.List;
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
-import javax.annotation.Nonnull;
-
-import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.html.hc.IHCNode;
-
-public interface IHCSpecialNodeListModifier
+@Documented
+@Retention (RetentionPolicy.RUNTIME)
+@Target ({ ElementType.TYPE })
+public @interface SpecialNodeListModifier
 {
   /**
-   * Merge certain special nodes.
-   * 
-   * @param aNodes
-   *        The source list of special nodes to be merged.
-   * @return The modified list to be used for further processing.
+   * @return The class implementing {@link IHCSpecialNodeListModifier}. It must
+   *         be public and have a public no-argument constructor.
    */
-  @Nonnull
-  @ReturnsMutableCopy
-  List <? extends IHCNode> modifySpecialNodes (@Nonnull List <? extends IHCNode> aNodes);
+  Class <? extends IHCSpecialNodeListModifier> value();
 }
