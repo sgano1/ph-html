@@ -34,6 +34,7 @@ import com.helger.commons.id.IHasID;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.commons.microdom.serialize.MicroWriter;
 import com.helger.commons.xml.serialize.write.XMLWriter;
+import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.hc.IHCHasID;
@@ -604,6 +605,22 @@ public final class JQuery
                                                           @Nonnull final ICSSClassProvider aCSSClass)
   {
     return elementNameRef (sElementName, JQuerySelector.clazz (aCSSClass));
+  }
+
+  /**
+   * Get the result of a jQuery selection
+   *
+   * @param sName
+   *        The name of the HTML elements to be selected. May not be
+   *        <code>null</code>.
+   * @return A jQuery invocation with the passed element:
+   *         <code>$('[name=value]')</code>
+   */
+  @Nonnull
+  public static JQueryInvocation nameRef (@Nonnull @Nonempty final String sName)
+  {
+    ValueEnforcer.notEmpty (sName, "Name");
+    return JQuerySelector.attributeEquals (CHTMLAttributes.NAME, sName).invoke ();
   }
 
   /**
