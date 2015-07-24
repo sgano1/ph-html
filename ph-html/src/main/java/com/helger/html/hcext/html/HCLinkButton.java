@@ -19,7 +19,7 @@ package com.helger.html.hcext.html;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.url.ISimpleURL;
-import com.helger.html.hc.html.AbstractHCButton;
+import com.helger.html.hc.base.AbstractHCButton;
 import com.helger.html.js.builder.IJSStatement;
 import com.helger.html.js.builder.html.JSHtml;
 

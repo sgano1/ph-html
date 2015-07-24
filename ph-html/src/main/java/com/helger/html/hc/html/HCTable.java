@@ -18,7 +18,7 @@ package com.helger.html.hc.html;
 
 import javax.annotation.Nullable;
 
-import com.helger.html.hc.api.IHCCol;
+import com.helger.html.hc.base.IHCCol;
 
 /**
  * Class for representing a simple HTML &lt;table&gt;.

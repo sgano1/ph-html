@@ -25,7 +25,7 @@ import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.EURLProtocol;
 import com.helger.commons.url.ReadOnlySimpleURL;
-import com.helger.html.hc.html.AbstractHCA;
+import com.helger.html.hc.base.AbstractHCA;
 
 public class HCA_MailTo extends AbstractHCA <HCA_MailTo>
 {

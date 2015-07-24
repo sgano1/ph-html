@@ -30,6 +30,7 @@ import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.hc.IHCElement;
 import com.helger.html.hc.IHCHasChildren;
 import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.base.IHCCol;
 import com.helger.html.hc.html.HCColGroup;
 import com.helger.html.hc.html.HCRow;
 

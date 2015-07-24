@@ -24,7 +24,7 @@ import com.helger.commons.collection.impl.NonBlockingStack;
 import com.helger.commons.string.StringHelper;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeWithChildren;
-import com.helger.html.hc.api.IHCCell;
+import com.helger.html.hc.base.IHCCell;
 import com.helger.html.hc.html.AbstractHCBaseTable;
 import com.helger.html.hc.html.AbstractHCDefinitionItem;
 import com.helger.html.hc.html.AbstractHCList;

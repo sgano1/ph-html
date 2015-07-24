@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html;
+package com.helger.html.hc.base;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -31,8 +31,9 @@ import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.api.EHCButtonType;
 import com.helger.html.hc.api.EHCFormMethod;
-import com.helger.html.hc.api.IHCButton;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
+import com.helger.html.hc.html.HC_Action;
+import com.helger.html.hc.html.HC_Target;
 import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 import com.helger.html.js.EJSEvent;
 import com.helger.html.js.IHasJSCode;
@@ -43,10 +44,10 @@ import com.helger.html.js.builder.html.JSHtml;
  * Represents an HTML &lt;button&gt; element with type "button"
  *
  * @author Philip Helger
- * @param <IMPLTYPE>
+ * @param <THISTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCButton <IMPLTYPE extends AbstractHCButton <IMPLTYPE>> extends AbstractHCElementWithChildren <IMPLTYPE>implements IHCButton <IMPLTYPE>
+public abstract class AbstractHCButton <THISTYPE extends AbstractHCButton <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCButton <THISTYPE>
 {
   /** By default auto focus is disabled */
   public static final boolean DEFAULT_AUTO_FOCUS = false;
@@ -92,7 +93,7 @@ public abstract class AbstractHCButton <IMPLTYPE extends AbstractHCButton <IMPLT
   }
 
   @Nonnull
-  public final IMPLTYPE setAutoFocus (final boolean bAutoFocus)
+  public final THISTYPE setAutoFocus (final boolean bAutoFocus)
   {
     m_bAutoFocus = bAutoFocus;
     return thisAsT ();
@@ -104,7 +105,7 @@ public abstract class AbstractHCButton <IMPLTYPE extends AbstractHCButton <IMPLT
   }
 
   @Nonnull
-  public final IMPLTYPE setDisabled (final boolean bDisabled)
+  public final THISTYPE setDisabled (final boolean bDisabled)
   {
     m_bDisabled = bDisabled;
     return thisAsT ();
@@ -117,7 +118,7 @@ public abstract class AbstractHCButton <IMPLTYPE extends AbstractHCButton <IMPLT
   }
 
   @Nonnull
-  public final IMPLTYPE setForm (@Nullable final String sForm)
+  public final THISTYPE setForm (@Nullable final String sForm)
   {
     m_sForm = sForm;
     return thisAsT ();
@@ -136,21 +137,21 @@ public abstract class AbstractHCButton <IMPLTYPE extends AbstractHCButton <IMPLT
   }
 
   @Nonnull
-  public final IMPLTYPE setFormAction (@Nullable final ISimpleURL aAction)
+  public final THISTYPE setFormAction (@Nullable final ISimpleURL aAction)
   {
     m_aFormAction.setAction (aAction);
     return thisAsT ();
   }
 
   @Nonnull
-  public final IMPLTYPE setFormAction (@Nullable final String sAction)
+  public final THISTYPE setFormAction (@Nullable final String sAction)
   {
     m_aFormAction.setAction (sAction);
     return thisAsT ();
   }
 
   @Nonnull
-  public final IMPLTYPE setFormAction (@Nullable final IJSStatement aAction)
+  public final THISTYPE setFormAction (@Nullable final IJSStatement aAction)
   {
     m_aFormAction.setAction (aAction);
     return thisAsT ();
@@ -162,30 +163,20 @@ public abstract class AbstractHCButton <IMPLTYPE extends AbstractHCButton <IMPLT
     return m_aFormEncType;
   }
 
-  /**
-   * Make this form a file-upload form.
-   *
-   * @return this
-   */
   @Nonnull
-  public IMPLTYPE setFormEncTypeFileUpload ()
+  public THISTYPE setFormEncTypeFileUpload ()
   {
     return setFormEncType (CMimeType.MULTIPART_FORMDATA);
   }
 
-  /**
-   * Set the enctype to text/plain
-   *
-   * @return this
-   */
   @Nonnull
-  public IMPLTYPE setFormEncTypeTextPlain ()
+  public THISTYPE setFormEncTypeTextPlain ()
   {
     return setFormEncType (CMimeType.TEXT_PLAIN);
   }
 
   @Nonnull
-  public IMPLTYPE setFormEncType (@Nullable final IMimeType aFormEncType)
+  public THISTYPE setFormEncType (@Nullable final IMimeType aFormEncType)
   {
     m_aFormEncType = aFormEncType;
     return thisAsT ();
@@ -198,7 +189,7 @@ public abstract class AbstractHCButton <IMPLTYPE extends AbstractHCButton <IMPLT
   }
 
   @Nonnull
-  public final IMPLTYPE setFormMethod (@Nullable final EHCFormMethod eFormMethod)
+  public final THISTYPE setFormMethod (@Nullable final EHCFormMethod eFormMethod)
   {
     m_eFormMethod = eFormMethod;
     return thisAsT ();
@@ -210,7 +201,7 @@ public abstract class AbstractHCButton <IMPLTYPE extends AbstractHCButton <IMPLT
   }
 
   @Nonnull
-  public final IMPLTYPE setFormNoValidate (final boolean bFormNoValidate)
+  public final THISTYPE setFormNoValidate (final boolean bFormNoValidate)
   {
     m_bFormNoValidate = bFormNoValidate;
     return thisAsT ();
@@ -223,13 +214,13 @@ public abstract class AbstractHCButton <IMPLTYPE extends AbstractHCButton <IMPLT
   }
 
   @Nonnull
-  public final IMPLTYPE setFormTargetBlank ()
+  public final THISTYPE setFormTargetBlank ()
   {
     return setFormTarget (HC_Target.BLANK);
   }
 
   @Nonnull
-  public final IMPLTYPE setFormTarget (@Nullable final HC_Target aFormTarget)
+  public final THISTYPE setFormTarget (@Nullable final HC_Target aFormTarget)
   {
     m_aFormTarget = aFormTarget;
     return thisAsT ();
@@ -241,7 +232,7 @@ public abstract class AbstractHCButton <IMPLTYPE extends AbstractHCButton <IMPLT
   }
 
   @Nonnull
-  public final IMPLTYPE setName (@Nullable final String sName)
+  public final THISTYPE setName (@Nullable final String sName)
   {
     m_sName = sName;
     return thisAsT ();
@@ -254,7 +245,7 @@ public abstract class AbstractHCButton <IMPLTYPE extends AbstractHCButton <IMPLT
   }
 
   @Nonnull
-  public IMPLTYPE setType (@Nonnull final EHCButtonType eType)
+  public THISTYPE setType (@Nonnull final EHCButtonType eType)
   {
     m_eType = ValueEnforcer.notNull (eType, "Type");
     return thisAsT ();
@@ -266,32 +257,32 @@ public abstract class AbstractHCButton <IMPLTYPE extends AbstractHCButton <IMPLT
   }
 
   @Nonnull
-  public final IMPLTYPE setValue (@Nullable final String sValue)
+  public final THISTYPE setValue (@Nullable final String sValue)
   {
     m_sValue = sValue;
     return thisAsT ();
   }
 
   @Nonnull
-  public IMPLTYPE setOnClick (@Nullable final IHasJSCode aOnClick)
+  public THISTYPE setOnClick (@Nullable final IHasJSCode aOnClick)
   {
     return setEventHandler (EJSEvent.CLICK, aOnClick);
   }
 
   @Nonnull
-  public IMPLTYPE setOnClick (@Nonnull final ISimpleURL aURL)
+  public THISTYPE setOnClick (@Nonnull final ISimpleURL aURL)
   {
     return setOnClick (JSHtml.windowLocationHref (aURL));
   }
 
   @Nonnull
-  public IMPLTYPE addOnClick (@Nullable final IHasJSCode aOnClick)
+  public THISTYPE addOnClick (@Nullable final IHasJSCode aOnClick)
   {
     return addEventHandler (EJSEvent.CLICK, aOnClick);
   }
 
   @Nonnull
-  public IMPLTYPE addOnClick (@Nonnull final ISimpleURL aURL)
+  public THISTYPE addOnClick (@Nonnull final ISimpleURL aURL)
   {
     return addOnClick (JSHtml.windowLocationHref (aURL));
   }

@@ -21,7 +21,7 @@ import javax.annotation.Nonnull;
 import com.helger.commons.annotation.Nonempty;
 
 /**
- * Alignment of an {@link com.helger.html.hc.html.AbstractHCCell} element.
+ * Alignment of an {@link com.helger.html.hc.base.AbstractHCCell} element.
  * 
  * @author Philip Helger
  */

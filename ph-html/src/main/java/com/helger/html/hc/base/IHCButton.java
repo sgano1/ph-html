@@ -14,19 +14,92 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.api;
+package com.helger.html.hc.base;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.helger.commons.mime.IMimeType;
 import com.helger.commons.url.ISimpleURL;
-import com.helger.html.hc.IHCHasState;
 import com.helger.html.hc.IHCElementWithChildren;
 import com.helger.html.hc.IHCHasName;
+import com.helger.html.hc.IHCHasState;
+import com.helger.html.hc.api.EHCButtonType;
+import com.helger.html.hc.api.EHCFormMethod;
+import com.helger.html.hc.html.HC_Target;
 import com.helger.html.js.IHasJSCode;
+import com.helger.html.js.builder.IJSStatement;
 
 public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends IHCElementWithChildren <THISTYPE>, IHCHasState <THISTYPE>, IHCHasName <THISTYPE>
 {
+  boolean isAutoFocus ();
+
+  @Nonnull
+  THISTYPE setAutoFocus (boolean bAutoFocus);
+
+  @Nullable
+  String getForm ();
+
+  @Nonnull
+  THISTYPE setForm (@Nullable String sForm);
+
+  @Nullable
+  String getFormActionURL ();
+
+  @Nullable
+  IHasJSCode getFormActionJS ();
+
+  @Nonnull
+  THISTYPE setFormAction (@Nullable ISimpleURL aAction);
+
+  @Nonnull
+  THISTYPE setFormAction (@Nullable String sAction);
+
+  @Nonnull
+  THISTYPE setFormAction (@Nullable IJSStatement aAction);
+
+  @Nullable
+  IMimeType getFormEncType ();
+
+  /**
+   * Make this form a file-upload form.
+   *
+   * @return this
+   */
+  @Nonnull
+  THISTYPE setFormEncTypeFileUpload ();
+
+  /**
+   * Set the enctype to text/plain
+   *
+   * @return this
+   */
+  @Nonnull
+  THISTYPE setFormEncTypeTextPlain ();
+
+  @Nonnull
+  THISTYPE setFormEncType (@Nullable IMimeType aFormEncType);
+
+  @Nullable
+  EHCFormMethod getFormMethod ();
+
+  @Nonnull
+  THISTYPE setFormMethod (@Nullable EHCFormMethod eFormMethod);
+
+  boolean isFormNoValidate ();
+
+  @Nonnull
+  THISTYPE setFormNoValidate (boolean bFormNoValidate);
+
+  @Nullable
+  HC_Target getFormTarget ();
+
+  @Nonnull
+  THISTYPE setFormTargetBlank ();
+
+  @Nonnull
+  THISTYPE setFormTarget (@Nullable HC_Target aFormTarget);
+
   /**
    * @return The value of the button. May be <code>null</code>.
    */
@@ -35,7 +108,7 @@ public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends IHCEl
 
   /**
    * Set the value of the button.
-   * 
+   *
    * @param sValue
    *        The value to set. May be <code>null</code>.
    * @return this
@@ -52,7 +125,7 @@ public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends IHCEl
 
   /**
    * Set the type of the button.
-   * 
+   *
    * @param eType
    *        The new type. May not be <code>null</code>.
    * @return this
@@ -62,7 +135,7 @@ public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends IHCEl
 
   /**
    * Shortcut for <code>setEventHandler(EJSEvent.ONCLICK, aOnClick)</code>
-   * 
+   *
    * @param aOnClick
    *        JS event to trigger
    * @return this
@@ -72,7 +145,7 @@ public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends IHCEl
 
   /**
    * Shortcut for <code>setOnClick(JSHtml.windowLocationHref (aURL))</code>
-   * 
+   *
    * @param aURL
    *        URL to link to
    * @return this
@@ -82,7 +155,7 @@ public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends IHCEl
 
   /**
    * Shortcut for <code>addEventHandler(EJSEvent.ONCLICK, aOnClick)</code>
-   * 
+   *
    * @param aOnClick
    *        JS event to trigger
    * @return this
@@ -92,7 +165,7 @@ public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends IHCEl
 
   /**
    * Shortcut for <code>addOnClick(JSHtml.windowLocationHref (aURL))</code>
-   * 
+   *
    * @param aURL
    *        URL to link to
    * @return this

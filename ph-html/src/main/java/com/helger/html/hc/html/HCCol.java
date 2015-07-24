@@ -22,6 +22,7 @@ import javax.annotation.Nullable;
 
 import com.helger.css.ECSSUnit;
 import com.helger.html.CHTMLAttributeValues;
+import com.helger.html.hc.base.AbstractHCCol;
 
 /**
  * Represents an HTML &lt;col&gt; element

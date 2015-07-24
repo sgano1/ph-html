@@ -19,6 +19,7 @@ package com.helger.html.hc.html;
 import javax.annotation.Nullable;
 
 import com.helger.html.hc.api.EHCButtonType;
+import com.helger.html.hc.base.AbstractHCButton;
 
 /**
  * Represents an HTML &lt;button&gt; element with type "reset"

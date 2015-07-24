@@ -21,7 +21,8 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.url.ISimpleURL;
 import com.helger.commons.url.ReadOnlySimpleURL;
-import com.helger.html.hc.html.AbstractHCA;
+import com.helger.html.hc.base.AbstractHCA;
+import com.helger.html.hc.base.IHCA;
 import com.helger.html.js.CJS;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.builder.JSExpr;
@@ -61,12 +62,12 @@ public class HCA_JS extends AbstractHCA <HCA_JS>
     return this;
   }
 
-  public static void addOnClickReturnFalse (@Nonnull final AbstractHCA <?> aLink, @Nullable final IHasJSCode aJSOnClick)
+  public static void addOnClickReturnFalse (@Nonnull final IHCA <?> aLink, @Nullable final IHasJSCode aJSOnClick)
   {
     aLink.addOnClick (new CollectingJSCodeProvider (aJSOnClick, new JSReturn (JSExpr.FALSE)));
   }
 
-  public static void setOnClickReturnFalse (@Nonnull final AbstractHCA <?> aLink, @Nullable final IHasJSCode aJSOnClick)
+  public static void setOnClickReturnFalse (@Nonnull final IHCA <?> aLink, @Nullable final IHasJSCode aJSOnClick)
   {
     aLink.setOnClick (new CollectingJSCodeProvider (aJSOnClick, new JSReturn (JSExpr.FALSE)));
   }

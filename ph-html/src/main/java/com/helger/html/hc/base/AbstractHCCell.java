@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html;
+package com.helger.html.hc.base;
 
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
@@ -27,8 +27,8 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.api.EHCCellAlign;
-import com.helger.html.hc.api.IHCCell;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
+import com.helger.html.hc.html.HCRow;
 import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 
 /**
@@ -57,7 +57,7 @@ public abstract class AbstractHCCell <IMPLTYPE extends AbstractHCCell <IMPLTYPE>
   }
 
   @Nonnull
-  final IMPLTYPE internalSetParentRow (@Nullable final HCRow aParentRow)
+  public final IMPLTYPE internalSetParentRow (@Nullable final HCRow aParentRow)
   {
     m_aParentRow = aParentRow;
     return thisAsT ();

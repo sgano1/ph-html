@@ -17,6 +17,7 @@
 package com.helger.html.hc.html;
 
 import com.helger.html.EHTMLElement;
+import com.helger.html.hc.base.AbstractHCCell;
 
 /**
  * Represents an HTML &lt;th&gt; element

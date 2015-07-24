@@ -18,6 +18,7 @@ package com.helger.html.hc.html;
 
 import javax.annotation.Nullable;
 
+import com.helger.html.hc.base.AbstractHCButton;
 import com.helger.html.js.IHasJSCode;
 
 /**
