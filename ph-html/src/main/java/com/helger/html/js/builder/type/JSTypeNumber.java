@@ -14,13 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.js.builder;
+package com.helger.html.js.builder.type;
 
 import javax.annotation.Nonnull;
 
+import com.helger.html.js.builder.JSFieldRef;
+import com.helger.html.js.builder.JSGlobal;
+
 /**
- * Contains the JS built-in type Number
- * 
+ * Contains the JS built-in type 'Number'
+ *
  * @author Philip Helger
  */
 public class JSTypeNumber extends JSPrimitiveType

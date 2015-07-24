@@ -24,6 +24,8 @@ import java.math.BigDecimal;
 
 import org.junit.Test;
 
+import com.helger.html.js.builder.type.JSPrimitiveType;
+
 /**
  * Test class for class {@link JSOp}.
  *

@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.js.builder;
+package com.helger.html.js.builder.type;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -22,6 +22,11 @@ import javax.annotation.Nullable;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.builder.AbstractJSType;
+import com.helger.html.js.builder.JSExpr;
+import com.helger.html.js.builder.JSFormatter;
+import com.helger.html.js.builder.JSPrinter;
+import com.helger.html.js.builder.JSRef;
 import com.helger.html.js.marshal.JSMarshaller;
 import com.helger.html.js.writer.IJSWriterSettings;
 
@@ -35,15 +40,19 @@ public class JSPrimitiveType extends AbstractJSType
   public static final JSPrimitiveType ARGUMENTS = new JSPrimitiveType ("Arguments");
   public static final JSPrimitiveType ARRAY = new JSPrimitiveType ("Array");
   public static final JSPrimitiveType BOOLEAN = new JSPrimitiveType ("Boolean");
-  public static final JSPrimitiveType DATE = new JSPrimitiveType ("Date");
-  public static final JSPrimitiveType ERROR = new JSPrimitiveType ("Error");
+  public static final JSTypeDate DATE = new JSTypeDate ();
+  public static final JSTypeError ERROR = new JSTypeError ();
+  public static final JSTypeEvalError EVAL_ERROR = new JSTypeEvalError ();
   public static final JSPrimitiveType FUNCTION = new JSPrimitiveType ("Function");
-  public static final JSPrimitiveType JSON = new JSPrimitiveType ("JSON");
+  public static final JSTypeJSON JSON = new JSTypeJSON ();
   public static final JSTypeMath MATH = new JSTypeMath ();
   public static final JSTypeNumber NUMBER = new JSTypeNumber ();
-  public static final JSPrimitiveType OBJECT = new JSPrimitiveType ("Object");
+  public static final JSTypeObject OBJECT = new JSTypeObject ();
+  public static final JSTypeRangeError RANGE_ERROR = new JSTypeRangeError ();
   public static final JSPrimitiveType REGEXP = new JSPrimitiveType ("RegExp");
-  public static final JSPrimitiveType STRING = new JSPrimitiveType ("String");
+  public static final JSTypeString STRING = new JSTypeString ();
+  public static final JSTypeTypeError TYPE_ERROR = new JSTypeTypeError ();
+  public static final JSTypeURIError URI_ERROR = new JSTypeURIError ();
 
   private final String m_sName;
   private final JSRef m_aGlobal;

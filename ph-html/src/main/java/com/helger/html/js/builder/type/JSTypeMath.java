@@ -14,14 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.js.builder;
+package com.helger.html.js.builder.type;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.helger.html.js.builder.IJSExpression;
+import com.helger.html.js.builder.JSFieldRef;
+import com.helger.html.js.builder.JSInvocation;
+
 /**
- * Contains the JS built-in type Number
- * 
+ * Contains the JS built-in type 'Math'
+ *
  * @author Philip Helger
  */
 public class JSTypeMath extends JSPrimitiveType

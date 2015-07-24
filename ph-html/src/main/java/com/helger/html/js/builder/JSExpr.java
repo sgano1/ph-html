@@ -28,6 +28,7 @@ import com.helger.commons.annotation.CodingStyleguideUnaware;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.PresentForCodeCoverage;
 import com.helger.commons.collection.ArrayHelper;
+import com.helger.html.js.builder.type.JSPrimitiveType;
 import com.helger.json.IJson;
 
 /**
