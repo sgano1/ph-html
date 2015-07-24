@@ -19,6 +19,7 @@ package com.helger.html.js.builder.type;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.helger.commons.annotation.CodingStyleguideUnaware;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
@@ -35,21 +36,21 @@ import com.helger.html.js.writer.IJSWriterSettings;
  *
  * @author Philip Helger
  */
-public class JSPrimitiveType extends AbstractJSType
+@CodingStyleguideUnaware
+public abstract class JSPrimitiveType extends AbstractJSType
 {
-  public static final JSPrimitiveType ARGUMENTS = new JSPrimitiveType ("Arguments");
-  public static final JSPrimitiveType ARRAY = new JSPrimitiveType ("Array");
-  public static final JSPrimitiveType BOOLEAN = new JSPrimitiveType ("Boolean");
+  public static final JSTypeArray ARRAY = new JSTypeArray ();
+  public static final JSTypeBoolean BOOLEAN = new JSTypeBoolean ();
   public static final JSTypeDate DATE = new JSTypeDate ();
   public static final JSTypeError ERROR = new JSTypeError ();
   public static final JSTypeEvalError EVAL_ERROR = new JSTypeEvalError ();
-  public static final JSPrimitiveType FUNCTION = new JSPrimitiveType ("Function");
+  public static final JSTypeFunction FUNCTION = new JSTypeFunction ();
   public static final JSTypeJSON JSON = new JSTypeJSON ();
   public static final JSTypeMath MATH = new JSTypeMath ();
   public static final JSTypeNumber NUMBER = new JSTypeNumber ();
   public static final JSTypeObject OBJECT = new JSTypeObject ();
   public static final JSTypeRangeError RANGE_ERROR = new JSTypeRangeError ();
-  public static final JSPrimitiveType REGEXP = new JSPrimitiveType ("RegExp");
+  public static final JSTypeRegExp REGEXP = new JSTypeRegExp ();
   public static final JSTypeString STRING = new JSTypeString ();
   public static final JSTypeTypeError TYPE_ERROR = new JSTypeTypeError ();
   public static final JSTypeURIError URI_ERROR = new JSTypeURIError ();
