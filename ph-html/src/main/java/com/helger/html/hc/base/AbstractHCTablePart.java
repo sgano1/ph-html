@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html;
+package com.helger.html.hc.base;
 
 import java.util.List;
 
@@ -27,6 +27,7 @@ import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
+import com.helger.html.hc.html.HCRow;
 import com.helger.html.hc.impl.AbstractHCElementWithInternalChildren;
 
 /**
@@ -75,7 +76,7 @@ public abstract class AbstractHCTablePart <THISTYPE extends AbstractHCTablePart 
    */
   @Nullable
   @ReturnsMutableObject ("speed")
-  final List <HCRow> directGetRowList ()
+  protected final List <HCRow> directGetRowList ()
   {
     return directGetChildren ();
   }

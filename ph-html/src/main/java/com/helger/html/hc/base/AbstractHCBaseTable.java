@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html;
+package com.helger.html.hc.base;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -39,11 +39,13 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
 import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.api.IHCTable;
-import com.helger.html.hc.base.IHCCell;
-import com.helger.html.hc.base.IHCCol;
 import com.helger.html.hc.conversion.HCConsistencyChecker;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
+import com.helger.html.hc.html.HCColGroup;
+import com.helger.html.hc.html.HCRow;
+import com.helger.html.hc.html.HCTBody;
+import com.helger.html.hc.html.HCTFoot;
+import com.helger.html.hc.html.HCTHead;
 import com.helger.html.hc.impl.AbstractHCElement;
 import com.helger.html.hc.impl.HCTextNode;
 
@@ -77,9 +79,6 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
     super (aElement);
   }
 
-  /**
-   * @return The table header. Never <code>null</code>.
-   */
   @Nonnull
   public final HCTHead getHead ()
   {
@@ -93,9 +92,6 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
     return thisAsT ();
   }
 
-  /**
-   * @return The table body. Never <code>null</code>.
-   */
   @Nonnull
   public final HCTBody getBody ()
   {
@@ -109,9 +105,6 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
     return thisAsT ();
   }
 
-  /**
-   * @return The table footer. Never <code>null</code>.
-   */
   @Nonnull
   public final HCTFoot getFoot ()
   {
@@ -905,25 +898,25 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
       }
   }
 
-  public static void checkInternalConsistency (@Nonnull final AbstractHCBaseTable <?> aBaseTable)
+  public void checkInternalConsistency ()
   {
     // Determine number of columns to use
     int nCols = 0;
-    if (aBaseTable.m_aColGroup != null)
-      nCols = aBaseTable.m_aColGroup.getColumnCount ();
-    if (nCols == 0 && aBaseTable.m_aHead.hasChildren ())
-      nCols = aBaseTable.m_aHead.getFirstChild ().getEffectiveCellCount ();
-    if (nCols == 0 && aBaseTable.m_aBody.hasChildren ())
-      nCols = aBaseTable.m_aBody.getFirstChild ().getEffectiveCellCount ();
-    if (nCols == 0 && aBaseTable.m_aFoot.hasChildren ())
-      nCols = aBaseTable.m_aFoot.getFirstChild ().getEffectiveCellCount ();
+    if (m_aColGroup != null)
+      nCols = m_aColGroup.getColumnCount ();
+    if (nCols == 0 && m_aHead.hasChildren ())
+      nCols = m_aHead.getFirstChild ().getEffectiveCellCount ();
+    if (nCols == 0 && m_aBody.hasChildren ())
+      nCols = m_aBody.getFirstChild ().getEffectiveCellCount ();
+    if (nCols == 0 && m_aFoot.hasChildren ())
+      nCols = m_aFoot.getFirstChild ().getEffectiveCellCount ();
 
     String sPrefix = "Table";
-    if (StringHelper.hasText (aBaseTable.getID ()))
-      sPrefix += " with ID " + aBaseTable.getID ();
-    _checkConsistency (sPrefix + " header", aBaseTable.m_aHead, nCols);
-    _checkConsistency (sPrefix + " body", aBaseTable.m_aBody, nCols);
-    _checkConsistency (sPrefix + " footer", aBaseTable.m_aFoot, nCols);
+    if (StringHelper.hasText (getID ()))
+      sPrefix += " with ID " + getID ();
+    _checkConsistency (sPrefix + " header", m_aHead, nCols);
+    _checkConsistency (sPrefix + " body", m_aBody, nCols);
+    _checkConsistency (sPrefix + " footer", m_aFoot, nCols);
   }
 
   @Override

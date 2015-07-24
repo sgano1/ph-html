@@ -43,7 +43,7 @@ import com.helger.html.hc.IHCHasChildren;
 import com.helger.html.hc.IHCHasID;
 import com.helger.html.hc.IHCIteratorCallback;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.html.AbstractHCBaseTable;
+import com.helger.html.hc.base.IHCTable;
 import com.helger.html.hc.html.HCA;
 import com.helger.html.hc.html.HCButton;
 import com.helger.html.hc.html.HCForm;
@@ -168,9 +168,9 @@ public final class HCConsistencyChecker
       consistencyWarning ("PROGRESS contains other nested progress");
   }
 
-  private static void _checkTable (@Nonnull final AbstractHCBaseTable <?> aTable)
+  private static void _checkTable (@Nonnull final IHCTable <?> aTable)
   {
-    AbstractHCBaseTable.checkInternalConsistency (aTable);
+    aTable.checkInternalConsistency ();
   }
 
   public static void runConsistencyCheckBeforeCreation (@Nonnull final IHCElement <?> aElement,
@@ -204,8 +204,8 @@ public final class HCConsistencyChecker
                 if (aElement instanceof HCProgress)
                   _checkProgress ((HCProgress) aElement);
                 else
-                  if (aElement instanceof AbstractHCBaseTable <?>)
-                    _checkTable ((AbstractHCBaseTable <?>) aElement);
+                  if (aElement instanceof IHCTable <?>)
+                    _checkTable ((IHCTable <?>) aElement);
   }
 
   public static void checkIfLinkIsMasked (@Nullable final String sHref)

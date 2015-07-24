@@ -17,13 +17,13 @@
 package com.helger.html.hc;
 
 /**
- * Interface for elements having children.
+ * Interface for elements having children of a certain type.
  *
  * @author Philip Helger
  * @param <THISTYPE>
  *        Implementation type
  */
-public interface IHCElementWithChildren <THISTYPE extends IHCElementWithChildren <THISTYPE>> extends IHCElementWithInternalChildren <THISTYPE, IHCNode>, IHCNodeWithChildren <THISTYPE>
+public interface IHCElementWithInternalChildren <THISTYPE extends IHCElementWithInternalChildren <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode> extends IHCElement <THISTYPE>, IHCHasChildrenMutable <THISTYPE, CHILDTYPE>
 {
   /** empty */
 }

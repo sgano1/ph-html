@@ -24,14 +24,14 @@ import com.helger.commons.collection.impl.NonBlockingStack;
 import com.helger.commons.string.StringHelper;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeWithChildren;
+import com.helger.html.hc.base.AbstractHCTablePart;
 import com.helger.html.hc.base.IHCCell;
 import com.helger.html.hc.base.IHCMediaElementChild;
-import com.helger.html.hc.html.AbstractHCBaseTable;
+import com.helger.html.hc.base.IHCTable;
 import com.helger.html.hc.html.AbstractHCDefinitionItem;
 import com.helger.html.hc.html.AbstractHCList;
 import com.helger.html.hc.html.AbstractHCMediaElement;
 import com.helger.html.hc.html.AbstractHCRubyChild;
-import com.helger.html.hc.html.AbstractHCTablePart;
 import com.helger.html.hc.html.HCCol;
 import com.helger.html.hc.html.HCColGroup;
 import com.helger.html.hc.html.HCDL;
@@ -126,19 +126,19 @@ final class HCStack
               if (aParent instanceof HCOption && aNode instanceof HCTextNode)
                 ((HCOption) aParent).addChild ((HCTextNode) aNode);
               else
-                if (aParent instanceof AbstractHCBaseTable <?>)
+                if (aParent instanceof IHCTable <?>)
                 {
                   if (aNode instanceof HCTHead)
-                    ((AbstractHCBaseTable <?>) aParent).setHead ((HCTHead) aNode);
+                    ((IHCTable <?>) aParent).setHead ((HCTHead) aNode);
                   else
                     if (aNode instanceof HCTBody)
-                      ((AbstractHCBaseTable <?>) aParent).setBody ((HCTBody) aNode);
+                      ((IHCTable <?>) aParent).setBody ((HCTBody) aNode);
                     else
                       if (aNode instanceof HCTFoot)
-                        ((AbstractHCBaseTable <?>) aParent).setFoot ((HCTFoot) aNode);
+                        ((IHCTable <?>) aParent).setFoot ((HCTFoot) aNode);
                       else
                         if (aNode instanceof HCRow)
-                          ((AbstractHCBaseTable <?>) aParent).addBodyRow ((HCRow) aNode);
+                          ((IHCTable <?>) aParent).addBodyRow ((HCRow) aNode);
                         else
                           throw new MarkdownException ("Cannot add node " + aNode + " to " + aParent);
                 }

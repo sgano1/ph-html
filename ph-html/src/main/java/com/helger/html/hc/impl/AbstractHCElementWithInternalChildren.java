@@ -42,7 +42,7 @@ import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.HCHelper;
-import com.helger.html.hc.IHCHasChildrenMutable;
+import com.helger.html.hc.IHCElementWithInternalChildren;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
@@ -56,7 +56,7 @@ import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
  *        Contained child type
  */
 @NotThreadSafe
-public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends AbstractHCElementWithInternalChildren <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode> extends AbstractHCElement <THISTYPE>implements IHCHasChildrenMutable <THISTYPE, CHILDTYPE>
+public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends AbstractHCElementWithInternalChildren <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode> extends AbstractHCElement <THISTYPE>implements IHCElementWithInternalChildren <THISTYPE, CHILDTYPE>
 {
   private List <CHILDTYPE> m_aChildren;
 

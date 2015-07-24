@@ -14,22 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html;
+package com.helger.html.hc.base;
 
-import com.helger.html.EHTMLElement;
-import com.helger.html.hc.impl.AbstractHCElementWithChildren;
+import com.helger.html.hc.IHCElementWithChildren;
 
 /**
- * Represents an HTML &lt;span&gt; element with open semantics.
+ * Interface for SPANs
  *
  * @author Philip Helger
  * @param <THISTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCSpan <THISTYPE extends AbstractHCSpan <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>
+public interface IHCSpan <THISTYPE extends IHCSpan <THISTYPE>> extends IHCElementWithChildren <THISTYPE>
 {
-  public AbstractHCSpan ()
-  {
-    super (EHTMLElement.SPAN);
-  }
+  /* empty */
 }

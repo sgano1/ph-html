@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.api;
+package com.helger.html.hc.base;
 
 import java.util.Comparator;
 import java.util.List;
@@ -30,9 +30,11 @@ import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.hc.IHCElement;
 import com.helger.html.hc.IHCHasChildren;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.base.IHCCol;
 import com.helger.html.hc.html.HCColGroup;
 import com.helger.html.hc.html.HCRow;
+import com.helger.html.hc.html.HCTBody;
+import com.helger.html.hc.html.HCTFoot;
+import com.helger.html.hc.html.HCTHead;
 
 /**
  * Base interface for HTML tables
@@ -43,6 +45,33 @@ import com.helger.html.hc.html.HCRow;
  */
 public interface IHCTable <IMPLTYPE extends IHCTable <IMPLTYPE>> extends IHCElement <IMPLTYPE>, IHCHasChildren
 {
+  /**
+   * @return The table header. Never <code>null</code>.
+   */
+  @Nonnull
+  HCTHead getHead ();
+
+  @Nonnull
+  IMPLTYPE setHead (@Nonnull HCTHead aHead);
+
+  /**
+   * @return The table body. Never <code>null</code>.
+   */
+  @Nonnull
+  HCTBody getBody ();
+
+  @Nonnull
+  IMPLTYPE setBody (@Nonnull HCTBody aBody);
+
+  /**
+   * @return The table footer. Never <code>null</code>.
+   */
+  @Nonnull
+  HCTFoot getFoot ();
+
+  @Nonnull
+  IMPLTYPE setFoot (@Nonnull HCTFoot aFoot);
+
   /**
    * @return The cell spacing. Values &le; 0 mean undefined.
    */
@@ -409,4 +438,6 @@ public interface IHCTable <IMPLTYPE extends IHCTable <IMPLTYPE>> extends IHCElem
 
   @Nonnull
   IMPLTYPE addSpanningFooterContent (@Nullable IHCNode aNode);
+
+  void checkInternalConsistency ();
 }

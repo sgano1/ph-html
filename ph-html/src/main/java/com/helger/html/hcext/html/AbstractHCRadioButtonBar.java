@@ -24,7 +24,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.html.AbstractHCSpan;
+import com.helger.html.hc.base.AbstractHCSpan;
 import com.helger.html.hc.html.HCRadioButton;
 import com.helger.html.hc.impl.HCTextNode;
 
