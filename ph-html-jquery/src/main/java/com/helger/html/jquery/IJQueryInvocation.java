@@ -384,7 +384,6 @@ public interface IJQueryInvocation <IMPLTYPE extends IJQueryInvocation <IMPLTYPE
 
   /**
    * @return The invocation of the jQuery deferred function <code>progress()</code> with return type Deferred
-   * @since jQuery 1.7
    */
   @Nonnull
   IMPLTYPE deferred_progress ();
@@ -661,7 +660,7 @@ public interface IJQueryInvocation <IMPLTYPE extends IJQueryInvocation <IMPLTYPE
   IMPLTYPE innerHeight ();
 
   /**
-   * @return The invocation of the jQuery function <code>innerWidth()</code> with return type Integer or jQuery
+   * @return The invocation of the jQuery function <code>innerWidth()</code> with return type Number or jQuery
    */
   @Nonnull
   IMPLTYPE innerWidth ();

@@ -133,6 +133,8 @@ abstract class AbstractCreateJQueryAPIList
         return new String [] { "IJSExpression" };
       if (sType.equals ("Array"))
         return new String [] { "IJSExpression", "JSArray" };
+      if (sType.equals ("ArrayLikeObject"))
+        return new String [] { "IJSExpression", "JSArray" };
       if (sType.equals ("Element"))
         return new String [] { "IJSExpression", "EHTMLElement", "String" };
       if (sType.equals ("Elements"))

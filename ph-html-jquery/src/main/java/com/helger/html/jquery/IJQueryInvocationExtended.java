@@ -3523,6 +3523,36 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 * @param progressCallbacks 
         A function, or array of functions, to be called when the Deferred generates progress notifications.
       
+
+* @return this
+* @since jQuery 1.7
+*/
+@Nonnull IMPLTYPE deferred_progress(@Nonnull IJSExpression progressCallbacks);
+
+/**
+* @param progressCallbacks 
+        A function, or array of functions, to be called when the Deferred generates progress notifications.
+      
+
+* @return this
+* @since jQuery 1.7
+*/
+@Nonnull IMPLTYPE deferred_progress(@Nonnull JSAnonymousFunction progressCallbacks);
+
+/**
+* @param progressCallbacks 
+        A function, or array of functions, to be called when the Deferred generates progress notifications.
+      
+
+* @return this
+* @since jQuery 1.7
+*/
+@Nonnull IMPLTYPE deferred_progress(@Nonnull JSArray progressCallbacks);
+
+/**
+* @param progressCallbacks 
+        A function, or array of functions, to be called when the Deferred generates progress notifications.
+      
 * @param progressCallbacks1 
         Optional additional function, or array of functions, to be called when the Deferred generates progress notifications.
       
@@ -13220,6 +13250,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 */
 @Nonnull IMPLTYPE focusin(@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler);
 
+@Nonnull IMPLTYPE focusin();
+
 /**
 * @param handler A function to execute each time the event is triggered.
 
@@ -13253,6 +13285,8 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 * @since jQuery 1.4.3
 */
 @Nonnull IMPLTYPE focusout(@Nonnull IJSExpression eventData, @Nonnull JSAnonymousFunction handler);
+
+@Nonnull IMPLTYPE focusout();
 
 /**
 * @param index A zero-based integer indicating which element to retrieve.
@@ -21959,56 +21993,56 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 @Nonnull IMPLTYPE width(@Nonnull JSAnonymousFunction function);
 
 /**
-* @param wrappingElement A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements.
+* @param wrappingElement A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements. When you pass a jQuery collection containing more than one element, or a selector matching more than one element, the first element will be used.
 
 * @return this
 */
 @Nonnull IMPLTYPE wrap(@Nonnull IJSExpression wrappingElement);
 
 /**
-* @param wrappingElement A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements.
+* @param wrappingElement A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements. When you pass a jQuery collection containing more than one element, or a selector matching more than one element, the first element will be used.
 
 * @return this
 */
 @Nonnull IMPLTYPE wrap(@Nonnull IJQuerySelector wrappingElement);
 
 /**
-* @param wrappingElement A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements.
+* @param wrappingElement A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements. When you pass a jQuery collection containing more than one element, or a selector matching more than one element, the first element will be used.
 
 * @return this
 */
 @Nonnull IMPLTYPE wrap(@Nonnull JQuerySelectorList wrappingElement);
 
 /**
-* @param wrappingElement A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements.
+* @param wrappingElement A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements. When you pass a jQuery collection containing more than one element, or a selector matching more than one element, the first element will be used.
 
 * @return this
 */
 @Nonnull IMPLTYPE wrap(@Nonnull EHTMLElement wrappingElement);
 
 /**
-* @param wrappingElement A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements.
+* @param wrappingElement A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements. When you pass a jQuery collection containing more than one element, or a selector matching more than one element, the first element will be used.
 
 * @return this
 */
 @Nonnull IMPLTYPE wrap(@Nonnull ICSSClassProvider wrappingElement);
 
 /**
-* @param wrappingElement A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements.
+* @param wrappingElement A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements. When you pass a jQuery collection containing more than one element, or a selector matching more than one element, the first element will be used.
 
 * @return this
 */
 @Nonnull IMPLTYPE wrap(@Nonnull IHCNode wrappingElement);
 
 /**
-* @param wrappingElement A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements.
+* @param wrappingElement A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements. When you pass a jQuery collection containing more than one element, or a selector matching more than one element, the first element will be used.
 
 * @return this
 */
 @Nonnull IMPLTYPE wrap(@Nonnull String wrappingElement);
 
 /**
-* @param wrappingElement A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements.
+* @param wrappingElement A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements. When you pass a jQuery collection containing more than one element, or a selector matching more than one element, the first element will be used.
 
 * @return this
 */
@@ -22087,7 +22121,7 @@ public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationEx
 @Nonnull IMPLTYPE wrapAll(@Nonnull JQueryInvocation wrappingElement);
 
 /**
-* @param function A function that returns a structure to wrap around the matched elements. Receives the index position of the element in the set as an argument. Within the function, this refers to the current element in the set.
+* @param function A callback function returning the HTML content or jQuery object to wrap around the matched elements. Receives the index position of the element in the set as an argument. Within the function, this refers to the current element in the set.
 
 * @return this
 * @since jQuery 1.4

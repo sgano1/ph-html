@@ -1267,6 +1267,15 @@ public IMPLTYPE deferred_pipe(@Nonnull IJSExpression doneFilter, @Nonnull JSAnon
 public IMPLTYPE deferred_pipe(@Nonnull JSAnonymousFunction doneFilter, @Nonnull JSAnonymousFunction failFilter, @Nonnull JSAnonymousFunction progressFilter) { return deferred_pipe ().arg (doneFilter).arg (failFilter).arg (progressFilter); }
 
 @Nonnull
+public IMPLTYPE deferred_progress(@Nonnull IJSExpression progressCallbacks) { return deferred_progress ().arg (progressCallbacks); }
+
+@Nonnull
+public IMPLTYPE deferred_progress(@Nonnull JSAnonymousFunction progressCallbacks) { return deferred_progress ().arg (progressCallbacks); }
+
+@Nonnull
+public IMPLTYPE deferred_progress(@Nonnull JSArray progressCallbacks) { return deferred_progress ().arg (progressCallbacks); }
+
+@Nonnull
 public IMPLTYPE deferred_progress(@Nonnull IJSExpression progressCallbacks, @Nonnull IJSExpression progressCallbacks1) { return deferred_progress ().arg (progressCallbacks).arg (progressCallbacks1); }
 
 @Nonnull
