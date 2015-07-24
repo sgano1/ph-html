@@ -98,7 +98,7 @@ public class Main_AbstractJQueryInvocationTest extends AbstractCreateJQueryAPILi
       else
         aFull.append ('\n');
     aFull.append ("}\n");
-    SimpleFileIO.writeFile (new File ("src/test/java/com/helger/html/js/builder/jquery/AbstractJQueryInvocationTest.java"),
+    SimpleFileIO.writeFile (new File ("src/test/java/com/helger/html/jquery/AbstractJQueryInvocationTest.java"),
                             aFull.toString (),
                             CCharset.CHARSET_UTF_8_OBJ);
     System.out.println ("Done");

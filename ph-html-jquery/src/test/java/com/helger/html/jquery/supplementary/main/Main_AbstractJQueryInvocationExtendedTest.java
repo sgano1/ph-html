@@ -195,7 +195,7 @@ public class Main_AbstractJQueryInvocationExtendedTest extends AbstractCreateJQu
                                                    "import com.helger.html.js.builder.JSAnonymousFunction;\n" +
                                                    "import com.helger.html.js.builder.JSArray;\n" +
                                                    "import com.helger.html.js.builder.JSExpr;\n" +
-                                                   "import com.helger.json.impl.JsonObject;\n" +
+                                                   "import com.helger.json.JsonObject;\n" +
                                                    "\n" +
                                                    "/**\n" +
                                                    " * Unit test class for class @{link AbstractJQueryInvocation}\n" +
@@ -211,7 +211,7 @@ public class Main_AbstractJQueryInvocationExtendedTest extends AbstractCreateJQu
     for (final String sEntry : aLines)
       aFull.append (sEntry).append ("\n\n");
     aFull.append ("}\n");
-    SimpleFileIO.writeFile (new File ("src/test/java/com/helger/html/js/builder/jquery/AbstractJQueryInvocationExtendedTest.java"),
+    SimpleFileIO.writeFile (new File ("src/test/java/com/helger/html/jquery/AbstractJQueryInvocationExtendedTest.java"),
                             aFull.toString (),
                             CCharset.CHARSET_UTF_8_OBJ);
     System.out.println ("Done");

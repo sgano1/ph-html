@@ -198,7 +198,7 @@ public class Main_IJQueryInvocationExtended extends AbstractCreateJQueryAPIList
     for (final String sEntry : aLines)
       aFull.append (sEntry).append ("\n\n");
     aFull.append ("}\n");
-    SimpleFileIO.writeFile (new File ("src/main/java/com/helger/html/js/builder/jquery/IJQueryInvocationExtended.java"),
+    SimpleFileIO.writeFile (new File ("src/main/java/com/helger/html/jquery/IJQueryInvocationExtended.java"),
                             aFull.toString (),
                             CCharset.CHARSET_UTF_8_OBJ);
     System.out.println ("Done");

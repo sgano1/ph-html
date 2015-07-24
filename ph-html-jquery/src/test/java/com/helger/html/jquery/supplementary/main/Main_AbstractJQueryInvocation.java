@@ -77,7 +77,7 @@ public class Main_AbstractJQueryInvocation extends AbstractCreateJQueryAPIList
                                                    "import javax.annotation.Nonnull;\n" +
                                                    "import javax.annotation.Nullable;\n" +
                                                    "\n" +
-                                                   "import com.helger.commons.annotations.Nonempty;\n" +
+                                                   "import com.helger.commons.annotation.Nonempty;\n" +
                                                    "import com.helger.html.css.ICSSClassProvider;\n" +
                                                    "import com.helger.html.js.builder.AbstractJSInvocation;\n" +
                                                    "import com.helger.html.js.builder.IJSExpression;\n" +
@@ -153,7 +153,7 @@ public class Main_AbstractJQueryInvocation extends AbstractCreateJQueryAPIList
       else
         aFull.append ('\n');
     aFull.append ("}\n");
-    SimpleFileIO.writeFile (new File ("src/main/java/com/helger/html/js/builder/jquery/AbstractJQueryInvocation.java"),
+    SimpleFileIO.writeFile (new File ("src/main/java/com/helger/html/jquery/AbstractJQueryInvocation.java"),
                             aFull.toString (),
                             CCharset.CHARSET_UTF_8_OBJ);
     System.out.println ("Done");
