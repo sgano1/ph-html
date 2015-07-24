@@ -20,6 +20,11 @@ import org.junit.Test;
 
 import com.helger.commons.mock.CommonsTestHelper;
 
+/**
+ * Test if all SPI definitions are valid.
+ *
+ * @author Philip Helger
+ */
 public final class SPITest
 {
   @Test
