@@ -24,14 +24,14 @@ import com.helger.commons.collection.impl.NonBlockingStack;
 import com.helger.commons.string.StringHelper;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeWithChildren;
-import com.helger.html.hc.base.AbstractHCTablePart;
 import com.helger.html.hc.base.IHCCell;
 import com.helger.html.hc.base.IHCMediaElementChild;
+import com.helger.html.hc.base.IHCRubyChild;
 import com.helger.html.hc.base.IHCTable;
+import com.helger.html.hc.base.IHCTablePart;
 import com.helger.html.hc.html.AbstractHCDefinitionItem;
 import com.helger.html.hc.html.AbstractHCList;
 import com.helger.html.hc.html.AbstractHCMediaElement;
-import com.helger.html.hc.html.AbstractHCRubyChild;
 import com.helger.html.hc.html.HCCol;
 import com.helger.html.hc.html.HCColGroup;
 import com.helger.html.hc.html.HCDL;
@@ -143,14 +143,14 @@ final class HCStack
                           throw new MarkdownException ("Cannot add node " + aNode + " to " + aParent);
                 }
                 else
-                  if (aParent instanceof AbstractHCTablePart <?> && aNode instanceof HCRow)
-                    ((AbstractHCTablePart <?>) aParent).addChild ((HCRow) aNode);
+                  if (aParent instanceof IHCTablePart <?> && aNode instanceof HCRow)
+                    ((IHCTablePart <?>) aParent).addChild ((HCRow) aNode);
                   else
                     if (aParent instanceof HCRow && aNode instanceof IHCCell <?>)
                       ((HCRow) aParent).addCell (aNode);
                     else
-                      if (aParent instanceof HCRuby && aNode instanceof AbstractHCRubyChild <?>)
-                        ((HCRuby) aParent).addChild ((AbstractHCRubyChild <?>) aNode);
+                      if (aParent instanceof HCRuby && aNode instanceof IHCRubyChild <?>)
+                        ((HCRuby) aParent).addChild ((IHCRubyChild <?>) aNode);
                       else
                         if (aParent instanceof IHCNodeWithChildren <?>)
                         {

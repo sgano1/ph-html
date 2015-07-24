@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html;
+package com.helger.html.hc.base;
 
 import javax.annotation.Nonnull;
 
@@ -23,7 +23,7 @@ import com.helger.html.annotation.SinceHTML5;
 import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 
 @SinceHTML5
-public abstract class AbstractHCRubyChild <THISTYPE extends AbstractHCRubyChild <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>
+public abstract class AbstractHCRubyChild <THISTYPE extends AbstractHCRubyChild <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCRubyChild <THISTYPE>
 {
   public AbstractHCRubyChild (@Nonnull final EHTMLElement aElement)
   {

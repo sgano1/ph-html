@@ -14,34 +14,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html;
+package com.helger.html.hc.base;
 
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
-import com.helger.html.EHTMLElement;
-import com.helger.html.annotation.SinceHTML5;
-import com.helger.html.hc.base.IHCRubyChild;
-import com.helger.html.hc.impl.AbstractHCElementWithInternalChildren;
+import com.helger.html.hc.IHCElementWithInternalChildren;
+import com.helger.html.hc.html.HCRow;
 
-@SinceHTML5
-public class HCRuby extends AbstractHCElementWithInternalChildren <HCRuby, IHCRubyChild <?>>
+/**
+ * Interface for thead, tbody and tfoot
+ *
+ * @author Philip Helger
+ * @param <THISTYPE>
+ *        Implementation type
+ */
+public interface IHCTablePart <THISTYPE extends IHCTablePart <THISTYPE>> extends IHCElementWithInternalChildren <THISTYPE, HCRow>
 {
-  public HCRuby ()
-  {
-    super (EHTMLElement.RUBY);
-  }
-
-  public final boolean hasItems ()
-  {
-    return hasChildren ();
-  }
+  boolean isHeaderOrFooter ();
 
   @Nonnull
-  public final HCRuby addItem (@Nullable final IHCRubyChild <?> aChild)
-  {
-    if (aChild != null)
-      addChild (aChild);
-    return this;
-  }
+  HCRow addRow ();
+
+  @Nonnull
+  HCRow addRow (@Nonnegative int nIndex);
 }

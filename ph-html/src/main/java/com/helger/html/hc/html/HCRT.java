@@ -22,6 +22,7 @@ import javax.annotation.Nullable;
 import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.SinceHTML5;
 import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.base.AbstractHCRubyChild;
 
 @SinceHTML5
 public class HCRT extends AbstractHCRubyChild <HCRT>

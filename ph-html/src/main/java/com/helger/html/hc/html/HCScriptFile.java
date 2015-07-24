@@ -26,6 +26,7 @@ import com.helger.commons.url.SimpleURL;
 import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.annotation.OutOfBandNode;
+import com.helger.html.hc.base.AbstractHCScript;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
 /**

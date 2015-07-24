@@ -37,6 +37,7 @@ import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.system.ENewLineMode;
 import com.helger.html.annotation.OutOfBandNode;
+import com.helger.html.hc.base.AbstractHCScript;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.provider.UnparsedJSCodeProvider;

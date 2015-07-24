@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html;
+package com.helger.html.hc.base;
 
 import java.nio.charset.Charset;
 
@@ -29,8 +29,9 @@ import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hc.api.IHCJSNode;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
+import com.helger.html.hc.html.HCScript;
+import com.helger.html.hc.html.HCScriptFile;
 import com.helger.html.hc.impl.AbstractHCElement;
 
 /**
@@ -39,10 +40,10 @@ import com.helger.html.hc.impl.AbstractHCElement;
  * @author Philip Helger
  * @see HCScript
  * @see HCScriptFile
- * @param <IMPLTYPE>
+ * @param <THISTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCScript <IMPLTYPE extends AbstractHCScript <IMPLTYPE>> extends AbstractHCElement <IMPLTYPE>implements IHCJSNode
+public abstract class AbstractHCScript <THISTYPE extends AbstractHCScript <THISTYPE>> extends AbstractHCElement <THISTYPE>implements IHCScript <THISTYPE>
 {
   /** Default MIME type: text/javascript */
   public static final IMimeType DEFAULT_TYPE = CMimeType.TEXT_JAVASCRIPT;
@@ -62,7 +63,7 @@ public abstract class AbstractHCScript <IMPLTYPE extends AbstractHCScript <IMPLT
   }
 
   @Nonnull
-  public IMPLTYPE setType (@Nonnull final IMimeType aType)
+  public THISTYPE setType (@Nonnull final IMimeType aType)
   {
     m_aType = ValueEnforcer.notNull (aType, "Type");
     return thisAsT ();
@@ -75,13 +76,13 @@ public abstract class AbstractHCScript <IMPLTYPE extends AbstractHCScript <IMPLT
   }
 
   @Nonnull
-  public IMPLTYPE setCharset (@Nullable final Charset aCharset)
+  public THISTYPE setCharset (@Nullable final Charset aCharset)
   {
     return setCharset (aCharset == null ? null : aCharset.name ());
   }
 
   @Nonnull
-  public IMPLTYPE setCharset (@Nullable final String sCharset)
+  public THISTYPE setCharset (@Nullable final String sCharset)
   {
     m_sCharset = sCharset;
     return thisAsT ();
