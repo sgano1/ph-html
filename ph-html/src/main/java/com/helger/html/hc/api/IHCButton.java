@@ -20,12 +20,12 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.url.ISimpleURL;
-import com.helger.html.hc.IHCCanBeDisabled;
+import com.helger.html.hc.IHCHasState;
 import com.helger.html.hc.IHCElementWithChildren;
 import com.helger.html.hc.IHCHasName;
 import com.helger.html.js.IHasJSCode;
 
-public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends IHCElementWithChildren <THISTYPE>, IHCCanBeDisabled <THISTYPE>, IHCHasName <THISTYPE>
+public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends IHCElementWithChildren <THISTYPE>, IHCHasState <THISTYPE>, IHCHasName <THISTYPE>
 {
   /**
    * @return The value of the button. May be <code>null</code>.

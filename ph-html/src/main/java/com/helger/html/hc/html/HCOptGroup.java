@@ -24,7 +24,7 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hc.IHCCanBeDisabled;
+import com.helger.html.hc.IHCHasState;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElementWithInternalChildren;
 
@@ -33,7 +33,7 @@ import com.helger.html.hc.impl.AbstractHCElementWithInternalChildren;
  *
  * @author Philip Helger
  */
-public class HCOptGroup extends AbstractHCElementWithInternalChildren <HCOptGroup, HCOption>implements IHCCanBeDisabled <HCOptGroup>
+public class HCOptGroup extends AbstractHCElementWithInternalChildren <HCOptGroup, HCOption>implements IHCHasState <HCOptGroup>
 {
   /** By default the opt group is not disabled */
   public static final boolean DEFAULT_DISABLED = false;

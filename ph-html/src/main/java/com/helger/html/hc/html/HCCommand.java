@@ -27,13 +27,13 @@ import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.SinceHTML5;
-import com.helger.html.hc.IHCCanBeDisabled;
+import com.helger.html.hc.IHCHasState;
 import com.helger.html.hc.api.EHCCommandType;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElement;
 
 @SinceHTML5
-public class HCCommand extends AbstractHCElement <HCCommand>implements IHCCanBeDisabled <HCCommand>
+public class HCCommand extends AbstractHCElement <HCCommand>implements IHCHasState <HCCommand>
 {
   /** By default checked is disabled */
   public static final boolean DEFAULT_CHECKED = false;

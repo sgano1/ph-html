@@ -26,13 +26,13 @@ import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.SinceHTML5;
-import com.helger.html.hc.IHCCanBeDisabled;
+import com.helger.html.hc.IHCHasState;
 import com.helger.html.hc.api.EHCKeyGenType;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElement;
 
 @SinceHTML5
-public class HCKeyGen extends AbstractHCElement <HCKeyGen>implements IHCCanBeDisabled <HCKeyGen>
+public class HCKeyGen extends AbstractHCElement <HCKeyGen>implements IHCHasState <HCKeyGen>
 {
   public static final boolean DEFAULT_AUTOFOCUS = false;
   public static final boolean DEFAULT_DISABLED = false;

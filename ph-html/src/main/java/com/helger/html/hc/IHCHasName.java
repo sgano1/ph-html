@@ -19,7 +19,7 @@ package com.helger.html.hc;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public interface IHCHasName <IMPLTYPE extends IHCHasName <IMPLTYPE>> extends IHCElement <IMPLTYPE>
+public interface IHCHasName <IMPLTYPE extends IHCHasName <IMPLTYPE>>
 {
   /**
    * @return The name of the element. May be <code>null</code>.
@@ -29,7 +29,7 @@ public interface IHCHasName <IMPLTYPE extends IHCHasName <IMPLTYPE>> extends IHC
 
   /**
    * Set the name of the element.
-   * 
+   *
    * @param sName
    *        The new name. May be <code>null</code>.
    * @return this

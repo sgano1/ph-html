@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
  * @param <THISTYPE>
  *        Implementation type
  */
-public interface IHCControl <THISTYPE extends IHCControl <THISTYPE>> extends IHCHasFocus <THISTYPE>, IHCCanBeDisabled <THISTYPE>
+public interface IHCControl <THISTYPE extends IHCControl <THISTYPE>> extends IHCElement <THISTYPE>, IHCHasFocus <THISTYPE>, IHCHasState <THISTYPE>
 {
   @Nullable
   String getName ();

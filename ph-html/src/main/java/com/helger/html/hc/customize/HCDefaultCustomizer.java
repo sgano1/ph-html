@@ -33,7 +33,7 @@ import com.helger.css.property.CCSSProperties;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.css.DefaultCSSClassProvider;
 import com.helger.html.css.ICSSClassProvider;
-import com.helger.html.hc.IHCCanBeDisabled;
+import com.helger.html.hc.IHCHasState;
 import com.helger.html.hc.IHCControl;
 import com.helger.html.hc.IHCElement;
 import com.helger.html.hc.IHCHasChildrenMutable;
@@ -196,8 +196,8 @@ public class HCDefaultCustomizer extends HCEmptyCustomizer
         aElement.setEventHandler (EJSEvent.FOCUS, JS_BLUR);
 
       // Added "disabled" class on disabled element
-      if (aElement instanceof IHCCanBeDisabled <?>)
-        if (((IHCCanBeDisabled <?>) aElement).isDisabled ())
+      if (aElement instanceof IHCHasState <?>)
+        if (((IHCHasState <?>) aElement).isDisabled ())
           aElement.addClass (CSS_CLASS_DISABLED);
 
       if (aElement instanceof IHCControl <?>)

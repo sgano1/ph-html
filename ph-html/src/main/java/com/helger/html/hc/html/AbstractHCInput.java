@@ -101,13 +101,19 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
     super (EHTMLElement.INPUT);
   }
 
+  /**
+   * Default ctor
+   *
+   * @param eType
+   *        Type of input. May not be <code>null</code>.
+   */
   public AbstractHCInput (@Nonnull final EHCInputType eType)
   {
     this ();
     setType (eType);
   }
 
-  @Nonnull
+  @Nullable
   public final EHCInputType getType ()
   {
     return m_eType;

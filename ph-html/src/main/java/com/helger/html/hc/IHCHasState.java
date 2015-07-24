@@ -19,13 +19,13 @@ package com.helger.html.hc;
 import javax.annotation.Nonnull;
 
 /**
- * Base interface for HC objects that can be disabled.
+ * Base interface for HC objects that can be enabled and disabled.
  *
  * @author Philip Helger
  * @param <IMPLTYPE>
  *        Implementation type
  */
-public interface IHCCanBeDisabled <IMPLTYPE extends IHCCanBeDisabled <IMPLTYPE>> extends IHCElement <IMPLTYPE>
+public interface IHCHasState <IMPLTYPE extends IHCHasState <IMPLTYPE>>
 {
   /**
    * @return <code>true</code> if the element is disabled, <code>false</code>
@@ -35,7 +35,7 @@ public interface IHCCanBeDisabled <IMPLTYPE extends IHCCanBeDisabled <IMPLTYPE>>
 
   /**
    * Set the disabled state of this element.
-   * 
+   *
    * @param bDisabled
    *        <code>true</code> to disable, <code>false</code> to enable
    * @return this

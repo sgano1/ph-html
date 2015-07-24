@@ -24,7 +24,7 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hc.IHCCanBeDisabled;
+import com.helger.html.hc.IHCHasState;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElementWithInternalChildren;
 import com.helger.html.hc.impl.HCTextNode;
@@ -34,7 +34,7 @@ import com.helger.html.hc.impl.HCTextNode;
  *
  * @author Philip Helger
  */
-public class HCOption extends AbstractHCElementWithInternalChildren <HCOption, HCTextNode>implements IHCCanBeDisabled <HCOption>
+public class HCOption extends AbstractHCElementWithInternalChildren <HCOption, HCTextNode>implements IHCHasState <HCOption>
 {
   /** By default the option is not disabled */
   public static final boolean DEFAULT_DISABLED = false;

@@ -18,6 +18,11 @@
 
 -->
 <changelog xmlns="http://www.helger.com/xsd/changelog/1.0" version="1.0" component="ph-html">
+  <entry date="2015-07-24" category="api" action="change" incompatible="true">
+    <change>
+      <text locale="en">Extracted all JQuery stuff into a separate sub-project ph-html-jquery</text>
+    </change>
+  </entry>
   <release date="2015-06-15" version="4.7.4" />
   <entry date="2015-06-15" category="api" action="change">
     <change>

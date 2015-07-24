@@ -31,9 +31,10 @@ import com.helger.html.hc.IHCControl;
 public interface IHCInput <IMPLTYPE extends IHCInput <IMPLTYPE>> extends IHCControl <IMPLTYPE>
 {
   /**
-   * @return The type used for this <code>input</code> element.
+   * @return The type used for this <code>input</code> element. May be
+   *         <code>null</code>.
    */
-  @Nonnull
+  @Nullable
   EHCInputType getType ();
 
   /**
@@ -45,7 +46,7 @@ public interface IHCInput <IMPLTYPE extends IHCInput <IMPLTYPE>> extends IHCCont
 
   /**
    * Set the new value for the HTML <code>placeholder</code> attribute.
-   * 
+   *
    * @param sPlaceholder
    *        The new value. May be <code>null</code>.
    * @return this
