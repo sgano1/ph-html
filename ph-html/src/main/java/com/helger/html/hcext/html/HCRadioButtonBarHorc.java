@@ -14,17 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.ext;
+package com.helger.html.hcext.html;
 
-import javax.annotation.Nonnull;
-
-import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.js.builder.JSAssocArray;
+import com.helger.html.hc.impl.HCEntityNode;
 
-public interface IHCNodeWithJSOptions extends IHCNode
+public class HCRadioButtonBarHorc extends AbstractHCRadioButtonBar
 {
-  @Nonnull
-  @ReturnsMutableCopy
-  JSAssocArray getJSOptions ();
+  public HCRadioButtonBarHorc (final String sName)
+  {
+    super (sName);
+  }
+
+  @Override
+  protected final IHCNode getSeparator ()
+  {
+    return HCEntityNode.newNBSP ();
+  }
 }

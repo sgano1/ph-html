@@ -30,7 +30,7 @@ import com.helger.commons.string.ToStringGenerator;
  * @author Philip Helger
  */
 @Immutable
-public final class UncheckedCSSClassProvider implements ICSSClassProvider
+public class UncheckedCSSClassProvider implements ICSSClassProvider
 {
   private final String m_sCSSClass;
 

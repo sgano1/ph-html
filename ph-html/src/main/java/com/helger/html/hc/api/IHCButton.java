@@ -14,13 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc;
+package com.helger.html.hc.api;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.url.ISimpleURL;
-import com.helger.html.hc.api.EHCButtonType;
+import com.helger.html.hc.IHCCanBeDisabled;
+import com.helger.html.hc.IHCElementWithChildren;
+import com.helger.html.hc.IHCHasName;
 import com.helger.html.js.IHasJSCode;
 
 public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends IHCElementWithChildren <THISTYPE>, IHCCanBeDisabled <THISTYPE>, IHCHasName <THISTYPE>

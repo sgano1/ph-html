@@ -14,21 +14,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.htmlext;
+package com.helger.html.hcext.html;
 
-import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.impl.HCEntityNode;
+import javax.annotation.Nonnull;
 
-public class HCRadioButtonBarHorc extends AbstractHCRadioButtonBar
+import com.helger.commons.url.ISimpleURL;
+import com.helger.html.hc.html.AbstractHCButton;
+import com.helger.html.js.builder.IJSStatement;
+import com.helger.html.js.builder.html.JSHtml;
+
+public class HCLinkButton extends AbstractHCButton <HCLinkButton>
 {
-  public HCRadioButtonBarHorc (final String sName)
+  public HCLinkButton (final String sLabel, @Nonnull final ISimpleURL aURL)
   {
-    super (sName);
+    super (sLabel, JSHtml.windowLocationHref (aURL));
   }
 
-  @Override
-  protected final IHCNode getSeparator ()
+  public HCLinkButton (final String sLabel, final IJSStatement aJS)
   {
-    return HCEntityNode.newNBSP ();
+    super (sLabel, aJS);
   }
 }

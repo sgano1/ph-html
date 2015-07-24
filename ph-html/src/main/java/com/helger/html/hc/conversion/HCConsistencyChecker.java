@@ -37,9 +37,11 @@ import com.helger.html.annotation.DeprecatedInHTML4;
 import com.helger.html.annotation.DeprecatedInHTML5;
 import com.helger.html.annotation.DeprecatedInXHTML1;
 import com.helger.html.annotation.SinceHTML5;
+import com.helger.html.hc.HCHelper;
 import com.helger.html.hc.IHCElement;
 import com.helger.html.hc.IHCHasChildren;
 import com.helger.html.hc.IHCHasID;
+import com.helger.html.hc.IHCIteratorCallback;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.html.AbstractHCBaseTable;
 import com.helger.html.hc.html.HCA;
@@ -49,8 +51,6 @@ import com.helger.html.hc.html.HCMeter;
 import com.helger.html.hc.html.HCObject;
 import com.helger.html.hc.html.HCPre;
 import com.helger.html.hc.html.HCProgress;
-import com.helger.html.hc.htmlext.HCHelper;
-import com.helger.html.hc.htmlext.IHCIteratorCallback;
 
 /**
  * This class performs some consistency checks on HCNodes

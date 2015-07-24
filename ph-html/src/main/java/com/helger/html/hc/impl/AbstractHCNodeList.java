@@ -24,7 +24,7 @@ import javax.annotation.concurrent.NotThreadSafe;
 import com.helger.commons.annotation.DevelopersNote;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeBuilder;
-import com.helger.html.hc.IHCNodeWithChildren;
+import com.helger.html.hc.IHCNodeList;
 
 /**
  * This class is an abstract HC node that represents a list of nodes without
@@ -35,7 +35,7 @@ import com.helger.html.hc.IHCNodeWithChildren;
  *        Implementation type
  */
 @NotThreadSafe
-public abstract class AbstractHCNodeList <THISTYPE extends AbstractHCNodeList <THISTYPE>> extends AbstractHCHasChildrenMutable <THISTYPE, IHCNode>implements IHCNodeWithChildren <THISTYPE>
+public abstract class AbstractHCNodeList <THISTYPE extends AbstractHCNodeList <THISTYPE>> extends AbstractHCHasChildrenMutable <THISTYPE, IHCNode>implements IHCNodeList <THISTYPE>
 {
   public AbstractHCNodeList ()
   {}

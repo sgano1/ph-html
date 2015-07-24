@@ -43,10 +43,10 @@ import com.helger.commons.microdom.MicroContainer;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
+import com.helger.html.hc.HCHelper;
 import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
-import com.helger.html.hc.htmlext.HCHelper;
 
 /**
  * This class is an abstract HC node that represents a list of nodes without

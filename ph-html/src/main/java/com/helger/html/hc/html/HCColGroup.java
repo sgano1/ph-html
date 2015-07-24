@@ -24,7 +24,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.annotation.ReturnsImmutableObject;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hc.IHCCol;
+import com.helger.html.hc.api.IHCCol;
 import com.helger.html.hc.impl.AbstractHCElementWithInternalChildren;
 
 /**

@@ -27,7 +27,6 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCNodeWithChildren;
 import com.helger.html.hc.api.EHCInputType;
-import com.helger.html.hc.impl.AbstractHCInput;
 import com.helger.html.request.IHCRequestFieldBoolean;
 import com.helger.html.request.IHCRequestFieldBooleanMultiValue;
 

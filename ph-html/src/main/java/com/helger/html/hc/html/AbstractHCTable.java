@@ -26,7 +26,7 @@ import org.slf4j.LoggerFactory;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hc.IHCCol;
+import com.helger.html.hc.api.IHCCol;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
 /**

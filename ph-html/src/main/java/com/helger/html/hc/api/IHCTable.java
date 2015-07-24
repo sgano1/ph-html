@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc;
+package com.helger.html.hc.api;
 
 import java.util.Comparator;
 import java.util.List;
@@ -27,6 +27,9 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.html.css.ICSSClassProvider;
+import com.helger.html.hc.IHCElement;
+import com.helger.html.hc.IHCHasChildren;
+import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.html.HCColGroup;
 import com.helger.html.hc.html.HCRow;
 

@@ -16,16 +16,30 @@
  */
 package com.helger.html.hc;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+import com.helger.commons.callback.ICallback;
+import com.helger.commons.state.EFinish;
+
 /**
- * Marker interface for nodes that can contain JS code (inline or external)
- * 
+ * Callback interface to be used when iterating an HC tree.
+ *
  * @author Philip Helger
  */
-public interface IHCJSNode extends IHCNode
+public interface IHCIteratorCallback extends ICallback
 {
   /**
-   * @return <code>true</code> if this is an inline JS node, <code>false</code>
-   *         if it is an externally referenced JS node
+   * Callback method
+   *
+   * @param aParentNode
+   *        Optional parent node. May be <code>null</code> for the initial
+   *        element.
+   * @param aChildNode
+   *        The current child node. Never <code>null</code>.
+   * @return {@link EFinish#FINISHED} to break iteration and
+   *         {@link EFinish#UNFINISHED} to continue iteration.
    */
-  boolean isInlineJS ();
+  @Nonnull
+  EFinish call (@Nullable IHCHasChildren aParentNode, @Nonnull IHCNode aChildNode);
 }

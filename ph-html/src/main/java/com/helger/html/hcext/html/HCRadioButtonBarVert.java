@@ -14,18 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc;
+package com.helger.html.hcext.html;
 
-/**
- * Marker interface for nodes that can contain CSS code (inline or external)
- * 
- * @author Philip Helger
- */
-public interface IHCCSSNode extends IHCNode
+import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.html.HCBR;
+
+public class HCRadioButtonBarVert extends AbstractHCRadioButtonBar
 {
-  /**
-   * @return <code>true</code> if this is an inline CSS node, <code>false</code>
-   *         if it is an externally referenced CSS node
-   */
-  boolean isInlineCSS ();
+  public HCRadioButtonBarVert (final String sName)
+  {
+    super (sName);
+  }
+
+  @Override
+  protected final IHCNode getSeparator ()
+  {
+    return new HCBR ();
+  }
 }

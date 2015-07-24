@@ -20,7 +20,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.html.hc.api.EHCInputType;
-import com.helger.html.hc.impl.AbstractHCInput;
 import com.helger.html.request.IHCRequestField;
 
 /**

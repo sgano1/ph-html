@@ -43,7 +43,7 @@ import com.helger.css.writer.CSSWriterSettings;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.OutOfBandNode;
-import com.helger.html.hc.IHCCSSNode;
+import com.helger.html.hc.api.IHCCSSNode;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElement;
 

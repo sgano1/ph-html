@@ -14,26 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.htmlext;
+package com.helger.html.hcext;
 
 import javax.annotation.Nonnull;
 
-import com.helger.commons.annotation.DevelopersNote;
-import com.helger.commons.url.ISimpleURL;
-import com.helger.html.hc.html.AbstractHCButton;
-import com.helger.html.js.builder.IJSStatement;
-import com.helger.html.js.builder.html.JSHtml;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.html.hc.IHCNode;
+import com.helger.html.js.builder.JSAssocArray;
 
-@DevelopersNote ("Do not use for pDAF3 - missing CSS information. Use HCP3Button instead!")
-public class HCLinkButton extends AbstractHCButton <HCLinkButton>
+public interface IHCNodeWithJSOptions extends IHCNode
 {
-  public HCLinkButton (final String sLabel, @Nonnull final ISimpleURL aURL)
-  {
-    super (sLabel, JSHtml.windowLocationHref (aURL));
-  }
-
-  public HCLinkButton (final String sLabel, final IJSStatement aJS)
-  {
-    super (sLabel, aJS);
-  }
+  @Nonnull
+  @ReturnsMutableCopy
+  JSAssocArray getJSOptions ();
 }

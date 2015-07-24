@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc;
+package com.helger.html.hc.api;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.html.hc.api.EHCInputType;
+import com.helger.html.hc.IHCControl;
 
 /**
  * Base interface for controls base on &lt;input&gt; area.

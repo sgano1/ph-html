@@ -40,7 +40,7 @@ import com.helger.commons.string.ToStringGenerator;
  * @author Philip Helger
  */
 @Immutable
-public final class DefaultCSSClassProvider implements ICSSClassProvider, Serializable
+public class DefaultCSSClassProvider implements ICSSClassProvider, Serializable
 {
   private static final Logger s_aLogger = LoggerFactory.getLogger (DefaultCSSClassProvider.class);
   private static final Map <String, DefaultCSSClassProvider> s_aAll = new HashMap <String, DefaultCSSClassProvider> ();

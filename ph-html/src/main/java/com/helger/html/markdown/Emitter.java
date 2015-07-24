@@ -40,12 +40,12 @@ import com.helger.html.hc.html.HCAbbr;
 import com.helger.html.hc.html.HCCode;
 import com.helger.html.hc.html.HCImg;
 import com.helger.html.hc.html.HCLI;
-import com.helger.html.hc.htmlext.HCHelper;
 import com.helger.html.hc.impl.AbstractHCElement;
 import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 import com.helger.html.hc.impl.HCCommentNode;
 import com.helger.html.hc.impl.HCDOMWrapper;
 import com.helger.html.hc.impl.HCEntityNode;
+import com.helger.html.hcext.html.HCHTMLHelper;
 
 /**
  * Emitter class responsible for generating HTML output.
@@ -521,7 +521,7 @@ final class Emitter
             final IMicroElement eRoot = aXML.getDocumentElement ();
 
             // And use the root element
-            final AbstractHCElement <?> aHC = HCHelper.createHCElementFromName (eRoot.getTagName ());
+            final AbstractHCElement <?> aHC = HCHTMLHelper.createHCElementFromName (eRoot.getTagName ());
             if (aHC == null)
               throw new MarkdownException ("Failed to get HC element: " + eRoot.getTagName ());
 

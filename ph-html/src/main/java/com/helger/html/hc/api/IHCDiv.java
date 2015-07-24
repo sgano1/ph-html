@@ -14,21 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.htmlext;
+package com.helger.html.hc.api;
 
-import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.html.HCBR;
+import com.helger.html.hc.IHCElementWithChildren;
+import com.helger.html.hc.IHCHasName;
 
-public class HCRadioButtonBarVert extends AbstractHCRadioButtonBar
+/**
+ * Interface for DIVs
+ * 
+ * @author Philip Helger
+ * @param <THISTYPE>
+ *        Implementation type
+ */
+public interface IHCDiv <THISTYPE extends IHCDiv <THISTYPE>> extends IHCElementWithChildren <THISTYPE>, IHCHasName <THISTYPE>
 {
-  public HCRadioButtonBarVert (final String sName)
-  {
-    super (sName);
-  }
-
-  @Override
-  protected final IHCNode getSeparator ()
-  {
-    return new HCBR ();
-  }
+  /* empty */
 }

@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.impl;
+package com.helger.html.hc.html;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -34,12 +34,11 @@ import com.helger.commons.url.SimpleURL;
 import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hc.IHCInput;
 import com.helger.html.hc.api.EHCFormMethod;
 import com.helger.html.hc.api.EHCInputType;
+import com.helger.html.hc.api.IHCInput;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
-import com.helger.html.hc.html.HC_Action;
-import com.helger.html.hc.html.HC_Target;
+import com.helger.html.hc.impl.AbstractHCControl;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.builder.IJSStatement;
 

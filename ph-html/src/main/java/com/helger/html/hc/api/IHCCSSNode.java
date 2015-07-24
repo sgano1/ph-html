@@ -14,33 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.htmlext;
+package com.helger.html.hc.api;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
-import com.helger.commons.state.EFinish;
-import com.helger.html.hc.IHCHasChildren;
 import com.helger.html.hc.IHCNode;
 
 /**
- * Callback interface to be used when iterating an HC tree.
+ * Marker interface for nodes that can contain CSS code (inline or external)
  * 
  * @author Philip Helger
  */
-public interface IHCIteratorCallback
+public interface IHCCSSNode extends IHCNode
 {
   /**
-   * Callback method
-   * 
-   * @param aParentNode
-   *        Optional parent node. May be <code>null</code> for the initial
-   *        element.
-   * @param aChildNode
-   *        The current child node. Never <code>null</code>.
-   * @return {@link EFinish#FINISHED} to break iteration and
-   *         {@link EFinish#UNFINISHED} to continue iteration.
+   * @return <code>true</code> if this is an inline CSS node, <code>false</code>
+   *         if it is an externally referenced CSS node
    */
-  @Nonnull
-  EFinish call (@Nullable IHCHasChildren aParentNode, @Nonnull IHCNode aChildNode);
+  boolean isInlineCSS ();
 }

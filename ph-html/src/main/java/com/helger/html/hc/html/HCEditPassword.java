@@ -20,7 +20,6 @@ import javax.annotation.Nullable;
 
 import com.helger.html.hc.api.EHCInputType;
 import com.helger.html.hc.customize.HCDefaultSettings;
-import com.helger.html.hc.impl.AbstractHCInput;
 
 /**
  * Represents an HTML &lt;input&gt; element with type "password"
