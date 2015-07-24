@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html;
+package com.helger.html.hc.base;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -35,7 +35,7 @@ import com.helger.html.hc.impl.AbstractHCElementWithChildren;
  * @param <THISTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCLabel <THISTYPE extends AbstractHCLabel <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>
+public abstract class AbstractHCLabel <THISTYPE extends AbstractHCLabel <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCLabel <THISTYPE>
 {
   private String m_sFor;
   private String m_sForm;
@@ -51,13 +51,6 @@ public abstract class AbstractHCLabel <THISTYPE extends AbstractHCLabel <THISTYP
     return m_sFor;
   }
 
-  /**
-   * Indicates that this label is used as the description for another object.
-   *
-   * @param sFor
-   *        The HTML ID of the other object.
-   * @return this
-   */
   @Nonnull
   public THISTYPE setFor (@Nullable final String sFor)
   {
@@ -65,13 +58,6 @@ public abstract class AbstractHCLabel <THISTYPE extends AbstractHCLabel <THISTYP
     return thisAsT ();
   }
 
-  /**
-   * Indicates that this label is used as the description for another object.
-   *
-   * @param aFor
-   *        The HTML of the other object.
-   * @return this
-   */
   @Nonnull
   public THISTYPE setFor (@Nullable final IHCHasID <?> aFor)
   {
@@ -88,14 +74,6 @@ public abstract class AbstractHCLabel <THISTYPE extends AbstractHCLabel <THISTYP
     return m_sForm;
   }
 
-  /**
-   * The value of the id attribute on the form with which to associate the
-   * element.
-   *
-   * @param sForm
-   *        The HTML ID of the form.
-   * @return this
-   */
   @Nonnull
   public THISTYPE setForm (@Nullable final String sForm)
   {

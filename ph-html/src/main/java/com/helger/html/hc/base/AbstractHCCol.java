@@ -57,31 +57,17 @@ public abstract class AbstractHCCol <IMPLTYPE extends AbstractHCCol <IMPLTYPE>> 
     setWidth (nWidth);
   }
 
-  /**
-   * @return <code>true</code> if this is a star column (width == "*")
-   */
   public boolean isStar ()
   {
     return CHTMLAttributeValues.STAR.equals (m_sWidth);
   }
 
-  /**
-   * @return The width definition of the column or <code>null</code> if no width
-   *         is present.
-   */
   @Nullable
   public String getWidth ()
   {
     return m_sWidth;
   }
 
-  /**
-   * Set the width in pixel.
-   *
-   * @param nWidth
-   *        Pixel width.
-   * @return this
-   */
   @Nonnull
   public IMPLTYPE setWidth (@Nonnegative final int nWidth)
   {
@@ -89,27 +75,12 @@ public abstract class AbstractHCCol <IMPLTYPE extends AbstractHCCol <IMPLTYPE>> 
     return setWidth (Integer.toString (nWidth));
   }
 
-  /**
-   * Set the width in percent.
-   *
-   * @param dPerc
-   *        percentage width.
-   * @return this
-   */
   @Nonnull
   public IMPLTYPE setWidthPerc (@Nonnegative final double dPerc)
   {
     return setWidth (ECSSUnit.perc (dPerc));
   }
 
-  /**
-   * Set the width as string. May either be a pure integer or e.g. a percentage
-   * value (like "50%") or "*" for "any".
-   *
-   * @param sWidth
-   *        The width as a string. May be <code>null</code>.
-   * @return this
-   */
   @Nonnull
   public IMPLTYPE setWidth (@Nullable final String sWidth)
   {

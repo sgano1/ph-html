@@ -20,6 +20,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.base.AbstractHCLabel;
 
 /**
  * Represents an HTML &lt;label&gt; element

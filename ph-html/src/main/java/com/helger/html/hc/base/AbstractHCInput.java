@@ -199,21 +199,11 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
     return thisAsT ();
   }
 
-  /**
-   * @return Whether or not the check-box is currently checked
-   */
   public final boolean isChecked ()
   {
     return m_bChecked;
   }
 
-  /**
-   * Set the checked state according to the passed value
-   *
-   * @param bChecked
-   *        new checked state
-   * @return This object for chaining
-   */
   @Nonnull
   public final IMPLTYPE setChecked (final boolean bChecked)
   {
@@ -286,22 +276,12 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
     return m_aFormEncType;
   }
 
-  /**
-   * Make this form a file-upload form.
-   *
-   * @return this
-   */
   @Nonnull
   public IMPLTYPE setFormEncTypeFileUpload ()
   {
     return setFormEncType (CMimeType.MULTIPART_FORMDATA);
   }
 
-  /**
-   * Set the enctype to text/plain
-   *
-   * @return this
-   */
   @Nonnull
   public IMPLTYPE setFormEncTypeTextPlain ()
   {
@@ -397,21 +377,11 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
     return thisAsT ();
   }
 
-  /**
-   * @return The currently set max length or -1.
-   */
   public final int getMaxLength ()
   {
     return m_nMaxLength;
   }
 
-  /**
-   * Set the maximum number of characters to be entered.
-   *
-   * @param nMaxLength
-   *        The max length. Should be &gt; 0.
-   * @return this
-   */
   @Nonnull
   public final IMPLTYPE setMaxLength (final int nMaxLength)
   {
@@ -432,21 +402,11 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
     return thisAsT ();
   }
 
-  /**
-   * @return The currently set min length or -1.
-   */
   public final int getMinLength ()
   {
     return m_nMinLength;
   }
 
-  /**
-   * Set the minimum number of characters to be entered.
-   *
-   * @param nMinLength
-   *        The min length. Should be &gt; 0.
-   * @return this
-   */
   @Nonnull
   public final IMPLTYPE setMinLength (final int nMinLength)
   {
@@ -492,23 +452,11 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
     return thisAsT ();
   }
 
-  /**
-   * @return The currently set max length.
-   */
   public final int getSize ()
   {
     return m_nSize;
   }
 
-  /**
-   * Sets the visible size of the edit. Should not be necessary in most cases,
-   * as styling via CSS is the preferred way. If you want to limit the number of
-   * available characters use {@link #setMaxLength(int)} instead.
-   *
-   * @param nSize
-   *        The width of the edit in characters.
-   * @return this
-   */
   @Nonnull
   public final IMPLTYPE setSize (final int nSize)
   {
@@ -563,39 +511,18 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
     return m_sValue;
   }
 
-  /**
-   * Sets the passed field value
-   *
-   * @param nValue
-   *        Value to use.
-   * @return This object for chaining
-   */
   @Nonnull
   public final IMPLTYPE setValue (final int nValue)
   {
     return setValue (Integer.toString (nValue));
   }
 
-  /**
-   * Sets the passed field value
-   *
-   * @param nValue
-   *        Value to use.
-   * @return This object for chaining
-   */
   @Nonnull
   public final IMPLTYPE setValue (final long nValue)
   {
     return setValue (Long.toString (nValue));
   }
 
-  /**
-   * Sets the passed field value
-   *
-   * @param sValue
-   *        Value to use.
-   * @return This object for chaining
-   */
   @Nonnull
   public final IMPLTYPE setValue (@Nullable final String sValue)
   {
