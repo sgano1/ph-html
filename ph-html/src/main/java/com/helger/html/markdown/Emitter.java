@@ -35,13 +35,13 @@ import com.helger.commons.string.StringHelper;
 import com.helger.commons.xml.serialize.write.XMLEmitter;
 import com.helger.html.entity.EHTMLEntity;
 import com.helger.html.entity.HTMLEntity;
+import com.helger.html.hc.IHCElement;
+import com.helger.html.hc.IHCElementWithChildren;
 import com.helger.html.hc.html.HCA;
 import com.helger.html.hc.html.HCAbbr;
 import com.helger.html.hc.html.HCCode;
 import com.helger.html.hc.html.HCImg;
 import com.helger.html.hc.html.HCLI;
-import com.helger.html.hc.impl.AbstractHCElement;
-import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 import com.helger.html.hc.impl.HCCommentNode;
 import com.helger.html.hc.impl.HCDOMWrapper;
 import com.helger.html.hc.impl.HCEntityNode;
@@ -127,7 +127,7 @@ final class Emitter
         // No open required
         break;
       case HEADLINE:
-        final AbstractHCElementWithChildren <?> aHX = aDecorator.openHeadline (out, aRoot.m_nHeadlineDepth);
+        final IHCElementWithChildren <?> aHX = aDecorator.openHeadline (out, aRoot.m_nHeadlineDepth);
         if (m_bUseExtensions && aRoot.m_sId != null)
           aHX.setID (aRoot.m_sId);
         break;
@@ -521,7 +521,7 @@ final class Emitter
             final IMicroElement eRoot = aXML.getDocumentElement ();
 
             // And use the root element
-            final AbstractHCElement <?> aHC = HCHTMLHelper.createHCElementFromName (eRoot.getTagName ());
+            final IHCElement <?> aHC = HCHTMLHelper.createHCElementFromName (eRoot.getTagName ());
             if (aHC == null)
               throw new MarkdownException ("Failed to get HC element: " + eRoot.getTagName ());
 

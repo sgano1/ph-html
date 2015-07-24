@@ -17,6 +17,7 @@
 package com.helger.html.hc.api;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import com.helger.html.annotation.SinceHTML5;
 
@@ -24,10 +25,16 @@ import com.helger.html.annotation.SinceHTML5;
 public interface IHCHasMedia <THISTYPE extends IHCHasMedia <THISTYPE>>
 {
   /**
+   * @return The currently set media query. May be <code>null</code>.
+   */
+  @Nullable
+  String getMedia ();
+
+  /**
    * Change media query
-   * 
+   *
    * @param sMediaQuery
-   *        The CSS3 media query to be used
+   *        The CSS3 media query to be used. May be <code>null</code>.
    * @return this
    */
   @Nonnull

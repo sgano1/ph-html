@@ -18,6 +18,7 @@ package com.helger.html.markdown;
 
 import javax.annotation.Nonnull;
 
+import com.helger.html.hc.IHCElementWithChildren;
 import com.helger.html.hc.html.HCA;
 import com.helger.html.hc.html.HCBlockQuote;
 import com.helger.html.hc.html.HCCode;
@@ -38,7 +39,6 @@ import com.helger.html.hc.html.HCS;
 import com.helger.html.hc.html.HCStrong;
 import com.helger.html.hc.html.HCSup;
 import com.helger.html.hc.html.HCUL;
-import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 
 /**
  * Default Decorator implementation.
@@ -109,7 +109,7 @@ public class MarkdownDefaultDecorator implements IMarkdownDecorator
   }
 
   @Nonnull
-  public AbstractHCElementWithChildren <?> openHeadline (@Nonnull final HCStack out, final int level)
+  public IHCElementWithChildren <?> openHeadline (@Nonnull final HCStack out, final int level)
   {
     switch (level)
     {

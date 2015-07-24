@@ -18,11 +18,11 @@ package com.helger.html.markdown;
 
 import javax.annotation.Nonnull;
 
+import com.helger.html.hc.IHCElementWithChildren;
 import com.helger.html.hc.html.HCA;
 import com.helger.html.hc.html.HCCode;
 import com.helger.html.hc.html.HCImg;
 import com.helger.html.hc.html.HCLI;
-import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 
 /**
  * Decorator interface.
@@ -170,7 +170,7 @@ public interface IMarkdownDecorator
    * @return Headline element
    */
   @Nonnull
-  AbstractHCElementWithChildren <?> openHeadline (@Nonnull HCStack out, int level);
+  IHCElementWithChildren <?> openHeadline (@Nonnull HCStack out, int level);
 
   /**
    * Called when a headline is closed.

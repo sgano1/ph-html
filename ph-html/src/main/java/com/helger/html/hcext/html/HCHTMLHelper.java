@@ -26,9 +26,9 @@ import javax.annotation.concurrent.Immutable;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.string.StringHelper;
 import com.helger.html.EHTMLElement;
+import com.helger.html.hc.IHCElement;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.html.*;
-import com.helger.html.hc.impl.AbstractHCElement;
 import com.helger.html.hc.impl.HCGenericElementWithChildren;
 import com.helger.html.hc.impl.HCTextNode;
 
@@ -144,7 +144,7 @@ public final class HCHTMLHelper
   }
 
   @Nullable
-  public static AbstractHCElement <?> createHCElement (@Nullable final EHTMLElement eElement)
+  public static IHCElement <?> createHCElement (@Nullable final EHTMLElement eElement)
   {
     if (eElement == null)
       return null;
@@ -392,10 +392,9 @@ public final class HCHTMLHelper
   }
 
   @Nullable
-  public static AbstractHCElement <?> createHCElementFromName (@Nullable final String sTagName)
+  public static IHCElement <?> createHCElementFromName (@Nullable final String sTagName)
   {
     final EHTMLElement eElement = EHTMLElement.getFromTagNameOrNull (sTagName);
     return createHCElement (eElement);
   }
-
 }
