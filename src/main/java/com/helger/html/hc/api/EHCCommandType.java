@@ -27,9 +27,9 @@ import com.helger.commons.annotation.Nonempty;
  */
 public enum EHCCommandType implements IHCHasHTMLAttributeValue
 {
-  CHECKBOX ("checkbox"),
-  COMMAND ("command"),
-  RADIO ("radio");
+ CHECKBOX ("checkbox"),
+ COMMAND ("command"),
+ RADIO ("radio");
 
   /** Default command: command */
   @Nonnull

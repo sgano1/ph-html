@@ -34,7 +34,7 @@ import com.helger.html.hc.impl.HCTextNode;
  *
  * @author Philip Helger
  */
-public class HCOption extends AbstractHCElementWithInternalChildren <HCOption, HCTextNode> implements IHCCanBeDisabled <HCOption>
+public class HCOption extends AbstractHCElementWithInternalChildren <HCOption, HCTextNode>implements IHCCanBeDisabled <HCOption>
 {
   /** By default the option is not disabled */
   public static final boolean DEFAULT_DISABLED = false;

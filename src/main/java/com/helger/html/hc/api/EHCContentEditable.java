@@ -27,9 +27,9 @@ import com.helger.commons.annotation.Nonempty;
  */
 public enum EHCContentEditable implements IHCHasHTMLAttributeValue
 {
-  TRUE ("true"),
-  FALSE ("false"),
-  INHERIT ("inherit");
+ TRUE ("true"),
+ FALSE ("false"),
+ INHERIT ("inherit");
 
   private final String m_sAttrValue;
 

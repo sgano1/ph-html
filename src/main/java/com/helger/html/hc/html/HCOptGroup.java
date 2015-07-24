@@ -33,7 +33,7 @@ import com.helger.html.hc.impl.AbstractHCElementWithInternalChildren;
  *
  * @author Philip Helger
  */
-public class HCOptGroup extends AbstractHCElementWithInternalChildren <HCOptGroup, HCOption> implements IHCCanBeDisabled <HCOptGroup>
+public class HCOptGroup extends AbstractHCElementWithInternalChildren <HCOptGroup, HCOption>implements IHCCanBeDisabled <HCOptGroup>
 {
   /** By default the opt group is not disabled */
   public static final boolean DEFAULT_DISABLED = false;

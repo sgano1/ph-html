@@ -55,7 +55,7 @@ import com.helger.html.hc.impl.HCTextNode;
  * @param <IMPLTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable <IMPLTYPE>> extends AbstractHCElement <IMPLTYPE> implements IHCTable <IMPLTYPE>
+public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable <IMPLTYPE>> extends AbstractHCElement <IMPLTYPE>implements IHCTable <IMPLTYPE>
 {
   private HCColGroup m_aColGroup;
   private int m_nCellSpacing = CGlobal.ILLEGAL_UINT;

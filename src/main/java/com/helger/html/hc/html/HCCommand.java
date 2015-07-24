@@ -33,7 +33,7 @@ import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElement;
 
 @SinceHTML5
-public class HCCommand extends AbstractHCElement <HCCommand> implements IHCCanBeDisabled <HCCommand>
+public class HCCommand extends AbstractHCElement <HCCommand>implements IHCCanBeDisabled <HCCommand>
 {
   /** By default checked is disabled */
   public static final boolean DEFAULT_CHECKED = false;

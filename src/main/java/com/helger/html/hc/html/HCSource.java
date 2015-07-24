@@ -30,7 +30,7 @@ import com.helger.html.hc.api.IHCHasMedia;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
 @SinceHTML5
-public class HCSource extends AbstractHCMediaElementChild <HCSource> implements IHCHasMedia <HCSource>
+public class HCSource extends AbstractHCMediaElementChild <HCSource>implements IHCHasMedia <HCSource>
 {
   private ISimpleURL m_aSrc;
   private IMimeType m_aType;

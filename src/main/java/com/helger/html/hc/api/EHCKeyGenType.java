@@ -27,22 +27,22 @@ import com.helger.commons.annotation.Nonempty;
  */
 public enum EHCKeyGenType implements IHCHasHTMLAttributeValue
 {
-  /**
-   * Specifies an RSA security algorithm. The user may be given a choice of RSA
-   * key strengths
-   */
+ /**
+  * Specifies an RSA security algorithm. The user may be given a choice of RSA
+  * key strengths
+  */
   RSA ("rsa"),
 
-  /**
-   * Specifies a DSA security algorithm. The user may be given a choice of DSA
-   * key sizes
-   */
+ /**
+  * Specifies a DSA security algorithm. The user may be given a choice of DSA
+  * key sizes
+  */
   DSA ("dsa"),
 
-  /**
-   * Specifies an Elliptic Curve security algorithm. The user may be given a
-   * choice of EC key strengths
-   */
+ /**
+  * Specifies an Elliptic Curve security algorithm. The user may be given a
+  * choice of EC key strengths
+  */
   EC ("ec");
 
   /** Default KeyGen type: RSA */

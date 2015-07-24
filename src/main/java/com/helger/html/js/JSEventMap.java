@@ -33,9 +33,9 @@ import com.helger.html.js.provider.CollectingJSCodeProvider;
 import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
- * This class represents a map from an {@link EJSEvent} to an
- * {@link IHasJSCode} that represents the code. This is mainly meant for
- * managing HTML element JS event handler.
+ * This class represents a map from an {@link EJSEvent} to an {@link IHasJSCode}
+ * that represents the code. This is mainly meant for managing HTML element JS
+ * event handler.
  *
  * @author Philip Helger
  */

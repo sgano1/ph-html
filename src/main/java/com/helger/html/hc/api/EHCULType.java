@@ -28,9 +28,9 @@ import com.helger.commons.annotation.Nonempty;
  */
 public enum EHCULType implements IHCHasHTMLAttributeValue
 {
-  DISC ("disc"),
-  SQUARE ("square"),
-  CIRCLE ("circle");
+ DISC ("disc"),
+ SQUARE ("square"),
+ CIRCLE ("circle");
 
   private final String m_sAttrValue;
 

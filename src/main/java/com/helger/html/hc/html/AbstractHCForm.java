@@ -288,8 +288,8 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
       aElement.setAttribute (CHTMLAttributes.ACCEPTCHARSET, m_sAcceptCharset);
     m_aAction.applyProperties (CHTMLAttributes.ACTION, aElement, aConversionSettings.getJSWriterSettings ());
     if (m_eAutoComplete.isDefined ())
-      aElement.setAttribute (CHTMLAttributes.AUTOCOMPLETE, m_eAutoComplete.isTrue () ? CHTMLAttributeValues.ON
-                                                                                    : CHTMLAttributeValues.OFF);
+      aElement.setAttribute (CHTMLAttributes.AUTOCOMPLETE,
+                             m_eAutoComplete.isTrue () ? CHTMLAttributeValues.ON : CHTMLAttributeValues.OFF);
     if (m_aEncType != null)
       aElement.setAttribute (CHTMLAttributes.ENCTYPE, m_aEncType.getAsString ());
     if (m_eMethod != null)

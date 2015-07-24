@@ -42,7 +42,7 @@ import com.helger.html.hc.impl.AbstractHCElement;
  * @param <IMPLTYPE>
  *        The implementation type.
  */
-public abstract class AbstractHCCol <IMPLTYPE extends AbstractHCCol <IMPLTYPE>> extends AbstractHCElement <IMPLTYPE> implements IHCCol <IMPLTYPE>
+public abstract class AbstractHCCol <IMPLTYPE extends AbstractHCCol <IMPLTYPE>> extends AbstractHCElement <IMPLTYPE>implements IHCCol <IMPLTYPE>
 {
   private String m_sWidth;
   private int m_nSpan = CGlobal.ILLEGAL_UINT;

@@ -25,13 +25,12 @@ import org.junit.Test;
 
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.IHCNodeBuilder;
 
 /**
  * Test class for class {@link HCBlockQuote} This file is automatically
  * generated from com.helger.html.supplementary.main.MainCreateHCClasses so DO
  * NOT EDIT!
- *
+ * 
  * @author Philip Helger
  */
 public final class HCBlockQuoteTest
@@ -40,8 +39,6 @@ public final class HCBlockQuoteTest
   public void testCreate ()
   {
     assertFalse (new HCBlockQuote ().hasChildren ());
-    assertEquals (0, HCBlockQuote.create ((IHCNodeBuilder) null).getChildCount ());
-    assertEquals (0, HCBlockQuote.create ((IHCNodeBuilder) null, (IHCNodeBuilder) null).getChildCount ());
     assertEquals (1, HCBlockQuote.create ("Text").getChildCount ());
     assertEquals (0, HCBlockQuote.create ((String) null).getChildCount ());
     assertEquals (1, HCBlockQuote.create (HCB.create ("Bold")).getChildCount ());
@@ -52,8 +49,9 @@ public final class HCBlockQuoteTest
     assertEquals (2, HCBlockQuote.create (HCB.create ("Bold"), HCI.create ("Italic")).getChildCount ());
     assertEquals (0, HCBlockQuote.create (new IHCNode [0]).getChildCount ());
     assertEquals (0, HCBlockQuote.create ((IHCNode []) null).getChildCount ());
-    assertEquals (2, HCBlockQuote.create (CollectionHelper.newList (HCB.create ("Bold"), HCI.create ("Italic")))
-                                 .getChildCount ());
+    assertEquals (2,
+                  HCBlockQuote.create (CollectionHelper.newList (HCB.create ("Bold"), HCI.create ("Italic")))
+                              .getChildCount ());
     assertEquals (0, HCBlockQuote.create (new ArrayList <IHCNode> ()).getChildCount ());
   }
 }

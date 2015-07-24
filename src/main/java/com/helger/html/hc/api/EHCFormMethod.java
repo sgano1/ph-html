@@ -28,8 +28,8 @@ import com.helger.commons.annotation.Nonempty;
  */
 public enum EHCFormMethod implements IHCHasHTMLAttributeValue
 {
-  GET ("GET"),
-  POST ("POST");
+ GET ("GET"),
+ POST ("POST");
 
   private final String m_sMethod;
 

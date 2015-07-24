@@ -56,7 +56,7 @@ import com.helger.html.hc.htmlext.HCHelper;
  *        Contained child type
  */
 @NotThreadSafe
-public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends AbstractHCElementWithInternalChildren <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode> extends AbstractHCElement <THISTYPE> implements IHCHasChildrenMutable <THISTYPE, CHILDTYPE>
+public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends AbstractHCElementWithInternalChildren <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode> extends AbstractHCElement <THISTYPE>implements IHCHasChildrenMutable <THISTYPE, CHILDTYPE>
 {
   private List <CHILDTYPE> m_aChildren;
 

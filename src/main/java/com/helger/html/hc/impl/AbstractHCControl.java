@@ -32,7 +32,7 @@ import com.helger.html.hc.IHCControl;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
 @NotThreadSafe
-public abstract class AbstractHCControl <IMPLTYPE extends AbstractHCControl <IMPLTYPE>> extends AbstractHCElement <IMPLTYPE> implements IHCControl <IMPLTYPE>
+public abstract class AbstractHCControl <IMPLTYPE extends AbstractHCControl <IMPLTYPE>> extends AbstractHCElement <IMPLTYPE>implements IHCControl <IMPLTYPE>
 {
   public static final boolean DEFAULT_DISABLED = false;
   public static final boolean DEFAULT_FOCUSED = false;

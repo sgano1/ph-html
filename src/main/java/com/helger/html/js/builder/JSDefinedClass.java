@@ -238,7 +238,10 @@ public class JSDefinedClass extends AbstractJSClass implements IJSDeclaration, I
     ValueEnforcer.notNull (aField, "Field");
 
     if (m_aFields.remove (aField.name ()) != aField)
-      throw new IllegalArgumentException ("Failed to remove field '" + aField.name () + "' from " + m_aFields.keySet ());
+      throw new IllegalArgumentException ("Failed to remove field '" +
+                                          aField.name () +
+                                          "' from " +
+                                          m_aFields.keySet ());
     return this;
   }
 

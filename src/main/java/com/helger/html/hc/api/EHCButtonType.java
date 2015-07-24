@@ -27,9 +27,9 @@ import com.helger.commons.annotation.Nonempty;
  */
 public enum EHCButtonType implements IHCHasHTMLAttributeValue
 {
-  SUBMIT ("submit"),
-  RESET ("reset"),
-  BUTTON ("button");
+ SUBMIT ("submit"),
+ RESET ("reset"),
+ BUTTON ("button");
 
   private final String m_sAttrValue;
 

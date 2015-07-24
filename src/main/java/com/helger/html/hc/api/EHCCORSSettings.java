@@ -27,8 +27,8 @@ import com.helger.commons.annotation.Nonempty;
  */
 public enum EHCCORSSettings implements IHCHasHTMLAttributeValue
 {
-  ANONYMOUS ("anonymous"),
-  USE_CREDENTIALS ("use-credentials");
+ ANONYMOUS ("anonymous"),
+ USE_CREDENTIALS ("use-credentials");
 
   /** Default CORS settings: anonymous */
   @Nonnull

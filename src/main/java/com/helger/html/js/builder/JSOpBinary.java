@@ -65,7 +65,9 @@ public class JSOpBinary extends AbstractJSExpression
    * @param aRight
    *        Right side. May not be <code>null</code>.
    */
-  public JSOpBinary (@Nonnull final IJSExpression aLeft, @Nonnull final String sOp, @Nonnull final IJSGeneratable aRight)
+  public JSOpBinary (@Nonnull final IJSExpression aLeft,
+                     @Nonnull final String sOp,
+                     @Nonnull final IJSGeneratable aRight)
   {
     this (aLeft, sOp, aRight, _useBraces (aLeft, sOp, aRight));
   }

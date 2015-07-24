@@ -27,11 +27,11 @@ import com.helger.commons.annotation.Nonempty;
  */
 public enum EHCTrackType implements IHCHasHTMLAttributeValue
 {
-  SUBTITLES ("subtitles"),
-  CAPTIONS ("captions"),
-  DESCRIPTIONS ("descriptions"),
-  CHAPTERS ("chapters"),
-  METADATA ("metadata");
+ SUBTITLES ("subtitles"),
+ CAPTIONS ("captions"),
+ DESCRIPTIONS ("descriptions"),
+ CHAPTERS ("chapters"),
+ METADATA ("metadata");
 
   private final String m_sAttrValue;
 

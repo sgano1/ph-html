@@ -865,8 +865,8 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
     if (bHTML5)
     {
       if (m_eTranslate.isDefined ())
-        aElement.setAttribute (CHTMLAttributes.TRANSLATE, m_eTranslate.isTrue () ? CHTMLAttributeValues.YES
-                                                                                : CHTMLAttributeValues.NO);
+        aElement.setAttribute (CHTMLAttributes.TRANSLATE,
+                               m_eTranslate.isTrue () ? CHTMLAttributeValues.YES : CHTMLAttributeValues.NO);
       if (m_eContentEditable != null)
         aElement.setAttribute (CHTMLAttributes.CONTENTEDITABLE, m_eContentEditable);
       if (StringHelper.hasNoText (m_sContextMenuID))

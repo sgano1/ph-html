@@ -87,20 +87,23 @@ public final class HCHeadTest
     assertTrue (aHead.getMetaElementList ().getAllMetaElements ().isEmpty ());
     assertEquals (0, aHead.getMetaElementList ().getMetaElementCount ());
 
-    assertSame (aHead.getMetaElementList (), aHead.getMetaElementList ()
-                                                  .addMetaElement (new MetaElement ("foo", "bar")));
+    assertSame (aHead.getMetaElementList (),
+                aHead.getMetaElementList ().addMetaElement (new MetaElement ("foo", "bar")));
     assertFalse (aHead.getMetaElementList ().getAllMetaElements ().isEmpty ());
     assertEquals (1, aHead.getMetaElementList ().getMetaElementCount ());
-    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\">" + "<meta name=\"foo\" content=\"bar\" />" + "</head>",
+    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\">" +
+                  "<meta name=\"foo\" content=\"bar\" />" +
+                  "</head>",
                   HCSettings.getAsHTMLString (aHead));
 
     assertSame (aHead.getMetaElementList (),
                 aHead.getMetaElementList ().addMetaElement (new MetaElement ("goo", true, "car")));
     assertEquals (2, aHead.getMetaElementList ().getMetaElementCount ());
-    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\">"
-                  + "<meta name=\"foo\" content=\"bar\" />"
-                  + "<meta http-equiv=\"goo\" content=\"car\" />"
-                  + "</head>", HCSettings.getAsHTMLString (aHead));
+    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\">" +
+                  "<meta name=\"foo\" content=\"bar\" />" +
+                  "<meta http-equiv=\"goo\" content=\"car\" />" +
+                  "</head>",
+                  HCSettings.getAsHTMLString (aHead));
 
     assertEquals (EChange.UNCHANGED, aHead.getMetaElementList ().removeMetaElement ("any"));
     assertEquals (2, aHead.getMetaElementList ().getMetaElementCount ());
@@ -108,9 +111,10 @@ public final class HCHeadTest
     assertEquals (1, aHead.getMetaElementList ().getMetaElementCount ());
     assertEquals (EChange.UNCHANGED, aHead.getMetaElementList ().removeMetaElement ("foo"));
     assertEquals (1, aHead.getMetaElementList ().getMetaElementCount ());
-    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\">"
-                  + "<meta http-equiv=\"goo\" content=\"car\" />"
-                  + "</head>", HCSettings.getAsHTMLString (aHead));
+    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\">" +
+                  "<meta http-equiv=\"goo\" content=\"car\" />" +
+                  "</head>",
+                  HCSettings.getAsHTMLString (aHead));
     assertEquals (EChange.CHANGED, aHead.getMetaElementList ().removeMetaElement ("goo"));
     assertEquals (0, aHead.getMetaElementList ().getMetaElementCount ());
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"></head>", HCSettings.getAsHTMLString (aHead));

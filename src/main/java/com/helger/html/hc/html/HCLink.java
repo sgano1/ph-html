@@ -45,7 +45,7 @@ import com.helger.html.hc.impl.AbstractHCElement;
  * @author Philip Helger
  */
 @OutOfBandNode
-public class HCLink extends AbstractHCElement <HCLink> implements IHCCSSNode
+public class HCLink extends AbstractHCElement <HCLink>implements IHCCSSNode
 {
   private IHCLinkType m_aRel;
   private IHCLinkType m_aRev;

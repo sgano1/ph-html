@@ -28,11 +28,11 @@ import com.helger.commons.annotation.Nonempty;
  */
 public enum EHCObjectAlign implements IHCHasHTMLAttributeValue
 {
-  TOP ("top"),
-  MIDDLE ("middle"),
-  BOTTOM ("bottom"),
-  LEFT ("left"),
-  RIGHT ("right");
+ TOP ("top"),
+ MIDDLE ("middle"),
+ BOTTOM ("bottom"),
+ LEFT ("left"),
+ RIGHT ("right");
 
   private final String m_sAttrValue;
 

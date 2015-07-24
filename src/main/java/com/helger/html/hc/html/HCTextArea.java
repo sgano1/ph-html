@@ -271,8 +271,8 @@ public class HCTextArea extends AbstractHCControl <HCTextArea>
   {
     super.applyProperties (aElement, aConversionSettings);
     if (m_eAutoComplete.isDefined ())
-      aElement.setAttribute (CHTMLAttributes.AUTOCOMPLETE, m_eAutoComplete.isTrue () ? CHTMLAttributeValues.ON
-                                                                                    : CHTMLAttributeValues.OFF);
+      aElement.setAttribute (CHTMLAttributes.AUTOCOMPLETE,
+                             m_eAutoComplete.isTrue () ? CHTMLAttributeValues.ON : CHTMLAttributeValues.OFF);
     if (m_bAutoFocus)
       aElement.setAttribute (CHTMLAttributes.AUTOFOCUS, CHTMLAttributeValues.AUTOFOCUS);
     if (m_nCols > 0)

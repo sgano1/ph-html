@@ -43,8 +43,7 @@ import com.helger.html.js.IHasJSCode;
  * @param <THISTYPE>
  *        Implementation type
  */
-public class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE> implements
-                                                                                                                   IHCHasMedia <THISTYPE>
+public class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCHasMedia <THISTYPE>
 {
   private ISimpleURL m_aHref;
   private HC_Target m_aTarget;

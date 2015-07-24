@@ -28,9 +28,9 @@ import com.helger.commons.annotation.Nonempty;
  */
 public enum EHCParamValueType implements IHCHasHTMLAttributeValue
 {
-  DATA ("data"),
-  REF ("ref"),
-  OBJECT ("object");
+ DATA ("data"),
+ REF ("ref"),
+ OBJECT ("object");
 
   /** Default param value type is data */
   public static final EHCParamValueType DEFAULT = DATA;

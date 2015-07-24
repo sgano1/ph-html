@@ -38,7 +38,7 @@ import com.helger.html.hc.impl.AbstractHCElementWithChildren;
  * @param <IMPLTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCCell <IMPLTYPE extends AbstractHCCell <IMPLTYPE>> extends AbstractHCElementWithChildren <IMPLTYPE> implements IHCCell <IMPLTYPE>
+public abstract class AbstractHCCell <IMPLTYPE extends AbstractHCCell <IMPLTYPE>> extends AbstractHCElementWithChildren <IMPLTYPE>implements IHCCell <IMPLTYPE>
 {
   private HCRow m_aParentRow;
   private int m_nColspan = CGlobal.ILLEGAL_UINT;

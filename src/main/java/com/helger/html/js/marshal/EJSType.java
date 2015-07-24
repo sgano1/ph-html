@@ -23,15 +23,15 @@ package com.helger.html.js.marshal;
  */
 enum EJSType
 {
-  HTML,
-  STRING,
-  INT,
-  DOUBLE,
-  BOOLEAN,
-  ARRAY,
-  LIST,
-  MAP,
-  VOID,
-  JS,
-  JSON;
+ HTML,
+ STRING,
+ INT,
+ DOUBLE,
+ BOOLEAN,
+ ARRAY,
+ LIST,
+ MAP,
+ VOID,
+ JS,
+ JSON;
 }

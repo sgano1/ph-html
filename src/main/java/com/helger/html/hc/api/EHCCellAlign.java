@@ -27,11 +27,11 @@ import com.helger.commons.annotation.Nonempty;
  */
 public enum EHCCellAlign implements IHCHasHTMLAttributeValue
 {
-  LEFT ("left"),
-  CENTER ("center"),
-  RIGHT ("right"),
-  JUSTIFY ("justify"),
-  CHAR ("char");
+ LEFT ("left"),
+ CENTER ("center"),
+ RIGHT ("right"),
+ JUSTIFY ("justify"),
+ CHAR ("char");
 
   private final String m_sAttrValue;
 

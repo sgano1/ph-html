@@ -199,8 +199,9 @@ public class MarkdownProcessor
         else
         {
           // Store linkRef and skip line
-          final LinkRef aLinkRef = new LinkRef (sLink, sComment, sComment != null &&
-                                                                 (sLink.length () == 1 && sLink.charAt (0) == '*'));
+          final LinkRef aLinkRef = new LinkRef (sLink,
+                                                sComment,
+                                                sComment != null && (sLink.length () == 1 && sLink.charAt (0) == '*'));
           m_aEmitter.addLinkRef (sID, aLinkRef);
           if (sComment == null)
             aLastLinkRef = aLinkRef;
@@ -252,7 +253,10 @@ public class MarkdownProcessor
       final ELineType t = aLine.getLineType (m_bUseExtensions);
       if (t == ELineType.OLIST ||
           t == ELineType.ULIST ||
-          (!aLine.m_bIsEmpty && aLine.m_bPrevEmpty && aLine.m_nLeading == 0 && !(t == ELineType.OLIST || t == ELineType.ULIST)))
+          (!aLine.m_bIsEmpty &&
+           aLine.m_bPrevEmpty &&
+           aLine.m_nLeading == 0 &&
+           !(t == ELineType.OLIST || t == ELineType.ULIST)))
       {
         aRoot.split (aLine.m_aPrevious).m_eType = EBlockType.LIST_ITEM;
       }
@@ -323,7 +327,7 @@ public class MarkdownProcessor
           else
           {
             bt = (listMode && (aLine == null || !aLine.m_bIsEmpty) && !bWasEmpty) ? EBlockType.NONE
-                                                                                 : EBlockType.PARAGRAPH;
+                                                                                  : EBlockType.PARAGRAPH;
             aRoot.split (aLine == null ? aRoot.m_aLineTail : aLine).m_eType = bt;
             aRoot.removeLeadingEmptyLines ();
           }

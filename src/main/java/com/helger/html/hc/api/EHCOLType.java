@@ -28,11 +28,11 @@ import com.helger.commons.annotation.Nonempty;
  */
 public enum EHCOLType implements IHCHasHTMLAttributeValue
 {
-  NUMERIC ("1"),
-  ALPHA_LOWERCASE ("a"),
-  ALPHA_UPPERCASE ("A"),
-  ROMAN_LOWERCASE ("i"),
-  ROMAN_UPPERCASE ("I");
+ NUMERIC ("1"),
+ ALPHA_LOWERCASE ("a"),
+ ALPHA_UPPERCASE ("A"),
+ ROMAN_LOWERCASE ("i"),
+ ROMAN_UPPERCASE ("I");
 
   private final String m_sAttrValue;
 

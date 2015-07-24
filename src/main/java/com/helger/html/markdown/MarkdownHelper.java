@@ -32,25 +32,25 @@ import com.helger.commons.random.VerySecureRandom;
 final class MarkdownHelper
 {
   private static final char [] ESCAPE_CHARS = new char [] { '\\',
-                                                           '[',
-                                                           ']',
-                                                           '(',
-                                                           ')',
-                                                           '{',
-                                                           '}',
-                                                           '#',
-                                                           '"',
-                                                           '\'',
-                                                           '.',
-                                                           '>',
-                                                           '<',
-                                                           '*',
-                                                           '+',
-                                                           '-',
-                                                           '_',
-                                                           '!',
-                                                           '`',
-                                                           '^' };
+                                                            '[',
+                                                            ']',
+                                                            '(',
+                                                            ')',
+                                                            '{',
+                                                            '}',
+                                                            '#',
+                                                            '"',
+                                                            '\'',
+                                                            '.',
+                                                            '>',
+                                                            '<',
+                                                            '*',
+                                                            '+',
+                                                            '-',
+                                                            '_',
+                                                            '!',
+                                                            '`',
+                                                            '^' };
 
   /**
    * @return A pseudo random number between 0 and 1023
@@ -452,7 +452,10 @@ final class MarkdownHelper
    * @return The new position or -1 if this is no valid XML element.
    */
   @CheckForSigned
-  public static int readXMLElement (final StringBuilder aSB, final String sIn, final int nStart, final boolean bSafeMode)
+  public static int readXMLElement (final StringBuilder aSB,
+                                    final String sIn,
+                                    final int nStart,
+                                    final boolean bSafeMode)
   {
     try
     {

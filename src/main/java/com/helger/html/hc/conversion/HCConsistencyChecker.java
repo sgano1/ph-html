@@ -119,15 +119,15 @@ public final class HCConsistencyChecker
   private static void _checkButton (final HCButton aButton)
   {
     final IHCElement <?> aChild = HCHelper.recursiveGetFirstChildWithTagName (aButton,
-                                                                             EHTMLElement.A,
-                                                                             EHTMLElement.INPUT,
-                                                                             EHTMLElement.SELECT,
-                                                                             EHTMLElement.TEXTAREA,
-                                                                             EHTMLElement.LABEL,
-                                                                             EHTMLElement.BUTTON,
-                                                                             EHTMLElement.FORM,
-                                                                             EHTMLElement.FIELDSET,
-                                                                             EHTMLElement.IFRAME);
+                                                                              EHTMLElement.A,
+                                                                              EHTMLElement.INPUT,
+                                                                              EHTMLElement.SELECT,
+                                                                              EHTMLElement.TEXTAREA,
+                                                                              EHTMLElement.LABEL,
+                                                                              EHTMLElement.BUTTON,
+                                                                              EHTMLElement.FORM,
+                                                                              EHTMLElement.FIELDSET,
+                                                                              EHTMLElement.IFRAME);
     if (aChild != null)
       consistencyWarning ("BUTTON element contains forbidden tag " + aChild.getElement ());
   }
@@ -153,11 +153,11 @@ public final class HCConsistencyChecker
   private static void _checkPre (final HCPre aPre)
   {
     final IHCElement <?> aChild = HCHelper.recursiveGetFirstChildWithTagName (aPre,
-                                                                             EHTMLElement.IMG,
-                                                                             EHTMLElement.OBJECT,
-                                                                             EHTMLElement.SMALL,
-                                                                             EHTMLElement.SUB,
-                                                                             EHTMLElement.SUP);
+                                                                              EHTMLElement.IMG,
+                                                                              EHTMLElement.OBJECT,
+                                                                              EHTMLElement.SMALL,
+                                                                              EHTMLElement.SUB,
+                                                                              EHTMLElement.SUP);
     if (aChild != null)
       consistencyWarning ("PRE elements contains forbidden tag " + aChild.getElement ());
   }
@@ -217,9 +217,8 @@ public final class HCConsistencyChecker
       // contain a'&amp;' followed by some malicious code that should be
       // escaped.
       // Note PH: this is not a vulnerability. This is a programming error!
-      consistencyAssert (!sHref.contains ("&amp;"), "The URL '" +
-                                                    sHref +
-                                                    "' seems to be already escaped - please use an unescaped URL!!");
+      consistencyAssert (!sHref.contains ("&amp;"),
+                         "The URL '" + sHref + "' seems to be already escaped - please use an unescaped URL!!");
     }
   }
 

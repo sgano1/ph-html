@@ -27,20 +27,20 @@ import com.helger.commons.annotation.Nonempty;
  */
 public enum EHCDropZone implements IHCHasHTMLAttributeValue
 {
-  /**
-   * Indicates that dropping an accepted item on the element will result in a
-   * copy of the dragged data.
-   */
+ /**
+  * Indicates that dropping an accepted item on the element will result in a
+  * copy of the dragged data.
+  */
   COPY ("copy"),
-  /**
-   * Indicates that dropping an accepted item on the element will result in the
-   * dragged data being moved to the new location.
-   */
+ /**
+  * Indicates that dropping an accepted item on the element will result in the
+  * dragged data being moved to the new location.
+  */
   MOVE ("move"),
-  /**
-   * Indicates that dropping an accepted item on the element will result in a
-   * link to the original data.
-   */
+ /**
+  * Indicates that dropping an accepted item on the element will result in a
+  * link to the original data.
+  */
   LINK ("link");
 
   private final String m_sAttrValue;

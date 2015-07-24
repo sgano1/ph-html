@@ -113,7 +113,9 @@ public class HCTextNode extends AbstractHCNode
   }
 
   @Nonnull
-  public HCTextNode prependText (@Nonnull final char [] aChars, @Nonnegative final int nOfs, @Nonnegative final int nLen)
+  public HCTextNode prependText (@Nonnull final char [] aChars,
+                                 @Nonnegative final int nOfs,
+                                 @Nonnegative final int nLen)
   {
     ValueEnforcer.notNull (aChars, "Chars");
     return prependText (new String (aChars, nOfs, nLen));

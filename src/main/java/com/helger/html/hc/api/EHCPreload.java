@@ -27,9 +27,9 @@ import com.helger.commons.annotation.Nonempty;
  */
 public enum EHCPreload implements IHCHasHTMLAttributeValue
 {
-  AUTO ("auto"),
-  METADATA ("metadata"),
-  DONE ("none");
+ AUTO ("auto"),
+ METADATA ("metadata"),
+ DONE ("none");
 
   private final String m_sAttrValue;
 

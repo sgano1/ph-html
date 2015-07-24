@@ -299,7 +299,8 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
    *            When the specified function was already created.
    */
   @Nonnull
-  public JSFunction function (@Nullable final AbstractJSType aType, @Nonnull @Nonempty final String sName) throws JSNameAlreadyExistsException
+  public JSFunction function (@Nullable final AbstractJSType aType,
+                              @Nonnull @Nonempty final String sName) throws JSNameAlreadyExistsException
   {
     final JSFunction aFunction = new JSFunction (aType, sName);
     return addDeclaration (aFunction);
@@ -434,7 +435,8 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
    *         if the name is not unique
    */
   @Nonnull
-  public JSVar var (@Nonnull @Nonempty final String sName, @Nullable final String sInitValue) throws JSNameAlreadyExistsException
+  public JSVar var (@Nonnull @Nonempty final String sName,
+                    @Nullable final String sInitValue) throws JSNameAlreadyExistsException
   {
     return var (null, sName, sInitValue == null ? JSExpr.NULL : JSExpr.lit (sInitValue));
   }
@@ -451,7 +453,8 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
    *         if the name is not unique
    */
   @Nonnull
-  public JSVar var (@Nonnull @Nonempty final String sName, @Nullable final IJSExpression aInitExpression) throws JSNameAlreadyExistsException
+  public JSVar var (@Nonnull @Nonempty final String sName,
+                    @Nullable final IJSExpression aInitExpression) throws JSNameAlreadyExistsException
   {
     return var (null, sName, aInitExpression);
   }
@@ -468,7 +471,8 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
    *         if the name is not unique
    */
   @Nonnull
-  public JSVar var (@Nullable final AbstractJSType aType, @Nonnull @Nonempty final String sName) throws JSNameAlreadyExistsException
+  public JSVar var (@Nullable final AbstractJSType aType,
+                    @Nonnull @Nonempty final String sName) throws JSNameAlreadyExistsException
   {
     return var (aType, sName, null);
   }

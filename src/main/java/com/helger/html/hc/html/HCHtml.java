@@ -151,8 +151,8 @@ public class HCHtml extends AbstractHCElement <HCHtml>
     // Note: we need to clone the doctype, because otherwise the object would
     // already have a parent assigned if "getAsNode" is called more than once!
     final IMicroDocument aDoc = new MicroDocument (eHTMLVersion.getDocType ().getClone ());
-    final IMicroElement aRoot = aDoc.appendElement (eHTMLVersion.getNamespaceURI (), eHTMLVersion.getDocType ()
-                                                                                                 .getQualifiedName ());
+    final IMicroElement aRoot = aDoc.appendElement (eHTMLVersion.getNamespaceURI (),
+                                                    eHTMLVersion.getDocType ().getQualifiedName ());
     applyProperties (aRoot, aConversionSettings);
 
     // Use the getter, to ensure the elements are not null

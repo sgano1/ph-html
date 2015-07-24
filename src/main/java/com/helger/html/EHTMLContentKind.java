@@ -26,13 +26,13 @@ import javax.annotation.Nonnegative;
  */
 public enum EHTMLContentKind
 {
-  METADATA (0x01),
-  FLOW (0x02),
-  SECTIONING (0x04),
-  HEADING (0x08),
-  PHRASING (0x10),
-  EMBEDDED (0x20),
-  INTERACTIVE (0x40);
+ METADATA (0x01),
+ FLOW (0x02),
+ SECTIONING (0x04),
+ HEADING (0x08),
+ PHRASING (0x10),
+ EMBEDDED (0x20),
+ INTERACTIVE (0x40);
 
   private final int m_nValue;
 

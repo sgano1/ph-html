@@ -41,7 +41,9 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
   /** The default value of the "value" attribute in HTML */
   public static final String DEFAULT_VALUE = Boolean.TRUE.toString ();
 
-  /** Emit a hidden field that indicates that the check-box was in the request. */
+  /**
+   * Emit a hidden field that indicates that the check-box was in the request.
+   */
   public static final boolean DEFAULT_EMIT_HIDDEN_FIELD = true;
 
   /**

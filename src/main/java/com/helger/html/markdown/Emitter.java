@@ -868,8 +868,9 @@ final class Emitter
         }
         if (m_bUseExtensions)
         {
-          return Character.isLetterOrDigit (c0) && c0 != '_' && Character.isLetterOrDigit (c1) ? EMarkToken.NONE
-                                                                                              : EMarkToken.EM_UNDERSCORE;
+          return Character.isLetterOrDigit (c0) &&
+                 c0 != '_' &&
+                 Character.isLetterOrDigit (c1) ? EMarkToken.NONE : EMarkToken.EM_UNDERSCORE;
         }
         return c0 != ' ' || c1 != ' ' ? EMarkToken.EM_UNDERSCORE : EMarkToken.NONE;
       case '~':

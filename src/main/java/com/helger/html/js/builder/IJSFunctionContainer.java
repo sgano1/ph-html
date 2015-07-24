@@ -53,5 +53,6 @@ public interface IJSFunctionContainer extends IHasJSCodeWithSettings
    *            When the specified function was already created.
    */
   @Nonnull
-  JSFunction function (@Nullable AbstractJSType aReturnType, @Nonnull @Nonempty String sName) throws JSNameAlreadyExistsException;
+  JSFunction function (@Nullable AbstractJSType aReturnType,
+                       @Nonnull @Nonempty String sName) throws JSNameAlreadyExistsException;
 }

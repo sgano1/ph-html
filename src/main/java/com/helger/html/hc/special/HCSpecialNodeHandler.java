@@ -423,13 +423,15 @@ public final class HCSpecialNodeHandler
       if (aNode instanceof HCScriptOnDocumentReady)
       {
         final HCScriptOnDocumentReady aScript = (HCScriptOnDocumentReady) aNode;
-        (aScript.isEmitAfterFiles () ? aJSOnDocumentReadyAfter : aJSOnDocumentReadyBefore).appendFlattened (aScript.getOnDocumentReadyCode ());
+        (aScript.isEmitAfterFiles () ? aJSOnDocumentReadyAfter
+                                     : aJSOnDocumentReadyBefore).appendFlattened (aScript.getOnDocumentReadyCode ());
       }
       else
         if (aNode instanceof HCScript)
         {
           final HCScript aScript = (HCScript) aNode;
-          (aScript.isEmitAfterFiles () ? aJSInlineAfter : aJSInlineBefore).appendFlattened (aScript.getJSCodeProvider ());
+          (aScript.isEmitAfterFiles () ? aJSInlineAfter
+                                       : aJSInlineBefore).appendFlattened (aScript.getJSCodeProvider ());
         }
         else
           if (aNode instanceof HCStyle && ((HCStyle) aNode).hasNoMediaOrAll ())

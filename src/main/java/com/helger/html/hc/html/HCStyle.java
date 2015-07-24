@@ -53,17 +53,17 @@ import com.helger.html.hc.impl.AbstractHCElement;
  * @author Philip Helger
  */
 @OutOfBandNode
-public class HCStyle extends AbstractHCElement <HCStyle> implements IHCCSSNode
+public class HCStyle extends AbstractHCElement <HCStyle>implements IHCCSSNode
 {
   public static enum EMode
   {
-    /**
-     * Emit JS code as plain text, but XML masked
-     */
+   /**
+    * Emit JS code as plain text, but XML masked
+    */
     PLAIN_TEXT,
-    /**
-     * Emit JS code as plain text, but without XML masking
-     */
+   /**
+    * Emit JS code as plain text, but without XML masking
+    */
     PLAIN_TEXT_NO_ESCAPE;
   }
 

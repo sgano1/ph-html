@@ -32,7 +32,7 @@ import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElement;
 
 @SinceHTML5
-public class HCKeyGen extends AbstractHCElement <HCKeyGen> implements IHCCanBeDisabled <HCKeyGen>
+public class HCKeyGen extends AbstractHCElement <HCKeyGen>implements IHCCanBeDisabled <HCKeyGen>
 {
   public static final boolean DEFAULT_AUTOFOCUS = false;
   public static final boolean DEFAULT_DISABLED = false;

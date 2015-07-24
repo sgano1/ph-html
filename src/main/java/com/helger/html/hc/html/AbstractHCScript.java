@@ -42,7 +42,7 @@ import com.helger.html.hc.impl.AbstractHCElement;
  * @param <IMPLTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCScript <IMPLTYPE extends AbstractHCScript <IMPLTYPE>> extends AbstractHCElement <IMPLTYPE> implements IHCJSNode
+public abstract class AbstractHCScript <IMPLTYPE extends AbstractHCScript <IMPLTYPE>> extends AbstractHCElement <IMPLTYPE>implements IHCJSNode
 {
   /** Default MIME type: text/javascript */
   public static final IMimeType DEFAULT_TYPE = CMimeType.TEXT_JAVASCRIPT;

@@ -27,9 +27,9 @@ import com.helger.commons.annotation.Nonempty;
  */
 public enum EHCDraggable implements IHCHasHTMLAttributeValue
 {
-  TRUE ("true"),
-  FALSE ("false"),
-  AUTO ("auto");
+ TRUE ("true"),
+ FALSE ("false"),
+ AUTO ("auto");
 
   private final String m_sAttrValue;
 

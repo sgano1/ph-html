@@ -24,32 +24,6 @@ import com.helger.commons.url.SimpleURL;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.conversion.HCSettings;
 import com.helger.html.hc.conversion.IHCConversionSettings;
-import com.helger.html.hc.html.HCArticle;
-import com.helger.html.hc.html.HCAside;
-import com.helger.html.hc.html.HCAudio;
-import com.helger.html.hc.html.HCBDI;
-import com.helger.html.hc.html.HCBody;
-import com.helger.html.hc.html.HCCanvas;
-import com.helger.html.hc.html.HCCommand;
-import com.helger.html.hc.html.HCFigure;
-import com.helger.html.hc.html.HCFooter;
-import com.helger.html.hc.html.HCHGroup;
-import com.helger.html.hc.html.HCHeader;
-import com.helger.html.hc.html.HCHtml;
-import com.helger.html.hc.html.HCKeyGen;
-import com.helger.html.hc.html.HCMark;
-import com.helger.html.hc.html.HCMeter;
-import com.helger.html.hc.html.HCNav;
-import com.helger.html.hc.html.HCProgress;
-import com.helger.html.hc.html.HCRP;
-import com.helger.html.hc.html.HCRT;
-import com.helger.html.hc.html.HCRuby;
-import com.helger.html.hc.html.HCSection;
-import com.helger.html.hc.html.HCSource;
-import com.helger.html.hc.html.HCTime;
-import com.helger.html.hc.html.HCTrack;
-import com.helger.html.hc.html.HCVideo;
-import com.helger.html.hc.html.HCWBR;
 
 /**
  * Instantiate and generate code for all HTML5 elements available
