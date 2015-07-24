@@ -81,7 +81,7 @@ public class HCNoBR extends AbstractHCElementWithChildren <HCNoBR>
   @Nonnull
   public static HCNoBR create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCNoBR ().addChild (aChild);
+    return new HCNoBR ().buildAndAddChild (aChild);
   }
 
   /**
@@ -94,7 +94,7 @@ public class HCNoBR extends AbstractHCElementWithChildren <HCNoBR>
   @Nonnull
   public static HCNoBR create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCNoBR ().addChildren (aChildren);
+    return new HCNoBR ().buildAndAddChildren (aChildren);
   }
 
   /**

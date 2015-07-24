@@ -79,7 +79,7 @@ public class HCFont extends AbstractHCElementWithChildren <HCFont>
   @Nonnull
   public static HCFont create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCFont ().addChild (aChild);
+    return new HCFont ().buildAndAddChild (aChild);
   }
 
   /**
@@ -92,7 +92,7 @@ public class HCFont extends AbstractHCElementWithChildren <HCFont>
   @Nonnull
   public static HCFont create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCFont ().addChildren (aChildren);
+    return new HCFont ().buildAndAddChildren (aChildren);
   }
 
   /**

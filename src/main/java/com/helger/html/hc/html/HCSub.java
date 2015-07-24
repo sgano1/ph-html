@@ -77,7 +77,7 @@ public class HCSub extends AbstractHCElementWithChildren <HCSub>
   @Nonnull
   public static HCSub create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCSub ().addChild (aChild);
+    return new HCSub ().buildAndAddChild (aChild);
   }
 
   /**
@@ -90,7 +90,7 @@ public class HCSub extends AbstractHCElementWithChildren <HCSub>
   @Nonnull
   public static HCSub create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCSub ().addChildren (aChildren);
+    return new HCSub ().buildAndAddChildren (aChildren);
   }
 
   /**

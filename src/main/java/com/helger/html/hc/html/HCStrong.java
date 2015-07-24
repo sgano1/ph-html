@@ -77,7 +77,7 @@ public class HCStrong extends AbstractHCElementWithChildren <HCStrong>
   @Nonnull
   public static HCStrong create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCStrong ().addChild (aChild);
+    return new HCStrong ().buildAndAddChild (aChild);
   }
 
   /**
@@ -90,7 +90,7 @@ public class HCStrong extends AbstractHCElementWithChildren <HCStrong>
   @Nonnull
   public static HCStrong create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCStrong ().addChildren (aChildren);
+    return new HCStrong ().buildAndAddChildren (aChildren);
   }
 
   /**

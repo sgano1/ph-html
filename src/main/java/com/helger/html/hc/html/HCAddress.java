@@ -77,7 +77,7 @@ public class HCAddress extends AbstractHCElementWithChildren <HCAddress>
   @Nonnull
   public static HCAddress create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCAddress ().addChild (aChild);
+    return new HCAddress ().buildAndAddChild (aChild);
   }
 
   /**
@@ -90,7 +90,7 @@ public class HCAddress extends AbstractHCElementWithChildren <HCAddress>
   @Nonnull
   public static HCAddress create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCAddress ().addChildren (aChildren);
+    return new HCAddress ().buildAndAddChildren (aChildren);
   }
 
   /**

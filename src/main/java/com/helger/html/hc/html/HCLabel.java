@@ -68,7 +68,7 @@ public class HCLabel extends AbstractHCLabel <HCLabel>
   @Nonnull
   public static HCLabel create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCLabel ().addChild (aChild);
+    return new HCLabel ().buildAndAddChild (aChild);
   }
 
   /**
@@ -81,7 +81,7 @@ public class HCLabel extends AbstractHCLabel <HCLabel>
   @Nonnull
   public static HCLabel create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCLabel ().addChildren (aChildren);
+    return new HCLabel ().buildAndAddChildren (aChildren);
   }
 
   /**

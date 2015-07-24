@@ -77,7 +77,7 @@ public class HCQ extends AbstractHCElementWithChildren <HCQ>
   @Nonnull
   public static HCQ create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCQ ().addChild (aChild);
+    return new HCQ ().buildAndAddChild (aChild);
   }
 
   /**
@@ -90,7 +90,7 @@ public class HCQ extends AbstractHCElementWithChildren <HCQ>
   @Nonnull
   public static HCQ create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCQ ().addChildren (aChildren);
+    return new HCQ ().buildAndAddChildren (aChildren);
   }
 
   /**

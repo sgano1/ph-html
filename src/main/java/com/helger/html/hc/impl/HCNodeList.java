@@ -48,13 +48,13 @@ public class HCNodeList extends AbstractHCNodeList <HCNodeList>
   @Nonnull
   public static HCNodeList create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCNodeList ().addChild (aChild);
+    return new HCNodeList ().buildAndAddChild (aChild);
   }
 
   @Nonnull
   public static HCNodeList create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCNodeList ().addChildren (aChildren);
+    return new HCNodeList ().buildAndAddChildren (aChildren);
   }
 
   @Nonnull

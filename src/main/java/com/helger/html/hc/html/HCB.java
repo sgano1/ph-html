@@ -77,7 +77,7 @@ public class HCB extends AbstractHCElementWithChildren <HCB>
   @Nonnull
   public static HCB create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCB ().addChild (aChild);
+    return new HCB ().buildAndAddChild (aChild);
   }
 
   /**
@@ -90,7 +90,7 @@ public class HCB extends AbstractHCElementWithChildren <HCB>
   @Nonnull
   public static HCB create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCB ().addChildren (aChildren);
+    return new HCB ().buildAndAddChildren (aChildren);
   }
 
   /**

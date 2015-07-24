@@ -77,7 +77,7 @@ public class HCCenter extends AbstractHCElementWithChildren <HCCenter>
   @Nonnull
   public static HCCenter create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCCenter ().addChild (aChild);
+    return new HCCenter ().buildAndAddChild (aChild);
   }
 
   /**
@@ -90,7 +90,7 @@ public class HCCenter extends AbstractHCElementWithChildren <HCCenter>
   @Nonnull
   public static HCCenter create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCCenter ().addChildren (aChildren);
+    return new HCCenter ().buildAndAddChildren (aChildren);
   }
 
   /**

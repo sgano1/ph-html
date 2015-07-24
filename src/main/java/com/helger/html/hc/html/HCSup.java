@@ -77,7 +77,7 @@ public class HCSup extends AbstractHCElementWithChildren <HCSup>
   @Nonnull
   public static HCSup create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCSup ().addChild (aChild);
+    return new HCSup ().buildAndAddChild (aChild);
   }
 
   /**
@@ -90,7 +90,7 @@ public class HCSup extends AbstractHCElementWithChildren <HCSup>
   @Nonnull
   public static HCSup create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCSup ().addChildren (aChildren);
+    return new HCSup ().buildAndAddChildren (aChildren);
   }
 
   /**

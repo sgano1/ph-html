@@ -77,7 +77,7 @@ public class HCEM extends AbstractHCElementWithChildren <HCEM>
   @Nonnull
   public static HCEM create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCEM ().addChild (aChild);
+    return new HCEM ().buildAndAddChild (aChild);
   }
 
   /**
@@ -90,7 +90,7 @@ public class HCEM extends AbstractHCElementWithChildren <HCEM>
   @Nonnull
   public static HCEM create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCEM ().addChildren (aChildren);
+    return new HCEM ().buildAndAddChildren (aChildren);
   }
 
   /**

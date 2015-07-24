@@ -77,7 +77,7 @@ public class HCI extends AbstractHCElementWithChildren <HCI>
   @Nonnull
   public static HCI create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCI ().addChild (aChild);
+    return new HCI ().buildAndAddChild (aChild);
   }
 
   /**
@@ -90,7 +90,7 @@ public class HCI extends AbstractHCElementWithChildren <HCI>
   @Nonnull
   public static HCI create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCI ().addChildren (aChildren);
+    return new HCI ().buildAndAddChildren (aChildren);
   }
 
   /**

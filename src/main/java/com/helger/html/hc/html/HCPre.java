@@ -77,7 +77,7 @@ public class HCPre extends AbstractHCElementWithChildren <HCPre>
   @Nonnull
   public static HCPre create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCPre ().addChild (aChild);
+    return new HCPre ().buildAndAddChild (aChild);
   }
 
   /**
@@ -90,7 +90,7 @@ public class HCPre extends AbstractHCElementWithChildren <HCPre>
   @Nonnull
   public static HCPre create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCPre ().addChildren (aChildren);
+    return new HCPre ().buildAndAddChildren (aChildren);
   }
 
   /**

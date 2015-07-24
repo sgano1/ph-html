@@ -81,7 +81,7 @@ public class HCU extends AbstractHCElementWithChildren <HCU>
   @Nonnull
   public static HCU create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCU ().addChild (aChild);
+    return new HCU ().buildAndAddChild (aChild);
   }
 
   /**
@@ -94,7 +94,7 @@ public class HCU extends AbstractHCElementWithChildren <HCU>
   @Nonnull
   public static HCU create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCU ().addChildren (aChildren);
+    return new HCU ().buildAndAddChildren (aChildren);
   }
 
   /**

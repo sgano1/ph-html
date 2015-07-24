@@ -96,7 +96,7 @@ public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>
   @CheckReturnValue
   public final HCLI addAndReturnItem (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return addItem ().addChildren (aChildren);
+    return addItem ().buildAndAddChildren (aChildren);
   }
 
   @Nonnull

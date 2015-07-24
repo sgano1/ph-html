@@ -75,7 +75,7 @@ public class HCSpan extends AbstractHCSpan <HCSpan>
   @Nonnull
   public static HCSpan create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCSpan ().addChild (aChild);
+    return new HCSpan ().buildAndAddChild (aChild);
   }
 
   /**
@@ -88,7 +88,7 @@ public class HCSpan extends AbstractHCSpan <HCSpan>
   @Nonnull
   public static HCSpan create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCSpan ().addChildren (aChildren);
+    return new HCSpan ().buildAndAddChildren (aChildren);
   }
 
   /**

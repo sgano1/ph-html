@@ -77,7 +77,7 @@ public class HCNoScript extends AbstractHCElementWithChildren <HCNoScript>
   @Nonnull
   public static HCNoScript create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCNoScript ().addChild (aChild);
+    return new HCNoScript ().buildAndAddChild (aChild);
   }
 
   /**
@@ -90,7 +90,7 @@ public class HCNoScript extends AbstractHCElementWithChildren <HCNoScript>
   @Nonnull
   public static HCNoScript create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCNoScript ().addChildren (aChildren);
+    return new HCNoScript ().buildAndAddChildren (aChildren);
   }
 
   /**

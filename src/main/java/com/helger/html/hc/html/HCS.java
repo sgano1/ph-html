@@ -77,7 +77,7 @@ public class HCS extends AbstractHCElementWithChildren <HCS>
   @Nonnull
   public static HCS create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCS ().addChild (aChild);
+    return new HCS ().buildAndAddChild (aChild);
   }
 
   /**
@@ -90,7 +90,7 @@ public class HCS extends AbstractHCElementWithChildren <HCS>
   @Nonnull
   public static HCS create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCS ().addChildren (aChildren);
+    return new HCS ().buildAndAddChildren (aChildren);
   }
 
   /**

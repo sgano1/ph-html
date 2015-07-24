@@ -115,7 +115,7 @@ public class HCRow extends AbstractHCElementWithInternalChildren <HCRow, IHCCell
   @CheckReturnValue
   public IHCCell <?> addAndReturnCell (@Nullable final IHCNodeBuilder aCellChild)
   {
-    return addCell ().addChild (aCellChild);
+    return addCell ().buildAndAddChild (aCellChild);
   }
 
   /**
@@ -157,7 +157,7 @@ public class HCRow extends AbstractHCElementWithInternalChildren <HCRow, IHCCell
   @CheckReturnValue
   public IHCCell <?> addAndReturnCell (@Nullable final IHCNodeBuilder... aCellChildren)
   {
-    return addCell ().addChildren (aCellChildren);
+    return addCell ().buildAndAddChildren (aCellChildren);
   }
 
   /**
@@ -217,7 +217,7 @@ public class HCRow extends AbstractHCElementWithInternalChildren <HCRow, IHCCell
   @CheckReturnValue
   public IHCCell <?> addAndReturnCell (@Nonnegative final int nIndex, @Nullable final IHCNodeBuilder aCellChild)
   {
-    return addCell (nIndex).addChild (aCellChild);
+    return addCell (nIndex).buildAndAddChild (aCellChild);
   }
 
   /**
@@ -265,7 +265,7 @@ public class HCRow extends AbstractHCElementWithInternalChildren <HCRow, IHCCell
   @CheckReturnValue
   public IHCCell <?> addAndReturnCell (@Nonnegative final int nIndex, @Nullable final IHCNodeBuilder... aCellChildren)
   {
-    return addCell (nIndex).addChildren (aCellChildren);
+    return addCell (nIndex).buildAndAddChildren (aCellChildren);
   }
 
   /**
@@ -325,7 +325,7 @@ public class HCRow extends AbstractHCElementWithInternalChildren <HCRow, IHCCell
   @Nonnull
   public HCRow addCell (@Nullable final IHCNodeBuilder aChild)
   {
-    addCell ().addChild (aChild);
+    addCell ().buildAndAddChild (aChild);
     return this;
   }
 
@@ -367,7 +367,7 @@ public class HCRow extends AbstractHCElementWithInternalChildren <HCRow, IHCCell
   @Nonnull
   public HCRow addCell (@Nullable final IHCNodeBuilder... aCellChildren)
   {
-    addCell ().addChildren (aCellChildren);
+    addCell ().buildAndAddChildren (aCellChildren);
     return this;
   }
 
@@ -427,7 +427,7 @@ public class HCRow extends AbstractHCElementWithInternalChildren <HCRow, IHCCell
   @Nonnull
   public HCRow addCell (@Nonnegative final int nIndex, @Nullable final IHCNodeBuilder aChild)
   {
-    addCell (nIndex).addChild (aChild);
+    addCell (nIndex).buildAndAddChild (aChild);
     return this;
   }
 
@@ -475,7 +475,7 @@ public class HCRow extends AbstractHCElementWithInternalChildren <HCRow, IHCCell
   @Nonnull
   public HCRow addCell (@Nonnegative final int nIndex, @Nullable final IHCNodeBuilder... aCellChildren)
   {
-    addCell (nIndex).addChildren (aCellChildren);
+    addCell (nIndex).buildAndAddChildren (aCellChildren);
     return this;
   }
 

@@ -84,7 +84,7 @@ public class HCP extends AbstractHCElementWithChildren <HCP>
   @Nonnull
   public static HCP create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCP ().addChild (aChild);
+    return new HCP ().buildAndAddChild (aChild);
   }
 
   /**
@@ -97,7 +97,7 @@ public class HCP extends AbstractHCElementWithChildren <HCP>
   @Nonnull
   public static HCP create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCP ().addChildren (aChildren);
+    return new HCP ().buildAndAddChildren (aChildren);
   }
 
   /**

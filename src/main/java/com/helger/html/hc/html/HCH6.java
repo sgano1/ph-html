@@ -77,7 +77,7 @@ public class HCH6 extends AbstractHCElementWithChildren <HCH6>
   @Nonnull
   public static HCH6 create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCH6 ().addChild (aChild);
+    return new HCH6 ().buildAndAddChild (aChild);
   }
 
   /**
@@ -90,7 +90,7 @@ public class HCH6 extends AbstractHCElementWithChildren <HCH6>
   @Nonnull
   public static HCH6 create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCH6 ().addChildren (aChildren);
+    return new HCH6 ().buildAndAddChildren (aChildren);
   }
 
   /**

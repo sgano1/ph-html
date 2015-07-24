@@ -77,7 +77,7 @@ public class HCBlockQuote extends AbstractHCElementWithChildren <HCBlockQuote>
   @Nonnull
   public static HCBlockQuote create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCBlockQuote ().addChild (aChild);
+    return new HCBlockQuote ().buildAndAddChild (aChild);
   }
 
   /**
@@ -90,7 +90,7 @@ public class HCBlockQuote extends AbstractHCElementWithChildren <HCBlockQuote>
   @Nonnull
   public static HCBlockQuote create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCBlockQuote ().addChildren (aChildren);
+    return new HCBlockQuote ().buildAndAddChildren (aChildren);
   }
 
   /**

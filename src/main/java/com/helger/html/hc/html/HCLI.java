@@ -77,7 +77,7 @@ public class HCLI extends AbstractHCElementWithChildren <HCLI>
   @Nonnull
   public static HCLI create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCLI ().addChild (aChild);
+    return new HCLI ().buildAndAddChild (aChild);
   }
 
   /**
@@ -90,7 +90,7 @@ public class HCLI extends AbstractHCElementWithChildren <HCLI>
   @Nonnull
   public static HCLI create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCLI ().addChildren (aChildren);
+    return new HCLI ().buildAndAddChildren (aChildren);
   }
 
   /**

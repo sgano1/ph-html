@@ -77,7 +77,7 @@ public class HCBDO extends AbstractHCElementWithChildren <HCBDO>
   @Nonnull
   public static HCBDO create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCBDO ().addChild (aChild);
+    return new HCBDO ().buildAndAddChild (aChild);
   }
 
   /**
@@ -90,7 +90,7 @@ public class HCBDO extends AbstractHCElementWithChildren <HCBDO>
   @Nonnull
   public static HCBDO create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCBDO ().addChildren (aChildren);
+    return new HCBDO ().buildAndAddChildren (aChildren);
   }
 
   /**

@@ -77,7 +77,7 @@ public class HCSmall extends AbstractHCElementWithChildren <HCSmall>
   @Nonnull
   public static HCSmall create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCSmall ().addChild (aChild);
+    return new HCSmall ().buildAndAddChild (aChild);
   }
 
   /**
@@ -90,7 +90,7 @@ public class HCSmall extends AbstractHCElementWithChildren <HCSmall>
   @Nonnull
   public static HCSmall create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCSmall ().addChildren (aChildren);
+    return new HCSmall ().buildAndAddChildren (aChildren);
   }
 
   /**

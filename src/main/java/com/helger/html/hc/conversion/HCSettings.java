@@ -102,7 +102,7 @@ public final class HCSettings
    * @return The fully created HTML node
    */
   @Nullable
-  public static IMicroNode getAsNode (@Nonnull final IHCNodeBuilder aNodeBuilder)
+  public static IMicroNode buildAndGetAsNode (@Nonnull final IHCNodeBuilder aNodeBuilder)
   {
     return getAsNode (aNodeBuilder.build (), getConversionSettings ());
   }
@@ -118,8 +118,8 @@ public final class HCSettings
    * @return The fully created HTML node
    */
   @Nullable
-  public static IMicroNode getAsNode (@Nonnull final IHCNodeBuilder aNodeBuilder,
-                                      @Nonnull final IHCConversionSettings aConversionSettings)
+  public static IMicroNode buildAndGetAsNode (@Nonnull final IHCNodeBuilder aNodeBuilder,
+                                              @Nonnull final IHCConversionSettings aConversionSettings)
   {
     return getAsNode (aNodeBuilder.build (), aConversionSettings);
   }
@@ -161,7 +161,7 @@ public final class HCSettings
    * @return The node as HTML.
    */
   @Nonnull
-  public static String getAsHTMLString (@Nonnull final IHCNodeBuilder aNodeBuilder)
+  public static String buildAndGetAsHTMLString (@Nonnull final IHCNodeBuilder aNodeBuilder)
   {
     return getAsHTMLString (aNodeBuilder.build (), getConversionSettings ());
   }
@@ -177,8 +177,8 @@ public final class HCSettings
    * @return The node as XML optionally without indentation.
    */
   @Nonnull
-  public static String getAsHTMLString (@Nonnull final IHCNodeBuilder aNodeBuilder,
-                                        @Nonnull final IHCConversionSettings aConversionSettings)
+  public static String buildAndGetAsHTMLString (@Nonnull final IHCNodeBuilder aNodeBuilder,
+                                                @Nonnull final IHCConversionSettings aConversionSettings)
   {
     return getAsHTMLString (aNodeBuilder.build (), aConversionSettings);
   }
@@ -250,7 +250,7 @@ public final class HCSettings
 
   /**
    * Get the {@link Charset} that is used to create the HTML code.
-   * 
+   *
    * @return The non-<code>null</code> Charset object
    */
   @Nonnull
@@ -261,7 +261,7 @@ public final class HCSettings
 
   /**
    * Get the customizer currently used.
-   * 
+   *
    * @return The customizer to use. May be <code>null</code>.
    */
   @Nullable

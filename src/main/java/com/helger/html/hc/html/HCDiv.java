@@ -75,7 +75,7 @@ public class HCDiv extends AbstractHCDiv <HCDiv>
   @Nonnull
   public static HCDiv create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCDiv ().addChild (aChild);
+    return new HCDiv ().buildAndAddChild (aChild);
   }
 
   /**
@@ -88,7 +88,7 @@ public class HCDiv extends AbstractHCDiv <HCDiv>
   @Nonnull
   public static HCDiv create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCDiv ().addChildren (aChildren);
+    return new HCDiv ().buildAndAddChildren (aChildren);
   }
 
   /**

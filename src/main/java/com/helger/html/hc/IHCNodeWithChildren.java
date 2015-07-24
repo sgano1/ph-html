@@ -40,14 +40,6 @@ public interface IHCNodeWithChildren <THISTYPE extends IHCNodeWithChildren <THIS
   THISTYPE addChild (@Nullable String sText);
 
   /**
-   * @param aNodeBuilder
-   *        Child to add. May be <code>null</code>.
-   * @return this
-   */
-  @Nonnull
-  THISTYPE addChild (@Nullable IHCNodeBuilder aNodeBuilder);
-
-  /**
    * @param nIndex
    *        The index to where the element should be inserted.
    * @param sText
@@ -56,16 +48,6 @@ public interface IHCNodeWithChildren <THISTYPE extends IHCNodeWithChildren <THIS
    */
   @Nonnull
   THISTYPE addChild (@Nonnegative int nIndex, @Nullable String sText);
-
-  /**
-   * @param nIndex
-   *        The index to where the element should be inserted.
-   * @param aNodeBuilder
-   *        Child to add. May be <code>null</code>.
-   * @return this
-   */
-  @Nonnull
-  THISTYPE addChild (@Nonnegative int nIndex, @Nullable IHCNodeBuilder aNodeBuilder);
 
   /**
    * Use {@link #addChild(String)} instead
@@ -88,7 +70,25 @@ public interface IHCNodeWithChildren <THISTYPE extends IHCNodeWithChildren <THIS
   THISTYPE addChildren (@Nullable String... aChildren);
 
   /**
-   * Use {@link #addChild(IHCNodeBuilder)} instead.
+   * @param aNodeBuilder
+   *        Child to add. May be <code>null</code>.
+   * @return this
+   */
+  @Nonnull
+  THISTYPE buildAndAddChild (@Nullable IHCNodeBuilder aNodeBuilder);
+
+  /**
+   * @param nIndex
+   *        The index to where the element should be inserted.
+   * @param aNodeBuilder
+   *        Child to add. May be <code>null</code>.
+   * @return this
+   */
+  @Nonnull
+  THISTYPE buildAndAddChild (@Nonnegative int nIndex, @Nullable IHCNodeBuilder aNodeBuilder);
+
+  /**
+   * Use {@link #buildAndAddChild(IHCNodeBuilder)} instead.
    *
    * @param aChild
    *        The child to add. May be <code>null</code>.
@@ -96,7 +96,7 @@ public interface IHCNodeWithChildren <THISTYPE extends IHCNodeWithChildren <THIS
    */
   @Deprecated
   @DevelopersNote ("Use addChild instead")
-  THISTYPE addChildren (@Nullable IHCNodeBuilder aChild);
+  THISTYPE buildAndAddChildren (@Nullable IHCNodeBuilder aChild);
 
   /**
    * @param aChildren
@@ -104,5 +104,5 @@ public interface IHCNodeWithChildren <THISTYPE extends IHCNodeWithChildren <THIS
    * @return this
    */
   @Nonnull
-  THISTYPE addChildren (@Nullable IHCNodeBuilder... aChildren);
+  THISTYPE buildAndAddChildren (@Nullable IHCNodeBuilder... aChildren);
 }

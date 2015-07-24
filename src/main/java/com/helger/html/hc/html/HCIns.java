@@ -77,7 +77,7 @@ public class HCIns extends AbstractHCElementWithChildren <HCIns>
   @Nonnull
   public static HCIns create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCIns ().addChild (aChild);
+    return new HCIns ().buildAndAddChild (aChild);
   }
 
   /**
@@ -90,7 +90,7 @@ public class HCIns extends AbstractHCElementWithChildren <HCIns>
   @Nonnull
   public static HCIns create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCIns ().addChildren (aChildren);
+    return new HCIns ().buildAndAddChildren (aChildren);
   }
 
   /**

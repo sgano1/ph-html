@@ -45,7 +45,7 @@ public abstract class AbstractHCElementWithChildren <THISTYPE extends AbstractHC
   }
 
   @Nonnull
-  public final THISTYPE addChild (@Nullable final IHCNodeBuilder aNodeBuilder)
+  public final THISTYPE buildAndAddChild (@Nullable final IHCNodeBuilder aNodeBuilder)
   {
     if (aNodeBuilder != null)
       addChild (aNodeBuilder.build ());
@@ -62,7 +62,7 @@ public abstract class AbstractHCElementWithChildren <THISTYPE extends AbstractHC
   }
 
   @Nonnull
-  public final THISTYPE addChild (@Nonnegative final int nIndex, @Nullable final IHCNodeBuilder aNodeBuilder)
+  public final THISTYPE buildAndAddChild (@Nonnegative final int nIndex, @Nullable final IHCNodeBuilder aNodeBuilder)
   {
     if (aNodeBuilder != null)
       addChild (nIndex, aNodeBuilder.build ());
@@ -89,17 +89,17 @@ public abstract class AbstractHCElementWithChildren <THISTYPE extends AbstractHC
   @Nonnull
   @DevelopersNote ("Use addChild instead!")
   @Deprecated
-  public final THISTYPE addChildren (@Nullable final IHCNodeBuilder aChild)
+  public final THISTYPE buildAndAddChildren (@Nullable final IHCNodeBuilder aChild)
   {
-    return addChild (aChild);
+    return buildAndAddChild (aChild);
   }
 
   @Nonnull
-  public final THISTYPE addChildren (@Nullable final IHCNodeBuilder... aChildren)
+  public final THISTYPE buildAndAddChildren (@Nullable final IHCNodeBuilder... aChildren)
   {
     if (aChildren != null)
       for (final IHCNodeBuilder aChild : aChildren)
-        addChild (aChild);
+        buildAndAddChild (aChild);
     return thisAsT ();
   }
 }

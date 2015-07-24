@@ -50,7 +50,7 @@ public abstract class AbstractHCNodeList <THISTYPE extends AbstractHCNodeList <T
   }
 
   @Nonnull
-  public THISTYPE addChild (@Nullable final IHCNodeBuilder aNodeBuilder)
+  public THISTYPE buildAndAddChild (@Nullable final IHCNodeBuilder aNodeBuilder)
   {
     if (aNodeBuilder != null)
       addChild (aNodeBuilder.build ());
@@ -67,7 +67,7 @@ public abstract class AbstractHCNodeList <THISTYPE extends AbstractHCNodeList <T
   }
 
   @Nonnull
-  public THISTYPE addChild (@Nonnegative final int nIndex, @Nullable final IHCNodeBuilder aNodeBuilder)
+  public THISTYPE buildAndAddChild (@Nonnegative final int nIndex, @Nullable final IHCNodeBuilder aNodeBuilder)
   {
     if (aNodeBuilder != null)
       addChild (nIndex, aNodeBuilder.build ());
@@ -94,17 +94,17 @@ public abstract class AbstractHCNodeList <THISTYPE extends AbstractHCNodeList <T
   @Deprecated
   @DevelopersNote ("Use addChild instead")
   @Nonnull
-  public THISTYPE addChildren (@Nullable final IHCNodeBuilder aChild)
+  public THISTYPE buildAndAddChildren (@Nullable final IHCNodeBuilder aChild)
   {
-    return addChild (aChild);
+    return buildAndAddChild (aChild);
   }
 
   @Nonnull
-  public THISTYPE addChildren (@Nullable final IHCNodeBuilder... aChildren)
+  public THISTYPE buildAndAddChildren (@Nullable final IHCNodeBuilder... aChildren)
   {
     if (aChildren != null)
       for (final IHCNodeBuilder aChild : aChildren)
-        addChild (aChild);
+        buildAndAddChild (aChild);
     return thisAsT ();
   }
 }

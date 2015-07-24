@@ -77,7 +77,7 @@ public class HCKBD extends AbstractHCElementWithChildren <HCKBD>
   @Nonnull
   public static HCKBD create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCKBD ().addChild (aChild);
+    return new HCKBD ().buildAndAddChild (aChild);
   }
 
   /**
@@ -90,7 +90,7 @@ public class HCKBD extends AbstractHCElementWithChildren <HCKBD>
   @Nonnull
   public static HCKBD create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCKBD ().addChildren (aChildren);
+    return new HCKBD ().buildAndAddChildren (aChildren);
   }
 
   /**

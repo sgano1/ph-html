@@ -77,7 +77,7 @@ public class HCSamp extends AbstractHCElementWithChildren <HCSamp>
   @Nonnull
   public static HCSamp create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCSamp ().addChild (aChild);
+    return new HCSamp ().buildAndAddChild (aChild);
   }
 
   /**
@@ -90,7 +90,7 @@ public class HCSamp extends AbstractHCElementWithChildren <HCSamp>
   @Nonnull
   public static HCSamp create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCSamp ().addChildren (aChildren);
+    return new HCSamp ().buildAndAddChildren (aChildren);
   }
 
   /**

@@ -77,7 +77,7 @@ public class HCVar extends AbstractHCElementWithChildren <HCVar>
   @Nonnull
   public static HCVar create (@Nullable final IHCNodeBuilder aChild)
   {
-    return new HCVar ().addChild (aChild);
+    return new HCVar ().buildAndAddChild (aChild);
   }
 
   /**
@@ -90,7 +90,7 @@ public class HCVar extends AbstractHCElementWithChildren <HCVar>
   @Nonnull
   public static HCVar create (@Nullable final IHCNodeBuilder... aChildren)
   {
-    return new HCVar ().addChildren (aChildren);
+    return new HCVar ().buildAndAddChildren (aChildren);
   }
 
   /**
