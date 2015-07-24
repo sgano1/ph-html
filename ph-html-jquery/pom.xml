@@ -24,11 +24,11 @@
     <artifactId>ph-html-parent-pom</artifactId>
     <version>5.0.0-SNAPSHOT</version>
   </parent>
-  <artifactId>ph-html</artifactId>
+  <artifactId>ph-html-jquery</artifactId>
   <packaging>bundle</packaging>
-  <name>ph-html</name>
-  <description>Java library to programmtically create HTML and JavaScript code</description>
-  <url>https://github.com/phax/ph-html/ph-html</url>
+  <name>ph-html-jquery</name>
+  <description>Java library encapsulate the dynamic creation of JQuery based JS</description>
+  <url>https://github.com/phax/ph-html/ph-html-jquery</url>
   <inceptionYear>2014</inceptionYear>
  
   <licenses>
@@ -66,30 +66,11 @@
       <groupId>com.helger</groupId>
       <artifactId>ph-css</artifactId>
     </dependency>
-
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <optional>true</optional>
+      <groupId>com.helger</groupId>
+      <artifactId>ph-html</artifactId>
     </dependency>
 
-    <!-- 3.0.1 for JDK 1.6 -->
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>joda-time</groupId>
-      <artifactId>joda-time</artifactId>
-      <optional>true</optional>
-    </dependency>
-
-    <dependency>
-      <groupId>xerces</groupId>
-      <artifactId>xercesImpl</artifactId>
-      <scope>test</scope>
-    </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
@@ -106,7 +87,7 @@
         <configuration>
           <instructions>
             <Export-Package>
-              com.helger.html.*
+              com.helger.html.jquery.*
             </Export-Package>
             <Import-Package>
               !javax.annotation.*,*
@@ -119,9 +100,7 @@
         <artifactId>license-maven-plugin</artifactId>
         <configuration>
           <excludes>
-            <exclude>src/main/resources/html/**</exclude>
-            <exclude>src/test/resources/MarkdownTest/**</exclude>
-            <exclude>src/test/resources/MarkupFiles/**</exclude>
+            <exclude>src/test/resources/jquery/**</exclude>
           </excludes>
         </configuration>
       </plugin>
