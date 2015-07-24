@@ -14,31 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html;
+package com.helger.html.hc.base;
 
-import javax.annotation.Nullable;
-
-import com.helger.html.hc.api.EHCInputType;
-import com.helger.html.hc.base.AbstractHCInput;
-import com.helger.html.hc.customize.HCDefaultSettings;
+import com.helger.html.hc.IHCElementWithChildren;
+import com.helger.html.hc.IHCHasName;
 
 /**
- * Represents an HTML &lt;input&gt; element with type "password"
- *
+ * Interface for DIVs
+ * 
  * @author Philip Helger
+ * @param <THISTYPE>
+ *        Implementation type
  */
-public class HCEditPassword extends AbstractHCInput <HCEditPassword>
+public interface IHCDiv <THISTYPE extends IHCDiv <THISTYPE>> extends IHCElementWithChildren <THISTYPE>, IHCHasName <THISTYPE>
 {
-  public HCEditPassword ()
-  {
-    super (EHCInputType.PASSWORD);
-    if (HCDefaultSettings.isAutoCompleteOffForPasswordEdits ())
-      setAutoComplete (false);
-  }
-
-  public HCEditPassword (@Nullable final String sName)
-  {
-    this ();
-    setName (sName);
-  }
+  /* empty */
 }

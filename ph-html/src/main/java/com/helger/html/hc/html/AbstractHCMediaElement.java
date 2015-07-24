@@ -32,11 +32,12 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.SinceHTML5;
 import com.helger.html.hc.api.EHCCORSSettings;
 import com.helger.html.hc.api.EHCPreload;
+import com.helger.html.hc.base.IHCMediaElementChild;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElementWithInternalChildren;
 
 @SinceHTML5
-public abstract class AbstractHCMediaElement <THISTYPE extends AbstractHCMediaElement <THISTYPE>> extends AbstractHCElementWithInternalChildren <THISTYPE, AbstractHCMediaElementChild <?>>
+public abstract class AbstractHCMediaElement <THISTYPE extends AbstractHCMediaElement <THISTYPE>> extends AbstractHCElementWithInternalChildren <THISTYPE, IHCMediaElementChild <?>>
 {
   /** By default auto play is disabled */
   public static final boolean DEFAULT_AUTOPLAY = false;
@@ -166,16 +167,16 @@ public abstract class AbstractHCMediaElement <THISTYPE extends AbstractHCMediaEl
   @Override
   @Nonnull
   @Nonempty
-  protected List <AbstractHCMediaElementChild <?>> getChildrenFormEmitting (@Nonnull @Nonempty final List <AbstractHCMediaElementChild <?>> aChildren)
+  protected List <IHCMediaElementChild <?>> getChildrenFormEmitting (@Nonnull @Nonempty final List <IHCMediaElementChild <?>> aChildren)
   {
     // <source> must be first
-    final List <AbstractHCMediaElementChild <?>> ret = new ArrayList <AbstractHCMediaElementChild <?>> (aChildren.size ());
-    for (final AbstractHCMediaElementChild <?> aChild : aChildren)
+    final List <IHCMediaElementChild <?>> ret = new ArrayList <IHCMediaElementChild <?>> (aChildren.size ());
+    for (final IHCMediaElementChild <?> aChild : aChildren)
       if (aChild.getElement ().equals (EHTMLElement.SOURCE))
         ret.add (aChild);
 
     // Add <track> and <img>
-    for (final AbstractHCMediaElementChild <?> aChild : aChildren)
+    for (final IHCMediaElementChild <?> aChild : aChildren)
       if (!aChild.getElement ().equals (EHTMLElement.SOURCE))
         ret.add (aChild);
     return ret;

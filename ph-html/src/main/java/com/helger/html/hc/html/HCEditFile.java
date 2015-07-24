@@ -19,6 +19,7 @@ package com.helger.html.hc.html;
 import javax.annotation.Nullable;
 
 import com.helger.html.hc.api.EHCInputType;
+import com.helger.html.hc.base.AbstractHCInput;
 
 /**
  * Represents an HTML &lt;input&gt; element with type "file"

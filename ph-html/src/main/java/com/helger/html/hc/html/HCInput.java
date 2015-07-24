@@ -19,6 +19,7 @@ package com.helger.html.hc.html;
 import javax.annotation.Nonnull;
 
 import com.helger.html.hc.api.EHCInputType;
+import com.helger.html.hc.base.AbstractHCInput;
 
 /**
  * Represents a generic HTML &lt;input&gt; element.<br>

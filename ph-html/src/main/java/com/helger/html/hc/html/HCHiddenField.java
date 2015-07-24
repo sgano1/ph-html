@@ -22,6 +22,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.html.hc.api.EHCInputType;
+import com.helger.html.hc.base.AbstractHCInput;
 import com.helger.html.request.IHCRequestField;
 
 /**

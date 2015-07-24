@@ -14,19 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.api;
+package com.helger.html.hc.base;
 
-import com.helger.html.hc.IHCElementWithChildren;
-import com.helger.html.hc.IHCHasName;
+import com.helger.html.hc.IHCElement;
 
 /**
- * Interface for DIVs
- * 
+ * Marker interface
+ *
  * @author Philip Helger
  * @param <THISTYPE>
  *        Implementation type
  */
-public interface IHCDiv <THISTYPE extends IHCDiv <THISTYPE>> extends IHCElementWithChildren <THISTYPE>, IHCHasName <THISTYPE>
+public interface IHCMediaElementChild <THISTYPE extends IHCMediaElementChild <THISTYPE>> extends IHCElement <THISTYPE>
 {
   /* empty */
 }

@@ -22,7 +22,7 @@ import com.helger.commons.annotation.Nonempty;
 import com.helger.html.annotation.SinceHTML5;
 
 /**
- * The type of an {@link com.helger.html.hc.html.AbstractHCInput} element.
+ * The type of an {@link com.helger.html.hc.base.AbstractHCInput} element.
  *
  * @author Philip Helger
  */

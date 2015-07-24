@@ -25,11 +25,11 @@ import com.helger.commons.string.StringHelper;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeWithChildren;
 import com.helger.html.hc.base.IHCCell;
+import com.helger.html.hc.base.IHCMediaElementChild;
 import com.helger.html.hc.html.AbstractHCBaseTable;
 import com.helger.html.hc.html.AbstractHCDefinitionItem;
 import com.helger.html.hc.html.AbstractHCList;
 import com.helger.html.hc.html.AbstractHCMediaElement;
-import com.helger.html.hc.html.AbstractHCMediaElementChild;
 import com.helger.html.hc.html.AbstractHCRubyChild;
 import com.helger.html.hc.html.AbstractHCTablePart;
 import com.helger.html.hc.html.HCCol;
@@ -111,8 +111,8 @@ final class HCStack
     if (aParent instanceof AbstractHCList <?> && aNode instanceof HCLI)
       ((AbstractHCList <?>) aParent).addItem ((HCLI) aNode);
     else
-      if (aParent instanceof AbstractHCMediaElement <?> && aNode instanceof AbstractHCMediaElementChild <?>)
-        ((AbstractHCMediaElement <?>) aParent).addChild ((AbstractHCMediaElementChild <?>) aNode);
+      if (aParent instanceof AbstractHCMediaElement <?> && aNode instanceof IHCMediaElementChild <?>)
+        ((AbstractHCMediaElement <?>) aParent).addChild ((IHCMediaElementChild <?>) aNode);
       else
         if (aParent instanceof HCColGroup && aNode instanceof HCCol)
           ((HCColGroup) aParent).addChild ((HCCol) aNode);

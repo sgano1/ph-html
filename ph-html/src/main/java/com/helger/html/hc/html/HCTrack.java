@@ -26,6 +26,7 @@ import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.SinceHTML5;
+import com.helger.html.hc.base.AbstractHCMediaElementChild;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
 @SinceHTML5
