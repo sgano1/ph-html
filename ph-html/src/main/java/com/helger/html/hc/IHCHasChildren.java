@@ -16,8 +16,6 @@
  */
 package com.helger.html.hc;
 
-import javax.annotation.Nullable;
-
 import com.helger.commons.hierarchy.IHasChildrenSorted;
 
 /**
@@ -27,9 +25,5 @@ import com.helger.commons.hierarchy.IHasChildrenSorted;
  */
 public interface IHCHasChildren extends IHCNode, IHasChildrenSorted <IHCNode>
 {
-  @Nullable
-  IHCNode getFirstChild ();
-
-  @Nullable
-  IHCNode getLastChild ();
+  /* empty */
 }
