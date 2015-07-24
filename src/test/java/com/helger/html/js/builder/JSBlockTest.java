@@ -63,96 +63,96 @@ public final class JSBlockTest
     aBlock.assign (a, 'c');
     assertEquals ("{var a;var b=5;a=b;b=true;a='c';}", aBlock.getJSCode (aSettings));
 
-    aBlock.assign (b, 3.1415);
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;}", aBlock.getJSCode (aSettings));
+    aBlock.assign (b, 3.1234);
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;}", aBlock.getJSCode (aSettings));
 
     aBlock.assign (a, 47.5f);
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;}", aBlock.getJSCode (aSettings));
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;}", aBlock.getJSCode (aSettings));
 
     aBlock.assign (b, 65599);
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;b=65599;}", aBlock.getJSCode (aSettings));
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;b=65599;}", aBlock.getJSCode (aSettings));
 
     aBlock.assign (a, 655996559965599L);
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;b=65599;a=655996559965599;}",
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;b=65599;a=655996559965599;}",
                   aBlock.getJSCode (aSettings));
     final int nCurPos = aBlock.pos ();
 
     aBlock.assign (b, "Ha llo");
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;b=65599;a=655996559965599;b='Ha llo';}",
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;b=65599;a=655996559965599;b='Ha llo';}",
                   aBlock.getJSCode (aSettings));
 
     aBlock.assignPlus (b, '!');
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;b=65599;a=655996559965599;b='Ha llo';b+='!';}",
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;b=65599;a=655996559965599;b='Ha llo';b+='!';}",
                   aBlock.getJSCode (aSettings));
 
     aBlock.pos (nCurPos);
     aBlock.assignPlus (a, 5.0);
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;b=65599;a=655996559965599;a+=5.0;b='Ha llo';b+='!';}",
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;b=65599;a=655996559965599;a+=5.0;b='Ha llo';b+='!';}",
                   aBlock.getJSCode (aSettings));
 
     aBlock.assignPlus (a, -4.0);
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;b='Ha llo';b+='!';}",
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;b='Ha llo';b+='!';}",
                   aBlock.getJSCode (aSettings));
 
     aBlock.assignPlus (a, 0.0);
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;b='Ha llo';b+='!';}",
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;b='Ha llo';b+='!';}",
                   aBlock.getJSCode (aSettings));
 
     aBlock.assignMinus (a, 0.0);
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;b='Ha llo';b+='!';}",
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;b='Ha llo';b+='!';}",
                   aBlock.getJSCode (aSettings));
 
     aBlock.assignPlus (a, 27f);
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;b='Ha llo';b+='!';}",
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;b='Ha llo';b+='!';}",
                   aBlock.getJSCode (aSettings));
 
     aBlock.assignPlus (a, -26f);
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;b='Ha llo';b+='!';}",
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;b='Ha llo';b+='!';}",
                   aBlock.getJSCode (aSettings));
 
     aBlock.assignPlus (a, 0.0f);
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;b='Ha llo';b+='!';}",
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;b='Ha llo';b+='!';}",
                   aBlock.getJSCode (aSettings));
 
     aBlock.assignMinus (a, 0.0f);
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;b='Ha llo';b+='!';}",
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;b='Ha llo';b+='!';}",
                   aBlock.getJSCode (aSettings));
 
     aBlock.assignPlus (a, 32);
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;a+=32;b='Ha llo';b+='!';}",
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;a+=32;b='Ha llo';b+='!';}",
                   aBlock.getJSCode (aSettings));
 
     aBlock.assignPlus (a, -33);
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;a+=32;a-=33;b='Ha llo';b+='!';}",
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;a+=32;a-=33;b='Ha llo';b+='!';}",
                   aBlock.getJSCode (aSettings));
 
     aBlock.assignPlus (a, 0);
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;a+=32;a-=33;b='Ha llo';b+='!';}",
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;a+=32;a-=33;b='Ha llo';b+='!';}",
                   aBlock.getJSCode (aSettings));
 
     aBlock.assignMinus (a, 0);
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;a+=32;a-=33;b='Ha llo';b+='!';}",
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;a+=32;a-=33;b='Ha llo';b+='!';}",
                   aBlock.getJSCode (aSettings));
 
     aBlock.assignPlus (a, 1234567890111L);
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;a+=32;a-=33;a+=1234567890111;b='Ha llo';b+='!';}",
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;a+=32;a-=33;a+=1234567890111;b='Ha llo';b+='!';}",
                   aBlock.getJSCode (aSettings));
 
     aBlock.assignPlus (a, -9876543219888L);
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;a+=32;a-=33;a+=1234567890111;a-=9876543219888;b='Ha llo';b+='!';}",
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;a+=32;a-=33;a+=1234567890111;a-=9876543219888;b='Ha llo';b+='!';}",
                   aBlock.getJSCode (aSettings));
 
     aBlock.assignPlus (a, 0L);
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;a+=32;a-=33;a+=1234567890111;a-=9876543219888;b='Ha llo';b+='!';}",
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;a+=32;a-=33;a+=1234567890111;a-=9876543219888;b='Ha llo';b+='!';}",
                   aBlock.getJSCode (aSettings));
 
     aBlock.assignMinus (a, 0L);
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;a+=32;a-=33;a+=1234567890111;a-=9876543219888;b='Ha llo';b+='!';}",
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;a+=32;a-=33;a+=1234567890111;a-=9876543219888;b='Ha llo';b+='!';}",
                   aBlock.getJSCode (aSettings));
 
     aBlock.posEnd ();
     aBlock.assignPlus (b, " oder?");
-    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1415;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;a+=32;a-=33;a+=1234567890111;a-=9876543219888;b='Ha llo';b+='!';b+=' oder?';}",
+    assertEquals ("{var a;var b=5;a=b;b=true;a='c';b=3.1234;a=47.5;b=65599;a=655996559965599;a+=5.0;a-=4.0;a+=27.0;a-=26.0;a+=32;a-=33;a+=1234567890111;a-=9876543219888;b='Ha llo';b+='!';b+=' oder?';}",
                   aBlock.getJSCode (aSettings));
 
     aBlock.clear ();
@@ -214,7 +214,8 @@ public final class JSBlockTest
     assertEquals ("{var a=5;a*=2.5;a*=3.25;a*=4;a*=56;a/=4.5;a/=22.0;a/=3;a/=11;}", aBlock.getJSCode (aSettings));
 
     aBlock.assignModulo (a, 101);
-    assertEquals ("{var a=5;a*=2.5;a*=3.25;a*=4;a*=56;a/=4.5;a/=22.0;a/=3;a/=11;a%=101;}", aBlock.getJSCode (aSettings));
+    assertEquals ("{var a=5;a*=2.5;a*=3.25;a*=4;a*=56;a/=4.5;a/=22.0;a/=3;a/=11;a%=101;}",
+                  aBlock.getJSCode (aSettings));
 
     aBlock.assignModulo (a, 56L);
     assertEquals ("{var a=5;a*=2.5;a*=3.25;a*=4;a*=56;a/=4.5;a/=22.0;a/=3;a/=11;a%=101;a%=56;}",
