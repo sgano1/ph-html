@@ -20,7 +20,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.IHCNodeBuilder;
 
 /**
  * Represents an HTML &lt;label&gt; element
@@ -56,32 +55,6 @@ public class HCLabel extends AbstractHCLabel <HCLabel>
   public static HCLabel create (@Nullable final String... aChildren)
   {
     return new HCLabel ().addChildren (aChildren);
-  }
-
-  /**
-   * Create a new LABEL element with the passed child node
-   *
-   * @param aChild
-   *        The child node to be appended. May be <code>null</code>
-   * @return The created HCLabel element and never <code>null</code>
-   */
-  @Nonnull
-  public static HCLabel create (@Nullable final IHCNodeBuilder aChild)
-  {
-    return new HCLabel ().buildAndAddChild (aChild);
-  }
-
-  /**
-   * Create a new LABEL element with the passed child nodes
-   *
-   * @param aChildren
-   *        The child nodes to be appended. May be <code>null</code>
-   * @return The created HCLabel element and never <code>null</code>
-   */
-  @Nonnull
-  public static HCLabel create (@Nullable final IHCNodeBuilder... aChildren)
-  {
-    return new HCLabel ().buildAndAddChildren (aChildren);
   }
 
   /**

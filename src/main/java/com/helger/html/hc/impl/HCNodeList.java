@@ -20,7 +20,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.IHCNodeBuilder;
 
 /**
  * This class is an abstract HC node that represents a list of nodes without
@@ -43,18 +42,6 @@ public class HCNodeList extends AbstractHCNodeList <HCNodeList>
   public static HCNodeList create (@Nullable final String... aChildren)
   {
     return new HCNodeList ().addChildren (aChildren);
-  }
-
-  @Nonnull
-  public static HCNodeList create (@Nullable final IHCNodeBuilder aChild)
-  {
-    return new HCNodeList ().buildAndAddChild (aChild);
-  }
-
-  @Nonnull
-  public static HCNodeList create (@Nullable final IHCNodeBuilder... aChildren)
-  {
-    return new HCNodeList ().buildAndAddChildren (aChildren);
   }
 
   @Nonnull

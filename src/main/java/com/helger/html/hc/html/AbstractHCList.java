@@ -87,14 +87,14 @@ public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>
 
   @Nonnull
   @CheckReturnValue
-  public final HCLI addAndReturnItem (@Nullable final IHCNodeBuilder aChild)
+  public final HCLI buildAndAddAndReturnItem (@Nullable final IHCNodeBuilder aChild)
   {
     return addAndReturnItem (aChild == null ? null : aChild.build ());
   }
 
   @Nonnull
   @CheckReturnValue
-  public final HCLI addAndReturnItem (@Nullable final IHCNodeBuilder... aChildren)
+  public final HCLI buildAndAddAndReturnItem (@Nullable final IHCNodeBuilder... aChildren)
   {
     return addItem ().buildAndAddChildren (aChildren);
   }
@@ -155,17 +155,17 @@ public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>
 
   @Nonnull
   @SuppressFBWarnings ("RV_RETURN_VALUE_IGNORED")
-  public final THISTYPE addItem (@Nullable final IHCNodeBuilder aChild)
+  public final THISTYPE buildAndAddItem (@Nullable final IHCNodeBuilder aChild)
   {
-    addAndReturnItem (aChild);
+    buildAndAddAndReturnItem (aChild);
     return thisAsT ();
   }
 
   @Nonnull
   @SuppressFBWarnings ("RV_RETURN_VALUE_IGNORED")
-  public final THISTYPE addItem (@Nullable final IHCNodeBuilder... aChildren)
+  public final THISTYPE buildAndAddItem (@Nullable final IHCNodeBuilder... aChildren)
   {
-    addAndReturnItem (aChildren);
+    buildAndAddAndReturnItem (aChildren);
     return thisAsT ();
   }
 
