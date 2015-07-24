@@ -37,11 +37,9 @@ public class JSForIn extends AbstractJSStatement
   private final IJSExpression m_aCollection;
   private JSBlock m_aBody;
 
-  public JSForIn (@Nullable final AbstractJSType aVarType,
-                  @Nonnull @Nonempty final String sVarName,
-                  @Nonnull final IJSExpression aCollection)
+  public JSForIn (@Nonnull @Nonempty final String sVarName, @Nonnull final IJSExpression aCollection)
   {
-    this (new JSVar (aVarType, sVarName), aCollection);
+    this (new JSVar (sVarName), aCollection);
   }
 
   public JSForIn (@Nonnull final JSVar aLoopVar, @Nonnull final IJSExpression aCollection)

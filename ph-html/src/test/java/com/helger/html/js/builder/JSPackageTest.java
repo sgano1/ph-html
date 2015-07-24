@@ -39,7 +39,7 @@ public final class JSPackageTest
     final JSPackage aPkg = new JSPackage ();
 
     // Global variable
-    aPkg.var (JSPrimitiveType.NUMBER, "g_aRoot", JSExpr.lit (0));
+    aPkg.var ("g_aRoot", JSExpr.lit (0));
 
     // Crude function
     {
@@ -50,13 +50,13 @@ public final class JSPackageTest
       aFuncMain.jsDoc ().addParam (m1).add ("Any kind of value");
 
       // function variable
-      final JSVar aRoot = aFuncMain.body ().var (JSPrimitiveType.NUMBER, "root", JSExpr.lit (5));
+      final JSVar aRoot = aFuncMain.body ().var ("root", JSExpr.lit (5));
 
       // inline function
       final JSFunction aFunc = aFuncMain.body ().function ("add");
       {
         aFunc.jsDoc ().add ("This is a nested function");
-        final JSVar s1 = aFunc.param (JSPrimitiveType.STRING, "s1");
+        final JSVar s1 = aFunc.param ("s1");
         final JSVar s2 = aFunc.param ("s2");
         aFunc.body ()._return (s1.plus (s2));
 
@@ -66,11 +66,9 @@ public final class JSPackageTest
 
       // Dynamic function
       {
-        final JSVar aAdd2 = aFuncMain.body ().var ("add2",
-                                                   JSPrimitiveType.FUNCTION._new ()
-                                                                           .arg ("x")
-                                                                           .arg ("y")
-                                                                           .arg ("return x+y"));
+        final JSVar aAdd2 = aFuncMain.body ()
+                                     .var ("add2",
+                                           JSPrimitiveType.FUNCTION._new ().arg ("x").arg ("y").arg ("return x+y"));
         aFuncMain.body ().invoke (aAdd2.name ()).arg (1).arg (2);
       }
 
@@ -119,14 +117,15 @@ public final class JSPackageTest
       aFuncMain.body ().assign (aArray2.component ("num"), 6);
 
       // concatenate misc things
-      aFuncMain.body ()._return (m1.plus (JSExpr.lit ("abc").ref ("length"))
-                                   .plus (aRoot)
-                                   .plus (aFunc.invoke ().arg (2).arg (4))
-                                   .plus (7)
-                                   .mul (1.5)
-                                   .plus (5)
-                                   .minus (3)
-                                   .div (2));
+      aFuncMain.body ()
+               ._return (m1.plus (JSExpr.lit ("abc").ref ("length"))
+                           .plus (aRoot)
+                           .plus (aFunc.invoke ().arg (2).arg (4))
+                           .plus (7)
+                           .mul (1.5)
+                           .plus (5)
+                           .minus (3)
+                           .div (2));
     }
 
     {
@@ -210,48 +209,48 @@ public final class JSPackageTest
     System.out.print (sCode);
     System.out.println ("--------");
     final String sCompressedCode = aPkg.getJSCode (new JSWriterSettings ().setMinimumCodeSize (true));
-    assertEquals ("var g_aRoot=0;"
-                      + "function mainAdd(m1){"
-                      + "var root=5;"
-                      + "function add(s1,s2){return (s1+s2);}"
-                      + "add(32,-4);"
-                      + "var add2=new Function('x','y','return x+y');"
-                      + "add2(1,2);"
-                      + "if(typeof m1==='String')"
-                      + "{try{return 5;}catch (ex){throw new Error(ex);}finally{root.substring(0,1);}}"
-                      + "/water(mark)?/gim.test('waterMark');"
-                      + "/water(mark)?/i.test('Water');"
-                      + "'string'.search(/expression/);"
-                      + "'string'.replace(/expression/,'replacement');"
-                      + "(function(a){return (a+0.5);})(7.5);"
-                      + "var array1=[5];"
-                      + "array1[0]=6;"
-                      + "var array1a=new Array(5);"
-                      + "array1a[0]=7;"
-                      + "array1a.push('pushed');"
-                      + "var array2={num:1,array:array1,assocarray:{key:'value',key2:'anything else'}};"
-                      + "array2['num']=6;"
-                      + "return (((((m1+'abc'.length+root+add(2,4)+7)*1.5)+5)-3)/2);}"
-                      + "function sajax_extract_htmlcomments(sHTML){"
-                      + "var sComments='';"
-                      + "sHTML=sHTML.replace(/<!--([\\s\\S]*?)-->/g,function(all,sComment){sComments+=(sComment+'\\n');return '';});"
-                      + "return {html:sHTML,comments:sComments};}"
-                      + "sajax_extract_htmlcomments('<div>Test<\\/div>');"
-                      + "loop:for(var i in [1,2,4]){"
-                      + "if(i==2){break;}"
-                      + "else{continue loop;}"
-                      + "}"
-                      + "for(var i=0;(i<5);i++){"
-                      + "continue;"
-                      + "}"
-                      + "for(var i=5;(i>0);i--);"
-                      + "for(var i=0;(i<5);i++);"
-                      + "do{"
-                      + "i++;"
-                      + "}while(i<1000);"
-                      + "while(i>0){"
-                      + "i--;"
-                      + "}",
+    assertEquals ("var g_aRoot=0;" +
+                  "function mainAdd(m1){" +
+                  "var root=5;" +
+                  "function add(s1,s2){return (s1+s2);}" +
+                  "add(32,-4);" +
+                  "var add2=new Function('x','y','return x+y');" +
+                  "add2(1,2);" +
+                  "if(typeof m1==='String')" +
+                  "{try{return 5;}catch (ex){throw new Error(ex);}finally{root.substring(0,1);}}" +
+                  "/water(mark)?/gim.test('waterMark');" +
+                  "/water(mark)?/i.test('Water');" +
+                  "'string'.search(/expression/);" +
+                  "'string'.replace(/expression/,'replacement');" +
+                  "(function(a){return (a+0.5);})(7.5);" +
+                  "var array1=[5];" +
+                  "array1[0]=6;" +
+                  "var array1a=new Array(5);" +
+                  "array1a[0]=7;" +
+                  "array1a.push('pushed');" +
+                  "var array2={num:1,array:array1,assocarray:{key:'value',key2:'anything else'}};" +
+                  "array2['num']=6;" +
+                  "return (((((m1+'abc'.length+root+add(2,4)+7)*1.5)+5)-3)/2);}" +
+                  "function sajax_extract_htmlcomments(sHTML){" +
+                  "var sComments='';" +
+                  "sHTML=sHTML.replace(/<!--([\\s\\S]*?)-->/g,function(all,sComment){sComments+=(sComment+'\\n');return '';});" +
+                  "return {html:sHTML,comments:sComments};}" +
+                  "sajax_extract_htmlcomments('<div>Test<\\/div>');" +
+                  "loop:for(var i in [1,2,4]){" +
+                  "if(i==2){break;}" +
+                  "else{continue loop;}" +
+                  "}" +
+                  "for(var i=0;(i<5);i++){" +
+                  "continue;" +
+                  "}" +
+                  "for(var i=5;(i>0);i--);" +
+                  "for(var i=0;(i<5);i++);" +
+                  "do{" +
+                  "i++;" +
+                  "}while(i<1000);" +
+                  "while(i>0){" +
+                  "i--;" +
+                  "}",
                   sCompressedCode);
     System.out.println ("Saved " +
                         (sCode.length () - sCompressedCode.length ()) +

@@ -329,14 +329,6 @@ public class JSFormatter implements Closeable
     return this;
   }
 
-  @Nonnull
-  public JSFormatter typename (@Nonnull final AbstractJSType aType)
-  {
-    if (aType != null && m_aSettings.isGenerateTypeNames ())
-      plain ("/*").generatable (aType).plain ("*/");
-    return this;
-  }
-
   public void pkg (@Nonnull final JSPackage aPackage)
   {
     // for all declarations in the current package

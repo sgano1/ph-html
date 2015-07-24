@@ -39,11 +39,6 @@ import com.helger.commons.string.ToStringGenerator;
 public class JSAnonymousFunction extends AbstractJSExpression
 {
   /**
-   * Return type for this function
-   */
-  private AbstractJSType m_aType;
-
-  /**
    * List of parameters for this function's declaration
    */
   private final List <JSVar> m_aParams = new ArrayList <JSVar> ();
@@ -58,17 +53,6 @@ public class JSAnonymousFunction extends AbstractJSExpression
    */
   public JSAnonymousFunction ()
   {}
-
-  /**
-   * constructor
-   *
-   * @param aType
-   *        Type to which the expression is cast
-   */
-  public JSAnonymousFunction (@Nullable final AbstractJSType aType)
-  {
-    m_aType = aType;
-  }
 
   /**
    * Constructor for simple functions
@@ -98,17 +82,6 @@ public class JSAnonymousFunction extends AbstractJSExpression
       body ().add (aBody);
   }
 
-  public JSAnonymousFunction (@Nullable final AbstractJSType aType,
-                              @Nullable final Collection <JSVar> aParams,
-                              @Nullable final IJSStatement aBody)
-  {
-    this (aType);
-    if (aParams != null)
-      m_aParams.addAll (aParams);
-    if (aBody != null)
-      body ().add (aBody);
-  }
-
   public JSAnonymousFunction (@Nullable final JSBlock aBody)
   {
     m_aBody = aBody;
@@ -126,36 +99,6 @@ public class JSAnonymousFunction extends AbstractJSExpression
     if (aParams != null)
       m_aParams.addAll (aParams);
     m_aBody = aBody;
-  }
-
-  public JSAnonymousFunction (@Nullable final AbstractJSType aType,
-                              @Nullable final Collection <JSVar> aParams,
-                              @Nullable final JSBlock aBody)
-  {
-    this (aType);
-    if (aParams != null)
-      m_aParams.addAll (aParams);
-    m_aBody = aBody;
-  }
-
-  /**
-   * @return The return type. May be <code>null</code>.
-   */
-  @Nullable
-  public AbstractJSType type ()
-  {
-    return m_aType;
-  }
-
-  /**
-   * Overrides the return type.
-   *
-   * @param aType
-   *        the new return type.
-   */
-  public void type (@Nullable final AbstractJSType aType)
-  {
-    m_aType = aType;
   }
 
   /**
@@ -181,23 +124,7 @@ public class JSAnonymousFunction extends AbstractJSExpression
   @Nonnull
   public JSVar param (@Nonnull @Nonempty final String sName)
   {
-    return param (null, sName);
-  }
-
-  /**
-   * Add the specified variable to the list of parameters for this function
-   * signature.
-   *
-   * @param aType
-   *        type of the parameter being added
-   * @param sName
-   *        Name of the parameter being added
-   * @return New parameter variable
-   */
-  @Nonnull
-  public JSVar param (@Nullable final AbstractJSType aType, @Nonnull @Nonempty final String sName)
-  {
-    final JSVar aVar = new JSVar (aType, sName, null);
+    final JSVar aVar = new JSVar (sName, null);
     m_aParams.add (aVar);
     return aVar;
   }
@@ -235,7 +162,7 @@ public class JSAnonymousFunction extends AbstractJSExpression
 
   public void generate (final JSFormatter aFormatter)
   {
-    aFormatter.plain ("function").typename (m_aType).plain ('(');
+    aFormatter.plain ("function").plain ('(');
     boolean bFirst = true;
     for (final JSVar aParam : m_aParams)
     {
@@ -256,26 +183,19 @@ public class JSAnonymousFunction extends AbstractJSExpression
     if (!super.equals (o))
       return false;
     final JSAnonymousFunction rhs = (JSAnonymousFunction) o;
-    return EqualsHelper.equals (m_aType, rhs.m_aType) &&
-           m_aParams.equals (rhs.m_aParams) &&
-           EqualsHelper.equals (m_aBody, rhs.m_aBody);
+    return m_aParams.equals (rhs.m_aParams) && EqualsHelper.equals (m_aBody, rhs.m_aBody);
   }
 
   @Override
   public int hashCode ()
   {
-    return HashCodeGenerator.getDerived (super.hashCode ())
-                            .append (m_aType)
-                            .append (m_aParams)
-                            .append (m_aBody)
-                            .getHashCode ();
+    return HashCodeGenerator.getDerived (super.hashCode ()).append (m_aParams).append (m_aBody).getHashCode ();
   }
 
   @Override
   public String toString ()
   {
     return ToStringGenerator.getDerived (super.toString ())
-                            .appendIfNotNull ("type", m_aType)
                             .appendIfNotEmpty ("params", m_aParams)
                             .append ("body", m_aBody)
                             .toString ();

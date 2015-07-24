@@ -17,7 +17,6 @@
 package com.helger.html.js.builder;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 import com.helger.commons.annotation.Nonempty;
 import com.helger.html.js.writer.IHasJSCodeWithSettings;
@@ -40,19 +39,4 @@ public interface IJSFunctionContainer extends IHasJSCodeWithSettings
    */
   @Nonnull
   JSFunction function (@Nonnull @Nonempty String sName) throws JSNameAlreadyExistsException;
-
-  /**
-   * Add a new function to this container
-   *
-   * @param aReturnType
-   *        optional return type
-   * @param sName
-   *        function name
-   * @return The created function
-   * @exception JSNameAlreadyExistsException
-   *            When the specified function was already created.
-   */
-  @Nonnull
-  JSFunction function (@Nullable AbstractJSType aReturnType,
-                       @Nonnull @Nonempty String sName) throws JSNameAlreadyExistsException;
 }

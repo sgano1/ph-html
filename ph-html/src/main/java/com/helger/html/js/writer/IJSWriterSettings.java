@@ -25,7 +25,7 @@ import com.helger.commons.system.ENewLineMode;
 
 /**
  * Read only interface with all JS writer settings.
- * 
+ *
  * @author Philip Helger
  */
 public interface IJSWriterSettings extends Serializable
@@ -34,12 +34,6 @@ public interface IJSWriterSettings extends Serializable
    * @return <code>true</code> if the code should be indented and aligned.
    */
   boolean isIndentAndAlign ();
-
-  /**
-   * @return <code>true</code> if type names should be generated as inline
-   *         comments.
-   */
-  boolean isGenerateTypeNames ();
 
   /**
    * @return <code>true</code> if comments should be generated at all.

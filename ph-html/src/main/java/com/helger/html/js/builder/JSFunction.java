@@ -45,11 +45,6 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
   private JSCommentMultiLine m_aJSDoc;
 
   /**
-   * Return type for this function
-   */
-  private AbstractJSType m_aType;
-
-  /**
    * Name of this function
    */
   private String m_sName;
@@ -72,46 +67,9 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
    */
   public JSFunction (@Nonnull @Nonempty final String sName)
   {
-    this (null, sName);
-  }
-
-  /**
-   * function constructor
-   *
-   * @param aType
-   *        Type to use
-   * @param sName
-   *        Name of this function
-   */
-  public JSFunction (@Nullable final AbstractJSType aType, @Nonnull @Nonempty final String sName)
-  {
     if (!JSMarshaller.isJSIdentifier (sName))
       throw new IllegalArgumentException ("The name '" + sName + "' is not a legal JS identifier!");
-    m_aType = aType;
     m_sName = sName;
-  }
-
-  /**
-   * @return the return type.
-   */
-  @Nullable
-  public AbstractJSType type ()
-  {
-    return m_aType;
-  }
-
-  /**
-   * Overrides the return type.
-   *
-   * @param aType
-   *        new return type
-   * @return this
-   */
-  @Nonnull
-  public JSFunction type (@Nullable final AbstractJSType aType)
-  {
-    m_aType = aType;
-    return this;
   }
 
   @Nonnull
@@ -159,23 +117,7 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
   @Nonnull
   public JSVar param (@Nonnull @Nonempty final String sName)
   {
-    return param (null, sName);
-  }
-
-  /**
-   * Add the specified variable to the list of parameters for this function
-   * signature.
-   *
-   * @param aType
-   *        Type of the parameter being added
-   * @param sName
-   *        Name of the parameter being added
-   * @return New parameter variable
-   */
-  @Nonnull
-  public JSVar param (@Nullable final AbstractJSType aType, @Nonnull @Nonempty final String sName)
-  {
-    final JSVar aVar = new JSVar (aType, sName, null);
+    final JSVar aVar = new JSVar (sName, null);
     m_aParams.add (aVar);
     return aVar;
   }
@@ -235,7 +177,7 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
   public JSAnonymousFunction getAsAnonymousFunction ()
   {
     // No name required for anonymous function
-    return new JSAnonymousFunction (type (), params (), body ());
+    return new JSAnonymousFunction (params (), body ());
   }
 
   @Override
@@ -244,7 +186,7 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
     if (m_aJSDoc != null)
       aFormatter.generatable (m_aJSDoc);
 
-    aFormatter.plain ("function ").typename (m_aType).plain (m_sName).plain ('(');
+    aFormatter.plain ("function ").plain (m_sName).plain ('(');
     boolean bFirst = true;
     for (final JSVar aParam : m_aParams)
     {
@@ -278,7 +220,6 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
       return false;
     final JSFunction rhs = (JSFunction) o;
     return EqualsHelper.equals (m_aJSDoc, rhs.m_aJSDoc) &&
-           EqualsHelper.equals (m_aType, rhs.m_aType) &&
            m_sName.equals (rhs.m_sName) &&
            m_aParams.equals (rhs.m_aParams) &&
            EqualsHelper.equals (m_aBody, rhs.m_aBody);
@@ -288,7 +229,6 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
   public int hashCode ()
   {
     return new HashCodeGenerator (this).append (m_aJSDoc)
-                                       .append (m_aType)
                                        .append (m_sName)
                                        .append (m_aParams)
                                        .append (m_aBody)
@@ -299,7 +239,6 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
   public String toString ()
   {
     return new ToStringGenerator (this).appendIfNotNull ("jsDoc", m_aJSDoc)
-                                       .appendIfNotNull ("type", m_aType)
                                        .append ("name", m_sName)
                                        .appendIfNotEmpty ("params", m_aParams)
                                        .appendIfNotNull ("body", m_aBody)

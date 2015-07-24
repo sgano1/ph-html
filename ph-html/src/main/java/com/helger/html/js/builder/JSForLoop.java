@@ -78,17 +78,9 @@ public class JSForLoop extends AbstractJSStatement
   @Nonnull
   public JSVar init (@Nonnull @Nonempty final String sVarName, @Nonnull final IJSExpression aExpr)
   {
-    return init (null, sVarName, aExpr);
-  }
-
-  @Nonnull
-  public JSVar init (@Nullable final AbstractJSType aType,
-                     @Nonnull @Nonempty final String sVarName,
-                     @Nonnull final IJSExpression aExpr)
-  {
     ValueEnforcer.notNull (aExpr, "InitExpression");
 
-    final JSVar aVar = new JSVar (aType, sVarName, aExpr);
+    final JSVar aVar = new JSVar (sVarName, aExpr);
     m_aInits.add (aVar);
     return aVar;
   }

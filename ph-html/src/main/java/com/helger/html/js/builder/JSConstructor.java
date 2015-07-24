@@ -23,7 +23,7 @@ import com.helger.commons.string.ToStringGenerator;
 
 /**
  * JS constructor.
- * 
+ *
  * @author Philip Helger
  */
 public class JSConstructor extends JSFunction
@@ -32,13 +32,13 @@ public class JSConstructor extends JSFunction
 
   /**
    * Constructor constructor
-   * 
+   *
    * @param aClass
    *        Class containing this constructor
    */
   public JSConstructor (@Nonnull final JSDefinedClass aClass)
   {
-    super (null, aClass.name ());
+    super (aClass.name ());
     m_aClass = aClass;
   }
 

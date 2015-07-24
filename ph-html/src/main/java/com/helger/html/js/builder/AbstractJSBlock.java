@@ -284,25 +284,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   @Nonnull
   public JSFunction function (@Nonnull final String sName) throws JSNameAlreadyExistsException
   {
-    return function (null, sName);
-  }
-
-  /**
-   * Add a function to this package.
-   *
-   * @param aType
-   *        Optional return type
-   * @param sName
-   *        Name of function to be added to this package
-   * @return Newly generated function
-   * @exception JSNameAlreadyExistsException
-   *            When the specified function was already created.
-   */
-  @Nonnull
-  public JSFunction function (@Nullable final AbstractJSType aType,
-                              @Nonnull @Nonempty final String sName) throws JSNameAlreadyExistsException
-  {
-    final JSFunction aFunction = new JSFunction (aType, sName);
+    final JSFunction aFunction = new JSFunction (sName);
     return addDeclaration (aFunction);
   }
 
@@ -318,7 +300,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   @Nonnull
   public JSVar var (@Nonnull @Nonempty final String sName) throws JSNameAlreadyExistsException
   {
-    return var (null, sName, null);
+    return var (sName, (IJSExpression) null);
   }
 
   /**
@@ -335,7 +317,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   @Nonnull
   public JSVar var (@Nonnull @Nonempty final String sName, final boolean bInitValue) throws JSNameAlreadyExistsException
   {
-    return var (null, sName, JSExpr.lit (bInitValue));
+    return var (sName, JSExpr.lit (bInitValue));
   }
 
   /**
@@ -352,7 +334,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   @Nonnull
   public JSVar var (@Nonnull @Nonempty final String sName, final char cInitValue) throws JSNameAlreadyExistsException
   {
-    return var (null, sName, JSExpr.lit (cInitValue));
+    return var (sName, JSExpr.lit (cInitValue));
   }
 
   /**
@@ -369,7 +351,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   @Nonnull
   public JSVar var (@Nonnull @Nonempty final String sName, final double dInitValue) throws JSNameAlreadyExistsException
   {
-    return var (null, sName, JSExpr.lit (dInitValue));
+    return var (sName, JSExpr.lit (dInitValue));
   }
 
   /**
@@ -386,7 +368,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   @Nonnull
   public JSVar var (@Nonnull @Nonempty final String sName, final float fInitValue) throws JSNameAlreadyExistsException
   {
-    return var (null, sName, JSExpr.lit (fInitValue));
+    return var (sName, JSExpr.lit (fInitValue));
   }
 
   /**
@@ -403,7 +385,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   @Nonnull
   public JSVar var (@Nonnull @Nonempty final String sName, final int nInitValue) throws JSNameAlreadyExistsException
   {
-    return var (null, sName, JSExpr.lit (nInitValue));
+    return var (sName, JSExpr.lit (nInitValue));
   }
 
   /**
@@ -420,7 +402,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   @Nonnull
   public JSVar var (@Nonnull @Nonempty final String sName, final long nInitValue) throws JSNameAlreadyExistsException
   {
-    return var (null, sName, JSExpr.lit (nInitValue));
+    return var (sName, JSExpr.lit (nInitValue));
   }
 
   /**
@@ -438,7 +420,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   public JSVar var (@Nonnull @Nonempty final String sName,
                     @Nullable final String sInitValue) throws JSNameAlreadyExistsException
   {
-    return var (null, sName, sInitValue == null ? JSExpr.NULL : JSExpr.lit (sInitValue));
+    return var (sName, sInitValue == null ? JSExpr.NULL : JSExpr.lit (sInitValue));
   }
 
   /**
@@ -456,46 +438,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   public JSVar var (@Nonnull @Nonempty final String sName,
                     @Nullable final IJSExpression aInitExpression) throws JSNameAlreadyExistsException
   {
-    return var (null, sName, aInitExpression);
-  }
-
-  /**
-   * Adds a local variable declaration to this block
-   *
-   * @param aType
-   *        Type of the variable
-   * @param sName
-   *        Name of the variable
-   * @return Newly generated {@link JSVar}
-   * @throws JSNameAlreadyExistsException
-   *         if the name is not unique
-   */
-  @Nonnull
-  public JSVar var (@Nullable final AbstractJSType aType,
-                    @Nonnull @Nonempty final String sName) throws JSNameAlreadyExistsException
-  {
-    return var (aType, sName, null);
-  }
-
-  /**
-   * Add a var to this block.
-   *
-   * @param aType
-   *        optional type to use
-   * @param sName
-   *        Name of variable to be added to this package
-   * @param aInitExpression
-   *        the initial expression. May be <code>null</code>
-   * @return Newly generated function
-   * @exception JSNameAlreadyExistsException
-   *            When the specified var was already created.
-   */
-  @Nonnull
-  public JSVar var (@Nullable final AbstractJSType aType,
-                    @Nonnull @Nonempty final String sName,
-                    @Nullable final IJSExpression aInitExpression) throws JSNameAlreadyExistsException
-  {
-    final JSVar aVar = new JSVar (aType, sName, aInitExpression);
+    final JSVar aVar = new JSVar (sName, aInitExpression);
     return addDeclaration (aVar);
   }
 
@@ -916,15 +859,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   @Nonnull
   public JSForIn forIn (@Nonnull @Nonempty final String sVarName, @Nonnull final IJSExpression aCollection)
   {
-    return forIn (null, sVarName, aCollection);
-  }
-
-  @Nonnull
-  public JSForIn forIn (@Nullable final AbstractJSType aVarType,
-                        @Nonnull @Nonempty final String sVarName,
-                        @Nonnull final IJSExpression aCollection)
-  {
-    return addStatement (new JSForIn (aVarType, sVarName, aCollection));
+    return addStatement (new JSForIn (sVarName, aCollection));
   }
 
   /**

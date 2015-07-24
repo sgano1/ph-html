@@ -36,7 +36,6 @@ import com.helger.commons.system.ENewLineMode;
 public final class JSWriterSettings implements IJSWriterSettings, ICloneable <JSWriterSettings>
 {
   private boolean m_bIndentAndAlign;
-  private boolean m_bGenerateTypeNames;
   private boolean m_bGenerateComments;
   private String m_sIndent;
   private ENewLineMode m_eNewLineMode;
@@ -44,7 +43,6 @@ public final class JSWriterSettings implements IJSWriterSettings, ICloneable <JS
   public JSWriterSettings ()
   {
     m_bIndentAndAlign = JSWriterDefaultSettings.isIndentAndAlign ();
-    m_bGenerateTypeNames = JSWriterDefaultSettings.isGenerateTypeNames ();
     m_bGenerateComments = JSWriterDefaultSettings.isGenerateComments ();
     m_sIndent = JSWriterDefaultSettings.getIndent ();
     m_eNewLineMode = JSWriterDefaultSettings.getNewLineMode ();
@@ -54,7 +52,6 @@ public final class JSWriterSettings implements IJSWriterSettings, ICloneable <JS
   {
     ValueEnforcer.notNull (aOther, "Other");
     m_bIndentAndAlign = aOther.isIndentAndAlign ();
-    m_bGenerateTypeNames = aOther.isGenerateTypeNames ();
     m_bGenerateComments = aOther.isGenerateComments ();
     m_sIndent = aOther.getIndent ();
     m_eNewLineMode = aOther.getNewLineMode ();
@@ -72,18 +69,6 @@ public final class JSWriterSettings implements IJSWriterSettings, ICloneable <JS
     return this;
   }
 
-  public boolean isGenerateTypeNames ()
-  {
-    return m_bGenerateTypeNames;
-  }
-
-  @Nonnull
-  public JSWriterSettings setGenerateTypeNames (final boolean bGenerateTypeNames)
-  {
-    m_bGenerateTypeNames = bGenerateTypeNames;
-    return this;
-  }
-
   public boolean isGenerateComments ()
   {
     return m_bGenerateComments;
@@ -97,8 +82,7 @@ public final class JSWriterSettings implements IJSWriterSettings, ICloneable <JS
   }
 
   /**
-   * This is a wrapper around {@link #setIndentAndAlign(boolean)},
-   * {@link #setGenerateTypeNames(boolean)} and
+   * This is a wrapper around {@link #setIndentAndAlign(boolean)}, { and
    * {@link #setGenerateComments(boolean)}
    *
    * @param bMinimumCodeSize
@@ -109,7 +93,6 @@ public final class JSWriterSettings implements IJSWriterSettings, ICloneable <JS
   public JSWriterSettings setMinimumCodeSize (final boolean bMinimumCodeSize)
   {
     setIndentAndAlign (!bMinimumCodeSize);
-    setGenerateTypeNames (!bMinimumCodeSize);
     setGenerateComments (!bMinimumCodeSize);
     return this;
   }
@@ -159,7 +142,6 @@ public final class JSWriterSettings implements IJSWriterSettings, ICloneable <JS
   public String toString ()
   {
     return new ToStringGenerator (this).append ("IndentAndAlign", m_bIndentAndAlign)
-                                       .append ("GenerateTypeNames", m_bGenerateTypeNames)
                                        .append ("GenerateComments", m_bGenerateComments)
                                        .append ("Indent", m_sIndent)
                                        .append ("NewLineMode", m_eNewLineMode)

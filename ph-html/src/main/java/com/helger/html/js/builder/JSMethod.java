@@ -17,7 +17,6 @@
 package com.helger.html.js.builder;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,16 +43,12 @@ public class JSMethod extends JSFunction
    *
    * @param aOwnerClass
    *        Owning class
-   * @param aType
-   *        Return type for the method
    * @param sName
    *        Name of this method
    */
-  public JSMethod (@Nonnull final JSDefinedClass aOwnerClass,
-                   @Nullable final AbstractJSType aType,
-                   @Nonnull @Nonempty final String sName)
+  public JSMethod (@Nonnull final JSDefinedClass aOwnerClass, @Nonnull @Nonempty final String sName)
   {
-    super (aType, sName);
+    super (sName);
     ValueEnforcer.notNull (aOwnerClass, "OwnerClass");
     if (!JSMarshaller.isJSIdentifier (sName))
       throw new IllegalArgumentException ("The name '" + sName + "' is not a legal JS identifier!");

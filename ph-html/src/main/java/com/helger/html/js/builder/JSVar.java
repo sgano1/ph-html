@@ -34,11 +34,6 @@ import com.helger.html.js.writer.IJSWriterSettings;
 public class JSVar extends AbstractJSAssignmentTarget implements IJSDeclaration
 {
   /**
-   * type of the variable
-   */
-  private AbstractJSType m_aType;
-
-  /**
    * Name of the variable
    */
   private String m_sName;
@@ -69,65 +64,10 @@ public class JSVar extends AbstractJSAssignmentTarget implements IJSDeclaration
    */
   public JSVar (@Nonnull @Nonempty final String sName, @Nullable final IJSExpression aInit)
   {
-    this ((AbstractJSType) null, sName, aInit);
-  }
-
-  /**
-   * Constructor
-   *
-   * @param aType
-   *        Type of this variable
-   * @param sName
-   *        Name of this variable
-   */
-  public JSVar (@Nullable final AbstractJSType aType, @Nonnull @Nonempty final String sName)
-  {
-    this (aType, sName, (IJSExpression) null);
-  }
-
-  /**
-   * Constructor
-   *
-   * @param aType
-   *        Datatype of this variable
-   * @param sName
-   *        Name of this variable
-   * @param aInit
-   *        Value to initialize this variable to
-   */
-  public JSVar (@Nullable final AbstractJSType aType,
-                @Nonnull @Nonempty final String sName,
-                @Nullable final IJSExpression aInit)
-  {
     if (!JSMarshaller.isJSIdentifier (sName))
       throw new IllegalArgumentException ("The name '" + sName + "' is not a legal JS identifier!");
-    m_aType = aType;
     m_sName = sName;
     m_aInit = aInit;
-  }
-
-  /**
-   * @return the type of this variable.
-   */
-  @Nullable
-  public AbstractJSType type ()
-  {
-    return m_aType;
-  }
-
-  /**
-   * Sets the type of this variable.
-   *
-   * @param aNewType
-   *        new type. may be <code>null</code>.
-   * @return the old type value.
-   */
-  @Nullable
-  public AbstractJSType type (@Nullable final AbstractJSType aNewType)
-  {
-    final AbstractJSType aOldType = m_aType;
-    m_aType = aNewType;
-    return aOldType;
   }
 
   /**
@@ -193,7 +133,7 @@ public class JSVar extends AbstractJSAssignmentTarget implements IJSDeclaration
 
   public void bind (@Nonnull final JSFormatter aFormatter)
   {
-    aFormatter.typename (m_aType).plain (m_sName);
+    aFormatter.plain (m_sName);
     if (m_aInit != null)
       aFormatter.plain ('=').generatable (m_aInit);
   }
@@ -225,26 +165,19 @@ public class JSVar extends AbstractJSAssignmentTarget implements IJSDeclaration
     if (!super.equals (o))
       return false;
     final JSVar rhs = (JSVar) o;
-    return EqualsHelper.equals (m_aType, rhs.m_aType) &&
-           EqualsHelper.equals (m_sName, rhs.m_sName) &&
-           EqualsHelper.equals (m_aInit, rhs.m_aInit);
+    return EqualsHelper.equals (m_sName, rhs.m_sName) && EqualsHelper.equals (m_aInit, rhs.m_aInit);
   }
 
   @Override
   public int hashCode ()
   {
-    return HashCodeGenerator.getDerived (super.hashCode ())
-                            .append (m_aType)
-                            .append (m_sName)
-                            .append (m_aInit)
-                            .getHashCode ();
+    return HashCodeGenerator.getDerived (super.hashCode ()).append (m_sName).append (m_aInit).getHashCode ();
   }
 
   @Override
   public String toString ()
   {
     return ToStringGenerator.getDerived (super.toString ())
-                            .appendIfNotNull ("type", m_aType)
                             .append ("name", m_sName)
                             .appendIfNotNull ("init", m_aInit)
                             .toString ();

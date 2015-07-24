@@ -132,22 +132,7 @@ public class JSDefinedClass extends AbstractJSClass implements IJSDeclaration, I
   @Nonnull
   public JSFieldVar field (@Nonnull @Nonempty final String sName)
   {
-    return field (null, sName, null);
-  }
-
-  /**
-   * Adds a field to the list of field members of this defined class.
-   *
-   * @param aType
-   *        type of this field
-   * @param sName
-   *        Name of this field
-   * @return Newly generated field
-   */
-  @Nonnull
-  public JSFieldVar field (@Nullable final AbstractJSType aType, @Nonnull @Nonempty final String sName)
-  {
-    return field (aType, sName, null);
+    return field (sName, null);
   }
 
   /**
@@ -162,26 +147,7 @@ public class JSDefinedClass extends AbstractJSClass implements IJSDeclaration, I
   @Nonnull
   public JSFieldVar field (@Nonnull @Nonempty final String sName, @Nullable final IJSExpression aInit)
   {
-    return field (null, sName, aInit);
-  }
-
-  /**
-   * Adds a field to the list of field members of this defined class.
-   *
-   * @param aType
-   *        type of this field.
-   * @param sName
-   *        Name of this field.
-   * @param aInit
-   *        Initial value of this field.
-   * @return Newly generated field
-   */
-  @Nonnull
-  public JSFieldVar field (@Nullable final AbstractJSType aType,
-                           @Nonnull @Nonempty final String sName,
-                           @Nullable final IJSExpression aInit)
-  {
-    final JSFieldVar aField = new JSFieldVar (this, aType, sName, aInit);
+    final JSFieldVar aField = new JSFieldVar (this, sName, aInit);
     return addField (aField);
   }
 
@@ -275,22 +241,7 @@ public class JSDefinedClass extends AbstractJSClass implements IJSDeclaration, I
   @Nonnull
   public JSMethod method (@Nonnull @Nonempty final String sName)
   {
-    return method (null, sName);
-  }
-
-  /**
-   * Add a method to the list of method members of this JS class instance.
-   *
-   * @param aType
-   *        Return type for this method
-   * @param sName
-   *        Name of the method
-   * @return Newly generated method
-   */
-  @Nonnull
-  public JSMethod method (@Nullable final AbstractJSType aType, @Nonnull @Nonempty final String sName)
-  {
-    final JSMethod aMethod = new JSMethod (this, aType, sName);
+    final JSMethod aMethod = new JSMethod (this, sName);
     m_aMethods.add (aMethod);
     return aMethod;
   }
