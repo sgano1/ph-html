@@ -46,6 +46,7 @@ import com.helger.html.hc.IHCHasChildren;
 import com.helger.html.hc.IHCJSNode;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeWithChildren;
+import com.helger.html.hc.customize.HCDefaultSettings;
 import com.helger.html.hc.html.HCLink;
 import com.helger.html.hc.html.HCScript;
 import com.helger.html.hc.html.HCScriptFile;
@@ -54,7 +55,6 @@ import com.helger.html.hc.html.HCStyle;
 import com.helger.html.hc.htmlext.HCHelper;
 import com.helger.html.hc.impl.HCConditionalCommentNode;
 import com.helger.html.hc.impl.HCNodeList;
-import com.helger.html.js.builder.jquery.JQuery;
 import com.helger.html.js.provider.CollectingJSCodeProvider;
 
 /**
@@ -458,13 +458,15 @@ public final class HCSpecialNodeHandler
     // on-document-ready JS always as last inline JS!
     if (!aJSOnDocumentReadyBefore.isEmpty ())
       if (bKeepOnDocumentReady)
-        aJSInlineBefore.append (JQuery.onDocumentReady (aJSOnDocumentReadyBefore));
+        aJSInlineBefore.append (HCDefaultSettings.getOnDocumentReadyProvider ()
+                                                 .createOnDocumentReady (aJSOnDocumentReadyBefore));
       else
         aJSInlineBefore.append (aJSOnDocumentReadyBefore);
 
     if (!aJSOnDocumentReadyAfter.isEmpty ())
       if (bKeepOnDocumentReady)
-        aJSInlineAfter.append (JQuery.onDocumentReady (aJSOnDocumentReadyAfter));
+        aJSInlineAfter.append (HCDefaultSettings.getOnDocumentReadyProvider ()
+                                                .createOnDocumentReady (aJSOnDocumentReadyAfter));
       else
         aJSInlineAfter.append (aJSOnDocumentReadyAfter);
 

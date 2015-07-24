@@ -16,12 +16,20 @@
  */
 package com.helger.html.mock;
 
+import javax.annotation.Nonnull;
 import javax.annotation.OverridingMethodsMustInvokeSuper;
 
 import org.junit.rules.ExternalResource;
 
 import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.html.hc.conversion.HCSettings;
+import com.helger.html.hc.customize.DefaultHCOnDocumentReadyProvider;
+import com.helger.html.hc.customize.HCDefaultSettings;
+import com.helger.html.hc.customize.IHCOnDocumentReadyProvider;
+import com.helger.html.js.IHasJSCode;
+import com.helger.html.js.builder.JSAnonymousFunction;
+import com.helger.html.js.builder.JSExpr;
+import com.helger.html.js.builder.html.JSHtml;
 
 /**
  * A JUnit test rule that ensures that optimized HTML, CSS and JS output is
@@ -41,6 +49,17 @@ public class HCTestRuleOptimized extends ExternalResource
   public void before ()
   {
     HCSettings.getConversionSettingsProvider ().setToOptimized ();
+    HCDefaultSettings.setOnDocumentReadyProvider (new IHCOnDocumentReadyProvider ()
+    {
+      @Nonnull
+      public IHasJSCode createOnDocumentReady (@Nonnull final IHasJSCode aJSCodeProvider)
+      {
+        // Fake jQuery style code :)
+        final JSAnonymousFunction aFunc = new JSAnonymousFunction ();
+        aFunc.body ().add (aJSCodeProvider);
+        return JSExpr.invoke ("$").arg (JSHtml.document ()).invoke ("ready").arg (aFunc);
+      }
+    });
   }
 
   @Override
@@ -48,6 +67,7 @@ public class HCTestRuleOptimized extends ExternalResource
   @OverridingMethodsMustInvokeSuper
   public void after ()
   {
+    HCDefaultSettings.setOnDocumentReadyProvider (new DefaultHCOnDocumentReadyProvider ());
     HCSettings.getConversionSettingsProvider ().setToDefault ();
   }
 }

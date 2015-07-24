@@ -20,8 +20,8 @@ import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.DevelopersNote;
 import com.helger.html.annotation.OutOfBandNode;
+import com.helger.html.hc.customize.HCDefaultSettings;
 import com.helger.html.js.IHasJSCode;
-import com.helger.html.js.builder.jquery.JQuery;
 import com.helger.html.js.provider.UnparsedJSCodeProvider;
 
 /**
@@ -39,7 +39,7 @@ public class HCScriptOnDocumentReady extends HCScript
 
   public HCScriptOnDocumentReady (@Nonnull final IHasJSCode aOnDocumentReadyCode)
   {
-    super (JQuery.onDocumentReady (aOnDocumentReadyCode));
+    super (HCDefaultSettings.getOnDocumentReadyProvider ().createOnDocumentReady (aOnDocumentReadyCode));
     m_aOnDocumentReadyCode = aOnDocumentReadyCode;
   }
 

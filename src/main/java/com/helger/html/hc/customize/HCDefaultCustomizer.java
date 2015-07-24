@@ -63,7 +63,7 @@ import com.helger.html.hc.special.HCSpecialNodeHandler;
 import com.helger.html.js.EJSEvent;
 import com.helger.html.js.builder.JSExpr;
 import com.helger.html.js.builder.JSInvocation;
-import com.helger.html.js.builder.jquery.JQuery;
+import com.helger.html.js.builder.html.JSHtml;
 
 /**
  * The default implementation of {@link IHCCustomizer} performing some default
@@ -218,8 +218,7 @@ public class HCDefaultCustomizer extends HCEmptyCustomizer
         if (aCtrl.isFocused ())
         {
           // Add a JS call that focuses this element
-          // Note: assuming jQuery
-          aParentElement.addChild (new HCScript (JQuery.idRef (aCtrl).focus ()));
+          aParentElement.addChild (new HCScript (JSHtml.documentGetElementById (aCtrl).invoke ("focus")));
         }
       }
     }

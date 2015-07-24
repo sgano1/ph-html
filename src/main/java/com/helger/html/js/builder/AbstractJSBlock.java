@@ -1153,7 +1153,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
       {
         if (GlobalDebug.isDebugMode ())
           if (!(aJSCode instanceof IHasJSCodeWithSettings))
-            s_aLogger.warn ("Adding untyped IJSCodeProvider of class " +
+            s_aLogger.warn ("Adding unspecified IHasJSCode of type " +
                             aJSCode.getClass ().getName () +
                             " to " +
                             ClassHelper.getClassLocalName (this));

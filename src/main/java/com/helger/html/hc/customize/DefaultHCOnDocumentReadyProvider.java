@@ -14,29 +14,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.js.builder.jquery;
+package com.helger.html.hc.customize;
 
-import static org.junit.Assert.assertEquals;
+import javax.annotation.Nonnull;
 
-import org.junit.Test;
-
-import com.helger.html.js.writer.JSWriterSettings;
+import com.helger.html.js.IHasJSCode;
 
 /**
- * Test class for class {@link JQueryAjaxBuilder}.
+ * Default implementation of {@link IHCOnDocumentReadyProvider} doing nothing!
  *
  * @author Philip Helger
  */
-public final class JQueryAjaxBuilderTest
+public final class DefaultHCOnDocumentReadyProvider implements IHCOnDocumentReadyProvider
 {
-  @Test
-  public void testBasic ()
+  @Nonnull
+  public IHasJSCode createOnDocumentReady (@Nonnull final IHasJSCode aJSCodeProvider)
   {
-    final JSWriterSettings aSettings = new JSWriterSettings ().setIndentAndAlign (false);
-
-    final JQueryAjaxBuilder aJAB = new JQueryAjaxBuilder ();
-    assertEquals ("$.ajax({});", aJAB.build ().getJSCode (aSettings));
-    aJAB.async (false);
-    assertEquals ("$.ajax({async:false});", aJAB.build ().getJSCode (aSettings));
+    HCDefaultSettings.s_aLogger.warn ("No 'OnDocumentReadyProvider' defined. Please call 'HCDefaultSettings.setOnDocumentReadyProvider' on application startup!");
+    return aJSCodeProvider;
   }
 }

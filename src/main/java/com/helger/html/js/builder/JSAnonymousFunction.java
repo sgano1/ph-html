@@ -17,6 +17,7 @@
 package com.helger.html.js.builder;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import javax.annotation.Nonnegative;
@@ -89,7 +90,7 @@ public class JSAnonymousFunction extends AbstractJSExpression
       body ().add (aBody);
   }
 
-  public JSAnonymousFunction (@Nullable final List <JSVar> aParams, @Nullable final IJSStatement aBody)
+  public JSAnonymousFunction (@Nullable final Collection <JSVar> aParams, @Nullable final IJSStatement aBody)
   {
     if (aParams != null)
       m_aParams.addAll (aParams);
@@ -98,7 +99,7 @@ public class JSAnonymousFunction extends AbstractJSExpression
   }
 
   public JSAnonymousFunction (@Nullable final AbstractJSType aType,
-                              @Nullable final List <JSVar> aParams,
+                              @Nullable final Collection <JSVar> aParams,
                               @Nullable final IJSStatement aBody)
   {
     this (aType);
@@ -108,6 +109,11 @@ public class JSAnonymousFunction extends AbstractJSExpression
       body ().add (aBody);
   }
 
+  public JSAnonymousFunction (@Nullable final JSBlock aBody)
+  {
+    m_aBody = aBody;
+  }
+
   public JSAnonymousFunction (@Nullable final JSVar aParam, @Nullable final JSBlock aBody)
   {
     if (aParam != null)
@@ -115,7 +121,7 @@ public class JSAnonymousFunction extends AbstractJSExpression
     m_aBody = aBody;
   }
 
-  public JSAnonymousFunction (@Nullable final List <JSVar> aParams, @Nullable final JSBlock aBody)
+  public JSAnonymousFunction (@Nullable final Collection <JSVar> aParams, @Nullable final JSBlock aBody)
   {
     if (aParams != null)
       m_aParams.addAll (aParams);
@@ -123,7 +129,7 @@ public class JSAnonymousFunction extends AbstractJSExpression
   }
 
   public JSAnonymousFunction (@Nullable final AbstractJSType aType,
-                              @Nullable final List <JSVar> aParams,
+                              @Nullable final Collection <JSVar> aParams,
                               @Nullable final JSBlock aBody)
   {
     this (aType);

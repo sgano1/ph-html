@@ -16,13 +16,18 @@
  */
 package com.helger.html.hc.customize;
 
+import javax.annotation.Nonnull;
 import javax.annotation.concurrent.NotThreadSafe;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.debug.GlobalDebug;
 
 /**
  * Default settings for HTML controls
- * 
+ *
  * @author Philip Helger
  */
 @NotThreadSafe
@@ -31,9 +36,16 @@ public final class HCDefaultSettings
   /** Default auto-complete for password fields: false */
   public static final boolean DEFAULT_AUTO_COMPLETE_OFF_FOR_PASSWORD_EDITS = false;
 
+  static final Logger s_aLogger = LoggerFactory.getLogger (HCDefaultSettings.class);
+
   // For security reasons, the password should not be auto-filled by the browser
   // in the release-version
   private static boolean s_bAutoCompleteOffForPasswordEdits = DEFAULT_AUTO_COMPLETE_OFF_FOR_PASSWORD_EDITS;
+
+  /*
+   * Dummy implementation that returns the code as is.
+   */
+  private static IHCOnDocumentReadyProvider s_aOnDocumentReadyProvider = new DefaultHCOnDocumentReadyProvider ();
 
   private HCDefaultSettings ()
   {}
@@ -47,5 +59,17 @@ public final class HCDefaultSettings
   public static void setAutoCompleteOffForPasswordEdits (final boolean bOff)
   {
     s_bAutoCompleteOffForPasswordEdits = bOff;
+  }
+
+  @Nonnull
+  public static IHCOnDocumentReadyProvider getOnDocumentReadyProvider ()
+  {
+    return s_aOnDocumentReadyProvider;
+  }
+
+  public static void setOnDocumentReadyProvider (@Nonnull final IHCOnDocumentReadyProvider aOnDocumentReadyProvider)
+  {
+    ValueEnforcer.notNull (aOnDocumentReadyProvider, "OnDocumentReadyProvider");
+    s_aOnDocumentReadyProvider = aOnDocumentReadyProvider;
   }
 }
