@@ -98,12 +98,6 @@ public class HCDefaultCustomizer extends HCEmptyCustomizer
 
   private final boolean m_bCreateControlCSSClasses;
 
-  public HCDefaultCustomizer ()
-  {
-    // Backwards compatibility
-    this (true);
-  }
-
   public HCDefaultCustomizer (final boolean bCreateControlCSSClasses)
   {
     m_bCreateControlCSSClasses = bCreateControlCSSClasses;
