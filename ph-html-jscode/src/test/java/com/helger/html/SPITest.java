@@ -14,24 +14,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hcext.html;
+package com.helger.html;
 
-import javax.annotation.Nonnull;
+import org.junit.Test;
 
-import com.helger.commons.url.ISimpleURL;
-import com.helger.html.hc.base.AbstractHCButton;
-import com.helger.html.js.provider.FakeJS;
-import com.helger.html.js.writer.IHasJSCodeWithSettings;
+import com.helger.commons.mock.CommonsTestHelper;
 
-public class HCLinkButton extends AbstractHCButton <HCLinkButton>
+/**
+ * Test if all SPI definitions are valid.
+ *
+ * @author Philip Helger
+ */
+public final class SPITest
 {
-  public HCLinkButton (final String sLabel, @Nonnull final ISimpleURL aURL)
+  @Test
+  public void testBasic () throws Exception
   {
-    super (sLabel, FakeJS.windowLocationHref (aURL));
-  }
-
-  public HCLinkButton (final String sLabel, final IHasJSCodeWithSettings aJS)
-  {
-    super (sLabel, aJS);
+    CommonsTestHelper.testIfAllSPIImplementationsAreValid ();
   }
 }

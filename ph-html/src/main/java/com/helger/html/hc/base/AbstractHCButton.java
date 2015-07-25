@@ -37,7 +37,7 @@ import com.helger.html.hc.html.HC_Target;
 import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 import com.helger.html.js.EJSEvent;
 import com.helger.html.js.IHasJSCode;
-import com.helger.html.js.builder.html.JSHtml;
+import com.helger.html.js.provider.FakeJS;
 import com.helger.html.js.writer.IHasJSCodeWithSettings;
 
 /**
@@ -272,7 +272,7 @@ public abstract class AbstractHCButton <THISTYPE extends AbstractHCButton <THIST
   @Nonnull
   public THISTYPE setOnClick (@Nonnull final ISimpleURL aURL)
   {
-    return setOnClick (JSHtml.windowLocationHref (aURL));
+    return setOnClick (FakeJS.windowLocationHref (aURL));
   }
 
   @Nonnull
@@ -284,7 +284,7 @@ public abstract class AbstractHCButton <THISTYPE extends AbstractHCButton <THIST
   @Nonnull
   public THISTYPE addOnClick (@Nonnull final ISimpleURL aURL)
   {
-    return addOnClick (JSHtml.windowLocationHref (aURL));
+    return addOnClick (FakeJS.windowLocationHref (aURL));
   }
 
   @Override

@@ -26,9 +26,7 @@ import com.helger.html.hc.config.DefaultHCOnDocumentReadyProvider;
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.customize.IHCOnDocumentReadyProvider;
 import com.helger.html.js.IHasJSCode;
-import com.helger.html.js.builder.JSAnonymousFunction;
-import com.helger.html.js.builder.JSExpr;
-import com.helger.html.js.builder.html.JSHtml;
+import com.helger.html.js.provider.UnparsedJSCodeProvider;
 
 /**
  * A JUnit test rule that ensures that optimized HTML, CSS and JS output is
@@ -54,9 +52,7 @@ public class HCTestRuleOptimized extends ExternalResource
       public IHasJSCode createOnDocumentReady (@Nonnull final IHasJSCode aJSCodeProvider)
       {
         // Fake jQuery style code :)
-        final JSAnonymousFunction aFunc = new JSAnonymousFunction ();
-        aFunc.body ().add (aJSCodeProvider);
-        return JSExpr.invoke ("$").arg (JSHtml.document ()).invoke ("ready").arg (aFunc);
+        return new UnparsedJSCodeProvider ("$(document).ready(function(){" + aJSCodeProvider.getJSCode () + "});");
       }
     });
   }

@@ -26,7 +26,7 @@ import com.helger.html.hc.base.IHCA;
 import com.helger.html.js.CJS;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.provider.CollectingJSCodeProvider;
-import com.helger.html.js.provider.UnparsedJSCodeProvider;
+import com.helger.html.js.provider.FakeJS;
 
 public class HCA_JS extends AbstractHCA <HCA_JS>
 {
@@ -63,11 +63,11 @@ public class HCA_JS extends AbstractHCA <HCA_JS>
 
   public static void addOnClickReturnFalse (@Nonnull final IHCA <?> aLink, @Nullable final IHasJSCode aJSOnClick)
   {
-    aLink.addOnClick (new CollectingJSCodeProvider (aJSOnClick, new UnparsedJSCodeProvider ("return false;")));
+    aLink.addOnClick (new CollectingJSCodeProvider (aJSOnClick, FakeJS.RETURN_FALSE));
   }
 
   public static void setOnClickReturnFalse (@Nonnull final IHCA <?> aLink, @Nullable final IHasJSCode aJSOnClick)
   {
-    aLink.setOnClick (new CollectingJSCodeProvider (aJSOnClick, new UnparsedJSCodeProvider ("return false;")));
+    aLink.setOnClick (new CollectingJSCodeProvider (aJSOnClick, FakeJS.RETURN_FALSE));
   }
 }

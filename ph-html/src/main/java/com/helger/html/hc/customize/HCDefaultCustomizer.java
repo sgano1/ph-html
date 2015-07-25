@@ -60,9 +60,7 @@ import com.helger.html.hc.html.HCStyle;
 import com.helger.html.hc.impl.HCEntityNode;
 import com.helger.html.hc.special.HCSpecialNodeHandler;
 import com.helger.html.js.EJSEvent;
-import com.helger.html.js.IHasJSCode;
-import com.helger.html.js.builder.html.JSHtml;
-import com.helger.html.js.provider.UnparsedJSCodeProvider;
+import com.helger.html.js.provider.FakeJS;
 
 /**
  * The default implementation of {@link IHCCustomizer} performing some default
@@ -90,9 +88,6 @@ public class HCDefaultCustomizer extends HCEmptyCustomizer
 
   // For tables
   public static final ICSSClassProvider CSS_FORCE_COLSPAN = DefaultCSSClassProvider.create ("force_colspan");
-
-  // JS Code
-  public static final IHasJSCode JS_BLUR = new UnparsedJSCodeProvider ("blur();");
 
   private static final Logger s_aLogger = LoggerFactory.getLogger (HCDefaultCustomizer.class);
 
@@ -186,7 +181,7 @@ public class HCDefaultCustomizer extends HCEmptyCustomizer
 
       // Unfocusable?
       if (aElement.isUnfocusable ())
-        aElement.setEventHandler (EJSEvent.FOCUS, JS_BLUR);
+        aElement.setEventHandler (EJSEvent.FOCUS, FakeJS.JS_BLUR);
 
       // Added "disabled" class on disabled element
       if (aElement instanceof IHCHasState <?>)
@@ -211,7 +206,7 @@ public class HCDefaultCustomizer extends HCEmptyCustomizer
         if (aCtrl.isFocused ())
         {
           // Add a JS call that focuses this element
-          aParentElement.addChild (new HCScript (JSHtml.documentGetElementById (aCtrl).invoke ("focus")));
+          aParentElement.addChild (new HCScript (FakeJS.focus (aCtrl)));
         }
       }
     }
