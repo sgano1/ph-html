@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html;
+package com.helger.html.hc.base;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -40,6 +40,8 @@ import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
+import com.helger.html.hc.html.HCOptGroup;
+import com.helger.html.hc.html.HCOption;
 import com.helger.html.hc.impl.AbstractHCControl;
 import com.helger.html.hc.impl.HCTextNode;
 import com.helger.html.request.IHCRequestField;
@@ -48,10 +50,10 @@ import com.helger.html.request.IHCRequestField;
  * Represents an HTML &lt;select&gt; element
  *
  * @author Philip Helger
- * @param <IMPLTYPE>
+ * @param <THISTYPE>
  *        the implementation type
  */
-public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLTYPE>> extends AbstractHCControl <IMPLTYPE>
+public abstract class AbstractHCSelect <THISTYPE extends AbstractHCSelect <THISTYPE>> extends AbstractHCControl <THISTYPE>implements IHCSelect <THISTYPE>
 {
   /** By default auto focus is disabled */
   public static final boolean DEFAULT_AUTO_FOCUS = false;
@@ -94,7 +96,7 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
   }
 
   @Nonnull
-  public final IMPLTYPE setAutoFocus (final boolean bAutoFocus)
+  public final THISTYPE setAutoFocus (final boolean bAutoFocus)
   {
     m_bAutoFocus = bAutoFocus;
     return thisAsT ();
@@ -107,7 +109,7 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
   }
 
   @Nonnull
-  public final IMPLTYPE setForm (@Nullable final String sForm)
+  public final THISTYPE setForm (@Nullable final String sForm)
   {
     m_sForm = sForm;
     return thisAsT ();
@@ -119,7 +121,7 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
   }
 
   @Nonnull
-  public final IMPLTYPE setMultiple (final boolean bMultiple)
+  public final THISTYPE setMultiple (final boolean bMultiple)
   {
     m_bMultiple = bMultiple;
     return thisAsT ();
@@ -131,7 +133,7 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
   }
 
   @Nonnull
-  public final IMPLTYPE setSize (final int nSize)
+  public final THISTYPE setSize (final int nSize)
   {
     m_nSize = nSize;
     return thisAsT ();
@@ -236,7 +238,7 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
   }
 
   @Nonnull
-  public final IMPLTYPE addOptionGroup (@Nullable final HCOptGroup aOptGroup)
+  public final THISTYPE addOptionGroup (@Nullable final HCOptGroup aOptGroup)
   {
     if (aOptGroup != null)
     {
@@ -249,7 +251,7 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
   }
 
   @Nonnull
-  public final IMPLTYPE removeAllOptions ()
+  public final THISTYPE removeAllOptions ()
   {
     if (m_aOptions != null)
     {
@@ -263,7 +265,7 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
   }
 
   @Nonnull
-  public final IMPLTYPE removeAllOptionGroups ()
+  public final THISTYPE removeAllOptionGroups ()
   {
     if (m_aOptions != null)
     {
@@ -277,7 +279,7 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
   }
 
   @Nonnull
-  public final IMPLTYPE removeOptionAtIndex (@Nonnegative final int nIndex)
+  public final THISTYPE removeOptionAtIndex (@Nonnegative final int nIndex)
   {
     if (m_aOptions != null)
     {
@@ -298,7 +300,7 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
   }
 
   @Nonnull
-  public final IMPLTYPE removeOptionGroupAtIndex (@Nonnegative final int nIndex)
+  public final THISTYPE removeOptionGroupAtIndex (@Nonnegative final int nIndex)
   {
     if (m_aOptions != null)
     {
@@ -318,9 +320,6 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
     return thisAsT ();
   }
 
-  /**
-   * @return The number of available options.
-   */
   @Nonnegative
   public final int getOptionCount ()
   {
@@ -332,9 +331,6 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
     return ret;
   }
 
-  /**
-   * @return The number of available option groups.
-   */
   @Nonnegative
   public final int getOptionGroupCount ()
   {
@@ -346,12 +342,9 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
     return ret;
   }
 
-  /**
-   * @return A non-<code>null</code> list of all available options.
-   */
   @Nonnull
   @ReturnsMutableCopy
-  public final List <HCOption> getOptions ()
+  public final List <HCOption> getAllOptions ()
   {
     final List <HCOption> ret = new ArrayList <HCOption> ();
     if (m_aOptions != null)
@@ -361,12 +354,9 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
     return ret;
   }
 
-  /**
-   * @return A non-<code>null</code> list of all available option groups.
-   */
   @Nonnull
   @ReturnsMutableCopy
-  public final List <HCOptGroup> getOptionGroups ()
+  public final List <HCOptGroup> getAllOptionGroups ()
   {
     final List <HCOptGroup> ret = new ArrayList <HCOptGroup> ();
     if (m_aOptions != null)
@@ -376,14 +366,6 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
     return ret;
   }
 
-  /**
-   * Get the option at the specified index
-   *
-   * @param nIndex
-   *        The index to retrieve. Should always be &ge; 0.
-   * @return <code>null</code> if no option is available for the specified
-   *         index.
-   */
   @Nullable
   public final HCOption getOptionAtIndex (@Nonnegative final int nIndex)
   {
@@ -402,14 +384,6 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
     return ret;
   }
 
-  /**
-   * Get the option group at the specified index
-   *
-   * @param nIndex
-   *        The index to retrieve. Should always be &ge; 0.
-   * @return <code>null</code> if no option group is available for the specified
-   *         index.
-   */
   @Nullable
   public final HCOptGroup getOptionGroupAtIndex (@Nonnegative final int nIndex)
   {
@@ -428,9 +402,6 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
     return ret;
   }
 
-  /**
-   * @return <code>true</code> if this select has at least one option.
-   */
   public final boolean hasOptions ()
   {
     if (m_aOptions != null)
@@ -440,9 +411,6 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
     return false;
   }
 
-  /**
-   * @return <code>true</code> if this select has at least one option group.
-   */
   public final boolean hasOptionGroups ()
   {
     if (m_aOptions != null)
@@ -452,12 +420,9 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
     return false;
   }
 
-  /**
-   * @return A non-<code>null</code> list of all selected options.
-   */
   @Nonnull
   @ReturnsMutableCopy
-  public final List <HCOption> getSelectedOptions ()
+  public final List <HCOption> getAllSelectedOptions ()
   {
     final List <HCOption> ret = new ArrayList <HCOption> ();
     if (m_aOptions != null)
@@ -467,9 +432,6 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
     return ret;
   }
 
-  /**
-   * @return The number of selected options. Always &ge; 0.
-   */
   @Nonnegative
   public final int getSelectedOptionCount ()
   {
@@ -481,11 +443,6 @@ public abstract class AbstractHCSelect <IMPLTYPE extends AbstractHCSelect <IMPLT
     return ret;
   }
 
-  /**
-   * Check if this select has at least one selected option
-   *
-   * @return <code>true</code> if at least one option is selected
-   */
   public final boolean hasSelectedOption ()
   {
     if (m_aOptions != null)
