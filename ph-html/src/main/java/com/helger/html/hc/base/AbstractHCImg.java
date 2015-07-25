@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html;
+package com.helger.html.hc.base;
 
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
@@ -27,7 +27,6 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hc.base.AbstractHCMediaElementChild;
 import com.helger.html.hc.conversion.HCConsistencyChecker;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
@@ -35,10 +34,10 @@ import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
  * Represents an HTML &lt;img&gt; element
  *
  * @author Philip Helger
- * @param <IMPLTYPE>
+ * @param <THISTYPE>
  *        The implementation type.
  */
-public class AbstractHCImg <IMPLTYPE extends AbstractHCImg <IMPLTYPE>> extends AbstractHCMediaElementChild <IMPLTYPE>
+public class AbstractHCImg <THISTYPE extends AbstractHCImg <THISTYPE>> extends AbstractHCMediaElementChild <THISTYPE>implements IHCImg <THISTYPE>
 {
   // Must be a String to allow for inline images
   private String m_sSrc;
@@ -59,13 +58,13 @@ public class AbstractHCImg <IMPLTYPE extends AbstractHCImg <IMPLTYPE>> extends A
   }
 
   @Nonnull
-  public IMPLTYPE setSrc (@Nullable final ISimpleURL aSrc)
+  public THISTYPE setSrc (@Nullable final ISimpleURL aSrc)
   {
     return setSrc (aSrc == null ? null : aSrc.getAsString ());
   }
 
   @Nonnull
-  public IMPLTYPE setSrc (@Nullable final String sSrc)
+  public THISTYPE setSrc (@Nullable final String sSrc)
   {
     HCConsistencyChecker.checkIfLinkIsMasked (sSrc);
     m_sSrc = sSrc;
@@ -79,7 +78,7 @@ public class AbstractHCImg <IMPLTYPE extends AbstractHCImg <IMPLTYPE>> extends A
   }
 
   @Nonnull
-  public IMPLTYPE setSrcSet (@Nullable final String sSrcSet)
+  public THISTYPE setSrcSet (@Nullable final String sSrcSet)
   {
     m_sSrcSet = sSrcSet;
     return thisAsT ();
@@ -92,7 +91,7 @@ public class AbstractHCImg <IMPLTYPE extends AbstractHCImg <IMPLTYPE>> extends A
   }
 
   @Nonnull
-  public IMPLTYPE setSizes (@Nullable final String sSizes)
+  public THISTYPE setSizes (@Nullable final String sSizes)
   {
     m_sSizes = sSizes;
     return thisAsT ();
@@ -120,20 +119,20 @@ public class AbstractHCImg <IMPLTYPE extends AbstractHCImg <IMPLTYPE>> extends A
   }
 
   @Nonnull
-  public final IMPLTYPE setExtent (@Nullable final SizeInt aImageData)
+  public final THISTYPE setExtent (@Nullable final SizeInt aImageData)
   {
     m_aExtent = aImageData;
     return thisAsT ();
   }
 
   @Nonnull
-  public final IMPLTYPE setExtent (@Nonnegative final int nWidth, @Nonnegative final int nHeight)
+  public final THISTYPE setExtent (@Nonnegative final int nWidth, @Nonnegative final int nHeight)
   {
     return setExtent (new SizeInt (nWidth, nHeight));
   }
 
   @Nonnull
-  public final IMPLTYPE scaleToWidth (@Nonnegative final int nNewWidth)
+  public final THISTYPE scaleToWidth (@Nonnegative final int nNewWidth)
   {
     if (m_aExtent != null)
       m_aExtent = m_aExtent.getScaledToWidth (nNewWidth);
@@ -141,7 +140,7 @@ public class AbstractHCImg <IMPLTYPE extends AbstractHCImg <IMPLTYPE>> extends A
   }
 
   @Nonnull
-  public final IMPLTYPE scaleToHeight (@Nonnegative final int nNewHeight)
+  public final THISTYPE scaleToHeight (@Nonnegative final int nNewHeight)
   {
     if (m_aExtent != null)
       m_aExtent = m_aExtent.getScaledToHeight (nNewHeight);
@@ -159,7 +158,7 @@ public class AbstractHCImg <IMPLTYPE extends AbstractHCImg <IMPLTYPE>> extends A
    * @return the correctly resized image tag
    */
   @Nonnull
-  public final IMPLTYPE scaleBestMatching (@Nonnegative final int nMaxWidth, @Nonnegative final int nMaxHeight)
+  public final THISTYPE scaleBestMatching (@Nonnegative final int nMaxWidth, @Nonnegative final int nMaxHeight)
   {
     if (m_aExtent != null)
       m_aExtent = m_aExtent.getBestMatchingSize (nMaxWidth, nMaxHeight);
@@ -173,7 +172,7 @@ public class AbstractHCImg <IMPLTYPE extends AbstractHCImg <IMPLTYPE>> extends A
   }
 
   @Nonnull
-  public final IMPLTYPE setAlt (@Nullable final String sAlt)
+  public final THISTYPE setAlt (@Nullable final String sAlt)
   {
     m_sAlt = sAlt;
     return thisAsT ();

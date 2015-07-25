@@ -20,6 +20,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.url.ISimpleURL;
+import com.helger.html.hc.base.AbstractHCImg;
 
 /**
  * Represents an HTML &lt;img&gt; element
