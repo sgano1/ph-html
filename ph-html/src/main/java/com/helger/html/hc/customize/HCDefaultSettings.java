@@ -24,6 +24,7 @@ import org.slf4j.LoggerFactory;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.debug.GlobalDebug;
+import com.helger.commons.lang.ServiceLoaderHelper;
 
 /**
  * Default settings for HTML controls
@@ -46,6 +47,13 @@ public final class HCDefaultSettings
    * Dummy implementation that returns the code as is.
    */
   private static IHCOnDocumentReadyProvider s_aOnDocumentReadyProvider = new DefaultHCOnDocumentReadyProvider ();
+
+  static
+  {
+    // Apply all SPI default settings providers
+    for (final IHCDefaultSettingsProviderSPI aSPI : ServiceLoaderHelper.getAllSPIImplementations (IHCDefaultSettingsProviderSPI.class))
+      aSPI.initHCDefaultSettings ();
+  }
 
   private HCDefaultSettings ()
   {}
