@@ -26,12 +26,12 @@ import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeWithChildren;
 import com.helger.html.hc.base.IHCCell;
 import com.helger.html.hc.base.IHCDefinitionItem;
+import com.helger.html.hc.base.IHCList;
 import com.helger.html.hc.base.IHCMediaElement;
 import com.helger.html.hc.base.IHCMediaElementChild;
 import com.helger.html.hc.base.IHCRubyChild;
 import com.helger.html.hc.base.IHCTable;
 import com.helger.html.hc.base.IHCTablePart;
-import com.helger.html.hc.html.AbstractHCList;
 import com.helger.html.hc.html.HCCol;
 import com.helger.html.hc.html.HCColGroup;
 import com.helger.html.hc.html.HCDL;
@@ -108,8 +108,8 @@ final class HCStack
     final IHCNode aParent = m_aStack.peek ();
 
     // Handle special cases
-    if (aParent instanceof AbstractHCList <?> && aNode instanceof HCLI)
-      ((AbstractHCList <?>) aParent).addItem ((HCLI) aNode);
+    if (aParent instanceof IHCList <?> && aNode instanceof HCLI)
+      ((IHCList <?>) aParent).addItem ((HCLI) aNode);
     else
       if (aParent instanceof IHCMediaElement <?> && aNode instanceof IHCMediaElementChild <?>)
         ((IHCMediaElement <?>) aParent).addChild ((IHCMediaElementChild <?>) aNode);

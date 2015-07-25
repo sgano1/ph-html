@@ -26,6 +26,7 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.api.EHCULType;
+import com.helger.html.hc.base.AbstractHCList;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
 /**

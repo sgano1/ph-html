@@ -19,6 +19,7 @@ package com.helger.html.hc.html;
 import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.DeprecatedInHTML4;
 import com.helger.html.annotation.DeprecatedInXHTML1;
+import com.helger.html.hc.base.AbstractHCList;
 
 /**
  * Represents an HTML &lt;menu&gt; element

@@ -18,6 +18,7 @@ package com.helger.html.hc.html;
 
 import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.DeprecatedInHTML5;
+import com.helger.html.hc.base.AbstractHCList;
 
 /**
  * Represents an HTML &lt;dir&gt; element

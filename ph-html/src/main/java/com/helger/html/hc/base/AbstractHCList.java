@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html;
+package com.helger.html.hc.base;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
@@ -25,6 +25,7 @@ import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeBuilder;
+import com.helger.html.hc.html.HCLI;
 import com.helger.html.hc.impl.AbstractHCElementWithInternalChildren;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
@@ -36,7 +37,7 @@ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
  * @param <THISTYPE>
  *        The real implementation type.
  */
-public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>> extends AbstractHCElementWithInternalChildren <THISTYPE, HCLI>
+public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>> extends AbstractHCElementWithInternalChildren <THISTYPE, HCLI>implements IHCList <THISTYPE>
 {
   protected AbstractHCList (@Nonnull @Nonempty final EHTMLElement aElement)
   {

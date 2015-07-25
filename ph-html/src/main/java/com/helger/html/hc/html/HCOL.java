@@ -25,6 +25,7 @@ import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.api.EHCOLType;
+import com.helger.html.hc.base.AbstractHCList;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 
 /**
