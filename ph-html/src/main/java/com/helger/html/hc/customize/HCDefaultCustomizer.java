@@ -38,10 +38,10 @@ import com.helger.html.hc.IHCElement;
 import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCHasState;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.base.AbstractHCForm;
 import com.helger.html.hc.base.IHCButton;
 import com.helger.html.hc.base.IHCCell;
 import com.helger.html.hc.base.IHCCol;
+import com.helger.html.hc.base.IHCForm;
 import com.helger.html.hc.base.IHCTable;
 import com.helger.html.hc.html.HCBody;
 import com.helger.html.hc.html.HCButton_Submit;
@@ -152,9 +152,9 @@ public class HCDefaultCustomizer extends HCEmptyCustomizer
                       aElement.addClass (CSS_CLASS_RADIO);
       }
 
-      if (aElement instanceof AbstractHCForm <?>)
+      if (aElement instanceof IHCForm <?>)
       {
-        final AbstractHCForm <?> aForm = (AbstractHCForm <?>) aElement;
+        final IHCForm <?> aForm = (IHCForm <?>) aElement;
         if (aForm.isSubmitPressingEnter ())
         {
           final IHCButton <?> aButton = createFakeSubmitButton ();

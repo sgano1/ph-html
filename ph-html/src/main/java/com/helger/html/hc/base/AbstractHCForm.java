@@ -43,10 +43,10 @@ import com.helger.html.js.builder.IJSStatement;
  * Represents an HTML &lt;form&gt; element
  *
  * @author Philip Helger
- * @param <IMPLTYPE>
+ * @param <THISTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>> extends AbstractHCElementWithChildren <IMPLTYPE>
+public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCForm <THISTYPE>
 {
   /** By default no auto complete setting is active */
   public static final ETriState DEFAULT_AUTO_COMPLETE = ETriState.UNDEFINED;
@@ -103,7 +103,7 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
   }
 
   @Nonnull
-  public final IMPLTYPE setAcceptCharset (@Nullable final String sAcceptCharset)
+  public final THISTYPE setAcceptCharset (@Nullable final String sAcceptCharset)
   {
     m_sAcceptCharset = sAcceptCharset;
     return thisAsT ();
@@ -122,21 +122,21 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
   }
 
   @Nonnull
-  public final IMPLTYPE setAction (@Nullable final ISimpleURL aAction)
+  public final THISTYPE setAction (@Nullable final ISimpleURL aAction)
   {
     m_aAction.setAction (aAction);
     return thisAsT ();
   }
 
   @Nonnull
-  public final IMPLTYPE setAction (@Nullable final String sAction)
+  public final THISTYPE setAction (@Nullable final String sAction)
   {
     m_aAction.setAction (sAction);
     return thisAsT ();
   }
 
   @Nonnull
-  public final IMPLTYPE setAction (@Nullable final IJSStatement aAction)
+  public final THISTYPE setAction (@Nullable final IJSStatement aAction)
   {
     m_aAction.setAction (aAction);
     return thisAsT ();
@@ -158,13 +158,13 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
   }
 
   @Nonnull
-  public final IMPLTYPE setAutoComplete (final boolean bAutoComplete)
+  public final THISTYPE setAutoComplete (final boolean bAutoComplete)
   {
     return setAutoComplete (ETriState.valueOf (bAutoComplete));
   }
 
   @Nonnull
-  public final IMPLTYPE setAutoComplete (@Nonnull final ETriState eAutoComplete)
+  public final THISTYPE setAutoComplete (@Nonnull final ETriState eAutoComplete)
   {
     m_eAutoComplete = ValueEnforcer.notNull (eAutoComplete, "AutoComplete");
     return thisAsT ();
@@ -182,7 +182,7 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
    * @return this
    */
   @Nonnull
-  public IMPLTYPE setEncTypeFileUpload ()
+  public THISTYPE setEncTypeFileUpload ()
   {
     return setEncType (CMimeType.MULTIPART_FORMDATA);
   }
@@ -193,13 +193,13 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
    * @return this
    */
   @Nonnull
-  public IMPLTYPE setEncTypeTextPlain ()
+  public THISTYPE setEncTypeTextPlain ()
   {
     return setEncType (CMimeType.TEXT_PLAIN);
   }
 
   @Nonnull
-  public IMPLTYPE setEncType (@Nullable final IMimeType aEncType)
+  public THISTYPE setEncType (@Nullable final IMimeType aEncType)
   {
     m_aEncType = aEncType;
     return thisAsT ();
@@ -212,7 +212,7 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
   }
 
   @Nonnull
-  public final IMPLTYPE setMethod (@Nullable final EHCFormMethod eMethod)
+  public final THISTYPE setMethod (@Nullable final EHCFormMethod eMethod)
   {
     m_eMethod = eMethod;
     return thisAsT ();
@@ -225,7 +225,7 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
   }
 
   @Nonnull
-  public final IMPLTYPE setName (@Nullable final String sName)
+  public final THISTYPE setName (@Nullable final String sName)
   {
     m_sName = sName;
     return thisAsT ();
@@ -237,7 +237,7 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
   }
 
   @Nonnull
-  public final IMPLTYPE setNoValidate (final boolean bNoValidate)
+  public final THISTYPE setNoValidate (final boolean bNoValidate)
   {
     m_bNoValidate = bNoValidate;
     return thisAsT ();
@@ -250,7 +250,7 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
   }
 
   @Nonnull
-  public final IMPLTYPE setTarget (@Nullable final HC_Target aTarget)
+  public final THISTYPE setTarget (@Nullable final HC_Target aTarget)
   {
     m_aTarget = aTarget;
     return thisAsT ();
@@ -267,13 +267,13 @@ public abstract class AbstractHCForm <IMPLTYPE extends AbstractHCForm <IMPLTYPE>
   }
 
   @Nonnull
-  public final IMPLTYPE setSubmitPressingEnter (final boolean bSubmitPressingEnter)
+  public final THISTYPE setSubmitPressingEnter (final boolean bSubmitPressingEnter)
   {
     return setSubmitPressingEnter (bSubmitPressingEnter, CGlobal.ILLEGAL_UINT);
   }
 
   @Nonnull
-  public final IMPLTYPE setSubmitPressingEnter (final boolean bSubmitPressingEnter, final int nSubmitButtonTabIndex)
+  public final THISTYPE setSubmitPressingEnter (final boolean bSubmitPressingEnter, final int nSubmitButtonTabIndex)
   {
     m_bSubmitPressingEnter = bSubmitPressingEnter;
     m_nSubmitButtonTabIndex = nSubmitButtonTabIndex;
