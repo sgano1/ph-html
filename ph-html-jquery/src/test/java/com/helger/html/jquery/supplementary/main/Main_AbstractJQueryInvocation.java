@@ -64,7 +64,7 @@ public class Main_AbstractJQueryInvocation extends AbstractCreateJQueryAPIList
         if (bIsDeprecated)
           aLines.add ("@Deprecated");
         aLines.add ("@Nonnull");
-        aLines.add ("public final IMPLTYPE " + aEntry.getIdentifier () + " ()");
+        aLines.add ("public final THISTYPE " + aEntry.getIdentifier () + " ()");
         aLines.add ("{");
         aLines.add ("  return jqinvoke (\"" + sRealName + "\");");
         aLines.add ("}");
@@ -79,10 +79,10 @@ public class Main_AbstractJQueryInvocation extends AbstractCreateJQueryAPIList
                                                    "\n" +
                                                    "import com.helger.commons.annotation.Nonempty;\n" +
                                                    "import com.helger.html.css.ICSSClassProvider;\n" +
-                                                   "import com.helger.html.js.builder.AbstractJSInvocation;\n" +
-                                                   "import com.helger.html.js.builder.IJSExpression;\n" +
-                                                   "import com.helger.html.js.builder.JSFieldRef;\n" +
-                                                   "import com.helger.html.js.builder.JSFunction;\n" +
+                                                   "import com.helger.html.jscode.AbstractJSInvocation;\n" +
+                                                   "import com.helger.html.jscode.IJSExpression;\n" +
+                                                   "import com.helger.html.jscode.JSFieldRef;\n" +
+                                                   "import com.helger.html.jscode.JSFunction;\n" +
                                                    "\n" +
                                                    "/**\n" +
                                                    " * Special invocation semantics for jQuery\n" +
@@ -91,9 +91,9 @@ public class Main_AbstractJQueryInvocation extends AbstractCreateJQueryAPIList
                                                    " * @author " +
                                                    Main_AbstractJQueryInvocation.class.getName () +
                                                    "\n" +
-                                                   " * @param <IMPLTYPE> Implementation type\n" +
+                                                   " * @param <THISTYPE> Implementation type\n" +
                                                    " */\n" +
-                                                   "public abstract class AbstractJQueryInvocation <IMPLTYPE extends AbstractJQueryInvocation <IMPLTYPE>> extends AbstractJSInvocation <IMPLTYPE> implements IJQueryInvocation <IMPLTYPE>\n" +
+                                                   "public abstract class AbstractJQueryInvocation <THISTYPE extends AbstractJQueryInvocation <THISTYPE>> extends AbstractJSInvocation <THISTYPE> implements IJQueryInvocation <THISTYPE>\n" +
                                                    "{\n" +
                                                    "  public AbstractJQueryInvocation (@Nonnull final JSFunction aFunction)\n" +
                                                    "  {\n" +
@@ -106,19 +106,19 @@ public class Main_AbstractJQueryInvocation extends AbstractCreateJQueryAPIList
                                                    "  }\n" +
                                                    "\n" +
                                                    "  @Nonnull\n" +
-                                                   "  public IMPLTYPE arg (@Nullable final ICSSClassProvider aArgument)\n" +
+                                                   "  public THISTYPE arg (@Nullable final ICSSClassProvider aArgument)\n" +
                                                    "  {\n" +
                                                    "    return aArgument == null ? argNull () : arg (aArgument.getCSSClass ());\n" +
                                                    "  }\n" +
                                                    "\n" +
                                                    "  @Nonnull\n" +
-                                                   "  public IMPLTYPE arg (@Nullable final IJQuerySelector aArgument)\n" +
+                                                   "  public THISTYPE arg (@Nullable final IJQuerySelector aArgument)\n" +
                                                    "  {\n" +
                                                    "    return aArgument == null ? argNull () : arg (aArgument.getExpression ());\n" +
                                                    "  }\n" +
                                                    "\n" +
                                                    "  @Nonnull\n" +
-                                                   "  public IMPLTYPE arg (@Nullable final JQuerySelectorList aArgument)\n" +
+                                                   "  public THISTYPE arg (@Nullable final JQuerySelectorList aArgument)\n" +
                                                    "  {\n" +
                                                    "    return aArgument == null ? argNull () : arg (aArgument.getAsExpression ());\n" +
                                                    "  }\n" +

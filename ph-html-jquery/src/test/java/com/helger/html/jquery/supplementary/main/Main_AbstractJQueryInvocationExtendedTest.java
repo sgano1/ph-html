@@ -192,9 +192,9 @@ public class Main_AbstractJQueryInvocationExtendedTest extends AbstractCreateJQu
                                                    "import com.helger.html.EHTMLElement;\n" +
                                                    "import com.helger.html.css.DefaultCSSClassProvider;\n" +
                                                    "import com.helger.html.hc.html.HCDiv;\n" +
-                                                   "import com.helger.html.js.builder.JSAnonymousFunction;\n" +
-                                                   "import com.helger.html.js.builder.JSArray;\n" +
-                                                   "import com.helger.html.js.builder.JSExpr;\n" +
+                                                   "import com.helger.html.jscode.JSAnonymousFunction;\n" +
+                                                   "import com.helger.html.jscode.JSArray;\n" +
+                                                   "import com.helger.html.jscode.JSExpr;\n" +
                                                    "import com.helger.json.JsonObject;\n" +
                                                    "\n" +
                                                    "/**\n" +

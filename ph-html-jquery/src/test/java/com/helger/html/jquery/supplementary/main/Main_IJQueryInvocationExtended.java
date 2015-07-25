@@ -48,7 +48,7 @@ public class Main_IJQueryInvocationExtended extends AbstractCreateJQueryAPIList
         {
           final int nArgCount = aSignature.getArgumentCount ();
 
-          String sRealPrefix = "@Nonnull IMPLTYPE " + aEntry.getIdentifier ();
+          String sRealPrefix = "@Nonnull THISTYPE " + aEntry.getIdentifier ();
 
           // Build comment
           String sComment = "";
@@ -181,9 +181,9 @@ public class Main_IJQueryInvocationExtended extends AbstractCreateJQueryAPIList
                                                    "import com.helger.html.EHTMLElement;\n" +
                                                    "import com.helger.html.css.ICSSClassProvider;\n" +
                                                    "import com.helger.html.hc.IHCNode;\n" +
-                                                   "import com.helger.html.js.builder.IJSExpression;\n" +
-                                                   "import com.helger.html.js.builder.JSAnonymousFunction;\n" +
-                                                   "import com.helger.html.js.builder.JSArray;\n" +
+                                                   "import com.helger.html.jscode.IJSExpression;\n" +
+                                                   "import com.helger.html.jscode.JSAnonymousFunction;\n" +
+                                                   "import com.helger.html.jscode.JSArray;\n" +
                                                    "import com.helger.json.IJson;\n" +
                                                    "\n" +
                                                    "/**\n" +
@@ -191,9 +191,9 @@ public class Main_IJQueryInvocationExtended extends AbstractCreateJQueryAPIList
                                                    " * @author " +
                                                    Main_IJQueryInvocationExtended.class.getName () +
                                                    "\n" +
-                                                   " * @param <IMPLTYPE> Implementation type\n" +
+                                                   " * @param <THISTYPE> Implementation type\n" +
                                                    "*/\n" +
-                                                   "public interface IJQueryInvocationExtended <IMPLTYPE extends IJQueryInvocationExtended <IMPLTYPE>> extends IJQueryInvocation <IMPLTYPE>\n" +
+                                                   "public interface IJQueryInvocationExtended <THISTYPE extends IJQueryInvocationExtended <THISTYPE>> extends IJQueryInvocation <THISTYPE>\n" +
                                                    "{\n");
     for (final String sEntry : aLines)
       aFull.append (sEntry).append ("\n\n");

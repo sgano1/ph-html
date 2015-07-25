@@ -53,7 +53,7 @@ public class Main_AbstractJQueryInvocationExtended extends AbstractCreateJQueryA
             continue;
           }
 
-          String sRealPrefix = "@Nonnull\npublic IMPLTYPE " + aEntry.getIdentifier ();
+          String sRealPrefix = "@Nonnull\npublic THISTYPE " + aEntry.getIdentifier ();
           if (aEntry.isDeprecated ())
             sRealPrefix = "@Deprecated\n" + sRealPrefix;
 
@@ -182,10 +182,10 @@ public class Main_AbstractJQueryInvocationExtended extends AbstractCreateJQueryA
                                                    "import com.helger.html.EHTMLElement;\n" +
                                                    "import com.helger.html.css.ICSSClassProvider;\n" +
                                                    "import com.helger.html.hc.IHCNode;\n" +
-                                                   "import com.helger.html.js.builder.IJSExpression;\n" +
-                                                   "import com.helger.html.js.builder.JSAnonymousFunction;\n" +
-                                                   "import com.helger.html.js.builder.JSArray;\n" +
-                                                   "import com.helger.html.js.builder.JSFunction;\n" +
+                                                   "import com.helger.html.jscode.IJSExpression;\n" +
+                                                   "import com.helger.html.jscode.JSAnonymousFunction;\n" +
+                                                   "import com.helger.html.jscode.JSArray;\n" +
+                                                   "import com.helger.html.jscode.JSFunction;\n" +
                                                    "import com.helger.json.IJson;\n" +
                                                    "\n" +
                                                    "/**\n" +
@@ -193,9 +193,9 @@ public class Main_AbstractJQueryInvocationExtended extends AbstractCreateJQueryA
                                                    " * @author " +
                                                    Main_AbstractJQueryInvocationExtended.class.getName () +
                                                    "\n" +
-                                                   " * @param <IMPLTYPE> Implementation type\n" +
+                                                   " * @param <THISTYPE> Implementation type\n" +
                                                    "*/\n" +
-                                                   "public abstract class AbstractJQueryInvocationExtended <IMPLTYPE extends AbstractJQueryInvocationExtended <IMPLTYPE>> extends AbstractJQueryInvocation <IMPLTYPE> implements IJQueryInvocationExtended <IMPLTYPE>\n" +
+                                                   "public abstract class AbstractJQueryInvocationExtended <THISTYPE extends AbstractJQueryInvocationExtended <THISTYPE>> extends AbstractJQueryInvocation <THISTYPE> implements IJQueryInvocationExtended <THISTYPE>\n" +
                                                    "{\n" +
                                                    "  public AbstractJQueryInvocationExtended (@Nonnull final JSFunction aFunction)\n" +
                                                    "  {\n" +
