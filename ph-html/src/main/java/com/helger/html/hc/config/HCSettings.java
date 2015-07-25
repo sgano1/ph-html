@@ -26,15 +26,14 @@ import javax.annotation.concurrent.GuardedBy;
 import javax.annotation.concurrent.ThreadSafe;
 
 import com.helger.commons.ValueEnforcer;
+import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.debug.GlobalDebug;
 import com.helger.commons.lang.ServiceLoaderHelper;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.conversion.HCConversionSettings;
-import com.helger.html.hc.conversion.HCConversionSettingsProvider;
 import com.helger.html.hc.conversion.IHCConversionSettings;
-import com.helger.html.hc.conversion.IHCConversionSettingsProvider;
 import com.helger.html.hc.customize.IHCOnDocumentReadyProvider;
 
 /**
@@ -49,8 +48,10 @@ public final class HCSettings
   public static final boolean DEFAULT_AUTO_COMPLETE_OFF_FOR_PASSWORD_EDITS = false;
 
   private static final ReadWriteLock s_aRWLock = new ReentrantReadWriteLock ();
+
+  /** HC to MicroNode converter settings */
   @GuardedBy ("s_aRWLock")
-  private static IHCConversionSettingsProvider s_aSettingsProvider = new HCConversionSettingsProvider (EHTMLVersion.DEFAULT);
+  private static HCConversionSettings s_aConversionSettings = new HCConversionSettings (EHTMLVersion.DEFAULT);
 
   /**
    * For security reasons, the password should not be auto-filled by the browser
@@ -74,19 +75,19 @@ public final class HCSettings
   {}
 
   /**
-   * Set the global conversion settings provider.
+   * Set the global conversion settings.
    *
-   * @param aConversionSettingsProvider
+   * @param aConversionSettings
    *        The object to be used. May not be <code>null</code>.
    */
-  public static void setConversionSettingsProvider (@Nonnull final IHCConversionSettingsProvider aConversionSettingsProvider)
+  public static void setConversionSettings (@Nonnull final HCConversionSettings aConversionSettings)
   {
-    ValueEnforcer.notNull (aConversionSettingsProvider, "ConversionSettingsProvider");
+    ValueEnforcer.notNull (aConversionSettings, "ConversionSettings");
 
     s_aRWLock.writeLock ().lock ();
     try
     {
-      s_aSettingsProvider = aConversionSettingsProvider;
+      s_aConversionSettings = aConversionSettings;
     }
     finally
     {
@@ -95,17 +96,16 @@ public final class HCSettings
   }
 
   /**
-   * @return The global conversion settings provider. Never <code>null</code>.
-   *         By default a {@link HCConversionSettingsProvider} object is
-   *         returned.
+   * @return The global mutable conversion settings. Never <code>null</code>.
    */
   @Nonnull
-  public static IHCConversionSettingsProvider getConversionSettingsProvider ()
+  @ReturnsMutableObject ("design")
+  public static HCConversionSettings getMutableConversionSettings ()
   {
     s_aRWLock.readLock ().lock ();
     try
     {
-      return s_aSettingsProvider;
+      return s_aConversionSettings;
     }
     finally
     {
@@ -114,15 +114,12 @@ public final class HCSettings
   }
 
   /**
-   * Get the conversion settings from the current conversion settings provider
-   * using default pretty print mode
-   *
-   * @return The non-<code>null</code> conversion settings
+   * @return The global read-only non-<code>null</code> conversion settings
    */
   @Nonnull
   public static IHCConversionSettings getConversionSettings ()
   {
-    return getConversionSettingsProvider ().getConversionSettings ();
+    return getMutableConversionSettings ();
   }
 
   /**

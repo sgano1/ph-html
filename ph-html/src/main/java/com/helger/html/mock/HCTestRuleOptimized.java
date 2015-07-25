@@ -45,7 +45,7 @@ public class HCTestRuleOptimized extends ExternalResource
   @OverridingMethodsMustInvokeSuper
   public void before ()
   {
-    HCSettings.getConversionSettingsProvider ().setToOptimized ();
+    HCSettings.getMutableConversionSettings ().setToOptimized ();
     HCSettings.setOnDocumentReadyProvider (new IHCOnDocumentReadyProvider ()
     {
       @Nonnull
@@ -63,6 +63,6 @@ public class HCTestRuleOptimized extends ExternalResource
   public void after ()
   {
     HCSettings.setOnDocumentReadyProvider (new DefaultHCOnDocumentReadyProvider ());
-    HCSettings.getConversionSettingsProvider ().setToDefault ();
+    HCSettings.getMutableConversionSettings ().setToDefault ();
   }
 }

@@ -45,34 +45,47 @@ public final class HCConditionalCommentNodeTest
   public void testAll ()
   {
     HCConditionalCommentNode.setDefaultNewLineMode (ENewLineMode.UNIX);
-    HCSettings.getConversionSettingsProvider ().getXMLWriterSettings ().setIndent (EXMLSerializeIndent.NONE);
+    HCSettings.getMutableConversionSettings ().getXMLWriterSettings ().setIndent (EXMLSerializeIndent.NONE);
 
-    assertEquals ("<!--[if IE]>" + "abc" + "<![endif]-->",
+    assertEquals ("<!--[if IE]>" +
+                  "abc" +
+                  "<![endif]-->",
                   HCSettings.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCTextNode ("abc"))));
-    assertEquals ("<!--[if IE]>" + "<b xmlns=\"http://www.w3.org/1999/xhtml\">bold</b>" + "<![endif]-->",
+    assertEquals ("<!--[if IE]>" +
+                  "<b xmlns=\"http://www.w3.org/1999/xhtml\">bold</b>" +
+                  "<![endif]-->",
                   HCSettings.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCB ().addChild ("bold"))));
-    assertEquals ("<!--[if IE 7]>" + "<b>bold</b>" + "<![endif]-->",
+    assertEquals ("<!--[if IE 7]>" +
+                  "<b>bold</b>" +
+                  "<![endif]-->",
                   HCSettings.getAsHTMLStringWithoutNamespaces (HCConditionalCommentNode.createForIEExactVersion7 (new HCB ().addChild ("bold"))));
 
     // But if enabling alignment mode, the newline is printer!
-    final XMLWriterSettings aXWS = HCSettings.getConversionSettingsProvider ().getXMLWriterSettings ();
+    final XMLWriterSettings aXWS = HCSettings.getMutableConversionSettings ().getXMLWriterSettings ();
     aXWS.setIndent (EXMLSerializeIndent.ALIGN_ONLY);
     final String sCRLF = aXWS.getNewLineString ();
 
-    assertEquals ("<!--[if IE]>\n" + "abc" + "<![endif]-->" + sCRLF,
+    assertEquals ("<!--[if IE]>\n" +
+                  "abc" +
+                  "<![endif]-->" +
+                  sCRLF,
                   HCSettings.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCTextNode ("abc"))));
     assertEquals ("<!--[if IE]>\n" +
-                      "<b xmlns=\"http://www.w3.org/1999/xhtml\">bold</b>" +
-                      sCRLF +
-                      "<![endif]-->" +
-                      sCRLF,
+                  "<b xmlns=\"http://www.w3.org/1999/xhtml\">bold</b>" +
+                  sCRLF +
+                  "<![endif]-->" +
+                  sCRLF,
                   HCSettings.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCB ().addChild ("bold"))));
-    assertEquals ("<!--[if IE]>\n" + "<b>bold</b>" + sCRLF + "<![endif]-->" + sCRLF,
+    assertEquals ("<!--[if IE]>\n" +
+                  "<b>bold</b>" +
+                  sCRLF +
+                  "<![endif]-->" +
+                  sCRLF,
                   HCSettings.getAsHTMLStringWithoutNamespaces (HCConditionalCommentNode.createForIE (new HCB ().addChild ("bold"))));
 
     // Restore default settings
-    HCSettings.getConversionSettingsProvider ()
-              .setXMLWriterSettings (HCConversionSettings.createDefaultXMLWriterSettings (HCSettings.getConversionSettingsProvider ()
+    HCSettings.getMutableConversionSettings ()
+              .setXMLWriterSettings (HCConversionSettings.createDefaultXMLWriterSettings (HCSettings.getConversionSettings ()
                                                                                                     .getHTMLVersion ()));
     HCConditionalCommentNode.setDefaultNewLineMode (ENewLineMode.DEFAULT);
   }
