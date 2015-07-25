@@ -47,7 +47,7 @@ import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeWithChildren;
 import com.helger.html.hc.api.IHCCSSNode;
 import com.helger.html.hc.api.IHCJSNode;
-import com.helger.html.hc.customize.HCDefaultSettings;
+import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.html.HCLink;
 import com.helger.html.hc.html.HCScript;
 import com.helger.html.hc.html.HCScriptFile;
@@ -458,15 +458,15 @@ public final class HCSpecialNodeHandler
     // on-document-ready JS always as last inline JS!
     if (!aJSOnDocumentReadyBefore.isEmpty ())
       if (bKeepOnDocumentReady)
-        aJSInlineBefore.append (HCDefaultSettings.getOnDocumentReadyProvider ()
-                                                 .createOnDocumentReady (aJSOnDocumentReadyBefore));
+        aJSInlineBefore.append (HCSettings.getOnDocumentReadyProvider ()
+                                          .createOnDocumentReady (aJSOnDocumentReadyBefore));
       else
         aJSInlineBefore.append (aJSOnDocumentReadyBefore);
 
     if (!aJSOnDocumentReadyAfter.isEmpty ())
       if (bKeepOnDocumentReady)
-        aJSInlineAfter.append (HCDefaultSettings.getOnDocumentReadyProvider ()
-                                                .createOnDocumentReady (aJSOnDocumentReadyAfter));
+        aJSInlineAfter.append (HCSettings.getOnDocumentReadyProvider ()
+                                         .createOnDocumentReady (aJSOnDocumentReadyAfter));
       else
         aJSInlineAfter.append (aJSOnDocumentReadyAfter);
 

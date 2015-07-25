@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.conversion;
+package com.helger.html.hc.config;
 
 import java.nio.charset.Charset;
 import java.util.concurrent.locks.ReadWriteLock;
@@ -22,21 +22,55 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.annotation.concurrent.GuardedBy;
 import javax.annotation.concurrent.ThreadSafe;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.debug.GlobalDebug;
+import com.helger.commons.lang.ServiceLoaderHelper;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeBuilder;
+import com.helger.html.hc.conversion.HCConversionSettings;
+import com.helger.html.hc.conversion.HCConversionSettingsProvider;
+import com.helger.html.hc.conversion.IHCConversionSettings;
+import com.helger.html.hc.conversion.IHCConversionSettingsProvider;
 import com.helger.html.hc.customize.IHCCustomizer;
+import com.helger.html.hc.customize.IHCOnDocumentReadyProvider;
 
+/**
+ * Global HC settings
+ * 
+ * @author Philip Helger
+ */
 @ThreadSafe
 public final class HCSettings
 {
+  /** Default auto-complete for password fields: false */
+  public static final boolean DEFAULT_AUTO_COMPLETE_OFF_FOR_PASSWORD_EDITS = false;
+
   private static final ReadWriteLock s_aRWLock = new ReentrantReadWriteLock ();
+  @GuardedBy ("s_aRWLock")
   private static IHCConversionSettingsProvider s_aSettingsProvider = new HCConversionSettingsProvider (EHTMLVersion.DEFAULT);
+
+  /**
+   * For security reasons, the password should not be auto-filled by the browser
+   * in the release-version
+   */
+  @GuardedBy ("s_aRWLock")
+  private static boolean s_bAutoCompleteOffForPasswordEdits = DEFAULT_AUTO_COMPLETE_OFF_FOR_PASSWORD_EDITS;
+
+  /** The "on document ready" code provider */
+  @GuardedBy ("s_aRWLock")
+  private static IHCOnDocumentReadyProvider s_aOnDocumentReadyProvider = new DefaultHCOnDocumentReadyProvider ();
+
+  static
+  {
+    // Apply all SPI settings providers
+    for (final IHCSettingsProviderSPI aSPI : ServiceLoaderHelper.getAllSPIImplementations (IHCSettingsProviderSPI.class))
+      aSPI.initHCSettings ();
+  }
 
   private HCSettings ()
   {}
@@ -268,5 +302,61 @@ public final class HCSettings
   public static IHCCustomizer getCustomizer ()
   {
     return getConversionSettings ().getCustomizer ();
+  }
+
+  public static boolean isAutoCompleteOffForPasswordEdits ()
+  {
+    s_aRWLock.readLock ().lock ();
+    try
+    {
+      // Extremely annoying for development...
+      return s_bAutoCompleteOffForPasswordEdits && !GlobalDebug.isDebugMode ();
+    }
+    finally
+    {
+      s_aRWLock.readLock ().unlock ();
+    }
+  }
+
+  public static void setAutoCompleteOffForPasswordEdits (final boolean bOff)
+  {
+    s_aRWLock.writeLock ().lock ();
+    try
+    {
+      s_bAutoCompleteOffForPasswordEdits = bOff;
+    }
+    finally
+    {
+      s_aRWLock.writeLock ().unlock ();
+    }
+  }
+
+  @Nonnull
+  public static IHCOnDocumentReadyProvider getOnDocumentReadyProvider ()
+  {
+    s_aRWLock.readLock ().lock ();
+    try
+    {
+      return s_aOnDocumentReadyProvider;
+    }
+    finally
+    {
+      s_aRWLock.readLock ().unlock ();
+    }
+  }
+
+  public static void setOnDocumentReadyProvider (@Nonnull final IHCOnDocumentReadyProvider aOnDocumentReadyProvider)
+  {
+    ValueEnforcer.notNull (aOnDocumentReadyProvider, "OnDocumentReadyProvider");
+
+    s_aRWLock.writeLock ().lock ();
+    try
+    {
+      s_aOnDocumentReadyProvider = aOnDocumentReadyProvider;
+    }
+    finally
+    {
+      s_aRWLock.writeLock ().unlock ();
+    }
   }
 }

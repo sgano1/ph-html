@@ -35,7 +35,7 @@ import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.lang.ClassHelper;
 import com.helger.commons.string.StringHelper;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.conversion.HCSettings;
+import com.helger.html.hc.config.HCSettings;
 import com.helger.html.js.CJS;
 import com.helger.html.js.IHasJSCode;
 import com.helger.json.IJson;

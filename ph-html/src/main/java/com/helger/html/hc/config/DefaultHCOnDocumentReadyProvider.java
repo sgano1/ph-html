@@ -14,10 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.customize;
+package com.helger.html.hc.config;
 
 import javax.annotation.Nonnull;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.helger.html.hc.customize.IHCOnDocumentReadyProvider;
 import com.helger.html.js.IHasJSCode;
 
 /**
@@ -25,12 +29,14 @@ import com.helger.html.js.IHasJSCode;
  *
  * @author Philip Helger
  */
-public final class DefaultHCOnDocumentReadyProvider implements IHCOnDocumentReadyProvider
+public class DefaultHCOnDocumentReadyProvider implements IHCOnDocumentReadyProvider
 {
+  private static final Logger s_aLogger = LoggerFactory.getLogger (DefaultHCOnDocumentReadyProvider.class);
+
   @Nonnull
   public IHasJSCode createOnDocumentReady (@Nonnull final IHasJSCode aJSCodeProvider)
   {
-    HCDefaultSettings.s_aLogger.warn ("No 'OnDocumentReadyProvider' defined. Please call 'HCDefaultSettings.setOnDocumentReadyProvider' on application startup!");
+    s_aLogger.warn ("No 'OnDocumentReadyProvider' defined. Please call 'HCDefaultSettings.setOnDocumentReadyProvider' on application startup!");
     return aJSCodeProvider;
   }
 }

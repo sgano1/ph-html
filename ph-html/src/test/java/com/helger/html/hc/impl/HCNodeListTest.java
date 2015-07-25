@@ -25,7 +25,7 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import com.helger.commons.microdom.IMicroContainer;
-import com.helger.html.hc.conversion.HCSettings;
+import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.html.HCDiv;
 import com.helger.html.hc.html.HCRow;
 import com.helger.html.hc.html.HCSpan;

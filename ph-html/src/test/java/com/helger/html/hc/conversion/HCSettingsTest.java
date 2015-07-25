@@ -22,6 +22,7 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Rule;
 import org.junit.Test;
 
+import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.html.HCBR;
 import com.helger.html.mock.HCTestRuleOptimized;
 

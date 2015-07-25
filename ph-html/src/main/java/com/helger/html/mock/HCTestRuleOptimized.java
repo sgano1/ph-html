@@ -22,9 +22,8 @@ import javax.annotation.OverridingMethodsMustInvokeSuper;
 import org.junit.rules.ExternalResource;
 
 import com.helger.commons.annotation.OverrideOnDemand;
-import com.helger.html.hc.conversion.HCSettings;
-import com.helger.html.hc.customize.DefaultHCOnDocumentReadyProvider;
-import com.helger.html.hc.customize.HCDefaultSettings;
+import com.helger.html.hc.config.DefaultHCOnDocumentReadyProvider;
+import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.customize.IHCOnDocumentReadyProvider;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.builder.JSAnonymousFunction;
@@ -49,7 +48,7 @@ public class HCTestRuleOptimized extends ExternalResource
   public void before ()
   {
     HCSettings.getConversionSettingsProvider ().setToOptimized ();
-    HCDefaultSettings.setOnDocumentReadyProvider (new IHCOnDocumentReadyProvider ()
+    HCSettings.setOnDocumentReadyProvider (new IHCOnDocumentReadyProvider ()
     {
       @Nonnull
       public IHasJSCode createOnDocumentReady (@Nonnull final IHasJSCode aJSCodeProvider)
@@ -67,7 +66,7 @@ public class HCTestRuleOptimized extends ExternalResource
   @OverridingMethodsMustInvokeSuper
   public void after ()
   {
-    HCDefaultSettings.setOnDocumentReadyProvider (new DefaultHCOnDocumentReadyProvider ());
+    HCSettings.setOnDocumentReadyProvider (new DefaultHCOnDocumentReadyProvider ());
     HCSettings.getConversionSettingsProvider ().setToDefault ();
   }
 }

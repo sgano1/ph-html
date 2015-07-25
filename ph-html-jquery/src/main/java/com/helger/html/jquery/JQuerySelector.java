@@ -38,7 +38,7 @@ import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.hc.IHCHasID;
-import com.helger.html.hc.conversion.HCSettings;
+import com.helger.html.hc.config.HCSettings;
 import com.helger.html.js.builder.IJSExpression;
 import com.helger.html.js.builder.JSExpr;
 import com.helger.html.js.builder.JSStringLiteral;

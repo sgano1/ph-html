@@ -19,7 +19,7 @@ package com.helger.html.markdown;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.html.hc.conversion.HCSettings;
+import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.conversion.IHCConversionSettings;
 import com.helger.html.hc.impl.HCNodeList;
 

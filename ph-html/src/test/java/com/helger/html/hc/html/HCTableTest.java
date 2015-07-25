@@ -28,7 +28,7 @@ import org.junit.Test;
 import org.junit.rules.TestRule;
 
 import com.helger.commons.junit.DebugModeTestRule;
-import com.helger.html.hc.conversion.HCSettings;
+import com.helger.html.hc.config.HCSettings;
 
 /**
  * Test class for class {@link HCTable}.

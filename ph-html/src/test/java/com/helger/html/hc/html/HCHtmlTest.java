@@ -21,7 +21,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Rule;
 import org.junit.Test;
 
-import com.helger.html.hc.conversion.HCSettings;
+import com.helger.html.hc.config.HCSettings;
 import com.helger.html.js.provider.UnparsedJSCodeProvider;
 import com.helger.html.meta.MetaElement;
 import com.helger.html.mock.HCTestRuleOptimized;

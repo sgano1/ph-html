@@ -34,7 +34,7 @@ import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.conversion.HCSettings;
+import com.helger.html.hc.config.HCSettings;
 import com.helger.html.js.marshal.JSMarshaller;
 import com.helger.html.js.writer.IJSWriterSettings;
 import com.helger.json.IJson;

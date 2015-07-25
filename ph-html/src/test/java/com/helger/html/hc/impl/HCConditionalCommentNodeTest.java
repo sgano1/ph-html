@@ -26,8 +26,8 @@ import com.helger.commons.junit.DebugModeTestRule;
 import com.helger.commons.system.ENewLineMode;
 import com.helger.commons.xml.serialize.write.EXMLSerializeIndent;
 import com.helger.commons.xml.serialize.write.XMLWriterSettings;
+import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.conversion.HCConversionSettings;
-import com.helger.html.hc.conversion.HCSettings;
 import com.helger.html.hc.html.HCB;
 
 /**

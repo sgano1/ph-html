@@ -22,7 +22,7 @@ import org.junit.Test;
 
 import com.helger.commons.url.SimpleURL;
 import com.helger.html.EHTMLVersion;
-import com.helger.html.hc.conversion.HCSettings;
+import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.conversion.IHCConversionSettings;
 
 /**
