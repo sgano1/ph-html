@@ -25,11 +25,11 @@ import com.helger.commons.string.StringHelper;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeWithChildren;
 import com.helger.html.hc.base.IHCCell;
+import com.helger.html.hc.base.IHCDefinitionItem;
 import com.helger.html.hc.base.IHCMediaElementChild;
 import com.helger.html.hc.base.IHCRubyChild;
 import com.helger.html.hc.base.IHCTable;
 import com.helger.html.hc.base.IHCTablePart;
-import com.helger.html.hc.html.AbstractHCDefinitionItem;
 import com.helger.html.hc.html.AbstractHCList;
 import com.helger.html.hc.html.AbstractHCMediaElement;
 import com.helger.html.hc.html.HCCol;
@@ -117,8 +117,8 @@ final class HCStack
         if (aParent instanceof HCColGroup && aNode instanceof HCCol)
           ((HCColGroup) aParent).addChild ((HCCol) aNode);
         else
-          if (aParent instanceof HCDL && aNode instanceof AbstractHCDefinitionItem <?>)
-            ((HCDL) aParent).addChild ((AbstractHCDefinitionItem <?>) aNode);
+          if (aParent instanceof HCDL && aNode instanceof IHCDefinitionItem <?>)
+            ((HCDL) aParent).addChild ((IHCDefinitionItem <?>) aNode);
           else
             if (aParent instanceof HCOptGroup && aNode instanceof HCOption)
               ((HCOptGroup) aParent).addChild ((HCOption) aNode);

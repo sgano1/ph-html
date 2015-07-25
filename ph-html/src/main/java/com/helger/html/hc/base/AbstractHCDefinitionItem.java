@@ -14,37 +14,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html;
+package com.helger.html.hc.base;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 import com.helger.html.EHTMLElement;
-import com.helger.html.hc.base.IHCDefinitionItem;
-import com.helger.html.hc.impl.AbstractHCElementWithInternalChildren;
+import com.helger.html.hc.html.HCDD;
+import com.helger.html.hc.html.HCDT;
+import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 
 /**
- * Represents an HTML &lt;dl&gt; element
+ * Abstract base class for DD and DT tags ({@link HCDD} and {@link HCDT})
  *
  * @author Philip Helger
+ * @param <THISTYPE>
+ *        The implementing type
  */
-public class HCDL extends AbstractHCElementWithInternalChildren <HCDL, IHCDefinitionItem <?>>
+public abstract class AbstractHCDefinitionItem <THISTYPE extends AbstractHCDefinitionItem <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCDefinitionItem <THISTYPE>
 {
-  public HCDL ()
+  public AbstractHCDefinitionItem (@Nonnull final EHTMLElement aElement)
   {
-    super (EHTMLElement.DL);
-  }
-
-  public final boolean hasItems ()
-  {
-    return hasChildren ();
-  }
-
-  @Nonnull
-  public final HCDL addItem (@Nullable final IHCDefinitionItem <?> aItem)
-  {
-    if (aItem != null)
-      addChild (aItem);
-    return this;
+    super (aElement);
   }
 }

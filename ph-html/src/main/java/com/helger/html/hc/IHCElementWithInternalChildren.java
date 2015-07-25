@@ -22,6 +22,8 @@ package com.helger.html.hc;
  * @author Philip Helger
  * @param <THISTYPE>
  *        Implementation type
+ * @param <CHILDTYPE>
+ *        Contained child type
  */
 public interface IHCElementWithInternalChildren <THISTYPE extends IHCElementWithInternalChildren <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode> extends IHCElement <THISTYPE>, IHCHasChildrenMutable <THISTYPE, CHILDTYPE>
 {

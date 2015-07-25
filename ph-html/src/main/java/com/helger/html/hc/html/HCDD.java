@@ -17,6 +17,7 @@
 package com.helger.html.hc.html;
 
 import com.helger.html.EHTMLElement;
+import com.helger.html.hc.base.AbstractHCDefinitionItem;
 
 /**
  * Represents an HTML &lt;dd&gt; element
