@@ -30,7 +30,7 @@ import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.api.EHCLinkType;
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.conversion.IHCConversionSettings;
-import com.helger.html.js.builder.JSExpr;
+import com.helger.html.js.provider.UnparsedJSCodeProvider;
 import com.helger.html.mock.HCTestRuleOptimized;
 
 /**
@@ -143,7 +143,7 @@ public final class HCFuncTest
     b.addChild (new HCS ().addChild ("Das wäre also ein Beispiel"));
     b.addChild (new HCSamp ());
     b.addChild (new HCSamp ().addChild ("List"));
-    b.addChild (new HCScript (JSExpr.ref ("i").assign (17)));
+    b.addChild (new HCScript (new UnparsedJSCodeProvider ("i=17;")));
     b.addChild (HCScriptFile.create (new SimpleURL ("a.js")));
     final HCSelect aSelect = new HCSelect ("x");
     aSelect.addOption ("y", "Ypsilon");

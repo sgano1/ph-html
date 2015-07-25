@@ -28,7 +28,7 @@ import com.helger.html.hc.api.EHCButtonType;
 import com.helger.html.hc.api.EHCFormMethod;
 import com.helger.html.hc.html.HC_Target;
 import com.helger.html.js.IHasJSCode;
-import com.helger.html.js.builder.IJSStatement;
+import com.helger.html.js.writer.IHasJSCodeWithSettings;
 
 public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends IHCElementWithChildren <THISTYPE>, IHCHasState <THISTYPE>, IHCHasName <THISTYPE>
 {
@@ -56,7 +56,7 @@ public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends IHCEl
   THISTYPE setFormAction (@Nullable String sAction);
 
   @Nonnull
-  THISTYPE setFormAction (@Nullable IJSStatement aAction);
+  THISTYPE setFormAction (@Nullable IHasJSCodeWithSettings aAction);
 
   @Nullable
   IMimeType getFormEncType ();

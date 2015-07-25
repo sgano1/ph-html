@@ -41,7 +41,7 @@ import com.helger.html.hc.html.HC_Action;
 import com.helger.html.hc.html.HC_Target;
 import com.helger.html.hc.impl.AbstractHCControl;
 import com.helger.html.js.IHasJSCode;
-import com.helger.html.js.builder.IJSStatement;
+import com.helger.html.js.writer.IHasJSCodeWithSettings;
 
 @NotThreadSafe
 public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYPE>> extends AbstractHCControl <IMPLTYPE>implements IHCInput <IMPLTYPE>
@@ -264,7 +264,7 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   }
 
   @Nonnull
-  public final IMPLTYPE setFormAction (@Nullable final IJSStatement aAction)
+  public final IMPLTYPE setFormAction (@Nullable final IHasJSCodeWithSettings aAction)
   {
     m_aFormAction.setAction (aAction);
     return thisAsT ();

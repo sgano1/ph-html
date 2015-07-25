@@ -23,7 +23,7 @@ import org.junit.Test;
 
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.js.EJSEvent;
-import com.helger.html.js.builder.JSExpr;
+import com.helger.html.js.provider.UnparsedJSCodeProvider;
 import com.helger.html.mock.HCTestRuleOptimized;
 
 public final class HCBodyTest
@@ -38,11 +38,11 @@ public final class HCBodyTest
     assertEquals ("<body xmlns=\"http://www.w3.org/1999/xhtml\"></body>", HCSettings.getAsHTMLString (aBody));
 
     // With semicolon at the end
-    aBody.addEventHandler (EJSEvent.LOAD, JSExpr.invoke ("onLoad"));
+    aBody.addEventHandler (EJSEvent.LOAD, new UnparsedJSCodeProvider ("onLoad();"));
     // Empty event handler - ignored
     aBody.addEventHandler (EJSEvent.MOUSEDOWN, null);
     // With prefix
-    aBody.setEventHandler (EJSEvent.CLICK, JSExpr.invoke ("onClick"));
+    aBody.setEventHandler (EJSEvent.CLICK, new UnparsedJSCodeProvider ("onClick();"));
     aBody.setCustomAttr ("bla", "foo");
     assertEquals ("<body xmlns=\"http://www.w3.org/1999/xhtml\" onload=\"javascript:onLoad();\" onclick=\"javascript:onClick();\" bla=\"foo\"></body>",
                   HCSettings.getAsHTMLString (aBody));

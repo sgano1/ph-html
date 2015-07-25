@@ -29,7 +29,7 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.js.CJS;
 import com.helger.html.js.IHasJSCode;
-import com.helger.html.js.builder.IJSStatement;
+import com.helger.html.js.writer.IHasJSCodeWithSettings;
 import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
@@ -41,7 +41,7 @@ import com.helger.html.js.writer.IJSWriterSettings;
 public final class HC_Action implements ICloneable <HC_Action>
 {
   private String m_sAction;
-  private IJSStatement m_aAction;
+  private IHasJSCodeWithSettings m_aAction;
 
   public HC_Action ()
   {}
@@ -76,7 +76,7 @@ public final class HC_Action implements ICloneable <HC_Action>
     m_aAction = null;
   }
 
-  public void setAction (@Nullable final IJSStatement aAction)
+  public void setAction (@Nullable final IHasJSCodeWithSettings aAction)
   {
     m_sAction = null;
     m_aAction = aAction;

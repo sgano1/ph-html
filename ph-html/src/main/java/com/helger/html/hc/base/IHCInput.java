@@ -27,7 +27,7 @@ import com.helger.html.hc.api.EHCFormMethod;
 import com.helger.html.hc.api.EHCInputType;
 import com.helger.html.hc.html.HC_Target;
 import com.helger.html.js.IHasJSCode;
-import com.helger.html.js.builder.IJSStatement;
+import com.helger.html.js.writer.IHasJSCodeWithSettings;
 
 /**
  * Base interface for controls base on &lt;input&gt; area.
@@ -120,7 +120,7 @@ public interface IHCInput <IMPLTYPE extends IHCInput <IMPLTYPE>> extends IHCCont
   IMPLTYPE setFormAction (@Nullable String sAction);
 
   @Nonnull
-  IMPLTYPE setFormAction (@Nullable IJSStatement aAction);
+  IMPLTYPE setFormAction (@Nullable IHasJSCodeWithSettings aAction);
 
   @Nullable
   IMimeType getFormEncType ();

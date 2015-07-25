@@ -20,8 +20,8 @@ import javax.annotation.Nonnull;
 
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.hc.base.AbstractHCButton;
-import com.helger.html.js.builder.IJSStatement;
 import com.helger.html.js.builder.html.JSHtml;
+import com.helger.html.js.writer.IHasJSCodeWithSettings;
 
 public class HCLinkButton extends AbstractHCButton <HCLinkButton>
 {
@@ -30,7 +30,7 @@ public class HCLinkButton extends AbstractHCButton <HCLinkButton>
     super (sLabel, JSHtml.windowLocationHref (aURL));
   }
 
-  public HCLinkButton (final String sLabel, final IJSStatement aJS)
+  public HCLinkButton (final String sLabel, final IHasJSCodeWithSettings aJS)
   {
     super (sLabel, aJS);
   }

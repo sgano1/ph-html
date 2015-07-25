@@ -60,9 +60,9 @@ import com.helger.html.hc.html.HCStyle;
 import com.helger.html.hc.impl.HCEntityNode;
 import com.helger.html.hc.special.HCSpecialNodeHandler;
 import com.helger.html.js.EJSEvent;
-import com.helger.html.js.builder.JSExpr;
-import com.helger.html.js.builder.JSInvocation;
+import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.builder.html.JSHtml;
+import com.helger.html.js.provider.UnparsedJSCodeProvider;
 
 /**
  * The default implementation of {@link IHCCustomizer} performing some default
@@ -92,7 +92,7 @@ public class HCDefaultCustomizer extends HCEmptyCustomizer
   public static final ICSSClassProvider CSS_FORCE_COLSPAN = DefaultCSSClassProvider.create ("force_colspan");
 
   // JS Code
-  public static final JSInvocation JS_BLUR = JSExpr.invoke ("blur");
+  public static final IHasJSCode JS_BLUR = new UnparsedJSCodeProvider ("blur();");
 
   private static final Logger s_aLogger = LoggerFactory.getLogger (HCDefaultCustomizer.class);
 

@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.hc.base.AbstractHCForm;
-import com.helger.html.js.builder.IJSStatement;
+import com.helger.html.js.writer.IHasJSCodeWithSettings;
 
 /**
  * Represents an HTML &lt;form&gt; element
@@ -45,7 +45,7 @@ public class HCForm extends AbstractHCForm <HCForm>
     super (aAction);
   }
 
-  public HCForm (@Nullable final IJSStatement aAction)
+  public HCForm (@Nullable final IHasJSCodeWithSettings aAction)
   {
     super (aAction);
   }

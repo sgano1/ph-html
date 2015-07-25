@@ -37,7 +37,7 @@ import com.helger.html.hc.html.HC_Action;
 import com.helger.html.hc.html.HC_Target;
 import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 import com.helger.html.js.IHasJSCode;
-import com.helger.html.js.builder.IJSStatement;
+import com.helger.html.js.writer.IHasJSCodeWithSettings;
 
 /**
  * Represents an HTML &lt;form&gt; element
@@ -90,7 +90,7 @@ public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>
     setAction (aAction);
   }
 
-  public AbstractHCForm (@Nullable final IJSStatement aAction)
+  public AbstractHCForm (@Nullable final IHasJSCodeWithSettings aAction)
   {
     this ();
     setAction (aAction);
@@ -136,7 +136,7 @@ public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>
   }
 
   @Nonnull
-  public final THISTYPE setAction (@Nullable final IJSStatement aAction)
+  public final THISTYPE setAction (@Nullable final IHasJSCodeWithSettings aAction)
   {
     m_aAction.setAction (aAction);
     return thisAsT ();

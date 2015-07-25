@@ -26,7 +26,7 @@ import com.helger.html.hc.IHCElementWithChildren;
 import com.helger.html.hc.api.EHCFormMethod;
 import com.helger.html.hc.html.HC_Target;
 import com.helger.html.js.IHasJSCode;
-import com.helger.html.js.builder.IJSStatement;
+import com.helger.html.js.writer.IHasJSCodeWithSettings;
 
 /**
  * Interface for FORMs
@@ -56,7 +56,7 @@ public interface IHCForm <THISTYPE extends IHCForm <THISTYPE>> extends IHCElemen
   THISTYPE setAction (@Nullable String sAction);
 
   @Nonnull
-  THISTYPE setAction (@Nullable IJSStatement aAction);
+  THISTYPE setAction (@Nullable IHasJSCodeWithSettings aAction);
 
   boolean isAutoCompleteOn ();
 
