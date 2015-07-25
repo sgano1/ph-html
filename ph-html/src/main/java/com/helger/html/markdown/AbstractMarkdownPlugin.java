@@ -30,7 +30,7 @@ public abstract class AbstractMarkdownPlugin
     m_sPluginID = sPluginID;
   }
 
-  public abstract void emit (final HCStack out, final List <String> lines, final Map <String, String> params);
+  public abstract void emit (final MarkdownHCStack out, final List <String> lines, final Map <String, String> params);
 
   @Nonnull
   public String getPluginID ()

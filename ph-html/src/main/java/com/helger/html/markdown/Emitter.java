@@ -111,7 +111,7 @@ final class Emitter
    * @param aRoot
    *        The Block to process.
    */
-  public void emit (final HCStack out, final Block aRoot)
+  public void emit (final MarkdownHCStack out, final Block aRoot)
   {
     aRoot.removeSurroundingEmptyLines ();
     final IMarkdownDecorator aDecorator = m_aConfig.getDecorator ();
@@ -214,7 +214,7 @@ final class Emitter
    * @param block
    *        The Block to process.
    */
-  private void _emitLines (final HCStack out, final Block block)
+  private void _emitLines (final MarkdownHCStack out, final Block block)
   {
     switch (block.m_eType)
     {
@@ -278,7 +278,7 @@ final class Emitter
    *        Either LINK or IMAGE.
    * @return The new position or -1 if there is no valid markdown link.
    */
-  private int _checkInlineLink (final HCStack out, final String in, final int start, final EMarkToken token)
+  private int _checkInlineLink (final MarkdownHCStack out, final String in, final int start, final EMarkToken token)
   {
     boolean isAbbrev = false;
     int pos = start + (token == EMarkToken.LINK ? 1 : 2);
@@ -413,7 +413,7 @@ final class Emitter
    *        Starting position.
    * @return The new position or -1 if nothing valid has been found.
    */
-  private int _checkInlineHtml (final HCStack out, final String in, final int nStart)
+  private int _checkInlineHtml (final MarkdownHCStack out, final String in, final int nStart)
   {
     final StringBuilder aTemp = new StringBuilder ();
 
@@ -619,12 +619,12 @@ final class Emitter
    * @return The position of the matching Token or -1 if token was NONE or no
    *         Token could be found.
    */
-  private int _recursiveEmitLine (final HCStack out, final String in, final int start, final EMarkToken token)
+  private int _recursiveEmitLine (final MarkdownHCStack out, final String in, final int start, final EMarkToken token)
   {
     int pos = start;
     int a;
     int b;
-    final HCStack temp = new HCStack ();
+    final MarkdownHCStack temp = new MarkdownHCStack ();
     final StringBuilder tempSB = new StringBuilder ();
     while (pos < in.length ())
     {
@@ -950,7 +950,7 @@ final class Emitter
    * @param lines
    *        The lines to write.
    */
-  private void _emitMarkedLines (final HCStack out, final Line lines)
+  private void _emitMarkedLines (final MarkdownHCStack out, final Line lines)
   {
     final StringBuilder in = new StringBuilder ();
     Line line = lines;
@@ -982,7 +982,7 @@ final class Emitter
    * @param lines
    *        The lines to write.
    */
-  private void _emitXMLLines (final HCStack out, final Line lines)
+  private void _emitXMLLines (final MarkdownHCStack out, final Line lines)
   {
     Line line = lines;
     if (m_aConfig.isSafeMode ())
@@ -1048,7 +1048,7 @@ final class Emitter
     }
   }
 
-  private void _emitXMLComment (final HCStack out, final Line lines)
+  private void _emitXMLComment (final MarkdownHCStack out, final Line lines)
   {
     Line line = lines;
     final StringBuilder aXML = new StringBuilder ();
@@ -1081,7 +1081,7 @@ final class Emitter
    * @param meta
    *        Meta information.
    */
-  private void _emitCodeLines (final HCStack out,
+  private void _emitCodeLines (final MarkdownHCStack out,
                                final Line aLines,
                                @Nonnull final String meta,
                                final boolean removeIndent)
@@ -1122,7 +1122,7 @@ final class Emitter
    * @param meta
    *        Meta information.
    */
-  protected void emitPluginLines (final HCStack out, final Line lines, @Nonnull final String meta)
+  protected void emitPluginLines (final MarkdownHCStack out, final Line lines, @Nonnull final String meta)
   {
     Line line = lines;
 

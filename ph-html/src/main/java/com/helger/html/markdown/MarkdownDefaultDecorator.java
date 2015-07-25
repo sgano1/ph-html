@@ -65,51 +65,51 @@ public class MarkdownDefaultDecorator implements IMarkdownDecorator
   public MarkdownDefaultDecorator ()
   {}
 
-  public void openParagraph (@Nonnull final HCStack out)
+  public void openParagraph (@Nonnull final MarkdownHCStack out)
   {
     out.push (new HCP ());
   }
 
-  public void closeParagraph (@Nonnull final HCStack out)
+  public void closeParagraph (@Nonnull final MarkdownHCStack out)
   {
     out.pop ();
   }
 
-  public void openBlockquote (@Nonnull final HCStack out)
+  public void openBlockquote (@Nonnull final MarkdownHCStack out)
   {
     out.push (new HCBlockQuote ());
   }
 
-  public void closeBlockquote (@Nonnull final HCStack out)
+  public void closeBlockquote (@Nonnull final MarkdownHCStack out)
   {
     out.pop ();
   }
 
-  public void openCodeBlock (@Nonnull final HCStack out)
+  public void openCodeBlock (@Nonnull final MarkdownHCStack out)
   {
     out.push (new HCPre ());
     out.push (new HCCode ());
   }
 
-  public void closeCodeBlock (@Nonnull final HCStack out)
+  public void closeCodeBlock (@Nonnull final MarkdownHCStack out)
   {
     out.pop ();
     out.pop ();
   }
 
   @Nonnull
-  public HCCode openCodeSpan (@Nonnull final HCStack out)
+  public HCCode openCodeSpan (@Nonnull final MarkdownHCStack out)
   {
     return out.push (new HCCode ());
   }
 
-  public void closeCodeSpan (@Nonnull final HCStack out)
+  public void closeCodeSpan (@Nonnull final MarkdownHCStack out)
   {
     out.pop ();
   }
 
   @Nonnull
-  public IHCElementWithChildren <?> openHeadline (@Nonnull final HCStack out, final int level)
+  public IHCElementWithChildren <?> openHeadline (@Nonnull final MarkdownHCStack out, final int level)
   {
     switch (level)
     {
@@ -129,100 +129,100 @@ public class MarkdownDefaultDecorator implements IMarkdownDecorator
     throw new IllegalArgumentException ();
   }
 
-  public void closeHeadline (@Nonnull final HCStack out, final int level)
+  public void closeHeadline (@Nonnull final MarkdownHCStack out, final int level)
   {
     out.pop ();
   }
 
-  public void openStrong (@Nonnull final HCStack out)
+  public void openStrong (@Nonnull final MarkdownHCStack out)
   {
     out.push (new HCStrong ());
   }
 
-  public void closeStrong (@Nonnull final HCStack out)
+  public void closeStrong (@Nonnull final MarkdownHCStack out)
   {
     out.pop ();
   }
 
-  public void openStrike (@Nonnull final HCStack out)
+  public void openStrike (@Nonnull final MarkdownHCStack out)
   {
     out.push (new HCS ());
   }
 
-  public void closeStrike (@Nonnull final HCStack out)
+  public void closeStrike (@Nonnull final MarkdownHCStack out)
   {
     out.pop ();
   }
 
-  public void openEmphasis (@Nonnull final HCStack out)
+  public void openEmphasis (@Nonnull final MarkdownHCStack out)
   {
     out.push (new HCEM ());
   }
 
-  public void closeEmphasis (@Nonnull final HCStack out)
+  public void closeEmphasis (@Nonnull final MarkdownHCStack out)
   {
     out.pop ();
   }
 
-  public void openSuper (@Nonnull final HCStack out)
+  public void openSuper (@Nonnull final MarkdownHCStack out)
   {
     out.push (new HCSup ());
   }
 
-  public void closeSuper (@Nonnull final HCStack out)
+  public void closeSuper (@Nonnull final MarkdownHCStack out)
   {
     out.pop ();
   }
 
-  public void openOrderedList (@Nonnull final HCStack out)
+  public void openOrderedList (@Nonnull final MarkdownHCStack out)
   {
     out.push (new HCOL ());
   }
 
-  public void closeOrderedList (@Nonnull final HCStack out)
+  public void closeOrderedList (@Nonnull final MarkdownHCStack out)
   {
     out.pop ();
   }
 
-  public void openUnorderedList (@Nonnull final HCStack out)
+  public void openUnorderedList (@Nonnull final MarkdownHCStack out)
   {
     out.push (new HCUL ());
   }
 
-  public void closeUnorderedList (@Nonnull final HCStack out)
+  public void closeUnorderedList (@Nonnull final MarkdownHCStack out)
   {
     out.pop ();
   }
 
   @Nonnull
-  public HCLI openListItem (@Nonnull final HCStack out)
+  public HCLI openListItem (@Nonnull final MarkdownHCStack out)
   {
     return out.push (new HCLI ());
   }
 
-  public void closeListItem (@Nonnull final HCStack out)
+  public void closeListItem (@Nonnull final MarkdownHCStack out)
   {
     out.pop ();
   }
 
-  public void appendHorizontalRuler (@Nonnull final HCStack out)
+  public void appendHorizontalRuler (@Nonnull final MarkdownHCStack out)
   {
     out.append (new HCHR ());
   }
 
   @Nonnull
-  public HCA openLink (@Nonnull final HCStack out)
+  public HCA openLink (@Nonnull final MarkdownHCStack out)
   {
     return out.push (new HCA ());
   }
 
-  public void closeLink (@Nonnull final HCStack out)
+  public void closeLink (@Nonnull final MarkdownHCStack out)
   {
     out.pop ();
   }
 
   @Nonnull
-  public HCImg appendImage (@Nonnull final HCStack out)
+  public HCImg appendImage (@Nonnull final MarkdownHCStack out)
   {
     final HCImg ret = new HCImg ();
     out.append (ret);

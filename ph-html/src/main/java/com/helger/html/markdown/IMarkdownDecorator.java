@@ -44,7 +44,7 @@ public interface IMarkdownDecorator
    * @param out
    *        The StringBuilder to write to.
    */
-  void openParagraph (@Nonnull HCStack out);
+  void openParagraph (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when a paragraph is closed.
@@ -59,7 +59,7 @@ public interface IMarkdownDecorator
    * @param out
    *        The StringBuilder to write to.
    */
-  void closeParagraph (@Nonnull HCStack out);
+  void closeParagraph (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when a blockquote is opened. Default implementation is:
@@ -71,7 +71,7 @@ public interface IMarkdownDecorator
    * @param out
    *        The StringBuilder to write to.
    */
-  void openBlockquote (@Nonnull HCStack out);
+  void openBlockquote (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when a blockquote is closed.
@@ -86,7 +86,7 @@ public interface IMarkdownDecorator
    * @param out
    *        The StringBuilder to write to.
    */
-  void closeBlockquote (@Nonnull HCStack out);
+  void closeBlockquote (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when a code block is opened.
@@ -101,7 +101,7 @@ public interface IMarkdownDecorator
    * @param out
    *        The StringBuilder to write to.
    */
-  void openCodeBlock (@Nonnull HCStack out);
+  void openCodeBlock (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when a code block is closed.
@@ -116,7 +116,7 @@ public interface IMarkdownDecorator
    * @param out
    *        The StringBuilder to write to.
    */
-  void closeCodeBlock (@Nonnull HCStack out);
+  void closeCodeBlock (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when a code span is opened.
@@ -132,7 +132,7 @@ public interface IMarkdownDecorator
    *        The StringBuilder to write to.
    * @return code element
    */
-  HCCode openCodeSpan (@Nonnull HCStack out);
+  HCCode openCodeSpan (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when a code span is closed.
@@ -147,7 +147,7 @@ public interface IMarkdownDecorator
    * @param out
    *        The StringBuilder to write to.
    */
-  void closeCodeSpan (@Nonnull HCStack out);
+  void closeCodeSpan (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when a headline is opened.
@@ -170,7 +170,7 @@ public interface IMarkdownDecorator
    * @return Headline element
    */
   @Nonnull
-  IHCElementWithChildren <?> openHeadline (@Nonnull HCStack out, int level);
+  IHCElementWithChildren <?> openHeadline (@Nonnull MarkdownHCStack out, int level);
 
   /**
    * Called when a headline is closed.
@@ -189,7 +189,7 @@ public interface IMarkdownDecorator
    * @param level
    *        Headline level
    */
-  void closeHeadline (@Nonnull HCStack out, int level);
+  void closeHeadline (@Nonnull MarkdownHCStack out, int level);
 
   /**
    * Called when a strong span is opened.
@@ -204,7 +204,7 @@ public interface IMarkdownDecorator
    * @param out
    *        The StringBuilder to write to.
    */
-  void openStrong (@Nonnull HCStack out);
+  void openStrong (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when a strong span is closed.
@@ -219,7 +219,7 @@ public interface IMarkdownDecorator
    * @param out
    *        The StringBuilder to write to.
    */
-  void closeStrong (@Nonnull HCStack out);
+  void closeStrong (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when a strike span is opened.
@@ -234,7 +234,7 @@ public interface IMarkdownDecorator
    * @param out
    *        The StringBuilder to write to.
    */
-  void openStrike (@Nonnull HCStack out);
+  void openStrike (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when a strike span is closed.
@@ -249,7 +249,7 @@ public interface IMarkdownDecorator
    * @param out
    *        The StringBuilder to write to.
    */
-  void closeStrike (@Nonnull HCStack out);
+  void closeStrike (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when an emphasis span is opened.
@@ -264,7 +264,7 @@ public interface IMarkdownDecorator
    * @param out
    *        The StringBuilder to write to.
    */
-  void openEmphasis (@Nonnull HCStack out);
+  void openEmphasis (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when an emphasis span is closed.
@@ -279,7 +279,7 @@ public interface IMarkdownDecorator
    * @param out
    *        The StringBuilder to write to.
    */
-  void closeEmphasis (@Nonnull HCStack out);
+  void closeEmphasis (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when a superscript span is opened.
@@ -294,7 +294,7 @@ public interface IMarkdownDecorator
    * @param out
    *        The StringBuilder to write to.
    */
-  void openSuper (@Nonnull HCStack out);
+  void openSuper (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when a superscript span is closed.
@@ -309,7 +309,7 @@ public interface IMarkdownDecorator
    * @param out
    *        The StringBuilder to write to.
    */
-  void closeSuper (@Nonnull HCStack out);
+  void closeSuper (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when an ordered list is opened.
@@ -324,7 +324,7 @@ public interface IMarkdownDecorator
    * @param out
    *        The StringBuilder to write to.
    */
-  void openOrderedList (@Nonnull HCStack out);
+  void openOrderedList (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when an ordered list is closed.
@@ -339,7 +339,7 @@ public interface IMarkdownDecorator
    * @param out
    *        The StringBuilder to write to.
    */
-  void closeOrderedList (@Nonnull HCStack out);
+  void closeOrderedList (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when an unordered list is opened.
@@ -354,7 +354,7 @@ public interface IMarkdownDecorator
    * @param out
    *        The StringBuilder to write to.
    */
-  void openUnorderedList (@Nonnull HCStack out);
+  void openUnorderedList (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when an unordered list is closed.
@@ -369,7 +369,7 @@ public interface IMarkdownDecorator
    * @param out
    *        The StringBuilder to write to.
    */
-  void closeUnorderedList (@Nonnull HCStack out);
+  void closeUnorderedList (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when a list item is opened.
@@ -389,7 +389,7 @@ public interface IMarkdownDecorator
    * @return List item element
    */
   @Nonnull
-  HCLI openListItem (@Nonnull HCStack out);
+  HCLI openListItem (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when a list item is closed.
@@ -404,7 +404,7 @@ public interface IMarkdownDecorator
    * @param out
    *        The StringBuilder to write to.
    */
-  void closeListItem (@Nonnull HCStack out);
+  void closeListItem (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when a horizontal ruler is encountered.
@@ -419,7 +419,7 @@ public interface IMarkdownDecorator
    * @param out
    *        The StringBuilder to write to.
    */
-  void appendHorizontalRuler (@Nonnull HCStack out);
+  void appendHorizontalRuler (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when a link is opened.
@@ -439,9 +439,9 @@ public interface IMarkdownDecorator
    * @return Link element
    */
   @Nonnull
-  HCA openLink (@Nonnull HCStack out);
+  HCA openLink (@Nonnull MarkdownHCStack out);
 
-  void closeLink (@Nonnull HCStack out);
+  void closeLink (@Nonnull MarkdownHCStack out);
 
   /**
    * Called when an image is opened.
@@ -461,5 +461,5 @@ public interface IMarkdownDecorator
    * @return Image element
    */
   @Nonnull
-  HCImg appendImage (@Nonnull HCStack out);
+  HCImg appendImage (@Nonnull MarkdownHCStack out);
 }

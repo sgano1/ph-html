@@ -70,5 +70,5 @@ public interface IMarkdownBlockEmitter
    * @param meta
    *        Meta information as a single String (if any) or empty String
    */
-  void emitBlock (@Nonnull HCStack out, @Nonnull List <String> lines, @Nonnull String meta);
+  void emitBlock (@Nonnull MarkdownHCStack out, @Nonnull List <String> lines, @Nonnull String meta);
 }

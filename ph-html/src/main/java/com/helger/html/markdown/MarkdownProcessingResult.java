@@ -32,7 +32,7 @@ public class MarkdownProcessingResult
 {
   private final HCNodeList m_aNodeList;
 
-  public MarkdownProcessingResult (@Nonnull final HCStack aResult)
+  public MarkdownProcessingResult (@Nonnull final MarkdownHCStack aResult)
   {
     ValueEnforcer.notNull (aResult, "Result");
 
@@ -54,6 +54,6 @@ public class MarkdownProcessingResult
   @Nonnull
   public String getAsHTMLString (@Nonnull final IHCConversionSettings aConversionSettings)
   {
-    return HCSettings.getAsHTMLString (m_aNodeList, aConversionSettings).trim ();
+    return m_aNodeList.getAsHTMLString (aConversionSettings).trim ();
   }
 }

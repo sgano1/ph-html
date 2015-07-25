@@ -18,6 +18,7 @@ package com.helger.html.markdown;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.collection.impl.NonBlockingStack;
@@ -46,11 +47,12 @@ import com.helger.html.hc.html.HCTHead;
 import com.helger.html.hc.impl.HCNodeList;
 import com.helger.html.hc.impl.HCTextNode;
 
-final class HCStack
+@NotThreadSafe
+final class MarkdownHCStack
 {
   private final NonBlockingStack <IHCNode> m_aStack = new NonBlockingStack <IHCNode> ();
 
-  public HCStack ()
+  public MarkdownHCStack ()
   {
     m_aStack.push (new HCNodeList ());
   }

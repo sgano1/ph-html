@@ -35,7 +35,6 @@ import com.helger.html.hc.conversion.HCConversionSettings;
 import com.helger.html.hc.conversion.HCConversionSettingsProvider;
 import com.helger.html.hc.conversion.IHCConversionSettings;
 import com.helger.html.hc.conversion.IHCConversionSettingsProvider;
-import com.helger.html.hc.customize.IHCCustomizer;
 import com.helger.html.hc.customize.IHCOnDocumentReadyProvider;
 
 /**
@@ -127,8 +126,8 @@ public final class HCSettings
   }
 
   /**
-   * Convert the passed HC node to a micro node using the conversion settings
-   * provider.
+   * Convert the passed HC node to a micro node using the default conversion
+   * settings.
    *
    * @param aHCNode
    *        The node to be converted. May not be <code>null</code>.
@@ -137,26 +136,12 @@ public final class HCSettings
   @Nullable
   public static IMicroNode getAsNode (@Nonnull final IHCNode aHCNode)
   {
-    return getAsNode (aHCNode, getConversionSettings ());
+    return aHCNode.convertToNode (getConversionSettings ());
   }
 
   /**
-   * @param aHCNode
-   *        The node to be converted. May not be <code>null</code>.
-   * @param aConversionSettings
-   *        The conversion settings to be used. May not be <code>null</code>.
-   * @return The fully created HTML node
-   */
-  @Nullable
-  public static IMicroNode getAsNode (@Nonnull final IHCNode aHCNode,
-                                      @Nonnull final IHCConversionSettings aConversionSettings)
-  {
-    return aHCNode.convertToNode (aConversionSettings);
-  }
-
-  /**
-   * Convert the passed HC node to an HTML string. Indent and align status is
-   * determined from {@link GlobalDebug#isDebugMode()}
+   * Convert the passed HC node to an HTML string using the default conversion
+   * settings.
    *
    * @param aHCNode
    *        The node to be converted. May not be <code>null</code>.
@@ -165,24 +150,7 @@ public final class HCSettings
   @Nonnull
   public static String getAsHTMLString (@Nonnull final IHCNode aHCNode)
   {
-    return getAsHTMLString (aHCNode, getConversionSettings ());
-  }
-
-  /**
-   * Convert the passed HC node to an HTML string using the passed conversion
-   * settings.
-   *
-   * @param aHCNode
-   *        The node to be converted. May not be <code>null</code>.
-   * @param aConversionSettings
-   *        The conversion settings to be used. May not be <code>null</code>.
-   * @return The node as XML optionally without indentation.
-   */
-  @Nonnull
-  public static String getAsHTMLString (@Nonnull final IHCNode aHCNode,
-                                        @Nonnull final IHCConversionSettings aConversionSettings)
-  {
-    return aHCNode.getAsHTMLString (aConversionSettings);
+    return aHCNode.getAsHTMLString (getConversionSettings ());
   }
 
   /**
@@ -216,7 +184,7 @@ public final class HCSettings
     final HCConversionSettings aRealCS = new HCConversionSettings (aConversionSettings);
     // And modify the copied XML settings
     aRealCS.getXMLWriterSettings ().setEmitNamespaces (false);
-    return getAsHTMLString (aHCNode, aRealCS);
+    return aHCNode.getAsHTMLString (aRealCS);
   }
 
   /**
@@ -228,17 +196,6 @@ public final class HCSettings
   public static Charset getHTMLCharset ()
   {
     return getConversionSettings ().getXMLWriterSettings ().getCharsetObj ();
-  }
-
-  /**
-   * Get the customizer currently used.
-   *
-   * @return The customizer to use. May be <code>null</code>.
-   */
-  @Nullable
-  public static IHCCustomizer getCustomizer ()
-  {
-    return getConversionSettings ().getCustomizer ();
   }
 
   public static boolean isAutoCompleteOffForPasswordEdits ()

@@ -509,7 +509,7 @@ public class MarkdownProcessor
       aParent.removeSurroundingEmptyLines ();
       _recurse (aParent, false);
 
-      final HCStack aOut = new HCStack ();
+      final MarkdownHCStack aOut = new MarkdownHCStack ();
       Block aBlock = aParent.m_aBlocks;
       while (aBlock != null)
       {

@@ -34,5 +34,5 @@ public interface IMarkdownSpanEmitter
    * @param content
    *        The span's content.
    */
-  void emitSpan (@Nonnull HCStack out, @Nonnull HCStack content);
+  void emitSpan (@Nonnull MarkdownHCStack out, @Nonnull MarkdownHCStack content);
 }
