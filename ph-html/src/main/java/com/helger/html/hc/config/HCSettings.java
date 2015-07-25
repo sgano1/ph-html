@@ -31,7 +31,6 @@ import com.helger.commons.lang.ServiceLoaderHelper;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.IHCNodeBuilder;
 import com.helger.html.hc.conversion.HCConversionSettings;
 import com.helger.html.hc.conversion.HCConversionSettingsProvider;
 import com.helger.html.hc.conversion.IHCConversionSettings;
@@ -41,7 +40,7 @@ import com.helger.html.hc.customize.IHCOnDocumentReadyProvider;
 
 /**
  * Global HC settings
- * 
+ *
  * @author Philip Helger
  */
 @ThreadSafe
@@ -128,37 +127,6 @@ public final class HCSettings
   }
 
   /**
-   * Convert the passed HC node builder to a micro node using the conversion
-   * settings provider.
-   *
-   * @param aNodeBuilder
-   *        The node to be converted. May not be <code>null</code>.
-   * @return The fully created HTML node
-   */
-  @Nullable
-  public static IMicroNode buildAndGetAsNode (@Nonnull final IHCNodeBuilder aNodeBuilder)
-  {
-    return getAsNode (aNodeBuilder.build (), getConversionSettings ());
-  }
-
-  /**
-   * Convert the passed HC node builder to a micro node using the conversion
-   * settings provider.
-   *
-   * @param aNodeBuilder
-   *        The node to be converted. May not be <code>null</code>.
-   * @param aConversionSettings
-   *        The conversion settings to be used. May not be <code>null</code>.
-   * @return The fully created HTML node
-   */
-  @Nullable
-  public static IMicroNode buildAndGetAsNode (@Nonnull final IHCNodeBuilder aNodeBuilder,
-                                              @Nonnull final IHCConversionSettings aConversionSettings)
-  {
-    return getAsNode (aNodeBuilder.build (), aConversionSettings);
-  }
-
-  /**
    * Convert the passed HC node to a micro node using the conversion settings
    * provider.
    *
@@ -184,37 +152,6 @@ public final class HCSettings
                                       @Nonnull final IHCConversionSettings aConversionSettings)
   {
     return aHCNode.convertToNode (aConversionSettings);
-  }
-
-  /**
-   * Convert the passed HC node builder to an HTML string using default pretty
-   * print mode.
-   *
-   * @param aNodeBuilder
-   *        The node to be converted. May not be <code>null</code>.
-   * @return The node as HTML.
-   */
-  @Nonnull
-  public static String buildAndGetAsHTMLString (@Nonnull final IHCNodeBuilder aNodeBuilder)
-  {
-    return getAsHTMLString (aNodeBuilder.build (), getConversionSettings ());
-  }
-
-  /**
-   * Convert the passed HC node builder to an HTML string using the passed
-   * conversion settings.
-   *
-   * @param aNodeBuilder
-   *        The node to be converted. May not be <code>null</code>.
-   * @param aConversionSettings
-   *        The conversion settings to be used. May not be <code>null</code>.
-   * @return The node as XML optionally without indentation.
-   */
-  @Nonnull
-  public static String buildAndGetAsHTMLString (@Nonnull final IHCNodeBuilder aNodeBuilder,
-                                                @Nonnull final IHCConversionSettings aConversionSettings)
-  {
-    return getAsHTMLString (aNodeBuilder.build (), aConversionSettings);
   }
 
   /**
