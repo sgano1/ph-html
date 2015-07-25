@@ -35,6 +35,7 @@ import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.conversion.HCConversionSettings;
 import com.helger.html.hc.conversion.IHCConversionSettings;
 import com.helger.html.hc.customize.IHCOnDocumentReadyProvider;
+import com.helger.html.hc.html.HCScript;
 
 /**
  * Global HC settings
@@ -193,6 +194,33 @@ public final class HCSettings
   public static Charset getHTMLCharset ()
   {
     return getConversionSettings ().getXMLWriterSettings ().getCharsetObj ();
+  }
+
+  /**
+   * Set the default HTML version to use. This sets the HTML version in the
+   * {@link HCSettings} class and performs some additional modifications
+   * depending on the chosen version.
+   *
+   * @param eHTMLVersion
+   *        The HTML version to use. May not be <code>null</code>.
+   */
+  public static void setDefaultHTMLVersion (@Nonnull final EHTMLVersion eHTMLVersion)
+  {
+    ValueEnforcer.notNull (eHTMLVersion, "HTMLVersion");
+
+    // Update the HCSettings
+    getMutableConversionSettings ().setHTMLVersion (eHTMLVersion);
+
+    if (eHTMLVersion.isAtLeastHTML5 ())
+    {
+      // No need to put anything in a comment
+      HCScript.setDefaultMode (HCScript.EMode.PLAIN_TEXT_NO_ESCAPE);
+    }
+    else
+    {
+      // Use default mode
+      HCScript.setDefaultMode (HCScript.DEFAULT_MODE);
+    }
   }
 
   public static boolean isAutoCompleteOffForPasswordEdits ()
