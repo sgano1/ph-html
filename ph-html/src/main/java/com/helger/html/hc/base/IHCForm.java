@@ -23,6 +23,7 @@ import com.helger.commons.mime.IMimeType;
 import com.helger.commons.state.ETriState;
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.hc.IHCElementWithChildren;
+import com.helger.html.hc.IHCHasName;
 import com.helger.html.hc.api.EHCFormMethod;
 import com.helger.html.hc.html.HC_Target;
 import com.helger.html.js.IHasJSCode;
@@ -35,7 +36,7 @@ import com.helger.html.js.writer.IHasJSCodeWithSettings;
  * @param <THISTYPE>
  *        Implementation type
  */
-public interface IHCForm <THISTYPE extends IHCForm <THISTYPE>> extends IHCElementWithChildren <THISTYPE>
+public interface IHCForm <THISTYPE extends IHCForm <THISTYPE>> extends IHCElementWithChildren <THISTYPE>, IHCHasName <THISTYPE>
 {
   @Nullable
   String getAcceptCharset ();
@@ -97,12 +98,6 @@ public interface IHCForm <THISTYPE extends IHCForm <THISTYPE>> extends IHCElemen
 
   @Nonnull
   THISTYPE setMethod (@Nullable EHCFormMethod eMethod);
-
-  @Nullable
-  String getName ();
-
-  @Nonnull
-  THISTYPE setName (@Nullable String sName);
 
   boolean isNoValidate ();
 

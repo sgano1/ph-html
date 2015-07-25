@@ -17,7 +17,6 @@
 package com.helger.html.hc;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 /**
  * Base interface for controls like edit, checkbox, radio button, select or text
@@ -27,14 +26,8 @@ import javax.annotation.Nullable;
  * @param <THISTYPE>
  *        Implementation type
  */
-public interface IHCControl <THISTYPE extends IHCControl <THISTYPE>> extends IHCElement <THISTYPE>, IHCHasFocus <THISTYPE>, IHCHasState <THISTYPE>
+public interface IHCControl <THISTYPE extends IHCControl <THISTYPE>> extends IHCElement <THISTYPE>, IHCHasFocus <THISTYPE>, IHCHasState <THISTYPE>, IHCHasName <THISTYPE>
 {
-  @Nullable
-  String getName ();
-
-  @Nonnull
-  THISTYPE setName (@Nullable String sName);
-
   boolean isReadonly ();
 
   @Nonnull

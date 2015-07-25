@@ -179,6 +179,14 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
       if (RegExHelper.stringMatchesPattern (".*\\s.*", sID))
         throw new IllegalArgumentException ("ID '" + sID + "' may not contains whitespace chars!");
     }
+    if (m_sID != null)
+      if (StringHelper.hasText (sID))
+      {
+        if (!m_sID.equals (sID))
+          s_aLogger.warn ("Overwriting HC object ID '" + m_sID + "' with '" + sID + "' - this may have side effects!");
+      }
+      else
+        s_aLogger.warn ("The HC object ID '" + m_sID + "' will be removed - this may have side effects");
     m_sID = sID;
     return thisAsT ();
   }
