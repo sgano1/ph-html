@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.annotation.Nonempty;
 import com.helger.html.css.ICSSClassProvider;
-import com.helger.html.js.builder.JSFieldRef;
+import com.helger.html.jscode.JSFieldRef;
 
 /**
  * This file is generated - do NOT edit!

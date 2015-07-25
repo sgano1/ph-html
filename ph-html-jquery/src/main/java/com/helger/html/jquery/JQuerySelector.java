@@ -39,10 +39,10 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.hc.IHCHasID;
 import com.helger.html.hc.config.HCSettings;
-import com.helger.html.js.builder.IJSExpression;
-import com.helger.html.js.builder.JSExpr;
-import com.helger.html.js.builder.JSStringLiteral;
 import com.helger.html.js.writer.IJSWriterSettings;
+import com.helger.html.jscode.IJSExpression;
+import com.helger.html.jscode.JSExpr;
+import com.helger.html.jscode.JSStringLiteral;
 
 @Immutable
 @CodingStyleguideUnaware

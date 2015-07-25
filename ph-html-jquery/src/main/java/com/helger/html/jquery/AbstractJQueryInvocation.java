@@ -21,10 +21,10 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.annotation.Nonempty;
 import com.helger.html.css.ICSSClassProvider;
-import com.helger.html.js.builder.AbstractJSInvocation;
-import com.helger.html.js.builder.IJSExpression;
-import com.helger.html.js.builder.JSFieldRef;
-import com.helger.html.js.builder.JSFunction;
+import com.helger.html.jscode.AbstractJSInvocation;
+import com.helger.html.jscode.IJSExpression;
+import com.helger.html.jscode.JSFieldRef;
+import com.helger.html.jscode.JSFunction;
 
 /**
  * Special invocation semantics for jQuery

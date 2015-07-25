@@ -24,7 +24,7 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.css.DefaultCSSClassProvider;
 import com.helger.html.jquery.JQuerySelector;
 import com.helger.html.jquery.JQuerySelectorList;
-import com.helger.html.js.builder.JSExpr;
+import com.helger.html.jscode.JSExpr;
 
 /**
  * Test class for class {@link JQuerySelector}.

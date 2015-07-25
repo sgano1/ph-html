@@ -20,9 +20,9 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.annotation.Nonempty;
-import com.helger.html.js.builder.IJSExpression;
-import com.helger.html.js.builder.JSExpr;
-import com.helger.html.js.builder.JSFunction;
+import com.helger.html.jscode.IJSExpression;
+import com.helger.html.jscode.JSExpr;
+import com.helger.html.jscode.JSFunction;
 
 /**
  * Special invocation semantics for jQuery

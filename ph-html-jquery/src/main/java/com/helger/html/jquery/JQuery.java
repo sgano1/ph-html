@@ -40,12 +40,12 @@ import com.helger.html.hc.IHCHasID;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.js.IHasJSCode;
-import com.helger.html.js.builder.IJSExpression;
-import com.helger.html.js.builder.JSAnonymousFunction;
-import com.helger.html.js.builder.JSAssocArray;
-import com.helger.html.js.builder.JSExpr;
-import com.helger.html.js.builder.JSFunction;
-import com.helger.html.js.builder.html.JSHtml;
+import com.helger.html.jscode.IJSExpression;
+import com.helger.html.jscode.JSAnonymousFunction;
+import com.helger.html.jscode.JSAssocArray;
+import com.helger.html.jscode.JSExpr;
+import com.helger.html.jscode.JSFunction;
+import com.helger.html.jscode.html.JSHtml;
 import com.helger.json.IJson;
 import com.helger.json.serialize.JsonWriter;
 

@@ -27,9 +27,9 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.state.EChange;
-import com.helger.html.js.builder.IJSExpression;
 import com.helger.html.js.writer.IHasJSCodeWithSettings;
 import com.helger.html.js.writer.IJSWriterSettings;
+import com.helger.html.jscode.IJSExpression;
 
 /**
  * A list of jQuery selectors that are chained with ' ' (space)
