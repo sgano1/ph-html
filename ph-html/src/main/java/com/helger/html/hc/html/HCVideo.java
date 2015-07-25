@@ -18,6 +18,7 @@ package com.helger.html.hc.html;
 
 import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.SinceHTML5;
+import com.helger.html.hc.base.AbstractHCMediaElement;
 
 @SinceHTML5
 public class HCVideo extends AbstractHCMediaElement <HCVideo>

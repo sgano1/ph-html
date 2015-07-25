@@ -37,7 +37,7 @@ import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
  * @param <THISTYPE>
  *        The implementation type.
  */
-public class AbstractHCImg <THISTYPE extends AbstractHCImg <THISTYPE>> extends AbstractHCMediaElementChild <THISTYPE>implements IHCImg <THISTYPE>
+public abstract class AbstractHCImg <THISTYPE extends AbstractHCImg <THISTYPE>> extends AbstractHCMediaElementChild <THISTYPE>implements IHCImg <THISTYPE>
 {
   // Must be a String to allow for inline images
   private String m_sSrc;

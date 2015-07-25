@@ -19,7 +19,7 @@ package com.helger.html.hc.base;
 import com.helger.html.hc.IHCElementWithChildren;
 
 /**
- * Interface for deefinition items
+ * Interface for definition items
  *
  * @author Philip Helger
  * @param <THISTYPE>

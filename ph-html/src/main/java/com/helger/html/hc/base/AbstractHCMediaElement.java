@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html;
+package com.helger.html.hc.base;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,12 +32,13 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.SinceHTML5;
 import com.helger.html.hc.api.EHCCORSSettings;
 import com.helger.html.hc.api.EHCPreload;
-import com.helger.html.hc.base.IHCMediaElementChild;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
+import com.helger.html.hc.html.HCSource;
+import com.helger.html.hc.html.HCTrack;
 import com.helger.html.hc.impl.AbstractHCElementWithInternalChildren;
 
 @SinceHTML5
-public abstract class AbstractHCMediaElement <THISTYPE extends AbstractHCMediaElement <THISTYPE>> extends AbstractHCElementWithInternalChildren <THISTYPE, IHCMediaElementChild <?>>
+public abstract class AbstractHCMediaElement <THISTYPE extends AbstractHCMediaElement <THISTYPE>> extends AbstractHCElementWithInternalChildren <THISTYPE, IHCMediaElementChild <?>>implements IHCMediaElement <THISTYPE>
 {
   /** By default auto play is disabled */
   public static final boolean DEFAULT_AUTOPLAY = false;
