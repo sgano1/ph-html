@@ -270,10 +270,10 @@ public class HCObject extends AbstractHCElementWithChildren <HCObject>
   }
 
   @Override
-  protected void applyProperties (@Nonnull final IMicroElement aElement,
+  protected void fillMicroElement (@Nonnull final IMicroElement aElement,
                                   @Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
     if (m_nWidth > 0)
       aElement.setAttribute (CHTMLAttributes.WIDTH, m_nWidth);
     if (m_nHeight > 0)

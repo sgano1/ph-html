@@ -267,7 +267,7 @@ public class MetaElement implements IMutableMetaElement
     final IMicroContainer ret = new MicroContainer ();
     for (final Map.Entry <Locale, String> aMetaEntry : m_aContents.entrySet ())
     {
-      final IMicroElement aMeta = ret.appendElement (sNamespaceURI, EHTMLElement.META.getElementNameLowerCase ());
+      final IMicroElement aMeta = ret.appendElement (sNamespaceURI, EHTMLElement.META.getElementName ());
       aMeta.setAttribute (bIsHttpEquiv ? CHTMLAttributes.HTTP_EQUIV : getNodeNameAttribute (), m_sName);
       aMeta.setAttribute (getNodeContentAttribute (), aMetaEntry.getValue ());
       final Locale aContentLocale = aMetaEntry.getKey ();

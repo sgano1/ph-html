@@ -286,9 +286,9 @@ public class HCScript extends AbstractHCScript <HCScript>
   }
 
   @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
 
     // m_sJSCode is set in canConvertToNode which is called before this method!
     setInlineScript (aElement, m_sJSCode, m_eMode, getNewLineString ());

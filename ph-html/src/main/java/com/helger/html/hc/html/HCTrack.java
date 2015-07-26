@@ -110,9 +110,9 @@ public class HCTrack extends AbstractHCMediaElementChild <HCTrack>
   }
 
   @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
     if (StringHelper.hasText (m_sKind))
       aElement.setAttribute (CHTMLAttributes.KIND, m_sKind);
     if (m_aSrc != null)

@@ -185,9 +185,9 @@ public abstract class AbstractHCMediaElement <THISTYPE extends AbstractHCMediaEl
 
   @Override
   @OverridingMethodsMustInvokeSuper
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
     if (m_bAutoPlay)
       aElement.setAttribute (CHTMLAttributes.AUTOPLAY, CHTMLAttributeValues.AUTOPLAY);
     if (m_ePreload != null)

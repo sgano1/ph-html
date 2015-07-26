@@ -103,9 +103,9 @@ public abstract class AbstractHCCol <IMPLTYPE extends AbstractHCCol <IMPLTYPE>> 
 
   @Override
   @OverridingMethodsMustInvokeSuper
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
     if (StringHelper.hasText (m_sWidth))
       aElement.setAttribute (CHTMLAttributes.WIDTH, m_sWidth);
     if (m_nSpan > 0)

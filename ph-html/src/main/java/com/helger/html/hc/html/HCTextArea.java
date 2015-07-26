@@ -267,9 +267,9 @@ public class HCTextArea extends AbstractHCControl <HCTextArea>
 
   @Override
   @OverridingMethodsMustInvokeSuper
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
     if (m_eAutoComplete.isDefined ())
       aElement.setAttribute (CHTMLAttributes.AUTOCOMPLETE,
                              m_eAutoComplete.isTrue () ? CHTMLAttributeValues.ON : CHTMLAttributeValues.OFF);

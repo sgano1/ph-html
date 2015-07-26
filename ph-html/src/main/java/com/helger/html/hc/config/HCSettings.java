@@ -211,6 +211,9 @@ public final class HCSettings
     // Update the HCSettings
     getMutableConversionSettings ().setHTMLVersion (eHTMLVersion);
 
+    // Update the XMLWriterSettings
+    getMutableConversionSettings ().setXMLWriterSettings (HCConversionSettings.createDefaultXMLWriterSettings (eHTMLVersion));
+
     if (eHTMLVersion.isAtLeastHTML5 ())
     {
       // No need to put anything in a comment

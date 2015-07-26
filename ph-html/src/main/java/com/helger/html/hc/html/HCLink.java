@@ -244,9 +244,9 @@ public class HCLink extends AbstractHCElement <HCLink>implements IHCCSSNode
   }
 
   @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
     if (m_aRel != null)
       aElement.setAttribute (CHTMLAttributes.REL, m_aRel);
     if (m_aRev != null)

@@ -453,9 +453,9 @@ public abstract class AbstractHCSelect <THISTYPE extends AbstractHCSelect <THIST
   }
 
   @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
     if (m_bAutoFocus)
       aElement.setAttribute (CHTMLAttributes.AUTOFOCUS, CHTMLAttributeValues.AUTOFOCUS);
     if (StringHelper.hasText (m_sForm))

@@ -133,9 +133,9 @@ public class HCKeyGen extends AbstractHCElement <HCKeyGen>implements IHCHasState
   }
 
   @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
     if (m_bAutofocus)
       aElement.setAttribute (CHTMLAttributes.AUTOFOCUS, CHTMLAttributeValues.AUTOFOCUS);
     if (StringHelper.hasText (m_sChallenge))

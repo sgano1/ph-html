@@ -214,9 +214,9 @@ public class HCTime extends AbstractHCElementWithChildren <HCTime>
   }
 
   @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
     if (StringHelper.hasText (m_sDatetime))
       aElement.setAttribute (CHTMLAttributes.DATETIME, m_sDatetime);
   }

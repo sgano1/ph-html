@@ -104,9 +104,9 @@ public abstract class AbstractHCCell <IMPLTYPE extends AbstractHCCell <IMPLTYPE>
 
   @Override
   @OverridingMethodsMustInvokeSuper
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
     if (m_nColspan > 1)
       aElement.setAttribute (CHTMLAttributes.COLSPAN, m_nColspan);
     if (m_nRowspan > 1)

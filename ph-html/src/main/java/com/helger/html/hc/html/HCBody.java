@@ -54,9 +54,9 @@ public class HCBody extends AbstractHCElementWithChildren <HCBody>
   @Override
   @OverrideOnDemand
   @OverridingMethodsMustInvokeSuper
-  protected void applyProperties (@Nonnull final IMicroElement eHead,
+  protected void fillMicroElement (@Nonnull final IMicroElement eHead,
                                   @Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (eHead, aConversionSettings);
+    super.fillMicroElement (eHead, aConversionSettings);
   }
 }

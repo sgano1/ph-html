@@ -28,7 +28,6 @@ import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.collection.CollectionHelper;
-import com.helger.commons.debug.GlobalDebug;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.mime.CMimeType;
 import com.helger.commons.state.EChange;
@@ -368,7 +367,7 @@ public class HCHead extends AbstractHCElement <HCHead>
       eHead.appendChild (aCSS.convertToMicroNode (aConversionSettings));
     }
 
-    if (!GlobalDebug.isDebugMode ())
+    if (aConversionSettings.areConsistencyChecksEnabled ())
       HCConsistencyChecker.checkForMaximumCSSResources (nCSSExternals);
   }
 
@@ -381,10 +380,10 @@ public class HCHead extends AbstractHCElement <HCHead>
   }
 
   @Override
-  protected void applyProperties (@Nonnull final IMicroElement eHead,
+  protected void fillMicroElement (@Nonnull final IMicroElement eHead,
                                   @Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (eHead, aConversionSettings);
+    super.fillMicroElement (eHead, aConversionSettings);
 
     if (StringHelper.hasText (m_sProfile))
       eHead.setAttribute (CHTMLAttributes.PROFILE, m_sProfile);

@@ -171,8 +171,8 @@ public enum EHTMLElement
   }
 
   /**
-   * @return The defined element name in any case. Neither <code>null</code> nor
-   *         empty.
+   * @return The defined element name in any lower case. Neither
+   *         <code>null</code> nor empty.
    */
   @Nonnull
   @Nonempty
@@ -182,18 +182,7 @@ public enum EHTMLElement
   }
 
   /**
-   * @return The defined element name in lowercase characters. Neither
-   *         <code>null</code> nor empty.
-   */
-  @Nonnull
-  @Nonempty
-  public String getElementNameLowerCase ()
-  {
-    return m_sElementNameLC;
-  }
-
-  /**
-   * @return The defined element name in uppercase characters. Neither
+   * @return The defined element name in upper case characters. Neither
    *         <code>null</code> nor empty.
    */
   @Nonnull

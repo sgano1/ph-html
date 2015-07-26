@@ -55,9 +55,9 @@ public class HCHR extends AbstractHCElement <HCHR>
   }
 
   @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
     if (m_bNoShade)
       aElement.setAttribute (CHTMLAttributes.NOSHADE, CHTMLAttributes.NOSHADE);
   }

@@ -324,9 +324,9 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
   @Override
   @OverrideOnDemand
   @OverridingMethodsMustInvokeSuper
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
     if (hasChildren ())
       for (final CHILDTYPE aChild : getChildrenFormEmitting (m_aChildren))
         aElement.appendChild (aChild.convertToMicroNode (aConversionSettings));

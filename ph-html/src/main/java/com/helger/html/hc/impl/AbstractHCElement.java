@@ -31,9 +31,6 @@ import javax.annotation.OverridingMethodsMustInvokeSuper;
 import javax.annotation.concurrent.NotThreadSafe;
 import javax.xml.XMLConstants;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.DevelopersNote;
 import com.helger.commons.annotation.Nonempty;
@@ -92,8 +89,6 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   /** By default an element is not spell checked */
   public static final boolean DEFAULT_SPELLCHECK = false;
 
-  private static final Logger s_aLogger = LoggerFactory.getLogger (AbstractHCElement.class);
-
   /** The HTML enum element */
   private final EHTMLElement m_eElement;
   /** The cached element name */
@@ -132,7 +127,8 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   protected AbstractHCElement (@Nonnull final EHTMLElement eElement)
   {
     m_eElement = ValueEnforcer.notNull (eElement, "Element");
-    m_sElementName = eElement.getElementNameLowerCase ();
+    // Always use lowercase element names
+    m_sElementName = eElement.getElementName ();
   }
 
   @Nonnull
@@ -183,10 +179,18 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
       if (StringHelper.hasText (sID))
       {
         if (!m_sID.equals (sID))
-          s_aLogger.warn ("Overwriting HC object ID '" + m_sID + "' with '" + sID + "' - this may have side effects!");
+          HCConsistencyChecker.consistencyWarning ("Overwriting HC object ID '" +
+                                                   m_sID +
+                                                   "' with '" +
+                                                   sID +
+                                                   "' - this may have side effects!");
       }
       else
-        s_aLogger.warn ("The HC object ID '" + m_sID + "' will be removed - this may have side effects");
+      {
+        HCConsistencyChecker.consistencyWarning ("The HC object ID '" +
+                                                 m_sID +
+                                                 "' will be removed - this may have side effects");
+      }
     m_sID = sID;
     return thisAsT ();
   }
@@ -817,7 +821,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
    */
   @OverrideOnDemand
   @Nonnull
-  protected IMicroElement createElement (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  protected IMicroElement createMicroElement (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     return new MicroElement (aConversionSettings.getHTMLNamespaceURI (), m_sElementName);
   }
@@ -832,8 +836,8 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
    */
   @OverrideOnDemand
   @OverridingMethodsMustInvokeSuper
-  protected void applyProperties (@Nonnull final IMicroElement aElement,
-                                  @Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (@Nonnull final IMicroElement aElement,
+                                   @Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     final boolean bHTML5 = aConversionSettings.getHTMLVersion ().isAtLeastHTML5 ();
 
@@ -892,24 +896,27 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
     if (m_eRole != null)
       aElement.setAttribute (CHTMLAttributes.ROLE, m_eRole.getID ());
 
+    final boolean bConsistencyChecksEnabled = aConversionSettings.areConsistencyChecksEnabled ();
     if (m_aCustomAttrs != null && !m_aCustomAttrs.isEmpty ())
       for (final Map.Entry <String, String> aEntry : m_aCustomAttrs.entrySet ())
       {
         final String sAttrName = aEntry.getKey ();
-        // Link element often contains arbitrary attributes
-        if (bHTML5 &&
-            aConversionSettings.areConsistencyChecksEnabled () &&
-            !StringHelper.startsWith (sAttrName, CHTMLAttributes.HTML5_PREFIX_DATA) &&
-            !StringHelper.startsWith (sAttrName, CHTMLAttributes.PREFIX_ARIA) &&
-            m_eElement != EHTMLElement.LINK)
+        if (bConsistencyChecksEnabled)
         {
-          s_aLogger.warn ("Custom attribute '" +
-                          sAttrName +
-                          "' does not start with proposed prefix '" +
-                          CHTMLAttributes.HTML5_PREFIX_DATA +
-                          "' or '" +
-                          CHTMLAttributes.PREFIX_ARIA +
-                          "'");
+          // Link element often contains arbitrary attributes
+          if (bHTML5 &&
+              !StringHelper.startsWith (sAttrName, CHTMLAttributes.HTML5_PREFIX_DATA) &&
+              !StringHelper.startsWith (sAttrName, CHTMLAttributes.PREFIX_ARIA) &&
+              m_eElement != EHTMLElement.LINK)
+          {
+            HCConsistencyChecker.consistencyWarning ("Custom HTML5 attribute '" +
+                                                     sAttrName +
+                                                     "' does not start with one of the proposed prefixes '" +
+                                                     CHTMLAttributes.HTML5_PREFIX_DATA +
+                                                     "' or '" +
+                                                     CHTMLAttributes.PREFIX_ARIA +
+                                                     "'");
+          }
         }
         aElement.setAttribute (sAttrName, aEntry.getValue ());
       }
@@ -926,8 +933,8 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
    *        The conversion settings to be used
    */
   @OverrideOnDemand
-  protected void finishAfterApplyProperties (@Nonnull final IMicroElement eElement,
-                                             @Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  protected void finishMicroElement (@Nonnull final IMicroElement eElement,
+                                     @Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {}
 
   /*
@@ -941,18 +948,22 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   {
     // Run some consistency checks if desired
     if (aConversionSettings.areConsistencyChecksEnabled ())
+    {
+      HCConsistencyChecker.consistencyAssert (isConvertedToMicroNode (),
+                                              "beforeConvertToMicroNode was not called on this element! This seems to be an internal error!");
       HCConsistencyChecker.runConsistencyCheckBeforeCreation (this, aConversionSettings.getHTMLVersion ());
+    }
 
     // Create the element
-    final IMicroElement ret = createElement (aConversionSettings);
+    final IMicroElement ret = createMicroElement (aConversionSettings);
     if (ret == null)
       throw new IllegalStateException ("Created a null element!");
 
     // Set all HTML attributes etc.
-    applyProperties (ret, aConversionSettings);
+    fillMicroElement (ret, aConversionSettings);
 
     // Optional callback after everything was done (implementation dependent)
-    finishAfterApplyProperties (ret, aConversionSettings);
+    finishMicroElement (ret, aConversionSettings);
     return ret;
   }
 

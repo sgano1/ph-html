@@ -74,6 +74,16 @@ public final class HCConsistencyChecker
   private HCConsistencyChecker ()
   {}
 
+  /**
+   * Consistency assert.
+   * 
+   * @param bCondition
+   *        The condition that must be <code>true</code>.
+   * @param sMsg
+   *        The message to be thrown
+   * @throws IllegalStateException
+   *         If the condition does not hold <code>true</code>.
+   */
   public static void consistencyAssert (final boolean bCondition, final String sMsg)
   {
     if (!bCondition)

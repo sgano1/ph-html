@@ -68,9 +68,9 @@ public class HCFrameset extends AbstractHCElementWithChildren <HCFrameset>
   }
 
   @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
     if (m_nCols > 0)
       aElement.setAttribute (CHTMLAttributes.COLS, m_nCols);
     if (m_nRows > 0)

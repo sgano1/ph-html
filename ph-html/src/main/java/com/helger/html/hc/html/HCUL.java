@@ -59,9 +59,9 @@ public class HCUL extends AbstractHCList <HCUL>
   @Override
   @OverrideOnDemand
   @OverridingMethodsMustInvokeSuper
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
 
     if (m_eType != null)
       aElement.setAttribute (CHTMLAttributes.TYPE, m_eType);

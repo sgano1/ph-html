@@ -115,7 +115,7 @@ public class HCMeter extends AbstractHCElementWithChildren <HCMeter>
   }
 
   @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
     /**
      * <pre>
@@ -128,7 +128,7 @@ public class HCMeter extends AbstractHCElementWithChildren <HCMeter>
      * low &le; high (if both low and high are specified)
      * </pre>
      */
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
 
     if (!EqualsHelper.equals (m_dValue, CGlobal.ILLEGAL_DOUBLE))
       aElement.setAttribute (CHTMLAttributes.VALUE, Double.toString (m_dValue));

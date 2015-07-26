@@ -137,14 +137,22 @@ public class HCConversionSettings implements IHCConversionSettings
     ValueEnforcer.notNull (eHTMLVersion, "HTMLVersion");
 
     setHTMLVersion (eHTMLVersion);
-    m_aXMLWriterSettings = aBase.getMutableXMLWriterSettings ();
-    m_aCSSWriterSettings = aBase.getMutableCSSWriterSettings ();
-    m_aJSWriterSettings = aBase.getMutableJSWriterSettings ();
+    m_aXMLWriterSettings = aBase.getMutableXMLWriterSettings ().getClone ();
+    m_aCSSWriterSettings = aBase.getMutableCSSWriterSettings ().getClone ();
+    m_aJSWriterSettings = aBase.getMutableJSWriterSettings ().getClone ();
     m_bConsistencyChecksEnabled = aBase.areConsistencyChecksEnabled ();
     m_bExtractOutOfBandNodes = aBase.isExtractOutOfBandNodes ();
     m_aCustomizer = aBase.getCustomizer ();
   }
 
+  /**
+   * Change the HTML version. Note: this does NOT change the
+   * {@link XMLWriterSettings}!
+   *
+   * @param eHTMLVersion
+   *        The HTML version to use.
+   * @return this
+   */
   @Nonnull
   public HCConversionSettings setHTMLVersion (@Nonnull final EHTMLVersion eHTMLVersion)
   {

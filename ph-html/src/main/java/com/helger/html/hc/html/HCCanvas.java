@@ -62,9 +62,9 @@ public class HCCanvas extends AbstractHCElementWithChildren <HCCanvas>
   }
 
   @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
     if (m_nHeight >= 0)
       aElement.setAttribute (CHTMLAttributes.HEIGHT, m_nHeight);
     if (m_nWidth >= 0)

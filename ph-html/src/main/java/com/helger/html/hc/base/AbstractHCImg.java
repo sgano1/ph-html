@@ -179,9 +179,9 @@ public abstract class AbstractHCImg <THISTYPE extends AbstractHCImg <THISTYPE>> 
   }
 
   @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
     if (StringHelper.hasText (m_sSrc))
       aElement.setAttribute (CHTMLAttributes.SRC, m_sSrc);
     if (StringHelper.hasText (m_sSrcSet))

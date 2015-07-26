@@ -73,18 +73,18 @@ final class MarkdownHTML
 
   static
   {
-    for (final IURLProtocol element : URLProtocolRegistry.getInstance ().getAllProtocols ())
+    for (final IURLProtocol aProtocol : URLProtocolRegistry.getInstance ().getAllProtocols ())
     {
-      final String sProtocol = element.getProtocol ();
+      final String sProtocol = aProtocol.getProtocol ();
       final int i = sProtocol.indexOf (':');
       LINK_PREFIX.add (i < 0 ? sProtocol : sProtocol.substring (0, i));
     }
 
     for (final EHTMLElement h : BLOCK_ELEMENTS)
-      HTML_BLOCK_ELEMENTS.add (h.getElementNameLowerCase ());
+      HTML_BLOCK_ELEMENTS.add (h.getElementName ());
 
     for (final EHTMLElement h : UNSAFE_ELEMENTS)
-      HTML_UNSAFE.add (h.getElementNameLowerCase ());
+      HTML_UNSAFE.add (h.getElementName ());
   }
 
   private MarkdownHTML ()

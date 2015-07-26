@@ -164,9 +164,9 @@ public class HCFrame extends AbstractHCElement <HCFrame>
   }
 
   @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
     aElement.setAttribute (CHTMLAttributes.FRAMEBORDER, m_bFrameBorder ? "1" : "0");
     if (StringHelper.hasText (m_sLongDesc))
       aElement.setAttribute (CHTMLAttributes.LONGDESC, m_sLongDesc);

@@ -287,7 +287,7 @@ public final class HCHelper
     ValueEnforcer.notNull (aElement, "element");
     ValueEnforcer.notNull (eHTMLElement, "HTMLElement");
 
-    IMicroElement aChild = aElement.getFirstChildElement (eHTMLElement.getElementNameLowerCase ());
+    IMicroElement aChild = aElement.getFirstChildElement (eHTMLElement.getElementName ());
     if (aChild == null)
       aChild = aElement.getFirstChildElement (eHTMLElement.getElementNameUpperCase ());
     return aChild;
@@ -313,8 +313,8 @@ public final class HCHelper
     ValueEnforcer.notNull (eHTMLElement, "HTMLElement");
 
     final List <IMicroElement> ret = new ArrayList <IMicroElement> ();
-    ret.addAll (aElement.getAllChildElements (eHTMLElement.getElementNameLowerCase ()));
-    ret.addAll (aElement.getAllChildElements (eHTMLElement.getElementNameUpperCase ()));
+    ret.addAll (aElement.getAllChildElements (eHTMLElement.getElementName ()));
+    ret.addAll (aElement.getAllChildElements (eHTMLElement.getElementName ()));
     return ret;
   }
 

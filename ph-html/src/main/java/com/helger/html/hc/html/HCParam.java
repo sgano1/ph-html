@@ -106,9 +106,9 @@ public class HCParam extends AbstractHCElement <HCParam>
   }
 
   @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
     if (StringHelper.hasText (m_sName))
       aElement.setAttribute (CHTMLAttributes.NAME, m_sName);
     if (StringHelper.hasText (m_sValue))

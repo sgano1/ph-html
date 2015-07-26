@@ -72,7 +72,14 @@ public interface IHCNode extends IHasPlainText, Serializable
   /**
    * Apply customization as defined by
    * {@link IHCConversionSettingsToNode#getCustomizer()}. Customization is
-   * applied only once per node.
+   * applied only once per node. The following rules apply for triggering
+   * customization:
+   * <ul>
+   * <li>It must be triggered only once per document.</li>
+   * <li>It must be triggered before the HC node is converted to a MicroNode
+   * </li>
+   * </ul>
+   * For regular HTML documents it is triggered in HCHtml.
    *
    * @param aConversionSettings
    *        The conversion settings to use. May not be <code>null</code>.

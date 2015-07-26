@@ -82,9 +82,9 @@ public abstract class AbstractHCLabel <THISTYPE extends AbstractHCLabel <THISTYP
   }
 
   @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
     if (StringHelper.hasText (m_sFor))
       aElement.setAttribute (CHTMLAttributes.FOR, m_sFor);
     if (StringHelper.hasText (m_sForm))

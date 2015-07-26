@@ -550,9 +550,9 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
 
   @Override
   @OverridingMethodsMustInvokeSuper
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
     if (m_eType != null)
       aElement.setAttribute (CHTMLAttributes.TYPE, m_eType);
     if (StringHelper.hasText (m_sAccept))

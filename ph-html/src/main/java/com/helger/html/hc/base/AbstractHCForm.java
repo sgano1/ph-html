@@ -281,10 +281,10 @@ public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>
   }
 
   @Override
-  protected void applyProperties (@Nonnull final IMicroElement aElement,
+  protected void fillMicroElement (@Nonnull final IMicroElement aElement,
                                   final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
 
     if (StringHelper.hasText (m_sAcceptCharset))
       aElement.setAttribute (CHTMLAttributes.ACCEPTCHARSET, m_sAcceptCharset);

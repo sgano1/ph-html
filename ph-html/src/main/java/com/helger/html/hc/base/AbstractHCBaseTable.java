@@ -922,10 +922,8 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
   @Override
   @OverrideOnDemand
   @OverridingMethodsMustInvokeSuper
-  public void beforeConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  public void beforeConvertToMicroNodeOnce (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.beforeConvertToMicroNode (aConversionSettings);
-
     // Propagate to children
     if (m_aHead.hasChildren ())
       for (final HCRow aHeaderRow : m_aHead.directGetRowList ())

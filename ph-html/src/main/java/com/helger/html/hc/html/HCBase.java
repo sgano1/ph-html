@@ -82,9 +82,9 @@ public class HCBase extends AbstractHCElement <HCBase>
   }
 
   @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
     if (StringHelper.hasText (m_sHref))
       aElement.setAttribute (CHTMLAttributes.HREF, m_sHref);
     if (m_aTarget != null)

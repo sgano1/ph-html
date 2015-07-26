@@ -277,9 +277,9 @@ public class HCStyle extends AbstractHCElement <HCStyle>implements IHCCSSNode
   }
 
   @Override
-  protected void applyProperties (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
-    super.applyProperties (aElement, aConversionSettings);
+    super.fillMicroElement (aElement, aConversionSettings);
     aElement.setAttribute (CHTMLAttributes.TYPE, m_aType.getAsString ());
     if (hasAnyMedia ())
       aElement.setAttribute (CHTMLAttributes.MEDIA, m_aMediaList.getMediaString ());

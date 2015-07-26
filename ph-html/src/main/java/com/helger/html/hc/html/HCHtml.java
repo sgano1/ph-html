@@ -153,7 +153,7 @@ public class HCHtml extends AbstractHCElement <HCHtml>
     final IMicroDocument aDoc = new MicroDocument (eHTMLVersion.getDocType ().getClone ());
     final IMicroElement aRoot = aDoc.appendElement (eHTMLVersion.getNamespaceURI (),
                                                     eHTMLVersion.getDocType ().getQualifiedName ());
-    applyProperties (aRoot, aConversionSettings);
+    fillMicroElement (aRoot, aConversionSettings);
 
     // Use the getter, to ensure the elements are not null
     final IMicroNode eBody = getBody ().convertToMicroNode (aConversionSettings);
