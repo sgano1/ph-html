@@ -194,7 +194,7 @@ public class MainCreateHCClasses
         String sSuperClass = "AbstractHCElementWithChildren";
         String sSuperParam = "EHTMLElement." + sUC;
         String sCustomCode = "";
-        if (sElementName.equals ("Div") || sElementName.equals ("Span"))
+        if (sElementName.equals ("Div") || sElementName.equals ("Pre") || sElementName.equals ("Span"))
         {
           sSuperClass = "AbstractHC" + sElementName;
           sSuperParam = "";
