@@ -16,23 +16,21 @@
  */
 package com.helger.html.hc.impl;
 
-import java.util.List;
-
-import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.annotation.OverridingMethodsMustInvokeSuper;
 import javax.annotation.concurrent.NotThreadSafe;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.microdom.IMicroNode;
-import com.helger.commons.microdom.serialize.MicroWriter;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.hc.IHCHasChildren;
+import com.helger.html.EHTMLVersion;
+import com.helger.html.hc.EHCNodeState;
 import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.conversion.IHCConversionSettings;
+import com.helger.html.hc.conversion.HCConsistencyChecker;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
+import com.helger.html.hc.customize.IHCCustomizer;
 
 /**
  * Default implementation of the {@link IHCNode} interface.
@@ -42,43 +40,68 @@ import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 @NotThreadSafe
 public abstract class AbstractHCNode implements IHCNode
 {
-  private boolean m_bCustomized = false;
-  private boolean m_bBeforeConvertToMicroNodeCalled = false;
+  private EHCNodeState m_eNodeState = EHCNodeState.INITIAL;
 
-  public void onAdded (@Nonnegative final int nIndex, @Nonnull final IHCHasChildrenMutable <?, ?> aParent)
-  {}
-
-  public void onRemoved (@Nonnegative final int nIndex, @Nonnull final IHCHasChildrenMutable <?, ?> aParent)
-  {}
-
-  public final boolean isCustomized ()
+  @Nonnull
+  public EHCNodeState getNodeState ()
   {
-    return m_bCustomized;
+    return m_eNodeState;
   }
 
-  public final void applyCustomization (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
-                                        @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aParentNode)
+  private final void setNodeState (@Nonnull final EHCNodeState eNodeState)
   {
-    if (!m_bCustomized)
-    {
-      m_bCustomized = true;
-
-      // Run the global customizer
-      aConversionSettings.getCustomizer ().customizeNode (aParentNode, this, aConversionSettings.getHTMLVersion ());
-
-      if (this instanceof IHCHasChildren)
-      {
-        final List <? extends IHCNode> aChildNodes = ((IHCHasChildren) this).getAllChildren ();
-        if (aChildNodes != null)
-          for (final IHCNode aChildNode : aChildNodes)
-            aChildNode.applyCustomization (aConversionSettings, aParentNode);
-      }
-    }
+    ValueEnforcer.notNull (eNodeState, "NodeState");
+    if (eNodeState.getID () != m_eNodeState.getID () + 1)
+      throw new IllegalStateException ("The new node state is invalid. Got " +
+                                       eNodeState +
+                                       " but having " +
+                                       m_eNodeState);
+    m_eNodeState = eNodeState;
   }
 
-  public final boolean isConvertedToMicroNode ()
+  protected void onCustomizeNode (@Nonnull final IHCCustomizer aCustomizer,
+                                  @Nonnull final EHTMLVersion eHTMLVersion,
+                                  @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
   {
-    return m_bBeforeConvertToMicroNodeCalled;
+    aCustomizer.customizeNode (this, eHTMLVersion, aTargetNode);
+  }
+
+  public final void customizeNode (@Nonnull final IHCCustomizer aCustomizer,
+                                   @Nonnull final EHTMLVersion eHTMLVersion,
+                                   @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
+  {
+    onCustomizeNode (aCustomizer, eHTMLVersion, aTargetNode);
+    setNodeState (EHCNodeState.CUSTOMIZED);
+  }
+
+  /**
+   * @param aConversionSettings
+   *        HC conversion settings
+   * @param aTargetNode
+   *        The target node where additional nodes should be added
+   */
+  protected void onFinalizeNodeState (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
+                                      @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
+  {}
+
+  public final void finalizeNodeState (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
+                                       @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
+  {
+    onFinalizeNodeState (aConversionSettings, aTargetNode);
+    setNodeState (EHCNodeState.FINALIZED);
+  }
+
+  /**
+   * @param aConversionSettings
+   *        HC conversion settings
+   */
+  protected void onRegisterExternalResources (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  {}
+
+  public final void registerExternalResources (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  {
+    onRegisterExternalResources (aConversionSettings);
+    setNodeState (EHCNodeState.RESOURCES_REGISTERED);
   }
 
   @OverrideOnDemand
@@ -87,96 +110,25 @@ public abstract class AbstractHCNode implements IHCNode
     return true;
   }
 
-  /**
-   * This method is called only once for each instance. It is called before the
-   * node itself is created. Overwrite this method to perform actions that can
-   * only be done when the node is build finally.<br>
-   * Things <b>to do</b> in this method are:
-   * <ul>
-   * <li>Propagate the call to
-   * {@link #beforeConvertToMicroNode(IHCConversionSettingsToNode)} to all child
-   * nodes.</li>
-   * <li>Add special child elements depending on certain states</li>
-   * </ul>
-   * Things <b>NOT to do</b> in this method are:
-   * <ul>
-   * <li>Register external resources like JS or CSS files because this would be
-   * to late, because this is already part of the HTML serialization to a
-   * String! Use {@link #onAdded(int, IHCHasChildrenMutable)} instead to
-   * register external resources.</li>
-   * </ul>
-   *
-   * @param aConversionSettings
-   *        The conversion settings to be used
-   */
-  @OverrideOnDemand
-  protected void beforeConvertToMicroNodeOnce (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
-  {}
-
-  @OverridingMethodsMustInvokeSuper
-  public void beforeConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
-  {
-    // Prepare object once per instance - before first rendering (implementation
-    // dependent)
-    if (!m_bBeforeConvertToMicroNodeCalled)
-    {
-      m_bBeforeConvertToMicroNodeCalled = true;
-
-      // Call internal method exactly once
-      beforeConvertToMicroNodeOnce (aConversionSettings);
-    }
-  }
-
   @Nonnull
   @OverrideOnDemand
   protected abstract IMicroNode internalConvertToMicroNode (@Nonnull IHCConversionSettingsToNode aConversionSettings);
 
-  /**
-   * Called after the main conversion. Can be used to modify the created micro
-   * node somehow. The default implementation just returns the passed node.
-   *
-   * @param aConversionSettings
-   *        The conversion settings to be used. May not be <code>null</code>.
-   * @param aCreatedNode
-   *        The created node from
-   *        {@link #internalConvertToMicroNode(IHCConversionSettingsToNode)}
-   * @return The result of
-   *         {@link #convertToMicroNode(IHCConversionSettingsToNode)}
-   */
-  @Nullable
-  @OverrideOnDemand
-  protected IMicroNode afterConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
-                                                @Nullable final IMicroNode aCreatedNode)
-  {
-    return aCreatedNode;
-  }
-
   @Nullable
   public final IMicroNode convertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
+    // XXX enable
+    HCConsistencyChecker.consistencyAssert (m_eNodeState.equals (EHCNodeState.RESOURCES_REGISTERED) ||
+                                            m_eNodeState.equals (EHCNodeState.INITIAL),
+                                            "Invalid node state present. Having " + m_eNodeState);
+
     // Can this node be converted to a MicroNode?
     if (!canConvertToMicroNode (aConversionSettings))
       return null;
 
-    // Before convert
-    beforeConvertToMicroNode (aConversionSettings);
-
     // Main conversion
-    final IMicroNode aOriginalNode = internalConvertToMicroNode (aConversionSettings);
-
-    // After convert
-    final IMicroNode ret = afterConvertToMicroNode (aConversionSettings, aOriginalNode);
-
+    final IMicroNode ret = internalConvertToMicroNode (aConversionSettings);
     return ret;
-  }
-
-  @Nonnull
-  public final String getAsHTMLString (@Nonnull final IHCConversionSettings aConversionSettings)
-  {
-    final IMicroNode aNode = convertToMicroNode (aConversionSettings);
-    if (aNode == null)
-      return "";
-    return MicroWriter.getNodeAsString (aNode, aConversionSettings.getXMLWriterSettings ());
   }
 
   @OverrideOnDemand
@@ -189,8 +141,6 @@ public abstract class AbstractHCNode implements IHCNode
   @Override
   public String toString ()
   {
-    return new ToStringGenerator (this).append ("customized", m_bCustomized)
-                                       .append ("beforeConvertToMicroNodeCalled", m_bBeforeConvertToMicroNodeCalled)
-                                       .toString ();
+    return new ToStringGenerator (this).append ("nodeState", m_eNodeState).toString ();
   }
 }

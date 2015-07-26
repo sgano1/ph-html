@@ -31,7 +31,6 @@ import com.helger.commons.CGlobal;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.DevelopersNote;
 import com.helger.commons.annotation.Nonempty;
-import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.string.StringHelper;
@@ -917,23 +916,6 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
     _checkConsistency (sPrefix + " header", m_aHead, nCols);
     _checkConsistency (sPrefix + " body", m_aBody, nCols);
     _checkConsistency (sPrefix + " footer", m_aFoot, nCols);
-  }
-
-  @Override
-  @OverrideOnDemand
-  @OverridingMethodsMustInvokeSuper
-  public void beforeConvertToMicroNodeOnce (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
-  {
-    // Propagate to children
-    if (m_aHead.hasChildren ())
-      for (final HCRow aHeaderRow : m_aHead.directGetRowList ())
-        aHeaderRow.beforeConvertToMicroNode (aConversionSettings);
-    if (m_aBody.hasChildren ())
-      for (final HCRow aBodyRow : m_aBody.directGetRowList ())
-        aBodyRow.beforeConvertToMicroNode (aConversionSettings);
-    if (m_aFoot.hasChildren ())
-      for (final HCRow aFooterRow : m_aFoot.directGetRowList ())
-        aFooterRow.beforeConvertToMicroNode (aConversionSettings);
   }
 
   @Override

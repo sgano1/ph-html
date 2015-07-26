@@ -16,7 +16,6 @@
  */
 package com.helger.html.hc.html;
 
-import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -25,9 +24,10 @@ import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.hc.IHCHasChildrenMutable;
-import com.helger.html.hc.IHCNodeWithChildren;
+import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.api.EHCInputType;
 import com.helger.html.hc.base.AbstractHCInput;
+import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.request.IHCRequestFieldBoolean;
 import com.helger.html.request.IHCRequestFieldBooleanMultiValue;
 
@@ -53,7 +53,7 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
   public static final String DEFAULT_HIDDEN_FIELD_PREFIX = "__";
 
   private boolean m_bEmitHiddenField = DEFAULT_EMIT_HIDDEN_FIELD;
-  private boolean m_bEmittedHiddenField = false;
+  private final boolean m_bEmittedHiddenField = false;
 
   /**
    * Constructor
@@ -173,28 +173,15 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
   }
 
   @Override
-  public void onAdded (@Nonnegative final int nIndex, @Nonnull final IHCHasChildrenMutable <?, ?> aParent)
+  protected void onFinalizeNodeState (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
+                                      @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
   {
-    if (m_bEmitHiddenField && !m_bEmittedHiddenField)
+    if (m_bEmitHiddenField)
     {
       final String sHiddenFieldName = getHiddenFieldName ();
-      if (sHiddenFieldName != null)
-      {
-        ((IHCNodeWithChildren <?>) aParent).addChild (new HCHiddenField (sHiddenFieldName, getValue ()));
-        m_bEmittedHiddenField = true;
-      }
+      if (StringHelper.hasText (sHiddenFieldName))
+        aTargetNode.addChild (new HCHiddenField (sHiddenFieldName, getValue ()));
     }
-  }
-
-  @Override
-  public void onRemoved (@Nonnegative final int nIndex, @Nonnull final IHCHasChildrenMutable <?, ?> aParent)
-  {
-    if (m_bEmitHiddenField && getHiddenFieldName () != null)
-      if (m_bEmittedHiddenField)
-      {
-        ((IHCNodeWithChildren <?>) aParent).removeChild (nIndex);
-        m_bEmittedHiddenField = false;
-      }
   }
 
   @Override

@@ -86,12 +86,12 @@ public class HCMultiCustomizer implements IHCCustomizer
     return CollectionHelper.newList (m_aCustomizers);
   }
 
-  public void customizeNode (@Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aParentElement,
-                             @Nonnull final IHCNode aNode,
-                             @Nonnull final EHTMLVersion eHTMLVersion)
+  public void customizeNode (@Nonnull final IHCNode aNode,
+                             @Nonnull final EHTMLVersion eHTMLVersion,
+                             @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aParentElement)
   {
     for (final IHCCustomizer aCustomizer : m_aCustomizers)
-      aCustomizer.customizeNode (aParentElement, aNode, eHTMLVersion);
+      aCustomizer.customizeNode (aNode, eHTMLVersion, aParentElement);
   }
 
   public void handleOutOfBandNodes (@Nonnull final List <IHCNode> aOutOfBandNodes,

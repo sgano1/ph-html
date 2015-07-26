@@ -38,6 +38,7 @@ import com.helger.html.hc.IHCElement;
 import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCHasState;
 import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.IHCWrappingNode;
 import com.helger.html.hc.base.IHCButton;
 import com.helger.html.hc.base.IHCCell;
 import com.helger.html.hc.base.IHCCol;
@@ -110,106 +111,112 @@ public class HCDefaultCustomizer extends HCEmptyCustomizer
   }
 
   @Override
-  public void customizeNode (@Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aParentElement,
-                             @Nonnull final IHCNode aNode,
-                             @Nonnull final EHTMLVersion eHTMLVersion)
+  public void customizeNode (@Nonnull final IHCNode aNode,
+                             @Nonnull final EHTMLVersion eHTMLVersion,
+                             @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aParentElement)
   {
-    if (aNode instanceof IHCElement <?>)
+    if (aNode instanceof IHCWrappingNode)
     {
-      final IHCElement <?> aElement = (IHCElement <?>) aNode;
-      if (m_bCreateControlCSSClasses)
+      // unwrap
+      customizeNode (((IHCWrappingNode) aNode).getWrappedNode (), eHTMLVersion, aParentElement);
+    }
+    else
+      if (aNode instanceof IHCElement <?>)
       {
-        if (aElement instanceof IHCButton <?>)
-          aElement.addClass (CSS_CLASS_BUTTON);
-        else
-          if (aElement instanceof HCCheckBox)
-            aElement.addClass (CSS_CLASS_CHECKBOX);
+        final IHCElement <?> aElement = (IHCElement <?>) aNode;
+        if (m_bCreateControlCSSClasses)
+        {
+          if (aElement instanceof IHCButton <?>)
+            aElement.addClass (CSS_CLASS_BUTTON);
           else
-            if (aElement instanceof HCEdit)
-              aElement.addClass (CSS_CLASS_EDIT);
+            if (aElement instanceof HCCheckBox)
+              aElement.addClass (CSS_CLASS_CHECKBOX);
             else
-              if (aElement instanceof HCEditFile)
-                aElement.addClasses (CSS_CLASS_EDIT, CSS_CLASS_EDIT_FILE);
+              if (aElement instanceof HCEdit)
+                aElement.addClass (CSS_CLASS_EDIT);
               else
-                if (aElement instanceof HCEditPassword)
-                  aElement.addClasses (CSS_CLASS_EDIT, CSS_CLASS_EDIT_PASSWORD);
+                if (aElement instanceof HCEditFile)
+                  aElement.addClasses (CSS_CLASS_EDIT, CSS_CLASS_EDIT_FILE);
                 else
-                  if (aElement instanceof HCHiddenField)
-                    aElement.addClass (CSS_CLASS_HIDDEN);
+                  if (aElement instanceof HCEditPassword)
+                    aElement.addClasses (CSS_CLASS_EDIT, CSS_CLASS_EDIT_PASSWORD);
                   else
-                    if (aElement instanceof HCRadioButton)
-                      aElement.addClass (CSS_CLASS_RADIO);
-      }
-
-      if (aElement instanceof IHCForm <?>)
-      {
-        final IHCForm <?> aForm = (IHCForm <?>) aElement;
-        if (aForm.isSubmitPressingEnter ())
-        {
-          final IHCButton <?> aButton = createFakeSubmitButton ();
-          aButton.setTabIndex (aForm.getSubmitButtonTabIndex ());
-          aForm.addChild (aButton);
+                    if (aElement instanceof HCHiddenField)
+                      aElement.addClass (CSS_CLASS_HIDDEN);
+                    else
+                      if (aElement instanceof HCRadioButton)
+                        aElement.addClass (CSS_CLASS_RADIO);
         }
-      }
-      else
-        if (aElement instanceof IHCTable <?>)
+
+        if (aElement instanceof IHCForm <?>)
         {
-          final IHCTable <?> aTable = (IHCTable <?>) aElement;
-          final HCColGroup aColGroup = aTable.getColGroup ();
-          // bug fix for IE9 table layout bug
-          // (http://msdn.microsoft.com/en-us/library/ms531161%28v=vs.85%29.aspx)
-          // IE9 only interprets column widths if the first row
-          // does not use colspan (i.e. at least one row does not
-          // use colspan)
-          if (aColGroup != null &&
-              aColGroup.hasColumns () &&
-              aTable.hasBodyRows () &&
-              aTable.getFirstBodyRow ().isColspanUsed ())
+          final IHCForm <?> aForm = (IHCForm <?>) aElement;
+          if (aForm.isSubmitPressingEnter ())
           {
-            // Create a dummy row with explicit widths
-            final HCRow aRow = new HCRow (false).addClass (CSS_FORCE_COLSPAN);
-            for (final IHCCol <?> aCol : aColGroup.getAllColumns ())
-            {
-              final IHCCell <?> aCell = aRow.addAndReturnCell (HCEntityNode.newNBSP ());
-              final int nWidth = StringParser.parseInt (aCol.getWidth (), -1);
-              if (nWidth >= 0)
-                aCell.addStyle (CCSSProperties.WIDTH.newValue (ECSSUnit.px (nWidth)));
-            }
-            aTable.addBodyRow (0, aRow);
+            final IHCButton <?> aButton = createFakeSubmitButton ();
+            aButton.setTabIndex (aForm.getSubmitButtonTabIndex ());
+            aForm.addChild (aButton);
           }
         }
+        else
+          if (aElement instanceof IHCTable <?>)
+          {
+            final IHCTable <?> aTable = (IHCTable <?>) aElement;
+            final HCColGroup aColGroup = aTable.getColGroup ();
+            // bug fix for IE9 table layout bug
+            // (http://msdn.microsoft.com/en-us/library/ms531161%28v=vs.85%29.aspx)
+            // IE9 only interprets column widths if the first row
+            // does not use colspan (i.e. at least one row does not
+            // use colspan)
+            if (aColGroup != null &&
+                aColGroup.hasColumns () &&
+                aTable.hasBodyRows () &&
+                aTable.getFirstBodyRow ().isColspanUsed ())
+            {
+              // Create a dummy row with explicit widths
+              final HCRow aRow = new HCRow (false).addClass (CSS_FORCE_COLSPAN);
+              for (final IHCCol <?> aCol : aColGroup.getAllColumns ())
+              {
+                final IHCCell <?> aCell = aRow.addAndReturnCell (HCEntityNode.newNBSP ());
+                final int nWidth = StringParser.parseInt (aCol.getWidth (), -1);
+                if (nWidth >= 0)
+                  aCell.addStyle (CCSSProperties.WIDTH.newValue (ECSSUnit.px (nWidth)));
+              }
+              aTable.addBodyRow (0, aRow);
+            }
+          }
 
-      // Unfocusable?
-      if (aElement.isUnfocusable ())
-        aElement.setEventHandler (EJSEvent.FOCUS, FakeJS.JS_BLUR);
+        // Unfocusable?
+        if (aElement.isUnfocusable ())
+          aElement.setEventHandler (EJSEvent.FOCUS, FakeJS.JS_BLUR);
 
-      // Added "disabled" class on disabled element
-      if (aElement instanceof IHCHasState <?>)
-        if (((IHCHasState <?>) aElement).isDisabled ())
-          aElement.addClass (CSS_CLASS_DISABLED);
+        // Added "disabled" class on disabled element
+        if (aElement instanceof IHCHasState <?>)
+          if (((IHCHasState <?>) aElement).isDisabled ())
+            aElement.addClass (CSS_CLASS_DISABLED);
 
-      if (aElement instanceof IHCControl <?>)
-      {
-        // Specific control stuff
-        final IHCControl <?> aCtrl = (IHCControl <?>) aElement;
-
-        // Read only?
-        if (aCtrl.isReadonly ())
+        if (aElement instanceof IHCControl <?>)
         {
-          // Add read-only class
-          aCtrl.addClass (CSS_CLASS_READONLY);
+          // Specific control stuff
+          final IHCControl <?> aCtrl = (IHCControl <?>) aElement;
 
-          // Set explicit tab index -1 to avoid focusing
-          aCtrl.setTabIndex (-1L);
-        }
+          // Read only?
+          if (aCtrl.isReadonly ())
+          {
+            // Add read-only class
+            aCtrl.addClass (CSS_CLASS_READONLY);
 
-        if (aCtrl.isFocused ())
-        {
-          // Add a JS call that focuses this element
-          aParentElement.addChild (new HCScript (FakeJS.focus (aCtrl)));
+            // Set explicit tab index -1 to avoid focusing
+            aCtrl.setTabIndex (-1L);
+          }
+
+          if (aCtrl.isFocused ())
+          {
+            // Add a JS call that focuses this element
+            aParentElement.addChild (new HCScript (FakeJS.focus (aCtrl)));
+          }
         }
       }
-    }
   }
 
   /**

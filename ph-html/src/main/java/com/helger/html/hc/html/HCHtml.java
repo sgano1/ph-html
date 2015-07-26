@@ -19,9 +19,11 @@ package com.helger.html.hc.html;
 import java.util.List;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotation.OverrideOnDemand;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.microdom.IMicroDocument;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.microdom.IMicroNode;
@@ -30,9 +32,10 @@ import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
 import com.helger.html.EHTMLVersion;
+import com.helger.html.hc.EHCNodeState;
 import com.helger.html.hc.HCHelper;
+import com.helger.html.hc.IHCHasChildren;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.IHCNodeWithChildren;
 import com.helger.html.hc.api.EHCTextDirection;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElement;
@@ -43,103 +46,78 @@ import com.helger.html.hc.special.HCSpecialNodeHandler;
  *
  * @author Philip Helger
  */
-public class HCHtml extends AbstractHCElement <HCHtml>
+public class HCHtml extends AbstractHCElement <HCHtml>implements IHCHasChildren
 {
-  private HCHead m_aHead;
-  private HCBody m_aBody;
+  private final HCHead m_aHead;
+  private final HCBody m_aBody;
 
   /**
    * Create a new HTML object
    */
   public HCHtml ()
   {
+    this (new HCHead (), new HCBody ());
+  }
+
+  public HCHtml (@Nonnull final HCHead aHead, @Nonnull final HCBody aBody)
+  {
     super (EHTMLElement.HTML);
+    m_aHead = ValueEnforcer.notNull (aHead, "Head");
+    m_aBody = ValueEnforcer.notNull (aBody, "Body");
 
     // Set default direction
     setDirection (EHCTextDirection.LTR);
   }
 
-  /**
-   * Overwrite this method to create a custom {@link HCHead} implementation
-   *
-   * @return Never <code>null</code>.
-   */
-  @Nonnull
-  @OverrideOnDemand
-  protected HCHead createHead ()
-  {
-    return new HCHead ();
-  }
-
-  /**
-   * Overwrite this method to create a custom {@link HCBody} implementation
-   *
-   * @return Never <code>null</code>.
-   */
-  @Nonnull
-  @OverrideOnDemand
-  protected HCBody createBody ()
-  {
-    return new HCBody ();
-  }
-
   @Nonnull
   public final HCHead getHead ()
   {
-    if (m_aHead == null)
-    {
-      m_aHead = createHead ();
-      if (m_aHead == null)
-        throw new IllegalStateException ("Created HCHead is null!");
-    }
     return m_aHead;
   }
 
   @Nonnull
   public final HCBody getBody ()
   {
-    if (m_aBody == null)
-    {
-      m_aBody = createBody ();
-      if (m_aBody == null)
-        throw new IllegalStateException ("Created HCBody is null!");
-    }
     return m_aBody;
   }
 
-  public static void extractAndHandleOutOfBandNodes (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
-                                                     @Nonnull final IHCNodeWithChildren <?> aBaseNode,
-                                                     @Nonnull final HCHead aHead,
-                                                     @Nonnull final HCBody aBody)
+  @Nonnull
+  @ReturnsMutableCopy
+  public List <? extends IHCNode> getAllChildren ()
   {
-    ValueEnforcer.notNull (aConversionSettings, "ConversionSettings");
-
-    if (aConversionSettings.isExtractOutOfBandNodes ())
-    {
-      // Extract all out-of-band nodes
-      final List <IHCNode> aExtractedOutOfBandNodes = HCSpecialNodeHandler.recursiveExtractAndRemoveOutOfBandNodes (aBaseNode);
-
-      // Call out-of-band node handler
-      aConversionSettings.getCustomizer ().handleOutOfBandNodes (aExtractedOutOfBandNodes, aHead, aBody);
-    }
+    return CollectionHelper.newList (m_aHead, m_aBody);
   }
 
-  @Override
-  protected void beforeConvertToMicroNodeOnce (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  @Nullable
+  public IHCNode getChildAtIndex (final int nIndex)
   {
-    final HCHead aHead = getHead ();
-    final HCBody aBody = getBody ();
+    if (nIndex == 0)
+      return m_aHead;
+    if (nIndex == 1)
+      return m_aBody;
+    return null;
+  }
 
-    // Customize element, before extracting out-of-band nodes, in case the
-    // customizer adds some out-of-band nodes as well
-    HCHelper.customizeNodes (aBody, aConversionSettings);
+  @Nonnull
+  public IHCNode getFirstChild ()
+  {
+    return m_aHead;
+  }
 
-    // Prepare head and body before performing the OOB extraction
-    aHead.beforeConvertToMicroNode (aConversionSettings);
-    aBody.beforeConvertToMicroNode (aConversionSettings);
+  @Nonnull
+  public IHCNode getLastChild ()
+  {
+    return m_aBody;
+  }
 
-    // Extract all out-of-band nodes
-    extractAndHandleOutOfBandNodes (aConversionSettings, aBody, aHead, aBody);
+  public boolean hasChildren ()
+  {
+    return false;
+  }
+
+  public int getChildCount ()
+  {
+    return 2;
   }
 
   @Override
@@ -156,22 +134,48 @@ public class HCHtml extends AbstractHCElement <HCHtml>
     fillMicroElement (aRoot, aConversionSettings);
 
     // Use the getter, to ensure the elements are not null
-    final IMicroNode eBody = getBody ().convertToMicroNode (aConversionSettings);
+    final IMicroNode eBody = m_aBody.convertToMicroNode (aConversionSettings);
     aRoot.appendChild (eBody);
 
     // Create head after body but insert it before the body
-    final IMicroNode eHead = getHead ().convertToMicroNode (aConversionSettings);
+    final IMicroNode eHead = m_aHead.convertToMicroNode (aConversionSettings);
     aRoot.insertAtIndex (0, eHead);
 
     // Done!
     return aDoc;
   }
 
+  @Nullable
+  public IMicroNode customizeAndConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  {
+    if (getNodeState ().equals (EHCNodeState.INITIAL))
+    {
+      // 1. Apply customization to the whole tree
+      HCHelper.customizeNodes (this, m_aBody, aConversionSettings);
+
+      // 2. Finish node creation
+      HCHelper.finalizeAndRegisterResources (this, m_aBody, aConversionSettings);
+
+      // Extract all out-of-band nodes
+      if (aConversionSettings.isExtractOutOfBandNodes ())
+      {
+        // Extract all out-of-band nodes
+        final List <IHCNode> aExtractedOutOfBandNodes = HCSpecialNodeHandler.recursiveExtractAndRemoveOutOfBandNodes (m_aBody);
+
+        // Call out-of-band node handler
+        aConversionSettings.getCustomizer ().handleOutOfBandNodes (aExtractedOutOfBandNodes, m_aHead, m_aBody);
+      }
+    }
+
+    // 3. Convert to micro node
+    return convertToMicroNode (aConversionSettings);
+  }
+
   @Override
   @Nonnull
   public String getPlainText ()
   {
-    return StringHelper.getConcatenatedOnDemand (getHead ().getPlainText (), " ", getBody ().getPlainText ());
+    return StringHelper.getConcatenatedOnDemand (m_aHead.getPlainText (), " ", m_aBody.getPlainText ());
   }
 
   @Override

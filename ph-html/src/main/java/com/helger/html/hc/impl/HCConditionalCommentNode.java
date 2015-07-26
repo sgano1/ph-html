@@ -70,19 +70,27 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
   @GuardedBy ("s_aRWLock")
   private static ENewLineMode s_eDefaultNewLineMode = ENewLineMode.DEFAULT;
 
-  private String m_sCondition;
+  private final String m_sCondition;
   private final IHCNode m_aWrappedNode;
-  private ENewLineMode m_eNewLineMode = getDefaultNewLineMode ();
+  private final ENewLineMode m_eNewLineMode;
 
   public HCConditionalCommentNode (@Nonnull @Nonempty final String sCondition, @Nonnull final IHCNode aWrappedNode)
   {
+    this (sCondition, aWrappedNode, getDefaultNewLineMode ());
+  }
+
+  public HCConditionalCommentNode (@Nonnull @Nonempty final String sCondition,
+                                   @Nonnull final IHCNode aWrappedNode,
+                                   @Nonnull final ENewLineMode eNewLineMode)
+  {
+    m_sCondition = ValueEnforcer.notEmpty (sCondition, "Condition");
     ValueEnforcer.notNull (aWrappedNode, "WrappedNode");
     if (aWrappedNode instanceof HCCommentNode)
       throw new IllegalArgumentException ("You cannot wrap a comment inside a conditional comment");
     if (aWrappedNode instanceof HCConditionalCommentNode)
       throw new IllegalArgumentException ("You cannot wrap a conditional comment inside another conditional comment");
-    setCondition (sCondition);
     m_aWrappedNode = aWrappedNode;
+    m_eNewLineMode = ValueEnforcer.notNull (eNewLineMode, "NewLineMode");
   }
 
   /**
@@ -97,14 +105,6 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
   }
 
   @Nonnull
-  public HCConditionalCommentNode setCondition (@Nonnull @Nonempty final String sCondition)
-  {
-    ValueEnforcer.notEmpty (sCondition, "Condition");
-    m_sCondition = sCondition;
-    return this;
-  }
-
-  @Nonnull
   public IHCNode getWrappedNode ()
   {
     return m_aWrappedNode;
@@ -116,60 +116,36 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
     return m_eNewLineMode;
   }
 
-  @Nonnull
-  public HCConditionalCommentNode setNewLineMode (@Nonnull final ENewLineMode eNewLineMode)
-  {
-    m_eNewLineMode = ValueEnforcer.notNull (eNewLineMode, "NewLineMode");
-    return this;
-  }
-
-  @Nonnull
-  @Nonempty
-  private String _getCommentText (@Nonnull final IMicroNode aNode, @Nonnull final IXMLWriterSettings aXMLWriterSettings)
-  {
-    // Only create a newline when alignment is enabled
-    final String sLineSeparator = aXMLWriterSettings.getIndent ().isAlign () ? m_eNewLineMode.getText () : "";
-    return '[' +
-           m_sCondition +
-           "]>" +
-           sLineSeparator +
-           MicroWriter.getNodeAsString (aNode, aXMLWriterSettings) +
-           "<![endif]";
-  }
-
-  /**
-   * This method wraps an arbitrary HC node in a conditional node. The passed
-   * node is simply converted to an XML string and the content is put into the
-   * conditional comment.
-   *
-   * @param aConversionSettings
-   *        Conversion settings to be used.
-   * @return The wrapped node. Never <code>null</code>.
-   */
-  @Nonnull
-  public HCCommentNode getCommentNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
-  {
-    // First convert the contained node to a micro node
-    final IMicroNode aWrappedMicroNode = m_aWrappedNode.convertToMicroNode (aConversionSettings);
-    // Now wrap the created XML in the special format required for a conditional
-    // comment
-    final String sWrappedXML = _getCommentText (aWrappedMicroNode, aConversionSettings.getXMLWriterSettings ());
-    return new HCCommentNode (sWrappedXML);
-  }
-
   @Override
   @Nullable
   protected IMicroNode internalConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
-    return getCommentNode (aConversionSettings).convertToMicroNode (aConversionSettings);
+    // First convert the contained node to a micro node
+    final IMicroNode aWrappedMicroNode = m_aWrappedNode.convertToMicroNode (aConversionSettings);
+
+    // Only create a newline when alignment is enabled
+    final IXMLWriterSettings aXMLWriterSettings = aConversionSettings.getXMLWriterSettings ();
+    final String sLineSeparator = aXMLWriterSettings.getIndent ().isAlign () ? m_eNewLineMode.getText () : "";
+
+    // Now wrap the created XML in the special format required for a conditional
+    // comment
+    final HCCommentNode aCommentNode = new HCCommentNode ('[' +
+                                                          m_sCondition +
+                                                          "]>" +
+                                                          sLineSeparator +
+                                                          MicroWriter.getNodeAsString (aWrappedMicroNode,
+                                                                                       aXMLWriterSettings) +
+                                                          "<![endif]");
+
+    return aCommentNode.convertToMicroNode (aConversionSettings);
   }
 
   @Override
   public String toString ()
   {
     return new ToStringGenerator (this).append ("condition", m_sCondition)
-                                       .append ("NewLineMode", m_eNewLineMode)
                                        .append ("wrappedNode", m_aWrappedNode)
+                                       .append ("newLineMode", m_eNewLineMode)
                                        .toString ();
   }
 

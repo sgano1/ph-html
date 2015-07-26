@@ -91,9 +91,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
   @OverrideOnDemand
   @OverridingMethodsMustInvokeSuper
   protected void afterAddChild (@Nonnegative final int nIndex, @Nonnull final CHILDTYPE aChild)
-  {
-    aChild.onAdded (nIndex, this);
-  }
+  {}
 
   private void _addChild (@CheckForSigned final int nIndex, @Nullable final CHILDTYPE aChild)
   {
@@ -188,9 +186,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
   @OverrideOnDemand
   @OverridingMethodsMustInvokeSuper
   protected void afterRemoveChild (@Nonnegative final int nIndex, @Nonnull final CHILDTYPE aChild)
-  {
-    aChild.onRemoved (nIndex, this);
-  }
+  {}
 
   @Nonnull
   public final THISTYPE removeChild (@Nullable final CHILDTYPE aChild)
@@ -290,17 +286,6 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
   {
     // Can always be converted to a node
     return true;
-  }
-
-  @Override
-  @OverrideOnDemand
-  @OverridingMethodsMustInvokeSuper
-  protected void beforeConvertToMicroNodeOnce (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
-  {
-    // Propagate to children
-    if (hasChildren ())
-      for (final CHILDTYPE aChild : m_aChildren)
-        aChild.beforeConvertToMicroNode (aConversionSettings);
   }
 
   /**

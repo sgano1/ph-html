@@ -89,6 +89,6 @@ public final class HC5FuncTest
     final IHCConversionSettings aCS = HCSettings.getConversionSettings ().getCloneIfNecessary (EHTMLVersion.HTML5);
     assertNotNull (h.convertToMicroNode (aCS));
     if (false)
-      System.out.print (h.getAsHTMLString (aCS));
+      System.out.print (HCSettings.getAsHTMLString (h, aCS));
   }
 }

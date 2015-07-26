@@ -54,6 +54,6 @@ public class MarkdownProcessingResult
   @Nonnull
   public String getAsHTMLString (@Nonnull final IHCConversionSettings aConversionSettings)
   {
-    return m_aNodeList.getAsHTMLString (aConversionSettings).trim ();
+    return HCSettings.getAsHTMLString (m_aNodeList, aConversionSettings).trim ();
   }
 }

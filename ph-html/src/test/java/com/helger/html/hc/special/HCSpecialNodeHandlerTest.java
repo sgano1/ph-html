@@ -29,12 +29,11 @@ import com.helger.commons.xml.serialize.write.XMLWriterSettings;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.conversion.HCConversionSettings;
 import com.helger.html.hc.html.HCH1;
 import com.helger.html.hc.html.HCHtml;
 import com.helger.html.hc.html.HCScript;
-import com.helger.html.hc.special.IHCSpecialNodeListModifier;
-import com.helger.html.hc.special.SpecialNodeListModifier;
 
 public final class HCSpecialNodeHandlerTest
 {
@@ -96,8 +95,9 @@ public final class HCSpecialNodeHandlerTest
                   sCRLF +
                   "</html>" +
                   sCRLF,
-                  aHtml.getAsHTMLString (new HCConversionSettings (EHTMLVersion.HTML5).setXMLWriterSettings (XMLWriterSettings.createForHTML5 ()
-                                                                                                                              .setEmitNamespaces (false)
-                                                                                                                              .setIndent (EXMLSerializeIndent.ALIGN_ONLY))));
+                  HCSettings.getAsHTMLString (aHtml,
+                                              new HCConversionSettings (EHTMLVersion.HTML5).setXMLWriterSettings (XMLWriterSettings.createForHTML5 ()
+                                                                                                                                   .setEmitNamespaces (false)
+                                                                                                                                   .setIndent (EXMLSerializeIndent.ALIGN_ONLY))));
   }
 }

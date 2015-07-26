@@ -36,18 +36,17 @@ public interface IHCCustomizer
 {
   /**
    * Customize HC node with some predefined classes etc.
-   *
-   * @param aParentElement
-   *        The parent element of the element to be customized. May not be
-   *        <code>null</code>.
    * @param aNode
    *        The element to be customized. Never <code>null</code>.
    * @param eHTMLVersion
    *        The HTML version to be used. Never <code>null</code>.
+   * @param aTargetNode
+   *        The node where additional elements should be appended to. May not be
+   *        <code>null</code>.
    */
-  void customizeNode (@Nonnull IHCHasChildrenMutable <?, ? super IHCNode> aParentElement,
-                      @Nonnull IHCNode aNode,
-                      @Nonnull EHTMLVersion eHTMLVersion);
+  void customizeNode (@Nonnull IHCNode aNode,
+                      @Nonnull EHTMLVersion eHTMLVersion,
+                      @Nonnull IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode);
 
   /**
    * This callback is called, when the main HTML element is assembled, to move

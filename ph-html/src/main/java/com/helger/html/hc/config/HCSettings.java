@@ -30,11 +30,13 @@ import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.debug.GlobalDebug;
 import com.helger.commons.lang.ServiceLoaderHelper;
 import com.helger.commons.microdom.IMicroNode;
+import com.helger.commons.microdom.serialize.MicroWriter;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.conversion.HCConversionSettings;
 import com.helger.html.hc.conversion.IHCConversionSettings;
 import com.helger.html.hc.customize.IHCOnDocumentReadyProvider;
+import com.helger.html.hc.html.HCHtml;
 import com.helger.html.hc.html.HCScript;
 
 /**
@@ -138,6 +140,34 @@ public final class HCSettings
   }
 
   /**
+   * Convert the passed node to it's HTML representation. First this HC-node is
+   * converted to a micro node, which is than
+   *
+   * @param aHCNode
+   *        The HC node to be converted to an HTML string. May not be
+   *        <code>null</code>.
+   * @param aConversionSettings
+   *        The conversion settings to be used. May not be <code>null</code>.
+   * @return The node as HTML string. Never <code>null</code>.
+   */
+  @Nonnull
+  public final static String getAsHTMLString (@Nonnull final IHCNode aHCNode,
+                                              @Nonnull final IHCConversionSettings aConversionSettings)
+  {
+    IMicroNode aMicroNode;
+    if (aHCNode instanceof HCHtml)
+    {
+      // Apply customizer first
+      aMicroNode = ((HCHtml) aHCNode).customizeAndConvertToMicroNode (aConversionSettings);
+    }
+    else
+      aMicroNode = aHCNode.convertToMicroNode (aConversionSettings);
+    if (aMicroNode == null)
+      return "";
+    return MicroWriter.getNodeAsString (aMicroNode, aConversionSettings.getXMLWriterSettings ());
+  }
+
+  /**
    * Convert the passed HC node to an HTML string using the default conversion
    * settings.
    *
@@ -148,7 +178,7 @@ public final class HCSettings
   @Nonnull
   public static String getAsHTMLString (@Nonnull final IHCNode aHCNode)
   {
-    return aHCNode.getAsHTMLString (getConversionSettings ());
+    return getAsHTMLString (aHCNode, getConversionSettings ());
   }
 
   /**
@@ -182,7 +212,7 @@ public final class HCSettings
     final HCConversionSettings aRealCS = new HCConversionSettings (aConversionSettings);
     // And modify the copied XML settings
     aRealCS.getXMLWriterSettings ().setEmitNamespaces (false);
-    return aHCNode.getAsHTMLString (aRealCS);
+    return getAsHTMLString (aHCNode, aRealCS);
   }
 
   /**

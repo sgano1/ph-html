@@ -21,12 +21,17 @@ import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.microdom.IMicroNode;
+import com.helger.html.EHTMLVersion;
+import com.helger.html.hc.EHCNodeState;
+import com.helger.html.hc.IHCHasChildrenMutable;
+import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCWrappingNode;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
+import com.helger.html.hc.customize.IHCCustomizer;
 
 /**
  * Abstract implementation of {@link IHCWrappingNode}
- * 
+ *
  * @author Philip Helger
  */
 @NotThreadSafe
@@ -34,22 +39,36 @@ public abstract class AbstractHCWrappingNode extends AbstractHCNode implements I
 {
   @Override
   @Nonnull
-  public String getPlainText ()
+  public final EHCNodeState getNodeState ()
   {
-    return getWrappedNode ().getPlainText ();
+    return getWrappedNode ().getNodeState ();
   }
 
   @Override
-  public boolean canConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  protected final void onCustomizeNode (@Nonnull final IHCCustomizer aCustomizer,
+                                        @Nonnull final EHTMLVersion eHTMLVersion,
+                                        @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
+  {
+    getWrappedNode ().customizeNode (aCustomizer, eHTMLVersion, aTargetNode);
+  }
+
+  @Override
+  protected final void onFinalizeNodeState (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
+                                            @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
+  {
+    getWrappedNode ().finalizeNodeState (aConversionSettings, aTargetNode);
+  }
+
+  @Override
+  protected final void onRegisterExternalResources (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  {
+    getWrappedNode ().registerExternalResources (aConversionSettings);
+  }
+
+  @Override
+  public final boolean canConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     return getWrappedNode ().canConvertToMicroNode (aConversionSettings);
-  }
-
-  @Override
-  protected void beforeConvertToMicroNodeOnce (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
-  {
-    // Propagate to wrapped node
-    getWrappedNode ().beforeConvertToMicroNode (aConversionSettings);
   }
 
   @Override
@@ -57,5 +76,12 @@ public abstract class AbstractHCWrappingNode extends AbstractHCNode implements I
   protected IMicroNode internalConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     return getWrappedNode ().convertToMicroNode (aConversionSettings);
+  }
+
+  @Override
+  @Nonnull
+  public final String getPlainText ()
+  {
+    return getWrappedNode ().getPlainText ();
   }
 }

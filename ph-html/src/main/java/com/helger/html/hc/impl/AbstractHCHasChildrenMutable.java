@@ -99,9 +99,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
   @OverrideOnDemand
   @OverridingMethodsMustInvokeSuper
   protected void afterAddChild (@Nonnegative final int nIndex, @Nonnull final CHILDTYPE aChild)
-  {
-    aChild.onAdded (nIndex, this);
-  }
+  {}
 
   private void _internalAddChild (@CheckForSigned final int nIndex, @Nullable final CHILDTYPE aChild)
   {
@@ -197,9 +195,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
   @OverrideOnDemand
   @OverridingMethodsMustInvokeSuper
   protected void afterRemoveChild (@Nonnegative final int nIndex, @Nonnull final CHILDTYPE aChild)
-  {
-    aChild.onRemoved (nIndex, this);
-  }
+  {}
 
   @Nonnull
   public final THISTYPE removeChild (@Nullable final CHILDTYPE aChild)
@@ -329,17 +325,6 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
     // No children, or all children cannot be converted -> cannot convert this
     // list
     return false;
-  }
-
-  @Override
-  @OverrideOnDemand
-  @OverridingMethodsMustInvokeSuper
-  protected void beforeConvertToMicroNodeOnce (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
-  {
-    // Propagate to children
-    if (hasChildren ())
-      for (final CHILDTYPE aChild : m_aChildren)
-        aChild.beforeConvertToMicroNode (aConversionSettings);
   }
 
   @Nonnull

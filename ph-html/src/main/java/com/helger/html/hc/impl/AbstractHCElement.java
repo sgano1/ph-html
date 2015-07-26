@@ -949,8 +949,6 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
     // Run some consistency checks if desired
     if (aConversionSettings.areConsistencyChecksEnabled ())
     {
-      HCConsistencyChecker.consistencyAssert (isConvertedToMicroNode (),
-                                              "beforeConvertToMicroNode was not called on this element! This seems to be an internal error!");
       HCConsistencyChecker.runConsistencyCheckBeforeCreation (this, aConversionSettings.getHTMLVersion ());
     }
 
