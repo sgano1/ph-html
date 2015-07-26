@@ -319,7 +319,7 @@ public final class HCSpecialNodeHandler
 
   /**
    * Extract all out-of-band child nodes for the passed element. Ensure to call
-   * {@link com.helger.html.hc.IHCNode#beforeConvertToNode(com.helger.html.hc.conversion.IHCConversionSettingsToNode)}
+   * {@link com.helger.html.hc.IHCNode#beforeConvertToMicroNode(com.helger.html.hc.conversion.IHCConversionSettingsToNode)}
    * before calling this method! All out-of-band nodes are detached from their
    * parent so that the original node can be reused.
    *

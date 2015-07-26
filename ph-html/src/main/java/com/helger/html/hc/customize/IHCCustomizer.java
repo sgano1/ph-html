@@ -29,14 +29,14 @@ import com.helger.html.hc.html.HCHead;
 /**
  * A special customization interface, that lets you modify existing elements
  * before they are assembled and emitted in the HTML code.
- * 
+ *
  * @author Philip Helger
  */
 public interface IHCCustomizer
 {
   /**
    * Customize HC node with some predefined classes etc.
-   * 
+   *
    * @param aParentElement
    *        The parent element of the element to be customized. May not be
    *        <code>null</code>.
@@ -52,7 +52,7 @@ public interface IHCCustomizer
   /**
    * This callback is called, when the main HTML element is assembled, to move
    * the out-of-band nodes to the correct place.
-   * 
+   *
    * @param aOutOfBandNodes
    *        The non-<code>null</code> list of out-of-band nodes. May be empty.
    * @param aHead

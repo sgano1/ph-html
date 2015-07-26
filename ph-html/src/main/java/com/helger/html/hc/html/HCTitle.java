@@ -59,7 +59,7 @@ public class HCTitle extends AbstractHCElement <HCTitle>
   }
 
   @Override
-  public boolean canConvertToNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  public boolean canConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     return StringHelper.hasText (m_sContent);
   }

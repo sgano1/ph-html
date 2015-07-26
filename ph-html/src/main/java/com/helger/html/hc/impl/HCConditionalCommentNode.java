@@ -150,7 +150,7 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
   public HCCommentNode getCommentNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     // First convert the contained node to a micro node
-    final IMicroNode aWrappedMicroNode = m_aWrappedNode.convertToNode (aConversionSettings);
+    final IMicroNode aWrappedMicroNode = m_aWrappedNode.convertToMicroNode (aConversionSettings);
     // Now wrap the created XML in the special format required for a conditional
     // comment
     final String sWrappedXML = _getCommentText (aWrappedMicroNode, aConversionSettings.getXMLWriterSettings ());
@@ -159,9 +159,9 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
 
   @Override
   @Nullable
-  protected IMicroNode internalConvertToNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  protected IMicroNode internalConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
-    return getCommentNode (aConversionSettings).convertToNode (aConversionSettings);
+    return getCommentNode (aConversionSettings).convertToMicroNode (aConversionSettings);
   }
 
   @Override
@@ -472,11 +472,32 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
   }
 
   @Nullable
-  public static HCConditionalCommentNode getFromStringOrNull (@Nullable final String sValue,
-                                                              @Nonnull final IHCNode aWrappedNode)
+  public static HCConditionalCommentNode getFromStringOrNull (@Nullable final String sCondition,
+                                                              @Nonnull final IHCNode aNode)
   {
-    if (StringHelper.hasNoText (sValue))
+    if (StringHelper.hasNoText (sCondition))
       return null;
-    return new HCConditionalCommentNode (sValue, aWrappedNode);
+    return getAsConditionalCommentNode (sCondition, aNode);
+  }
+
+  /**
+   * Get the passed node wrapped in a conditional comment. This is a sanity
+   * method for <code>new HCConditionalCommentNode (this, sCondition)</code>. If
+   * this node is already an {@link HCConditionalCommentNode} the object is
+   * simply casted.
+   *
+   * @param sCondition
+   *        The condition to us. May neither be <code>null</code> nor empty.
+   * @param aNode
+   *        The HC node to be wrapped. May not be <code>null</code>.
+   * @return Never <code>null</code>.
+   */
+  @Nonnull
+  public static HCConditionalCommentNode getAsConditionalCommentNode (@Nonnull @Nonempty final String sCondition,
+                                                                      @Nonnull final IHCNode aNode)
+  {
+    if (aNode instanceof HCConditionalCommentNode)
+      return (HCConditionalCommentNode) aNode;
+    return new HCConditionalCommentNode (sCondition, aNode);
   }
 }

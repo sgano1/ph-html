@@ -63,7 +63,7 @@ public class HCDOMWrapper extends AbstractHCNode
 
   @Override
   @Nonnull
-  protected IMicroNode internalConvertToNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  protected IMicroNode internalConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     // Always return a clone, because otherwise upon first generation the node
     // will be assigned a parent, and upon second generation an exception is

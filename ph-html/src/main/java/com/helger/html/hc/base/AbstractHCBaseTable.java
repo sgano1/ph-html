@@ -808,12 +808,12 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
 
   @Override
   @OverridingMethodsMustInvokeSuper
-  public boolean canConvertToNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  public boolean canConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     // Avoid creating a table without header, body and footer
-    return m_aBody.canConvertToNode (aConversionSettings) ||
-           m_aHead.canConvertToNode (aConversionSettings) ||
-           m_aFoot.canConvertToNode (aConversionSettings);
+    return m_aBody.canConvertToMicroNode (aConversionSettings) ||
+           m_aHead.canConvertToMicroNode (aConversionSettings) ||
+           m_aFoot.canConvertToMicroNode (aConversionSettings);
   }
 
   private static int _getApplicableRowspan (final int nCellIndex, @Nullable final List <int []> aRowSpans)
@@ -922,18 +922,20 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
   @Override
   @OverrideOnDemand
   @OverridingMethodsMustInvokeSuper
-  protected void internalBeforeConvertToNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  public void beforeConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
+    super.beforeConvertToMicroNode (aConversionSettings);
+
     // Propagate to children
     if (m_aHead.hasChildren ())
       for (final HCRow aHeaderRow : m_aHead.directGetRowList ())
-        aHeaderRow.beforeConvertToNode (aConversionSettings);
+        aHeaderRow.beforeConvertToMicroNode (aConversionSettings);
     if (m_aBody.hasChildren ())
       for (final HCRow aBodyRow : m_aBody.directGetRowList ())
-        aBodyRow.beforeConvertToNode (aConversionSettings);
+        aBodyRow.beforeConvertToMicroNode (aConversionSettings);
     if (m_aFoot.hasChildren ())
       for (final HCRow aFooterRow : m_aFoot.directGetRowList ())
-        aFooterRow.beforeConvertToNode (aConversionSettings);
+        aFooterRow.beforeConvertToMicroNode (aConversionSettings);
   }
 
   @Override

@@ -23,9 +23,6 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.annotation.ReturnsMutableCopy;
@@ -44,6 +41,7 @@ import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.api.EHCLinkType;
 import com.helger.html.hc.api.IHCCSSNode;
 import com.helger.html.hc.api.IHCLinkType;
+import com.helger.html.hc.conversion.HCConsistencyChecker;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElement;
 import com.helger.html.hc.special.HCSpecialNodeHandler;
@@ -57,9 +55,6 @@ import com.helger.html.meta.MetaElementList;
  */
 public class HCHead extends AbstractHCElement <HCHead>
 {
-  private static final int MAX_CSS_IE = 31;
-  private static final Logger s_aLogger = LoggerFactory.getLogger (HCHead.class);
-
   private String m_sProfile;
   private final HCTitle m_aPageTitle = new HCTitle ();
   private final HCBase m_aBase = new HCBase ();
@@ -358,7 +353,7 @@ public class HCHead extends AbstractHCElement <HCHead>
                             @Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     for (final HCLink aLink : m_aLinks)
-      eHead.appendChild (aLink.convertToNode (aConversionSettings));
+      eHead.appendChild (aLink.convertToMicroNode (aConversionSettings));
   }
 
   @OverrideOnDemand
@@ -370,16 +365,11 @@ public class HCHead extends AbstractHCElement <HCHead>
     {
       if (aCSS instanceof IHCCSSNode && !((IHCCSSNode) aCSS).isInlineCSS ())
         ++nCSSExternals;
-      eHead.appendChild (aCSS.convertToNode (aConversionSettings));
+      eHead.appendChild (aCSS.convertToMicroNode (aConversionSettings));
     }
 
-    // Sources:
-    // http://acidmartin.wordpress.com/2008/11/25/the-32-external-css-files-limitation-of-internet-explorer-and-more/
-    // http://social.msdn.microsoft.com/Forums/en-US/iewebdevelopment/thread/ad1b6e88-bbfa-4cc4-9e95-3889b82a7c1d
-    if (nCSSExternals > MAX_CSS_IE && !GlobalDebug.isDebugMode ())
-      s_aLogger.warn ("You are including more than 31 CSS files (" +
-                      nCSSExternals +
-                      ") in your request, which will be ignored by Internet Explorer (at least up to version 8)!");
+    if (!GlobalDebug.isDebugMode ())
+      HCConsistencyChecker.checkForMaximumCSSResources (nCSSExternals);
   }
 
   @OverrideOnDemand
@@ -387,7 +377,7 @@ public class HCHead extends AbstractHCElement <HCHead>
                          @Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     for (final IHCNode aJS : m_aJS)
-      eHead.appendChild (aJS.convertToNode (aConversionSettings));
+      eHead.appendChild (aJS.convertToMicroNode (aConversionSettings));
   }
 
   @Override
@@ -404,10 +394,10 @@ public class HCHead extends AbstractHCElement <HCHead>
       eHead.appendChild (aMetaElement.convertToNode (aConversionSettings));
 
     // page title
-    eHead.appendChild (m_aPageTitle.convertToNode (aConversionSettings));
+    eHead.appendChild (m_aPageTitle.convertToMicroNode (aConversionSettings));
 
     // base
-    eHead.appendChild (m_aBase.convertToNode (aConversionSettings));
+    eHead.appendChild (m_aBase.convertToMicroNode (aConversionSettings));
 
     // links
     emitLinks (eHead, aConversionSettings);

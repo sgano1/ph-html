@@ -278,7 +278,7 @@ public class HCScript extends AbstractHCScript <HCScript>
   }
 
   @Override
-  public boolean canConvertToNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  public boolean canConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     m_sJSCode = StringHelper.trim (getJSCode (aConversionSettings.getJSWriterSettings ()));
     // Don't create script elements with empty content....

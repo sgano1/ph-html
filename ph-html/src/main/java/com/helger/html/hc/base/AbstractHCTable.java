@@ -89,15 +89,15 @@ public abstract class AbstractHCTable <THISTYPE extends AbstractHCTable <THISTYP
 
     // Append colgroup
     if (getColGroup () != null && getColGroup ().hasColumns ())
-      aElement.appendChild (getColGroup ().convertToNode (aConversionSettings));
+      aElement.appendChild (getColGroup ().convertToMicroNode (aConversionSettings));
 
     // Table header
-    aElement.appendChild (getHead ().convertToNode (aConversionSettings));
+    aElement.appendChild (getHead ().convertToMicroNode (aConversionSettings));
 
     // Table footer
-    aElement.appendChild (getFoot ().convertToNode (aConversionSettings));
+    aElement.appendChild (getFoot ().convertToMicroNode (aConversionSettings));
 
     // Table body
-    aElement.appendChild (getBody ().convertToNode (aConversionSettings));
+    aElement.appendChild (getBody ().convertToMicroNode (aConversionSettings));
   }
 }

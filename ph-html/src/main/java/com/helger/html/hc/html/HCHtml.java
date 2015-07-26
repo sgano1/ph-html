@@ -125,7 +125,7 @@ public class HCHtml extends AbstractHCElement <HCHtml>
   }
 
   @Override
-  protected void internalBeforeConvertToNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  protected void beforeConvertToMicroNodeOnce (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     final HCHead aHead = getHead ();
     final HCBody aBody = getBody ();
@@ -135,8 +135,8 @@ public class HCHtml extends AbstractHCElement <HCHtml>
     HCHelper.customizeNodes (aBody, aConversionSettings);
 
     // Prepare head and body before performing the OOB extraction
-    aHead.beforeConvertToNode (aConversionSettings);
-    aBody.beforeConvertToNode (aConversionSettings);
+    aHead.beforeConvertToMicroNode (aConversionSettings);
+    aBody.beforeConvertToMicroNode (aConversionSettings);
 
     // Extract all out-of-band nodes
     extractAndHandleOutOfBandNodes (aConversionSettings, aBody, aHead, aBody);
@@ -144,7 +144,7 @@ public class HCHtml extends AbstractHCElement <HCHtml>
 
   @Override
   @Nonnull
-  protected final IMicroDocument internalConvertToNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  protected final IMicroDocument internalConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     final EHTMLVersion eHTMLVersion = aConversionSettings.getHTMLVersion ();
 
@@ -156,11 +156,11 @@ public class HCHtml extends AbstractHCElement <HCHtml>
     applyProperties (aRoot, aConversionSettings);
 
     // Use the getter, to ensure the elements are not null
-    final IMicroNode eBody = getBody ().convertToNode (aConversionSettings);
+    final IMicroNode eBody = getBody ().convertToMicroNode (aConversionSettings);
     aRoot.appendChild (eBody);
 
     // Create head after body but insert it before the body
-    final IMicroNode eHead = getHead ().convertToNode (aConversionSettings);
+    final IMicroNode eHead = getHead ().convertToMicroNode (aConversionSettings);
     aRoot.insertAtIndex (0, eHead);
 
     // Done!

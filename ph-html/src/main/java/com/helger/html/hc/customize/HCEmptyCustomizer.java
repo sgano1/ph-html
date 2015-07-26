@@ -30,7 +30,7 @@ import com.helger.html.hc.html.HCHead;
 
 /**
  * An implementation of {@link IHCCustomizer} that does nothing.
- * 
+ *
  * @author Philip Helger
  */
 @Immutable

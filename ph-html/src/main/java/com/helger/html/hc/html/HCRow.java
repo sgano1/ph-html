@@ -656,7 +656,7 @@ public class HCRow extends AbstractHCElementWithInternalChildren <HCRow, IHCCell
   }
 
   @Override
-  public boolean canConvertToNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  public boolean canConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     // Avoid rows without cells!
     return hasChildren ();

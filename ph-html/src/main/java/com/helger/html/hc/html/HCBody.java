@@ -40,9 +40,9 @@ public class HCBody extends AbstractHCElementWithChildren <HCBody>
   }
 
   @Override
-  protected IMicroNode internalConvertToNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  protected IMicroNode internalConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
-    final IMicroNode ret = super.internalConvertToNode (aConversionSettings);
+    final IMicroNode ret = super.internalConvertToMicroNode (aConversionSettings);
 
     // Check if only unique IDs are used
     if (aConversionSettings.areConsistencyChecksEnabled ())

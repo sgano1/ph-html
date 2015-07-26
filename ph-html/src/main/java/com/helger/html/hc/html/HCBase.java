@@ -76,7 +76,7 @@ public class HCBase extends AbstractHCElement <HCBase>
   }
 
   @Override
-  public boolean canConvertToNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  public boolean canConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     return StringHelper.hasText (m_sHref) || m_aTarget != null;
   }

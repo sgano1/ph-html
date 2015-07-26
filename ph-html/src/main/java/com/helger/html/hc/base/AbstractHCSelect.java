@@ -468,7 +468,7 @@ public abstract class AbstractHCSelect <THISTYPE extends AbstractHCSelect <THIST
     if (CollectionHelper.isNotEmpty (m_aOptions))
     {
       for (final IHCNode aOption : m_aOptions)
-        aElement.appendChild (aOption.convertToNode (aConversionSettings));
+        aElement.appendChild (aOption.convertToMicroNode (aConversionSettings));
     }
     else
     {

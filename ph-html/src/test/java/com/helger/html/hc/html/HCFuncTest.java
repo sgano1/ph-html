@@ -173,7 +173,7 @@ public final class HCFuncTest
     b.addChild (new HCVar ().addChild ("zzz"));
 
     final IHCConversionSettings aCS = HCSettings.getConversionSettings ().getCloneIfNecessary (EHTMLVersion.DEFAULT);
-    assertNotNull (h.convertToNode (aCS));
+    assertNotNull (h.convertToMicroNode (aCS));
     if (false)
       System.out.print (h.getAsHTMLString (aCS));
   }

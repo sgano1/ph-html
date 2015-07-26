@@ -49,7 +49,7 @@ public class HCCDATANode extends AbstractHCNode
 
   @Override
   @Nonnull
-  protected IMicroCDATA internalConvertToNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  protected IMicroCDATA internalConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     return new MicroCDATA (m_sText);
   }

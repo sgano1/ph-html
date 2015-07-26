@@ -62,6 +62,7 @@ public final class HCConsistencyChecker
 {
   private static final Logger s_aLogger = LoggerFactory.getLogger (HCConsistencyChecker.class);
 
+  private static final int MAX_CSS_IE = 31;
   private static final AnnotationUsageCache s_aAUC_D_HTML4 = new AnnotationUsageCache (DeprecatedInHTML4.class);
   private static final AnnotationUsageCache s_aAUC_D_XHTML1 = new AnnotationUsageCache (DeprecatedInXHTML1.class);
   private static final AnnotationUsageCache s_aAUC_D_HTML5 = new AnnotationUsageCache (DeprecatedInHTML5.class);
@@ -257,5 +258,16 @@ public final class HCConsistencyChecker
       }
     });
     return aDuplicateIDs;
+  }
+
+  public static void checkForMaximumCSSResources (final int nCSSExternals)
+  {
+    // Sources:
+    // http://acidmartin.wordpress.com/2008/11/25/the-32-external-css-files-limitation-of-internet-explorer-and-more/
+    // http://social.msdn.microsoft.com/Forums/en-US/iewebdevelopment/thread/ad1b6e88-bbfa-4cc4-9e95-3889b82a7c1d
+    if (nCSSExternals > MAX_CSS_IE)
+      consistencyWarning ("You are including more than 31 CSS files (" +
+                          nCSSExternals +
+                          ") in your request, which will be ignored by Internet Explorer (at least up to version 8)!");
   }
 }

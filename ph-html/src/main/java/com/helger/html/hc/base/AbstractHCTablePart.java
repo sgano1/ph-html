@@ -83,7 +83,7 @@ public abstract class AbstractHCTablePart <THISTYPE extends AbstractHCTablePart 
 
   @Override
   @OverridingMethodsMustInvokeSuper
-  public boolean canConvertToNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  public boolean canConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     // Avoid creating an empty part
     return hasChildren () || hasID () || hasAnyClass () || hasAnyStyle () || hasCustomAttrs ();

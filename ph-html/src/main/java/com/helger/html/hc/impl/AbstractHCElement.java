@@ -126,7 +126,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   private boolean m_bSpellCheck = DEFAULT_SPELLCHECK;
   private EHTMLRole m_eRole;
 
-  // Must be a LinkedHashMap_
+  // Must be a LinkedHashMap:
   private Map <String, String> m_aCustomAttrs;
 
   protected AbstractHCElement (@Nonnull final EHTMLElement eElement)
@@ -826,9 +826,9 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
    * Set all attributes and child elements of this object
    *
    * @param aElement
-   *        The current micro element to be filled
+   *        The current micro element to be filled. Never <code>null</code>.
    * @param aConversionSettings
-   *        The conversion settings to be used
+   *        The conversion settings to be used. Never <code>null</code>.
    */
   @OverrideOnDemand
   @OverridingMethodsMustInvokeSuper
@@ -937,7 +937,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   @Override
   @Nonnull
   @OverridingMethodsMustInvokeSuper
-  protected IMicroNode internalConvertToNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  protected IMicroNode internalConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     // Run some consistency checks if desired
     if (aConversionSettings.areConsistencyChecksEnabled ())

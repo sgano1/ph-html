@@ -316,14 +316,14 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
   @Override
   @OverrideOnDemand
   @OverridingMethodsMustInvokeSuper
-  public boolean canConvertToNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  public boolean canConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     if (hasChildren ())
     {
       // If at least one child is present and can be converted to a node, the
       // whole list can be converted to a node
       for (final CHILDTYPE aChild : m_aChildren)
-        if (aChild.canConvertToNode (aConversionSettings))
+        if (aChild.canConvertToMicroNode (aConversionSettings))
           return true;
     }
     // No children, or all children cannot be converted -> cannot convert this
@@ -334,24 +334,24 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
   @Override
   @OverrideOnDemand
   @OverridingMethodsMustInvokeSuper
-  protected void internalBeforeConvertToNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  protected void beforeConvertToMicroNodeOnce (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     // Propagate to children
     if (hasChildren ())
       for (final CHILDTYPE aChild : m_aChildren)
-        aChild.beforeConvertToNode (aConversionSettings);
+        aChild.beforeConvertToMicroNode (aConversionSettings);
   }
 
   @Nonnull
   @Override
   @OverrideOnDemand
   @OverridingMethodsMustInvokeSuper
-  protected IMicroContainer internalConvertToNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  protected IMicroContainer internalConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     final IMicroContainer ret = new MicroContainer ();
     if (hasChildren ())
       for (final CHILDTYPE aNode : m_aChildren)
-        ret.appendChild (aNode.convertToNode (aConversionSettings));
+        ret.appendChild (aNode.convertToMicroNode (aConversionSettings));
     return ret;
   }
 

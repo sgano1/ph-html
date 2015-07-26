@@ -286,7 +286,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
   @Override
   @OverrideOnDemand
   @OverridingMethodsMustInvokeSuper
-  public boolean canConvertToNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  public boolean canConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     // Can always be converted to a node
     return true;
@@ -295,12 +295,12 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
   @Override
   @OverrideOnDemand
   @OverridingMethodsMustInvokeSuper
-  protected void internalBeforeConvertToNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  protected void beforeConvertToMicroNodeOnce (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     // Propagate to children
     if (hasChildren ())
       for (final CHILDTYPE aChild : m_aChildren)
-        aChild.beforeConvertToNode (aConversionSettings);
+        aChild.beforeConvertToMicroNode (aConversionSettings);
   }
 
   /**
@@ -329,7 +329,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
     super.applyProperties (aElement, aConversionSettings);
     if (hasChildren ())
       for (final CHILDTYPE aChild : getChildrenFormEmitting (m_aChildren))
-        aElement.appendChild (aChild.convertToNode (aConversionSettings));
+        aElement.appendChild (aChild.convertToMicroNode (aConversionSettings));
 
     if (!aElement.hasChildren ())
     {
