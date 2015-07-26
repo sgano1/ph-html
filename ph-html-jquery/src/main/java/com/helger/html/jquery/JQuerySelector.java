@@ -634,7 +634,7 @@ public final class JQuerySelector implements IJQuerySelector
   public static IJQuerySelector element (@Nonnull final EHTMLElement eHTMLElement)
   {
     ValueEnforcer.notNull (eHTMLElement, "HTMLElement");
-    return element (eHTMLElement.getElementNameLowerCase ());
+    return element (eHTMLElement.getElementName ());
   }
 
   /**
@@ -937,7 +937,7 @@ public final class JQuerySelector implements IJQuerySelector
   /**
    * Shortcut to select elements with a certain HTML <code>name</code>
    * attribute.
-   * 
+   *
    * @param sNameAttrValue
    *        The value of the name attribute to compare
    * @return <code>[name=<i>nameAttrValue</i>]</code>
