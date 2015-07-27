@@ -17,15 +17,9 @@
 package com.helger.html.hc.html;
 
 import java.util.Locale;
-import java.util.concurrent.locks.ReadWriteLock;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.annotation.concurrent.GuardedBy;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.DevelopersNote;
@@ -41,6 +35,7 @@ import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.api.EHCScriptInlineMode;
 import com.helger.html.hc.base.AbstractHCScript;
+import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.provider.UnparsedJSCodeProvider;
@@ -57,24 +52,13 @@ import com.helger.html.js.writer.IJSWriterSettings;
 @OutOfBandNode
 public class HCScriptInline extends AbstractHCScript <HCScriptInline>
 {
-  /** By default inline scripts are emitted in mode "wrap in comment" */
-  public static final EHCScriptInlineMode DEFAULT_MODE = EHCScriptInlineMode.PLAIN_TEXT_WRAPPED_IN_COMMENT;
-
   /** By default place inline JS after script files */
   public static final boolean DEFAULT_EMIT_AFTER_FILES = true;
 
-  private static final Logger s_aLogger = LoggerFactory.getLogger (HCScriptInline.class);
-  private static final ReadWriteLock s_aRWLock = new ReentrantReadWriteLock ();
-
-  @GuardedBy ("s_aRWLock")
-  private static EHCScriptInlineMode s_eDefaultMode = DEFAULT_MODE;
-  @GuardedBy ("s_aRWLock")
-  private static ENewLineMode s_eDefaultNewLineMode = ENewLineMode.DEFAULT;
-
   private IHasJSCode m_aProvider;
-  private EHCScriptInlineMode m_eMode = getDefaultMode ();
+  private EHCScriptInlineMode m_eMode = HCSettings.getScriptInlineMode ();
   private boolean m_bEmitAfterFiles = DEFAULT_EMIT_AFTER_FILES;
-  private ENewLineMode m_eNewLineMode = getDefaultNewLineMode ();
+  private ENewLineMode m_eNewLineMode = HCSettings.getNewLineMode ();
 
   private transient String m_sCachedJSCode;
 
@@ -264,79 +248,5 @@ public class HCScriptInline extends AbstractHCScript <HCScriptInline>
                             .append ("emitAfterFiles", m_bEmitAfterFiles)
                             .append ("NewLineMode", m_eNewLineMode)
                             .toString ();
-  }
-
-  /**
-   * @return The default masking mode to emit script content. Never
-   *         <code>null</code>.
-   */
-  @Nonnull
-  public static EHCScriptInlineMode getDefaultMode ()
-  {
-    s_aRWLock.readLock ().lock ();
-    try
-    {
-      return s_eDefaultMode;
-    }
-    finally
-    {
-      s_aRWLock.readLock ().unlock ();
-    }
-  }
-
-  /**
-   * Set how the content of script elements should be emitted. This only affects
-   * new built objects, and does not alter existing objects! The default mode is
-   * {@link #DEFAULT_MODE}.
-   *
-   * @param eMode
-   *        The new masking mode to set. May not be <code>null</code>.
-   */
-  public static void setDefaultMode (@Nonnull final EHCScriptInlineMode eMode)
-  {
-    ValueEnforcer.notNull (eMode, "Mode");
-
-    s_aRWLock.writeLock ().lock ();
-    try
-    {
-      if (s_eDefaultMode != eMode)
-      {
-        s_eDefaultMode = eMode;
-        s_aLogger.info ("Default <script> mode set to " + eMode);
-      }
-    }
-    finally
-    {
-      s_aRWLock.writeLock ().unlock ();
-    }
-  }
-
-  @Nonnull
-  public static ENewLineMode getDefaultNewLineMode ()
-  {
-    s_aRWLock.readLock ().lock ();
-    try
-    {
-      return s_eDefaultNewLineMode;
-    }
-    finally
-    {
-      s_aRWLock.readLock ().unlock ();
-    }
-  }
-
-  public static void setDefaultNewLineMode (@Nonnull final ENewLineMode eNewLineMode)
-  {
-    ValueEnforcer.notNull (eNewLineMode, "NewLineMode");
-
-    s_aRWLock.writeLock ().lock ();
-    try
-    {
-      s_eDefaultNewLineMode = eNewLineMode;
-    }
-    finally
-    {
-      s_aRWLock.writeLock ().unlock ();
-    }
   }
 }

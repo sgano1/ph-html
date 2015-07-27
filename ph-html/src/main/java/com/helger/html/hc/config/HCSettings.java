@@ -24,16 +24,19 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.GuardedBy;
 import javax.annotation.concurrent.ThreadSafe;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.debug.GlobalDebug;
 import com.helger.commons.lang.ServiceLoaderHelper;
+import com.helger.commons.system.ENewLineMode;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.api.EHCScriptInlineMode;
 import com.helger.html.hc.conversion.HCConversionSettings;
 import com.helger.html.hc.conversion.IHCConversionSettings;
 import com.helger.html.hc.customize.IHCOnDocumentReadyProvider;
-import com.helger.html.hc.html.HCScriptInline;
 
 /**
  * Global HC settings
@@ -45,6 +48,11 @@ public final class HCSettings
 {
   /** Default auto-complete for password fields: false */
   public static final boolean DEFAULT_AUTO_COMPLETE_OFF_FOR_PASSWORD_EDITS = false;
+
+  /** By default inline scripts are emitted in mode "wrap in comment" */
+  public static final EHCScriptInlineMode DEFAULT_SCRIPT_INLINE_MODE = EHCScriptInlineMode.PLAIN_TEXT_WRAPPED_IN_COMMENT;
+
+  private static final Logger s_aLogger = LoggerFactory.getLogger (HCSettings.class);
 
   private static final ReadWriteLock s_aRWLock = new ReentrantReadWriteLock ();
 
@@ -62,6 +70,12 @@ public final class HCSettings
   /** The "on document ready" code provider */
   @GuardedBy ("s_aRWLock")
   private static IHCOnDocumentReadyProvider s_aOnDocumentReadyProvider = new DefaultHCOnDocumentReadyProvider ();
+
+  @GuardedBy ("s_aRWLock")
+  private static EHCScriptInlineMode s_eScriptInlineMode = DEFAULT_SCRIPT_INLINE_MODE;
+
+  @GuardedBy ("s_aRWLock")
+  private static ENewLineMode s_eNewLineMode = ENewLineMode.DEFAULT;
 
   static
   {
@@ -167,12 +181,12 @@ public final class HCSettings
     if (eHTMLVersion.isAtLeastHTML5 ())
     {
       // No need to put anything in a comment
-      HCScriptInline.setDefaultMode (EHCScriptInlineMode.PLAIN_TEXT_NO_ESCAPE);
+      setScriptInlineMode (EHCScriptInlineMode.PLAIN_TEXT_NO_ESCAPE);
     }
     else
     {
       // Use default mode
-      HCScriptInline.setDefaultMode (HCScriptInline.DEFAULT_MODE);
+      setScriptInlineMode (DEFAULT_SCRIPT_INLINE_MODE);
     }
   }
 
@@ -225,6 +239,80 @@ public final class HCSettings
     try
     {
       s_aOnDocumentReadyProvider = aOnDocumentReadyProvider;
+    }
+    finally
+    {
+      s_aRWLock.writeLock ().unlock ();
+    }
+  }
+
+  /**
+   * @return The default masking mode to emit script content. Never
+   *         <code>null</code>.
+   */
+  @Nonnull
+  public static EHCScriptInlineMode getScriptInlineMode ()
+  {
+    s_aRWLock.readLock ().lock ();
+    try
+    {
+      return s_eScriptInlineMode;
+    }
+    finally
+    {
+      s_aRWLock.readLock ().unlock ();
+    }
+  }
+
+  /**
+   * Set how the content of script elements should be emitted. This only affects
+   * new built objects, and does not alter existing objects! The default mode is
+   * {@link #DEFAULT_SCRIPT_INLINE_MODE}.
+   *
+   * @param eMode
+   *        The new masking mode to set. May not be <code>null</code>.
+   */
+  public static void setScriptInlineMode (@Nonnull final EHCScriptInlineMode eMode)
+  {
+    ValueEnforcer.notNull (eMode, "Mode");
+
+    s_aRWLock.writeLock ().lock ();
+    try
+    {
+      if (s_eScriptInlineMode != eMode)
+      {
+        s_eScriptInlineMode = eMode;
+        s_aLogger.info ("Default <script> mode set to " + eMode);
+      }
+    }
+    finally
+    {
+      s_aRWLock.writeLock ().unlock ();
+    }
+  }
+
+  @Nonnull
+  public static ENewLineMode getNewLineMode ()
+  {
+    s_aRWLock.readLock ().lock ();
+    try
+    {
+      return s_eNewLineMode;
+    }
+    finally
+    {
+      s_aRWLock.readLock ().unlock ();
+    }
+  }
+
+  public static void setNewLineMode (@Nonnull final ENewLineMode eNewLineMode)
+  {
+    ValueEnforcer.notNull (eNewLineMode, "NewLineMode");
+
+    s_aRWLock.writeLock ().lock ();
+    try
+    {
+      s_eNewLineMode = eNewLineMode;
     }
     finally
     {

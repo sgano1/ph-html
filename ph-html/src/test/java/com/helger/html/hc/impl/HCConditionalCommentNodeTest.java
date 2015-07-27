@@ -45,7 +45,7 @@ public final class HCConditionalCommentNodeTest
   @Test
   public void testAll ()
   {
-    HCConditionalCommentNode.setDefaultNewLineMode (ENewLineMode.UNIX);
+    HCSettings.setNewLineMode (ENewLineMode.UNIX);
     HCSettings.getMutableConversionSettings ().getXMLWriterSettings ().setIndent (EXMLSerializeIndent.NONE);
 
     assertEquals ("<!--[if IE]>" +
@@ -88,6 +88,6 @@ public final class HCConditionalCommentNodeTest
     HCSettings.getMutableConversionSettings ()
               .setXMLWriterSettings (HCConversionSettings.createDefaultXMLWriterSettings (HCSettings.getConversionSettings ()
                                                                                                     .getHTMLVersion ()));
-    HCConditionalCommentNode.setDefaultNewLineMode (ENewLineMode.DEFAULT);
+    HCSettings.setNewLineMode (ENewLineMode.DEFAULT);
   }
 }

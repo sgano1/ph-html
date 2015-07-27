@@ -16,12 +16,8 @@
  */
 package com.helger.html.hc.impl;
 
-import java.util.concurrent.locks.ReadWriteLock;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
-
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.annotation.concurrent.GuardedBy;
 import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.ValueEnforcer;
@@ -34,6 +30,7 @@ import com.helger.commons.system.ENewLineMode;
 import com.helger.commons.version.Version;
 import com.helger.commons.xml.serialize.write.IXMLWriterSettings;
 import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.render.HCRenderer;
 
@@ -66,18 +63,13 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
   public static final String CONDITION_IF_GT_IE = "if gt IE ";
   public static final String CONDITION_IF_GTE_IE = "if gte IE ";
 
-  private static final ReadWriteLock s_aRWLock = new ReentrantReadWriteLock ();
-
-  @GuardedBy ("s_aRWLock")
-  private static ENewLineMode s_eDefaultNewLineMode = ENewLineMode.DEFAULT;
-
   private final String m_sCondition;
   private final IHCNode m_aWrappedNode;
   private final ENewLineMode m_eNewLineMode;
 
   public HCConditionalCommentNode (@Nonnull @Nonempty final String sCondition, @Nonnull final IHCNode aWrappedNode)
   {
-    this (sCondition, aWrappedNode, getDefaultNewLineMode ());
+    this (sCondition, aWrappedNode, HCSettings.getNewLineMode ());
   }
 
   public HCConditionalCommentNode (@Nonnull @Nonempty final String sCondition,
@@ -148,35 +140,6 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
                                        .append ("wrappedNode", m_aWrappedNode)
                                        .append ("newLineMode", m_eNewLineMode)
                                        .toString ();
-  }
-
-  @Nonnull
-  public static ENewLineMode getDefaultNewLineMode ()
-  {
-    s_aRWLock.readLock ().lock ();
-    try
-    {
-      return s_eDefaultNewLineMode;
-    }
-    finally
-    {
-      s_aRWLock.readLock ().unlock ();
-    }
-  }
-
-  public static void setDefaultNewLineMode (@Nonnull final ENewLineMode eNewLineMode)
-  {
-    ValueEnforcer.notNull (eNewLineMode, "NewLineMode");
-
-    s_aRWLock.writeLock ().lock ();
-    try
-    {
-      s_eDefaultNewLineMode = eNewLineMode;
-    }
-    finally
-    {
-      s_aRWLock.writeLock ().unlock ();
-    }
   }
 
   @Nonnull
