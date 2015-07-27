@@ -32,7 +32,7 @@ import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.config.HCSettings;
+import com.helger.html.hc.render.HCRenderer;
 import com.helger.json.IJson;
 
 /**
@@ -121,7 +121,7 @@ public class JSArray extends AbstractJSExpression
   @Nonnull
   public JSArray add (@Nullable final IHCNode aValue)
   {
-    return add (aValue == null ? null : HCSettings.getAsHTMLStringWithoutNamespaces (aValue));
+    return add (aValue == null ? null : HCRenderer.getAsHTMLStringWithoutNamespaces (aValue));
   }
 
   @Nonnull

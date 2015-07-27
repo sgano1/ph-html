@@ -32,7 +32,7 @@ import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.config.HCSettings;
+import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.js.marshal.JSMarshaller;
 import com.helger.json.IJson;
 
@@ -137,7 +137,7 @@ public class JSAssocArray extends AbstractJSExpression
   @Nonnull
   public JSAssocArray add (@Nonnull final String sKey, @Nullable final IHCNode aValue)
   {
-    return add (sKey, aValue == null ? null : HCSettings.getAsHTMLStringWithoutNamespaces (aValue));
+    return add (sKey, aValue == null ? null : HCRenderer.getAsHTMLStringWithoutNamespaces (aValue));
   }
 
   @Nonnull

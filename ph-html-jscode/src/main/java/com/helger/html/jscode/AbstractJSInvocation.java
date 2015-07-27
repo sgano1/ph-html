@@ -34,7 +34,7 @@ import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.config.HCSettings;
+import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.js.marshal.JSMarshaller;
 import com.helger.html.js.writer.IJSWriterSettings;
 import com.helger.json.IJson;
@@ -380,7 +380,7 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
   @Nonnull
   public IMPLTYPE arg (@Nullable final IHCNode aHCNode)
   {
-    return aHCNode == null ? argNull () : arg (HCSettings.getAsHTMLStringWithoutNamespaces (aHCNode));
+    return aHCNode == null ? argNull () : arg (HCRenderer.getAsHTMLStringWithoutNamespaces (aHCNode));
   }
 
   /**

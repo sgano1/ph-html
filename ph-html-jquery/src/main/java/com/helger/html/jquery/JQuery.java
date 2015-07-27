@@ -38,7 +38,7 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.hc.IHCHasID;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.config.HCSettings;
+import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.jscode.IJSExpression;
 import com.helger.html.jscode.JSAnonymousFunction;
@@ -130,7 +130,7 @@ public final class JQuery
   @Nonnull
   public static JQueryInvocation jQuery (@Nonnull final IHCNode aHCNode)
   {
-    return jQuery (HCSettings.getAsHTMLStringWithoutNamespaces (aHCNode));
+    return jQuery (HCRenderer.getAsHTMLStringWithoutNamespaces (aHCNode));
   }
 
   /**
@@ -213,7 +213,7 @@ public final class JQuery
   @Nonnull
   public static JQueryInvocation parseHTML (@Nonnull final IHCNode aHTML)
   {
-    return parseHTML (HCSettings.getAsHTMLStringWithoutNamespaces (aHTML));
+    return parseHTML (HCRenderer.getAsHTMLStringWithoutNamespaces (aHTML));
   }
 
   @Nonnull
