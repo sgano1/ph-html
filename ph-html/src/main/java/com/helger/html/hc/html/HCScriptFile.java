@@ -34,7 +34,7 @@ import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
  * URL.
  *
  * @author Philip Helger
- * @see HCScript
+ * @see HCScriptInline
  * @see HCScriptOnDocumentReady
  */
 @OutOfBandNode

@@ -199,16 +199,16 @@ public final class HCHeadTest
     assertTrue (aHead.getFirstChild () instanceof HCTitle);
     assertTrue (aHead.getLastChild () instanceof HCStyle);
 
-    aHead.addJS (new HCScript ("window.x=1;"));
+    aHead.addJS (new HCScriptInline ("window.x=1;"));
     assertEquals (6, aHead.getChildCount ());
     assertTrue (aHead.getChildAtIndex (0) instanceof HCTitle);
     assertTrue (aHead.getChildAtIndex (1) instanceof HCBase);
     assertTrue (aHead.getChildAtIndex (2) instanceof HCLink);
     assertTrue (aHead.getChildAtIndex (3) instanceof HCStyle);
     assertTrue (aHead.getChildAtIndex (4) instanceof HCStyle);
-    assertTrue (aHead.getChildAtIndex (5) instanceof HCScript);
+    assertTrue (aHead.getChildAtIndex (5) instanceof HCScriptInline);
     assertNull (aHead.getChildAtIndex (6));
     assertTrue (aHead.getFirstChild () instanceof HCTitle);
-    assertTrue (aHead.getLastChild () instanceof HCScript);
+    assertTrue (aHead.getLastChild () instanceof HCScriptInline);
   }
 }

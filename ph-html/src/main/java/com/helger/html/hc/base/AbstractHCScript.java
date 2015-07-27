@@ -30,7 +30,7 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
-import com.helger.html.hc.html.HCScript;
+import com.helger.html.hc.html.HCScriptInline;
 import com.helger.html.hc.html.HCScriptFile;
 import com.helger.html.hc.impl.AbstractHCElement;
 
@@ -38,7 +38,7 @@ import com.helger.html.hc.impl.AbstractHCElement;
  * Represents an HTML &lt;script&gt; element
  *
  * @author Philip Helger
- * @see HCScript
+ * @see HCScriptInline
  * @see HCScriptFile
  * @param <THISTYPE>
  *        Implementation type

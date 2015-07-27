@@ -29,11 +29,11 @@ import com.helger.html.js.provider.UnparsedJSCodeProvider;
  * be executed on document.ready. This requires jQuery to be present!
  *
  * @author Philip Helger
- * @see HCScript
+ * @see HCScriptInline
  * @see HCScriptFile
  */
 @OutOfBandNode
-public class HCScriptOnDocumentReady extends HCScript
+public class HCScriptOnDocumentReady extends HCScriptInline
 {
   private final IHasJSCode m_aOnDocumentReadyCode;
 

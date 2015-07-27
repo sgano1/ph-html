@@ -31,7 +31,7 @@ import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.conversion.HCConversionSettings;
 import com.helger.html.hc.html.HCH1;
 import com.helger.html.hc.html.HCHtml;
-import com.helger.html.hc.html.HCScript;
+import com.helger.html.hc.html.HCScriptInline;
 import com.helger.html.hc.render.HCRenderer;
 
 public final class HCSpecialNodeHandlerTest
@@ -49,7 +49,7 @@ public final class HCSpecialNodeHandlerTest
 
   @OutOfBandNode
   @SpecialNodeListModifier (MockSpecialNodeListHandler.class)
-  public static final class MockScript extends HCScript
+  public static final class MockScript extends HCScriptInline
   {
     public MockScript (final String sJSCode)
     {

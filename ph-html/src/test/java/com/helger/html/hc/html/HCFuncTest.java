@@ -145,7 +145,7 @@ public final class HCFuncTest
     b.addChild (new HCS ().addChild ("Das wäre also ein Beispiel"));
     b.addChild (new HCSamp ());
     b.addChild (new HCSamp ().addChild ("List"));
-    b.addChild (new HCScript (new UnparsedJSCodeProvider ("i=17;")));
+    b.addChild (new HCScriptInline (new UnparsedJSCodeProvider ("i=17;")));
     b.addChild (HCScriptFile.create (new SimpleURL ("a.js")));
     final HCSelect aSelect = new HCSelect ("x");
     aSelect.addOption ("y", "Ypsilon");

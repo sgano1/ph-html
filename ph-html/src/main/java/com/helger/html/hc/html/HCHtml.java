@@ -171,7 +171,7 @@ public class HCHtml extends AbstractHCElement <HCHtml>implements IHCHasChildren
       if (HCSpecialNodeHandler.isJSNode (aNode))
       {
         // It's a body node
-        if (aNode instanceof HCScript && !((HCScript) aNode).isEmitAfterFiles ())
+        if (aNode instanceof HCScriptInline && !((HCScriptInline) aNode).isEmitAfterFiles ())
         {
           // Add inline code before files
           m_aBody.addChild (nBodyNodeIndex, aNode);

@@ -44,7 +44,7 @@ import com.helger.html.hc.html.HCEditPassword;
 import com.helger.html.hc.html.HCHiddenField;
 import com.helger.html.hc.html.HCRadioButton;
 import com.helger.html.hc.html.HCRow;
-import com.helger.html.hc.html.HCScript;
+import com.helger.html.hc.html.HCScriptInline;
 import com.helger.html.hc.impl.HCEntityNode;
 import com.helger.html.js.EJSEvent;
 import com.helger.html.js.provider.FakeJS;
@@ -191,7 +191,7 @@ public class HCDefaultCustomizer extends HCEmptyCustomizer
         if (aCtrl.isFocused ())
         {
           // Add a JS call that focuses this element
-          aTargetNode.addChild (new HCScript (FakeJS.focus (aCtrl)));
+          aTargetNode.addChild (new HCScriptInline (FakeJS.focus (aCtrl)));
         }
       }
     }

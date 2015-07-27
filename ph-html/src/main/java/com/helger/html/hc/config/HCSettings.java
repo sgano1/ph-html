@@ -29,10 +29,11 @@ import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.debug.GlobalDebug;
 import com.helger.commons.lang.ServiceLoaderHelper;
 import com.helger.html.EHTMLVersion;
+import com.helger.html.hc.api.EHCScriptInlineMode;
 import com.helger.html.hc.conversion.HCConversionSettings;
 import com.helger.html.hc.conversion.IHCConversionSettings;
 import com.helger.html.hc.customize.IHCOnDocumentReadyProvider;
-import com.helger.html.hc.html.HCScript;
+import com.helger.html.hc.html.HCScriptInline;
 
 /**
  * Global HC settings
@@ -166,12 +167,12 @@ public final class HCSettings
     if (eHTMLVersion.isAtLeastHTML5 ())
     {
       // No need to put anything in a comment
-      HCScript.setDefaultMode (HCScript.EMode.PLAIN_TEXT_NO_ESCAPE);
+      HCScriptInline.setDefaultMode (EHCScriptInlineMode.PLAIN_TEXT_NO_ESCAPE);
     }
     else
     {
       // Use default mode
-      HCScript.setDefaultMode (HCScript.DEFAULT_MODE);
+      HCScriptInline.setDefaultMode (HCScriptInline.DEFAULT_MODE);
     }
   }
 

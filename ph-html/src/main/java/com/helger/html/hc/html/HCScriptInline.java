@@ -37,6 +37,9 @@ import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.system.ENewLineMode;
 import com.helger.html.annotation.OutOfBandNode;
+import com.helger.html.hc.IHCHasChildrenMutable;
+import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.api.EHCScriptInlineMode;
 import com.helger.html.hc.base.AbstractHCScript;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.js.IHasJSCode;
@@ -52,91 +55,42 @@ import com.helger.html.js.writer.IJSWriterSettings;
  * @see HCScriptOnDocumentReady
  */
 @OutOfBandNode
-public class HCScript extends AbstractHCScript <HCScript>
+public class HCScriptInline extends AbstractHCScript <HCScriptInline>
 {
-  public static enum EMode
-  {
-   /**
-    * Emit JS code as plain text, but XML masked. The XML masking rules for text
-    * nodes apply.
-    *
-    * <pre>
-    * &lt;script&gt;my &amp;lt; script&lt;/script&gt;
-    * </pre>
-    */
-    PLAIN_TEXT,
-   /**
-    * Emit JS code as plain text, but without XML masking.
-    *
-    * <pre>
-    * &lt;script&gt;my &lt; script&lt;/script&gt;
-    * </pre>
-    */
-    PLAIN_TEXT_NO_ESCAPE,
-   /**
-    * Wrap the whole JS code as plain text in XML comments.
-    *
-    * <pre>
-    * &lt;script&gt;&lt;!--
-    * my &lt; script
-    * //--&gt;&lt;/script&gt;
-    * </pre>
-    */
-    PLAIN_TEXT_WRAPPED_IN_COMMENT,
-   /**
-    * Wrap the whole JS code in an XML CDATA container.
-    *
-    * <pre>
-    * &lt;script&gt;&lt;![CDATA[my &lt; script]]&gt;&lt;/script&gt;
-    * </pre>
-    */
-    CDATA,
-   /**
-    * Wrap the whole JS code in an XML CDATA container inside a JS comment
-    * Tested OK with FF6, Opera11, Chrome13, IE8, IE9
-    *
-    * <pre>
-    * &lt;script&gt;//&lt;![CDATA[
-    * my &lt; script
-    * //]]&gt;&lt;/script&gt;
-    * </pre>
-    */
-    CDATA_IN_COMMENT;
-  }
-
   /** By default inline scripts are emitted in mode "wrap in comment" */
-  public static final EMode DEFAULT_MODE = EMode.PLAIN_TEXT_WRAPPED_IN_COMMENT;
+  public static final EHCScriptInlineMode DEFAULT_MODE = EHCScriptInlineMode.PLAIN_TEXT_WRAPPED_IN_COMMENT;
 
   /** By default place inline JS after script files */
   public static final boolean DEFAULT_EMIT_AFTER_FILES = true;
 
-  private static final Logger s_aLogger = LoggerFactory.getLogger (HCScript.class);
+  private static final Logger s_aLogger = LoggerFactory.getLogger (HCScriptInline.class);
   private static final ReadWriteLock s_aRWLock = new ReentrantReadWriteLock ();
 
   @GuardedBy ("s_aRWLock")
-  private static EMode s_eDefaultMode = DEFAULT_MODE;
+  private static EHCScriptInlineMode s_eDefaultMode = DEFAULT_MODE;
   @GuardedBy ("s_aRWLock")
   private static ENewLineMode s_eDefaultNewLineMode = ENewLineMode.DEFAULT;
 
   private IHasJSCode m_aProvider;
-  private String m_sJSCode;
-  private EMode m_eMode = getDefaultMode ();
+  private EHCScriptInlineMode m_eMode = getDefaultMode ();
   private boolean m_bEmitAfterFiles = DEFAULT_EMIT_AFTER_FILES;
   private ENewLineMode m_eNewLineMode = getDefaultNewLineMode ();
 
-  public HCScript ()
+  private transient String m_sCachedJSCode;
+
+  public HCScriptInline ()
   {
     super ();
   }
 
-  public HCScript (@Nonnull final IHasJSCode aProvider)
+  public HCScriptInline (@Nonnull final IHasJSCode aProvider)
   {
     this ();
     setJSCodeProvider (aProvider);
   }
 
   @DevelopersNote ("Handle with care!")
-  public HCScript (@Nonnull final String sJSCode)
+  public HCScriptInline (@Nonnull final String sJSCode)
   {
     this ();
     setJSCode (sJSCode);
@@ -148,7 +102,7 @@ public class HCScript extends AbstractHCScript <HCScript>
   }
 
   @Nonnull
-  public HCScript setJSCodeProvider (@Nonnull final IHasJSCode aProvider)
+  public HCScriptInline setJSCodeProvider (@Nonnull final IHasJSCode aProvider)
   {
     m_aProvider = ValueEnforcer.notNull (aProvider, "Provider");
     return this;
@@ -156,7 +110,7 @@ public class HCScript extends AbstractHCScript <HCScript>
 
   @Nonnull
   @DevelopersNote ("Handle with care!")
-  public HCScript setJSCode (@Nonnull final String sJSCode)
+  public HCScriptInline setJSCode (@Nonnull final String sJSCode)
   {
     return setJSCodeProvider (new UnparsedJSCodeProvider (sJSCode));
   }
@@ -189,7 +143,7 @@ public class HCScript extends AbstractHCScript <HCScript>
    * @return The masking mode. Never <code>null</code>.
    */
   @Nonnull
-  public EMode getMode ()
+  public EHCScriptInlineMode getMode ()
   {
     return m_eMode;
   }
@@ -202,7 +156,7 @@ public class HCScript extends AbstractHCScript <HCScript>
    * @return this
    */
   @Nonnull
-  public HCScript setMode (@Nonnull final EMode eMode)
+  public HCScriptInline setMode (@Nonnull final EHCScriptInlineMode eMode)
   {
     m_eMode = ValueEnforcer.notNull (eMode, "Mode");
     return this;
@@ -214,7 +168,7 @@ public class HCScript extends AbstractHCScript <HCScript>
   }
 
   @Nonnull
-  public HCScript setEmitAfterFiles (final boolean bEmitAfterFiles)
+  public HCScriptInline setEmitAfterFiles (final boolean bEmitAfterFiles)
   {
     m_bEmitAfterFiles = bEmitAfterFiles;
     return this;
@@ -234,7 +188,7 @@ public class HCScript extends AbstractHCScript <HCScript>
   }
 
   @Nonnull
-  public HCScript setNewLineMode (@Nonnull final ENewLineMode eNewLineMode)
+  public HCScriptInline setNewLineMode (@Nonnull final ENewLineMode eNewLineMode)
   {
     m_eNewLineMode = ValueEnforcer.notNull (eNewLineMode, "NewLineMode");
     return this;
@@ -242,7 +196,7 @@ public class HCScript extends AbstractHCScript <HCScript>
 
   public static void setInlineScript (@Nonnull final IMicroNodeWithChildren aElement,
                                       @Nullable final String sContent,
-                                      @Nonnull final EMode eMode,
+                                      @Nonnull final EHCScriptInlineMode eMode,
                                       @Nonnull final String sLineSeparator)
   {
     if (StringHelper.hasText (sContent))
@@ -278,11 +232,17 @@ public class HCScript extends AbstractHCScript <HCScript>
   }
 
   @Override
+  protected void onFinalizeNodeState (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
+                                      @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
+  {
+    m_sCachedJSCode = StringHelper.trim (getJSCode (aConversionSettings.getJSWriterSettings ()));
+  }
+
+  @Override
   public boolean canConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
-    m_sJSCode = StringHelper.trim (getJSCode (aConversionSettings.getJSWriterSettings ()));
     // Don't create script elements with empty content....
-    return StringHelper.hasText (m_sJSCode);
+    return StringHelper.hasText (m_sCachedJSCode);
   }
 
   @Override
@@ -291,7 +251,7 @@ public class HCScript extends AbstractHCScript <HCScript>
     super.fillMicroElement (aElement, aConversionSettings);
 
     // m_sJSCode is set in canConvertToNode which is called before this method!
-    setInlineScript (aElement, m_sJSCode, m_eMode, getNewLineString ());
+    setInlineScript (aElement, m_sCachedJSCode, m_eMode, getNewLineString ());
   }
 
   @Override
@@ -299,7 +259,7 @@ public class HCScript extends AbstractHCScript <HCScript>
   {
     return ToStringGenerator.getDerived (super.toString ())
                             .append ("provider", m_aProvider)
-                            .append ("jsCode", m_sJSCode)
+                            .append ("jsCode", m_sCachedJSCode)
                             .append ("mode", m_eMode)
                             .append ("emitAfterFiles", m_bEmitAfterFiles)
                             .append ("NewLineMode", m_eNewLineMode)
@@ -311,7 +271,7 @@ public class HCScript extends AbstractHCScript <HCScript>
    *         <code>null</code>.
    */
   @Nonnull
-  public static EMode getDefaultMode ()
+  public static EHCScriptInlineMode getDefaultMode ()
   {
     s_aRWLock.readLock ().lock ();
     try
@@ -332,7 +292,7 @@ public class HCScript extends AbstractHCScript <HCScript>
    * @param eMode
    *        The new masking mode to set. May not be <code>null</code>.
    */
-  public static void setDefaultMode (@Nonnull final EMode eMode)
+  public static void setDefaultMode (@Nonnull final EHCScriptInlineMode eMode)
   {
     ValueEnforcer.notNull (eMode, "Mode");
 

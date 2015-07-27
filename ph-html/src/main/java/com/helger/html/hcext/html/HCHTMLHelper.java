@@ -332,7 +332,7 @@ public final class HCHTMLHelper
       case SAMP:
         return new HCSamp ();
       case SCRIPT:
-        return new HCScript ();
+        return new HCScriptInline ();
       case SECTION:
         return new HCSection ();
       case SELECT:
