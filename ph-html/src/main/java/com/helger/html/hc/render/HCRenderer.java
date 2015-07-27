@@ -44,13 +44,13 @@ public final class HCRenderer
   private HCRenderer ()
   {}
 
-  public static void prepareForConversion (@Nonnull final HCHtml aHtml,
-                                           @Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  public static void prepareHtmlForConversion (@Nonnull final HCHtml aHtml,
+                                               @Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     // customize, finalize and extract resources
     prepareForConversion (aHtml, aHtml.getBody (), aConversionSettings);
 
-    // Extract all out-of-band nodes
+    // Extract all out-of-band nodes into the body
     if (aConversionSettings.isExtractOutOfBandNodes ())
       aHtml.extractAndReorderOutOfBandNodes ();
   }
@@ -140,14 +140,10 @@ public final class HCRenderer
                                       @Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     IHCNode aConvertNode = aSrcNode;
-    // Special case for HCHtml
-    if (aSrcNode instanceof HCHtml)
-    {
-      // it should have been done before, but for some unit tests it is
-      // necessary!
-      prepareForConversion ((HCHtml) aSrcNode, aConversionSettings);
-    }
-    else
+
+    // Special case for HCHtml - must have been done separately because the
+    // extraction of the OOB nodes must happen before the HTML HEAD is filled
+    if (!(aSrcNode instanceof HCHtml))
     {
       // Determine the target node to use
       final boolean bSrcNodeCanHaveChildren = aSrcNode instanceof IHCHasChildrenMutable <?, ?>;

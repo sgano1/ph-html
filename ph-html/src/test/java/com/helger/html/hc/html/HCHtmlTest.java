@@ -45,6 +45,9 @@ public final class HCHtmlTest
     aHtml.getBody ().addChild (new HCH1 ().addChild ("Test"));
     aHtml.getBody ().addChild (new HCStyle ("h1{color:red;}"));
 
+    // Must be done for HCHtml separately
+    HCRenderer.prepareHtmlForConversion (aHtml, HCSettings.getConversionSettings ());
+
     assertEquals ("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">" +
                   "<html xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">" +
                   "<head><style type=\"text/css\">h1{color:red;}</style></head>" +
@@ -66,6 +69,9 @@ public final class HCHtmlTest
     final HCHtml aHtml = new HCHtml ();
     aHtml.getBody ().addChild (new HCH1 ().addChild ("Test"));
     aHtml.getBody ().addChild (new HCStyle ("h1{color:red;}").addMedium (ECSSMedium.PRINT));
+
+    // Must be done for HCHtml separately
+    HCRenderer.prepareHtmlForConversion (aHtml, HCSettings.getConversionSettings ());
 
     assertEquals ("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">" +
                   "<html xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">" +
@@ -90,6 +96,10 @@ public final class HCHtmlTest
     aHtml.getBody ().addChild (new HCH1 ().addChild ("Test"));
     aHtml.getBody ().addChild (new HCScriptInlineOnDocumentReady (new UnparsedJSCodeProvider ("a=b;")));
     aHtml.getBody ().addChild (new HCScriptInlineOnDocumentReady (new UnparsedJSCodeProvider ("c=d;")));
+
+    // Must be done for HCHtml separately
+    HCRenderer.prepareHtmlForConversion (aHtml, HCSettings.getConversionSettings ());
+
     final String sCRLF = HCSettings.getNewLineMode ().getText ();
     assertEquals ("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">" +
                   "<html xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">" +

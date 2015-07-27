@@ -69,6 +69,10 @@ public final class HCSpecialNodeHandlerTest
     final String sCRLF = ENewLineMode.DEFAULT.getText ();
     final HCConversionSettings aCS = new HCConversionSettings (EHTMLVersion.HTML5);
     aCS.getXMLWriterSettings ().setEmitNamespaces (false).setIndent (EXMLSerializeIndent.ALIGN_ONLY);
+
+    // Must be done for HCHtml separately
+    HCRenderer.prepareHtmlForConversion (aHtml, aCS);
+
     assertEquals ("<!DOCTYPE html>" +
                   sCRLF +
                   "<html dir=\"ltr\">" +
