@@ -16,7 +16,6 @@ import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCIteratorCallback;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.config.HCSettings;
-import com.helger.html.hc.conversion.HCConversionSettings;
 import com.helger.html.hc.conversion.IHCConversionSettings;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.customize.IHCCustomizer;
@@ -28,6 +27,72 @@ public final class HCRenderer
 {
   private HCRenderer ()
   {}
+
+  public static void prepareForConversion (@Nonnull final HCHtml aHtml,
+                                           @Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  {
+    // customize, finalize and extract resources
+    prepareForConversion (aHtml, aHtml.getBody (), aConversionSettings);
+
+    // Extract all out-of-band nodes
+    if (aConversionSettings.isExtractOutOfBandNodes ())
+      aHtml.extractAndReorderOutOfBandNodes ();
+  }
+
+  /**
+   * Customize the passed base node and all child nodes recursively.
+   *
+   * @param aStartNode
+   *        Base node to start customizing (incl.). May not be <code>null</code>
+   *        .
+   * @param aGlobalTargetNode
+   *        The target node where new nodes should be appended to in case the
+   *        direct parent node is not suitable. May not be <code>null</code>.
+   * @param aConversionSettings
+   *        The conversion settings to use. May not be <code>null</code>.
+   */
+  public static void prepareForConversion (@Nonnull final IHCHasChildren aStartNode,
+                                           @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aGlobalTargetNode,
+                                           @Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  {
+    ValueEnforcer.notNull (aStartNode, "NodeToBeCustomized");
+    ValueEnforcer.notNull (aGlobalTargetNode, "TargetNode");
+    ValueEnforcer.notNull (aConversionSettings, "ConversionSettings");
+
+    final IHCCustomizer aCustomizer = aConversionSettings.getCustomizer ();
+    final EHTMLVersion eHTMLVersion = aConversionSettings.getHTMLVersion ();
+
+    // Customize all elements before extracting out-of-band nodes, in case the
+    // customizer adds some out-of-band nodes as well
+    // Than finalize and register external resources
+    HCHelper.iterateTree (aStartNode, new IHCIteratorCallback ()
+    {
+      @SuppressWarnings ("unchecked")
+      @Nonnull
+      public EFinish call (@Nullable final IHCHasChildren aParentNode, @Nonnull final IHCNode aChildNode)
+      {
+        // If the parent node is suitable, use it, else use the global target
+        // node
+        IHCHasChildrenMutable <?, ? super IHCNode> aRealTargetNode;
+        if (aParentNode instanceof IHCHasChildrenMutable <?, ?>)
+          aRealTargetNode = (IHCHasChildrenMutable <?, IHCNode>) aParentNode;
+        else
+          aRealTargetNode = aGlobalTargetNode;
+
+        // Run the global customizer
+        aChildNode.customizeNode (aCustomizer, eHTMLVersion, aRealTargetNode);
+
+        // finalize the node
+        aChildNode.finalizeNodeState (aConversionSettings, aRealTargetNode);
+
+        // No forced registration here
+        final boolean bForcedResourceRegistration = false;
+        aChildNode.registerExternalResources (aConversionSettings, bForcedResourceRegistration);
+
+        return EFinish.UNFINISHED;
+      }
+    });
+  }
 
   /**
    * Convert the passed HC node to a micro node using the default conversion
@@ -47,41 +112,46 @@ public final class HCRenderer
    * Convert the passed HC node to a micro node using the provided conversion
    * settings.
    *
-   * @param aHCNode
+   * @param aSrcNode
    *        The node to be converted. May not be <code>null</code>.
    * @param aConversionSettings
    *        The conversion settings to be used. May not be <code>null</code>.
    * @return The fully created HTML node
    */
+  @SuppressWarnings ("unchecked")
   @Nullable
-  public static IMicroNode getAsNode (@Nonnull final IHCNode aHCNode,
+  public static IMicroNode getAsNode (@Nonnull final IHCNode aSrcNode,
                                       @Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
-    IHCNode aConvertNode;
-    if (aHCNode instanceof HCHtml)
+    IHCNode aConvertNode = aSrcNode;
+    // Special case for HCHtml - it must have been done before!
+    if (!(aSrcNode instanceof HCHtml))
     {
-      final HCHtml aHTML = (HCHtml) aHCNode;
-
-      // prepare nodes
-      HCRenderer.prepareForConversion (aHTML, aHTML.getBody (), aConversionSettings);
-
-      // Extract all out-of-band nodes
-      if (aConversionSettings.isExtractOutOfBandNodes ())
-        aHTML.extractAndReorderOutOfBandNodes ();
-
-      aConvertNode = aHCNode;
-    }
-    else
-    {
-      final IHCHasChildrenMutable <?, IHCNode> aHCTemp = new HCNodeList ();
-      aHCTemp.addChild (aHCNode);
+      // Determine the target node to use
+      final boolean bSrcNodeCanHaveChildren = aSrcNode instanceof IHCHasChildrenMutable <?, ?>;
+      IHCHasChildrenMutable <?, IHCNode> aTempNode;
+      if (bSrcNodeCanHaveChildren)
+      {
+        // Passed node can handle it
+        aTempNode = (IHCHasChildrenMutable <?, IHCNode>) aSrcNode;
+      }
+      else
+      {
+        aTempNode = new HCNodeList ();
+        aTempNode.addChild (aSrcNode);
+      }
 
       // customize, finalize and extract resources
-      prepareForConversion (aHCTemp, aHCTemp, aConversionSettings);
+      prepareForConversion (aTempNode, aTempNode, aConversionSettings);
 
-      // Select node to convert - if nothing was extracted, use the original
-      // node
-      aConvertNode = aHCTemp.getChildCount () == 1 ? aHCNode : aHCTemp;
+      // NOTE: no OOB extraction here, because it is unclear what would happen
+      // to the nodes. So this branch should mainly be used for unit testing
+      // only!
+
+      // Select node to convert to MicroDOM - if something was extracted, use
+      // the temp node
+      if (!bSrcNodeCanHaveChildren && aTempNode.getChildCount () > 1)
+        aConvertNode = aTempNode;
     }
 
     final IMicroNode aMicroNode = aConvertNode.convertToMicroNode (aConversionSettings);
@@ -134,88 +204,6 @@ public final class HCRenderer
   @Nonnull
   public static String getAsHTMLStringWithoutNamespaces (@Nonnull final IHCNode aHCNode)
   {
-    return getAsHTMLStringWithoutNamespaces (aHCNode, HCSettings.getConversionSettings ());
-  }
-
-  /**
-   * Convert the passed HC node to an HTML string without namespaces.
-   *
-   * @param aHCNode
-   *        The node to be converted. May not be <code>null</code>.
-   * @param aConversionSettings
-   *        The conversion settings to be used. May not be <code>null</code>.
-   * @return The node as XML with or without indentation.
-   */
-  @Nonnull
-  public static String getAsHTMLStringWithoutNamespaces (@Nonnull final IHCNode aHCNode,
-                                                         @Nonnull final IHCConversionSettings aConversionSettings)
-  {
-    // Create a copy
-    final HCConversionSettings aRealCS = new HCConversionSettings (aConversionSettings);
-    // And modify the copied XML settings
-    aRealCS.getXMLWriterSettings ().setEmitNamespaces (false);
-    return getAsHTMLString (aHCNode, aRealCS);
-  }
-
-  /**
-   * Customize the passed base node and all child nodes recursively.
-   *
-   * @param aStartNode
-   *        Base node to start customizing (incl.). May not be <code>null</code>
-   *        .
-   * @param aTargetNode
-   *        The target node where new nodes should be appended to. May not be
-   *        <code>null</code>.
-   * @param aConversionSettings
-   *        The conversion settings to use. May not be <code>null</code>.
-   */
-  public static void prepareForConversion (@Nonnull final IHCHasChildren aStartNode,
-                                           @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode,
-                                           @Nonnull final IHCConversionSettingsToNode aConversionSettings)
-  {
-    ValueEnforcer.notNull (aStartNode, "NodeToBeCustomized");
-    ValueEnforcer.notNull (aTargetNode, "TargetNode");
-    ValueEnforcer.notNull (aConversionSettings, "ConversionSettings");
-
-    final IHCCustomizer aCustomizer = aConversionSettings.getCustomizer ();
-    final EHTMLVersion eHTMLVersion = aConversionSettings.getHTMLVersion ();
-
-    final int nTargetNodeChildren = aTargetNode.getChildCount ();
-
-    // Customize all elements before extracting out-of-band nodes, in case the
-    // customizer adds some out-of-band nodes as well
-    // Than finalize and register external resources
-    HCHelper.iterateTree (aStartNode, new IHCIteratorCallback ()
-    {
-      @SuppressWarnings ("unchecked")
-      @Nonnull
-      public EFinish call (@Nullable final IHCHasChildren aParentNode, @Nonnull final IHCNode aChildNode)
-      {
-        IHCHasChildrenMutable <?, ? super IHCNode> aRealTargetNode;
-        if (aParentNode instanceof IHCHasChildrenMutable <?, ?>)
-          aRealTargetNode = (IHCHasChildrenMutable <?, IHCNode>) aParentNode;
-        else
-          aRealTargetNode = aTargetNode;
-
-        // Run the global customizer
-        aChildNode.customizeNode (aCustomizer, eHTMLVersion, aRealTargetNode);
-
-        // finalize the node
-        aChildNode.finalizeNodeState (aConversionSettings, aRealTargetNode);
-
-        // No forced registration here
-        final boolean bForcedResourceRegistration = false;
-        aChildNode.registerExternalResources (aConversionSettings, bForcedResourceRegistration);
-        return EFinish.UNFINISHED;
-      }
-    });
-
-    if (aTargetNode.getChildCount () > nTargetNodeChildren)
-    {
-      // At least one child was added to the target node - ensure it is also
-      // prepared - recursive call
-      System.out.println ("Recursive preparation!");
-      prepareForConversion (aTargetNode, aTargetNode, aConversionSettings);
-    }
+    return getAsHTMLString (aHCNode, HCSettings.getConversionSettingsWithoutNamespaces ());
   }
 }

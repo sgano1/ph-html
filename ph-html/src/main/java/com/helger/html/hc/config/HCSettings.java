@@ -121,6 +121,20 @@ public final class HCSettings
   }
 
   /**
+   * @return The global read-only non-<code>null</code> conversion settings with
+   *         XML namespaces disabled
+   */
+  @Nonnull
+  public static IHCConversionSettings getConversionSettingsWithoutNamespaces ()
+  {
+    // Create a copy!!
+    final HCConversionSettings aCS = getMutableConversionSettings ().getClone ();
+    // And modify the copied XML settings
+    aCS.getXMLWriterSettings ().setEmitNamespaces (false);
+    return aCS;
+  }
+
+  /**
    * Get the {@link Charset} that is used to create the HTML code.
    *
    * @return The non-<code>null</code> Charset object
