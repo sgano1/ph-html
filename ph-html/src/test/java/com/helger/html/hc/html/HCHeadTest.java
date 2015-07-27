@@ -28,7 +28,7 @@ import org.junit.Test;
 
 import com.helger.commons.state.EChange;
 import com.helger.commons.url.SimpleURL;
-import com.helger.html.hc.config.HCSettings;
+import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.meta.MetaElement;
 import com.helger.html.mock.HCTestRuleOptimized;
 
@@ -61,22 +61,22 @@ public final class HCHeadTest
     assertSame (aHead, aHead.setProfile ("any"));
     assertEquals ("any", aHead.getProfile ());
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\" profile=\"any\"></head>",
-                  HCSettings.getAsHTMLString (aHead));
+                  HCRenderer.getAsHTMLString (aHead));
 
     assertSame (aHead, aHead.setPageTitle ("Title"));
     assertEquals ("Title", aHead.getPageTitle ());
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\" profile=\"any\"><title>Title</title></head>",
-                  HCSettings.getAsHTMLString (aHead));
+                  HCRenderer.getAsHTMLString (aHead));
 
     assertSame (aHead, aHead.setBaseHref ("/"));
     assertEquals ("/", aHead.getBaseHref ());
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\" profile=\"any\"><title>Title</title><base href=\"/\" /></head>",
-                  HCSettings.getAsHTMLString (aHead));
+                  HCRenderer.getAsHTMLString (aHead));
 
     assertSame (aHead, aHead.setBaseTarget (HC_Target.BLANK));
     assertEquals (HC_Target.BLANK, aHead.getBaseTarget ());
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\" profile=\"any\"><title>Title</title><base href=\"/\" target=\"_blank\" /></head>",
-                  HCSettings.getAsHTMLString (aHead));
+                  HCRenderer.getAsHTMLString (aHead));
     assertNotNull (aHead.toString ());
   }
 
@@ -94,7 +94,7 @@ public final class HCHeadTest
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\">" +
                   "<meta name=\"foo\" content=\"bar\" />" +
                   "</head>",
-                  HCSettings.getAsHTMLString (aHead));
+                  HCRenderer.getAsHTMLString (aHead));
 
     assertSame (aHead.getMetaElementList (),
                 aHead.getMetaElementList ().addMetaElement (new MetaElement ("goo", true, "car")));
@@ -103,7 +103,7 @@ public final class HCHeadTest
                   "<meta name=\"foo\" content=\"bar\" />" +
                   "<meta http-equiv=\"goo\" content=\"car\" />" +
                   "</head>",
-                  HCSettings.getAsHTMLString (aHead));
+                  HCRenderer.getAsHTMLString (aHead));
 
     assertEquals (EChange.UNCHANGED, aHead.getMetaElementList ().removeMetaElement ("any"));
     assertEquals (2, aHead.getMetaElementList ().getMetaElementCount ());
@@ -114,44 +114,44 @@ public final class HCHeadTest
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\">" +
                   "<meta http-equiv=\"goo\" content=\"car\" />" +
                   "</head>",
-                  HCSettings.getAsHTMLString (aHead));
+                  HCRenderer.getAsHTMLString (aHead));
     assertEquals (EChange.CHANGED, aHead.getMetaElementList ().removeMetaElement ("goo"));
     assertEquals (0, aHead.getMetaElementList ().getMetaElementCount ());
-    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"></head>", HCSettings.getAsHTMLString (aHead));
+    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"></head>", HCRenderer.getAsHTMLString (aHead));
   }
 
   @Test
   public void testGenerate ()
   {
     final HCHead aHead = new HCHead ();
-    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"></head>", HCSettings.getAsHTMLString (aHead));
+    assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"></head>", HCRenderer.getAsHTMLString (aHead));
 
     aHead.setPageTitle ("test");
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>test</title></head>",
-                  HCSettings.getAsHTMLString (aHead));
+                  HCRenderer.getAsHTMLString (aHead));
 
     aHead.setBaseHref ("/root");
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>test</title><base href=\"/root\" /></head>",
-                  HCSettings.getAsHTMLString (aHead));
+                  HCRenderer.getAsHTMLString (aHead));
     aHead.setBaseHref (null);
     aHead.setBaseTarget (HC_Target.BLANK);
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>test</title><base target=\"_blank\" /></head>",
-                  HCSettings.getAsHTMLString (aHead));
+                  HCRenderer.getAsHTMLString (aHead));
     aHead.setBaseTarget (null);
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>test</title></head>",
-                  HCSettings.getAsHTMLString (aHead));
+                  HCRenderer.getAsHTMLString (aHead));
 
     aHead.setShortcutIconHref (new SimpleURL ("/favicon.ico"));
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>test</title><link rel=\"shortcut icon\" href=\"/favicon.ico\"></link><link rel=\"icon\" type=\"image/icon\" href=\"/favicon.ico\"></link></head>",
-                  HCSettings.getAsHTMLString (aHead));
+                  HCRenderer.getAsHTMLString (aHead));
 
     aHead.setShortcutIconHref (null);
     aHead.addJS (HCScriptFile.create (new SimpleURL ("/my.js")));
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>test</title><script type=\"text/javascript\" src=\"/my.js\"></script></head>",
-                  HCSettings.getAsHTMLString (aHead));
+                  HCRenderer.getAsHTMLString (aHead));
 
     aHead.addCSS (HCLink.createCSSLink (new SimpleURL ("/my.css")));
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>test</title><link rel=\"stylesheet\" type=\"text/css\" href=\"/my.css\"></link><script type=\"text/javascript\" src=\"/my.js\"></script></head>",
-                  HCSettings.getAsHTMLString (aHead));
+                  HCRenderer.getAsHTMLString (aHead));
   }
 }

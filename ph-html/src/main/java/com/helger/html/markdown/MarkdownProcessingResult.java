@@ -19,9 +19,9 @@ package com.helger.html.markdown;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.conversion.IHCConversionSettings;
 import com.helger.html.hc.impl.HCNodeList;
+import com.helger.html.hc.render.HCRenderer;
 
 /**
  * The result of a Markdown processing
@@ -48,12 +48,12 @@ public class MarkdownProcessingResult
   @Nonnull
   public String getAsHTMLString ()
   {
-    return HCSettings.getAsHTMLStringWithoutNamespaces (m_aNodeList).trim ();
+    return HCRenderer.getAsHTMLStringWithoutNamespaces (m_aNodeList).trim ();
   }
 
   @Nonnull
   public String getAsHTMLString (@Nonnull final IHCConversionSettings aConversionSettings)
   {
-    return HCSettings.getAsHTMLString (m_aNodeList, aConversionSettings).trim ();
+    return HCRenderer.getAsHTMLString (m_aNodeList, aConversionSettings).trim ();
   }
 }

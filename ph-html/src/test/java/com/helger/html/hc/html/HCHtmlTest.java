@@ -21,7 +21,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Rule;
 import org.junit.Test;
 
-import com.helger.html.hc.config.HCSettings;
+import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.js.provider.UnparsedJSCodeProvider;
 import com.helger.html.meta.MetaElement;
 import com.helger.html.mock.HCTestRuleOptimized;
@@ -48,14 +48,14 @@ public final class HCHtmlTest
                   "<head><style type=\"text/css\">h1{color:red;}</style></head>" +
                   "<body><h1>Test</h1></body>" +
                   "</html>",
-                  HCSettings.getAsHTMLString (aHtml));
+                  HCRenderer.getAsHTMLString (aHtml));
     // Do it again and check for node consistency
     assertEquals ("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">" +
                   "<html xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">" +
                   "<head><style type=\"text/css\">h1{color:red;}</style></head>" +
                   "<body><h1>Test</h1></body>" +
                   "</html>",
-                  HCSettings.getAsHTMLString (aHtml));
+                  HCRenderer.getAsHTMLString (aHtml));
   }
 
   @Test
@@ -78,7 +78,7 @@ public final class HCHtmlTest
                   "//--></script>" +
                   "</body>" +
                   "</html>",
-                  HCSettings.getAsHTMLString (aHtml));
+                  HCRenderer.getAsHTMLString (aHtml));
     // Do it again and check for node consistency
     assertEquals ("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">" +
                   "<html xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">" +
@@ -91,6 +91,6 @@ public final class HCHtmlTest
                   "//--></script>" +
                   "</body>" +
                   "</html>",
-                  HCSettings.getAsHTMLString (aHtml));
+                  HCRenderer.getAsHTMLString (aHtml));
   }
 }

@@ -30,6 +30,7 @@ import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.api.EHCLinkType;
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.conversion.IHCConversionSettings;
+import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.js.provider.UnparsedJSCodeProvider;
 import com.helger.html.mock.HCTestRuleOptimized;
 
@@ -175,7 +176,7 @@ public final class HCFuncTest
     final IHCConversionSettings aCS = HCSettings.getConversionSettings ().getCloneIfNecessary (EHTMLVersion.DEFAULT);
     assertNotNull (h.convertToMicroNode (aCS));
     if (false)
-      System.out.print (HCSettings.getAsHTMLString (h, aCS));
+      System.out.print (HCRenderer.getAsHTMLString (h, aCS));
   }
 
   @Test
@@ -186,6 +187,6 @@ public final class HCFuncTest
     aDiv.setRole (EHTMLRole.DIALOG);
     assertEquals (EHTMLRole.DIALOG, aDiv.getRole ());
     assertEquals ("<div xmlns=\"http://www.w3.org/1999/xhtml\" role=\"dialog\"></div>",
-                  HCSettings.getAsHTMLString (aDiv));
+                  HCRenderer.getAsHTMLString (aDiv));
   }
 }

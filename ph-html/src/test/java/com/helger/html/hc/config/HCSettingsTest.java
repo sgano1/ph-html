@@ -22,8 +22,8 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Rule;
 import org.junit.Test;
 
-import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.html.HCBR;
+import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.mock.HCTestRuleOptimized;
 
 /**
@@ -40,7 +40,7 @@ public final class HCSettingsTest
   public void testGetAsString ()
   {
     final HCBR aBR = new HCBR ();
-    final String s = HCSettings.getAsHTMLString (aBR);
+    final String s = HCRenderer.getAsHTMLString (aBR);
     assertNotNull (s);
     assertEquals ("<br xmlns=\"http://www.w3.org/1999/xhtml\" />", s);
   }
@@ -49,7 +49,7 @@ public final class HCSettingsTest
   public void testGetAsStringWithoutNamespaces ()
   {
     final HCBR aBR = new HCBR ();
-    final String s = HCSettings.getAsHTMLStringWithoutNamespaces (aBR);
+    final String s = HCRenderer.getAsHTMLStringWithoutNamespaces (aBR);
     assertNotNull (s);
     assertEquals ("<br />", s);
   }

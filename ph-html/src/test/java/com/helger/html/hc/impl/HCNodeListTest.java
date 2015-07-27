@@ -25,11 +25,11 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import com.helger.commons.microdom.IMicroContainer;
-import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.html.HCDiv;
 import com.helger.html.hc.html.HCRow;
 import com.helger.html.hc.html.HCSpan;
 import com.helger.html.hc.html.HCTable;
+import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.mock.HCTestRuleOptimized;
 
 /**
@@ -50,7 +50,7 @@ public final class HCNodeListTest
     x.addChild (new HCDiv ().addChild ("d1"));
     x.addChild (new HCDiv ().addChild ("d2"));
     assertTrue (x.hasChildren ());
-    final IMicroContainer aNode = (IMicroContainer) HCSettings.getAsNode (x);
+    final IMicroContainer aNode = (IMicroContainer) HCRenderer.getAsNode (x);
     assertNotNull (aNode);
     assertEquals (2, x.getChildCount ());
 
@@ -58,7 +58,7 @@ public final class HCNodeListTest
     x.addChild (new HCSpan ().addChild ("span"));
     final HCDiv div = x.addAndReturnChild (new HCDiv ().addChild ("d3"));
     assertNotNull (div);
-    assertEquals ("<div xmlns=\"http://www.w3.org/1999/xhtml\">d3</div>", HCSettings.getAsHTMLString (div));
+    assertEquals ("<div xmlns=\"http://www.w3.org/1999/xhtml\">d3</div>", HCRenderer.getAsHTMLString (div));
     assertEquals (2, x.getChildCount ());
   }
 
@@ -71,7 +71,7 @@ public final class HCNodeListTest
     assertEquals ("<table xmlns=\"http://www.w3.org/1999/xhtml\"><tbody><tr><td>"
                   + "<div>dd2</div>"
                   + "<div>dd1</div>"
-                  + "</td></tr></tbody></table>", HCSettings.getAsHTMLString (table));
+                  + "</td></tr></tbody></table>", HCRenderer.getAsHTMLString (table));
   }
 
   @Test
@@ -80,8 +80,8 @@ public final class HCNodeListTest
     final HCNodeList x = new HCNodeList ();
     x.addChild (new HCDiv ().addChild ("Na so was"));
     x.addChild (new HCDiv ().addChild ("aber auch"));
-    assertNotNull (HCSettings.getAsNode (x));
+    assertNotNull (HCRenderer.getAsNode (x));
     assertEquals ("<div xmlns=\"http://www.w3.org/1999/xhtml\">Na so was</div>"
-                  + "<div xmlns=\"http://www.w3.org/1999/xhtml\">aber auch</div>", HCSettings.getAsHTMLString (x));
+                  + "<div xmlns=\"http://www.w3.org/1999/xhtml\">aber auch</div>", HCRenderer.getAsHTMLString (x));
   }
 }

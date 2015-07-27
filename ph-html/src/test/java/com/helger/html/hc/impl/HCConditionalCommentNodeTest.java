@@ -29,6 +29,7 @@ import com.helger.commons.xml.serialize.write.XMLWriterSettings;
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.conversion.HCConversionSettings;
 import com.helger.html.hc.html.HCB;
+import com.helger.html.hc.render.HCRenderer;
 
 /**
  * Test class for class {@link HCConditionalCommentNode}
@@ -50,15 +51,15 @@ public final class HCConditionalCommentNodeTest
     assertEquals ("<!--[if IE]>" +
                   "abc" +
                   "<![endif]-->",
-                  HCSettings.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCTextNode ("abc"))));
+                  HCRenderer.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCTextNode ("abc"))));
     assertEquals ("<!--[if IE]>" +
                   "<b xmlns=\"http://www.w3.org/1999/xhtml\">bold</b>" +
                   "<![endif]-->",
-                  HCSettings.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCB ().addChild ("bold"))));
+                  HCRenderer.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCB ().addChild ("bold"))));
     assertEquals ("<!--[if IE 7]>" +
                   "<b>bold</b>" +
                   "<![endif]-->",
-                  HCSettings.getAsHTMLStringWithoutNamespaces (HCConditionalCommentNode.createForIEExactVersion7 (new HCB ().addChild ("bold"))));
+                  HCRenderer.getAsHTMLStringWithoutNamespaces (HCConditionalCommentNode.createForIEExactVersion7 (new HCB ().addChild ("bold"))));
 
     // But if enabling alignment mode, the newline is printer!
     final XMLWriterSettings aXWS = HCSettings.getMutableConversionSettings ().getXMLWriterSettings ();
@@ -69,19 +70,19 @@ public final class HCConditionalCommentNodeTest
                   "abc" +
                   "<![endif]-->" +
                   sCRLF,
-                  HCSettings.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCTextNode ("abc"))));
+                  HCRenderer.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCTextNode ("abc"))));
     assertEquals ("<!--[if IE]>\n" +
                   "<b xmlns=\"http://www.w3.org/1999/xhtml\">bold</b>" +
                   sCRLF +
                   "<![endif]-->" +
                   sCRLF,
-                  HCSettings.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCB ().addChild ("bold"))));
+                  HCRenderer.getAsHTMLString (HCConditionalCommentNode.createForIE (new HCB ().addChild ("bold"))));
     assertEquals ("<!--[if IE]>\n" +
                   "<b>bold</b>" +
                   sCRLF +
                   "<![endif]-->" +
                   sCRLF,
-                  HCSettings.getAsHTMLStringWithoutNamespaces (HCConditionalCommentNode.createForIE (new HCB ().addChild ("bold"))));
+                  HCRenderer.getAsHTMLStringWithoutNamespaces (HCConditionalCommentNode.createForIE (new HCB ().addChild ("bold"))));
 
     // Restore default settings
     HCSettings.getMutableConversionSettings ()

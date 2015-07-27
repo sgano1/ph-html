@@ -24,6 +24,7 @@ import com.helger.commons.url.SimpleURL;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.conversion.IHCConversionSettings;
+import com.helger.html.hc.render.HCRenderer;
 
 /**
  * Instantiate and generate code for all HTML5 elements available
@@ -89,6 +90,6 @@ public final class HC5FuncTest
     final IHCConversionSettings aCS = HCSettings.getConversionSettings ().getCloneIfNecessary (EHTMLVersion.HTML5);
     assertNotNull (h.convertToMicroNode (aCS));
     if (false)
-      System.out.print (HCSettings.getAsHTMLString (h, aCS));
+      System.out.print (HCRenderer.getAsHTMLString (h, aCS));
   }
 }

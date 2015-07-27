@@ -36,9 +36,9 @@ import com.helger.commons.string.StringHelper;
 import com.helger.commons.xml.serialize.read.SAXReaderSettings;
 import com.helger.html.entity.HTMLEntityResolver;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.impl.HCDOMWrapper;
 import com.helger.html.hc.impl.HCTextNode;
+import com.helger.html.hc.render.HCRenderer;
 
 /**
  * Test class for class {@link XHTMLParser}.
@@ -346,13 +346,13 @@ public final class XHTMLParserTest
 
     IHCNode aNode = aParser.convertToXHTMLFragmentOnDemand ("<b>Hallo</b>");
     assertTrue (aNode instanceof HCDOMWrapper);
-    IMicroNode aMicroNode = HCSettings.getAsNode (aNode);
+    IMicroNode aMicroNode = HCRenderer.getAsNode (aNode);
     assertTrue (aMicroNode instanceof IMicroContainer);
     assertTrue (((IMicroContainer) aMicroNode).getChildAtIndex (0) instanceof IMicroElement);
 
     aNode = aParser.convertToXHTMLFragmentOnDemand ("<b>Hallo<br/>helger</b>");
     assertTrue (aNode instanceof HCDOMWrapper);
-    aMicroNode = HCSettings.getAsNode (aNode);
+    aMicroNode = HCRenderer.getAsNode (aNode);
     assertTrue (aMicroNode instanceof IMicroContainer);
     assertTrue (((IMicroContainer) aMicroNode).getChildAtIndex (0) instanceof IMicroElement);
 
