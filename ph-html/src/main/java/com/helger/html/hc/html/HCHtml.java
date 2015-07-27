@@ -36,6 +36,7 @@ import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.IHCHasChildren;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.api.EHCTextDirection;
+import com.helger.html.hc.base.IHCScriptInline;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElement;
 import com.helger.html.hc.special.HCSpecialNodeHandler;
@@ -171,7 +172,7 @@ public class HCHtml extends AbstractHCElement <HCHtml>implements IHCHasChildren
       if (HCSpecialNodeHandler.isJSNode (aNode))
       {
         // It's a body node
-        if (aNode instanceof HCScriptInline && !((HCScriptInline) aNode).isEmitAfterFiles ())
+        if (aNode instanceof IHCScriptInline <?> && !((IHCScriptInline <?>) aNode).isEmitAfterFiles ())
         {
           // Add inline code before files
           m_aBody.addChild (nBodyNodeIndex, aNode);

@@ -19,6 +19,7 @@ package com.helger.html.hc.html;
 import javax.annotation.Nonnull;
 
 import com.helger.html.annotation.OutOfBandNode;
+import com.helger.html.hc.base.AbstractHCScriptInline;
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.js.IHasJSCode;
 
@@ -31,7 +32,7 @@ import com.helger.html.js.IHasJSCode;
  * @see HCScriptFile
  */
 @OutOfBandNode
-public class HCScriptInlineOnDocumentReady extends HCScriptInline
+public class HCScriptInlineOnDocumentReady extends AbstractHCScriptInline <HCScriptInlineOnDocumentReady>
 {
   private final IHasJSCode m_aOnDocumentReadyCode;
 

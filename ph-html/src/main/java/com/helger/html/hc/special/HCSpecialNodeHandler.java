@@ -41,17 +41,17 @@ import com.helger.commons.lang.ClassHelper;
 import com.helger.commons.lang.GenericReflection;
 import com.helger.commons.string.StringHelper;
 import com.helger.html.annotation.OutOfBandNode;
-import com.helger.html.hc.EHCNodeState;
 import com.helger.html.hc.HCHelper;
 import com.helger.html.hc.IHCHasChildren;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeWithChildren;
 import com.helger.html.hc.api.IHCCSSNode;
 import com.helger.html.hc.api.IHCJSNode;
+import com.helger.html.hc.base.IHCScriptInline;
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.html.HCLink;
-import com.helger.html.hc.html.HCScriptInline;
 import com.helger.html.hc.html.HCScriptFile;
+import com.helger.html.hc.html.HCScriptInline;
 import com.helger.html.hc.html.HCScriptInlineOnDocumentReady;
 import com.helger.html.hc.html.HCStyle;
 import com.helger.html.hc.impl.HCConditionalCommentNode;
@@ -220,12 +220,12 @@ public final class HCSpecialNodeHandler
    *
    * @param aNode
    *        The node to be checked - may be <code>null</code>.
-   * @return <code>true</code> if the node implements {@link HCScriptInline}.
+   * @return <code>true</code> if the node implements {@link IHCScriptInline} .
    */
   public static boolean isDirectJSInlineNode (@Nullable final IHCNode aNode)
   {
     // Inline JS node?
-    return aNode instanceof HCScriptInline;
+    return aNode instanceof IHCScriptInline <?>;
   }
 
   /**
@@ -426,9 +426,9 @@ public final class HCSpecialNodeHandler
                                      : aJSOnDocumentReadyBefore).appendFlattened (aScript.getOnDocumentReadyCode ());
       }
       else
-        if (aNode instanceof HCScriptInline)
+        if (aNode instanceof IHCScriptInline <?>)
         {
-          final HCScriptInline aScript = (HCScriptInline) aNode;
+          final IHCScriptInline <?> aScript = (IHCScriptInline <?>) aNode;
           (aScript.isEmitAfterFiles () ? aJSInlineAfter
                                        : aJSInlineBefore).appendFlattened (aScript.getJSCodeProvider ());
         }
@@ -479,33 +479,17 @@ public final class HCSpecialNodeHandler
 
     // Finally add the inline JS
     if (!aJSInlineBefore.isEmpty ())
-    {
-      final HCScriptInline aScript = new HCScriptInline (aJSInlineBefore).setEmitAfterFiles (false);
-      aScript.internalSetNodeState (EHCNodeState.RESOURCES_REGISTERED);
-      ret.add (aScript);
-    }
+      ret.add (new HCScriptInline (aJSInlineBefore).setEmitAfterFiles (false));
 
     if (!aJSInlineAfter.isEmpty ())
-    {
-      final HCScriptInline aScript = new HCScriptInline (aJSInlineAfter).setEmitAfterFiles (true);
-      aScript.internalSetNodeState (EHCNodeState.RESOURCES_REGISTERED);
-      ret.add (aScript);
-    }
+      ret.add (new HCScriptInline (aJSInlineAfter).setEmitAfterFiles (true));
 
     // Add all merged inline CSSs
     if (aCSSInlineBefore.length () > 0)
-    {
-      final HCStyle aStyle = new HCStyle (aCSSInlineBefore.toString ()).setEmitAfterFiles (false);
-      aStyle.internalSetNodeState (EHCNodeState.RESOURCES_REGISTERED);
-      ret.add (aStyle);
-    }
+      ret.add (new HCStyle (aCSSInlineBefore.toString ()).setEmitAfterFiles (false));
 
     if (aCSSInlineAfter.length () > 0)
-    {
-      final HCStyle aStyle = new HCStyle (aCSSInlineAfter.toString ()).setEmitAfterFiles (true);
-      aStyle.internalSetNodeState (EHCNodeState.RESOURCES_REGISTERED);
-      ret.add (aStyle);
-    }
+      ret.add (new HCStyle (aCSSInlineAfter.toString ()).setEmitAfterFiles (true));
 
     return ret;
   }
@@ -539,7 +523,7 @@ public final class HCSpecialNodeHandler
           else
             if (isDirectJSInlineNode (aNode))
             {
-              aSpecialNodes.addInlineJS (((HCScriptInline) aNode).getJSCodeProvider ());
+              aSpecialNodes.addInlineJS (((IHCScriptInline <?>) aNode).getJSCodeProvider ());
             }
             else
             {

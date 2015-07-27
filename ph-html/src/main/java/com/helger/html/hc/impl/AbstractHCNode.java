@@ -66,23 +66,6 @@ public abstract class AbstractHCNode implements IHCNode
    * @param eNodeState
    *        The new node state. May not be <code>null</code>.
    */
-  public final void internalSetNodeState (@Nonnull final EHCNodeState eNodeState)
-  {
-    ValueEnforcer.notNull (eNodeState, "NodeState");
-    if (m_eNodeState.isAfter (eNodeState))
-      throw new IllegalStateException ("The new node state is invalid. Got " +
-                                       eNodeState +
-                                       " but having " +
-                                       m_eNodeState);
-    m_eNodeState = eNodeState;
-  }
-
-  /**
-   * Change the node state internally. Handle with care!
-   *
-   * @param eNodeState
-   *        The new node state. May not be <code>null</code>.
-   */
   private void _setNodeState (@Nonnull final EHCNodeState eNodeState)
   {
     ValueEnforcer.notNull (eNodeState, "NodeState");
