@@ -124,8 +124,14 @@ public final class HCRenderer
                                       @Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     IHCNode aConvertNode = aSrcNode;
-    // Special case for HCHtml - it must have been done before!
-    if (!(aSrcNode instanceof HCHtml))
+    // Special case for HCHtml
+    if (aSrcNode instanceof HCHtml)
+    {
+      // it should have been done before, but for some unit tests it is
+      // necessary!
+      prepareForConversion ((HCHtml) aSrcNode, aConversionSettings);
+    }
+    else
     {
       // Determine the target node to use
       final boolean bSrcNodeCanHaveChildren = aSrcNode instanceof IHCHasChildrenMutable <?, ?>;

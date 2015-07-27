@@ -33,6 +33,7 @@ import com.helger.html.hc.html.HCH1;
 import com.helger.html.hc.html.HCHtml;
 import com.helger.html.hc.html.HCScriptInline;
 import com.helger.html.hc.render.HCRenderer;
+import com.helger.html.js.provider.UnparsedJSCodeProvider;
 
 public final class HCSpecialNodeHandlerTest
 {
@@ -53,7 +54,7 @@ public final class HCSpecialNodeHandlerTest
   {
     public MockScript (final String sJSCode)
     {
-      super (sJSCode);
+      super (new UnparsedJSCodeProvider (sJSCode));
     }
   }
 

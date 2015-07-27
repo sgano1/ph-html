@@ -18,11 +18,9 @@ package com.helger.html.hc.html;
 
 import javax.annotation.Nonnull;
 
-import com.helger.commons.annotation.DevelopersNote;
 import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.js.IHasJSCode;
-import com.helger.html.js.provider.UnparsedJSCodeProvider;
 
 /**
  * Regular inline JS script elements with the special semantics, that stuff will
@@ -33,20 +31,14 @@ import com.helger.html.js.provider.UnparsedJSCodeProvider;
  * @see HCScriptFile
  */
 @OutOfBandNode
-public class HCScriptOnDocumentReady extends HCScriptInline
+public class HCScriptInlineOnDocumentReady extends HCScriptInline
 {
   private final IHasJSCode m_aOnDocumentReadyCode;
 
-  public HCScriptOnDocumentReady (@Nonnull final IHasJSCode aOnDocumentReadyCode)
+  public HCScriptInlineOnDocumentReady (@Nonnull final IHasJSCode aOnDocumentReadyCode)
   {
     super (HCSettings.getOnDocumentReadyProvider ().createOnDocumentReady (aOnDocumentReadyCode));
     m_aOnDocumentReadyCode = aOnDocumentReadyCode;
-  }
-
-  @DevelopersNote ("Handle with care!")
-  public HCScriptOnDocumentReady (@Nonnull final String sJSCode)
-  {
-    this (new UnparsedJSCodeProvider (sJSCode));
   }
 
   /**

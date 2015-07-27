@@ -88,8 +88,8 @@ public final class HCHtmlTest
     final HCHtml aHtml = new HCHtml ();
     aHtml.getHead ().getMetaElementList ().addMetaElement (new MetaElement ("foo", "bar"));
     aHtml.getBody ().addChild (new HCH1 ().addChild ("Test"));
-    aHtml.getBody ().addChild (new HCScriptOnDocumentReady (new UnparsedJSCodeProvider ("a=b;")));
-    aHtml.getBody ().addChild (new HCScriptOnDocumentReady (new UnparsedJSCodeProvider ("c=d;")));
+    aHtml.getBody ().addChild (new HCScriptInlineOnDocumentReady (new UnparsedJSCodeProvider ("a=b;")));
+    aHtml.getBody ().addChild (new HCScriptInlineOnDocumentReady (new UnparsedJSCodeProvider ("c=d;")));
     final String sCRLF = HCSettings.getNewLineMode ().getText ();
     assertEquals ("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">" +
                   "<html xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\">" +

@@ -22,7 +22,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotation.DevelopersNote;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.microdom.IMicroNodeWithChildren;
@@ -31,14 +30,11 @@ import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.system.ENewLineMode;
 import com.helger.html.annotation.OutOfBandNode;
-import com.helger.html.hc.IHCHasChildrenMutable;
-import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.api.EHCScriptInlineMode;
 import com.helger.html.hc.base.AbstractHCScript;
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.js.IHasJSCode;
-import com.helger.html.js.provider.UnparsedJSCodeProvider;
 import com.helger.html.js.writer.IHasJSCodeWithSettings;
 import com.helger.html.js.writer.IJSWriterSettings;
 
@@ -47,7 +43,7 @@ import com.helger.html.js.writer.IJSWriterSettings;
  *
  * @author Philip Helger
  * @see HCScriptFile
- * @see HCScriptOnDocumentReady
+ * @see HCScriptInlineOnDocumentReady
  */
 @OutOfBandNode
 public class HCScriptInline extends AbstractHCScript <HCScriptInline>
@@ -73,13 +69,6 @@ public class HCScriptInline extends AbstractHCScript <HCScriptInline>
     setJSCodeProvider (aProvider);
   }
 
-  @DevelopersNote ("Handle with care!")
-  public HCScriptInline (@Nonnull final String sJSCode)
-  {
-    this ();
-    setJSCode (sJSCode);
-  }
-
   public boolean isInlineJS ()
   {
     return true;
@@ -90,13 +79,6 @@ public class HCScriptInline extends AbstractHCScript <HCScriptInline>
   {
     m_aProvider = ValueEnforcer.notNull (aProvider, "Provider");
     return this;
-  }
-
-  @Nonnull
-  @DevelopersNote ("Handle with care!")
-  public HCScriptInline setJSCode (@Nonnull final String sJSCode)
-  {
-    return setJSCodeProvider (new UnparsedJSCodeProvider (sJSCode));
   }
 
   /**
@@ -216,15 +198,10 @@ public class HCScriptInline extends AbstractHCScript <HCScriptInline>
   }
 
   @Override
-  protected void onFinalizeNodeState (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
-                                      @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
-  {
-    m_sCachedJSCode = StringHelper.trim (getJSCode (aConversionSettings.getJSWriterSettings ()));
-  }
-
-  @Override
   public boolean canConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
+    if (m_sCachedJSCode == null)
+      m_sCachedJSCode = StringHelper.trim (getJSCode (aConversionSettings.getJSWriterSettings ()));
     // Don't create script elements with empty content....
     return StringHelper.hasText (m_sCachedJSCode);
   }

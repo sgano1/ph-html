@@ -16,8 +16,6 @@
  */
 package com.helger.html.hc.html;
 
-import java.util.Locale;
-
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -56,11 +54,6 @@ public class HCHiddenField extends AbstractHCInput <HCHiddenField>
     this ();
     setName (sName);
     setValue (nValue);
-  }
-
-  public HCHiddenField (@Nullable final String sName, @Nonnull final Locale aLocale)
-  {
-    this (sName, aLocale.toString ());
   }
 
   public HCHiddenField (@Nullable final String sName, final boolean bValue)

@@ -35,7 +35,7 @@ import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
  *
  * @author Philip Helger
  * @see HCScriptInline
- * @see HCScriptOnDocumentReady
+ * @see HCScriptInlineOnDocumentReady
  */
 @OutOfBandNode
 public class HCScriptFile extends AbstractHCScript <HCScriptFile>

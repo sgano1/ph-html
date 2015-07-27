@@ -52,7 +52,7 @@ import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.html.HCLink;
 import com.helger.html.hc.html.HCScriptInline;
 import com.helger.html.hc.html.HCScriptFile;
-import com.helger.html.hc.html.HCScriptOnDocumentReady;
+import com.helger.html.hc.html.HCScriptInlineOnDocumentReady;
 import com.helger.html.hc.html.HCStyle;
 import com.helger.html.hc.impl.HCConditionalCommentNode;
 import com.helger.html.js.provider.CollectingJSCodeProvider;
@@ -419,9 +419,9 @@ public final class HCSpecialNodeHandler
 
       // Check HCScriptOnDocumentReady first, because it is a subclass of
       // HCScript
-      if (aNode instanceof HCScriptOnDocumentReady)
+      if (aNode instanceof HCScriptInlineOnDocumentReady)
       {
-        final HCScriptOnDocumentReady aScript = (HCScriptOnDocumentReady) aNode;
+        final HCScriptInlineOnDocumentReady aScript = (HCScriptInlineOnDocumentReady) aNode;
         (aScript.isEmitAfterFiles () ? aJSOnDocumentReadyAfter
                                      : aJSOnDocumentReadyBefore).appendFlattened (aScript.getOnDocumentReadyCode ());
       }

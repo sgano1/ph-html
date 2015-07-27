@@ -31,6 +31,7 @@ import com.helger.commons.url.SimpleURL;
 import com.helger.html.hc.api.EHCLinkType;
 import com.helger.html.hc.api.HC_Target;
 import com.helger.html.hc.render.HCRenderer;
+import com.helger.html.js.provider.UnparsedJSCodeProvider;
 import com.helger.html.meta.MetaElement;
 import com.helger.html.mock.HCTestRuleOptimized;
 
@@ -199,7 +200,7 @@ public final class HCHeadTest
     assertTrue (aHead.getFirstChild () instanceof HCTitle);
     assertTrue (aHead.getLastChild () instanceof HCStyle);
 
-    aHead.addJS (new HCScriptInline ("window.x=1;"));
+    aHead.addJS (new HCScriptInline (new UnparsedJSCodeProvider ("window.x=1;")));
     assertEquals (6, aHead.getChildCount ());
     assertTrue (aHead.getChildAtIndex (0) instanceof HCTitle);
     assertTrue (aHead.getChildAtIndex (1) instanceof HCBase);
