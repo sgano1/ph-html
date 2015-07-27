@@ -271,7 +271,7 @@ public class HCObject extends AbstractHCElementWithChildren <HCObject>
 
   @Override
   protected void fillMicroElement (@Nonnull final IMicroElement aElement,
-                                  @Nonnull final IHCConversionSettingsToNode aConversionSettings)
+                                   @Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     super.fillMicroElement (aElement, aConversionSettings);
     if (m_nWidth > 0)

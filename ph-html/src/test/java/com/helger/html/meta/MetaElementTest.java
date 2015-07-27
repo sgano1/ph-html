@@ -45,6 +45,7 @@ public final class MetaElementTest
     CommonsTestHelper.testDefaultImplementationWithDifferentContentObject (e1, new MetaElement ("nam2", "con"));
     CommonsTestHelper.testDefaultImplementationWithDifferentContentObject (e1, new MetaElement ("nam", "con2"));
     CommonsTestHelper.testDefaultImplementationWithDifferentContentObject (e1,
-                                                                           new MetaElement ("nam", "con").setHttpEquiv (true));
+                                                                           new MetaElement ("nam",
+                                                                                            "con").setHttpEquiv (true));
   }
 }

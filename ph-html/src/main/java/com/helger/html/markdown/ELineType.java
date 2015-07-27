@@ -29,14 +29,11 @@ enum ELineType
   OTHER,
  /** A markdown headline. */
   HEADLINE,
- HEADLINE1,
- HEADLINE2,
- /** A code block line. */
+ HEADLINE1, HEADLINE2, /** A code block line. */
   CODE,
  /** A list. */
   ULIST,
- OLIST,
- /** A block quote. */
+ OLIST, /** A block quote. */
   BQUOTE,
  /** A horizontal ruler. */
   HR,

@@ -87,9 +87,9 @@ public final class MarkupFileFuncTest
   public final HCTestRuleOptimized m_aRule = new HCTestRuleOptimized ();
 
   private final static String [] TEST_FILENAMES = new String [] { "/dingus.txt",
-                                                                 "/paragraphs.txt",
-                                                                 "/snippets.txt",
-                                                                 "/lists.txt" };
+                                                                  "/paragraphs.txt",
+                                                                  "/snippets.txt",
+                                                                  "/lists.txt" };
 
   private static void _addTestResultPair (final List <String []> list,
                                           @Nonnull final File aFile,

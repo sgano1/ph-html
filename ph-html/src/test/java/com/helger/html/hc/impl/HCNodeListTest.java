@@ -68,10 +68,11 @@ public final class HCNodeListTest
     final HCTable table = new HCTable ();
     final HCRow tr = table.addBodyRow ();
     tr.addCell (new HCNodeList ().addChild (new HCDiv ().addChild ("dd2")).addChild (new HCDiv ().addChild ("dd1")));
-    assertEquals ("<table xmlns=\"http://www.w3.org/1999/xhtml\"><tbody><tr><td>"
-                  + "<div>dd2</div>"
-                  + "<div>dd1</div>"
-                  + "</td></tr></tbody></table>", HCRenderer.getAsHTMLString (table));
+    assertEquals ("<table xmlns=\"http://www.w3.org/1999/xhtml\"><tbody><tr><td>" +
+                  "<div>dd2</div>" +
+                  "<div>dd1</div>" +
+                  "</td></tr></tbody></table>",
+                  HCRenderer.getAsHTMLString (table));
   }
 
   @Test
@@ -81,7 +82,8 @@ public final class HCNodeListTest
     x.addChild (new HCDiv ().addChild ("Na so was"));
     x.addChild (new HCDiv ().addChild ("aber auch"));
     assertNotNull (HCRenderer.getAsNode (x));
-    assertEquals ("<div xmlns=\"http://www.w3.org/1999/xhtml\">Na so was</div>"
-                  + "<div xmlns=\"http://www.w3.org/1999/xhtml\">aber auch</div>", HCRenderer.getAsHTMLString (x));
+    assertEquals ("<div xmlns=\"http://www.w3.org/1999/xhtml\">Na so was</div>" +
+                  "<div xmlns=\"http://www.w3.org/1999/xhtml\">aber auch</div>",
+                  HCRenderer.getAsHTMLString (x));
   }
 }
