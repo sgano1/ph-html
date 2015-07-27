@@ -25,7 +25,6 @@ import com.helger.commons.annotation.DevelopersNote;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCElementWithChildren;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.IHCNodeBuilder;
 
 @NotThreadSafe
 public abstract class AbstractHCElementWithChildren <THISTYPE extends AbstractHCElementWithChildren <THISTYPE>> extends AbstractHCElementWithInternalChildren <THISTYPE, IHCNode>implements IHCElementWithChildren <THISTYPE>
@@ -45,27 +44,11 @@ public abstract class AbstractHCElementWithChildren <THISTYPE extends AbstractHC
   }
 
   @Nonnull
-  public final THISTYPE buildAndAddChild (@Nullable final IHCNodeBuilder aNodeBuilder)
-  {
-    if (aNodeBuilder != null)
-      addChild (aNodeBuilder.build ());
-    return thisAsT ();
-  }
-
-  @Nonnull
   public final THISTYPE addChild (@Nonnegative final int nIndex, @Nullable final String sText)
   {
     // Empty text is OK!!!
     if (sText != null)
       addChild (nIndex, new HCTextNode (sText));
-    return thisAsT ();
-  }
-
-  @Nonnull
-  public final THISTYPE buildAndAddChild (@Nonnegative final int nIndex, @Nullable final IHCNodeBuilder aNodeBuilder)
-  {
-    if (aNodeBuilder != null)
-      addChild (nIndex, aNodeBuilder.build ());
     return thisAsT ();
   }
 
@@ -83,23 +66,6 @@ public abstract class AbstractHCElementWithChildren <THISTYPE extends AbstractHC
     if (aChildren != null)
       for (final String sChild : aChildren)
         addChild (sChild);
-    return thisAsT ();
-  }
-
-  @Nonnull
-  @DevelopersNote ("Use addChild instead!")
-  @Deprecated
-  public final THISTYPE buildAndAddChildren (@Nullable final IHCNodeBuilder aChild)
-  {
-    return buildAndAddChild (aChild);
-  }
-
-  @Nonnull
-  public final THISTYPE buildAndAddChildren (@Nullable final IHCNodeBuilder... aChildren)
-  {
-    if (aChildren != null)
-      for (final IHCNodeBuilder aChild : aChildren)
-        buildAndAddChild (aChild);
     return thisAsT ();
   }
 }

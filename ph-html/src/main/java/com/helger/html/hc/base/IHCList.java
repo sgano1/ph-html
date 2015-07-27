@@ -22,7 +22,6 @@ import javax.annotation.Nullable;
 
 import com.helger.html.hc.IHCElementWithInternalChildren;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.IHCNodeBuilder;
 import com.helger.html.hc.html.HCLI;
 
 /**
@@ -47,14 +46,6 @@ public interface IHCList <THISTYPE extends IHCList <THISTYPE>> extends IHCElemen
 
   @Nonnull
   @CheckReturnValue
-  HCLI buildAndAddAndReturnItem (@Nullable IHCNodeBuilder aChild);
-
-  @Nonnull
-  @CheckReturnValue
-  HCLI buildAndAddAndReturnItem (@Nullable IHCNodeBuilder... aChildren);
-
-  @Nonnull
-  @CheckReturnValue
   HCLI addAndReturnItem (@Nullable IHCNode aChild);
 
   @Nonnull
@@ -74,12 +65,6 @@ public interface IHCList <THISTYPE extends IHCList <THISTYPE>> extends IHCElemen
 
   @Nonnull
   THISTYPE addItem (@Nullable String... aChildren);
-
-  @Nonnull
-  THISTYPE buildAndAddItem (@Nullable IHCNodeBuilder aChild);
-
-  @Nonnull
-  THISTYPE buildAndAddItem (@Nullable IHCNodeBuilder... aChildren);
 
   @Nonnull
   THISTYPE addItem (@Nullable IHCNode aChild);

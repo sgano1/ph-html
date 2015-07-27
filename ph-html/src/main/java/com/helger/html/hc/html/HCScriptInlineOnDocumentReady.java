@@ -18,6 +18,7 @@ package com.helger.html.hc.html;
 
 import javax.annotation.Nonnull;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hc.base.AbstractHCScriptInline;
 import com.helger.html.hc.config.HCSettings;
@@ -34,12 +35,23 @@ import com.helger.html.js.IHasJSCode;
 @OutOfBandNode
 public class HCScriptInlineOnDocumentReady extends AbstractHCScriptInline <HCScriptInlineOnDocumentReady>
 {
-  private final IHasJSCode m_aOnDocumentReadyCode;
+  private IHasJSCode m_aOnDocumentReadyCode;
+
+  protected HCScriptInlineOnDocumentReady ()
+  {}
 
   public HCScriptInlineOnDocumentReady (@Nonnull final IHasJSCode aOnDocumentReadyCode)
   {
-    super (HCSettings.getOnDocumentReadyProvider ().createOnDocumentReady (aOnDocumentReadyCode));
+    setOnDocumentReadyCode (aOnDocumentReadyCode);
+  }
+
+  @Nonnull
+  public HCScriptInlineOnDocumentReady setOnDocumentReadyCode (@Nonnull final IHasJSCode aOnDocumentReadyCode)
+  {
+    ValueEnforcer.notNull (aOnDocumentReadyCode, "OnDocumentReadyCode");
+    setJSCodeProvider (HCSettings.getOnDocumentReadyProvider ().createOnDocumentReady (aOnDocumentReadyCode));
     m_aOnDocumentReadyCode = aOnDocumentReadyCode;
+    return this;
   }
 
   /**

@@ -24,7 +24,6 @@ import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.IHCNodeBuilder;
 import com.helger.html.hc.html.HCLI;
 import com.helger.html.hc.impl.AbstractHCElementWithInternalChildren;
 
@@ -88,20 +87,6 @@ public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>
 
   @Nonnull
   @CheckReturnValue
-  public final HCLI buildAndAddAndReturnItem (@Nullable final IHCNodeBuilder aChild)
-  {
-    return addAndReturnItem (aChild == null ? null : aChild.build ());
-  }
-
-  @Nonnull
-  @CheckReturnValue
-  public final HCLI buildAndAddAndReturnItem (@Nullable final IHCNodeBuilder... aChildren)
-  {
-    return addItem ().buildAndAddChildren (aChildren);
-  }
-
-  @Nonnull
-  @CheckReturnValue
   public final HCLI addAndReturnItem (@Nullable final IHCNode aChild)
   {
     // Avoid directly nested LI elements
@@ -151,22 +136,6 @@ public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>
   public final THISTYPE addItem (@Nullable final String... aChildren)
   {
     addAndReturnItem (aChildren);
-    return thisAsT ();
-  }
-
-  @Nonnull
-  @SuppressFBWarnings ("RV_RETURN_VALUE_IGNORED")
-  public final THISTYPE buildAndAddItem (@Nullable final IHCNodeBuilder aChild)
-  {
-    buildAndAddAndReturnItem (aChild);
-    return thisAsT ();
-  }
-
-  @Nonnull
-  @SuppressFBWarnings ("RV_RETURN_VALUE_IGNORED")
-  public final THISTYPE buildAndAddItem (@Nullable final IHCNodeBuilder... aChildren)
-  {
-    buildAndAddAndReturnItem (aChildren);
     return thisAsT ();
   }
 
