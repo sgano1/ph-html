@@ -41,6 +41,7 @@ import com.helger.commons.lang.ClassHelper;
 import com.helger.commons.lang.GenericReflection;
 import com.helger.commons.string.StringHelper;
 import com.helger.html.annotation.OutOfBandNode;
+import com.helger.html.hc.EHCNodeState;
 import com.helger.html.hc.HCHelper;
 import com.helger.html.hc.IHCHasChildren;
 import com.helger.html.hc.IHCNode;
@@ -432,11 +433,19 @@ public final class HCSpecialNodeHandler
                                        : aJSInlineBefore).appendFlattened (aScript.getJSCodeProvider ());
         }
         else
-          if (aNode instanceof HCStyle && ((HCStyle) aNode).hasNoMediaOrAll ())
+          if (aNode instanceof HCStyle)
           {
-            // Merge only inline CSS nodes, that are media-independent
-            final HCStyle aStyle = (HCStyle) aNode;
-            (aStyle.isEmitAfterFiles () ? aCSSInlineAfter : aCSSInlineBefore).append (aStyle.getStyleContent ());
+            if (((HCStyle) aNode).hasNoMediaOrAll ())
+            {
+              // Merge only inline CSS nodes, that are media-independent
+              final HCStyle aStyle = (HCStyle) aNode;
+              (aStyle.isEmitAfterFiles () ? aCSSInlineAfter : aCSSInlineBefore).append (aStyle.getStyleContent ());
+            }
+            else
+            {
+              // Add as-is
+              ret.add (aNode);
+            }
           }
           else
           {
@@ -470,17 +479,33 @@ public final class HCSpecialNodeHandler
 
     // Finally add the inline JS
     if (!aJSInlineBefore.isEmpty ())
-      ret.add (new HCScript (aJSInlineBefore).setEmitAfterFiles (false));
+    {
+      final HCScript aScript = new HCScript (aJSInlineBefore).setEmitAfterFiles (false);
+      aScript.internalSetNodeState (EHCNodeState.RESOURCES_REGISTERED);
+      ret.add (aScript);
+    }
 
     if (!aJSInlineAfter.isEmpty ())
-      ret.add (new HCScript (aJSInlineAfter).setEmitAfterFiles (true));
+    {
+      final HCScript aScript = new HCScript (aJSInlineAfter).setEmitAfterFiles (true);
+      aScript.internalSetNodeState (EHCNodeState.RESOURCES_REGISTERED);
+      ret.add (aScript);
+    }
 
     // Add all merged inline CSSs
     if (aCSSInlineBefore.length () > 0)
-      ret.add (new HCStyle (aCSSInlineBefore.toString ()).setEmitAfterFiles (false));
+    {
+      final HCStyle aStyle = new HCStyle (aCSSInlineBefore.toString ()).setEmitAfterFiles (false);
+      aStyle.internalSetNodeState (EHCNodeState.RESOURCES_REGISTERED);
+      ret.add (aStyle);
+    }
 
     if (aCSSInlineAfter.length () > 0)
-      ret.add (new HCStyle (aCSSInlineAfter.toString ()).setEmitAfterFiles (true));
+    {
+      final HCStyle aStyle = new HCStyle (aCSSInlineAfter.toString ()).setEmitAfterFiles (true);
+      aStyle.internalSetNodeState (EHCNodeState.RESOURCES_REGISTERED);
+      ret.add (aStyle);
+    }
 
     return ret;
   }

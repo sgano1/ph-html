@@ -35,7 +35,9 @@ import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.customize.IHCCustomizer;
 
 /**
- * Abstract implementation of {@link IHCWrappingNode}
+ * Abstract implementation of {@link IHCWrappingNode}. It additionally
+ * implements {@link IHCHasChildren} for correct iteration in case the wrapped
+ * node implements {@link IHCHasChildren}.
  *
  * @author Philip Helger
  */

@@ -60,7 +60,15 @@ public final class HCRenderer
     IHCNode aConvertNode;
     if (aHCNode instanceof HCHtml)
     {
-      ((HCHtml) aHCNode).customizeAndConvertToMicroNode (aConversionSettings);
+      final HCHtml aHTML = (HCHtml) aHCNode;
+
+      // prepare nodes
+      HCRenderer.prepareForConversion (aHTML, aHTML.getBody (), aConversionSettings);
+
+      // Extract all out-of-band nodes
+      if (aConversionSettings.isExtractOutOfBandNodes ())
+        aHTML.extractAndReorderOutOfBandNodes ();
+
       aConvertNode = aHCNode;
     }
     else
@@ -171,24 +179,12 @@ public final class HCRenderer
 
     final IHCCustomizer aCustomizer = aConversionSettings.getCustomizer ();
     final EHTMLVersion eHTMLVersion = aConversionSettings.getHTMLVersion ();
-    final boolean bForcedResourceRegistration = false;
 
     final int nTargetNodeChildren = aTargetNode.getChildCount ();
 
     // Customize all elements before extracting out-of-band nodes, in case the
     // customizer adds some out-of-band nodes as well
-    HCHelper.iterateTree (aStartNode, new IHCIteratorCallback ()
-    {
-      @Nonnull
-      public EFinish call (@Nullable final IHCHasChildren aParentNode, @Nonnull final IHCNode aChildNode)
-      {
-        // Run the global customizer
-        aChildNode.customizeNode (aCustomizer, eHTMLVersion, aTargetNode);
-        return EFinish.UNFINISHED;
-      }
-    });
-
-    // 2. finalize and register external resources
+    // Than finalize and register external resources
     HCHelper.iterateTree (aStartNode, new IHCIteratorCallback ()
     {
       @SuppressWarnings ("unchecked")
@@ -201,8 +197,14 @@ public final class HCRenderer
         else
           aRealTargetNode = aTargetNode;
 
+        // Run the global customizer
+        aChildNode.customizeNode (aCustomizer, eHTMLVersion, aRealTargetNode);
+
+        // finalize the node
         aChildNode.finalizeNodeState (aConversionSettings, aRealTargetNode);
+
         // No forced registration here
+        final boolean bForcedResourceRegistration = false;
         aChildNode.registerExternalResources (aConversionSettings, bForcedResourceRegistration);
         return EFinish.UNFINISHED;
       }
@@ -212,6 +214,7 @@ public final class HCRenderer
     {
       // At least one child was added to the target node - ensure it is also
       // prepared - recursive call
+      System.out.println ("Recursive preparation!");
       prepareForConversion (aTargetNode, aTargetNode, aConversionSettings);
     }
   }

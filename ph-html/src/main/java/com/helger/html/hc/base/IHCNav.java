@@ -14,14 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html;
+package com.helger.html.hc.base;
 
-import com.helger.html.annotation.SinceHTML5;
-import com.helger.html.hc.base.AbstractHCNav;
+import com.helger.html.hc.IHCElementWithChildren;
 
-@SinceHTML5
-public class HCNav extends AbstractHCNav <HCNav>
+/**
+ * Interface for NAVs
+ *
+ * @author Philip Helger
+ * @param <THISTYPE>
+ *        Implementation type
+ */
+public interface IHCNav <THISTYPE extends IHCNav <THISTYPE>> extends IHCElementWithChildren <THISTYPE>
 {
-  public HCNav ()
-  {}
+  /* empty */
 }

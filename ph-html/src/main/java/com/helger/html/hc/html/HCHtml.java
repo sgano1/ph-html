@@ -23,7 +23,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.microdom.IMicroDocument;
@@ -39,7 +38,6 @@ import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.api.EHCTextDirection;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElement;
-import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.hc.special.HCSpecialNodeHandler;
 
 /**
@@ -146,32 +144,13 @@ public class HCHtml extends AbstractHCElement <HCHtml>implements IHCHasChildren
     return aDoc;
   }
 
-  /**
-   * Check if the passed out-of-band node belongs to the body or to the head.
-   *
-   * @param aOOBNode
-   *        The node to check. Never <code>null</code>.
-   * @return <code>true</code> if it belongs to the body, <code>false</code> if
-   *         it belongs to the head.
-   */
-  @OverrideOnDemand
-  protected boolean isOutOfBandBodyNode (@Nonnull final IHCNode aOOBNode)
-  {
-    // JS nodes go to body
-    if (HCSpecialNodeHandler.isJSNode (aOOBNode))
-      return true;
-
-    // All other nodes stay in the head
-    return false;
-  }
-
-  private void _extractOutOfBandNodes ()
+  public void extractAndReorderOutOfBandNodes ()
   {
     // Extract all out-of-band nodes
     final List <IHCNode> aExtractedOutOfBandNodes = HCSpecialNodeHandler.recursiveExtractAndRemoveOutOfBandNodes (m_aBody);
 
     // Remember the body index where to append OOB nodes to
-    int nBeginIndex = m_aBody.getChildCount ();
+    int nBodyNodeIndex = m_aBody.getChildCount ();
 
     // Add all existing JS and CSS nodes from the head, as they are known to be
     // out-of-band
@@ -189,15 +168,14 @@ public class HCHtml extends AbstractHCElement <HCHtml>implements IHCHasChildren
     for (final IHCNode aNode : aMergedOOBNodes)
     {
       // Node for the body?
-      if (isOutOfBandBodyNode (aNode))
+      if (HCSpecialNodeHandler.isJSNode (aNode))
       {
         // It's a body node
-        if ((aNode instanceof HCScript && !((HCScript) aNode).isEmitAfterFiles ()) ||
-            (aNode instanceof HCStyle && !((HCStyle) aNode).isEmitAfterFiles ()))
+        if (aNode instanceof HCScript && !((HCScript) aNode).isEmitAfterFiles ())
         {
-          // Before files
-          m_aBody.addChild (nBeginIndex, aNode);
-          nBeginIndex++;
+          // Add inline code before files
+          m_aBody.addChild (nBodyNodeIndex, aNode);
+          nBodyNodeIndex++;
         }
         else
         {
@@ -223,16 +201,6 @@ public class HCHtml extends AbstractHCElement <HCHtml>implements IHCHasChildren
               throw new IllegalStateException ("Found illegal out-of-band head node: " + aNode);
       }
     }
-  }
-
-  public void customizeAndConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
-  {
-    // prepare nodes
-    HCRenderer.prepareForConversion (this, m_aBody, aConversionSettings);
-
-    // Extract all out-of-band nodes
-    if (aConversionSettings.isExtractOutOfBandNodes ())
-      _extractOutOfBandNodes ();
   }
 
   @Override

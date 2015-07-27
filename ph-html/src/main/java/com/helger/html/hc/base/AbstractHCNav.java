@@ -14,14 +14,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html;
+package com.helger.html.hc.base;
 
+import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.SinceHTML5;
-import com.helger.html.hc.base.AbstractHCNav;
+import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 
+/**
+ * Represents an HTML &lt;nav&gt; element with open semantics.
+ *
+ * @author Philip Helger
+ * @param <THISTYPE>
+ *        Implementation type
+ */
 @SinceHTML5
-public class HCNav extends AbstractHCNav <HCNav>
+public abstract class AbstractHCNav <THISTYPE extends AbstractHCNav <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCNav <THISTYPE>
 {
-  public HCNav ()
-  {}
+  public AbstractHCNav ()
+  {
+    super (EHTMLElement.NAV);
+  }
 }

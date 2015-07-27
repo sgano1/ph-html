@@ -25,4 +25,19 @@ public enum EHCNodeState
   {
     return m_nID < eOther.m_nID;
   }
+
+  public boolean isEqualOrBefore (@Nonnull final EHCNodeState eOther)
+  {
+    return m_nID <= eOther.m_nID;
+  }
+
+  public boolean isAfter (@Nonnull final EHCNodeState eOther)
+  {
+    return m_nID > eOther.m_nID;
+  }
+
+  public boolean isEqualOrAfter (@Nonnull final EHCNodeState eOther)
+  {
+    return m_nID >= eOther.m_nID;
+  }
 }
