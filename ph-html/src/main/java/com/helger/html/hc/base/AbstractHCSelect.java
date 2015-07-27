@@ -18,7 +18,6 @@ package com.helger.html.hc.base;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -81,8 +80,7 @@ public abstract class AbstractHCSelect <THISTYPE extends AbstractHCSelect <THIST
   public AbstractHCSelect (@Nullable final Collection <String> aPreselectedValues)
   {
     this ();
-    m_aPreselectedValues = aPreselectedValues == null ? new HashSet <String> ()
-                                                      : new HashSet <String> (aPreselectedValues);
+    m_aPreselectedValues = CollectionHelper.newSet (aPreselectedValues);
   }
 
   public AbstractHCSelect (@Nonnull final IHCRequestField aRF)

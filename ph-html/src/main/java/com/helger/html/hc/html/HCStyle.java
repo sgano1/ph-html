@@ -22,9 +22,6 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.microdom.IMicroNodeWithChildren;
@@ -43,7 +40,9 @@ import com.helger.css.writer.CSSWriterSettings;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.OutOfBandNode;
+import com.helger.html.hc.api.EHCStyleMode;
 import com.helger.html.hc.api.IHCCSSNode;
+import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElement;
 
@@ -55,34 +54,16 @@ import com.helger.html.hc.impl.AbstractHCElement;
 @OutOfBandNode
 public class HCStyle extends AbstractHCElement <HCStyle>implements IHCCSSNode
 {
-  public static enum EMode
-  {
-   /**
-    * Emit JS code as plain text, but XML masked
-    */
-    PLAIN_TEXT,
-   /**
-    * Emit JS code as plain text, but without XML masking
-    */
-    PLAIN_TEXT_NO_ESCAPE;
-  }
-
-  /** By default plain text without escape is used */
-  public static final EMode DEFAULT_MODE = EMode.PLAIN_TEXT_NO_ESCAPE;
   /** The default MIME type is text/css */
   public static final IMimeType DEFAULT_TYPE = CMimeType.TEXT_CSS;
 
   /** By default place inline CSS after script files */
   public static final boolean DEFAULT_EMIT_AFTER_FILES = true;
 
-  private static final Logger s_aLogger = LoggerFactory.getLogger (HCStyle.class);
-
-  private static EMode s_eDefaultMode = DEFAULT_MODE;
-
   private IMimeType m_aType = DEFAULT_TYPE;
   private CSSMediaList m_aMediaList;
   private String m_sContent;
-  private EMode m_eMode = s_eDefaultMode;
+  private EHCStyleMode m_eMode = HCSettings.getStyleMode ();
   private boolean m_bEmitAfterFiles = DEFAULT_EMIT_AFTER_FILES;
 
   public HCStyle ()
@@ -227,13 +208,13 @@ public class HCStyle extends AbstractHCElement <HCStyle>implements IHCCSSNode
   }
 
   @Nonnull
-  public EMode getMode ()
+  public EHCStyleMode getMode ()
   {
     return m_eMode;
   }
 
   @Nonnull
-  public HCStyle setMode (@Nonnull final EMode eMode)
+  public HCStyle setMode (@Nonnull final EHCStyleMode eMode)
   {
     m_eMode = ValueEnforcer.notNull (eMode, "Mode");
     return this;
@@ -260,7 +241,7 @@ public class HCStyle extends AbstractHCElement <HCStyle>implements IHCCSSNode
 
   public static void setInlineStyle (@Nonnull final IMicroNodeWithChildren aElement,
                                      @Nullable final String sContent,
-                                     @Nonnull final EMode eMode)
+                                     @Nonnull final EHCStyleMode eMode)
   {
     if (StringHelper.hasText (sContent))
       switch (eMode)
@@ -296,29 +277,5 @@ public class HCStyle extends AbstractHCElement <HCStyle>implements IHCCSSNode
                             .append ("mode", m_eMode)
                             .append ("emitAfterFiles", m_bEmitAfterFiles)
                             .toString ();
-  }
-
-  /**
-   * Set how the content of style elements should be emitted. This only affects
-   * new built objects, and does not alter existing objects! The default mode is
-   * {@link #DEFAULT_MODE}.
-   *
-   * @param eMode
-   *        The new mode to set. May not be <code>null</code>.
-   */
-  public static void setDefaultMode (@Nonnull final EMode eMode)
-  {
-    ValueEnforcer.notNull (eMode, "mode");
-    s_eDefaultMode = eMode;
-    s_aLogger.info ("Default <style> mode set to " + eMode);
-  }
-
-  /**
-   * @return The default mode to emit style content. Never <code>null</code>.
-   */
-  @Nonnull
-  public static EMode getDefaultMode ()
-  {
-    return s_eDefaultMode;
   }
 }
