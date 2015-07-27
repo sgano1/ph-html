@@ -163,8 +163,7 @@ public final class HCRenderer
       prepareForConversion (aTempNode, aTempNode, aConversionSettings);
 
       // NOTE: no OOB extraction here, because it is unclear what would happen
-      // to the nodes. So this branch should mainly be used for unit testing
-      // only!
+      // to the nodes.
 
       // Select node to convert to MicroDOM - if something was extracted, use
       // the temp node
