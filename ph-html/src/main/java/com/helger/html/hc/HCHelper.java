@@ -31,9 +31,6 @@ import com.helger.commons.mutable.MutableBoolean;
 import com.helger.commons.state.EFinish;
 import com.helger.commons.wrapper.Wrapper;
 import com.helger.html.EHTMLElement;
-import com.helger.html.EHTMLVersion;
-import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
-import com.helger.html.hc.customize.IHCCustomizer;
 import com.helger.html.hc.impl.HCTextNode;
 
 @Immutable
@@ -526,65 +523,5 @@ public final class HCHelper
     final List <IHCControl <?>> ret = new ArrayList <IHCControl <?>> ();
     getAllHCControls (aNodes, ret);
     return ret;
-  }
-
-  /**
-   * Customize the passed base node and all child nodes recursively.
-   *
-   * @param aStartNode
-   *        Base node to start customizing (incl.). May not be <code>null</code>
-   *        .
-   * @param aTargetNode
-   *        The target node where new nodes should be appended to. May not be
-   *        <code>null</code>.
-   * @param aConversionSettings
-   *        The conversion settings to use. May not be <code>null</code>.
-   */
-  public static void customizeNodes (@Nonnull final IHCHasChildren aStartNode,
-                                     @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode,
-                                     @Nonnull final IHCConversionSettingsToNode aConversionSettings)
-  {
-    ValueEnforcer.notNull (aStartNode, "NodeToBeCustomized");
-    ValueEnforcer.notNull (aTargetNode, "TargetNode");
-    ValueEnforcer.notNull (aConversionSettings, "ConversionSettings");
-
-    final IHCCustomizer aCustomizer = aConversionSettings.getCustomizer ();
-    final EHTMLVersion eHTMLVersion = aConversionSettings.getHTMLVersion ();
-
-    // Customize element, before extracting out-of-band nodes, in case the
-    // customizer adds some out-of-band nodes as well
-    iterateTree (aStartNode, new IHCIteratorCallback ()
-    {
-      @Nonnull
-      public EFinish call (@Nullable final IHCHasChildren aParentNode, @Nonnull final IHCNode aChildNode)
-      {
-        // Run the global customizer
-        aChildNode.customizeNode (aCustomizer, eHTMLVersion, aTargetNode);
-        return EFinish.UNFINISHED;
-      }
-    });
-  }
-
-  public static void finalizeAndRegisterResources (@Nonnull final IHCHasChildren aStartNode,
-                                                   @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode,
-                                                   @Nonnull final IHCConversionSettingsToNode aConversionSettings)
-  {
-    iterateTree (aStartNode, new IHCIteratorCallback ()
-    {
-      @SuppressWarnings ("unchecked")
-      @Nonnull
-      public EFinish call (@Nullable final IHCHasChildren aParentNode, @Nonnull final IHCNode aChildNode)
-      {
-        IHCHasChildrenMutable <?, ? super IHCNode> aRealTargetNode;
-        if (aParentNode instanceof IHCHasChildrenMutable <?, ?>)
-          aRealTargetNode = (IHCHasChildrenMutable <?, IHCNode>) aParentNode;
-        else
-          aRealTargetNode = aTargetNode;
-
-        aChildNode.finalizeNodeState (aConversionSettings, aRealTargetNode);
-        aChildNode.registerExternalResources (aConversionSettings);
-        return EFinish.UNFINISHED;
-      }
-    });
   }
 }

@@ -4,14 +4,24 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.debug.GlobalDebug;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.commons.microdom.serialize.MicroWriter;
+import com.helger.commons.state.EFinish;
+import com.helger.html.EHTMLVersion;
+import com.helger.html.hc.HCHelper;
+import com.helger.html.hc.IHCHasChildren;
+import com.helger.html.hc.IHCHasChildrenMutable;
+import com.helger.html.hc.IHCIteratorCallback;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.conversion.HCConversionSettings;
 import com.helger.html.hc.conversion.IHCConversionSettings;
+import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
+import com.helger.html.hc.customize.IHCCustomizer;
 import com.helger.html.hc.html.HCHtml;
+import com.helger.html.hc.impl.HCNodeList;
 
 @Immutable
 public final class HCRenderer
@@ -30,7 +40,44 @@ public final class HCRenderer
   @Nullable
   public static IMicroNode getAsNode (@Nonnull final IHCNode aHCNode)
   {
-    return aHCNode.convertToMicroNode (HCSettings.getConversionSettings ());
+    return getAsNode (aHCNode, HCSettings.getConversionSettings ());
+  }
+
+  /**
+   * Convert the passed HC node to a micro node using the provided conversion
+   * settings.
+   *
+   * @param aHCNode
+   *        The node to be converted. May not be <code>null</code>.
+   * @param aConversionSettings
+   *        The conversion settings to be used. May not be <code>null</code>.
+   * @return The fully created HTML node
+   */
+  @Nullable
+  public static IMicroNode getAsNode (@Nonnull final IHCNode aHCNode,
+                                      @Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  {
+    IHCNode aConvertNode;
+    if (aHCNode instanceof HCHtml)
+    {
+      ((HCHtml) aHCNode).customizeAndConvertToMicroNode (aConversionSettings);
+      aConvertNode = aHCNode;
+    }
+    else
+    {
+      final IHCHasChildrenMutable <?, IHCNode> aHCTemp = new HCNodeList ();
+      aHCTemp.addChild (aHCNode);
+
+      // customize, finalize and extract resources
+      prepareForConversion (aHCTemp, aHCTemp, aConversionSettings);
+
+      // Select node to convert - if nothing was extracted, use the original
+      // node
+      aConvertNode = aHCTemp.getChildCount () == 1 ? aHCNode : aHCTemp;
+    }
+
+    final IMicroNode aMicroNode = aConvertNode.convertToMicroNode (aConversionSettings);
+    return aMicroNode;
   }
 
   /**
@@ -62,14 +109,7 @@ public final class HCRenderer
   public final static String getAsHTMLString (@Nonnull final IHCNode aHCNode,
                                               @Nonnull final IHCConversionSettings aConversionSettings)
   {
-    IMicroNode aMicroNode;
-    if (aHCNode instanceof HCHtml)
-    {
-      // Apply customizer first
-      aMicroNode = ((HCHtml) aHCNode).customizeAndConvertToMicroNode (aConversionSettings);
-    }
-    else
-      aMicroNode = aHCNode.convertToMicroNode (aConversionSettings);
+    final IMicroNode aMicroNode = getAsNode (aHCNode, aConversionSettings);
     if (aMicroNode == null)
       return "";
     return MicroWriter.getNodeAsString (aMicroNode, aConversionSettings.getXMLWriterSettings ());
@@ -107,5 +147,72 @@ public final class HCRenderer
     // And modify the copied XML settings
     aRealCS.getXMLWriterSettings ().setEmitNamespaces (false);
     return getAsHTMLString (aHCNode, aRealCS);
+  }
+
+  /**
+   * Customize the passed base node and all child nodes recursively.
+   *
+   * @param aStartNode
+   *        Base node to start customizing (incl.). May not be <code>null</code>
+   *        .
+   * @param aTargetNode
+   *        The target node where new nodes should be appended to. May not be
+   *        <code>null</code>.
+   * @param aConversionSettings
+   *        The conversion settings to use. May not be <code>null</code>.
+   */
+  public static void prepareForConversion (@Nonnull final IHCHasChildren aStartNode,
+                                           @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode,
+                                           @Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  {
+    ValueEnforcer.notNull (aStartNode, "NodeToBeCustomized");
+    ValueEnforcer.notNull (aTargetNode, "TargetNode");
+    ValueEnforcer.notNull (aConversionSettings, "ConversionSettings");
+
+    final IHCCustomizer aCustomizer = aConversionSettings.getCustomizer ();
+    final EHTMLVersion eHTMLVersion = aConversionSettings.getHTMLVersion ();
+    final boolean bForcedResourceRegistration = false;
+
+    final int nTargetNodeChildren = aTargetNode.getChildCount ();
+
+    // Customize all elements before extracting out-of-band nodes, in case the
+    // customizer adds some out-of-band nodes as well
+    HCHelper.iterateTree (aStartNode, new IHCIteratorCallback ()
+    {
+      @Nonnull
+      public EFinish call (@Nullable final IHCHasChildren aParentNode, @Nonnull final IHCNode aChildNode)
+      {
+        // Run the global customizer
+        aChildNode.customizeNode (aCustomizer, eHTMLVersion, aTargetNode);
+        return EFinish.UNFINISHED;
+      }
+    });
+
+    // 2. finalize and register external resources
+    HCHelper.iterateTree (aStartNode, new IHCIteratorCallback ()
+    {
+      @SuppressWarnings ("unchecked")
+      @Nonnull
+      public EFinish call (@Nullable final IHCHasChildren aParentNode, @Nonnull final IHCNode aChildNode)
+      {
+        IHCHasChildrenMutable <?, ? super IHCNode> aRealTargetNode;
+        if (aParentNode instanceof IHCHasChildrenMutable <?, ?>)
+          aRealTargetNode = (IHCHasChildrenMutable <?, IHCNode>) aParentNode;
+        else
+          aRealTargetNode = aTargetNode;
+
+        aChildNode.finalizeNodeState (aConversionSettings, aRealTargetNode);
+        // No forced registration here
+        aChildNode.registerExternalResources (aConversionSettings, bForcedResourceRegistration);
+        return EFinish.UNFINISHED;
+      }
+    });
+
+    if (aTargetNode.getChildCount () > nTargetNodeChildren)
+    {
+      // At least one child was added to the target node - ensure it is also
+      // prepared - recursive call
+      prepareForConversion (aTargetNode, aTargetNode, aConversionSettings);
+    }
   }
 }

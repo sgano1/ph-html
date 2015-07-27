@@ -25,6 +25,7 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
+import com.helger.html.hc.api.HC_Target;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElement;
 

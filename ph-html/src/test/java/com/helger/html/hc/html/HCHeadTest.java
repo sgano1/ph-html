@@ -28,6 +28,8 @@ import org.junit.Test;
 
 import com.helger.commons.state.EChange;
 import com.helger.commons.url.SimpleURL;
+import com.helger.html.hc.api.EHCLinkType;
+import com.helger.html.hc.api.HC_Target;
 import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.meta.MetaElement;
 import com.helger.html.mock.HCTestRuleOptimized;
@@ -153,5 +155,60 @@ public final class HCHeadTest
     aHead.addCSS (HCLink.createCSSLink (new SimpleURL ("/my.css")));
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>test</title><link rel=\"stylesheet\" type=\"text/css\" href=\"/my.css\"></link><script type=\"text/javascript\" src=\"/my.js\"></script></head>",
                   HCRenderer.getAsHTMLString (aHead));
+  }
+
+  @Test
+  public void testChildrenStuff ()
+  {
+    final HCHead aHead = new HCHead ();
+    assertTrue (aHead.hasChildren ());
+    assertEquals (2, aHead.getChildCount ());
+    assertTrue (aHead.getChildAtIndex (0) instanceof HCTitle);
+    assertTrue (aHead.getChildAtIndex (1) instanceof HCBase);
+    assertNull (aHead.getChildAtIndex (2));
+    assertTrue (aHead.getFirstChild () instanceof HCTitle);
+    assertTrue (aHead.getLastChild () instanceof HCBase);
+
+    aHead.addCSS (new HCStyle ("bla{}"));
+    assertEquals (3, aHead.getChildCount ());
+    assertTrue (aHead.getChildAtIndex (0) instanceof HCTitle);
+    assertTrue (aHead.getChildAtIndex (1) instanceof HCBase);
+    assertTrue (aHead.getChildAtIndex (2) instanceof HCStyle);
+    assertNull (aHead.getChildAtIndex (3));
+    assertTrue (aHead.getFirstChild () instanceof HCTitle);
+    assertTrue (aHead.getLastChild () instanceof HCStyle);
+
+    aHead.addCSS (new HCStyle ("foo{}"));
+    assertEquals (4, aHead.getChildCount ());
+    assertTrue (aHead.getChildAtIndex (0) instanceof HCTitle);
+    assertTrue (aHead.getChildAtIndex (1) instanceof HCBase);
+    assertTrue (aHead.getChildAtIndex (2) instanceof HCStyle);
+    assertTrue (aHead.getChildAtIndex (3) instanceof HCStyle);
+    assertNull (aHead.getChildAtIndex (4));
+    assertTrue (aHead.getFirstChild () instanceof HCTitle);
+    assertTrue (aHead.getLastChild () instanceof HCStyle);
+
+    aHead.addLink (new HCLink ().setRev (EHCLinkType.APPENDIX));
+    assertEquals (5, aHead.getChildCount ());
+    assertTrue (aHead.getChildAtIndex (0) instanceof HCTitle);
+    assertTrue (aHead.getChildAtIndex (1) instanceof HCBase);
+    assertTrue (aHead.getChildAtIndex (2) instanceof HCLink);
+    assertTrue (aHead.getChildAtIndex (3) instanceof HCStyle);
+    assertTrue (aHead.getChildAtIndex (4) instanceof HCStyle);
+    assertNull (aHead.getChildAtIndex (5));
+    assertTrue (aHead.getFirstChild () instanceof HCTitle);
+    assertTrue (aHead.getLastChild () instanceof HCStyle);
+
+    aHead.addJS (new HCScript ("window.x=1;"));
+    assertEquals (6, aHead.getChildCount ());
+    assertTrue (aHead.getChildAtIndex (0) instanceof HCTitle);
+    assertTrue (aHead.getChildAtIndex (1) instanceof HCBase);
+    assertTrue (aHead.getChildAtIndex (2) instanceof HCLink);
+    assertTrue (aHead.getChildAtIndex (3) instanceof HCStyle);
+    assertTrue (aHead.getChildAtIndex (4) instanceof HCStyle);
+    assertTrue (aHead.getChildAtIndex (5) instanceof HCScript);
+    assertNull (aHead.getChildAtIndex (6));
+    assertTrue (aHead.getFirstChild () instanceof HCTitle);
+    assertTrue (aHead.getLastChild () instanceof HCScript);
   }
 }

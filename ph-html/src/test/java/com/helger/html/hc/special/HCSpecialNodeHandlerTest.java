@@ -25,7 +25,6 @@ import org.junit.Test;
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.system.ENewLineMode;
 import com.helger.commons.xml.serialize.write.EXMLSerializeIndent;
-import com.helger.commons.xml.serialize.write.XMLWriterSettings;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hc.IHCNode;
@@ -67,6 +66,8 @@ public final class HCSpecialNodeHandlerTest
     aHtml.getHead ().addJS (new MockScript ("var y=0;"));
     aHtml.getBody ().addChild (new HCH1 ().addChild ("root"));
     final String sCRLF = ENewLineMode.DEFAULT.getText ();
+    final HCConversionSettings aCS = new HCConversionSettings (EHTMLVersion.HTML5);
+    aCS.getXMLWriterSettings ().setEmitNamespaces (false).setIndent (EXMLSerializeIndent.ALIGN_ONLY);
     assertEquals ("<!DOCTYPE html>" +
                   sCRLF +
                   "<html dir=\"ltr\">" +
@@ -95,9 +96,6 @@ public final class HCSpecialNodeHandlerTest
                   sCRLF +
                   "</html>" +
                   sCRLF,
-                  HCRenderer.getAsHTMLString (aHtml,
-                                              new HCConversionSettings (EHTMLVersion.HTML5).setXMLWriterSettings (XMLWriterSettings.createForHTML5 ()
-                                                                                                                                   .setEmitNamespaces (false)
-                                                                                                                                   .setIndent (EXMLSerializeIndent.ALIGN_ONLY))));
+                  HCRenderer.getAsHTMLString (aHtml, aCS));
   }
 }

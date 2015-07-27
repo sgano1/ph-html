@@ -25,7 +25,7 @@ import com.helger.commons.url.ISimpleURL;
 import com.helger.html.hc.IHCControl;
 import com.helger.html.hc.api.EHCFormMethod;
 import com.helger.html.hc.api.EHCInputType;
-import com.helger.html.hc.html.HC_Target;
+import com.helger.html.hc.api.HC_Target;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.writer.IHasJSCodeWithSettings;
 

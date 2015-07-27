@@ -28,6 +28,7 @@ import com.helger.commons.url.SimpleURL;
 import com.helger.html.EHTMLRole;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.api.EHCLinkType;
+import com.helger.html.hc.api.HC_Target;
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.conversion.IHCConversionSettings;
 import com.helger.html.hc.render.HCRenderer;
@@ -174,7 +175,7 @@ public final class HCFuncTest
     b.addChild (new HCVar ().addChild ("zzz"));
 
     final IHCConversionSettings aCS = HCSettings.getConversionSettings ().getCloneIfNecessary (EHTMLVersion.DEFAULT);
-    assertNotNull (h.convertToMicroNode (aCS));
+    assertNotNull (HCRenderer.getAsNode (h, aCS));
     if (false)
       System.out.print (HCRenderer.getAsHTMLString (h, aCS));
   }

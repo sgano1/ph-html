@@ -23,8 +23,8 @@ import com.helger.commons.mime.IMimeType;
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.hc.IHCElementWithChildren;
 import com.helger.html.hc.IHCHasName;
+import com.helger.html.hc.api.HC_Target;
 import com.helger.html.hc.api.IHCHasMedia;
-import com.helger.html.hc.html.HC_Target;
 import com.helger.html.js.IHasJSCode;
 
 /**

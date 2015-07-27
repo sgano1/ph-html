@@ -32,8 +32,6 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.html.HCBody;
-import com.helger.html.hc.html.HCHead;
 
 /**
  * An implementation of {@link IHCCustomizer} that handles multiple customizers.
@@ -88,18 +86,10 @@ public class HCMultiCustomizer implements IHCCustomizer
 
   public void customizeNode (@Nonnull final IHCNode aNode,
                              @Nonnull final EHTMLVersion eHTMLVersion,
-                             @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aParentElement)
+                             @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
   {
     for (final IHCCustomizer aCustomizer : m_aCustomizers)
-      aCustomizer.customizeNode (aNode, eHTMLVersion, aParentElement);
-  }
-
-  public void handleOutOfBandNodes (@Nonnull final List <IHCNode> aOutOfBandNodes,
-                                    @Nonnull final HCHead aHead,
-                                    @Nonnull final HCBody aBody)
-  {
-    for (final IHCCustomizer aCustomizer : m_aCustomizers)
-      aCustomizer.handleOutOfBandNodes (aOutOfBandNodes, aHead, aBody);
+      aCustomizer.customizeNode (aNode, eHTMLVersion, aTargetNode);
   }
 
   @Override

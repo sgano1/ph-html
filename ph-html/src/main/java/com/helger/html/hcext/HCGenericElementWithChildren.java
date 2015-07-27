@@ -14,11 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.impl;
+package com.helger.html.hcext;
 
 import javax.annotation.Nonnull;
 
 import com.helger.html.EHTMLElement;
+import com.helger.html.hc.impl.AbstractHCElementWithChildren;
 
 /**
  * Fallback implementation of {@link AbstractHCElementWithChildren} for

@@ -36,8 +36,10 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
+import com.helger.html.hc.IHCHasChildren;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.api.EHCLinkType;
+import com.helger.html.hc.api.HC_Target;
 import com.helger.html.hc.api.IHCCSSNode;
 import com.helger.html.hc.api.IHCLinkType;
 import com.helger.html.hc.conversion.HCConsistencyChecker;
@@ -52,7 +54,7 @@ import com.helger.html.meta.MetaElementList;
  *
  * @author Philip Helger
  */
-public class HCHead extends AbstractHCElement <HCHead>
+public class HCHead extends AbstractHCElement <HCHead>implements IHCHasChildren
 {
   private String m_sProfile;
   private final HCTitle m_aPageTitle = new HCTitle ();
@@ -381,7 +383,7 @@ public class HCHead extends AbstractHCElement <HCHead>
 
   @Override
   protected void fillMicroElement (@Nonnull final IMicroElement eHead,
-                                  @Nonnull final IHCConversionSettingsToNode aConversionSettings)
+                                   @Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     super.fillMicroElement (eHead, aConversionSettings);
 
@@ -418,6 +420,72 @@ public class HCHead extends AbstractHCElement <HCHead>
   {
     // Use the page title as plain text
     return m_aPageTitle.getPlainText ();
+  }
+
+  @Nullable
+  public List <? extends IHCNode> getAllChildren ()
+  {
+    final List <IHCNode> ret = new ArrayList <IHCNode> ();
+    ret.add (m_aPageTitle);
+    ret.add (m_aBase);
+    ret.addAll (m_aLinks);
+    ret.addAll (m_aCSS);
+    ret.addAll (m_aJS);
+    return ret;
+  }
+
+  @Nullable
+  public IHCNode getChildAtIndex (@Nonnegative final int nIndex)
+  {
+    if (nIndex == 0)
+      return m_aPageTitle;
+    if (nIndex == 1)
+      return m_aBase;
+
+    int nStart = 2;
+    int nEnd = nStart + m_aLinks.size ();
+    if (nIndex >= nStart && nIndex < nEnd)
+      return m_aLinks.get (nIndex - nStart);
+
+    nStart = nEnd;
+    nEnd = nStart + m_aCSS.size ();
+    if (nIndex >= nStart && nIndex < nEnd)
+      return m_aCSS.get (nIndex - nStart);
+
+    nStart = nEnd;
+    nEnd = nStart + m_aJS.size ();
+    if (nIndex >= nStart && nIndex < nEnd)
+      return m_aJS.get (nIndex - nStart);
+
+    return null;
+  }
+
+  @Nullable
+  public IHCNode getFirstChild ()
+  {
+    return m_aPageTitle;
+  }
+
+  @Nullable
+  public IHCNode getLastChild ()
+  {
+    if (!m_aJS.isEmpty ())
+      return CollectionHelper.getLastElement (m_aJS);
+    if (!m_aCSS.isEmpty ())
+      return CollectionHelper.getLastElement (m_aCSS);
+    if (!m_aLinks.isEmpty ())
+      return CollectionHelper.getLastElement (m_aLinks);
+    return m_aBase;
+  }
+
+  public boolean hasChildren ()
+  {
+    return true;
+  }
+
+  public int getChildCount ()
+  {
+    return 1 + 1 + m_aLinks.size () + m_aCSS.size () + m_aJS.size ();
   }
 
   @Override

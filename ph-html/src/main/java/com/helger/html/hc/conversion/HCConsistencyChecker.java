@@ -76,7 +76,7 @@ public final class HCConsistencyChecker
 
   /**
    * Consistency assert.
-   * 
+   *
    * @param bCondition
    *        The condition that must be <code>true</code>.
    * @param sMsg
@@ -223,7 +223,7 @@ public final class HCConsistencyChecker
   {
     if (sHref != null)
     {
-      // FIXME: this is potential vulnerability. If the passed href is passed
+      // This is potential vulnerability. If the passed href is passed
       // from a user input, which cannot be told at this point, it might as well
       // contain a'&amp;' followed by some malicious code that should be
       // escaped.

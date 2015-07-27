@@ -16,13 +16,18 @@
  */
 package com.helger.html.hc.impl;
 
+import java.util.List;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.annotation.OverridingMethodsMustInvokeSuper;
 import javax.annotation.concurrent.NotThreadSafe;
 
+import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.EHCNodeState;
+import com.helger.html.hc.IHCHasChildren;
 import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCWrappingNode;
@@ -35,44 +40,55 @@ import com.helger.html.hc.customize.IHCCustomizer;
  * @author Philip Helger
  */
 @NotThreadSafe
-public abstract class AbstractHCWrappingNode extends AbstractHCNode implements IHCWrappingNode
+public abstract class AbstractHCWrappingNode extends AbstractHCNode implements IHCWrappingNode, IHCHasChildren
 {
   @Override
   @Nonnull
-  public final EHCNodeState getNodeState ()
+  public EHCNodeState getNodeState ()
   {
     return getWrappedNode ().getNodeState ();
   }
 
   @Override
-  protected final void onCustomizeNode (@Nonnull final IHCCustomizer aCustomizer,
-                                        @Nonnull final EHTMLVersion eHTMLVersion,
-                                        @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
+  @OverrideOnDemand
+  @OverridingMethodsMustInvokeSuper
+  protected void onCustomizeNode (@Nonnull final IHCCustomizer aCustomizer,
+                                  @Nonnull final EHTMLVersion eHTMLVersion,
+                                  @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
   {
     getWrappedNode ().customizeNode (aCustomizer, eHTMLVersion, aTargetNode);
   }
 
   @Override
-  protected final void onFinalizeNodeState (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
-                                            @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
+  @OverrideOnDemand
+  @OverridingMethodsMustInvokeSuper
+  protected void onFinalizeNodeState (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
+                                      @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
   {
     getWrappedNode ().finalizeNodeState (aConversionSettings, aTargetNode);
   }
 
   @Override
-  protected final void onRegisterExternalResources (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  @OverrideOnDemand
+  @OverridingMethodsMustInvokeSuper
+  protected final void onRegisterExternalResources (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
+                                                    final boolean bForceRegistration)
   {
-    getWrappedNode ().registerExternalResources (aConversionSettings);
+    getWrappedNode ().registerExternalResources (aConversionSettings, bForceRegistration);
   }
 
   @Override
-  public final boolean canConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  @OverrideOnDemand
+  @OverridingMethodsMustInvokeSuper
+  public boolean canConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     return getWrappedNode ().canConvertToMicroNode (aConversionSettings);
   }
 
   @Override
   @Nullable
+  @OverrideOnDemand
+  @OverridingMethodsMustInvokeSuper
   protected IMicroNode internalConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     return getWrappedNode ().convertToMicroNode (aConversionSettings);
@@ -80,8 +96,48 @@ public abstract class AbstractHCWrappingNode extends AbstractHCNode implements I
 
   @Override
   @Nonnull
-  public final String getPlainText ()
+  public String getPlainText ()
   {
     return getWrappedNode ().getPlainText ();
+  }
+
+  @Nullable
+  public List <? extends IHCNode> getAllChildren ()
+  {
+    final IHCNode aWrappedNode = getWrappedNode ();
+    return aWrappedNode instanceof IHCHasChildren ? ((IHCHasChildren) aWrappedNode).getAllChildren () : null;
+  }
+
+  @Nullable
+  public IHCNode getChildAtIndex (final int nIndex)
+  {
+    final IHCNode aWrappedNode = getWrappedNode ();
+    return aWrappedNode instanceof IHCHasChildren ? ((IHCHasChildren) aWrappedNode).getChildAtIndex (nIndex) : null;
+  }
+
+  @Nullable
+  public IHCNode getFirstChild ()
+  {
+    final IHCNode aWrappedNode = getWrappedNode ();
+    return aWrappedNode instanceof IHCHasChildren ? ((IHCHasChildren) aWrappedNode).getFirstChild () : null;
+  }
+
+  @Nullable
+  public IHCNode getLastChild ()
+  {
+    final IHCNode aWrappedNode = getWrappedNode ();
+    return aWrappedNode instanceof IHCHasChildren ? ((IHCHasChildren) aWrappedNode).getLastChild () : null;
+  }
+
+  public boolean hasChildren ()
+  {
+    final IHCNode aWrappedNode = getWrappedNode ();
+    return aWrappedNode instanceof IHCHasChildren ? ((IHCHasChildren) aWrappedNode).hasChildren () : false;
+  }
+
+  public int getChildCount ()
+  {
+    final IHCNode aWrappedNode = getWrappedNode ();
+    return aWrappedNode instanceof IHCHasChildren ? ((IHCHasChildren) aWrappedNode).getChildCount () : 0;
   }
 }

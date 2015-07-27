@@ -28,7 +28,6 @@ import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.EHCNodeState;
 import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.conversion.HCConsistencyChecker;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.customize.IHCCustomizer;
 
@@ -48,7 +47,19 @@ public abstract class AbstractHCNode implements IHCNode
     return m_eNodeState;
   }
 
-  private final void setNodeState (@Nonnull final EHCNodeState eNodeState)
+  private final void _ensureNodeState (@Nonnull final EHCNodeState eNodeState)
+  {
+    ValueEnforcer.notNull (eNodeState, "NodeState");
+    if (!m_eNodeState.equals (eNodeState))
+      throw new IllegalStateException ("Expected node state " +
+                                       eNodeState +
+                                       " but having node state " +
+                                       m_eNodeState +
+                                       " in " +
+                                       toString ());
+  }
+
+  private final void _setNodeState (@Nonnull final EHCNodeState eNodeState)
   {
     ValueEnforcer.notNull (eNodeState, "NodeState");
     if (eNodeState.getID () != m_eNodeState.getID () + 1)
@@ -59,6 +70,7 @@ public abstract class AbstractHCNode implements IHCNode
     m_eNodeState = eNodeState;
   }
 
+  @OverrideOnDemand
   protected void onCustomizeNode (@Nonnull final IHCCustomizer aCustomizer,
                                   @Nonnull final EHTMLVersion eHTMLVersion,
                                   @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
@@ -70,8 +82,13 @@ public abstract class AbstractHCNode implements IHCNode
                                    @Nonnull final EHTMLVersion eHTMLVersion,
                                    @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
   {
-    onCustomizeNode (aCustomizer, eHTMLVersion, aTargetNode);
-    setNodeState (EHCNodeState.CUSTOMIZED);
+    // Customize only once
+    if (m_eNodeState.isBefore (EHCNodeState.CUSTOMIZED))
+    {
+      _ensureNodeState (EHCNodeState.INITIAL);
+      onCustomizeNode (aCustomizer, eHTMLVersion, aTargetNode);
+      _setNodeState (EHCNodeState.CUSTOMIZED);
+    }
   }
 
   /**
@@ -80,6 +97,7 @@ public abstract class AbstractHCNode implements IHCNode
    * @param aTargetNode
    *        The target node where additional nodes should be added
    */
+  @OverrideOnDemand
   protected void onFinalizeNodeState (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
                                       @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
   {}
@@ -87,27 +105,45 @@ public abstract class AbstractHCNode implements IHCNode
   public final void finalizeNodeState (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
                                        @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
   {
-    onFinalizeNodeState (aConversionSettings, aTargetNode);
-    setNodeState (EHCNodeState.FINALIZED);
-  }
-
-  /**
-   * @param aConversionSettings
-   *        HC conversion settings
-   */
-  protected void onRegisterExternalResources (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
-  {}
-
-  public final void registerExternalResources (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
-  {
-    onRegisterExternalResources (aConversionSettings);
-    setNodeState (EHCNodeState.RESOURCES_REGISTERED);
+    // finalize only once
+    if (m_eNodeState.isBefore (EHCNodeState.FINALIZED))
+    {
+      _ensureNodeState (EHCNodeState.CUSTOMIZED);
+      onFinalizeNodeState (aConversionSettings, aTargetNode);
+      _setNodeState (EHCNodeState.FINALIZED);
+    }
   }
 
   @OverrideOnDemand
   public boolean canConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     return true;
+  }
+
+  /**
+   * @param aConversionSettings
+   *        HC conversion settings
+   * @param bForceRegistration
+   *        <code>true</code> if the registration is forced by the caller.
+   */
+  @OverrideOnDemand
+  protected void onRegisterExternalResources (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
+                                              final boolean bForceRegistration)
+  {}
+
+  public final void registerExternalResources (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
+                                               final boolean bForceRegistration)
+  {
+    // register resources only once
+    if (m_eNodeState.isBefore (EHCNodeState.RESOURCES_REGISTERED))
+    {
+      _ensureNodeState (EHCNodeState.FINALIZED);
+      // Register resources only, if forced or if it can be converted to a micro
+      // node
+      if (bForceRegistration || canConvertToMicroNode (aConversionSettings))
+        onRegisterExternalResources (aConversionSettings, bForceRegistration);
+      _setNodeState (EHCNodeState.RESOURCES_REGISTERED);
+    }
   }
 
   @Nonnull
@@ -117,10 +153,7 @@ public abstract class AbstractHCNode implements IHCNode
   @Nullable
   public final IMicroNode convertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
-    // XXX enable
-    HCConsistencyChecker.consistencyAssert (m_eNodeState.equals (EHCNodeState.RESOURCES_REGISTERED) ||
-                                            m_eNodeState.equals (EHCNodeState.INITIAL),
-                                            "Invalid node state present. Having " + m_eNodeState);
+    _ensureNodeState (EHCNodeState.RESOURCES_REGISTERED);
 
     // Can this node be converted to a MicroNode?
     if (!canConvertToMicroNode (aConversionSettings))
@@ -128,6 +161,7 @@ public abstract class AbstractHCNode implements IHCNode
 
     // Main conversion
     final IMicroNode ret = internalConvertToMicroNode (aConversionSettings);
+
     return ret;
   }
 

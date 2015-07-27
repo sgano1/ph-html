@@ -16,8 +16,6 @@
  */
 package com.helger.html.hc.customize;
 
-import java.util.List;
-
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 
@@ -25,8 +23,6 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.html.HCBody;
-import com.helger.html.hc.html.HCHead;
 
 /**
  * An implementation of {@link IHCCustomizer} that does nothing.
@@ -41,14 +37,7 @@ public class HCEmptyCustomizer implements IHCCustomizer
 
   public void customizeNode (@Nonnull final IHCNode aNode,
                              @Nonnull final EHTMLVersion eHTMLVersion,
-                             @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aParentElement)
-  {
-    // Nada
-  }
-
-  public void handleOutOfBandNodes (@Nonnull final List <IHCNode> aOutOfBandNodes,
-                                    @Nonnull final HCHead aHead,
-                                    @Nonnull final HCBody aBody)
+                             @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
   {
     // Nada
   }

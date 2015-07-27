@@ -29,8 +29,8 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCElement;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.html.*;
-import com.helger.html.hc.impl.HCGenericElementWithChildren;
 import com.helger.html.hc.impl.HCTextNode;
+import com.helger.html.hcext.HCGenericElementWithChildren;
 
 @Immutable
 public final class HCHTMLHelper

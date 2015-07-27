@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html;
+package com.helger.html.hc.impl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

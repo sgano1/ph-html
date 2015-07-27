@@ -54,7 +54,6 @@ import com.helger.html.hc.html.HCScriptFile;
 import com.helger.html.hc.html.HCScriptOnDocumentReady;
 import com.helger.html.hc.html.HCStyle;
 import com.helger.html.hc.impl.HCConditionalCommentNode;
-import com.helger.html.hc.impl.HCNodeList;
 import com.helger.html.js.provider.CollectingJSCodeProvider;
 
 /**
@@ -488,8 +487,8 @@ public final class HCSpecialNodeHandler
 
   @Nonnull
   @ReturnsMutableCopy
-  public static List <IHCNode> getWithoutSpecialNodes (@Nonnull final Iterable <? extends IHCNode> aNodes,
-                                                       @Nonnull final AbstractHCSpecialNodes <?> aSpecialNodes)
+  public static List <IHCNode> extractSpecialNodes (@Nonnull final Iterable <? extends IHCNode> aNodes,
+                                                    @Nonnull final AbstractHCSpecialNodes <?> aSpecialNodes)
   {
     ValueEnforcer.notNull (aNodes, "Nodes");
     ValueEnforcer.notNull (aSpecialNodes, "SpecialNodes");
@@ -541,13 +540,11 @@ public final class HCSpecialNodeHandler
    *        document.ready() scripts are converted to regular scripts and are
    *        executed after all other scripts. For AJAX calls, this should be
    *        <code>false</code>.
-   * @return A node list with all remaining (non-special) nodes. Never
-   *         <code>null</code>.
    */
   @Nonnull
-  public static HCNodeList extractSpecialContent (@Nonnull final IHCHasChildren aNode,
-                                                  @Nonnull final AbstractHCSpecialNodes <?> aSpecialNodes,
-                                                  final boolean bKeepOnDocumentReady)
+  public static void extractSpecialContent (@Nonnull final IHCHasChildren aNode,
+                                            @Nonnull final AbstractHCSpecialNodes <?> aSpecialNodes,
+                                            final boolean bKeepOnDocumentReady)
   {
     ValueEnforcer.notNull (aNode, "Node");
     ValueEnforcer.notNull (aSpecialNodes, "SpecialNodes");
@@ -559,18 +556,12 @@ public final class HCSpecialNodeHandler
     aExtractedOutOfBandNodes = getMergedInlineCSSAndJSNodes (aExtractedOutOfBandNodes, bKeepOnDocumentReady);
 
     // Extract the special nodes into the provided object
-    aExtractedOutOfBandNodes = getWithoutSpecialNodes (aExtractedOutOfBandNodes, aSpecialNodes);
+    aExtractedOutOfBandNodes = extractSpecialNodes (aExtractedOutOfBandNodes, aSpecialNodes);
 
-    // Now the aExtractedOutOfBandNodes list should be empty - otherwise we have
-    // an internal inconsistency (see the warning below)
+    // Now the aExtractedOutOfBandNodes list must be empty - otherwise we have
+    // an internal inconsistency
     if (!aExtractedOutOfBandNodes.isEmpty ())
-      s_aLogger.warn ("Out-of-band nodes are left after merging and extraction: " + aExtractedOutOfBandNodes);
-
-    // Add the content without the out-of-band nodes
-    final HCNodeList ret = HCNodeList.create (aNode);
-    // And to be sure, add all remaining out-of-band nodes at the end so that no
-    // node will get lost!
-    ret.addChildren (aExtractedOutOfBandNodes);
-    return ret;
+      throw new IllegalStateException ("Out-of-band nodes are left after merging and extraction: " +
+                                       aExtractedOutOfBandNodes);
   }
 }

@@ -44,8 +44,6 @@ public interface IHCNode extends IHasPlainText, Serializable
   void finalizeNodeState (@Nonnull IHCConversionSettingsToNode aConversionSettings,
                           @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode);
 
-  void registerExternalResources (@Nonnull IHCConversionSettingsToNode aConversionSettings);
-
   /**
    * This method checks whether the node is suitable for conversion to an
    * {@link IMicroNode}. If this node cannot be converted, no child node will be
@@ -59,8 +57,23 @@ public interface IHCNode extends IHasPlainText, Serializable
   boolean canConvertToMicroNode (@Nonnull IHCConversionSettingsToNode aConversionSettings);
 
   /**
+   * Register external JS and CSS resources required for this node, but only if
+   * this HC node can be converted to a micro node as determined by
+   * {@link #canConvertToMicroNode(IHCConversionSettingsToNode)}. Using the
+   * bForceRegistration parameter, this can be forced.
+   *
+   * @param aConversionSettings
+   *        Conversion settings to be used. Never <code>null</code>.
+   * @param bForceRegistration
+   *        <code>true</code> to force registration, <code>false</code> to
+   *        register resources only if the node can be converted to a micro
+   *        node.
+   */
+  void registerExternalResources (@Nonnull IHCConversionSettingsToNode aConversionSettings, boolean bForceRegistration);
+
+  /**
    * The main conversion to a micro node.<br>
-   * Note: return type cannot by IMicroElement since the checkbox object
+   * Note: return type cannot by IMicroElement since the check box object
    * delivers an IMicroNodeList!
    *
    * @param aConversionSettings

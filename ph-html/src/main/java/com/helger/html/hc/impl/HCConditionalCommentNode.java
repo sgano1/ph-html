@@ -35,6 +35,7 @@ import com.helger.commons.version.Version;
 import com.helger.commons.xml.serialize.write.IXMLWriterSettings;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
+import com.helger.html.hc.render.HCRenderer;
 
 /**
  * Represents an HTML conditional comment for IE specific usage. E.g.
@@ -121,7 +122,7 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
   protected IMicroNode internalConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     // First convert the contained node to a micro node
-    final IMicroNode aWrappedMicroNode = m_aWrappedNode.convertToMicroNode (aConversionSettings);
+    final IMicroNode aWrappedMicroNode = super.internalConvertToMicroNode (aConversionSettings);
 
     // Only create a newline when alignment is enabled
     final IXMLWriterSettings aXMLWriterSettings = aConversionSettings.getXMLWriterSettings ();
@@ -137,7 +138,7 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
                                                                                        aXMLWriterSettings) +
                                                           "<![endif]");
 
-    return aCommentNode.convertToMicroNode (aConversionSettings);
+    return HCRenderer.getAsNode (aCommentNode, aConversionSettings);
   }
 
   @Override

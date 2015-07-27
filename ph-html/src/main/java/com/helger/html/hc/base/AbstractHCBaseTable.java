@@ -119,39 +119,25 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
 
   public final boolean hasChildren ()
   {
-    return m_aHead.hasChildren () || m_aBody.hasChildren () || m_aFoot.hasChildren ();
+    return true;
   }
 
   @Nonnegative
   public final int getChildCount ()
   {
-    return m_aHead.getChildCount () + m_aBody.getChildCount () + m_aFoot.getChildCount ();
+    return (m_aColGroup != null ? 1 : 0) + 3;
   }
 
   @Nullable
-  public final HCRow getFirstChild ()
+  public final IHCNode getFirstChild ()
   {
-    HCRow ret = getFirstHeaderRow ();
-    if (ret == null)
-    {
-      ret = getFirstBodyRow ();
-      if (ret == null)
-        ret = getFirstFooterRow ();
-    }
-    return ret;
+    return m_aColGroup != null ? m_aColGroup : m_aHead;
   }
 
   @Nullable
-  public final HCRow getLastChild ()
+  public final IHCNode getLastChild ()
   {
-    HCRow ret = getLastFooterRow ();
-    if (ret == null)
-    {
-      ret = getLastBodyRow ();
-      if (ret == null)
-        ret = getLastHeaderRow ();
-    }
-    return ret;
+    return m_aFoot;
   }
 
   @Nonnull
@@ -159,24 +145,27 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
   public final List <IHCNode> getAllChildren ()
   {
     final List <IHCNode> ret = new ArrayList <IHCNode> ();
-    ret.addAll (m_aHead.getAllChildren ());
-    ret.addAll (m_aBody.getAllChildren ());
-    ret.addAll (m_aFoot.getAllChildren ());
+    if (m_aColGroup != null)
+      ret.add (m_aColGroup);
+    ret.add (m_aHead);
+    ret.add (m_aBody);
+    ret.add (m_aFoot);
     return ret;
   }
 
   @Nullable
-  public final HCRow getChildAtIndex (@Nonnegative final int nIndex)
+  public final IHCNode getChildAtIndex (@Nonnegative final int nIndex)
   {
-    int nRealIndex = nIndex;
-    if (nRealIndex < getHeaderRowCount ())
-      return getHeaderRowAtIndex (nRealIndex);
-    nRealIndex -= getHeaderRowCount ();
-    if (nRealIndex < getBodyRowCount ())
-      return getBodyRowAtIndex (nRealIndex);
-    nRealIndex -= getBodyRowCount ();
-    if (nRealIndex < getFooterRowCount ())
-      return getFooterRowAtIndex (nRealIndex);
+    final boolean bHasColGroup = m_aColGroup != null;
+    if (nIndex == 0)
+      return bHasColGroup ? m_aColGroup : m_aHead;
+    if (nIndex == 1)
+      return bHasColGroup ? m_aHead : m_aBody;
+    if (nIndex == 2)
+      return bHasColGroup ? m_aBody : m_aFoot;
+    if (nIndex == 3)
+      if (bHasColGroup)
+        return m_aFoot;
     return null;
   }
 

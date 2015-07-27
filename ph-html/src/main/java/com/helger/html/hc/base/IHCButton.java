@@ -26,7 +26,7 @@ import com.helger.html.hc.IHCHasName;
 import com.helger.html.hc.IHCHasState;
 import com.helger.html.hc.api.EHCButtonType;
 import com.helger.html.hc.api.EHCFormMethod;
-import com.helger.html.hc.html.HC_Target;
+import com.helger.html.hc.api.HC_Target;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.writer.IHasJSCodeWithSettings;
 

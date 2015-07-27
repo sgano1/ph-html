@@ -16,15 +16,11 @@
  */
 package com.helger.html.hc.customize;
 
-import java.util.List;
-
 import javax.annotation.Nonnull;
 
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.html.HCBody;
-import com.helger.html.hc.html.HCHead;
 
 /**
  * A special customization interface, that lets you modify existing elements
@@ -36,6 +32,7 @@ public interface IHCCustomizer
 {
   /**
    * Customize HC node with some predefined classes etc.
+   * 
    * @param aNode
    *        The element to be customized. Never <code>null</code>.
    * @param eHTMLVersion
@@ -47,17 +44,4 @@ public interface IHCCustomizer
   void customizeNode (@Nonnull IHCNode aNode,
                       @Nonnull EHTMLVersion eHTMLVersion,
                       @Nonnull IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode);
-
-  /**
-   * This callback is called, when the main HTML element is assembled, to move
-   * the out-of-band nodes to the correct place.
-   *
-   * @param aOutOfBandNodes
-   *        The non-<code>null</code> list of out-of-band nodes. May be empty.
-   * @param aHead
-   *        The head element. Never <code>null</code>.
-   * @param aBody
-   *        The body element. Never <code>null</code>.
-   */
-  void handleOutOfBandNodes (@Nonnull List <IHCNode> aOutOfBandNodes, @Nonnull HCHead aHead, @Nonnull HCBody aBody);
 }

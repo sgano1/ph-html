@@ -23,6 +23,7 @@ import com.helger.commons.string.StringHelper;
 import com.helger.commons.url.ISimpleURL;
 import com.helger.commons.url.URLValidator;
 import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.api.HC_Target;
 import com.helger.html.hc.base.AbstractHCA;
 import com.helger.html.hc.impl.HCTextNode;
 

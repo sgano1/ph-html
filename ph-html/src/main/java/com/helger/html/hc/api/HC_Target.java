@@ -31,7 +31,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html;
+package com.helger.html.hc.api;
 
 import java.io.Serializable;
 
@@ -42,7 +42,6 @@ import javax.annotation.concurrent.Immutable;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.hc.api.IHCHasHTMLAttributeValue;
 
 /**
  * Represents the value of the "target" attribute of an HTML &lt;a&gt; element
