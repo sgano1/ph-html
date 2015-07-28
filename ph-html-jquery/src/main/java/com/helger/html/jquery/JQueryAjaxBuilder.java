@@ -28,23 +28,17 @@ import com.helger.html.jscode.JSAssocArray;
 import com.helger.html.jscode.JSExpr;
 
 /**
- * Utility class handling <code>$.ajax</code>
+ * Utility class handling <code>$.ajax</code>. <br>
+ * By default asynchronous AJAX is enabled<br>
+ * By default HTTP caching is disabled<br>
+ * By default global events are triggered<br>
+ * By default processData is enabled<br>
+ * By default traditional processing is disabled
  *
  * @author Philip Helger
  */
 public class JQueryAjaxBuilder implements Serializable
 {
-  /** By default asynchronous AJAX is enabled */
-  public static final boolean DEFAULT_ASYNC = true;
-  /** By default HTTP caching is enabled */
-  public static final boolean DEFAULT_CACHE = true;
-  /** By default global events are triggered */
-  public static final boolean DEFAULT_GLOBAL_EVENTS = true;
-  /** By default processData is enabled */
-  public static final boolean DEFAULT_PROCESS_DATA = true;
-  /** By default traditional processing is disabled */
-  public static final boolean DEFAULT_TRADITIONAL = false;
-
   // modifier
   private IJSExpression m_aAsync;
   private IJSExpression m_aCache;
@@ -64,7 +58,10 @@ public class JQueryAjaxBuilder implements Serializable
   private JSAnonymousFunction m_aSuccess;
 
   public JQueryAjaxBuilder ()
-  {}
+  {
+    // By default caching is disabled for real world use cases
+    cache (false);
+  }
 
   @Nullable
   public IJSExpression async ()
