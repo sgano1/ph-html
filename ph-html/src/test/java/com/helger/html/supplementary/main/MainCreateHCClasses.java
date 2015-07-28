@@ -57,6 +57,7 @@ public class MainCreateHCClasses
                                               "   * @return The created HC$$ element and never <code>null</code>\r\n" +
                                               "   */\r\n" +
                                               "  @Nonnull\r\n" +
+                                              "  @Deprecated\r\n" +
                                               "  public static HC$$ create (@Nullable final String sChild)\r\n" +
                                               "  {\r\n" +
                                               "    return new HC$$ ().addChild (sChild);\r\n" +
@@ -68,6 +69,7 @@ public class MainCreateHCClasses
                                               "   * @return The created HC$$ element and never <code>null</code>\r\n" +
                                               "   */\r\n" +
                                               "  @Nonnull\r\n" +
+                                              "  @Deprecated\r\n" +
                                               "  public static HC$$ create (@Nullable final String... aChildren)\r\n" +
                                               "  {\r\n" +
                                               "    return new HC$$ ().addChildren (aChildren);\r\n" +
@@ -79,6 +81,7 @@ public class MainCreateHCClasses
                                               "   * @return The created HC$$ element and never <code>null</code>\r\n" +
                                               "   */\r\n" +
                                               "  @Nonnull\r\n" +
+                                              "  @Deprecated\r\n" +
                                               "  public static HC$$ create (@Nullable final IHCNode aChild)\r\n" +
                                               "  {\r\n" +
                                               "    return new HC$$ ().addChild (aChild);\r\n" +
@@ -90,6 +93,7 @@ public class MainCreateHCClasses
                                               "   * @return The created HC$$ element and never <code>null</code>\r\n" +
                                               "   */\r\n" +
                                               "  @Nonnull\r\n" +
+                                              "  @Deprecated\r\n" +
                                               "  public static HC$$ create (@Nullable final IHCNode... aChildren)\r\n" +
                                               "  {\r\n" +
                                               "    return new HC$$ ().addChildren (aChildren);\r\n" +
@@ -101,6 +105,7 @@ public class MainCreateHCClasses
                                               "   * @return The created HC$$ element and never <code>null</code>\r\n" +
                                               "   */\r\n" +
                                               "  @Nonnull\r\n" +
+                                              "  @Deprecated\r\n" +
                                               "  public static HC$$ create (@Nullable final Iterable <? extends IHCNode> aChildren)\r\n" +
                                               "  {\r\n" +
                                               "    return new HC$$ ().addChildren (aChildren);\r\n" +
@@ -117,7 +122,7 @@ public class MainCreateHCClasses
                                               "\r\n" +
                                               "import org.junit.Test;\r\n" +
                                               "\r\n" +
-                                              "import com.helger.commons.collections.CollectionHelper;\r\n" +
+                                              "import com.helger.commons.collection.CollectionHelper;\r\n" +
                                               "import com.helger.html.hc.IHCNode;\r\n" +
                                               "\r\n" +
                                               "/**\r\n" +
@@ -128,6 +133,7 @@ public class MainCreateHCClasses
                                               " * \r\n" +
                                               " * @author Philip Helger\r\n" +
                                               " */\r\n" +
+                                              "@SuppressWarnings (\"deprecation\")\r\n" +
                                               "public final class HC$$Test\r\n" +
                                               "{\r\n" +
                                               "  @Test\r\n" +
