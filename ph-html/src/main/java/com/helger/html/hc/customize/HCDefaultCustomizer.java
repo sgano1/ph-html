@@ -36,13 +36,7 @@ import com.helger.html.hc.base.IHCCol;
 import com.helger.html.hc.base.IHCForm;
 import com.helger.html.hc.base.IHCTable;
 import com.helger.html.hc.html.HCButton_Submit;
-import com.helger.html.hc.html.HCCheckBox;
 import com.helger.html.hc.html.HCColGroup;
-import com.helger.html.hc.html.HCEdit;
-import com.helger.html.hc.html.HCEditFile;
-import com.helger.html.hc.html.HCEditPassword;
-import com.helger.html.hc.html.HCHiddenField;
-import com.helger.html.hc.html.HCRadioButton;
 import com.helger.html.hc.html.HCRow;
 import com.helger.html.hc.html.HCScriptInline;
 import com.helger.html.hc.impl.HCEntityNode;
@@ -58,14 +52,6 @@ import com.helger.html.js.provider.FakeJS;
 @Immutable
 public class HCDefaultCustomizer extends HCEmptyCustomizer
 {
-  public static final ICSSClassProvider CSS_CLASS_BUTTON = DefaultCSSClassProvider.create ("button");
-  public static final ICSSClassProvider CSS_CLASS_CHECKBOX = DefaultCSSClassProvider.create ("checkbox");
-  public static final ICSSClassProvider CSS_CLASS_EDIT = DefaultCSSClassProvider.create ("edit");
-  public static final ICSSClassProvider CSS_CLASS_EDIT_FILE = DefaultCSSClassProvider.create ("edit_file");
-  public static final ICSSClassProvider CSS_CLASS_EDIT_PASSWORD = DefaultCSSClassProvider.create ("edit_password");
-  public static final ICSSClassProvider CSS_CLASS_HIDDEN = DefaultCSSClassProvider.create ("hidden");
-  public static final ICSSClassProvider CSS_CLASS_RADIO = DefaultCSSClassProvider.create ("radio");
-
   // For controls only
   public static final ICSSClassProvider CSS_CLASS_DISABLED = DefaultCSSClassProvider.create ("disabled");
   public static final ICSSClassProvider CSS_CLASS_READONLY = DefaultCSSClassProvider.create ("readonly");
@@ -76,17 +62,8 @@ public class HCDefaultCustomizer extends HCEmptyCustomizer
   // For tables
   public static final ICSSClassProvider CSS_FORCE_COLSPAN = DefaultCSSClassProvider.create ("force_colspan");
 
-  private final boolean m_bCreateControlCSSClasses;
-
-  public HCDefaultCustomizer (final boolean bCreateControlCSSClasses)
-  {
-    m_bCreateControlCSSClasses = bCreateControlCSSClasses;
-  }
-
-  public final boolean isCreateControlCSSClasses ()
-  {
-    return m_bCreateControlCSSClasses;
-  }
+  public HCDefaultCustomizer ()
+  {}
 
   @Nonnull
   protected IHCButton <?> createFakeSubmitButton ()
@@ -102,29 +79,6 @@ public class HCDefaultCustomizer extends HCEmptyCustomizer
     if (aNode instanceof IHCElement <?>)
     {
       final IHCElement <?> aElement = (IHCElement <?>) aNode;
-      if (m_bCreateControlCSSClasses)
-      {
-        if (aElement instanceof IHCButton <?>)
-          aElement.addClass (CSS_CLASS_BUTTON);
-        else
-          if (aElement instanceof HCCheckBox)
-            aElement.addClass (CSS_CLASS_CHECKBOX);
-          else
-            if (aElement instanceof HCEdit)
-              aElement.addClass (CSS_CLASS_EDIT);
-            else
-              if (aElement instanceof HCEditFile)
-                aElement.addClasses (CSS_CLASS_EDIT, CSS_CLASS_EDIT_FILE);
-              else
-                if (aElement instanceof HCEditPassword)
-                  aElement.addClasses (CSS_CLASS_EDIT, CSS_CLASS_EDIT_PASSWORD);
-                else
-                  if (aElement instanceof HCHiddenField)
-                    aElement.addClass (CSS_CLASS_HIDDEN);
-                  else
-                    if (aElement instanceof HCRadioButton)
-                      aElement.addClass (CSS_CLASS_RADIO);
-      }
 
       if (aElement instanceof IHCForm <?>)
       {

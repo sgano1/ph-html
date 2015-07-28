@@ -95,7 +95,7 @@ public class HCConversionSettings implements IHCConversionSettings
   public static IHCCustomizer createDefaultCustomizer ()
   {
     // Don't create control classes
-    return new HCDefaultCustomizer (false);
+    return new HCDefaultCustomizer ();
   }
 
   /**
