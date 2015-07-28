@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.impl;
+package com.helger.html;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -25,7 +25,6 @@ import com.helger.commons.microdom.EMicroNodeType;
 import com.helger.commons.microdom.IMicroDocumentType;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.EHTMLElement;
 
 /**
  * HTML5 document type representation

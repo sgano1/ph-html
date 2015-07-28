@@ -25,11 +25,11 @@ import com.helger.html.hc.IHCNode;
 
 /**
  * Implementation of a node that is ONLY an out-of-band node!
- * 
+ *
  * @author Philip Helger
  */
 @OutOfBandNode
-public final class HCOutOfBandNode extends AbstractHCWrappingNode
+public class HCOutOfBandNode extends AbstractHCWrappingNode
 {
   private final IHCNode m_aOutOfBandNode;
 

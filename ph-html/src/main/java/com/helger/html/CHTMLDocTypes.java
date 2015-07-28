@@ -21,7 +21,6 @@ import javax.annotation.concurrent.Immutable;
 import com.helger.commons.microdom.IMicroDocumentType;
 import com.helger.commons.microdom.MicroDocumentType;
 import com.helger.html.annotation.SinceHTML5;
-import com.helger.html.hc.impl.HTML5DocumentType;
 
 /**
  * Contains a list of predefined (X)HTML document types.
