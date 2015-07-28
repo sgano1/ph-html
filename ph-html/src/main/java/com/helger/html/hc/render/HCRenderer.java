@@ -43,20 +43,9 @@ public final class HCRenderer
   private HCRenderer ()
   {}
 
-  public static void prepareHtmlForConversion (@Nonnull final HCHtml aHtml,
-                                               @Nonnull final IHCConversionSettingsToNode aConversionSettings)
-  {
-    // customize, finalize and extract resources
-    prepareForConversion (aHtml, aHtml.getBody (), aConversionSettings);
-
-    // Extract all out-of-band nodes into the body
-    if (aConversionSettings.isExtractOutOfBandNodes ())
-      aHtml.extractAndReorderOutOfBandNodes ();
-  }
-
   /**
    * Prepare and return a single node.
-   * 
+   *
    * @param aNode
    *        Node to be prepared.
    * @param aTargetNode
@@ -81,6 +70,17 @@ public final class HCRenderer
     aNode.registerExternalResources (aConversionSettings, bForcedResourceRegistration);
 
     return aNode;
+  }
+
+  public static void prepareHtmlForConversion (@Nonnull final HCHtml aHtml,
+                                               @Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  {
+    // customize, finalize and extract resources
+    prepareForConversion (aHtml, aHtml.getBody (), aConversionSettings);
+
+    // Extract all out-of-band nodes into the body
+    if (aConversionSettings.isExtractOutOfBandNodes ())
+      aHtml.extractAndReorderOutOfBandNodes ();
   }
 
   /**
@@ -123,6 +123,8 @@ public final class HCRenderer
         else
           aRealTargetNode = aGlobalTargetNode;
 
+        final int nTargetNodeChildren = aRealTargetNode.getChildCount ();
+
         // Run the global customizer
         aChildNode.customizeNode (aCustomizer, eHTMLVersion, aRealTargetNode);
 
@@ -132,6 +134,15 @@ public final class HCRenderer
         // No forced registration here
         final boolean bForcedResourceRegistration = false;
         aChildNode.registerExternalResources (aConversionSettings, bForcedResourceRegistration);
+
+        // Something was added?
+        if (aRealTargetNode.getChildCount () > nTargetNodeChildren)
+        {
+          // Recursive call on the target node only.
+          // It's important to scan the whole tree, as a hierarchy of nodes may
+          // have been added!
+          prepareForConversion (aRealTargetNode, aRealTargetNode, aConversionSettings);
+        }
 
         return EFinish.UNFINISHED;
       }

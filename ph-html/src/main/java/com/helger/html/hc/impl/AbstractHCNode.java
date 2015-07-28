@@ -31,6 +31,7 @@ import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.EHCNodeState;
 import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.conversion.HCConsistencyChecker;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.customize.IHCCustomizer;
 
@@ -96,12 +97,12 @@ public abstract class AbstractHCNode implements IHCNode
     ValueEnforcer.notNull (eNodeState, "NodeState");
     if (false)
       if (!m_eNodeState.equals (eNodeState))
-        throw new IllegalStateException ("Expected node state " +
-                                         eNodeState +
-                                         " but having node state " +
-                                         m_eNodeState +
-                                         " in " +
-                                         toString ());
+        HCConsistencyChecker.consistencyError ("Expected node state " +
+                                               eNodeState +
+                                               " but having node state " +
+                                               m_eNodeState +
+                                               " in " +
+                                               toString ());
   }
 
   /**
@@ -110,14 +111,14 @@ public abstract class AbstractHCNode implements IHCNode
    * @param eNodeState
    *        The new node state. May not be <code>null</code>.
    */
-  private void _setNodeState (@Nonnull final EHCNodeState eNodeState)
+  public final void internalSetNodeState (@Nonnull final EHCNodeState eNodeState)
   {
     ValueEnforcer.notNull (eNodeState, "NodeState");
     if (m_eNodeState.isAfter (eNodeState))
-      throw new IllegalStateException ("The new node state is invalid. Got " +
-                                       eNodeState +
-                                       " but having " +
-                                       m_eNodeState);
+      HCConsistencyChecker.consistencyError ("The new node state is invalid. Got " +
+                                             eNodeState +
+                                             " but having " +
+                                             m_eNodeState);
     m_eNodeState = eNodeState;
   }
 
@@ -138,7 +139,7 @@ public abstract class AbstractHCNode implements IHCNode
     {
       _ensureNodeState (EHCNodeState.INITIAL);
       onCustomizeNode (aCustomizer, eHTMLVersion, aTargetNode);
-      _setNodeState (EHCNodeState.CUSTOMIZED);
+      internalSetNodeState (EHCNodeState.CUSTOMIZED);
     }
   }
 
@@ -161,7 +162,7 @@ public abstract class AbstractHCNode implements IHCNode
     {
       _ensureNodeState (EHCNodeState.CUSTOMIZED);
       onFinalizeNodeState (aConversionSettings, aTargetNode);
-      _setNodeState (EHCNodeState.FINALIZED);
+      internalSetNodeState (EHCNodeState.FINALIZED);
     }
   }
 
@@ -193,7 +194,7 @@ public abstract class AbstractHCNode implements IHCNode
       // node
       if (bForceRegistration || canConvertToMicroNode (aConversionSettings))
         onRegisterExternalResources (aConversionSettings, bForceRegistration);
-      _setNodeState (EHCNodeState.RESOURCES_REGISTERED);
+      internalSetNodeState (EHCNodeState.RESOURCES_REGISTERED);
     }
   }
 

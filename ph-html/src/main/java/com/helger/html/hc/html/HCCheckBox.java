@@ -28,7 +28,6 @@ import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.api.EHCInputType;
 import com.helger.html.hc.base.AbstractHCInput;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
-import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.request.IHCRequestFieldBoolean;
 import com.helger.html.request.IHCRequestFieldBooleanMultiValue;
 
@@ -181,9 +180,7 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
     {
       final String sHiddenFieldName = getHiddenFieldName ();
       if (StringHelper.hasText (sHiddenFieldName))
-        aTargetNode.addChild (HCRenderer.getPreparedNode (new HCHiddenField (sHiddenFieldName, getValue ()),
-                                                          aTargetNode,
-                                                          aConversionSettings));
+        aTargetNode.addChild (new HCHiddenField (sHiddenFieldName, getValue ()));
     }
   }
 
