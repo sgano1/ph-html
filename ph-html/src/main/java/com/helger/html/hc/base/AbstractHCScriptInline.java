@@ -97,6 +97,9 @@ public abstract class AbstractHCScriptInline <THISTYPE extends AbstractHCScriptI
   @Nullable
   public String getJSCode (@Nonnull final IJSWriterSettings aSettings)
   {
+    if (m_aJSProvider == null)
+      return null;
+
     if (m_aJSProvider instanceof IHasJSCodeWithSettings)
       return ((IHasJSCodeWithSettings) m_aJSProvider).getJSCode (aSettings);
     return m_aJSProvider.getJSCode ();

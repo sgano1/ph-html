@@ -55,6 +55,35 @@ public final class HCRenderer
   }
 
   /**
+   * Prepare and return a single node.
+   * 
+   * @param aNode
+   *        Node to be prepared.
+   * @param aTargetNode
+   *        Target node for additional nodes.
+   * @param aConversionSettings
+   *        Conversion settings to be used.
+   * @return The passed in node.
+   */
+  @Nonnull
+  public static <T extends IHCNode> T getPreparedNode (@Nonnull final T aNode,
+                                                       @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode,
+                                                       @Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  {
+    // Run the global customizer
+    aNode.customizeNode (aConversionSettings.getCustomizer (), aConversionSettings.getHTMLVersion (), aTargetNode);
+
+    // finalize the node
+    aNode.finalizeNodeState (aConversionSettings, aTargetNode);
+
+    // No forced registration here
+    final boolean bForcedResourceRegistration = false;
+    aNode.registerExternalResources (aConversionSettings, bForcedResourceRegistration);
+
+    return aNode;
+  }
+
+  /**
    * Customize the passed base node and all child nodes recursively.
    *
    * @param aStartNode
