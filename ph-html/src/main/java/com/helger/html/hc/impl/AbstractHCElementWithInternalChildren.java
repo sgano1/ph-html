@@ -65,6 +65,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
     super (aElement);
   }
 
+  @Override
   public final boolean hasChildren ()
   {
     return CollectionHelper.isNotEmpty (m_aChildren);
@@ -221,6 +222,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
     return thisAsT ();
   }
 
+  @Override
   @Nonnegative
   public final int getChildCount ()
   {
@@ -234,6 +236,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
     return m_aChildren;
   }
 
+  @Override
   @Nonnull
   @ReturnsMutableCopy
   public final List <CHILDTYPE> getAllChildren ()
@@ -241,18 +244,21 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
     return CollectionHelper.newList (m_aChildren);
   }
 
+  @Override
   @Nullable
   public final CHILDTYPE getChildAtIndex (@Nonnegative final int nIndex)
   {
     return CollectionHelper.getSafe (m_aChildren, nIndex, null);
   }
 
+  @Override
   @Nullable
   public final CHILDTYPE getFirstChild ()
   {
     return CollectionHelper.getFirstElement (m_aChildren);
   }
 
+  @Override
   @Nullable
   public final CHILDTYPE getLastChild ()
   {

@@ -16,6 +16,9 @@
  */
 package com.helger.html.hc.impl;
 
+import java.util.List;
+
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
@@ -40,6 +43,47 @@ import com.helger.html.hc.customize.IHCCustomizer;
 public abstract class AbstractHCNode implements IHCNode
 {
   private EHCNodeState m_eNodeState = EHCNodeState.INITIAL;
+
+  @OverrideOnDemand
+  public boolean hasChildren ()
+  {
+    return false;
+  }
+
+  @OverrideOnDemand
+  @Nonnegative
+  public int getChildCount ()
+  {
+    return 0;
+  }
+
+  @Nullable
+  @OverrideOnDemand
+  public List <? extends IHCNode> getAllChildren ()
+  {
+    return null;
+  }
+
+  @Nullable
+  @OverrideOnDemand
+  public IHCNode getChildAtIndex (@Nonnegative final int nIndex)
+  {
+    return null;
+  }
+
+  @Nullable
+  @OverrideOnDemand
+  public IHCNode getFirstChild ()
+  {
+    return null;
+  }
+
+  @Nullable
+  @OverrideOnDemand
+  public IHCNode getLastChild ()
+  {
+    return null;
+  }
 
   @Nonnull
   public EHCNodeState getNodeState ()

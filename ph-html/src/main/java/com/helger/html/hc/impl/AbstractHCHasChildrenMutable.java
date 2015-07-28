@@ -73,6 +73,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
     return GenericReflection.<AbstractHCHasChildrenMutable <THISTYPE, CHILDTYPE>, THISTYPE> uncheckedCast (this);
   }
 
+  @Override
   public final boolean hasChildren ()
   {
     return CollectionHelper.isNotEmpty (m_aChildren);
@@ -230,6 +231,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
     return thisAsT ();
   }
 
+  @Override
   @Nonnegative
   public final int getChildCount ()
   {
@@ -243,6 +245,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
     return m_aChildren;
   }
 
+  @Override
   @Nonnull
   @ReturnsMutableCopy
   public final List <CHILDTYPE> getAllChildren ()
@@ -250,18 +253,21 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
     return CollectionHelper.newList (m_aChildren);
   }
 
+  @Override
   @Nullable
   public final CHILDTYPE getChildAtIndex (@Nonnegative final int nIndex)
   {
     return CollectionHelper.getSafe (m_aChildren, nIndex);
   }
 
+  @Override
   @Nullable
   public final CHILDTYPE getFirstChild ()
   {
     return CollectionHelper.getFirstElement (m_aChildren);
   }
 
+  @Override
   @Nullable
   public final CHILDTYPE getLastChild ()
   {

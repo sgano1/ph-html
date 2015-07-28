@@ -18,6 +18,7 @@ package com.helger.html.hc.impl;
 
 import java.util.List;
 
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.OverridingMethodsMustInvokeSuper;
@@ -27,7 +28,6 @@ import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.EHCNodeState;
-import com.helger.html.hc.IHCHasChildren;
 import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCWrappingNode;
@@ -35,14 +35,12 @@ import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.customize.IHCCustomizer;
 
 /**
- * Abstract implementation of {@link IHCWrappingNode}. It additionally
- * implements {@link IHCHasChildren} for correct iteration in case the wrapped
- * node implements {@link IHCHasChildren}.
+ * Abstract implementation of {@link IHCWrappingNode}.
  *
  * @author Philip Helger
  */
 @NotThreadSafe
-public abstract class AbstractHCWrappingNode extends AbstractHCNode implements IHCWrappingNode, IHCHasChildren
+public abstract class AbstractHCWrappingNode extends AbstractHCNode implements IHCWrappingNode
 {
   @Override
   @Nonnull
@@ -103,43 +101,44 @@ public abstract class AbstractHCWrappingNode extends AbstractHCNode implements I
     return getWrappedNode ().getPlainText ();
   }
 
+  @Override
   @Nullable
   public List <? extends IHCNode> getAllChildren ()
   {
-    final IHCNode aWrappedNode = getWrappedNode ();
-    return aWrappedNode instanceof IHCHasChildren ? ((IHCHasChildren) aWrappedNode).getAllChildren () : null;
+    return getWrappedNode ().getAllChildren ();
   }
 
+  @Override
   @Nullable
   public IHCNode getChildAtIndex (final int nIndex)
   {
-    final IHCNode aWrappedNode = getWrappedNode ();
-    return aWrappedNode instanceof IHCHasChildren ? ((IHCHasChildren) aWrappedNode).getChildAtIndex (nIndex) : null;
+    return getWrappedNode ().getChildAtIndex (nIndex);
   }
 
+  @Override
   @Nullable
   public IHCNode getFirstChild ()
   {
-    final IHCNode aWrappedNode = getWrappedNode ();
-    return aWrappedNode instanceof IHCHasChildren ? ((IHCHasChildren) aWrappedNode).getFirstChild () : null;
+    return getWrappedNode ().getFirstChild ();
   }
 
+  @Override
   @Nullable
   public IHCNode getLastChild ()
   {
-    final IHCNode aWrappedNode = getWrappedNode ();
-    return aWrappedNode instanceof IHCHasChildren ? ((IHCHasChildren) aWrappedNode).getLastChild () : null;
+    return getWrappedNode ().getLastChild ();
   }
 
+  @Override
   public boolean hasChildren ()
   {
-    final IHCNode aWrappedNode = getWrappedNode ();
-    return aWrappedNode instanceof IHCHasChildren ? ((IHCHasChildren) aWrappedNode).hasChildren () : false;
+    return getWrappedNode ().hasChildren ();
   }
 
+  @Override
+  @Nonnegative
   public int getChildCount ()
   {
-    final IHCNode aWrappedNode = getWrappedNode ();
-    return aWrappedNode instanceof IHCHasChildren ? ((IHCHasChildren) aWrappedNode).getChildCount () : 0;
+    return getWrappedNode ().getChildCount ();
   }
 }

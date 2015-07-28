@@ -36,7 +36,7 @@ import com.helger.html.hc.impl.HCNodeList;
  * @param <CHILDTYPE>
  *        Desired child type
  */
-public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode> extends IHCHasChildren
+public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode> extends IHCNode
 {
   /**
    * @param aNode

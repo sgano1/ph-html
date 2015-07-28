@@ -29,6 +29,7 @@ import org.slf4j.LoggerFactory;
 import com.helger.commons.annotation.PresentForCodeCoverage;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.cache.AnnotationUsageCache;
+import com.helger.commons.debug.GlobalDebug;
 import com.helger.commons.state.EFinish;
 import com.helger.commons.string.StringHelper;
 import com.helger.html.EHTMLElement;
@@ -39,7 +40,6 @@ import com.helger.html.annotation.DeprecatedInXHTML1;
 import com.helger.html.annotation.SinceHTML5;
 import com.helger.html.hc.HCHelper;
 import com.helger.html.hc.IHCElement;
-import com.helger.html.hc.IHCHasChildren;
 import com.helger.html.hc.IHCHasID;
 import com.helger.html.hc.IHCIteratorCallback;
 import com.helger.html.hc.IHCNode;
@@ -74,25 +74,12 @@ public final class HCConsistencyChecker
   private HCConsistencyChecker ()
   {}
 
-  /**
-   * Consistency assert.
-   *
-   * @param bCondition
-   *        The condition that must be <code>true</code>.
-   * @param sMsg
-   *        The message to be thrown
-   * @throws IllegalStateException
-   *         If the condition does not hold <code>true</code>.
-   */
-  public static void consistencyAssert (final boolean bCondition, final String sMsg)
+  public static void consistencyError (@Nonnull final String sMsg)
   {
-    if (!bCondition)
-      throw new IllegalStateException ("Consistency check failed: " + sMsg);
-  }
-
-  public static void consistencyWarning (final String sMsg)
-  {
-    s_aLogger.warn (sMsg);
+    if (GlobalDebug.isDebugMode ())
+      throw new IllegalStateException ("HC Consistency check error: " + sMsg);
+    // In production emit only an error
+    s_aLogger.error ("HC Consistency check error: " + sMsg);
   }
 
   private static void _checkDeprecation (final Class <?> aElementClass,
@@ -100,31 +87,31 @@ public final class HCConsistencyChecker
                                          final EHTMLVersion eHTMLVersion)
   {
     if (s_aAUC_D_HTML4.hasAnnotation (aElementClass))
-      consistencyWarning ("The element '" + sElementName + "' was deprecated in HTML 4.0");
+      consistencyError ("The element '" + sElementName + "' was deprecated in HTML 4.0");
     else
       if (s_aAUC_D_XHTML1.hasAnnotation (aElementClass))
-        consistencyWarning ("The element '" + sElementName + "' is deprecated in XHTML1");
+        consistencyError ("The element '" + sElementName + "' is deprecated in XHTML1");
       else
         if (eHTMLVersion.isAtLeastHTML5 ())
         {
           // HTML5 specifics checks
           if (s_aAUC_D_HTML5.hasAnnotation (aElementClass))
-            consistencyWarning ("The element '" + sElementName + "' is deprecated in HTML5");
+            consistencyError ("The element '" + sElementName + "' is deprecated in HTML5");
         }
         else
         {
           // pre-HTML5 checks
           if (s_aAUC_S_HTML5.hasAnnotation (aElementClass))
-            consistencyWarning ("The element '" + sElementName + "' is only available in HTML5");
+            consistencyError ("The element '" + sElementName + "' is only available in HTML5");
         }
   }
 
   private static void _checkA (final HCA aA)
   {
     if (HCHelper.recursiveContainsChildWithTagName (aA, EHTMLElement.A))
-      consistencyWarning ("A may never contain other links!");
+      consistencyError ("A may never contain other links!");
     if (HCHelper.recursiveContainsChildWithTagName (aA, EHTMLElement.SELECT))
-      consistencyWarning ("A contains invalid child element!");
+      consistencyError ("A contains invalid child element!");
   }
 
   private static void _checkButton (final HCButton aButton)
@@ -140,25 +127,25 @@ public final class HCConsistencyChecker
                                                                               EHTMLElement.FIELDSET,
                                                                               EHTMLElement.IFRAME);
     if (aChild != null)
-      consistencyWarning ("BUTTON element contains forbidden tag " + aChild.getElement ());
+      consistencyError ("BUTTON element contains forbidden tag " + aChild.getElement ());
   }
 
   private static void _checkForm (final HCForm aForm)
   {
     if (HCHelper.recursiveContainsChildWithTagName (aForm, EHTMLElement.FORM))
-      consistencyWarning ("FORM contains other nested form");
+      consistencyError ("FORM contains other nested form");
   }
 
   private static void _checkMeter (final HCMeter aMeter)
   {
     if (HCHelper.recursiveContainsChildWithTagName (aMeter, EHTMLElement.METER))
-      consistencyWarning ("METER contains other nested meter");
+      consistencyError ("METER contains other nested meter");
   }
 
   private static void _checkObject (final HCObject aValue)
   {
     if (aValue.getData () == null && aValue.getType () == null)
-      consistencyWarning ("OBJECT contains neither type nor data");
+      consistencyError ("OBJECT contains neither type nor data");
   }
 
   private static void _checkPre (final HCPre aPre)
@@ -170,13 +157,13 @@ public final class HCConsistencyChecker
                                                                               EHTMLElement.SUB,
                                                                               EHTMLElement.SUP);
     if (aChild != null)
-      consistencyWarning ("PRE elements contains forbidden tag " + aChild.getElement ());
+      consistencyError ("PRE elements contains forbidden tag " + aChild.getElement ());
   }
 
   private static void _checkProgress (final HCProgress aProgress)
   {
     if (HCHelper.recursiveContainsChildWithTagName (aProgress, EHTMLElement.PROGRESS))
-      consistencyWarning ("PROGRESS contains other nested progress");
+      consistencyError ("PROGRESS contains other nested progress");
   }
 
   private static void _checkTable (@Nonnull final IHCTable <?> aTable)
@@ -228,8 +215,8 @@ public final class HCConsistencyChecker
       // contain a'&amp;' followed by some malicious code that should be
       // escaped.
       // Note PH: this is not a vulnerability. This is a programming error!
-      consistencyAssert (!sHref.contains ("&amp;"),
-                         "The URL '" + sHref + "' seems to be already escaped - please use an unescaped URL!!");
+      if (sHref.contains ("&amp;"))
+        consistencyError ("The URL '" + sHref + "' seems to be already escaped - please use an unescaped URL!!");
     }
   }
 
@@ -245,14 +232,14 @@ public final class HCConsistencyChecker
    */
   @Nonnull
   @ReturnsMutableCopy
-  public static Set <String> checkForUniqueIDs (@Nonnull final IHCHasChildren aStartNode)
+  public static Set <String> checkForUniqueIDs (@Nonnull final IHCNode aStartNode)
   {
     final Set <String> aUsedIDs = new HashSet <String> ();
     final Set <String> aDuplicateIDs = new HashSet <String> ();
     HCHelper.iterateTree (aStartNode, new IHCIteratorCallback ()
     {
       @Nonnull
-      public EFinish call (@Nullable final IHCHasChildren aParentNode, @Nonnull final IHCNode aChildNode)
+      public EFinish call (@Nullable final IHCNode aParentNode, @Nonnull final IHCNode aChildNode)
       {
         if (aChildNode instanceof IHCHasID <?>)
         {
@@ -260,7 +247,7 @@ public final class HCConsistencyChecker
           final String sID = aElement.getID ();
           if (StringHelper.hasText (sID) && !aUsedIDs.add (sID))
           {
-            consistencyWarning ("The ID '" + sID + "' is used more than once within a single HTML page!");
+            consistencyError ("The ID '" + sID + "' is used more than once within a single HTML page!");
             aDuplicateIDs.add (sID);
           }
         }
@@ -276,8 +263,8 @@ public final class HCConsistencyChecker
     // http://acidmartin.wordpress.com/2008/11/25/the-32-external-css-files-limitation-of-internet-explorer-and-more/
     // http://social.msdn.microsoft.com/Forums/en-US/iewebdevelopment/thread/ad1b6e88-bbfa-4cc4-9e95-3889b82a7c1d
     if (nCSSExternals > MAX_CSS_IE)
-      consistencyWarning ("You are including more than 31 CSS files (" +
-                          nCSSExternals +
-                          ") in your request, which will be ignored by Internet Explorer (at least up to version 8)!");
+      consistencyError ("You are including more than 31 CSS files (" +
+                        nCSSExternals +
+                        ") in your request, which will be ignored by Internet Explorer (at least up to version 8)!");
   }
 }

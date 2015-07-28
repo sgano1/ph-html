@@ -42,7 +42,6 @@ import com.helger.commons.lang.GenericReflection;
 import com.helger.commons.string.StringHelper;
 import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hc.HCHelper;
-import com.helger.html.hc.IHCHasChildren;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeWithChildren;
 import com.helger.html.hc.api.IHCCSSNode;
@@ -278,7 +277,7 @@ public final class HCSpecialNodeHandler
     return false;
   }
 
-  private static void _recursiveExtractAndRemoveOutOfBandNodes (@Nonnull final IHCHasChildren aParentElement,
+  private static void _recursiveExtractAndRemoveOutOfBandNodes (@Nonnull final IHCNode aParentElement,
                                                                 @Nonnull final List <IHCNode> aTargetList,
                                                                 @Nonnegative final int nLevel)
   {
@@ -311,8 +310,7 @@ public final class HCSpecialNodeHandler
         }
 
         // Recurse deeper?
-        if (aChild instanceof IHCHasChildren)
-          _recursiveExtractAndRemoveOutOfBandNodes ((IHCHasChildren) aChild, aTargetList, nLevel + 1);
+        _recursiveExtractAndRemoveOutOfBandNodes (aChild, aTargetList, nLevel + 1);
       }
     }
   }
@@ -329,7 +327,7 @@ public final class HCSpecialNodeHandler
    */
   @Nonnull
   @ReturnsMutableCopy
-  public static List <IHCNode> recursiveExtractAndRemoveOutOfBandNodes (@Nonnull final IHCHasChildren aParentElement)
+  public static List <IHCNode> recursiveExtractAndRemoveOutOfBandNodes (@Nonnull final IHCNode aParentElement)
   {
     ValueEnforcer.notNull (aParentElement, "ParentElement");
 
@@ -551,7 +549,7 @@ public final class HCSpecialNodeHandler
    *        <code>false</code>.
    */
   @Nonnull
-  public static void extractSpecialContent (@Nonnull final IHCHasChildren aNode,
+  public static void extractSpecialContent (@Nonnull final IHCNode aNode,
                                             @Nonnull final AbstractHCSpecialNodes <?> aSpecialNodes,
                                             final boolean bKeepOnDocumentReady)
   {

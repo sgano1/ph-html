@@ -51,7 +51,7 @@ public final class HCHelper
    *         <code>null</code> if no such element exists.
    */
   @Nullable
-  public static IHCElement <?> recursiveGetFirstChildWithTagName (@Nonnull final IHCHasChildren aOwner,
+  public static IHCElement <?> recursiveGetFirstChildWithTagName (@Nonnull final IHCNode aOwner,
                                                                   @Nonnull @Nonempty final EHTMLElement... aElements)
   {
     ValueEnforcer.notNull (aOwner, "Owner");
@@ -61,7 +61,7 @@ public final class HCHelper
     iterateChildren (aOwner, new IHCIteratorCallback ()
     {
       @Nullable
-      public EFinish call (@Nullable final IHCHasChildren aParentNode, @Nonnull final IHCNode aChildNode)
+      public EFinish call (@Nullable final IHCNode aParentNode, @Nonnull final IHCNode aChildNode)
       {
         if (aChildNode instanceof IHCElement <?>)
         {
@@ -80,7 +80,7 @@ public final class HCHelper
     return ret.get ();
   }
 
-  public static boolean recursiveContainsChildWithTagName (@Nonnull final IHCHasChildren aOwner,
+  public static boolean recursiveContainsChildWithTagName (@Nonnull final IHCNode aOwner,
                                                            @Nonnull @Nonempty final EHTMLElement... aElements)
   {
     return recursiveGetFirstChildWithTagName (aOwner, aElements) != null;
@@ -99,7 +99,7 @@ public final class HCHelper
    */
   @Nonnull
   @ReturnsMutableCopy
-  public static List <IHCElement <?>> recursiveGetAllChildrenWithTagName (@Nonnull final IHCHasChildren aOwner,
+  public static List <IHCElement <?>> recursiveGetAllChildrenWithTagName (@Nonnull final IHCNode aOwner,
                                                                           @Nonnull @Nonempty final EHTMLElement... aElements)
   {
     ValueEnforcer.notNull (aOwner, "Owner");
@@ -109,7 +109,7 @@ public final class HCHelper
     iterateChildren (aOwner, new IHCIteratorCallback ()
     {
       @Nullable
-      public EFinish call (@Nullable final IHCHasChildren aParentNode, @Nonnull final IHCNode aChildNode)
+      public EFinish call (@Nullable final IHCNode aParentNode, @Nonnull final IHCNode aChildNode)
       {
         if (aChildNode instanceof IHCElement <?>)
         {
@@ -140,7 +140,7 @@ public final class HCHelper
    *         level, or <code>null</code> if no such element exists.
    */
   @Nullable
-  public static IHCElement <?> recursiveGetFirstChildWithDifferentTagName (@Nonnull final IHCHasChildren aOwner,
+  public static IHCElement <?> recursiveGetFirstChildWithDifferentTagName (@Nonnull final IHCNode aOwner,
                                                                            @Nonnull @Nonempty final EHTMLElement... aElements)
   {
     ValueEnforcer.notNull (aOwner, "Owner");
@@ -150,7 +150,7 @@ public final class HCHelper
     iterateChildren (aOwner, new IHCIteratorCallback ()
     {
       @Nullable
-      public EFinish call (@Nullable final IHCHasChildren aParentNode, @Nonnull final IHCNode aChildNode)
+      public EFinish call (@Nullable final IHCNode aParentNode, @Nonnull final IHCNode aChildNode)
       {
         if (aChildNode instanceof IHCElement <?>)
         {
@@ -175,7 +175,7 @@ public final class HCHelper
     return ret.get ();
   }
 
-  public static boolean recursiveContainsChildWithDifferentTagName (@Nonnull final IHCHasChildren aOwner,
+  public static boolean recursiveContainsChildWithDifferentTagName (@Nonnull final IHCNode aOwner,
                                                                     @Nonnull @Nonempty final EHTMLElement... aElements)
   {
     return recursiveGetFirstChildWithDifferentTagName (aOwner, aElements) != null;
@@ -189,30 +189,25 @@ public final class HCHelper
     if (aStartNode instanceof HCTextNode)
       return true;
 
-    if (aStartNode instanceof IHCHasChildren)
+    final MutableBoolean ret = new MutableBoolean (false);
+    iterateChildren (aStartNode, new IHCIteratorCallback ()
     {
-      final MutableBoolean ret = new MutableBoolean (false);
-      iterateChildren ((IHCHasChildren) aStartNode, new IHCIteratorCallback ()
+      @Nullable
+      public EFinish call (@Nullable final IHCNode aParentNode, @Nonnull final IHCNode aChildNode)
       {
-        @Nullable
-        public EFinish call (@Nullable final IHCHasChildren aParentNode, @Nonnull final IHCNode aChildNode)
+        if (aChildNode instanceof HCTextNode)
         {
-          if (aChildNode instanceof HCTextNode)
-          {
-            ret.set (true);
-            return EFinish.FINISHED;
-          }
-          return EFinish.UNFINISHED;
+          ret.set (true);
+          return EFinish.FINISHED;
         }
-      });
-      return ret.booleanValue ();
-    }
-
-    return false;
+        return EFinish.UNFINISHED;
+      }
+    });
+    return ret.booleanValue ();
   }
 
   @Nonnull
-  private static EFinish _recursiveIterateTree (@Nonnull final IHCHasChildren aNode,
+  private static EFinish _recursiveIterateTree (@Nonnull final IHCNode aNode,
                                                 @Nonnull final IHCIteratorCallback aCallback)
   {
     if (aNode.hasChildren ())
@@ -224,9 +219,8 @@ public final class HCHelper
           return EFinish.FINISHED;
 
         // does the node has children
-        if (aChild instanceof IHCHasChildren)
-          if (_recursiveIterateTree ((IHCHasChildren) aChild, aCallback).isFinished ())
-            return EFinish.FINISHED;
+        if (_recursiveIterateTree (aChild, aCallback).isFinished ())
+          return EFinish.FINISHED;
       }
     }
     return EFinish.UNFINISHED;
@@ -234,15 +228,15 @@ public final class HCHelper
 
   /**
    * Recursively iterate the node and all child nodes of the passed node. The
-   * difference to {@link #iterateChildren(IHCHasChildren, IHCIteratorCallback)}
-   * is, that the callback is also invoked on the passed node.
+   * difference to {@link #iterateChildren(IHCNode, IHCIteratorCallback)} is,
+   * that the callback is also invoked on the passed node.
    *
    * @param aNode
    *        The node to be iterated.
    * @param aCallback
    *        The callback to be invoked on every child
    */
-  public static void iterateTree (@Nonnull final IHCHasChildren aNode, @Nonnull final IHCIteratorCallback aCallback)
+  public static void iterateTree (@Nonnull final IHCNode aNode, @Nonnull final IHCIteratorCallback aCallback)
   {
     ValueEnforcer.notNull (aNode, "node");
     ValueEnforcer.notNull (aCallback, "callback");
@@ -260,7 +254,7 @@ public final class HCHelper
    * @param aCallback
    *        The callback to be invoked on every child
    */
-  public static void iterateChildren (@Nonnull final IHCHasChildren aNode, @Nonnull final IHCIteratorCallback aCallback)
+  public static void iterateChildren (@Nonnull final IHCNode aNode, @Nonnull final IHCIteratorCallback aCallback)
   {
     ValueEnforcer.notNull (aNode, "node");
     ValueEnforcer.notNull (aCallback, "callback");
@@ -427,12 +421,10 @@ public final class HCHelper
     if (aNode instanceof IHCControl <?>)
       return (IHCControl <?>) aNode;
 
-    if (aNode instanceof IHCHasChildren)
+    if (aNode != null)
     {
-      // E.g. HCNodeList
-      final IHCHasChildren aParent = (IHCHasChildren) aNode;
-      if (aParent.hasChildren ())
-        for (final IHCNode aChild : aParent.getAllChildren ())
+      if (aNode.hasChildren ())
+        for (final IHCNode aChild : aNode.getAllChildren ())
         {
           final IHCControl <?> aNestedCtrl = getFirstHCControl (aChild);
           if (aNestedCtrl != null)
@@ -457,15 +449,14 @@ public final class HCHelper
   {
     ValueEnforcer.notNull (aTargetList, "TargetList");
 
-    if (aNode instanceof IHCControl <?>)
-      aTargetList.add ((IHCControl <?>) aNode);
-
-    if (aNode instanceof IHCHasChildren)
+    if (aNode != null)
     {
+      if (aNode instanceof IHCControl <?>)
+        aTargetList.add ((IHCControl <?>) aNode);
+
       // E.g. HCNodeList
-      final IHCHasChildren aParent = (IHCHasChildren) aNode;
-      if (aParent.hasChildren ())
-        for (final IHCNode aChild : aParent.getAllChildren ())
+      if (aNode.hasChildren ())
+        for (final IHCNode aChild : aNode.getAllChildren ())
           getAllHCControls (aChild, aTargetList);
     }
   }

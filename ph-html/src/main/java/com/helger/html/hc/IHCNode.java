@@ -21,6 +21,7 @@ import java.io.Serializable;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.helger.commons.hierarchy.IHasChildrenSorted;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.commons.text.IHasPlainText;
 import com.helger.html.EHTMLVersion;
@@ -32,7 +33,7 @@ import com.helger.html.hc.customize.IHCCustomizer;
  *
  * @author Philip Helger
  */
-public interface IHCNode extends IHasPlainText, Serializable
+public interface IHCNode extends IHasChildrenSorted <IHCNode>, IHasPlainText, Serializable
 {
   @Nonnull
   EHCNodeState getNodeState ();

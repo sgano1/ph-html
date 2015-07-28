@@ -37,7 +37,6 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hc.IHCHasChildren;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.html.HCOptGroup;
@@ -53,7 +52,7 @@ import com.helger.html.request.IHCRequestField;
  * @param <THISTYPE>
  *        the implementation type
  */
-public abstract class AbstractHCSelect <THISTYPE extends AbstractHCSelect <THISTYPE>> extends AbstractHCControl <THISTYPE>implements IHCSelect <THISTYPE>, IHCHasChildren
+public abstract class AbstractHCSelect <THISTYPE extends AbstractHCSelect <THISTYPE>> extends AbstractHCControl <THISTYPE>implements IHCSelect <THISTYPE>
 {
   /** By default auto focus is disabled */
   public static final boolean DEFAULT_AUTO_FOCUS = false;
@@ -451,35 +450,41 @@ public abstract class AbstractHCSelect <THISTYPE extends AbstractHCSelect <THIST
     return false;
   }
 
+  @Override
   @Nullable
   public List <? extends IHCNode> getAllChildren ()
   {
     return CollectionHelper.newList (m_aOptions);
   }
 
+  @Override
   @Nullable
   public IHCNode getChildAtIndex (final int nIndex)
   {
     return CollectionHelper.getSafe (m_aOptions, nIndex);
   }
 
+  @Override
   @Nullable
   public IHCNode getFirstChild ()
   {
     return CollectionHelper.getFirstElement (m_aOptions);
   }
 
+  @Override
   @Nullable
   public IHCNode getLastChild ()
   {
     return CollectionHelper.getLastElement (m_aOptions);
   }
 
+  @Override
   public boolean hasChildren ()
   {
     return !m_aOptions.isEmpty ();
   }
 
+  @Override
   public int getChildCount ()
   {
     return m_aOptions.size ();

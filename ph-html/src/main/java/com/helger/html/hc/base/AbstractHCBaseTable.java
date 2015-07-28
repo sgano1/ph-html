@@ -117,29 +117,34 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
     return thisAsT ();
   }
 
+  @Override
   public final boolean hasChildren ()
   {
     return true;
   }
 
+  @Override
   @Nonnegative
   public final int getChildCount ()
   {
     return (m_aColGroup != null ? 1 : 0) + 3;
   }
 
+  @Override
   @Nullable
   public final IHCNode getFirstChild ()
   {
     return m_aColGroup != null ? m_aColGroup : m_aHead;
   }
 
+  @Override
   @Nullable
   public final IHCNode getLastChild ()
   {
     return m_aFoot;
   }
 
+  @Override
   @Nonnull
   @ReturnsMutableCopy
   public final List <IHCNode> getAllChildren ()
@@ -153,6 +158,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
     return ret;
   }
 
+  @Override
   @Nullable
   public final IHCNode getChildAtIndex (@Nonnegative final int nIndex)
   {
@@ -850,7 +856,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
         // Pass null if no row spans are defined!
         final int nRowCols = _getEffectiveCellCount (aBodyRow, bTotalHasRowSpans ? aTotalRowSpans : null);
         if (nRowCols != nCols)
-          HCConsistencyChecker.consistencyWarning (sContext +
+          HCConsistencyChecker.consistencyError (sContext +
                                                    " row #" +
                                                    (nRowIndex + 1) +
                                                    " has " +

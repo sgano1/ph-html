@@ -28,7 +28,6 @@ import javax.annotation.Nullable;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.hc.IHCElement;
-import com.helger.html.hc.IHCHasChildren;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.html.HCColGroup;
 import com.helger.html.hc.html.HCRow;
@@ -43,7 +42,7 @@ import com.helger.html.hc.html.HCTHead;
  * @param <IMPLTYPE>
  *        Implementation type
  */
-public interface IHCTable <IMPLTYPE extends IHCTable <IMPLTYPE>> extends IHCElement <IMPLTYPE>, IHCHasChildren
+public interface IHCTable <IMPLTYPE extends IHCTable <IMPLTYPE>> extends IHCElement <IMPLTYPE>
 {
   /**
    * @return The table header. Never <code>null</code>.

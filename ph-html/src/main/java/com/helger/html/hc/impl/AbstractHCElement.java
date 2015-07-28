@@ -179,7 +179,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
       if (StringHelper.hasText (sID))
       {
         if (!m_sID.equals (sID))
-          HCConsistencyChecker.consistencyWarning ("Overwriting HC object ID '" +
+          HCConsistencyChecker.consistencyError ("Overwriting HC object ID '" +
                                                    m_sID +
                                                    "' with '" +
                                                    sID +
@@ -187,7 +187,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
       }
       else
       {
-        HCConsistencyChecker.consistencyWarning ("The HC object ID '" +
+        HCConsistencyChecker.consistencyError ("The HC object ID '" +
                                                  m_sID +
                                                  "' will be removed - this may have side effects");
       }
@@ -909,7 +909,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
               !StringHelper.startsWith (sAttrName, CHTMLAttributes.PREFIX_ARIA) &&
               m_eElement != EHTMLElement.LINK)
           {
-            HCConsistencyChecker.consistencyWarning ("Custom HTML5 attribute '" +
+            HCConsistencyChecker.consistencyError ("Custom HTML5 attribute '" +
                                                      sAttrName +
                                                      "' does not start with one of the proposed prefixes '" +
                                                      CHTMLAttributes.HTML5_PREFIX_DATA +

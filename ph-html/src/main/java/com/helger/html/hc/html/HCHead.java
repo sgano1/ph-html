@@ -36,7 +36,6 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hc.IHCHasChildren;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.api.EHCLinkType;
 import com.helger.html.hc.api.HC_Target;
@@ -54,7 +53,7 @@ import com.helger.html.meta.MetaElementList;
  *
  * @author Philip Helger
  */
-public class HCHead extends AbstractHCElement <HCHead>implements IHCHasChildren
+public class HCHead extends AbstractHCElement <HCHead>
 {
   private String m_sProfile;
   private final HCTitle m_aPageTitle = new HCTitle ();
@@ -422,6 +421,7 @@ public class HCHead extends AbstractHCElement <HCHead>implements IHCHasChildren
     return m_aPageTitle.getPlainText ();
   }
 
+  @Override
   @Nullable
   public List <? extends IHCNode> getAllChildren ()
   {
@@ -434,6 +434,7 @@ public class HCHead extends AbstractHCElement <HCHead>implements IHCHasChildren
     return ret;
   }
 
+  @Override
   @Nullable
   public IHCNode getChildAtIndex (@Nonnegative final int nIndex)
   {
@@ -460,12 +461,14 @@ public class HCHead extends AbstractHCElement <HCHead>implements IHCHasChildren
     return null;
   }
 
+  @Override
   @Nullable
   public IHCNode getFirstChild ()
   {
     return m_aPageTitle;
   }
 
+  @Override
   @Nullable
   public IHCNode getLastChild ()
   {
@@ -478,11 +481,13 @@ public class HCHead extends AbstractHCElement <HCHead>implements IHCHasChildren
     return m_aBase;
   }
 
+  @Override
   public boolean hasChildren ()
   {
     return true;
   }
 
+  @Override
   public int getChildCount ()
   {
     return 1 + 1 + m_aLinks.size () + m_aCSS.size () + m_aJS.size ();

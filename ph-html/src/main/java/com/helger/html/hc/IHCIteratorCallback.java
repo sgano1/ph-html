@@ -41,5 +41,5 @@ public interface IHCIteratorCallback extends ICallback
    *         {@link EFinish#UNFINISHED} to continue iteration.
    */
   @Nonnull
-  EFinish call (@Nullable IHCHasChildren aParentNode, @Nonnull IHCNode aChildNode);
+  EFinish call (@Nullable IHCNode aParentNode, @Nonnull IHCNode aChildNode);
 }

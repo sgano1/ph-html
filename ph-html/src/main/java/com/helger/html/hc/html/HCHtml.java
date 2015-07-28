@@ -33,7 +33,6 @@ import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
 import com.helger.html.EHTMLVersion;
-import com.helger.html.hc.IHCHasChildren;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.api.EHCTextDirection;
 import com.helger.html.hc.base.IHCScriptInline;
@@ -46,7 +45,7 @@ import com.helger.html.hc.special.HCSpecialNodeHandler;
  *
  * @author Philip Helger
  */
-public class HCHtml extends AbstractHCElement <HCHtml>implements IHCHasChildren
+public class HCHtml extends AbstractHCElement <HCHtml>
 {
   private final HCHead m_aHead;
   private final HCBody m_aBody;
@@ -81,6 +80,7 @@ public class HCHtml extends AbstractHCElement <HCHtml>implements IHCHasChildren
     return m_aBody;
   }
 
+  @Override
   @Nonnull
   @ReturnsMutableCopy
   public List <? extends IHCNode> getAllChildren ()
@@ -88,6 +88,7 @@ public class HCHtml extends AbstractHCElement <HCHtml>implements IHCHasChildren
     return CollectionHelper.<IHCNode> newList (m_aHead, m_aBody);
   }
 
+  @Override
   @Nullable
   public IHCNode getChildAtIndex (final int nIndex)
   {
@@ -98,23 +99,27 @@ public class HCHtml extends AbstractHCElement <HCHtml>implements IHCHasChildren
     return null;
   }
 
+  @Override
   @Nonnull
   public IHCNode getFirstChild ()
   {
     return m_aHead;
   }
 
+  @Override
   @Nonnull
   public IHCNode getLastChild ()
   {
     return m_aBody;
   }
 
+  @Override
   public boolean hasChildren ()
   {
     return true;
   }
 
+  @Override
   public int getChildCount ()
   {
     return 2;

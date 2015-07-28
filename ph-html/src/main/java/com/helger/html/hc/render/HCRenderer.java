@@ -27,7 +27,6 @@ import com.helger.commons.microdom.serialize.MicroWriter;
 import com.helger.commons.state.EFinish;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.HCHelper;
-import com.helger.html.hc.IHCHasChildren;
 import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCIteratorCallback;
 import com.helger.html.hc.IHCNode;
@@ -67,7 +66,7 @@ public final class HCRenderer
    * @param aConversionSettings
    *        The conversion settings to use. May not be <code>null</code>.
    */
-  public static void prepareForConversion (@Nonnull final IHCHasChildren aStartNode,
+  public static void prepareForConversion (@Nonnull final IHCNode aStartNode,
                                            @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aGlobalTargetNode,
                                            @Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
@@ -85,7 +84,7 @@ public final class HCRenderer
     {
       @SuppressWarnings ("unchecked")
       @Nonnull
-      public EFinish call (@Nullable final IHCHasChildren aParentNode, @Nonnull final IHCNode aChildNode)
+      public EFinish call (@Nullable final IHCNode aParentNode, @Nonnull final IHCNode aChildNode)
       {
         // If the parent node is suitable, use it, else use the global target
         // node
