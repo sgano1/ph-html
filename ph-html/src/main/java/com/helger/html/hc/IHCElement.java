@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.state.ETriState;
 import com.helger.html.EHTMLElement;
 import com.helger.html.EHTMLRole;
@@ -34,6 +35,7 @@ import com.helger.html.hc.api.EHCDropZone;
 import com.helger.html.hc.api.EHCTextDirection;
 import com.helger.html.js.EJSEvent;
 import com.helger.html.js.IHasJSCode;
+import com.helger.html.js.JSEventMap;
 
 /**
  * Base interface for an HC element
@@ -110,6 +112,10 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends IHC
    */
   @Nonnull
   THISTYPE setLanguage (@Nullable String sLanguage);
+
+  @Nullable
+  @ReturnsMutableObject ("design")
+  JSEventMap getEventMap ();
 
   /**
    * Get the event handler of the specified event.

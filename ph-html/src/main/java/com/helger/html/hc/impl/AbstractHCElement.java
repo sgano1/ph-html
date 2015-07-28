@@ -36,6 +36,7 @@ import com.helger.commons.annotation.DevelopersNote;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.id.factory.GlobalIDFactory;
@@ -180,16 +181,16 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
       {
         if (!m_sID.equals (sID))
           HCConsistencyChecker.consistencyError ("Overwriting HC object ID '" +
-                                                   m_sID +
-                                                   "' with '" +
-                                                   sID +
-                                                   "' - this may have side effects!");
+                                                 m_sID +
+                                                 "' with '" +
+                                                 sID +
+                                                 "' - this may have side effects!");
       }
       else
       {
         HCConsistencyChecker.consistencyError ("The HC object ID '" +
-                                                 m_sID +
-                                                 "' will be removed - this may have side effects");
+                                               m_sID +
+                                               "' will be removed - this may have side effects");
       }
     m_sID = sID;
     return thisAsT ();
@@ -464,6 +465,13 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   {
     m_sLanguage = sLanguage;
     return thisAsT ();
+  }
+
+  @Nullable
+  @ReturnsMutableObject ("design")
+  public final JSEventMap getEventMap ()
+  {
+    return m_aJSHandler;
   }
 
   @Nullable
@@ -910,12 +918,12 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
               m_eElement != EHTMLElement.LINK)
           {
             HCConsistencyChecker.consistencyError ("Custom HTML5 attribute '" +
-                                                     sAttrName +
-                                                     "' does not start with one of the proposed prefixes '" +
-                                                     CHTMLAttributes.HTML5_PREFIX_DATA +
-                                                     "' or '" +
-                                                     CHTMLAttributes.PREFIX_ARIA +
-                                                     "'");
+                                                   sAttrName +
+                                                   "' does not start with one of the proposed prefixes '" +
+                                                   CHTMLAttributes.HTML5_PREFIX_DATA +
+                                                   "' or '" +
+                                                   CHTMLAttributes.PREFIX_ARIA +
+                                                   "'");
           }
         }
         aElement.setAttribute (sAttrName, aEntry.getValue ());

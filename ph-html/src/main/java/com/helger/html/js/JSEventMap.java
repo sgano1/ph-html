@@ -64,7 +64,7 @@ public final class JSEventMap implements Serializable
       aCode = new CollectingJSCodeProvider ();
       m_aEvents.put (eJSEvent, aCode);
     }
-    aCode.append (aNewHandler);
+    aCode.appendFlattened (aNewHandler);
   }
 
   /**
@@ -105,7 +105,7 @@ public final class JSEventMap implements Serializable
     ValueEnforcer.notNull (aNewHandler, "NewHandler");
 
     // Set only the new handler and remove any existing handler
-    m_aEvents.put (eJSEvent, new CollectingJSCodeProvider (aNewHandler));
+    m_aEvents.put (eJSEvent, new CollectingJSCodeProvider ().appendFlattened (aNewHandler));
   }
 
   @Nonnull
