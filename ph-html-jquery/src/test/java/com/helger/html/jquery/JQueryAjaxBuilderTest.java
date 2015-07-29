@@ -20,7 +20,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.helger.html.jquery.JQueryAjaxBuilder;
 import com.helger.html.js.writer.JSWriterSettings;
 
 /**
@@ -36,8 +35,8 @@ public final class JQueryAjaxBuilderTest
     final JSWriterSettings aSettings = new JSWriterSettings ().setIndentAndAlign (false);
 
     final JQueryAjaxBuilder aJAB = new JQueryAjaxBuilder ();
-    assertEquals ("$.ajax({});", aJAB.build ().getJSCode (aSettings));
+    assertEquals ("$.ajax({cache:false});", aJAB.build ().getJSCode (aSettings));
     aJAB.async (false);
-    assertEquals ("$.ajax({async:false});", aJAB.build ().getJSCode (aSettings));
+    assertEquals ("$.ajax({async:false,cache:false});", aJAB.build ().getJSCode (aSettings));
   }
 }
