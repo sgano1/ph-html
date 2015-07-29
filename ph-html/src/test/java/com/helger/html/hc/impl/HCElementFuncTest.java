@@ -36,9 +36,21 @@ public final class HCElementFuncTest
   @Test
   public void testSetID ()
   {
-    final HCP aElement = new HCP ();
+    HCP aElement = new HCP ();
     assertNull (aElement.getID ());
     assertNotNull (aElement.ensureID ().getID ());
+    assertSame (aElement, aElement.ensureID ());
+    try
+    {
+      assertSame (aElement, aElement.setID ("foo"));
+      assertEquals ("foo", aElement.getID ());
+    }
+    catch (final IllegalStateException ex)
+    {
+      // ID already set - in debug mode
+    }
+
+    aElement = new HCP ();
     assertSame (aElement, aElement.setID ("foo"));
     assertEquals ("foo", aElement.getID ());
 
