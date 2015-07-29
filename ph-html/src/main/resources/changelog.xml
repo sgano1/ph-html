@@ -18,9 +18,19 @@
 
 -->
 <changelog xmlns="http://www.helger.com/xsd/changelog/1.0" version="1.0" component="ph-html">
+  <entry date="2015-07-25" category="api" action="change" incompatible="true">
+    <change>
+      <text locale="en">Extracted all JS builder stuff into a separate sub-project ph-html-jscode</text>
+    </change>
+  </entry>
   <entry date="2015-07-24" category="api" action="change" incompatible="true">
     <change>
       <text locale="en">Extracted all JQuery stuff into a separate sub-project ph-html-jquery</text>
+    </change>
+  </entry>
+  <entry date="2015-07-02" category="tech" action="update">
+    <change>
+      <text locale="en">Updated to ph-commons 6.0.0</text>
     </change>
   </entry>
   <release date="2015-06-15" version="4.7.4" />
