@@ -17,8 +17,6 @@
 package com.helger.html.hchtml.interactive;
 
 import com.helger.html.EHTMLElement;
-import com.helger.html.annotation.DeprecatedInHTML4;
-import com.helger.html.annotation.DeprecatedInXHTML1;
 import com.helger.html.hchtml.grouping.AbstractHCList;
 
 /**
@@ -26,8 +24,6 @@ import com.helger.html.hchtml.grouping.AbstractHCList;
  *
  * @author Philip Helger
  */
-@DeprecatedInHTML4
-@DeprecatedInXHTML1
 public class HCMenu extends AbstractHCList <HCMenu>
 {
   public HCMenu ()

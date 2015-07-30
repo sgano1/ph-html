@@ -23,7 +23,7 @@ import com.helger.commons.microdom.IMicroDocumentType;
 
 /**
  * Enum of supported HTML versions.
- * 
+ *
  * @author Philip Helger
  */
 public enum EHTMLVersion
@@ -91,6 +91,22 @@ public enum EHTMLVersion
    {
      return null;
    }
+ },
+ HTML51
+ {
+   @Override
+   @Nonnull
+   public IMicroDocumentType getDocType ()
+   {
+     return CHTMLDocTypes.DOCTYPE_HTML5;
+   }
+
+   @Override
+   @Nullable
+   public String getNamespaceURI ()
+   {
+     return null;
+   }
  };
 
   /**
@@ -129,6 +145,6 @@ public enum EHTMLVersion
 
   public boolean isAtLeastHTML5 ()
   {
-    return this == HTML5;
+    return this == HTML5 || this == HTML51;
   }
 }

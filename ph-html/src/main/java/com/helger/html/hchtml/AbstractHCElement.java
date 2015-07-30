@@ -58,9 +58,7 @@ import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.EHTMLRole;
 import com.helger.html.EHTMLVersion;
-import com.helger.html.annotation.DeprecatedInHTML4;
 import com.helger.html.annotation.DeprecatedInHTML5;
-import com.helger.html.annotation.DeprecatedInXHTML1;
 import com.helger.html.annotation.SinceHTML5;
 import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.hc.config.HCConsistencyChecker;
@@ -838,8 +836,6 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
       addEventHandler (EJSEvent.FOCUS, FakeJS.JS_BLUR);
   }
 
-  private static final AnnotationUsageCache s_aAUC_D_HTML4 = new AnnotationUsageCache (DeprecatedInHTML4.class);
-  private static final AnnotationUsageCache s_aAUC_D_XHTML1 = new AnnotationUsageCache (DeprecatedInXHTML1.class);
   private static final AnnotationUsageCache s_aAUC_D_HTML5 = new AnnotationUsageCache (DeprecatedInHTML5.class);
   private static final AnnotationUsageCache s_aAUC_S_HTML5 = new AnnotationUsageCache (SinceHTML5.class);
 
@@ -847,24 +843,18 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
                                          final String sElementName,
                                          final EHTMLVersion eHTMLVersion)
   {
-    if (s_aAUC_D_HTML4.hasAnnotation (aElementClass))
-      HCConsistencyChecker.consistencyError ("The element '" + sElementName + "' was deprecated in HTML 4.0");
+    if (eHTMLVersion.isAtLeastHTML5 ())
+    {
+      // HTML5 specifics checks
+      if (s_aAUC_D_HTML5.hasAnnotation (aElementClass))
+        HCConsistencyChecker.consistencyError ("The element '" + sElementName + "' is deprecated in HTML5");
+    }
     else
-      if (s_aAUC_D_XHTML1.hasAnnotation (aElementClass))
-        HCConsistencyChecker.consistencyError ("The element '" + sElementName + "' is deprecated in XHTML1");
-      else
-        if (eHTMLVersion.isAtLeastHTML5 ())
-        {
-          // HTML5 specifics checks
-          if (s_aAUC_D_HTML5.hasAnnotation (aElementClass))
-            HCConsistencyChecker.consistencyError ("The element '" + sElementName + "' is deprecated in HTML5");
-        }
-        else
-        {
-          // pre-HTML5 checks
-          if (s_aAUC_S_HTML5.hasAnnotation (aElementClass))
-            HCConsistencyChecker.consistencyError ("The element '" + sElementName + "' is only available in HTML5");
-        }
+    {
+      // pre-HTML5 checks
+      if (s_aAUC_S_HTML5.hasAnnotation (aElementClass))
+        HCConsistencyChecker.consistencyError ("The element '" + sElementName + "' is only available in HTML5");
+    }
   }
 
   @Override

@@ -23,17 +23,14 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Marker annotation that denotes all HTML elements that are marked deprecated
- * in XHTML1.<br>
- * Source: http://www.w3.org/2002/08/xhtml/xhtml1-transitional.xsd<br>
- * Source: http://webdesign.about.com/od/htmltags/a/bltags_deprctag.htm
- * 
+ * Marker annotation that denotes all HTML elements that are new in HTML 5.1
+ *
  * @author Philip Helger
  */
 @Documented
 @Retention (RetentionPolicy.RUNTIME)
-@Target ({ ElementType.TYPE })
-public @interface DeprecatedInXHTML1
+@Target ({ ElementType.TYPE, ElementType.METHOD, ElementType.FIELD })
+public @interface SinceHTML51
 {
   String value() default "";
 }
