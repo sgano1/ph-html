@@ -171,6 +171,13 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
   @Nonnull
   public final THISTYPE setID (@Nullable final String sID)
   {
+    // Check for existing ID
+    return setID (sID, false);
+  }
+
+  @Nonnull
+  public final THISTYPE setID (@Nullable final String sID, final boolean bImSureToOverwriteAnExistingID)
+  {
     if (StringHelper.hasText (sID))
     {
       // RegEx check: !CXMLRegEx.PATTERN_NCNAME.matcher (sID).matches ()
@@ -181,7 +188,7 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
       if (RegExHelper.stringMatchesPattern (".*\\s.*", sID))
         throw new IllegalArgumentException ("ID '" + sID + "' may not contains whitespace chars!");
     }
-    if (m_sID != null)
+    if (!bImSureToOverwriteAnExistingID && m_sID != null)
       if (StringHelper.hasText (sID))
       {
         if (!m_sID.equals (sID))

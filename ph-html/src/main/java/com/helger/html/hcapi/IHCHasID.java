@@ -53,7 +53,7 @@ public interface IHCHasID <THISTYPE extends IHCHasID <THISTYPE>>
    * @return this
    */
   @Nonnull
-  THISTYPE setID (String sID);
+  THISTYPE setID (@Nullable String sID);
 
   /**
    * Set a unique HTML ID for this object. Equal to
