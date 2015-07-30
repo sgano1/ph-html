@@ -14,33 +14,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hchtml.impl;
+package com.helger.html.hchtml.form;
 
-import javax.annotation.Nullable;
+import javax.annotation.Nonnull;
 
-import com.helger.html.hchtml.EHCButtonType;
-import com.helger.html.hchtml.base.AbstractHCButton;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.html.hchtml.IHCHasHTMLAttributeValue;
 
 /**
- * Represents an HTML &lt;button&gt; element with type "reset"
- *
+ * Type of an {@link com.helger.html.hchtml.form.HCButton}
+ * 
  * @author Philip Helger
  */
-public class HCButton_Reset extends AbstractHCButton <HCButton_Reset>
+public enum EHCButtonType implements IHCHasHTMLAttributeValue
 {
-  private void _init ()
+ SUBMIT ("submit"),
+ RESET ("reset"),
+ BUTTON ("button");
+
+  private final String m_sAttrValue;
+
+  private EHCButtonType (@Nonnull @Nonempty final String sAttrValue)
   {
-    setType (EHCButtonType.RESET);
+    m_sAttrValue = sAttrValue;
   }
 
-  public HCButton_Reset ()
+  @Nonnull
+  @Nonempty
+  public String getAttrValue ()
   {
-    _init ();
-  }
-
-  public HCButton_Reset (@Nullable final String sLabel)
-  {
-    super (sLabel);
-    _init ();
+    return m_sAttrValue;
   }
 }

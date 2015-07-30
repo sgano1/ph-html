@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hchtml.base;
+package com.helger.html.hchtml.form;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -22,11 +22,9 @@ import javax.annotation.Nullable;
 import com.helger.commons.mime.IMimeType;
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.hcapi.IHCHasName;
-import com.helger.html.hchtml.EHCButtonType;
 import com.helger.html.hchtml.HC_Target;
 import com.helger.html.hchtml.IHCElementWithChildren;
 import com.helger.html.hchtml.IHCHasState;
-import com.helger.html.hchtml.form.EHCFormMethod;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.IHasJSCodeWithSettings;
 

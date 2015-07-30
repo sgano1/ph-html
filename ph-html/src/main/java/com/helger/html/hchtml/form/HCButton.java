@@ -14,33 +14,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hchtml.impl;
+package com.helger.html.hchtml.form;
 
 import javax.annotation.Nullable;
 
-import com.helger.html.hchtml.EHCButtonType;
-import com.helger.html.hchtml.base.AbstractHCButton;
+import com.helger.html.js.IHasJSCode;
 
 /**
- * Represents an HTML &lt;button&gt; element with type "submit"
+ * Represents an HTML &lt;button&gt; element with type "button"
  *
  * @author Philip Helger
  */
-public class HCButton_Submit extends AbstractHCButton <HCButton_Submit>
+public class HCButton extends AbstractHCButton <HCButton>
 {
-  private void _init ()
-  {
-    setType (EHCButtonType.SUBMIT);
-  }
+  public HCButton ()
+  {}
 
-  public HCButton_Submit ()
-  {
-    _init ();
-  }
-
-  public HCButton_Submit (@Nullable final String sLabel)
+  public HCButton (@Nullable final String sLabel)
   {
     super (sLabel);
-    _init ();
+  }
+
+  public HCButton (@Nullable final String sLabel, @Nullable final IHasJSCode aOnClick)
+  {
+    super (sLabel, aOnClick);
   }
 }

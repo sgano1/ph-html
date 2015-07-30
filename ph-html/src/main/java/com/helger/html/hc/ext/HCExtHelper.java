@@ -29,6 +29,7 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.hcapi.IHCNode;
 import com.helger.html.hcapi.impl.HCTextNode;
 import com.helger.html.hchtml.IHCElement;
+import com.helger.html.hchtml.form.HCButton;
 import com.helger.html.hchtml.form.HCForm;
 import com.helger.html.hchtml.form.HCInput;
 import com.helger.html.hchtml.form.HCOptGroup;

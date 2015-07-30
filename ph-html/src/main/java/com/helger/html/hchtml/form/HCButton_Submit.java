@@ -14,34 +14,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hchtml;
+package com.helger.html.hchtml.form;
 
-import javax.annotation.Nonnull;
-
-import com.helger.commons.annotation.Nonempty;
+import javax.annotation.Nullable;
 
 /**
- * Type of an {@link com.helger.html.hchtml.impl.HCButton}
- * 
+ * Represents an HTML &lt;button&gt; element with type "submit"
+ *
  * @author Philip Helger
  */
-public enum EHCButtonType implements IHCHasHTMLAttributeValue
+public class HCButton_Submit extends AbstractHCButton <HCButton_Submit>
 {
- SUBMIT ("submit"),
- RESET ("reset"),
- BUTTON ("button");
-
-  private final String m_sAttrValue;
-
-  private EHCButtonType (@Nonnull @Nonempty final String sAttrValue)
+  private void _init ()
   {
-    m_sAttrValue = sAttrValue;
+    setType (EHCButtonType.SUBMIT);
   }
 
-  @Nonnull
-  @Nonempty
-  public String getAttrValue ()
+  public HCButton_Submit ()
   {
-    return m_sAttrValue;
+    _init ();
+  }
+
+  public HCButton_Submit (@Nullable final String sLabel)
+  {
+    super (sLabel);
+    _init ();
   }
 }

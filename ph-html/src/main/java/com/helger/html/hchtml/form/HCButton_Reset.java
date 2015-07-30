@@ -14,30 +14,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hchtml.impl;
+package com.helger.html.hchtml.form;
 
 import javax.annotation.Nullable;
 
-import com.helger.html.hchtml.base.AbstractHCButton;
-import com.helger.html.js.IHasJSCode;
-
 /**
- * Represents an HTML &lt;button&gt; element with type "button"
+ * Represents an HTML &lt;button&gt; element with type "reset"
  *
  * @author Philip Helger
  */
-public class HCButton extends AbstractHCButton <HCButton>
+public class HCButton_Reset extends AbstractHCButton <HCButton_Reset>
 {
-  public HCButton ()
-  {}
-
-  public HCButton (@Nullable final String sLabel)
+  private void _init ()
   {
-    super (sLabel);
+    setType (EHCButtonType.RESET);
   }
 
-  public HCButton (@Nullable final String sLabel, @Nullable final IHasJSCode aOnClick)
+  public HCButton_Reset ()
   {
-    super (sLabel, aOnClick);
+    _init ();
+  }
+
+  public HCButton_Reset (@Nullable final String sLabel)
+  {
+    super (sLabel);
+    _init ();
   }
 }

@@ -45,11 +45,11 @@ import com.helger.html.hcapi.IHCNode;
 import com.helger.html.hchtml.HCHTMLHelper;
 import com.helger.html.hchtml.IHCElement;
 import com.helger.html.hchtml.base.IHCA;
-import com.helger.html.hchtml.base.IHCButton;
 import com.helger.html.hchtml.base.IHCMeter;
 import com.helger.html.hchtml.base.IHCObject;
 import com.helger.html.hchtml.base.IHCPre;
 import com.helger.html.hchtml.base.IHCProgress;
+import com.helger.html.hchtml.form.IHCButton;
 import com.helger.html.hchtml.form.IHCForm;
 import com.helger.html.hchtml.table.IHCTable;
 
