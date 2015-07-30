@@ -38,22 +38,24 @@ import com.helger.html.hchtml.FakeJS;
 import com.helger.html.hchtml.script.HCScriptInline;
 
 @NotThreadSafe
-public abstract class AbstractHCControl <IMPLTYPE extends AbstractHCControl <IMPLTYPE>> extends AbstractHCElement <IMPLTYPE>implements IHCControl <IMPLTYPE>
+public abstract class AbstractHCControl <THISTYPE extends AbstractHCControl <THISTYPE>> extends AbstractHCElement <THISTYPE>implements IHCControl <THISTYPE>
 {
   public static final boolean DEFAULT_DISABLED = false;
-  public static final boolean DEFAULT_FOCUSED = false;
   public static final boolean DEFAULT_READONLY = false;
 
   /** By default required is disabled */
   public static final boolean DEFAULT_REQUIRED = false;
 
+  /** By default auto focus is disabled */
+  public static final boolean DEFAULT_AUTO_FOCUS = false;
+
   public static final ICSSClassProvider CSS_CLASS_READONLY = DefaultCSSClassProvider.create ("readonly");
 
   private boolean m_bDisabled = DEFAULT_DISABLED;
-  private boolean m_bFocused = DEFAULT_FOCUSED;
   private String m_sName;
   private boolean m_bReadOnly = DEFAULT_READONLY;
   private boolean m_bRequired = DEFAULT_REQUIRED;
+  private boolean m_bAutoFocus = DEFAULT_AUTO_FOCUS;
 
   public AbstractHCControl (@Nonnull @Nonempty final EHTMLElement aElement)
   {
@@ -66,21 +68,9 @@ public abstract class AbstractHCControl <IMPLTYPE extends AbstractHCControl <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setDisabled (final boolean bDisabled)
+  public final THISTYPE setDisabled (final boolean bDisabled)
   {
     m_bDisabled = bDisabled;
-    return thisAsT ();
-  }
-
-  public final boolean isFocused ()
-  {
-    return m_bFocused;
-  }
-
-  @Nonnull
-  public final IMPLTYPE setFocused (final boolean bFocused)
-  {
-    m_bFocused = bFocused;
     return thisAsT ();
   }
 
@@ -90,7 +80,7 @@ public abstract class AbstractHCControl <IMPLTYPE extends AbstractHCControl <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setName (@Nullable final String sName)
+  public final THISTYPE setName (@Nullable final String sName)
   {
     m_sName = sName;
     return thisAsT ();
@@ -102,7 +92,7 @@ public abstract class AbstractHCControl <IMPLTYPE extends AbstractHCControl <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setReadonly (final boolean bReadOnly)
+  public final THISTYPE setReadonly (final boolean bReadOnly)
   {
     m_bReadOnly = bReadOnly;
     return thisAsT ();
@@ -114,9 +104,21 @@ public abstract class AbstractHCControl <IMPLTYPE extends AbstractHCControl <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setRequired (final boolean bRequired)
+  public final THISTYPE setRequired (final boolean bRequired)
   {
     m_bRequired = bRequired;
+    return thisAsT ();
+  }
+
+  public final boolean isAutoFocus ()
+  {
+    return m_bAutoFocus;
+  }
+
+  @Nonnull
+  public final THISTYPE setAutoFocus (final boolean bAutoFocus)
+  {
+    m_bAutoFocus = bAutoFocus;
     return thisAsT ();
   }
 
@@ -136,9 +138,9 @@ public abstract class AbstractHCControl <IMPLTYPE extends AbstractHCControl <IMP
       setTabIndex (-1L);
     }
 
-    if (m_bFocused)
+    if (m_bAutoFocus)
     {
-      // Add a JS call that focuses this element
+      // Add a JS call that focuses this element (for non HTML5 browsers)
       aTargetNode.addChild (new HCScriptInline (FakeJS.focus (this)));
     }
   }
@@ -157,6 +159,8 @@ public abstract class AbstractHCControl <IMPLTYPE extends AbstractHCControl <IMP
       aElement.setAttribute (CHTMLAttributes.READONLY, CHTMLAttributeValues.READONLY);
     if (m_bRequired)
       aElement.setAttribute (CHTMLAttributes.REQUIRED, CHTMLAttributeValues.REQUIRED);
+    if (m_bAutoFocus)
+      aElement.setAttribute (CHTMLAttributes.AUTOFOCUS, CHTMLAttributeValues.AUTOFOCUS);
   }
 
   @Override
@@ -164,10 +168,10 @@ public abstract class AbstractHCControl <IMPLTYPE extends AbstractHCControl <IMP
   {
     return ToStringGenerator.getDerived (super.toString ())
                             .append ("disabled", m_bDisabled)
-                            .append ("focused", m_bFocused)
                             .appendIfNotNull ("name", m_sName)
                             .append ("readOnly", m_bReadOnly)
                             .append ("required", m_bRequired)
+                            .append ("autoFocus", m_bAutoFocus)
                             .toString ();
   }
 }

@@ -36,4 +36,9 @@ public interface IHCControl <THISTYPE extends IHCControl <THISTYPE>> extends IHC
 
   @Nonnull
   THISTYPE setReadonly (boolean bReadOnly);
+
+  boolean isRequired ();
+
+  @Nonnull
+  THISTYPE setRequired (boolean bRequired);
 }

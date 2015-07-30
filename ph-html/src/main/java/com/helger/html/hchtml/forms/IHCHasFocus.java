@@ -20,27 +20,27 @@ import javax.annotation.Nonnull;
 
 /**
  * Base interface for focusable objects. Must not necessarily be an IHCElement!
- * 
+ *
  * @author Philip Helger
- * @param <IMPLTYPE>
+ * @param <THISTYPE>
  *        Implementation type
  */
-public interface IHCHasFocus <IMPLTYPE extends IHCHasFocus <IMPLTYPE>>
+public interface IHCHasFocus <THISTYPE extends IHCHasFocus <THISTYPE>>
 {
   /**
    * @return <code>true</code> if this element is focused, <code>false</code>
    *         otherwise. By default an element is not focused.
    */
-  boolean isFocused ();
+  boolean isAutoFocus ();
 
   /**
-   * Change the focused state of this element.
-   * 
-   * @param bFocused
-   *        <code>true</code> to focus this element, <code>false</code> to not
-   *        focus the element.
+   * Change the auto focused state of this element.
+   *
+   * @param bAutoFocus
+   *        <code>true</code> to auto focus this element, <code>false</code> to
+   *        not focus the element.
    * @return this
    */
   @Nonnull
-  IMPLTYPE setFocused (boolean bFocused);
+  THISTYPE setAutoFocus (boolean bAutoFocus);
 }

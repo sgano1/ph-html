@@ -28,13 +28,8 @@ import com.helger.html.hchtml.IHCHasState;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.IHasJSCodeWithSettings;
 
-public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends IHCElementWithChildren <THISTYPE>, IHCHasState <THISTYPE>, IHCHasName <THISTYPE>
+public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends IHCElementWithChildren <THISTYPE>, IHCHasState <THISTYPE>, IHCHasName <THISTYPE>, IHCHasFocus <THISTYPE>
 {
-  boolean isAutoFocus ();
-
-  @Nonnull
-  THISTYPE setAutoFocus (boolean bAutoFocus);
-
   @Nullable
   String getForm ();
 

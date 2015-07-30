@@ -51,13 +51,10 @@ import com.helger.html.request.IHCRequestField;
  */
 public abstract class AbstractHCSelect <THISTYPE extends AbstractHCSelect <THISTYPE>> extends AbstractHCControl <THISTYPE>implements IHCSelect <THISTYPE>
 {
-  /** By default auto focus is disabled */
-  public static final boolean DEFAULT_AUTO_FOCUS = false;
-
   /** By default multi select is disabled */
   public static final boolean DEFAULT_MULTIPLE = false;
 
-  private boolean m_bAutoFocus = DEFAULT_AUTO_FOCUS;
+  // autofocus is inherited
   // disabled is inherited
   private String m_sForm;
   private boolean m_bMultiple = DEFAULT_MULTIPLE;
@@ -83,18 +80,6 @@ public abstract class AbstractHCSelect <THISTYPE extends AbstractHCSelect <THIST
   {
     this (aRF.getRequestValueAsList ());
     setName (aRF.getFieldName ());
-  }
-
-  public final boolean isAutoFocus ()
-  {
-    return m_bAutoFocus;
-  }
-
-  @Nonnull
-  public final THISTYPE setAutoFocus (final boolean bAutoFocus)
-  {
-    m_bAutoFocus = bAutoFocus;
-    return thisAsT ();
   }
 
   @Nullable
@@ -491,8 +476,6 @@ public abstract class AbstractHCSelect <THISTYPE extends AbstractHCSelect <THIST
   protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
     super.fillMicroElement (aElement, aConversionSettings);
-    if (m_bAutoFocus)
-      aElement.setAttribute (CHTMLAttributes.AUTOFOCUS, CHTMLAttributeValues.AUTOFOCUS);
     if (StringHelper.hasText (m_sForm))
       aElement.setAttribute (CHTMLAttributes.FORM, m_sForm);
     if (m_bMultiple)
@@ -518,7 +501,6 @@ public abstract class AbstractHCSelect <THISTYPE extends AbstractHCSelect <THIST
   public String toString ()
   {
     return ToStringGenerator.getDerived (super.toString ())
-                            .append ("autoFocus", m_bAutoFocus)
                             .appendIfNotNull ("form", m_sForm)
                             .append ("multiple", m_bMultiple)
                             .append ("size", m_nSize)

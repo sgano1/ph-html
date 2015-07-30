@@ -44,11 +44,8 @@ public abstract class AbstractHCTextArea <THISTYPE extends AbstractHCTextArea <T
   /** By default no auto complete setting is active */
   public static final ETriState DEFAULT_AUTO_COMPLETE = ETriState.UNDEFINED;
 
-  /** By default auto focus is disabled */
-  public static final boolean DEFAULT_AUTO_FOCUS = false;
-
   private ETriState m_eAutoComplete = DEFAULT_AUTO_COMPLETE;
-  private boolean m_bAutoFocus = DEFAULT_AUTO_FOCUS;
+  // autofocus is inherited
   private int m_nCols = CGlobal.ILLEGAL_UINT;
   private String m_sDirName;
   // disabled is inherited
@@ -110,18 +107,6 @@ public abstract class AbstractHCTextArea <THISTYPE extends AbstractHCTextArea <T
   public final THISTYPE setAutoComplete (@Nonnull final ETriState eAutoComplete)
   {
     m_eAutoComplete = ValueEnforcer.notNull (eAutoComplete, "AutoComplete");
-    return thisAsT ();
-  }
-
-  public final boolean isAutoFocus ()
-  {
-    return m_bAutoFocus;
-  }
-
-  @Nonnull
-  public final THISTYPE setAutoFocus (final boolean bAutoFocus)
-  {
-    m_bAutoFocus = bAutoFocus;
     return thisAsT ();
   }
 
@@ -253,8 +238,6 @@ public abstract class AbstractHCTextArea <THISTYPE extends AbstractHCTextArea <T
     if (m_eAutoComplete.isDefined ())
       aElement.setAttribute (CHTMLAttributes.AUTOCOMPLETE,
                              m_eAutoComplete.isTrue () ? CHTMLAttributeValues.ON : CHTMLAttributeValues.OFF);
-    if (m_bAutoFocus)
-      aElement.setAttribute (CHTMLAttributes.AUTOFOCUS, CHTMLAttributeValues.AUTOFOCUS);
     if (m_nCols > 0)
       aElement.setAttribute (CHTMLAttributes.COLS, m_nCols);
     if (StringHelper.hasText (m_sDirName))
@@ -282,7 +265,6 @@ public abstract class AbstractHCTextArea <THISTYPE extends AbstractHCTextArea <T
   {
     return ToStringGenerator.getDerived (super.toString ())
                             .append ("autoComplete", m_eAutoComplete)
-                            .append ("autoFocus", m_bAutoFocus)
                             .append ("cols", m_nCols)
                             .appendIfNotNull ("dirname", m_sDirName)
                             .appendIfNotNull ("form", m_sForm)

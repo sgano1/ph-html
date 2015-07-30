@@ -31,13 +31,13 @@ import com.helger.html.hchtml.AbstractHCElement;
 import com.helger.html.hchtml.IHCHasState;
 
 @SinceHTML5
-public class HCKeyGen extends AbstractHCElement <HCKeyGen>implements IHCHasState <HCKeyGen>
+public class HCKeyGen extends AbstractHCElement <HCKeyGen>implements IHCHasState <HCKeyGen>, IHCHasFocus <HCKeyGen>
 {
   public static final boolean DEFAULT_AUTOFOCUS = false;
   public static final boolean DEFAULT_DISABLED = false;
   public static final EHCKeyGenType DEFAULT_KEY_TYPE = EHCKeyGenType.DEFAULT;
 
-  private boolean m_bAutofocus = DEFAULT_AUTOFOCUS;
+  private boolean m_bAutoFocus = DEFAULT_AUTOFOCUS;
   private String m_sChallenge;
   private boolean m_bDisabled = DEFAULT_DISABLED;
   private String m_sForm;
@@ -55,15 +55,15 @@ public class HCKeyGen extends AbstractHCElement <HCKeyGen>implements IHCHasState
     m_sName = sName;
   }
 
-  public boolean isAutofocus ()
+  public boolean isAutoFocus ()
   {
-    return m_bAutofocus;
+    return m_bAutoFocus;
   }
 
   @Nonnull
-  public HCKeyGen setAutofocus (final boolean bAutofocus)
+  public HCKeyGen setAutoFocus (final boolean bAutoFocus)
   {
-    m_bAutofocus = bAutofocus;
+    m_bAutoFocus = bAutoFocus;
     return this;
   }
 
@@ -135,7 +135,7 @@ public class HCKeyGen extends AbstractHCElement <HCKeyGen>implements IHCHasState
   protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
     super.fillMicroElement (aElement, aConversionSettings);
-    if (m_bAutofocus)
+    if (m_bAutoFocus)
       aElement.setAttribute (CHTMLAttributes.AUTOFOCUS, CHTMLAttributeValues.AUTOFOCUS);
     if (StringHelper.hasText (m_sChallenge))
       aElement.setAttribute (CHTMLAttributes.CHALLENGE, m_sChallenge);

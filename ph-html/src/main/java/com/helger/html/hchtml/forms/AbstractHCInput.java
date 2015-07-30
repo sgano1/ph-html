@@ -46,9 +46,6 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   /** By default no auto complete setting is active */
   public static final ETriState DEFAULT_AUTO_COMPLETE = ETriState.UNDEFINED;
 
-  /** By default auto focus is disabled */
-  public static final boolean DEFAULT_AUTO_FOCUS = false;
-
   /** Not checked by default */
   public static final boolean DEFAULT_CHECKED = false;
 
@@ -62,7 +59,6 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   private String m_sAccept;
   private String m_sAlt;
   private ETriState m_eAutoComplete = DEFAULT_AUTO_COMPLETE;
-  private boolean m_bAutoFocus = DEFAULT_AUTO_FOCUS;
   private boolean m_bChecked = DEFAULT_CHECKED;
   private String m_sDirName;
   // disabled is inherited
@@ -181,18 +177,6 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   public final IMPLTYPE setAutoComplete (@Nonnull final ETriState eAutoComplete)
   {
     m_eAutoComplete = ValueEnforcer.notNull (eAutoComplete, "AutoComplete");
-    return thisAsT ();
-  }
-
-  public final boolean isAutoFocus ()
-  {
-    return m_bAutoFocus;
-  }
-
-  @Nonnull
-  public final IMPLTYPE setAutoFocus (final boolean bAutoFocus)
-  {
-    m_bAutoFocus = bAutoFocus;
     return thisAsT ();
   }
 
@@ -559,8 +543,6 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
     if (m_eAutoComplete.isDefined ())
       aElement.setAttribute (CHTMLAttributes.AUTOCOMPLETE,
                              m_eAutoComplete.isTrue () ? CHTMLAttributeValues.ON : CHTMLAttributeValues.OFF);
-    if (m_bAutoFocus)
-      aElement.setAttribute (CHTMLAttributes.AUTOFOCUS, CHTMLAttributeValues.AUTOFOCUS);
     if (m_bChecked)
       aElement.setAttribute (CHTMLAttributes.CHECKED, CHTMLAttributeValues.CHECKED);
     if (StringHelper.hasText (m_sDirName))
@@ -614,7 +596,6 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
                             .appendIfNotNull ("accept", m_sAccept)
                             .appendIfNotNull ("alt", m_sAlt)
                             .append ("autoComplete", m_eAutoComplete)
-                            .append ("autoFocus", m_bAutoFocus)
                             .append ("checked", m_bChecked)
                             .appendIfNotNull ("dirname", m_sDirName)
                             .appendIfNotNull ("form", m_sForm)
