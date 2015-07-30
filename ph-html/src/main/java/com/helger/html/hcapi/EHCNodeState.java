@@ -23,7 +23,8 @@ public enum EHCNodeState
  INITIAL (0),
  CUSTOMIZED (1),
  FINALIZED (2),
- RESOURCES_REGISTERED (3);
+ CONSISTENCY_CHECKED (3),
+ RESOURCES_REGISTERED (4);
 
   private final int m_nID;
 

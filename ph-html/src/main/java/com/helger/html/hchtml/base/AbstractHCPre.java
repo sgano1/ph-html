@@ -16,8 +16,14 @@
  */
 package com.helger.html.hchtml.base;
 
+import javax.annotation.Nonnull;
+
 import com.helger.html.EHTMLElement;
+import com.helger.html.hc.config.HCConsistencyChecker;
+import com.helger.html.hcapi.IHCConversionSettingsToNode;
 import com.helger.html.hchtml.AbstractHCElementWithChildren;
+import com.helger.html.hchtml.HCHTMLHelper;
+import com.helger.html.hchtml.IHCElement;
 
 /**
  * Represents an HTML &lt;pre&gt; element with open semantics.
@@ -31,5 +37,19 @@ public abstract class AbstractHCPre <THISTYPE extends AbstractHCPre <THISTYPE>> 
   public AbstractHCPre ()
   {
     super (EHTMLElement.PRE);
+  }
+
+  @Override
+  protected void onConsistencyCheck (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  {
+    super.onConsistencyCheck (aConversionSettings);
+    final IHCElement <?> aChild = HCHTMLHelper.recursiveGetFirstChildWithTagName (this,
+                                                                                  EHTMLElement.IMG,
+                                                                                  EHTMLElement.OBJECT,
+                                                                                  EHTMLElement.SMALL,
+                                                                                  EHTMLElement.SUB,
+                                                                                  EHTMLElement.SUP);
+    if (aChild != null)
+      HCConsistencyChecker.consistencyError ("PRE elements contains forbidden tag " + aChild.getElement ());
   }
 }

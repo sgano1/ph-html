@@ -369,7 +369,11 @@ public class HCHead extends AbstractHCElement <HCHead>
     }
 
     if (aConversionSettings.areConsistencyChecksEnabled ())
+    {
+      // This check must be done here because not all elements where available
+      // at the time of regular consistency checking
       HCConsistencyChecker.checkForMaximumCSSResources (nCSSExternals);
+    }
   }
 
   @OverrideOnDemand

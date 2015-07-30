@@ -33,7 +33,6 @@ import com.helger.css.ECSSVersion;
 import com.helger.css.ICSSWriterSettings;
 import com.helger.css.writer.CSSWriterSettings;
 import com.helger.html.EHTMLVersion;
-import com.helger.html.hc.ext.HCCustomizerDefault;
 import com.helger.html.hcapi.IHCCustomizer;
 import com.helger.html.hcapi.config.IHCConversionSettings;
 import com.helger.html.js.IJSWriterSettings;
@@ -92,11 +91,10 @@ public class HCConversionSettings implements IHCConversionSettings
     return new JSWriterSettings ().setIndentAndAlign (DEFAULT_INDENT_AND_ALIGN_JS);
   }
 
-  @Nonnull
+  @Nullable
   public static IHCCustomizer createDefaultCustomizer ()
   {
-    // Don't create control classes
-    return new HCCustomizerDefault ();
+    return null;
   }
 
   /**
@@ -338,13 +336,13 @@ public class HCConversionSettings implements IHCConversionSettings
    * @return this
    */
   @Nonnull
-  public HCConversionSettings setCustomizer (@Nonnull final IHCCustomizer aCustomizer)
+  public HCConversionSettings setCustomizer (@Nullable final IHCCustomizer aCustomizer)
   {
-    m_aCustomizer = ValueEnforcer.notNull (aCustomizer, "Customizer");
+    m_aCustomizer = aCustomizer;
     return this;
   }
 
-  @Nonnull
+  @Nullable
   public IHCCustomizer getCustomizer ()
   {
     return m_aCustomizer;
@@ -394,13 +392,13 @@ public class HCConversionSettings implements IHCConversionSettings
   @Override
   public String toString ()
   {
-    return new ToStringGenerator (this).append ("htmlVersion", m_eHTMLVersion)
+    return new ToStringGenerator (this).append ("HTMLVersion", m_eHTMLVersion)
                                        .append ("XMLWriterSettings", m_aXMLWriterSettings)
                                        .append ("CSSWriterSettings", m_aCSSWriterSettings)
                                        .append ("JSWriterSettings", m_aJSWriterSettings)
                                        .append ("consistencyChecksEnabled", m_bConsistencyChecksEnabled)
                                        .append ("extractOutOfBandNodes", m_bExtractOutOfBandNodes)
-                                       .append ("customizer", m_aCustomizer)
+                                       .appendIfNotNull ("customizer", m_aCustomizer)
                                        .toString ();
   }
 }

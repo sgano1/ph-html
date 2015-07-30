@@ -16,15 +16,24 @@
  */
 package com.helger.html.hchtml.impl;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.annotation.OverridingMethodsMustInvokeSuper;
 
 import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.microdom.IMicroElement;
-import com.helger.commons.microdom.IMicroNode;
+import com.helger.commons.state.EFinish;
+import com.helger.commons.string.StringHelper;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.config.HCConsistencyChecker;
+import com.helger.html.hcapi.HCHelper;
 import com.helger.html.hcapi.IHCConversionSettingsToNode;
+import com.helger.html.hcapi.IHCHasID;
+import com.helger.html.hcapi.IHCIteratorCallback;
+import com.helger.html.hcapi.IHCNode;
 import com.helger.html.hchtml.AbstractHCElementWithChildren;
 
 /**
@@ -40,15 +49,30 @@ public class HCBody extends AbstractHCElementWithChildren <HCBody>
   }
 
   @Override
-  protected IMicroNode internalConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  protected void onConsistencyCheck (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
-    final IMicroNode ret = super.internalConvertToMicroNode (aConversionSettings);
+    super.onConsistencyCheck (aConversionSettings);
 
-    // Check if only unique IDs are used
-    if (aConversionSettings.areConsistencyChecksEnabled ())
-      HCConsistencyChecker.checkForUniqueIDs (this);
-
-    return ret;
+    final Set <String> aUsedIDs = new HashSet <String> ();
+    HCHelper.iterateTree (this, new IHCIteratorCallback ()
+    {
+      @Nonnull
+      public EFinish call (@Nullable final IHCNode aParentNode, @Nonnull final IHCNode aChildNode)
+      {
+        if (aChildNode instanceof IHCHasID <?>)
+        {
+          final IHCHasID <?> aElement = (IHCHasID <?>) aChildNode;
+          final String sID = aElement.getID ();
+          if (StringHelper.hasText (sID) && !aUsedIDs.add (sID))
+          {
+            HCConsistencyChecker.consistencyError ("The ID '" +
+                                                   sID +
+                                                   "' is used more than once within a single HTML page!");
+          }
+        }
+        return EFinish.UNFINISHED;
+      }
+    });
   }
 
   @Override

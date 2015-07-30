@@ -34,12 +34,18 @@ import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.string.StringHelper;
+import com.helger.commons.string.StringParser;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.css.ECSSUnit;
+import com.helger.css.property.CCSSProperties;
 import com.helger.html.EHTMLElement;
+import com.helger.html.css.DefaultCSSClassProvider;
 import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.hcapi.IHCConversionSettingsToNode;
+import com.helger.html.hcapi.IHCHasChildrenMutable;
 import com.helger.html.hcapi.IHCNode;
+import com.helger.html.hcapi.impl.HCEntityNode;
 import com.helger.html.hcapi.impl.HCTextNode;
 import com.helger.html.hchtml.AbstractHCElement;
 
@@ -53,6 +59,8 @@ import com.helger.html.hchtml.AbstractHCElement;
  */
 public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable <IMPLTYPE>> extends AbstractHCElement <IMPLTYPE>implements IHCTable <IMPLTYPE>
 {
+  public static final ICSSClassProvider CSS_FORCE_COLSPAN = DefaultCSSClassProvider.create ("force-colspan");
+
   private HCColGroup m_aColGroup;
   private int m_nCellSpacing = CGlobal.ILLEGAL_UINT;
   private int m_nCellPadding = CGlobal.ILLEGAL_UINT;
@@ -796,6 +804,33 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
   //
 
   @Override
+  protected void onFinalizeNodeState (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
+                                      @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
+  {
+    super.onFinalizeNodeState (aConversionSettings, aTargetNode);
+
+    /*
+     * bug fix for IE9 table layout bug
+     * (http://msdn.microsoft.com/en-us/library/ms531161%28v=vs.85%29.aspx) IE9
+     * only interprets column widths if the first row does not use colspan (i.e.
+     * at least one row does not use colspan)
+     */
+    if (m_aColGroup != null && m_aColGroup.hasColumns () && hasBodyRows () && getFirstBodyRow ().isColspanUsed ())
+    {
+      // Create a dummy row with explicit widths
+      final HCRow aRow = new HCRow (false).addClass (CSS_FORCE_COLSPAN);
+      for (final IHCCol <?> aCol : m_aColGroup.getAllColumns ())
+      {
+        final IHCCell <?> aCell = aRow.addAndReturnCell (HCEntityNode.newNBSP ());
+        final int nWidth = StringParser.parseInt (aCol.getWidth (), -1);
+        if (nWidth >= 0)
+          aCell.addStyle (CCSSProperties.WIDTH.newValue (ECSSUnit.px (nWidth)));
+      }
+      addBodyRow (0, aRow);
+    }
+  }
+
+  @Override
   @OverridingMethodsMustInvokeSuper
   public boolean canConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
@@ -906,6 +941,13 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
     _checkConsistency (sPrefix + " header", m_aHead, nCols);
     _checkConsistency (sPrefix + " body", m_aBody, nCols);
     _checkConsistency (sPrefix + " footer", m_aFoot, nCols);
+  }
+
+  @Override
+  protected void onConsistencyCheck (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  {
+    super.onConsistencyCheck (aConversionSettings);
+    checkInternalConsistency ();
   }
 
   @Override

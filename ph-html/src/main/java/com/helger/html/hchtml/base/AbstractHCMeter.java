@@ -24,8 +24,10 @@ import com.helger.commons.microdom.IMicroElement;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.SinceHTML5;
+import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.hcapi.IHCConversionSettingsToNode;
 import com.helger.html.hchtml.AbstractHCElementWithChildren;
+import com.helger.html.hchtml.HCHTMLHelper;
 
 @SinceHTML5
 public abstract class AbstractHCMeter <THISTYPE extends AbstractHCMeter <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCMeter <THISTYPE>
@@ -112,6 +114,14 @@ public abstract class AbstractHCMeter <THISTYPE extends AbstractHCMeter <THISTYP
   {
     m_dOptimum = dOptimum;
     return thisAsT ();
+  }
+
+  @Override
+  protected void onConsistencyCheck (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  {
+    super.onConsistencyCheck (aConversionSettings);
+    if (HCHTMLHelper.recursiveContainsChildWithTagName (this, EHTMLElement.METER))
+      HCConsistencyChecker.consistencyError ("METER contains other nested meter");
   }
 
   @Override

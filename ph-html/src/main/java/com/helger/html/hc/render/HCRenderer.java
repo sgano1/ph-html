@@ -65,6 +65,9 @@ public final class HCRenderer
     // finalize the node
     aNode.finalizeNodeState (aConversionSettings, aTargetNode);
 
+    // Consistency check
+    aNode.consistencyCheck (aConversionSettings);
+
     // No forced registration here
     final boolean bForcedResourceRegistration = false;
     aNode.registerExternalResources (aConversionSettings, bForcedResourceRegistration);
@@ -130,6 +133,9 @@ public final class HCRenderer
 
         // finalize the node
         aChildNode.finalizeNodeState (aConversionSettings, aRealTargetNode);
+
+        // Consistency check
+        aChildNode.consistencyCheck (aConversionSettings);
 
         // No forced registration here
         final boolean bForcedResourceRegistration = false;

@@ -37,6 +37,7 @@ import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.annotation.ReturnsMutableObject;
+import com.helger.commons.cache.AnnotationUsageCache;
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.id.factory.GlobalIDFactory;
@@ -56,9 +57,16 @@ import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.EHTMLRole;
+import com.helger.html.EHTMLVersion;
+import com.helger.html.annotation.DeprecatedInHTML4;
+import com.helger.html.annotation.DeprecatedInHTML5;
+import com.helger.html.annotation.DeprecatedInXHTML1;
+import com.helger.html.annotation.SinceHTML5;
 import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.hcapi.IHCConversionSettingsToNode;
+import com.helger.html.hcapi.IHCHasChildrenMutable;
+import com.helger.html.hcapi.IHCNode;
 import com.helger.html.hcapi.impl.AbstractHCNode;
 import com.helger.html.js.CJS;
 import com.helger.html.js.CollectingJSCodeProvider;
@@ -820,6 +828,76 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
     return removeCustomAttr (makeDataAttrName (sName));
   }
 
+  @Override
+  protected void onFinalizeNodeState (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
+                                      @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
+  {
+    super.onFinalizeNodeState (aConversionSettings, aTargetNode);
+    // Unfocusable?
+    if (m_bUnfocusable)
+      addEventHandler (EJSEvent.FOCUS, FakeJS.JS_BLUR);
+  }
+
+  private static final AnnotationUsageCache s_aAUC_D_HTML4 = new AnnotationUsageCache (DeprecatedInHTML4.class);
+  private static final AnnotationUsageCache s_aAUC_D_XHTML1 = new AnnotationUsageCache (DeprecatedInXHTML1.class);
+  private static final AnnotationUsageCache s_aAUC_D_HTML5 = new AnnotationUsageCache (DeprecatedInHTML5.class);
+  private static final AnnotationUsageCache s_aAUC_S_HTML5 = new AnnotationUsageCache (SinceHTML5.class);
+
+  private static void _checkDeprecation (final Class <?> aElementClass,
+                                         final String sElementName,
+                                         final EHTMLVersion eHTMLVersion)
+  {
+    if (s_aAUC_D_HTML4.hasAnnotation (aElementClass))
+      HCConsistencyChecker.consistencyError ("The element '" + sElementName + "' was deprecated in HTML 4.0");
+    else
+      if (s_aAUC_D_XHTML1.hasAnnotation (aElementClass))
+        HCConsistencyChecker.consistencyError ("The element '" + sElementName + "' is deprecated in XHTML1");
+      else
+        if (eHTMLVersion.isAtLeastHTML5 ())
+        {
+          // HTML5 specifics checks
+          if (s_aAUC_D_HTML5.hasAnnotation (aElementClass))
+            HCConsistencyChecker.consistencyError ("The element '" + sElementName + "' is deprecated in HTML5");
+        }
+        else
+        {
+          // pre-HTML5 checks
+          if (s_aAUC_S_HTML5.hasAnnotation (aElementClass))
+            HCConsistencyChecker.consistencyError ("The element '" + sElementName + "' is only available in HTML5");
+        }
+  }
+
+  @Override
+  protected void onConsistencyCheck (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  {
+    final EHTMLVersion eHTMLVersion = aConversionSettings.getHTMLVersion ();
+
+    // Deprecation is checked for all elements
+    _checkDeprecation (getClass (), getTagName (), eHTMLVersion);
+
+    if (eHTMLVersion.isAtLeastHTML5 ())
+    {
+      if (m_aCustomAttrs != null)
+        for (final Map.Entry <String, String> aEntry : m_aCustomAttrs.entrySet ())
+        {
+          final String sAttrName = aEntry.getKey ();
+          // Link element often contains arbitrary attributes
+          if (!StringHelper.startsWith (sAttrName, CHTMLAttributes.HTML5_PREFIX_DATA) &&
+              !StringHelper.startsWith (sAttrName, CHTMLAttributes.PREFIX_ARIA) &&
+              m_eElement != EHTMLElement.LINK)
+          {
+            HCConsistencyChecker.consistencyError ("Custom HTML5 attribute '" +
+                                                   sAttrName +
+                                                   "' does not start with one of the proposed prefixes '" +
+                                                   CHTMLAttributes.HTML5_PREFIX_DATA +
+                                                   "' or '" +
+                                                   CHTMLAttributes.PREFIX_ARIA +
+                                                   "'");
+          }
+        }
+    }
+  }
+
   /**
    * @param aConversionSettings
    *        The conversion settings to be used
@@ -916,30 +994,9 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
     if (m_eRole != null)
       aElement.setAttribute (CHTMLAttributes.ROLE, m_eRole.getID ());
 
-    final boolean bConsistencyChecksEnabled = aConversionSettings.areConsistencyChecksEnabled ();
-    if (m_aCustomAttrs != null && !m_aCustomAttrs.isEmpty ())
+    if (m_aCustomAttrs != null)
       for (final Map.Entry <String, String> aEntry : m_aCustomAttrs.entrySet ())
-      {
-        final String sAttrName = aEntry.getKey ();
-        if (bConsistencyChecksEnabled)
-        {
-          // Link element often contains arbitrary attributes
-          if (bHTML5 &&
-              !StringHelper.startsWith (sAttrName, CHTMLAttributes.HTML5_PREFIX_DATA) &&
-              !StringHelper.startsWith (sAttrName, CHTMLAttributes.PREFIX_ARIA) &&
-              m_eElement != EHTMLElement.LINK)
-          {
-            HCConsistencyChecker.consistencyError ("Custom HTML5 attribute '" +
-                                                   sAttrName +
-                                                   "' does not start with one of the proposed prefixes '" +
-                                                   CHTMLAttributes.HTML5_PREFIX_DATA +
-                                                   "' or '" +
-                                                   CHTMLAttributes.PREFIX_ARIA +
-                                                   "'");
-          }
-        }
-        aElement.setAttribute (sAttrName, aEntry.getValue ());
-      }
+        aElement.setAttribute (aEntry.getKey (), aEntry.getValue ());
   }
 
   /**
@@ -966,10 +1023,6 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
   @OverridingMethodsMustInvokeSuper
   protected IMicroNode internalConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
-    // Run some consistency checks if desired
-    if (aConversionSettings.areConsistencyChecksEnabled ())
-      HCConsistencyChecker.runConsistencyCheckBeforeCreation (this, aConversionSettings.getHTMLVersion ());
-
     // Create the element
     final IMicroElement ret = createMicroElement (aConversionSettings);
     if (ret == null)

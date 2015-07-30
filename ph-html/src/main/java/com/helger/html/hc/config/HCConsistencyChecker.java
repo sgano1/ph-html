@@ -16,9 +16,6 @@
  */
 package com.helger.html.hc.config;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
@@ -27,31 +24,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.helger.commons.annotation.PresentForCodeCoverage;
-import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.commons.cache.AnnotationUsageCache;
 import com.helger.commons.debug.GlobalDebug;
-import com.helger.commons.state.EFinish;
-import com.helger.commons.string.StringHelper;
-import com.helger.html.EHTMLElement;
-import com.helger.html.EHTMLVersion;
-import com.helger.html.annotation.DeprecatedInHTML4;
-import com.helger.html.annotation.DeprecatedInHTML5;
-import com.helger.html.annotation.DeprecatedInXHTML1;
-import com.helger.html.annotation.SinceHTML5;
-import com.helger.html.hcapi.HCHelper;
-import com.helger.html.hcapi.IHCHasID;
-import com.helger.html.hcapi.IHCIteratorCallback;
-import com.helger.html.hcapi.IHCNode;
-import com.helger.html.hchtml.HCHTMLHelper;
-import com.helger.html.hchtml.IHCElement;
-import com.helger.html.hchtml.base.IHCA;
-import com.helger.html.hchtml.base.IHCMeter;
-import com.helger.html.hchtml.base.IHCObject;
-import com.helger.html.hchtml.base.IHCPre;
-import com.helger.html.hchtml.base.IHCProgress;
-import com.helger.html.hchtml.form.IHCButton;
-import com.helger.html.hchtml.form.IHCForm;
-import com.helger.html.hchtml.table.IHCTable;
 
 /**
  * This class performs some consistency checks on HCNodes
@@ -64,10 +37,6 @@ public final class HCConsistencyChecker
   private static final Logger s_aLogger = LoggerFactory.getLogger (HCConsistencyChecker.class);
 
   private static final int MAX_CSS_IE = 31;
-  private static final AnnotationUsageCache s_aAUC_D_HTML4 = new AnnotationUsageCache (DeprecatedInHTML4.class);
-  private static final AnnotationUsageCache s_aAUC_D_XHTML1 = new AnnotationUsageCache (DeprecatedInXHTML1.class);
-  private static final AnnotationUsageCache s_aAUC_D_HTML5 = new AnnotationUsageCache (DeprecatedInHTML5.class);
-  private static final AnnotationUsageCache s_aAUC_S_HTML5 = new AnnotationUsageCache (SinceHTML5.class);
 
   @PresentForCodeCoverage
   private static final HCConsistencyChecker s_aInstance = new HCConsistencyChecker ();
@@ -83,130 +52,6 @@ public final class HCConsistencyChecker
     s_aLogger.error ("HC Consistency check error: " + sMsg);
   }
 
-  private static void _checkDeprecation (final Class <?> aElementClass,
-                                         final String sElementName,
-                                         final EHTMLVersion eHTMLVersion)
-  {
-    if (s_aAUC_D_HTML4.hasAnnotation (aElementClass))
-      consistencyError ("The element '" + sElementName + "' was deprecated in HTML 4.0");
-    else
-      if (s_aAUC_D_XHTML1.hasAnnotation (aElementClass))
-        consistencyError ("The element '" + sElementName + "' is deprecated in XHTML1");
-      else
-        if (eHTMLVersion.isAtLeastHTML5 ())
-        {
-          // HTML5 specifics checks
-          if (s_aAUC_D_HTML5.hasAnnotation (aElementClass))
-            consistencyError ("The element '" + sElementName + "' is deprecated in HTML5");
-        }
-        else
-        {
-          // pre-HTML5 checks
-          if (s_aAUC_S_HTML5.hasAnnotation (aElementClass))
-            consistencyError ("The element '" + sElementName + "' is only available in HTML5");
-        }
-  }
-
-  private static void _checkA (final IHCA <?> aA)
-  {
-    if (HCHTMLHelper.recursiveContainsChildWithTagName (aA, EHTMLElement.A))
-      consistencyError ("A may never contain other links!");
-    if (HCHTMLHelper.recursiveContainsChildWithTagName (aA, EHTMLElement.SELECT))
-      consistencyError ("A contains invalid child element!");
-  }
-
-  private static void _checkButton (final IHCButton <?> aButton)
-  {
-    final IHCElement <?> aChild = HCHTMLHelper.recursiveGetFirstChildWithTagName (aButton,
-                                                                                  EHTMLElement.A,
-                                                                                  EHTMLElement.INPUT,
-                                                                                  EHTMLElement.SELECT,
-                                                                                  EHTMLElement.TEXTAREA,
-                                                                                  EHTMLElement.LABEL,
-                                                                                  EHTMLElement.BUTTON,
-                                                                                  EHTMLElement.FORM,
-                                                                                  EHTMLElement.FIELDSET,
-                                                                                  EHTMLElement.IFRAME);
-    if (aChild != null)
-      consistencyError ("BUTTON element contains forbidden tag " + aChild.getElement ());
-  }
-
-  private static void _checkForm (final IHCForm <?> aForm)
-  {
-    if (HCHTMLHelper.recursiveContainsChildWithTagName (aForm, EHTMLElement.FORM))
-      consistencyError ("FORM contains other nested form");
-  }
-
-  private static void _checkMeter (final IHCMeter <?> aMeter)
-  {
-    if (HCHTMLHelper.recursiveContainsChildWithTagName (aMeter, EHTMLElement.METER))
-      consistencyError ("METER contains other nested meter");
-  }
-
-  private static void _checkObject (final IHCObject <?> aValue)
-  {
-    if (aValue.getData () == null && aValue.getType () == null)
-      consistencyError ("OBJECT contains neither type nor data");
-  }
-
-  private static void _checkPre (final IHCPre <?> aPre)
-  {
-    final IHCElement <?> aChild = HCHTMLHelper.recursiveGetFirstChildWithTagName (aPre,
-                                                                                  EHTMLElement.IMG,
-                                                                                  EHTMLElement.OBJECT,
-                                                                                  EHTMLElement.SMALL,
-                                                                                  EHTMLElement.SUB,
-                                                                                  EHTMLElement.SUP);
-    if (aChild != null)
-      consistencyError ("PRE elements contains forbidden tag " + aChild.getElement ());
-  }
-
-  private static void _checkProgress (final IHCProgress <?> aProgress)
-  {
-    if (HCHTMLHelper.recursiveContainsChildWithTagName (aProgress, EHTMLElement.PROGRESS))
-      consistencyError ("PROGRESS contains other nested progress");
-  }
-
-  private static void _checkTable (@Nonnull final IHCTable <?> aTable)
-  {
-    aTable.checkInternalConsistency ();
-  }
-
-  public static void runConsistencyCheckBeforeCreation (@Nonnull final IHCElement <?> aElement,
-                                                        @Nonnull final EHTMLVersion eHTMLVersion)
-  {
-    final String sElementName = aElement.getTagName ();
-    final Class <?> aElementClass = aElement.getClass ();
-
-    // Deprecation is checked for all elements
-    _checkDeprecation (aElementClass, sElementName, eHTMLVersion);
-
-    // Special checks based on the implementation
-    if (aElement instanceof IHCA <?>)
-      _checkA ((IHCA <?>) aElement);
-    else
-      if (aElement instanceof IHCButton <?>)
-        _checkButton ((IHCButton <?>) aElement);
-      else
-        if (aElement instanceof IHCForm <?>)
-          _checkForm ((IHCForm <?>) aElement);
-        else
-          if (aElement instanceof IHCMeter <?>)
-            _checkMeter ((IHCMeter <?>) aElement);
-          else
-            if (aElement instanceof IHCObject <?>)
-              _checkObject ((IHCObject <?>) aElement);
-            else
-              if (aElement instanceof IHCPre <?>)
-                _checkPre ((IHCPre <?>) aElement);
-              else
-                if (aElement instanceof IHCProgress <?>)
-                  _checkProgress ((IHCProgress <?>) aElement);
-                else
-                  if (aElement instanceof IHCTable <?>)
-                    _checkTable ((IHCTable <?>) aElement);
-  }
-
   public static void checkIfLinkIsMasked (@Nullable final String sHref)
   {
     if (sHref != null)
@@ -219,43 +64,6 @@ public final class HCConsistencyChecker
       if (sHref.contains ("&amp;"))
         consistencyError ("The URL '" + sHref + "' seems to be already escaped - please use an unescaped URL!!");
     }
-  }
-
-  /**
-   * Check all nodes inside the passed HTML body whether they have unique IDs or
-   * not.
-   *
-   * @param aStartNode
-   *        The HTML node to check, usually the body element. May not be
-   *        <code>null</code>.
-   * @return A set with all IDs used more than once. Never <code>null</code> but
-   *         maybe empty.
-   */
-  @Nonnull
-  @ReturnsMutableCopy
-  public static Set <String> checkForUniqueIDs (@Nonnull final IHCNode aStartNode)
-  {
-    final Set <String> aUsedIDs = new HashSet <String> ();
-    final Set <String> aDuplicateIDs = new HashSet <String> ();
-    HCHelper.iterateTree (aStartNode, new IHCIteratorCallback ()
-    {
-      @Nonnull
-      public EFinish call (@Nullable final IHCNode aParentNode, @Nonnull final IHCNode aChildNode)
-      {
-        if (aChildNode instanceof IHCHasID <?>)
-        {
-          final IHCHasID <?> aElement = (IHCHasID <?>) aChildNode;
-          final String sID = aElement.getID ();
-          if (StringHelper.hasText (sID) && !aUsedIDs.add (sID))
-          {
-            consistencyError ("The ID '" + sID + "' is used more than once within a single HTML page!");
-            aDuplicateIDs.add (sID);
-          }
-        }
-        return EFinish.UNFINISHED;
-      }
-    });
-    return aDuplicateIDs;
   }
 
   public static void checkForMaximumCSSResources (final int nCSSExternals)

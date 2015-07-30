@@ -29,11 +29,14 @@ import com.helger.commons.url.ISimpleURL;
 import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hc.config.FakeJS;
+import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.hcapi.IHCConversionSettingsToNode;
 import com.helger.html.hchtml.AbstractHCElementWithChildren;
+import com.helger.html.hchtml.FakeJS;
+import com.helger.html.hchtml.HCHTMLHelper;
 import com.helger.html.hchtml.HC_Action;
 import com.helger.html.hchtml.HC_Target;
+import com.helger.html.hchtml.IHCElement;
 import com.helger.html.js.EJSEvent;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.IHasJSCodeWithSettings;
@@ -283,6 +286,24 @@ public abstract class AbstractHCButton <THISTYPE extends AbstractHCButton <THIST
   public THISTYPE addOnClick (@Nonnull final ISimpleURL aURL)
   {
     return addOnClick (FakeJS.windowLocationHref (aURL));
+  }
+
+  @Override
+  protected void onConsistencyCheck (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  {
+    super.onConsistencyCheck (aConversionSettings);
+    final IHCElement <?> aChild = HCHTMLHelper.recursiveGetFirstChildWithTagName (this,
+                                                                                  EHTMLElement.A,
+                                                                                  EHTMLElement.INPUT,
+                                                                                  EHTMLElement.SELECT,
+                                                                                  EHTMLElement.TEXTAREA,
+                                                                                  EHTMLElement.LABEL,
+                                                                                  EHTMLElement.BUTTON,
+                                                                                  EHTMLElement.FORM,
+                                                                                  EHTMLElement.FIELDSET,
+                                                                                  EHTMLElement.IFRAME);
+    if (aChild != null)
+      HCConsistencyChecker.consistencyError ("BUTTON element contains forbidden tag " + aChild.getElement ());
   }
 
   @Override

@@ -174,6 +174,7 @@ public class HCCheckBox extends AbstractHCInput <HCCheckBox>
   protected void onFinalizeNodeState (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
                                       @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
   {
+    super.onFinalizeNodeState (aConversionSettings, aTargetNode);
     if (m_bEmitHiddenField)
     {
       final String sHiddenFieldName = getHiddenFieldName ();

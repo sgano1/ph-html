@@ -80,10 +80,10 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
   {
     m_sCondition = ValueEnforcer.notEmpty (sCondition, "Condition");
     ValueEnforcer.notNull (aWrappedNode, "WrappedNode");
-    if (aWrappedNode instanceof HCCommentNode)
-      throw new IllegalArgumentException ("You cannot wrap a comment inside a conditional comment");
-    if (aWrappedNode instanceof HCConditionalCommentNode)
-      throw new IllegalArgumentException ("You cannot wrap a conditional comment inside another conditional comment");
+    ValueEnforcer.isFalse (aWrappedNode instanceof HCCommentNode,
+                           "You cannot wrap a comment inside a conditional comment");
+    ValueEnforcer.isFalse (aWrappedNode instanceof HCConditionalCommentNode,
+                           "You cannot wrap a conditional comment inside another conditional comment");
     m_aWrappedNode = aWrappedNode;
     m_eNewLineMode = ValueEnforcer.notNull (eNewLineMode, "NewLineMode");
   }

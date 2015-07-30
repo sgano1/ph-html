@@ -21,6 +21,7 @@ import java.util.List;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.annotation.OverridingMethodsMustInvokeSuper;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.ValueEnforcer;
@@ -28,6 +29,7 @@ import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLVersion;
+import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.hcapi.EHCNodeState;
 import com.helger.html.hcapi.IHCConversionSettingsToNode;
 import com.helger.html.hcapi.IHCCustomizer;
@@ -96,12 +98,12 @@ public abstract class AbstractHCNode implements IHCNode
     ValueEnforcer.notNull (eNodeState, "NodeState");
     if (false)
       if (!m_eNodeState.equals (eNodeState))
-        throw new IllegalStateException ("Expected node state " +
-                                         eNodeState +
-                                         " but having node state " +
-                                         m_eNodeState +
-                                         " in " +
-                                         toString ());
+        HCConsistencyChecker.consistencyError ("Expected node state " +
+                                               eNodeState +
+                                               " but having node state " +
+                                               m_eNodeState +
+                                               " in " +
+                                               toString ());
   }
 
   /**
@@ -114,10 +116,10 @@ public abstract class AbstractHCNode implements IHCNode
   {
     ValueEnforcer.notNull (eNodeState, "NodeState");
     if (m_eNodeState.isAfter (eNodeState))
-      throw new IllegalStateException ("The new node state is invalid. Got " +
-                                       eNodeState +
-                                       " but having " +
-                                       m_eNodeState);
+      HCConsistencyChecker.consistencyError ("The new node state is invalid. Got " +
+                                             eNodeState +
+                                             " but having " +
+                                             m_eNodeState);
     m_eNodeState = eNodeState;
   }
 
@@ -129,7 +131,7 @@ public abstract class AbstractHCNode implements IHCNode
     aCustomizer.customizeNode (this, eHTMLVersion, aTargetNode);
   }
 
-  public final void customizeNode (@Nonnull final IHCCustomizer aCustomizer,
+  public final void customizeNode (@Nullable final IHCCustomizer aCustomizer,
                                    @Nonnull final EHTMLVersion eHTMLVersion,
                                    @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
   {
@@ -137,7 +139,8 @@ public abstract class AbstractHCNode implements IHCNode
     if (m_eNodeState.isBefore (EHCNodeState.CUSTOMIZED))
     {
       _ensureNodeState (EHCNodeState.INITIAL);
-      onCustomizeNode (aCustomizer, eHTMLVersion, aTargetNode);
+      if (aCustomizer != null)
+        onCustomizeNode (aCustomizer, eHTMLVersion, aTargetNode);
       internalSetNodeState (EHCNodeState.CUSTOMIZED);
     }
   }
@@ -149,6 +152,7 @@ public abstract class AbstractHCNode implements IHCNode
    *        The target node where additional nodes should be added
    */
   @OverrideOnDemand
+  @OverridingMethodsMustInvokeSuper
   protected void onFinalizeNodeState (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
                                       @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
   {}
@@ -162,6 +166,30 @@ public abstract class AbstractHCNode implements IHCNode
       _ensureNodeState (EHCNodeState.CUSTOMIZED);
       onFinalizeNodeState (aConversionSettings, aTargetNode);
       internalSetNodeState (EHCNodeState.FINALIZED);
+    }
+  }
+
+  /**
+   * @param aConversionSettings
+   *        HC conversion settings
+   */
+  @OverrideOnDemand
+  @OverridingMethodsMustInvokeSuper
+  protected void onConsistencyCheck (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  {}
+
+  public final void consistencyCheck (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  {
+    // finalize only once
+    if (m_eNodeState.isBefore (EHCNodeState.CONSISTENCY_CHECKED))
+    {
+      _ensureNodeState (EHCNodeState.FINALIZED);
+      if (aConversionSettings.areConsistencyChecksEnabled ())
+      {
+        // Only if enabled
+        onConsistencyCheck (aConversionSettings);
+      }
+      internalSetNodeState (EHCNodeState.CONSISTENCY_CHECKED);
     }
   }
 
@@ -188,7 +216,7 @@ public abstract class AbstractHCNode implements IHCNode
     // register resources only once
     if (m_eNodeState.isBefore (EHCNodeState.RESOURCES_REGISTERED))
     {
-      _ensureNodeState (EHCNodeState.FINALIZED);
+      _ensureNodeState (EHCNodeState.CONSISTENCY_CHECKED);
       // Register resources only, if forced or if it can be converted to a micro
       // node
       if (bForceRegistration || canConvertToMicroNode (aConversionSettings))

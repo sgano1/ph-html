@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.system.ENewLineMode;
-import com.helger.html.hchtml.EHCScriptInlineMode;
+import com.helger.html.hc.config.EHCScriptInlineMode;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.IJSWriterSettings;
 

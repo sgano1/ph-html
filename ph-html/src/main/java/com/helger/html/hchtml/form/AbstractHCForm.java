@@ -31,8 +31,14 @@ import com.helger.commons.url.ISimpleURL;
 import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
+import com.helger.html.css.DefaultCSSClassProvider;
+import com.helger.html.css.ICSSClassProvider;
+import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.hcapi.IHCConversionSettingsToNode;
+import com.helger.html.hcapi.IHCHasChildrenMutable;
+import com.helger.html.hcapi.IHCNode;
 import com.helger.html.hchtml.AbstractHCElementWithChildren;
+import com.helger.html.hchtml.HCHTMLHelper;
 import com.helger.html.hchtml.HC_Action;
 import com.helger.html.hchtml.HC_Target;
 import com.helger.html.js.IHasJSCode;
@@ -58,6 +64,9 @@ public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>
 
   /** By default form are not submitted by pressing Enter key */
   public static final boolean DEFAULT_SUBMIT_PRESSING_ENTER = false;
+
+  // For buttons
+  public static final ICSSClassProvider CSS_CLASS_INVISIBLE_BUTTON = DefaultCSSClassProvider.create ("invisible-button");
 
   private String m_sAcceptCharset;
   private final HC_Action m_aAction = new HC_Action ();
@@ -277,6 +286,23 @@ public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>
     m_bSubmitPressingEnter = bSubmitPressingEnter;
     m_nSubmitButtonTabIndex = nSubmitButtonTabIndex;
     return thisAsT ();
+  }
+
+  @Override
+  protected void onFinalizeNodeState (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
+                                      @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
+  {
+    super.onFinalizeNodeState (aConversionSettings, aTargetNode);
+    if (m_bSubmitPressingEnter)
+      addChild (new HCButton_Submit ("").addClass (CSS_CLASS_INVISIBLE_BUTTON).setTabIndex (m_nSubmitButtonTabIndex));
+  }
+
+  @Override
+  protected void onConsistencyCheck (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  {
+    super.onConsistencyCheck (aConversionSettings);
+    if (HCHTMLHelper.recursiveContainsChildWithTagName (this, EHTMLElement.FORM))
+      HCConsistencyChecker.consistencyError ("FORM contains other nested form");
   }
 
   @Override

@@ -28,6 +28,7 @@ import com.helger.commons.url.ISimpleURL;
 import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
+import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.hcapi.IHCConversionSettingsToNode;
 import com.helger.html.hchtml.AbstractHCElementWithChildren;
 import com.helger.html.hchtml.EHCObjectAlign;
@@ -269,6 +270,14 @@ public abstract class AbstractHCObject <THISTYPE extends AbstractHCObject <THIST
   {
     m_sUseMap = sUseMap;
     return thisAsT ();
+  }
+
+  @Override
+  protected void onConsistencyCheck (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  {
+    super.onConsistencyCheck (aConversionSettings);
+    if (m_aData == null && m_aType == null)
+      HCConsistencyChecker.consistencyError ("OBJECT contains neither type nor data");
   }
 
   @Override

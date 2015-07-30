@@ -33,15 +33,52 @@ import com.helger.html.EHTMLVersion;
  */
 public interface IHCNode extends IHasChildrenSorted <IHCNode>, IHasPlainText, Serializable
 {
+  /**
+   * @return The current node state and never <code>null</code>.
+   */
   @Nonnull
   EHCNodeState getNodeState ();
 
-  void customizeNode (@Nonnull IHCCustomizer aCustomizer,
+  /**
+   * Customize the current node with the respective customizer.<br>
+   * This method is called at last once per {@link IHCNode}.
+   *
+   * @param aCustomizer
+   *        The customizer to use. May be <code>null</code>.
+   * @param eHTMLVersion
+   *        The HTML version to be used. May not be <code>null</code>.
+   * @param aTargetNode
+   *        The target node where additional nodes should be added. May not be
+   *        <code>null</code>.
+   */
+  void customizeNode (@Nullable IHCCustomizer aCustomizer,
                       @Nonnull EHTMLVersion eHTMLVersion,
                       @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode);
 
+  /**
+   * Finalize the node by applying any internal state that was not yet converted
+   * to a HC element.<br>
+   * This method is called at last once per {@link IHCNode}.
+   *
+   * @param aConversionSettings
+   *        The current conversion settings to be used. May not be
+   *        <code>null</code>.
+   * @param aTargetNode
+   *        The target node where additional nodes should be added. May not be
+   *        <code>null</code>.
+   */
   void finalizeNodeState (@Nonnull IHCConversionSettingsToNode aConversionSettings,
                           @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode);
+
+  /**
+   * Perform consistency checks on this node.<br>
+   * This method is called at last once per {@link IHCNode}.
+   *
+   * @param aConversionSettings
+   *        The current conversion settings to be used. May not be
+   *        <code>null</code>.
+   */
+  void consistencyCheck (@Nonnull IHCConversionSettingsToNode aConversionSettings);
 
   /**
    * This method checks whether the node is suitable for conversion to an
@@ -59,7 +96,8 @@ public interface IHCNode extends IHasChildrenSorted <IHCNode>, IHasPlainText, Se
    * Register external JS and CSS resources required for this node, but only if
    * this HC node can be converted to a micro node as determined by
    * {@link #canConvertToMicroNode(IHCConversionSettingsToNode)}. Using the
-   * bForceRegistration parameter, this can be forced.
+   * bForceRegistration parameter, this can be forced.<br>
+   * This method is called at last once per {@link IHCNode}.
    *
    * @param aConversionSettings
    *        Conversion settings to be used. Never <code>null</code>.
@@ -72,8 +110,7 @@ public interface IHCNode extends IHasChildrenSorted <IHCNode>, IHasPlainText, Se
 
   /**
    * The main conversion to a micro node.<br>
-   * Note: return type cannot by IMicroElement since the check box object
-   * delivers an IMicroNodeList!
+   * Note: must be an IMicroNode since e.g. the text node returns an IMicroText.
    *
    * @param aConversionSettings
    *        The conversion settings to be used. May not be <code>null</code>.

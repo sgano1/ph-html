@@ -32,6 +32,7 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.hcapi.IHCConversionSettingsToNode;
 import com.helger.html.hchtml.AbstractHCElementWithChildren;
+import com.helger.html.hchtml.HCHTMLHelper;
 import com.helger.html.hchtml.HC_Target;
 import com.helger.html.js.EJSEvent;
 import com.helger.html.js.IHasJSCode;
@@ -176,6 +177,16 @@ public abstract class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>> exte
   public THISTYPE addOnClick (@Nullable final IHasJSCode aOnClick)
   {
     return addEventHandler (EJSEvent.CLICK, aOnClick);
+  }
+
+  @Override
+  protected void onConsistencyCheck (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  {
+    super.onConsistencyCheck (aConversionSettings);
+    if (HCHTMLHelper.recursiveContainsChildWithTagName (this, EHTMLElement.A))
+      HCConsistencyChecker.consistencyError ("A may never contain other links!");
+    if (HCHTMLHelper.recursiveContainsChildWithTagName (this, EHTMLElement.SELECT))
+      HCConsistencyChecker.consistencyError ("A contains invalid child element!");
   }
 
   @Override

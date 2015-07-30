@@ -28,8 +28,14 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
+import com.helger.html.css.DefaultCSSClassProvider;
+import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.hcapi.IHCConversionSettingsToNode;
+import com.helger.html.hcapi.IHCHasChildrenMutable;
+import com.helger.html.hcapi.IHCNode;
 import com.helger.html.hchtml.AbstractHCElement;
+import com.helger.html.hchtml.FakeJS;
+import com.helger.html.hchtml.impl.HCScriptInline;
 
 @NotThreadSafe
 public abstract class AbstractHCControl <IMPLTYPE extends AbstractHCControl <IMPLTYPE>> extends AbstractHCElement <IMPLTYPE>implements IHCControl <IMPLTYPE>
@@ -40,6 +46,8 @@ public abstract class AbstractHCControl <IMPLTYPE extends AbstractHCControl <IMP
 
   /** By default required is disabled */
   public static final boolean DEFAULT_REQUIRED = false;
+
+  public static final ICSSClassProvider CSS_CLASS_READONLY = DefaultCSSClassProvider.create ("readonly");
 
   private boolean m_bDisabled = DEFAULT_DISABLED;
   private boolean m_bFocused = DEFAULT_FOCUSED;
@@ -110,6 +118,29 @@ public abstract class AbstractHCControl <IMPLTYPE extends AbstractHCControl <IMP
   {
     m_bRequired = bRequired;
     return thisAsT ();
+  }
+
+  @Override
+  protected void onFinalizeNodeState (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
+                                      @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
+  {
+    super.onFinalizeNodeState (aConversionSettings, aTargetNode);
+
+    // Read only?
+    if (m_bReadOnly)
+    {
+      // Add read-only class
+      addClass (CSS_CLASS_READONLY);
+
+      // Set explicit tab index -1 to avoid focusing
+      setTabIndex (-1L);
+    }
+
+    if (m_bFocused)
+    {
+      // Add a JS call that focuses this element
+      aTargetNode.addChild (new HCScriptInline (FakeJS.focus (this)));
+    }
   }
 
   @Override

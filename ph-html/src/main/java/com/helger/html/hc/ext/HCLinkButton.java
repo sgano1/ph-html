@@ -19,7 +19,7 @@ package com.helger.html.hc.ext;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.url.ISimpleURL;
-import com.helger.html.hc.config.FakeJS;
+import com.helger.html.hchtml.FakeJS;
 import com.helger.html.hchtml.form.AbstractHCButton;
 import com.helger.html.js.IHasJSCodeWithSettings;
 

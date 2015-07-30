@@ -65,7 +65,17 @@ public abstract class AbstractHCWrappingNode extends AbstractHCNode implements I
   protected void onFinalizeNodeState (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
                                       @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
   {
+    super.onFinalizeNodeState (aConversionSettings, aTargetNode);
     getWrappedNode ().finalizeNodeState (aConversionSettings, aTargetNode);
+  }
+
+  @Override
+  @OverrideOnDemand
+  @OverridingMethodsMustInvokeSuper
+  protected void onConsistencyCheck (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  {
+    super.onConsistencyCheck (aConversionSettings);
+    getWrappedNode ().consistencyCheck (aConversionSettings);
   }
 
   @Override

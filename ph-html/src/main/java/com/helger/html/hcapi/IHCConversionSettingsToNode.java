@@ -105,10 +105,9 @@ public interface IHCConversionSettingsToNode
   boolean isExtractOutOfBandNodes ();
 
   /**
-   * @return The current customizer to be used. Never <code>null</code>. By
-   *         default a {@link com.helger.html.hc.ext.HCCustomizerDefault}
-   *         object is returned.
+   * @return The current customizer to be used. May be <code>null</code>. The
+   *         default is <code>null</code>.
    */
-  @Nonnull
+  @Nullable
   IHCCustomizer getCustomizer ();
 }

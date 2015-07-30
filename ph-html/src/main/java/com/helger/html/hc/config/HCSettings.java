@@ -34,8 +34,6 @@ import com.helger.commons.lang.ServiceLoaderHelper;
 import com.helger.commons.system.ENewLineMode;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hcapi.config.IHCConversionSettings;
-import com.helger.html.hchtml.EHCScriptInlineMode;
-import com.helger.html.hchtml.EHCStyleMode;
 
 /**
  * Global HC settings
