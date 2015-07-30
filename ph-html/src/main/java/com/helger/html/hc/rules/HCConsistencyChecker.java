@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.conversion;
+package com.helger.html.hc.rules;
 
 import java.util.HashSet;
 import java.util.Set;

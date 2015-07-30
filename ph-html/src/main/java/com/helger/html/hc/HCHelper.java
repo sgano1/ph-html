@@ -31,7 +31,6 @@ import com.helger.commons.mutable.MutableBoolean;
 import com.helger.commons.state.EFinish;
 import com.helger.commons.wrapper.Wrapper;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hc.impl.HCTextNode;
 
 @Immutable
 public final class HCHelper
@@ -186,7 +185,7 @@ public final class HCHelper
     if (aStartNode == null)
       return false;
 
-    if (aStartNode instanceof HCTextNode)
+    if (aStartNode instanceof IHCTextNode)
       return true;
 
     final MutableBoolean ret = new MutableBoolean (false);
@@ -195,7 +194,7 @@ public final class HCHelper
       @Nullable
       public EFinish call (@Nullable final IHCNode aParentNode, @Nonnull final IHCNode aChildNode)
       {
-        if (aChildNode instanceof HCTextNode)
+        if (aChildNode instanceof IHCTextNode)
         {
           ret.set (true);
           return EFinish.FINISHED;

@@ -31,9 +31,9 @@ import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.EHCNodeState;
 import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.conversion.HCConsistencyChecker;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.customize.IHCCustomizer;
+import com.helger.html.hc.rules.HCConsistencyChecker;
 
 /**
  * Default implementation of the {@link IHCNode} interface.

@@ -62,8 +62,8 @@ import com.helger.html.hc.api.EHCContentEditable;
 import com.helger.html.hc.api.EHCDraggable;
 import com.helger.html.hc.api.EHCDropZone;
 import com.helger.html.hc.api.EHCTextDirection;
-import com.helger.html.hc.conversion.HCConsistencyChecker;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
+import com.helger.html.hc.rules.HCConsistencyChecker;
 import com.helger.html.js.EJSEvent;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.JSEventMap;
@@ -72,11 +72,11 @@ import com.helger.html.js.JSEventMap;
  * Base class for an HC element.
  *
  * @author Philip Helger
- * @param <IMPLTYPE>
+ * @param <THISTYPE>
  *        The implementation type.
  */
 @NotThreadSafe
-public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMPLTYPE>> extends AbstractHCNode implements IHCElement <IMPLTYPE>
+public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THISTYPE>> extends AbstractHCNode implements IHCElement <THISTYPE>
 {
   /** Default translate mode */
   public static final ETriState DEFAULT_TRANSLATE = ETriState.UNDEFINED;
@@ -146,10 +146,10 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  protected final IMPLTYPE thisAsT ()
+  protected final THISTYPE thisAsT ()
   {
     // Avoid the unchecked cast warning in all places
-    return GenericReflection.<AbstractHCElement <IMPLTYPE>, IMPLTYPE> uncheckedCast (this);
+    return GenericReflection.<AbstractHCElement <THISTYPE>, THISTYPE> uncheckedCast (this);
   }
 
   public final boolean hasID ()
@@ -164,7 +164,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setID (@Nullable final String sID)
+  public final THISTYPE setID (@Nullable final String sID)
   {
     if (StringHelper.hasText (sID))
     {
@@ -197,13 +197,13 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setUniqueID ()
+  public final THISTYPE setUniqueID ()
   {
     return setID (GlobalIDFactory.getNewStringID ());
   }
 
   @Nonnull
-  public IMPLTYPE ensureID ()
+  public THISTYPE ensureID ()
   {
     if (!hasID ())
       setUniqueID ();
@@ -217,7 +217,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setTitle (@Nullable final String sTitle)
+  public final THISTYPE setTitle (@Nullable final String sTitle)
   {
     m_sTitle = sTitle;
     return thisAsT ();
@@ -231,7 +231,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE addClass (@Nullable final ICSSClassProvider aCSSClassProvider)
+  public final THISTYPE addClass (@Nullable final ICSSClassProvider aCSSClassProvider)
   {
     if (aCSSClassProvider != null)
     {
@@ -245,13 +245,13 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   @Deprecated
   @DevelopersNote ("Use addClass - singular")
   @Nonnull
-  public final IMPLTYPE addClasses (@Nullable final ICSSClassProvider aCSSClassProvider)
+  public final THISTYPE addClasses (@Nullable final ICSSClassProvider aCSSClassProvider)
   {
     return addClass (aCSSClassProvider);
   }
 
   @Nonnull
-  public final IMPLTYPE addClasses (@Nullable final ICSSClassProvider... aCSSClassProviders)
+  public final THISTYPE addClasses (@Nullable final ICSSClassProvider... aCSSClassProviders)
   {
     if (aCSSClassProviders != null)
       for (final ICSSClassProvider aProvider : aCSSClassProviders)
@@ -260,7 +260,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE addClasses (@Nullable final Iterable <? extends ICSSClassProvider> aCSSClassProviders)
+  public final THISTYPE addClasses (@Nullable final Iterable <? extends ICSSClassProvider> aCSSClassProviders)
   {
     if (aCSSClassProviders != null)
       for (final ICSSClassProvider aProvider : aCSSClassProviders)
@@ -269,7 +269,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE removeClass (@Nullable final ICSSClassProvider aCSSClassProvider)
+  public final THISTYPE removeClass (@Nullable final ICSSClassProvider aCSSClassProvider)
   {
     if (m_aCSSClassProviders != null && aCSSClassProvider != null)
       m_aCSSClassProviders.remove (aCSSClassProvider);
@@ -277,7 +277,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE removeAllClasses ()
+  public final THISTYPE removeAllClasses ()
   {
     if (m_aCSSClassProviders != null)
       m_aCSSClassProviders.clear ();
@@ -372,13 +372,13 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE addStyle (@Nonnull final ECSSProperty eProperty, @Nonnull @Nonempty final String sPropertyValue)
+  public final THISTYPE addStyle (@Nonnull final ECSSProperty eProperty, @Nonnull @Nonempty final String sPropertyValue)
   {
     return addStyle (new CSSPropertyFree (eProperty).newValue (sPropertyValue));
   }
 
   @Nonnull
-  public final IMPLTYPE addStyle (@Nullable final ICSSValue aValue)
+  public final THISTYPE addStyle (@Nullable final ICSSValue aValue)
   {
     if (aValue != null)
     {
@@ -392,13 +392,13 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   @Nonnull
   @DevelopersNote ("Use addStyle - singular")
   @Deprecated
-  public final IMPLTYPE addStyles (@Nullable final ICSSValue aValue)
+  public final THISTYPE addStyles (@Nullable final ICSSValue aValue)
   {
     return addStyle (aValue);
   }
 
   @Nonnull
-  public final IMPLTYPE addStyles (@Nullable final ICSSValue... aValues)
+  public final THISTYPE addStyles (@Nullable final ICSSValue... aValues)
   {
     if (aValues != null)
       for (final ICSSValue aValue : aValues)
@@ -407,7 +407,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE addStyles (@Nullable final Iterable <? extends ICSSValue> aValues)
+  public final THISTYPE addStyles (@Nullable final Iterable <? extends ICSSValue> aValues)
   {
     if (aValues != null)
       for (final ICSSValue aValue : aValues)
@@ -416,7 +416,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE removeStyle (@Nonnull final ECSSProperty eProperty)
+  public final THISTYPE removeStyle (@Nonnull final ECSSProperty eProperty)
   {
     if (m_aStyles != null)
       m_aStyles.remove (eProperty);
@@ -424,7 +424,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE removeAllStyles ()
+  public final THISTYPE removeAllStyles ()
   {
     m_aStyles.clear ();
     return thisAsT ();
@@ -448,7 +448,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setDirection (@Nullable final EHCTextDirection eDirection)
+  public final THISTYPE setDirection (@Nullable final EHCTextDirection eDirection)
   {
     m_eDirection = eDirection;
     return thisAsT ();
@@ -461,7 +461,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setLanguage (@Nullable final String sLanguage)
+  public final THISTYPE setLanguage (@Nullable final String sLanguage)
   {
     m_sLanguage = sLanguage;
     return thisAsT ();
@@ -486,7 +486,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE addEventHandler (@Nonnull final EJSEvent eJSEvent, @Nullable final IHasJSCode aJSCode)
+  public final THISTYPE addEventHandler (@Nonnull final EJSEvent eJSEvent, @Nullable final IHasJSCode aJSCode)
   {
     if (aJSCode != null)
     {
@@ -498,7 +498,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE prependEventHandler (@Nonnull final EJSEvent eJSEvent, @Nullable final IHasJSCode aJSCode)
+  public final THISTYPE prependEventHandler (@Nonnull final EJSEvent eJSEvent, @Nullable final IHasJSCode aJSCode)
   {
     if (aJSCode != null)
     {
@@ -510,7 +510,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setEventHandler (@Nonnull final EJSEvent eJSEvent, @Nullable final IHasJSCode aJSCode)
+  public final THISTYPE setEventHandler (@Nonnull final EJSEvent eJSEvent, @Nullable final IHasJSCode aJSCode)
   {
     if (aJSCode != null)
     {
@@ -525,7 +525,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE removeAllEventHandler (@Nullable final EJSEvent eJSEvent)
+  public final THISTYPE removeAllEventHandler (@Nullable final EJSEvent eJSEvent)
   {
     if (m_aJSHandler != null)
       m_aJSHandler.removeHandler (eJSEvent);
@@ -538,7 +538,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setUnfocusable (final boolean bUnfocusable)
+  public final THISTYPE setUnfocusable (final boolean bUnfocusable)
   {
     m_bUnfocusable = bUnfocusable;
     return thisAsT ();
@@ -550,7 +550,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setHidden (final boolean bHidden)
+  public final THISTYPE setHidden (final boolean bHidden)
   {
     m_bHidden = bHidden;
     return thisAsT ();
@@ -563,7 +563,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setTabIndex (final long nTabIndex)
+  public final THISTYPE setTabIndex (final long nTabIndex)
   {
     m_nTabIndex = nTabIndex;
     return thisAsT ();
@@ -576,7 +576,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setAccessKey (@Nullable final String sAccessKey)
+  public final THISTYPE setAccessKey (@Nullable final String sAccessKey)
   {
     m_sAccessKey = sAccessKey;
     return thisAsT ();
@@ -604,13 +604,13 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setTranslate (final boolean bTranslate)
+  public final THISTYPE setTranslate (final boolean bTranslate)
   {
     return setTranslate (ETriState.valueOf (bTranslate));
   }
 
   @Nonnull
-  public final IMPLTYPE setTranslate (@Nonnull final ETriState eTranslate)
+  public final THISTYPE setTranslate (@Nonnull final ETriState eTranslate)
   {
     m_eTranslate = ValueEnforcer.notNull (eTranslate, "Translate");
     return thisAsT ();
@@ -623,7 +623,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setContentEditable (@Nullable final EHCContentEditable eContentEditable)
+  public final THISTYPE setContentEditable (@Nullable final EHCContentEditable eContentEditable)
   {
     m_eContentEditable = eContentEditable;
     return thisAsT ();
@@ -636,7 +636,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setContextMenu (@Nullable final String sContextMenuID)
+  public final THISTYPE setContextMenu (@Nullable final String sContextMenuID)
   {
     m_sContextMenuID = sContextMenuID;
     return thisAsT ();
@@ -649,7 +649,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setDraggable (@Nullable final EHCDraggable eDraggable)
+  public final THISTYPE setDraggable (@Nullable final EHCDraggable eDraggable)
   {
     m_eDraggable = eDraggable;
     return thisAsT ();
@@ -662,7 +662,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setDropZone (@Nullable final EHCDropZone eDropZone)
+  public final THISTYPE setDropZone (@Nullable final EHCDropZone eDropZone)
   {
     m_eDropZone = eDropZone;
     return thisAsT ();
@@ -674,7 +674,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setSpellCheck (final boolean bSpellCheck)
+  public final THISTYPE setSpellCheck (final boolean bSpellCheck)
   {
     m_bSpellCheck = bSpellCheck;
     return thisAsT ();
@@ -687,7 +687,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setRole (@Nullable final EHTMLRole eRole)
+  public final THISTYPE setRole (@Nullable final EHTMLRole eRole)
   {
     m_eRole = eRole;
     return thisAsT ();
@@ -723,7 +723,7 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setCustomAttr (@Nullable final String sName, @Nullable final String sValue)
+  public final THISTYPE setCustomAttr (@Nullable final String sName, @Nullable final String sValue)
   {
     if (StringHelper.hasText (sName) && sValue != null)
     {
@@ -735,19 +735,19 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public final IMPLTYPE setCustomAttr (@Nullable final String sName, final int nValue)
+  public final THISTYPE setCustomAttr (@Nullable final String sName, final int nValue)
   {
     return setCustomAttr (sName, Integer.toString (nValue));
   }
 
   @Nonnull
-  public final IMPLTYPE setCustomAttr (@Nullable final String sName, final long nValue)
+  public final THISTYPE setCustomAttr (@Nullable final String sName, final long nValue)
   {
     return setCustomAttr (sName, Long.toString (nValue));
   }
 
   @Nonnull
-  public final IMPLTYPE removeCustomAttr (@Nullable final String sName)
+  public final THISTYPE removeCustomAttr (@Nullable final String sName)
   {
     if (m_aCustomAttrs != null && sName != null)
       m_aCustomAttrs.remove (sName);
@@ -798,25 +798,25 @@ public abstract class AbstractHCElement <IMPLTYPE extends AbstractHCElement <IMP
   }
 
   @Nonnull
-  public IMPLTYPE setDataAttr (@Nullable final String sName, final int nValue)
+  public THISTYPE setDataAttr (@Nullable final String sName, final int nValue)
   {
     return setCustomAttr (makeDataAttrName (sName), nValue);
   }
 
   @Nonnull
-  public IMPLTYPE setDataAttr (@Nullable final String sName, final long nValue)
+  public THISTYPE setDataAttr (@Nullable final String sName, final long nValue)
   {
     return setCustomAttr (makeDataAttrName (sName), nValue);
   }
 
   @Nonnull
-  public IMPLTYPE setDataAttr (@Nullable final String sName, @Nullable final String sValue)
+  public THISTYPE setDataAttr (@Nullable final String sName, @Nullable final String sValue)
   {
     return setCustomAttr (makeDataAttrName (sName), sValue);
   }
 
   @Nonnull
-  public IMPLTYPE removeDataAttr (@Nullable final String sName)
+  public THISTYPE removeDataAttr (@Nullable final String sName)
   {
     return removeCustomAttr (makeDataAttrName (sName));
   }

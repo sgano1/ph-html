@@ -30,9 +30,9 @@ import com.helger.commons.url.SimpleURL;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.api.HC_Target;
-import com.helger.html.hc.conversion.HCConsistencyChecker;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElementWithChildren;
+import com.helger.html.hc.rules.HCConsistencyChecker;
 import com.helger.html.js.EJSEvent;
 import com.helger.html.js.IHasJSCode;
 

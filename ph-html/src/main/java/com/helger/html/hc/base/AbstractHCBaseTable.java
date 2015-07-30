@@ -38,7 +38,6 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
 import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.conversion.HCConsistencyChecker;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.html.HCColGroup;
 import com.helger.html.hc.html.HCRow;
@@ -47,6 +46,7 @@ import com.helger.html.hc.html.HCTFoot;
 import com.helger.html.hc.html.HCTHead;
 import com.helger.html.hc.impl.AbstractHCElement;
 import com.helger.html.hc.impl.HCTextNode;
+import com.helger.html.hc.rules.HCConsistencyChecker;
 
 /**
  * This is the common base class for regular HC tables as well as for more

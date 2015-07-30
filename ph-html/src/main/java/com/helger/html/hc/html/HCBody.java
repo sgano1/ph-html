@@ -23,9 +23,9 @@ import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hc.conversion.HCConsistencyChecker;
 import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
 import com.helger.html.hc.impl.AbstractHCElementWithChildren;
+import com.helger.html.hc.rules.HCConsistencyChecker;
 
 /**
  * Represents an HTML &lt;body&gt; element
