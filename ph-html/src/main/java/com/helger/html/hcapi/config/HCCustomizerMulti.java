@@ -40,7 +40,7 @@ import com.helger.html.hcapi.IHCNode;
  * @author Philip Helger
  */
 @NotThreadSafe
-public class HCCustomizerMulti implements IHCCustomizer
+public class HCCustomizerMulti extends AbstractHCCustomizer
 {
   private final List <IHCCustomizer> m_aCustomizers = new ArrayList <IHCCustomizer> ();
 
@@ -96,6 +96,6 @@ public class HCCustomizerMulti implements IHCCustomizer
   @Override
   public String toString ()
   {
-    return new ToStringGenerator (this).append ("customizers", m_aCustomizers).toString ();
+    return ToStringGenerator.getDerived (super.toString ()).append ("customizers", m_aCustomizers).toString ();
   }
 }

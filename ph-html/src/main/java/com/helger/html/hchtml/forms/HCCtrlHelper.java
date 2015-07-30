@@ -45,11 +45,11 @@ public final class HCCtrlHelper
   @Nullable
   public static IHCControl <?> getFirstHCControl (@Nullable final IHCNode aNode)
   {
-    if (aNode instanceof IHCControl <?>)
-      return (IHCControl <?>) aNode;
-
     if (aNode != null)
     {
+      if (aNode instanceof IHCControl <?>)
+        return (IHCControl <?>) aNode;
+
       if (aNode.hasChildren ())
         for (final IHCNode aChild : aNode.getAllChildren ())
         {

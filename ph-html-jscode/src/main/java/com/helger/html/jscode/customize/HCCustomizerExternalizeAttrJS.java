@@ -24,7 +24,7 @@ import com.helger.commons.id.factory.GlobalIDFactory;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hcapi.IHCHasChildrenMutable;
 import com.helger.html.hcapi.IHCNode;
-import com.helger.html.hcapi.config.HCCustomizerDoNothing;
+import com.helger.html.hcapi.config.AbstractHCCustomizer;
 import com.helger.html.hchtml.IHCElement;
 import com.helger.html.hchtml.script.HCScriptInline;
 import com.helger.html.hchtml.script.IHCScript;
@@ -33,7 +33,7 @@ import com.helger.html.js.EJSEvent;
 import com.helger.html.js.JSEventMap;
 import com.helger.html.jscode.JSFunction;
 
-public class HCCustomizerExternalizeAttrJS extends HCCustomizerDoNothing
+public class HCCustomizerExternalizeAttrJS extends AbstractHCCustomizer
 {
   public HCCustomizerExternalizeAttrJS ()
   {}

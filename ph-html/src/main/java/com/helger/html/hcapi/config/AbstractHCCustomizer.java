@@ -16,14 +16,10 @@
  */
 package com.helger.html.hcapi.config;
 
-import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.EHTMLVersion;
 import com.helger.html.hcapi.IHCCustomizer;
-import com.helger.html.hcapi.IHCHasChildrenMutable;
-import com.helger.html.hcapi.IHCNode;
 
 /**
  * An implementation of {@link IHCCustomizer} that does nothing.
@@ -31,17 +27,10 @@ import com.helger.html.hcapi.IHCNode;
  * @author Philip Helger
  */
 @Immutable
-public class HCCustomizerDoNothing implements IHCCustomizer
+public abstract class AbstractHCCustomizer implements IHCCustomizer
 {
-  public HCCustomizerDoNothing ()
+  public AbstractHCCustomizer ()
   {}
-
-  public void customizeNode (@Nonnull final IHCNode aNode,
-                             @Nonnull final EHTMLVersion eHTMLVersion,
-                             @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
-  {
-    // Nada
-  }
 
   @Override
   public String toString ()
