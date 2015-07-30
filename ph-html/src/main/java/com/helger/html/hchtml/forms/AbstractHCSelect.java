@@ -478,13 +478,13 @@ public abstract class AbstractHCSelect <THISTYPE extends AbstractHCSelect <THIST
   @Override
   public boolean hasChildren ()
   {
-    return !m_aOptions.isEmpty ();
+    return CollectionHelper.isNotEmpty (m_aOptions);
   }
 
   @Override
   public int getChildCount ()
   {
-    return m_aOptions.size ();
+    return CollectionHelper.getSize (m_aOptions);
   }
 
   @Override
