@@ -293,18 +293,11 @@ public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>
     return thisAsT ();
   }
 
-  @Override
-  protected void onFinalizeNodeState (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
-                                      @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
+  public static void setAutoFocusOnFirstControl (@Nonnull final IHCNode aStartNode)
   {
-    super.onFinalizeNodeState (aConversionSettings, aTargetNode);
-    if (m_bSubmitPressingEnter)
-      addChild (new HCButton_Submit ("").addClass (CSS_CLASS_INVISIBLE_BUTTON).setTabIndex (m_nSubmitButtonTabIndex));
-
-    // Set focus on first control
     final Wrapper <IHCHasFocus <?>> aFirstCtrl = new Wrapper <IHCHasFocus <?>> ();
     final MutableBoolean bAnyCtrlHasFocus = new MutableBoolean (false);
-    HCHelper.iterateChildren (this, new IHCIteratorCallback ()
+    HCHelper.iterateChildren (aStartNode, new IHCIteratorCallback ()
     {
       public EFinish call (@Nullable final IHCNode aParentNode, @Nonnull final IHCNode aChildNode)
       {
@@ -332,6 +325,18 @@ public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>
       if (aFirst != null)
         aFirst.setAutoFocus (true);
     }
+  }
+
+  @Override
+  protected void onFinalizeNodeState (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
+                                      @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
+  {
+    super.onFinalizeNodeState (aConversionSettings, aTargetNode);
+    if (m_bSubmitPressingEnter)
+      addChild (new HCButton_Submit ("").addClass (CSS_CLASS_INVISIBLE_BUTTON).setTabIndex (m_nSubmitButtonTabIndex));
+
+    // Set focus on first control
+    setAutoFocusOnFirstControl (this);
   }
 
   @Override
