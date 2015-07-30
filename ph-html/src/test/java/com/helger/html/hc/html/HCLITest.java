@@ -4,7 +4,7 @@ import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
-import com.helger.html.hchtml.impl.HCLI;
+import com.helger.html.hchtml.list.HCLI;
 
 /**
  * Test class for class {@link HCLI}

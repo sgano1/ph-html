@@ -77,8 +77,8 @@ import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.commons.io.stream.StreamHelper;
 import com.helger.commons.regex.RegExPool;
 import com.helger.commons.string.StringHelper;
+import com.helger.html.hc.mock.HCTestRuleOptimized;
 import com.helger.html.markdown.MarkdownConfiguration.Builder;
-import com.helger.html.mock.HCTestRuleOptimized;
 
 @RunWith (Parameterized.class)
 public final class MarkupFileFuncTest

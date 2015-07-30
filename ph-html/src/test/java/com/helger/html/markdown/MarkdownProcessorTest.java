@@ -71,7 +71,7 @@ import com.helger.commons.charset.CCharset;
 import com.helger.commons.io.file.FilenameHelper;
 import com.helger.commons.io.file.SimpleFileIO;
 import com.helger.commons.io.file.iterate.FileSystemRecursiveIterator;
-import com.helger.html.mock.HCTestRuleOptimized;
+import com.helger.html.hc.mock.HCTestRuleOptimized;
 
 @RunWith (value = Parameterized.class)
 public final class MarkdownProcessorTest

@@ -27,7 +27,7 @@ import com.helger.html.css.DefaultCSSClassProvider;
 import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.jquery.JQuery;
 import com.helger.html.jquery.JQueryInvocation;
-import com.helger.html.js.writer.JSWriterSettings;
+import com.helger.html.js.JSWriterSettings;
 import com.helger.html.jscode.JSAnonymousFunction;
 import com.helger.html.jscode.JSExpr;
 

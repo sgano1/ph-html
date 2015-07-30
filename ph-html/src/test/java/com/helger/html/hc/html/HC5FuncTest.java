@@ -27,7 +27,6 @@ import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.hcapi.config.IHCConversionSettings;
 import com.helger.html.hchtml.impl.HCArticle;
 import com.helger.html.hchtml.impl.HCAside;
-import com.helger.html.hchtml.impl.HCAudio;
 import com.helger.html.hchtml.impl.HCBDI;
 import com.helger.html.hchtml.impl.HCBody;
 import com.helger.html.hchtml.impl.HCCanvas;
@@ -46,11 +45,12 @@ import com.helger.html.hchtml.impl.HCRP;
 import com.helger.html.hchtml.impl.HCRT;
 import com.helger.html.hchtml.impl.HCRuby;
 import com.helger.html.hchtml.impl.HCSection;
-import com.helger.html.hchtml.impl.HCSource;
 import com.helger.html.hchtml.impl.HCTime;
-import com.helger.html.hchtml.impl.HCTrack;
-import com.helger.html.hchtml.impl.HCVideo;
 import com.helger.html.hchtml.impl.HCWBR;
+import com.helger.html.hchtml.media.HCAudio;
+import com.helger.html.hchtml.media.HCSource;
+import com.helger.html.hchtml.media.HCTrack;
+import com.helger.html.hchtml.media.HCVideo;
 
 /**
  * Instantiate and generate code for all HTML5 elements available

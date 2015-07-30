@@ -24,7 +24,7 @@ import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.js.marshal.JSMarshaller;
+import com.helger.html.js.JSMarshaller;
 
 /**
  * Global Reference

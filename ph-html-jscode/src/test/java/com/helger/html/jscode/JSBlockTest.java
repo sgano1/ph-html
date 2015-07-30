@@ -23,7 +23,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import com.helger.html.js.writer.JSWriterSettings;
+import com.helger.html.js.JSWriterSettings;
 import com.helger.html.jscode.AbstractJSExpression;
 import com.helger.html.jscode.JSBlock;
 import com.helger.html.jscode.JSExpr;

@@ -22,10 +22,10 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import com.helger.html.hc.config.HCSettings;
+import com.helger.html.hc.mock.HCTestRuleOptimized;
 import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.hchtml.EHCStyleMode;
 import com.helger.html.hchtml.impl.HCStyle;
-import com.helger.html.mock.HCTestRuleOptimized;
 
 /**
  * Test class for class {@link HCStyle}.

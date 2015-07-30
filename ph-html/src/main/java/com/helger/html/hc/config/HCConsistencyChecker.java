@@ -46,12 +46,12 @@ import com.helger.html.hchtml.HCHTMLHelper;
 import com.helger.html.hchtml.IHCElement;
 import com.helger.html.hchtml.base.IHCA;
 import com.helger.html.hchtml.base.IHCButton;
-import com.helger.html.hchtml.base.IHCForm;
+import com.helger.html.hchtml.base.IHCMeter;
 import com.helger.html.hchtml.base.IHCObject;
 import com.helger.html.hchtml.base.IHCPre;
-import com.helger.html.hchtml.base.IHCTable;
-import com.helger.html.hchtml.impl.HCMeter;
-import com.helger.html.hchtml.impl.HCProgress;
+import com.helger.html.hchtml.base.IHCProgress;
+import com.helger.html.hchtml.form.IHCForm;
+import com.helger.html.hchtml.table.IHCTable;
 
 /**
  * This class performs some consistency checks on HCNodes
@@ -137,7 +137,7 @@ public final class HCConsistencyChecker
       consistencyError ("FORM contains other nested form");
   }
 
-  private static void _checkMeter (final HCMeter aMeter)
+  private static void _checkMeter (final IHCMeter <?> aMeter)
   {
     if (HCHTMLHelper.recursiveContainsChildWithTagName (aMeter, EHTMLElement.METER))
       consistencyError ("METER contains other nested meter");
@@ -161,7 +161,7 @@ public final class HCConsistencyChecker
       consistencyError ("PRE elements contains forbidden tag " + aChild.getElement ());
   }
 
-  private static void _checkProgress (final HCProgress aProgress)
+  private static void _checkProgress (final IHCProgress <?> aProgress)
   {
     if (HCHTMLHelper.recursiveContainsChildWithTagName (aProgress, EHTMLElement.PROGRESS))
       consistencyError ("PROGRESS contains other nested progress");
@@ -191,8 +191,8 @@ public final class HCConsistencyChecker
         if (aElement instanceof IHCForm <?>)
           _checkForm ((IHCForm <?>) aElement);
         else
-          if (aElement instanceof HCMeter)
-            _checkMeter ((HCMeter) aElement);
+          if (aElement instanceof IHCMeter <?>)
+            _checkMeter ((IHCMeter <?>) aElement);
           else
             if (aElement instanceof IHCObject <?>)
               _checkObject ((IHCObject <?>) aElement);
@@ -200,8 +200,8 @@ public final class HCConsistencyChecker
               if (aElement instanceof IHCPre <?>)
                 _checkPre ((IHCPre <?>) aElement);
               else
-                if (aElement instanceof HCProgress)
-                  _checkProgress ((HCProgress) aElement);
+                if (aElement instanceof IHCProgress <?>)
+                  _checkProgress ((IHCProgress <?>) aElement);
                 else
                   if (aElement instanceof IHCTable <?>)
                     _checkTable ((IHCTable <?>) aElement);

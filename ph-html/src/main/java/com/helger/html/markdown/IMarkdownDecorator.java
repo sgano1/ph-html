@@ -22,7 +22,7 @@ import com.helger.html.hchtml.IHCElementWithChildren;
 import com.helger.html.hchtml.impl.HCA;
 import com.helger.html.hchtml.impl.HCCode;
 import com.helger.html.hchtml.impl.HCImg;
-import com.helger.html.hchtml.impl.HCLI;
+import com.helger.html.hchtml.list.HCLI;
 
 /**
  * Decorator interface.

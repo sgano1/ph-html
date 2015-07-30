@@ -23,10 +23,10 @@ import com.helger.commons.mime.IMimeType;
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.hcapi.IHCHasName;
 import com.helger.html.hchtml.EHCButtonType;
-import com.helger.html.hchtml.EHCFormMethod;
 import com.helger.html.hchtml.HC_Target;
 import com.helger.html.hchtml.IHCElementWithChildren;
 import com.helger.html.hchtml.IHCHasState;
+import com.helger.html.hchtml.form.EHCFormMethod;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.IHasJSCodeWithSettings;
 

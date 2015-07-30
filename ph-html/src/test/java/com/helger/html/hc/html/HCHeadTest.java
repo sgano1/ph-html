@@ -28,6 +28,7 @@ import org.junit.Test;
 
 import com.helger.commons.state.EChange;
 import com.helger.commons.url.SimpleURL;
+import com.helger.html.hc.mock.HCTestRuleOptimized;
 import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.hchtml.EHCLinkType;
 import com.helger.html.hchtml.HC_Target;
@@ -40,7 +41,6 @@ import com.helger.html.hchtml.impl.HCStyle;
 import com.helger.html.hchtml.impl.HCTitle;
 import com.helger.html.js.UnparsedJSCodeProvider;
 import com.helger.html.meta.MetaElement;
-import com.helger.html.mock.HCTestRuleOptimized;
 
 /**
  * Test class for class {@link HCHead}

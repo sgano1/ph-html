@@ -31,14 +31,14 @@ import com.helger.html.hchtml.impl.HCH5;
 import com.helger.html.hchtml.impl.HCH6;
 import com.helger.html.hchtml.impl.HCHR;
 import com.helger.html.hchtml.impl.HCImg;
-import com.helger.html.hchtml.impl.HCLI;
-import com.helger.html.hchtml.impl.HCOL;
 import com.helger.html.hchtml.impl.HCP;
 import com.helger.html.hchtml.impl.HCPre;
 import com.helger.html.hchtml.impl.HCS;
 import com.helger.html.hchtml.impl.HCStrong;
 import com.helger.html.hchtml.impl.HCSup;
-import com.helger.html.hchtml.impl.HCUL;
+import com.helger.html.hchtml.list.HCLI;
+import com.helger.html.hchtml.list.HCOL;
+import com.helger.html.hchtml.list.HCUL;
 
 /**
  * Default Decorator implementation.

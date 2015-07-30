@@ -61,7 +61,7 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import com.helger.commons.regex.RegExPool;
-import com.helger.html.mock.HCTestRuleOptimized;
+import com.helger.html.hc.mock.HCTestRuleOptimized;
 
 public final class EdgeCasesFuncTest
 {

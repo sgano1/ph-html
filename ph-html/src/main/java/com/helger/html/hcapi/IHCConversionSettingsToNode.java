@@ -26,7 +26,7 @@ import com.helger.css.ICSSWriterSettings;
 import com.helger.css.writer.CSSWriterSettings;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.js.IJSWriterSettings;
-import com.helger.html.js.writer.JSWriterSettings;
+import com.helger.html.js.JSWriterSettings;
 
 /**
  * Settings interface that is used to convert HC* nodes to micro nodes.
@@ -106,7 +106,7 @@ public interface IHCConversionSettingsToNode
 
   /**
    * @return The current customizer to be used. Never <code>null</code>. By
-   *         default a {@link com.helger.html.hc.config.HCCustomizerDefault}
+   *         default a {@link com.helger.html.hc.ext.HCCustomizerDefault}
    *         object is returned.
    */
   @Nonnull

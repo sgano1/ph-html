@@ -23,6 +23,7 @@ import org.junit.Test;
 
 import com.helger.css.media.ECSSMedium;
 import com.helger.html.hc.config.HCSettings;
+import com.helger.html.hc.mock.HCTestRuleOptimized;
 import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.hchtml.impl.HCH1;
 import com.helger.html.hchtml.impl.HCHtml;
@@ -30,7 +31,6 @@ import com.helger.html.hchtml.impl.HCScriptInlineOnDocumentReady;
 import com.helger.html.hchtml.impl.HCStyle;
 import com.helger.html.js.UnparsedJSCodeProvider;
 import com.helger.html.meta.MetaElement;
-import com.helger.html.mock.HCTestRuleOptimized;
 
 /**
  * Test class for class {@link HCHtml}

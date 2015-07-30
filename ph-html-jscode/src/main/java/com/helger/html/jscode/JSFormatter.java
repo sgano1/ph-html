@@ -30,7 +30,7 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.IHasJSCodeWithSettings;
 import com.helger.html.js.IJSWriterSettings;
-import com.helger.html.js.writer.JSWriterSettings;
+import com.helger.html.js.JSWriterSettings;
 
 /**
  * This is a utility class for managing indentation and other basic formatting

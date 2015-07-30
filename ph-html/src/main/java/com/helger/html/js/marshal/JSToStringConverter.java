@@ -22,6 +22,7 @@ import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.JSMarshaller;
 
 /**
  * Default implementation of the {@link IJSToStringConverter} interface, using
@@ -55,7 +56,7 @@ public class JSToStringConverter implements IJSToStringConverter
   @Nullable
   public String objectToJSString (@Nullable final Object aObject, @Nonnull final JSType aType)
   {
-    return aObject == null ? null : JSMarshaller.objectToJSString (aObject, aType, m_bWithSurroundingVar);
+    return aObject == null ? null : JSToString.objectToJSString (aObject, aType, m_bWithSurroundingVar);
   }
 
   @Override

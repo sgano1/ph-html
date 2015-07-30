@@ -968,9 +968,7 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
   {
     // Run some consistency checks if desired
     if (aConversionSettings.areConsistencyChecksEnabled ())
-    {
       HCConsistencyChecker.runConsistencyCheckBeforeCreation (this, aConversionSettings.getHTMLVersion ());
-    }
 
     // Create the element
     final IMicroElement ret = createMicroElement (aConversionSettings);

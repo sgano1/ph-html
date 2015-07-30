@@ -21,8 +21,8 @@ import javax.annotation.Nonnull;
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.hcapi.IHCHasID;
 import com.helger.html.js.IHasJSCode;
+import com.helger.html.js.JSMarshaller;
 import com.helger.html.js.UnparsedJSCodeProvider;
-import com.helger.html.js.marshal.JSMarshaller;
 
 public final class FakeJS
 {

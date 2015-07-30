@@ -33,10 +33,11 @@ import com.helger.css.ECSSVersion;
 import com.helger.css.ICSSWriterSettings;
 import com.helger.css.writer.CSSWriterSettings;
 import com.helger.html.EHTMLVersion;
+import com.helger.html.hc.ext.HCCustomizerDefault;
 import com.helger.html.hcapi.IHCCustomizer;
 import com.helger.html.hcapi.config.IHCConversionSettings;
 import com.helger.html.js.IJSWriterSettings;
-import com.helger.html.js.writer.JSWriterSettings;
+import com.helger.html.js.JSWriterSettings;
 
 /**
  * The default implementation of {@link IHCConversionSettings} containing the

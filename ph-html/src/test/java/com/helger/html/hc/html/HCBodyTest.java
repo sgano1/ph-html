@@ -21,11 +21,11 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Rule;
 import org.junit.Test;
 
+import com.helger.html.hc.mock.HCTestRuleOptimized;
 import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.hchtml.impl.HCBody;
 import com.helger.html.js.EJSEvent;
 import com.helger.html.js.UnparsedJSCodeProvider;
-import com.helger.html.mock.HCTestRuleOptimized;
 
 public final class HCBodyTest
 {
