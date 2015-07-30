@@ -25,8 +25,6 @@ import java.util.List;
 import org.junit.Test;
 
 import com.helger.html.EHTMLElement;
-import com.helger.html.hc.HCHelper;
-import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.html.HCBR;
 import com.helger.html.hc.html.HCDiv;
 import com.helger.html.hc.impl.HCTextNode;

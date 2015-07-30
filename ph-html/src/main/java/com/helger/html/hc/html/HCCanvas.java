@@ -16,58 +16,12 @@
  */
 package com.helger.html.hc.html;
 
-import javax.annotation.Nonnull;
-
-import com.helger.commons.CGlobal;
-import com.helger.commons.microdom.IMicroElement;
-import com.helger.html.CHTMLAttributes;
-import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.SinceHTML5;
-import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
-import com.helger.html.hc.impl.AbstractHCElementWithChildren;
+import com.helger.html.hc.base.AbstractHCCanvas;
 
 @SinceHTML5
-public class HCCanvas extends AbstractHCElementWithChildren <HCCanvas>
+public class HCCanvas extends AbstractHCCanvas <HCCanvas>
 {
-  private long m_nHeight = CGlobal.ILLEGAL_ULONG;
-  private long m_nWidth = CGlobal.ILLEGAL_ULONG;
-
   public HCCanvas ()
-  {
-    super (EHTMLElement.CANVAS);
-  }
-
-  public long getHeight ()
-  {
-    return m_nHeight;
-  }
-
-  @Nonnull
-  public HCCanvas setHeight (final long nHeight)
-  {
-    m_nHeight = nHeight;
-    return this;
-  }
-
-  public long getWidth ()
-  {
-    return m_nWidth;
-  }
-
-  @Nonnull
-  public HCCanvas setWidth (final long nWidth)
-  {
-    m_nWidth = nWidth;
-    return this;
-  }
-
-  @Override
-  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
-  {
-    super.fillMicroElement (aElement, aConversionSettings);
-    if (m_nHeight >= 0)
-      aElement.setAttribute (CHTMLAttributes.HEIGHT, m_nHeight);
-    if (m_nWidth >= 0)
-      aElement.setAttribute (CHTMLAttributes.WIDTH, m_nWidth);
-  }
+  {}
 }

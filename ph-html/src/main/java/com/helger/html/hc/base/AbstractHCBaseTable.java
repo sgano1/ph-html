@@ -857,13 +857,13 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
         final int nRowCols = _getEffectiveCellCount (aBodyRow, bTotalHasRowSpans ? aTotalRowSpans : null);
         if (nRowCols != nCols)
           HCConsistencyChecker.consistencyError (sContext +
-                                                   " row #" +
-                                                   (nRowIndex + 1) +
-                                                   " has " +
-                                                   nRowCols +
-                                                   " cells but was expecting " +
-                                                   nCols +
-                                                   " cells");
+                                                 " row #" +
+                                                 (nRowIndex + 1) +
+                                                 " has " +
+                                                 nRowCols +
+                                                 " cells but was expecting " +
+                                                 nCols +
+                                                 " cells");
         // Add row span at the end of the row so that it affects following rows
         {
           final int [] aRowRowSpans = new int [aBodyRow.getCellCount ()];

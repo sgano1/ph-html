@@ -14,38 +14,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.markdown;
+package com.helger.html.hc.base;
+
+import javax.annotation.Nonnull;
+
+import com.helger.html.hc.IHCElementWithChildren;
 
 /**
- * Line type enumeration.
+ * Interface for CANVASs
  *
- * @author René Jeschke &lt;rene_jeschke@yahoo.de&gt
+ * @author Philip Helger
+ * @param <THISTYPE>
+ *        Implementation type
  */
-enum ELineType
+public interface IHCCanvas <THISTYPE extends IHCCanvas <THISTYPE>> extends IHCElementWithChildren <THISTYPE>
 {
- /** Empty line. */
-  EMPTY,
- /** Undefined content. */
-  OTHER,
- /** A markdown headline. */
-  HEADLINE,
- HEADLINE1,
- HEADLINE2,
- /** A code block line. */
-  CODE,
- /** A list. */
-  ULIST,
- OLIST,
- /** A block quote. */
-  BQUOTE,
- /** A horizontal ruler. */
-  HR,
- /** Start of a XML block. */
-  XML,
- /** XML comment. */
-  XML_COMMENT,
- /** Fenced code block start/end */
-  FENCED_CODE,
- /** plugin block */
-  PLUGIN
+  long getHeight ();
+
+  @Nonnull
+  THISTYPE setHeight (long nHeight);
+
+  long getWidth ();
+
+  @Nonnull
+  THISTYPE setWidth (long nWidth);
 }
