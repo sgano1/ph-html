@@ -28,7 +28,6 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.SinceHTML5;
 import com.helger.html.hcapi.IHCConversionSettingsToNode;
 import com.helger.html.hchtml.AbstractHCElement;
-import com.helger.html.hchtml.EHCKeyGenType;
 import com.helger.html.hchtml.IHCHasState;
 
 @SinceHTML5

@@ -21,7 +21,6 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.mime.IMimeType;
 import com.helger.commons.url.ISimpleURL;
-import com.helger.html.hchtml.EHCObjectAlign;
 import com.helger.html.hchtml.IHCElementWithChildren;
 
 /**

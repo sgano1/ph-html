@@ -14,28 +14,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hchtml;
+package com.helger.html.hchtml.embedded;
 
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.Nonempty;
+import com.helger.html.hchtml.IHCHasHTMLAttributeValue;
 
 /**
- * Track type (read-only property in JS)
+ * CORS settings
  * 
  * @author Philip Helger
  */
-public enum EHCTrackType implements IHCHasHTMLAttributeValue
+public enum EHCCORSSettings implements IHCHasHTMLAttributeValue
 {
- SUBTITLES ("subtitles"),
- CAPTIONS ("captions"),
- DESCRIPTIONS ("descriptions"),
- CHAPTERS ("chapters"),
- METADATA ("metadata");
+ ANONYMOUS ("anonymous"),
+ USE_CREDENTIALS ("use-credentials");
+
+  /** Default CORS settings: anonymous */
+  @Nonnull
+  public static final EHCCORSSettings DEFAULT = ANONYMOUS;
 
   private final String m_sAttrValue;
 
-  private EHCTrackType (@Nonnull @Nonempty final String sAttrValue)
+  private EHCCORSSettings (@Nonnull @Nonempty final String sAttrValue)
   {
     m_sAttrValue = sAttrValue;
   }

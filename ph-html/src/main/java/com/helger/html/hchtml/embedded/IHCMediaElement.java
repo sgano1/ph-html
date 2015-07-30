@@ -20,8 +20,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.url.ISimpleURL;
-import com.helger.html.hchtml.EHCCORSSettings;
-import com.helger.html.hchtml.EHCPreload;
 import com.helger.html.hchtml.IHCElementWithInternalChildren;
 import com.helger.html.hchtml.IHCMediaElementChild;
 

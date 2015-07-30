@@ -14,28 +14,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hchtml;
+package com.helger.html.hchtml.embedded;
 
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.Nonempty;
+import com.helger.html.hchtml.IHCHasHTMLAttributeValue;
 
 /**
- * Enumeration for {@link com.helger.html.hchtml.embedded.HCIFrame} alignment.
+ * Track type (read-only property in JS)
  * 
  * @author Philip Helger
  */
-public enum EHCIFrameAlign implements IHCHasHTMLAttributeValue
+public enum EHCTrackType implements IHCHasHTMLAttributeValue
 {
- TOP ("top"),
- MIDDLE ("middle"),
- BOTTOM ("bottom"),
- LEFT ("left"),
- RIGHT ("right");
+ SUBTITLES ("subtitles"),
+ CAPTIONS ("captions"),
+ DESCRIPTIONS ("descriptions"),
+ CHAPTERS ("chapters"),
+ METADATA ("metadata");
 
   private final String m_sAttrValue;
 
-  private EHCIFrameAlign (@Nonnull @Nonempty final String sAttrValue)
+  private EHCTrackType (@Nonnull @Nonempty final String sAttrValue)
   {
     m_sAttrValue = sAttrValue;
   }

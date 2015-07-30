@@ -32,8 +32,6 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.SinceHTML5;
 import com.helger.html.hcapi.IHCConversionSettingsToNode;
 import com.helger.html.hchtml.AbstractHCElementWithInternalChildren;
-import com.helger.html.hchtml.EHCCORSSettings;
-import com.helger.html.hchtml.EHCPreload;
 import com.helger.html.hchtml.IHCMediaElementChild;
 
 @SinceHTML5

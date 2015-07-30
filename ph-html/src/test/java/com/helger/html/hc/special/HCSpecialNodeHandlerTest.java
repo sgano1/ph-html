@@ -32,7 +32,7 @@ import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.hc.special.IHCSpecialNodeListModifier;
 import com.helger.html.hc.special.SpecialNodeListModifier;
 import com.helger.html.hcapi.IHCNode;
-import com.helger.html.hchtml.base.HCHtml;
+import com.helger.html.hchtml.root.HCHtml;
 import com.helger.html.hchtml.script.AbstractHCScriptInline;
 import com.helger.html.hchtml.sections.HCH1;
 import com.helger.html.js.UnparsedJSCodeProvider;

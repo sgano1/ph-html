@@ -36,10 +36,8 @@ import com.helger.html.annotation.DeprecatedInHTML5;
 import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hcapi.IHCConversionSettingsToNode;
 import com.helger.html.hchtml.AbstractHCElement;
-import com.helger.html.hchtml.EHCLinkType;
 import com.helger.html.hchtml.HC_Target;
 import com.helger.html.hchtml.IHCCSSNode;
-import com.helger.html.hchtml.IHCLinkType;
 
 /**
  * Represents an HTML &lt;link&gt; element

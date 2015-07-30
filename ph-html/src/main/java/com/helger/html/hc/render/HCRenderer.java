@@ -35,7 +35,7 @@ import com.helger.html.hcapi.IHCIteratorCallback;
 import com.helger.html.hcapi.IHCNode;
 import com.helger.html.hcapi.config.IHCConversionSettings;
 import com.helger.html.hcapi.impl.HCNodeList;
-import com.helger.html.hchtml.base.HCHtml;
+import com.helger.html.hchtml.root.HCHtml;
 
 @Immutable
 public final class HCRenderer

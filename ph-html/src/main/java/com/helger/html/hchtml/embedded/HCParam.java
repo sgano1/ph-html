@@ -28,7 +28,6 @@ import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hcapi.IHCConversionSettingsToNode;
 import com.helger.html.hchtml.AbstractHCElement;
-import com.helger.html.hchtml.EHCParamValueType;
 
 /**
  * Represents a single parameter for an {@link HCObject} or an applet.

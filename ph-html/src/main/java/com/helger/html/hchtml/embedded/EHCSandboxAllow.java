@@ -14,11 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hchtml;
+package com.helger.html.hchtml.embedded;
 
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.Nonempty;
+import com.helger.html.hchtml.IHCHasHTMLAttributeValue;
 
 /**
  * Sandbox allowance?

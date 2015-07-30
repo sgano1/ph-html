@@ -14,43 +14,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hchtml;
+package com.helger.html.hchtml.embedded;
 
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.Nonempty;
+import com.helger.html.hchtml.IHCHasHTMLAttributeValue;
 
 /**
- * Keygen type?
+ * An enumeration that can be used in {@link com.helger.html.hchtml.embedded.HCParam}
+ * objects to define the used value type.
  * 
  * @author Philip Helger
  */
-public enum EHCKeyGenType implements IHCHasHTMLAttributeValue
+public enum EHCParamValueType implements IHCHasHTMLAttributeValue
 {
- /**
-  * Specifies an RSA security algorithm. The user may be given a choice of RSA
-  * key strengths
-  */
-  RSA ("rsa"),
+ DATA ("data"),
+ REF ("ref"),
+ OBJECT ("object");
 
- /**
-  * Specifies a DSA security algorithm. The user may be given a choice of DSA
-  * key sizes
-  */
-  DSA ("dsa"),
-
- /**
-  * Specifies an Elliptic Curve security algorithm. The user may be given a
-  * choice of EC key strengths
-  */
-  EC ("ec");
-
-  /** Default KeyGen type: RSA */
-  public static final EHCKeyGenType DEFAULT = RSA;
+  /** Default param value type is data */
+  public static final EHCParamValueType DEFAULT = DATA;
 
   private final String m_sAttrValue;
 
-  private EHCKeyGenType (@Nonnull @Nonempty final String sAttrValue)
+  private EHCParamValueType (@Nonnull @Nonempty final String sAttrValue)
   {
     m_sAttrValue = sAttrValue;
   }

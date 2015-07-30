@@ -23,8 +23,6 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.url.ISimpleURL;
-import com.helger.html.hchtml.EHCIFrameAlign;
-import com.helger.html.hchtml.EHCSandboxAllow;
 import com.helger.html.hchtml.EHCScrolling;
 import com.helger.html.hchtml.IHCElementWithChildren;
 

@@ -14,29 +14,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hchtml;
+package com.helger.html.hchtml.embedded;
 
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.Nonempty;
+import com.helger.html.hchtml.IHCHasHTMLAttributeValue;
 
 /**
- * CORS settings
+ * Audio preload?
  * 
  * @author Philip Helger
  */
-public enum EHCCORSSettings implements IHCHasHTMLAttributeValue
+public enum EHCPreload implements IHCHasHTMLAttributeValue
 {
- ANONYMOUS ("anonymous"),
- USE_CREDENTIALS ("use-credentials");
-
-  /** Default CORS settings: anonymous */
-  @Nonnull
-  public static final EHCCORSSettings DEFAULT = ANONYMOUS;
+ AUTO ("auto"),
+ METADATA ("metadata"),
+ DONE ("none");
 
   private final String m_sAttrValue;
 
-  private EHCCORSSettings (@Nonnull @Nonempty final String sAttrValue)
+  private EHCPreload (@Nonnull @Nonempty final String sAttrValue)
   {
     m_sAttrValue = sAttrValue;
   }

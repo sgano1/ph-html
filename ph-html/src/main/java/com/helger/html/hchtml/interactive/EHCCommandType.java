@@ -14,26 +14,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hchtml;
+package com.helger.html.hchtml.interactive;
 
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.Nonempty;
+import com.helger.html.hchtml.IHCHasHTMLAttributeValue;
 
 /**
- * Audio preload?
+ * Command type
  * 
  * @author Philip Helger
  */
-public enum EHCPreload implements IHCHasHTMLAttributeValue
+public enum EHCCommandType implements IHCHasHTMLAttributeValue
 {
- AUTO ("auto"),
- METADATA ("metadata"),
- DONE ("none");
+ CHECKBOX ("checkbox"),
+ COMMAND ("command"),
+ RADIO ("radio");
+
+  /** Default command: command */
+  @Nonnull
+  public static final EHCCommandType DEFAULT = COMMAND;
 
   private final String m_sAttrValue;
 
-  private EHCPreload (@Nonnull @Nonempty final String sAttrValue)
+  private EHCCommandType (@Nonnull @Nonempty final String sAttrValue)
   {
     m_sAttrValue = sAttrValue;
   }

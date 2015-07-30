@@ -14,30 +14,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hchtml;
+package com.helger.html.hchtml.embedded;
 
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.Nonempty;
+import com.helger.html.hchtml.IHCHasHTMLAttributeValue;
 
 /**
- * Command type
+ * Enumeration for the possible "alignment" values in HTML
+ * {@link com.helger.html.hchtml.embedded.HCObject} tags.
  * 
  * @author Philip Helger
  */
-public enum EHCCommandType implements IHCHasHTMLAttributeValue
+public enum EHCObjectAlign implements IHCHasHTMLAttributeValue
 {
- CHECKBOX ("checkbox"),
- COMMAND ("command"),
- RADIO ("radio");
-
-  /** Default command: command */
-  @Nonnull
-  public static final EHCCommandType DEFAULT = COMMAND;
+ TOP ("top"),
+ MIDDLE ("middle"),
+ BOTTOM ("bottom"),
+ LEFT ("left"),
+ RIGHT ("right");
 
   private final String m_sAttrValue;
 
-  private EHCCommandType (@Nonnull @Nonempty final String sAttrValue)
+  private EHCObjectAlign (@Nonnull @Nonempty final String sAttrValue)
   {
     m_sAttrValue = sAttrValue;
   }

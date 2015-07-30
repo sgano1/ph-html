@@ -41,10 +41,8 @@ import com.helger.html.hc.special.HCSpecialNodeHandler;
 import com.helger.html.hcapi.IHCConversionSettingsToNode;
 import com.helger.html.hcapi.IHCNode;
 import com.helger.html.hchtml.AbstractHCElement;
-import com.helger.html.hchtml.EHCLinkType;
 import com.helger.html.hchtml.HC_Target;
 import com.helger.html.hchtml.IHCCSSNode;
-import com.helger.html.hchtml.IHCLinkType;
 import com.helger.html.meta.IMetaElement;
 import com.helger.html.meta.MetaElementList;
 

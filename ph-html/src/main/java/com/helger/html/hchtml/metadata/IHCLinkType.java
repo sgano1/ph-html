@@ -14,37 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hchtml;
+package com.helger.html.hchtml.metadata;
 
-import javax.annotation.Nonnull;
-
-import com.helger.commons.annotation.Nonempty;
+import com.helger.html.hchtml.IHCHasHTMLAttributeValue;
 
 /**
- * Enumeration for the possible "alignment" values in HTML
- * {@link com.helger.html.hchtml.embedded.HCObject} tags.
- * 
+ * Base interface for link types (used in {@link com.helger.html.hchtml.metadata.HCLink}
+ * )
+ *
  * @author Philip Helger
  */
-public enum EHCObjectAlign implements IHCHasHTMLAttributeValue
+public interface IHCLinkType extends IHCHasHTMLAttributeValue
 {
- TOP ("top"),
- MIDDLE ("middle"),
- BOTTOM ("bottom"),
- LEFT ("left"),
- RIGHT ("right");
-
-  private final String m_sAttrValue;
-
-  private EHCObjectAlign (@Nonnull @Nonempty final String sAttrValue)
-  {
-    m_sAttrValue = sAttrValue;
-  }
-
-  @Nonnull
-  @Nonempty
-  public String getAttrValue ()
-  {
-    return m_sAttrValue;
-  }
+  /**
+   * @return <code>true</code> if links of this type can occur more than once,
+   *         <code>false</code> if it may occur only once.
+   */
+  boolean isAllowedMoreThanOnce ();
 }

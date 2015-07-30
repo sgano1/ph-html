@@ -21,8 +21,8 @@ import javax.annotation.Nonnull;
 import com.helger.commons.annotation.Nonempty;
 
 /**
- * Draggable?
- * 
+ * Drop zone?
+ *
  * @author Philip Helger
  */
 public enum EHCDropZone implements IHCHasHTMLAttributeValue
