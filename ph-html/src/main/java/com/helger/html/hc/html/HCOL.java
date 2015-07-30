@@ -16,98 +16,15 @@
  */
 package com.helger.html.hc.html;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
-import com.helger.commons.microdom.IMicroElement;
-import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.CHTMLAttributeValues;
-import com.helger.html.CHTMLAttributes;
-import com.helger.html.EHTMLElement;
-import com.helger.html.hc.api.EHCOLType;
-import com.helger.html.hc.base.AbstractHCList;
-import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
+import com.helger.html.hc.base.AbstractHCOL;
 
 /**
  * Represents an HTML &lt;ol&gt; element
  *
  * @author Philip Helger
  */
-public class HCOL extends AbstractHCList <HCOL>
+public class HCOL extends AbstractHCOL <HCOL>
 {
-  private Integer m_aStart;
-  private boolean m_bReversed = false;
-  private EHCOLType m_eType;
-
   public HCOL ()
-  {
-    super (EHTMLElement.OL);
-  }
-
-  @Nullable
-  public final Integer getStart ()
-  {
-    return m_aStart;
-  }
-
-  @Nonnull
-  public final HCOL setStart (final int nStart)
-  {
-    return setStart (Integer.valueOf (nStart));
-  }
-
-  @Nonnull
-  public final HCOL setStart (@Nullable final Integer aStart)
-  {
-    m_aStart = aStart;
-    return this;
-  }
-
-  public final boolean getReversed ()
-  {
-    return m_bReversed;
-  }
-
-  @Nonnull
-  public final HCOL setReversed (final boolean bReversed)
-  {
-    m_bReversed = bReversed;
-    return this;
-  }
-
-  @Nullable
-  public final EHCOLType getType ()
-  {
-    return m_eType;
-  }
-
-  @Nonnull
-  public final HCOL setType (@Nullable final EHCOLType eType)
-  {
-    m_eType = eType;
-    return this;
-  }
-
-  @Override
-  protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
-  {
-    super.fillMicroElement (aElement, aConversionSettings);
-
-    if (m_aStart != null)
-      aElement.setAttribute (CHTMLAttributes.START, m_aStart.toString ());
-    if (m_bReversed)
-      aElement.setAttribute (CHTMLAttributes.REVERSED, CHTMLAttributeValues.REVERSED);
-    if (m_eType != null)
-      aElement.setAttribute (CHTMLAttributes.TYPE, m_eType);
-  }
-
-  @Override
-  public String toString ()
-  {
-    return ToStringGenerator.getDerived (super.toString ())
-                            .appendIfNotNull ("start", m_aStart)
-                            .append ("reversed", m_bReversed)
-                            .appendIfNotNull ("type", m_eType)
-                            .toString ();
-  }
+  {}
 }

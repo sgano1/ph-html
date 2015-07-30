@@ -43,7 +43,7 @@ import com.helger.html.hc.impl.AbstractHCElementWithChildren;
  * @param <THISTYPE>
  *        Implementation type
  */
-public class AbstractHCIFrame <THISTYPE extends AbstractHCIFrame <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCIFrame <THISTYPE>
+public abstract class AbstractHCIFrame <THISTYPE extends AbstractHCIFrame <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCIFrame <THISTYPE>
 {
   /** Default scrolling is auto */
   public static final EHCScrolling DEFAULT_SCROLLING = EHCScrolling.AUTO;

@@ -14,17 +14,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html;
+package com.helger.html.hc.base;
 
-import com.helger.html.hc.base.AbstractHCUL;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+import com.helger.html.hc.api.EHCULType;
 
 /**
- * Represents an HTML &lt;ul&gt; element
+ * Interface for ULs
  *
  * @author Philip Helger
+ * @param <THISTYPE>
+ *        Implementation type
  */
-public class HCUL extends AbstractHCUL <HCUL>
+public interface IHCUL <THISTYPE extends IHCUL <THISTYPE>> extends IHCList <THISTYPE>
 {
-  public HCUL ()
-  {}
+  @Nullable
+  EHCULType getType ();
+
+  @Nonnull
+  THISTYPE setType (@Nullable EHCULType eType);
 }
