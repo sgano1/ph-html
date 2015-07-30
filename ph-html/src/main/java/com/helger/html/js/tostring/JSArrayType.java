@@ -14,53 +14,60 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.js.marshal;
-
-import java.io.Serializable;
+package com.helger.html.js.tostring;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.json.IJson;
 
 /**
- * Implementation of the {@link IJSToStringConverter} interface, for converting
- * native {@link IJson} objects.
- * 
+ * Specific JavaScript array type.
+ *
  * @author Philip Helger
  */
 @Immutable
-public final class JsonToStringConverter implements IJSToStringConverter, Serializable
+public class JSArrayType extends JSType implements IHasChildJSType
 {
-  @Nullable
-  public String objectToJSString (@Nullable final Object aObject, @Nonnull final JSType aType)
+  /**
+   * The type of the list elements
+   */
+  private final JSType m_aChildType;
+
+  public JSArrayType (@Nonnull final JSType aChildType)
   {
-    if (aObject != null && !(aObject instanceof IJson))
-      throw new IllegalArgumentException ("The passed object is not of type IJson but " +
-                                          aObject.getClass ().getName ());
-    if (aType != JSType.JSON)
-      throw new IllegalArgumentException ("Unexpected JSType '" + aType + "'! Only JSON is supported!");
-    return aObject == null ? null : ((IJson) aObject).getAsString ();
+    super (EJSType.ARRAY);
+    m_aChildType = ValueEnforcer.notNull (aChildType, "ChildType");
+  }
+
+  @Nonnull
+  public JSType getChildType ()
+  {
+    return m_aChildType;
   }
 
   @Override
   public boolean equals (final Object o)
   {
-    return o instanceof JsonToStringConverter;
+    if (o == this)
+      return true;
+    if (!super.equals (o))
+      return false;
+    final JSArrayType rhs = (JSArrayType) o;
+    return m_aChildType.equals (rhs.m_aChildType);
   }
 
   @Override
   public int hashCode ()
   {
-    return new HashCodeGenerator (this).getHashCode ();
+    return HashCodeGenerator.getDerived (super.hashCode ()).append (m_aChildType).getHashCode ();
   }
 
   @Override
   public String toString ()
   {
-    return new ToStringGenerator (this).toString ();
+    return ToStringGenerator.getDerived (super.toString ()).append ("childType", m_aChildType).toString ();
   }
 }

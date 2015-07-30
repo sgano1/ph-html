@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.js.marshal;
+package com.helger.html.js.tostring;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
@@ -24,21 +24,21 @@ import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 
 /**
- * Specific JavaScript array type.
+ * Specific JavaScript list type.
  *
  * @author Philip Helger
  */
 @Immutable
-public class JSArrayType extends JSType implements IHasChildJSType
+public class JSListType extends JSType implements IHasChildJSType
 {
   /**
    * The type of the list elements
    */
   private final JSType m_aChildType;
 
-  public JSArrayType (@Nonnull final JSType aChildType)
+  public JSListType (@Nonnull final JSType aChildType)
   {
-    super (EJSType.ARRAY);
+    super (EJSType.LIST);
     m_aChildType = ValueEnforcer.notNull (aChildType, "ChildType");
   }
 
@@ -55,7 +55,7 @@ public class JSArrayType extends JSType implements IHasChildJSType
       return true;
     if (!super.equals (o))
       return false;
-    final JSArrayType rhs = (JSArrayType) o;
+    final JSListType rhs = (JSListType) o;
     return m_aChildType.equals (rhs.m_aChildType);
   }
 

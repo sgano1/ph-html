@@ -14,60 +14,53 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.js.marshal;
+package com.helger.html.js.tostring;
+
+import java.io.Serializable;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
-import com.helger.commons.ValueEnforcer;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.json.IJson;
 
 /**
- * Specific JavaScript list type.
- *
+ * Implementation of the {@link IJSToStringConverter} interface, for converting
+ * native {@link IJson} objects.
+ * 
  * @author Philip Helger
  */
 @Immutable
-public class JSListType extends JSType implements IHasChildJSType
+public final class JsonToStringConverter implements IJSToStringConverter, Serializable
 {
-  /**
-   * The type of the list elements
-   */
-  private final JSType m_aChildType;
-
-  public JSListType (@Nonnull final JSType aChildType)
+  @Nullable
+  public String objectToJSString (@Nullable final Object aObject, @Nonnull final JSType aType)
   {
-    super (EJSType.LIST);
-    m_aChildType = ValueEnforcer.notNull (aChildType, "ChildType");
-  }
-
-  @Nonnull
-  public JSType getChildType ()
-  {
-    return m_aChildType;
+    if (aObject != null && !(aObject instanceof IJson))
+      throw new IllegalArgumentException ("The passed object is not of type IJson but " +
+                                          aObject.getClass ().getName ());
+    if (aType != JSType.JSON)
+      throw new IllegalArgumentException ("Unexpected JSType '" + aType + "'! Only JSON is supported!");
+    return aObject == null ? null : ((IJson) aObject).getAsString ();
   }
 
   @Override
   public boolean equals (final Object o)
   {
-    if (o == this)
-      return true;
-    if (!super.equals (o))
-      return false;
-    final JSListType rhs = (JSListType) o;
-    return m_aChildType.equals (rhs.m_aChildType);
+    return o instanceof JsonToStringConverter;
   }
 
   @Override
   public int hashCode ()
   {
-    return HashCodeGenerator.getDerived (super.hashCode ()).append (m_aChildType).getHashCode ();
+    return new HashCodeGenerator (this).getHashCode ();
   }
 
   @Override
   public String toString ()
   {
-    return ToStringGenerator.getDerived (super.toString ()).append ("childType", m_aChildType).toString ();
+    return new ToStringGenerator (this).toString ();
   }
 }

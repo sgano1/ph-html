@@ -14,24 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.js.marshal;
+package com.helger.html.js.tostring;
+
+import javax.annotation.Nonnull;
 
 /**
- * Basic JavaScript object types.
+ * Interface for {@link JSType} objects having child types. Used for lists,
+ * arrays and maps.
  * 
  * @author Philip Helger
  */
-enum EJSType
+public interface IHasChildJSType
 {
- HTML,
- STRING,
- INT,
- DOUBLE,
- BOOLEAN,
- ARRAY,
- LIST,
- MAP,
- VOID,
- JS,
- JSON;
+  /**
+   * @return The type of the child. May not be <code>null</code>.
+   */
+  @Nonnull
+  JSType getChildType ();
 }

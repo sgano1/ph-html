@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.js.marshal;
+package com.helger.html.js.tostring;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -32,6 +32,10 @@ import org.slf4j.LoggerFactory;
 
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.html.js.UnparsedJSCodeProvider;
+import com.helger.html.js.tostring.JSListType;
+import com.helger.html.js.tostring.JSMapType;
+import com.helger.html.js.tostring.JSToString;
+import com.helger.html.js.tostring.JSType;
 
 /**
  * JUnit test for class {@link JSToString}.
