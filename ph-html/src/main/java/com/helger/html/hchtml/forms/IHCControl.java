@@ -32,10 +32,10 @@ import com.helger.html.hchtml.IHCHasState;
  */
 public interface IHCControl <THISTYPE extends IHCControl <THISTYPE>> extends IHCElement <THISTYPE>, IHCHasFocus <THISTYPE>, IHCHasState <THISTYPE>, IHCHasName <THISTYPE>
 {
-  boolean isReadonly ();
+  boolean isReadOnly ();
 
   @Nonnull
-  THISTYPE setReadonly (boolean bReadOnly);
+  THISTYPE setReadOnly (boolean bReadOnly);
 
   boolean isRequired ();
 

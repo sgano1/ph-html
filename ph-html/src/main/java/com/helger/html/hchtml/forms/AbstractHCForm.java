@@ -305,8 +305,19 @@ public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>
         {
           final IHCHasFocus <?> aHasFocus = (IHCHasFocus <?>) aChildNode;
           if (!aFirstCtrl.isSet ())
-            if (!(aHasFocus instanceof HCHiddenField))
-              aFirstCtrl.set (aHasFocus);
+          {
+            if (aHasFocus instanceof HCHiddenField)
+            {
+              // cannot focus
+            }
+            else
+              if (aHasFocus instanceof IHCControl <?> && ((IHCControl <?>) aHasFocus).isReadOnly ())
+              {
+                // cannot focus read-only controls
+              }
+              else
+                aFirstCtrl.set (aHasFocus);
+          }
           if (aHasFocus.isAutoFocus ())
           {
             // No need to continue

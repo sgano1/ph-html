@@ -41,7 +41,7 @@ import com.helger.html.hchtml.script.HCScriptInline;
 public abstract class AbstractHCControl <THISTYPE extends AbstractHCControl <THISTYPE>> extends AbstractHCElement <THISTYPE>implements IHCControl <THISTYPE>
 {
   public static final boolean DEFAULT_DISABLED = false;
-  public static final boolean DEFAULT_READONLY = false;
+  public static final boolean DEFAULT_READ_ONLY = false;
 
   /** By default required is disabled */
   public static final boolean DEFAULT_REQUIRED = false;
@@ -49,11 +49,11 @@ public abstract class AbstractHCControl <THISTYPE extends AbstractHCControl <THI
   /** By default auto focus is disabled */
   public static final boolean DEFAULT_AUTO_FOCUS = false;
 
-  public static final ICSSClassProvider CSS_CLASS_READONLY = DefaultCSSClassProvider.create ("readonly");
+  public static final ICSSClassProvider CSS_CLASS_READ_ONLY = DefaultCSSClassProvider.create ("read-only");
 
   private boolean m_bDisabled = DEFAULT_DISABLED;
   private String m_sName;
-  private boolean m_bReadOnly = DEFAULT_READONLY;
+  private boolean m_bReadOnly = DEFAULT_READ_ONLY;
   private boolean m_bRequired = DEFAULT_REQUIRED;
   private boolean m_bAutoFocus = DEFAULT_AUTO_FOCUS;
 
@@ -86,13 +86,13 @@ public abstract class AbstractHCControl <THISTYPE extends AbstractHCControl <THI
     return thisAsT ();
   }
 
-  public final boolean isReadonly ()
+  public final boolean isReadOnly ()
   {
     return m_bReadOnly;
   }
 
   @Nonnull
-  public final THISTYPE setReadonly (final boolean bReadOnly)
+  public final THISTYPE setReadOnly (final boolean bReadOnly)
   {
     m_bReadOnly = bReadOnly;
     return thisAsT ();
@@ -132,7 +132,7 @@ public abstract class AbstractHCControl <THISTYPE extends AbstractHCControl <THI
     if (m_bReadOnly)
     {
       // Add read-only class
-      addClass (CSS_CLASS_READONLY);
+      addClass (CSS_CLASS_READ_ONLY);
 
       // Set explicit tab index -1 to avoid focusing
       setTabIndex (-1L);
