@@ -4,7 +4,7 @@ import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
-import com.helger.html.hchtml.impl.HCNoScript;
+import com.helger.html.hchtml.script.HCNoScript;
 
 /**
  * Test class for class {@link HCNoScript}

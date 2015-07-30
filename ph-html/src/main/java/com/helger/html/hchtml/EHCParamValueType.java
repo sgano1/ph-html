@@ -21,7 +21,7 @@ import javax.annotation.Nonnull;
 import com.helger.commons.annotation.Nonempty;
 
 /**
- * An enumeration that can be used in {@link com.helger.html.hchtml.impl.HCParam}
+ * An enumeration that can be used in {@link com.helger.html.hchtml.embedded.HCParam}
  * objects to define the used value type.
  * 
  * @author Philip Helger

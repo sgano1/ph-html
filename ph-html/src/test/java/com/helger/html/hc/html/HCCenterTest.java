@@ -4,7 +4,7 @@ import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
-import com.helger.html.hchtml.impl.HCCenter;
+import com.helger.html.hchtml.deprecated.HCCenter;
 
 /**
  * Test class for class {@link HCCenter}

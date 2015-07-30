@@ -4,7 +4,7 @@ import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
-import com.helger.html.hchtml.impl.HCSub;
+import com.helger.html.hchtml.textlevel.HCSub;
 
 /**
  * Test class for class {@link HCSub}

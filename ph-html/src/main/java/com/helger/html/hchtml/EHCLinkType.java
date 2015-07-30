@@ -22,7 +22,7 @@ import com.helger.commons.annotation.Nonempty;
 
 /**
  * The possible values of the <code>rel</code> attribute of a
- * {@link com.helger.html.hchtml.impl.HCLink} element.<br>
+ * {@link com.helger.html.hchtml.metadata.HCLink} element.<br>
  * Source: http://de.selfhtml.org/html/kopfdaten/beziehungen.htm
  *
  * @author Philip Helger

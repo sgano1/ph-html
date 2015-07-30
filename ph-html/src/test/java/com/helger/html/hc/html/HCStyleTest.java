@@ -25,7 +25,7 @@ import com.helger.html.hc.config.EHCStyleMode;
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.mock.HCTestRuleOptimized;
 import com.helger.html.hc.render.HCRenderer;
-import com.helger.html.hchtml.impl.HCStyle;
+import com.helger.html.hchtml.metadata.HCStyle;
 
 /**
  * Test class for class {@link HCStyle}.

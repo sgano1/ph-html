@@ -41,11 +41,11 @@ import com.helger.html.hcapi.impl.HCDOMWrapper;
 import com.helger.html.hcapi.impl.HCEntityNode;
 import com.helger.html.hchtml.IHCElement;
 import com.helger.html.hchtml.IHCElementWithChildren;
-import com.helger.html.hchtml.impl.HCA;
-import com.helger.html.hchtml.impl.HCAbbr;
-import com.helger.html.hchtml.impl.HCCode;
-import com.helger.html.hchtml.impl.HCImg;
-import com.helger.html.hchtml.list.HCLI;
+import com.helger.html.hchtml.embedded.HCImg;
+import com.helger.html.hchtml.grouping.HCLI;
+import com.helger.html.hchtml.textlevel.HCA;
+import com.helger.html.hchtml.textlevel.HCAbbr;
+import com.helger.html.hchtml.textlevel.HCCode;
 
 /**
  * Emitter class responsible for generating HTML output.

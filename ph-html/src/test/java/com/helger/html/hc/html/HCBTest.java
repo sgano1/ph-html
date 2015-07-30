@@ -4,7 +4,7 @@ import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
-import com.helger.html.hchtml.impl.HCB;
+import com.helger.html.hchtml.textlevel.HCB;
 
 /**
  * Test class for class {@link HCB}

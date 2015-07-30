@@ -24,7 +24,7 @@ import org.junit.Test;
 
 import com.helger.html.hc.mock.HCTestRuleOptimized;
 import com.helger.html.hc.render.HCRenderer;
-import com.helger.html.hchtml.impl.HCBR;
+import com.helger.html.hchtml.textlevel.HCBR;
 
 /**
  * Test class for class {final @link HCSettings}.

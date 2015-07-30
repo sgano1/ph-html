@@ -4,7 +4,7 @@ import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
-import com.helger.html.hchtml.impl.HCH4;
+import com.helger.html.hchtml.sections.HCH4;
 
 /**
  * Test class for class {@link HCH4}

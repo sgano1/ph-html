@@ -17,7 +17,7 @@
 package com.helger.html.hc.ext;
 
 import com.helger.html.hcapi.IHCNode;
-import com.helger.html.hchtml.impl.HCBR;
+import com.helger.html.hchtml.textlevel.HCBR;
 
 public class HCRadioButtonBarVert extends AbstractHCRadioButtonBar
 {

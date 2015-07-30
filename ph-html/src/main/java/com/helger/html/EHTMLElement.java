@@ -56,6 +56,7 @@ public enum EHTMLElement
  COL ("col", true, EHTMLContentModelType.EMPTY),
  COLGROUP ("colgroup", false, EHTMLContentModelType.CHILD),
  COMMAND ("command", false, EHTMLContentModelType.PHRASING_METADATA),
+ DATA ("data", false, EHTMLContentModelType.PHRASING),
  DATALIST ("datalist", false, EHTMLContentModelType.PHRASING),
  DD ("dd", false, EHTMLContentModelType.FLOW),
  DEL ("del", false, EHTMLContentModelType.FLOW),

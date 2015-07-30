@@ -31,7 +31,7 @@ import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.hcapi.impl.HCTextNode;
 import com.helger.html.hchtml.HCConditionalCommentNode;
-import com.helger.html.hchtml.impl.HCB;
+import com.helger.html.hchtml.textlevel.HCB;
 
 /**
  * Test class for class {@link HCConditionalCommentNode}

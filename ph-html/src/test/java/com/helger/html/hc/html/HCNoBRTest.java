@@ -4,7 +4,7 @@ import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
-import com.helger.html.hchtml.impl.HCNoBR;
+import com.helger.html.hchtml.deprecated.HCNoBR;
 
 /**
  * Test class for class {@link HCNoBR}

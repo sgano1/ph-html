@@ -4,7 +4,7 @@ import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
-import com.helger.html.hchtml.impl.HCIns;
+import com.helger.html.hchtml.edits.HCIns;
 
 /**
  * Test class for class {@link HCIns}

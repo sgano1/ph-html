@@ -28,8 +28,8 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.hc.ext.HCExtHelper;
 import com.helger.html.hcapi.IHCNode;
 import com.helger.html.hcapi.impl.HCTextNode;
-import com.helger.html.hchtml.impl.HCBR;
-import com.helger.html.hchtml.impl.HCDiv;
+import com.helger.html.hchtml.grouping.HCDiv;
+import com.helger.html.hchtml.textlevel.HCBR;
 
 /**
  * Test class for class {@link HCExtHelper}.

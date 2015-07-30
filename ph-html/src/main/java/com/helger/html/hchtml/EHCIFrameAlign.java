@@ -21,7 +21,7 @@ import javax.annotation.Nonnull;
 import com.helger.commons.annotation.Nonempty;
 
 /**
- * Enumeration for {@link com.helger.html.hchtml.impl.HCIFrame} alignment.
+ * Enumeration for {@link com.helger.html.hchtml.embedded.HCIFrame} alignment.
  * 
  * @author Philip Helger
  */

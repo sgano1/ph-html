@@ -4,7 +4,7 @@ import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
-import com.helger.html.hchtml.impl.HCDiv;
+import com.helger.html.hchtml.grouping.HCDiv;
 
 /**
  * Test class for class {@link HCDiv}

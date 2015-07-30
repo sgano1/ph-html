@@ -22,7 +22,7 @@ import com.helger.commons.annotation.Nonempty;
 
 /**
  * Enumeration for the possible "alignment" values in HTML
- * {@link com.helger.html.hchtml.impl.HCObject} tags.
+ * {@link com.helger.html.hchtml.embedded.HCObject} tags.
  * 
  * @author Philip Helger
  */

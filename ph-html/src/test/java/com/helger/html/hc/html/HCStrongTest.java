@@ -4,7 +4,7 @@ import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
-import com.helger.html.hchtml.impl.HCStrong;
+import com.helger.html.hchtml.textlevel.HCStrong;
 
 /**
  * Test class for class {@link HCStrong}

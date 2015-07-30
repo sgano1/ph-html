@@ -25,7 +25,7 @@ import static org.junit.Assert.fail;
 import org.junit.Test;
 
 import com.helger.html.hchtml.AbstractHCElement;
-import com.helger.html.hchtml.impl.HCP;
+import com.helger.html.hchtml.grouping.HCP;
 
 /**
  * Test class for class {@link AbstractHCElement}

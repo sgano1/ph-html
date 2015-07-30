@@ -23,7 +23,7 @@ import org.junit.Test;
 
 import com.helger.html.hc.mock.HCTestRuleOptimized;
 import com.helger.html.hc.render.HCRenderer;
-import com.helger.html.hchtml.impl.HCBody;
+import com.helger.html.hchtml.sections.HCBody;
 import com.helger.html.js.EJSEvent;
 import com.helger.html.js.UnparsedJSCodeProvider;
 

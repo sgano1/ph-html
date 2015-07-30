@@ -4,7 +4,7 @@ import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
-import com.helger.html.hchtml.impl.HCSpan;
+import com.helger.html.hchtml.textlevel.HCSpan;
 
 /**
  * Test class for class {@link HCSpan}

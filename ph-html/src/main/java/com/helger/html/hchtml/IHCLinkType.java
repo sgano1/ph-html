@@ -17,7 +17,7 @@
 package com.helger.html.hchtml;
 
 /**
- * Base interface for link types (used in {@link com.helger.html.hchtml.impl.HCLink}
+ * Base interface for link types (used in {@link com.helger.html.hchtml.metadata.HCLink}
  * )
  *
  * @author Philip Helger

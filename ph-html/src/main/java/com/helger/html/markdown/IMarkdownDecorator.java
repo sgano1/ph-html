@@ -19,10 +19,10 @@ package com.helger.html.markdown;
 import javax.annotation.Nonnull;
 
 import com.helger.html.hchtml.IHCElementWithChildren;
-import com.helger.html.hchtml.impl.HCA;
-import com.helger.html.hchtml.impl.HCCode;
-import com.helger.html.hchtml.impl.HCImg;
-import com.helger.html.hchtml.list.HCLI;
+import com.helger.html.hchtml.embedded.HCImg;
+import com.helger.html.hchtml.grouping.HCLI;
+import com.helger.html.hchtml.textlevel.HCA;
+import com.helger.html.hchtml.textlevel.HCCode;
 
 /**
  * Decorator interface.

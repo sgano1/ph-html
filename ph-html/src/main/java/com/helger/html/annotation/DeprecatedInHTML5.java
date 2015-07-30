@@ -26,12 +26,12 @@ import java.lang.annotation.Target;
  * Marker annotation that denotes all HTML elements that are marked deprecated
  * in HTML5.<br>
  * Source: http://www.w3.org/TR/html5-diff/
- * 
+ *
  * @author Philip Helger
  */
 @Documented
 @Retention (RetentionPolicy.RUNTIME)
-@Target ({ ElementType.TYPE, ElementType.FIELD })
+@Target ({ ElementType.TYPE, ElementType.FIELD, ElementType.METHOD })
 public @interface DeprecatedInHTML5
 {
   String value() default "";
