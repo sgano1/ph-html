@@ -28,8 +28,8 @@ import javax.annotation.WillCloseWhenClosed;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.html.js.IHasJSCode;
-import com.helger.html.js.writer.IHasJSCodeWithSettings;
-import com.helger.html.js.writer.IJSWriterSettings;
+import com.helger.html.js.IHasJSCodeWithSettings;
+import com.helger.html.js.IJSWriterSettings;
 import com.helger.html.js.writer.JSWriterSettings;
 
 /**

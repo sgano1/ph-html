@@ -22,18 +22,18 @@ import javax.annotation.Nonnull;
 
 import com.helger.commons.id.factory.GlobalIDFactory;
 import com.helger.html.EHTMLVersion;
-import com.helger.html.hc.IHCElement;
-import com.helger.html.hc.IHCHasChildrenMutable;
-import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.base.IHCScript;
-import com.helger.html.hc.customize.HCEmptyCustomizer;
-import com.helger.html.hc.html.HCScriptInline;
+import com.helger.html.hcapi.IHCHasChildrenMutable;
+import com.helger.html.hcapi.IHCNode;
+import com.helger.html.hcapi.config.HCCustomizerDoNothing;
+import com.helger.html.hchtml.IHCElement;
+import com.helger.html.hchtml.base.IHCScript;
+import com.helger.html.hchtml.impl.HCScriptInline;
+import com.helger.html.js.CollectingJSCodeProvider;
 import com.helger.html.js.EJSEvent;
 import com.helger.html.js.JSEventMap;
-import com.helger.html.js.provider.CollectingJSCodeProvider;
 import com.helger.html.jscode.JSFunction;
 
-public class HCCustomizerExternalizeAttrJS extends HCEmptyCustomizer
+public class HCCustomizerExternalizeAttrJS extends HCCustomizerDoNothing
 {
   public HCCustomizerExternalizeAttrJS ()
   {}

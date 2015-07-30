@@ -26,7 +26,7 @@ import javax.annotation.concurrent.Immutable;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.io.stream.NonBlockingStringWriter;
 import com.helger.commons.io.stream.StreamHelper;
-import com.helger.html.js.writer.IJSWriterSettings;
+import com.helger.html.js.IJSWriterSettings;
 
 @Immutable
 public final class JSPrinter

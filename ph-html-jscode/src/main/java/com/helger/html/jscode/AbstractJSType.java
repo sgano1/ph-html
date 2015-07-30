@@ -23,7 +23,7 @@ import com.helger.commons.annotation.CodingStyleguideUnaware;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.js.writer.IJSWriterSettings;
+import com.helger.html.js.IJSWriterSettings;
 
 /**
  * A representation of a type in JS.

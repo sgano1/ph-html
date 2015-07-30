@@ -26,6 +26,7 @@ import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.lang.ICloneable;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.system.ENewLineMode;
+import com.helger.html.js.IJSWriterSettings;
 
 /**
  * Settings for the textual representation of JSDOM objects

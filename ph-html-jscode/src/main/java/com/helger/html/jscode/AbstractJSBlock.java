@@ -42,10 +42,10 @@ import com.helger.commons.lang.ClassHelper;
 import com.helger.commons.math.MathHelper;
 import com.helger.commons.state.EChange;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.CollectingJSCodeProvider;
 import com.helger.html.js.IHasJSCode;
-import com.helger.html.js.provider.CollectingJSCodeProvider;
-import com.helger.html.js.writer.IHasJSCodeWithSettings;
-import com.helger.html.js.writer.IJSWriterSettings;
+import com.helger.html.js.IHasJSCodeWithSettings;
+import com.helger.html.js.IJSWriterSettings;
 import com.helger.json.IJson;
 
 /**

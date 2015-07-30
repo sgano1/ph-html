@@ -2,7 +2,7 @@ package com.helger.html.jquery.config;
 
 import javax.annotation.Nonnull;
 
-import com.helger.html.hc.customize.IHCOnDocumentReadyProvider;
+import com.helger.html.hc.config.IHCOnDocumentReadyProvider;
 import com.helger.html.jquery.JQuery;
 import com.helger.html.js.IHasJSCode;
 

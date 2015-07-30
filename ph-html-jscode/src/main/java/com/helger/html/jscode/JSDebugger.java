@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.js.writer.IJSWriterSettings;
+import com.helger.html.js.IJSWriterSettings;
 
 /**
  * Debugger statement.<br>

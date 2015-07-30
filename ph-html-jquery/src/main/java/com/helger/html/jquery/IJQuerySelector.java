@@ -19,7 +19,7 @@ package com.helger.html.jquery;
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
 
-import com.helger.html.js.writer.IHasJSCodeWithSettings;
+import com.helger.html.js.IHasJSCodeWithSettings;
 import com.helger.html.jscode.IJSExpression;
 
 /**

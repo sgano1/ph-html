@@ -23,7 +23,7 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.regex.RegExHelper;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.js.writer.IJSWriterSettings;
+import com.helger.html.js.IJSWriterSettings;
 
 /**
  * Single line comments

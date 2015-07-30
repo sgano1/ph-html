@@ -23,7 +23,7 @@ import javax.annotation.Nonnull;
 import org.junit.Test;
 
 import com.helger.commons.mock.CommonsTestHelper;
-import com.helger.html.js.provider.UnparsedJSCodeProvider;
+import com.helger.html.js.UnparsedJSCodeProvider;
 import com.helger.html.js.writer.JSWriterSettings;
 import com.helger.html.jscode.IJSGeneratable;
 import com.helger.html.jscode.JSAnonymousFunction;

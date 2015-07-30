@@ -26,16 +26,16 @@ import com.helger.commons.microdom.IMicroNode;
 import com.helger.commons.microdom.serialize.MicroWriter;
 import com.helger.commons.state.EFinish;
 import com.helger.html.EHTMLVersion;
-import com.helger.html.hc.HCHelper;
-import com.helger.html.hc.IHCHasChildrenMutable;
-import com.helger.html.hc.IHCIteratorCallback;
-import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.config.HCSettings;
-import com.helger.html.hc.conversion.IHCConversionSettings;
-import com.helger.html.hc.conversion.IHCConversionSettingsToNode;
-import com.helger.html.hc.customize.IHCCustomizer;
-import com.helger.html.hc.html.HCHtml;
-import com.helger.html.hc.impl.HCNodeList;
+import com.helger.html.hcapi.HCHelper;
+import com.helger.html.hcapi.IHCConversionSettingsToNode;
+import com.helger.html.hcapi.IHCCustomizer;
+import com.helger.html.hcapi.IHCHasChildrenMutable;
+import com.helger.html.hcapi.IHCIteratorCallback;
+import com.helger.html.hcapi.IHCNode;
+import com.helger.html.hcapi.config.IHCConversionSettings;
+import com.helger.html.hcapi.impl.HCNodeList;
+import com.helger.html.hchtml.impl.HCHtml;
 
 @Immutable
 public final class HCRenderer

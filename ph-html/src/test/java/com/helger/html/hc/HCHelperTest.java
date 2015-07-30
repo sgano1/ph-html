@@ -25,10 +25,12 @@ import java.util.List;
 import org.junit.Test;
 
 import com.helger.html.EHTMLElement;
-import com.helger.html.hc.html.HCBR;
-import com.helger.html.hc.html.HCDiv;
-import com.helger.html.hc.impl.HCTextNode;
-import com.helger.html.hcext.html.HCHTMLHelper;
+import com.helger.html.hcapi.HCHelper;
+import com.helger.html.hcapi.IHCNode;
+import com.helger.html.hcapi.impl.HCTextNode;
+import com.helger.html.hchtml.HCHTMLHelper;
+import com.helger.html.hchtml.impl.HCBR;
+import com.helger.html.hchtml.impl.HCDiv;
 
 /**
  * Test class for class {@link HCHelper}.

@@ -27,13 +27,15 @@ import com.helger.commons.system.ENewLineMode;
 import com.helger.commons.xml.serialize.write.EXMLSerializeIndent;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.annotation.OutOfBandNode;
-import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.base.AbstractHCScriptInline;
-import com.helger.html.hc.conversion.HCConversionSettings;
-import com.helger.html.hc.html.HCH1;
-import com.helger.html.hc.html.HCHtml;
+import com.helger.html.hc.config.HCConversionSettings;
 import com.helger.html.hc.render.HCRenderer;
-import com.helger.html.js.provider.UnparsedJSCodeProvider;
+import com.helger.html.hc.special.IHCSpecialNodeListModifier;
+import com.helger.html.hc.special.SpecialNodeListModifier;
+import com.helger.html.hcapi.IHCNode;
+import com.helger.html.hchtml.base.AbstractHCScriptInline;
+import com.helger.html.hchtml.impl.HCH1;
+import com.helger.html.hchtml.impl.HCHtml;
+import com.helger.html.js.UnparsedJSCodeProvider;
 
 public final class HCSpecialNodeHandlerTest
 {

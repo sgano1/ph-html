@@ -18,27 +18,27 @@ package com.helger.html.markdown;
 
 import javax.annotation.Nonnull;
 
-import com.helger.html.hc.IHCElementWithChildren;
-import com.helger.html.hc.html.HCA;
-import com.helger.html.hc.html.HCBlockQuote;
-import com.helger.html.hc.html.HCCode;
-import com.helger.html.hc.html.HCEM;
-import com.helger.html.hc.html.HCH1;
-import com.helger.html.hc.html.HCH2;
-import com.helger.html.hc.html.HCH3;
-import com.helger.html.hc.html.HCH4;
-import com.helger.html.hc.html.HCH5;
-import com.helger.html.hc.html.HCH6;
-import com.helger.html.hc.html.HCHR;
-import com.helger.html.hc.html.HCImg;
-import com.helger.html.hc.html.HCLI;
-import com.helger.html.hc.html.HCOL;
-import com.helger.html.hc.html.HCP;
-import com.helger.html.hc.html.HCPre;
-import com.helger.html.hc.html.HCS;
-import com.helger.html.hc.html.HCStrong;
-import com.helger.html.hc.html.HCSup;
-import com.helger.html.hc.html.HCUL;
+import com.helger.html.hchtml.IHCElementWithChildren;
+import com.helger.html.hchtml.impl.HCA;
+import com.helger.html.hchtml.impl.HCBlockQuote;
+import com.helger.html.hchtml.impl.HCCode;
+import com.helger.html.hchtml.impl.HCEM;
+import com.helger.html.hchtml.impl.HCH1;
+import com.helger.html.hchtml.impl.HCH2;
+import com.helger.html.hchtml.impl.HCH3;
+import com.helger.html.hchtml.impl.HCH4;
+import com.helger.html.hchtml.impl.HCH5;
+import com.helger.html.hchtml.impl.HCH6;
+import com.helger.html.hchtml.impl.HCHR;
+import com.helger.html.hchtml.impl.HCImg;
+import com.helger.html.hchtml.impl.HCLI;
+import com.helger.html.hchtml.impl.HCOL;
+import com.helger.html.hchtml.impl.HCP;
+import com.helger.html.hchtml.impl.HCPre;
+import com.helger.html.hchtml.impl.HCS;
+import com.helger.html.hchtml.impl.HCStrong;
+import com.helger.html.hchtml.impl.HCSup;
+import com.helger.html.hchtml.impl.HCUL;
 
 /**
  * Default Decorator implementation.

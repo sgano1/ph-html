@@ -41,21 +41,21 @@ import com.helger.commons.lang.ClassHelper;
 import com.helger.commons.lang.GenericReflection;
 import com.helger.commons.string.StringHelper;
 import com.helger.html.annotation.OutOfBandNode;
-import com.helger.html.hc.EHCNodeState;
-import com.helger.html.hc.HCHelper;
-import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.IHCNodeWithChildren;
-import com.helger.html.hc.api.IHCCSSNode;
-import com.helger.html.hc.api.IHCJSNode;
-import com.helger.html.hc.base.IHCScriptInline;
 import com.helger.html.hc.config.HCSettings;
-import com.helger.html.hc.html.HCLink;
-import com.helger.html.hc.html.HCScriptFile;
-import com.helger.html.hc.html.HCScriptInline;
-import com.helger.html.hc.html.HCScriptInlineOnDocumentReady;
-import com.helger.html.hc.html.HCStyle;
-import com.helger.html.hc.impl.HCConditionalCommentNode;
-import com.helger.html.js.provider.CollectingJSCodeProvider;
+import com.helger.html.hcapi.EHCNodeState;
+import com.helger.html.hcapi.HCHelper;
+import com.helger.html.hcapi.IHCNode;
+import com.helger.html.hcapi.IHCNodeWithChildren;
+import com.helger.html.hchtml.HCConditionalCommentNode;
+import com.helger.html.hchtml.IHCCSSNode;
+import com.helger.html.hchtml.IHCJSNode;
+import com.helger.html.hchtml.base.IHCScriptInline;
+import com.helger.html.hchtml.impl.HCLink;
+import com.helger.html.hchtml.impl.HCScriptFile;
+import com.helger.html.hchtml.impl.HCScriptInline;
+import com.helger.html.hchtml.impl.HCScriptInlineOnDocumentReady;
+import com.helger.html.hchtml.impl.HCStyle;
+import com.helger.html.js.CollectingJSCodeProvider;
 
 /**
  * This class is used to handle the special nodes (JS and CSS, inline and

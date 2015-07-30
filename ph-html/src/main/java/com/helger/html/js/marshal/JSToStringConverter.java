@@ -30,7 +30,7 @@ import com.helger.commons.string.ToStringGenerator;
  * @author Philip Helger
  */
 @Immutable
-public final class JSToStringConverter implements IJSToStringConverter
+public class JSToStringConverter implements IJSToStringConverter
 {
   /** By default a surrounding variable is created */
   public static final boolean DEFAULT_WITH_SURROUNDING_VAR = true;

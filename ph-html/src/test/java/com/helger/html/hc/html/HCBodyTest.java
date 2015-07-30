@@ -22,8 +22,9 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import com.helger.html.hc.render.HCRenderer;
+import com.helger.html.hchtml.impl.HCBody;
 import com.helger.html.js.EJSEvent;
-import com.helger.html.js.provider.UnparsedJSCodeProvider;
+import com.helger.html.js.UnparsedJSCodeProvider;
 import com.helger.html.mock.HCTestRuleOptimized;
 
 public final class HCBodyTest

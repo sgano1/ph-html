@@ -35,17 +35,17 @@ import com.helger.commons.string.StringHelper;
 import com.helger.commons.xml.serialize.write.XMLEmitter;
 import com.helger.html.entity.EHTMLEntity;
 import com.helger.html.entity.HTMLEntity;
-import com.helger.html.hc.IHCElement;
-import com.helger.html.hc.IHCElementWithChildren;
-import com.helger.html.hc.html.HCA;
-import com.helger.html.hc.html.HCAbbr;
-import com.helger.html.hc.html.HCCode;
-import com.helger.html.hc.html.HCImg;
-import com.helger.html.hc.html.HCLI;
-import com.helger.html.hc.impl.HCCommentNode;
-import com.helger.html.hc.impl.HCDOMWrapper;
-import com.helger.html.hc.impl.HCEntityNode;
-import com.helger.html.hcext.html.HCHTMLHelper;
+import com.helger.html.hcapi.impl.HCCommentNode;
+import com.helger.html.hcapi.impl.HCDOMWrapper;
+import com.helger.html.hcapi.impl.HCEntityNode;
+import com.helger.html.hchtml.HCHTMLHelper;
+import com.helger.html.hchtml.IHCElement;
+import com.helger.html.hchtml.IHCElementWithChildren;
+import com.helger.html.hchtml.impl.HCA;
+import com.helger.html.hchtml.impl.HCAbbr;
+import com.helger.html.hchtml.impl.HCCode;
+import com.helger.html.hchtml.impl.HCImg;
+import com.helger.html.hchtml.impl.HCLI;
 
 /**
  * Emitter class responsible for generating HTML output.

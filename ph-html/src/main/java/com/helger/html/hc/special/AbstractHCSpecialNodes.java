@@ -33,8 +33,8 @@ import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.CollectingJSCodeProvider;
 import com.helger.html.js.IHasJSCode;
-import com.helger.html.js.provider.CollectingJSCodeProvider;
 
 /**
  * Abstract implementation of {@link IHCSpecialNodes}.

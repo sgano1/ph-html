@@ -27,8 +27,8 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.state.EChange;
-import com.helger.html.js.writer.IHasJSCodeWithSettings;
-import com.helger.html.js.writer.IJSWriterSettings;
+import com.helger.html.js.IHasJSCodeWithSettings;
+import com.helger.html.js.IJSWriterSettings;
 import com.helger.html.jscode.IJSExpression;
 
 /**

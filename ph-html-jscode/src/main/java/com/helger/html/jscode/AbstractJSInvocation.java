@@ -33,10 +33,10 @@ import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.render.HCRenderer;
+import com.helger.html.hcapi.IHCNode;
+import com.helger.html.js.IJSWriterSettings;
 import com.helger.html.js.marshal.JSMarshaller;
-import com.helger.html.js.writer.IJSWriterSettings;
 import com.helger.json.IJson;
 
 /**

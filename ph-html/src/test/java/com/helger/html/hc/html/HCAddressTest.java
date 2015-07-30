@@ -4,6 +4,8 @@ import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
+import com.helger.html.hchtml.impl.HCAddress;
+
 /**
  * Test class for class {@link HCAddress}
  * 

@@ -19,7 +19,7 @@ package com.helger.html.jscode;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.Nonempty;
-import com.helger.html.js.writer.IHasJSCodeWithSettings;
+import com.helger.html.js.IHasJSCodeWithSettings;
 
 /**
  * The common aspect of a package and a function.

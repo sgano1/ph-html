@@ -22,6 +22,7 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import com.helger.html.hc.render.HCRenderer;
+import com.helger.html.hcapi.impl.HCCommentNode;
 import com.helger.html.mock.HCTestRuleOptimized;
 
 /**

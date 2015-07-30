@@ -19,7 +19,7 @@ package com.helger.html.jscode;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.html.js.writer.IJSWriterSettings;
+import com.helger.html.js.IJSWriterSettings;
 
 /**
  * A JS package. This is the entry point for all functions, declarations etc.

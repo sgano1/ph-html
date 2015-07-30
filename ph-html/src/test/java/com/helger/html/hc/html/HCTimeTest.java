@@ -24,6 +24,8 @@ import org.joda.time.DateTime;
 import org.joda.time.Duration;
 import org.junit.Test;
 
+import com.helger.html.hchtml.impl.HCTime;
+
 /**
  * Test class for class {@link HCTime}
  *

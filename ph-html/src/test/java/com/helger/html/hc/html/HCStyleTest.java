@@ -21,9 +21,10 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Rule;
 import org.junit.Test;
 
-import com.helger.html.hc.api.EHCStyleMode;
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.render.HCRenderer;
+import com.helger.html.hchtml.EHCStyleMode;
+import com.helger.html.hchtml.impl.HCStyle;
 import com.helger.html.mock.HCTestRuleOptimized;
 
 /**

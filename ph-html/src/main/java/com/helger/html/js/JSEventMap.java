@@ -26,11 +26,8 @@ import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.state.EChange;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.js.provider.CollectingJSCodeProvider;
-import com.helger.html.js.writer.IJSWriterSettings;
 
 /**
  * This class represents a map from an {@link EJSEvent} to an {@link IHasJSCode}
@@ -40,7 +37,7 @@ import com.helger.html.js.writer.IJSWriterSettings;
  * @author Philip Helger
  */
 @NotThreadSafe
-public final class JSEventMap implements Serializable
+public class JSEventMap implements Serializable
 {
   private final Map <EJSEvent, CollectingJSCodeProvider> m_aEvents = new EnumMap <EJSEvent, CollectingJSCodeProvider> (EJSEvent.class);
 
@@ -118,7 +115,7 @@ public final class JSEventMap implements Serializable
   }
 
   @Nullable
-  public IHasJSCode getHandler (@Nullable final EJSEvent eJSEvent)
+  public CollectingJSCodeProvider getHandler (@Nullable final EJSEvent eJSEvent)
   {
     return eJSEvent == null ? null : m_aEvents.get (eJSEvent);
   }
@@ -126,20 +123,6 @@ public final class JSEventMap implements Serializable
   public boolean containsHandler (@Nullable final EJSEvent eJSEvent)
   {
     return eJSEvent != null && m_aEvents.containsKey (eJSEvent);
-  }
-
-  public void applyToElement (@Nonnull final IMicroElement aElement, @Nonnull final IJSWriterSettings aSettings)
-  {
-    // Loop over all events in the defined order for consistent results
-    for (final EJSEvent eEvent : EJSEvent.values ())
-    {
-      final CollectingJSCodeProvider aProvider = m_aEvents.get (eEvent);
-      if (aProvider != null)
-      {
-        final String sJSCode = aProvider.getJSCode (aSettings);
-        aElement.setAttribute (eEvent.getHTMLEventName (), CJS.JS_PREFIX + sJSCode);
-      }
-    }
   }
 
   @Nonnull

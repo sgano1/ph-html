@@ -18,7 +18,7 @@ package com.helger.html.jscode;
 
 import javax.annotation.Nonnull;
 
-import com.helger.html.js.writer.IJSWriterSettings;
+import com.helger.html.js.IJSWriterSettings;
 
 public abstract class AbstractJSStatement implements IJSStatement
 {

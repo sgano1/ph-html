@@ -26,10 +26,12 @@ import com.helger.commons.junit.DebugModeTestRule;
 import com.helger.commons.system.ENewLineMode;
 import com.helger.commons.xml.serialize.write.EXMLSerializeIndent;
 import com.helger.commons.xml.serialize.write.XMLWriterSettings;
+import com.helger.html.hc.config.HCConversionSettings;
 import com.helger.html.hc.config.HCSettings;
-import com.helger.html.hc.conversion.HCConversionSettings;
-import com.helger.html.hc.html.HCB;
 import com.helger.html.hc.render.HCRenderer;
+import com.helger.html.hcapi.impl.HCTextNode;
+import com.helger.html.hchtml.HCConditionalCommentNode;
+import com.helger.html.hchtml.impl.HCB;
 
 /**
  * Test class for class {@link HCConditionalCommentNode}

@@ -33,11 +33,9 @@ import com.helger.commons.debug.GlobalDebug;
 import com.helger.commons.lang.ServiceLoaderHelper;
 import com.helger.commons.system.ENewLineMode;
 import com.helger.html.EHTMLVersion;
-import com.helger.html.hc.api.EHCScriptInlineMode;
-import com.helger.html.hc.api.EHCStyleMode;
-import com.helger.html.hc.conversion.HCConversionSettings;
-import com.helger.html.hc.conversion.IHCConversionSettings;
-import com.helger.html.hc.customize.IHCOnDocumentReadyProvider;
+import com.helger.html.hcapi.config.IHCConversionSettings;
+import com.helger.html.hchtml.EHCScriptInlineMode;
+import com.helger.html.hchtml.EHCStyleMode;
 
 /**
  * Global HC settings

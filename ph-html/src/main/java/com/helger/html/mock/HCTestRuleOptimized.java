@@ -24,9 +24,9 @@ import org.junit.rules.ExternalResource;
 import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.html.hc.config.DefaultHCOnDocumentReadyProvider;
 import com.helger.html.hc.config.HCSettings;
-import com.helger.html.hc.customize.IHCOnDocumentReadyProvider;
+import com.helger.html.hc.config.IHCOnDocumentReadyProvider;
 import com.helger.html.js.IHasJSCode;
-import com.helger.html.js.provider.UnparsedJSCodeProvider;
+import com.helger.html.js.UnparsedJSCodeProvider;
 
 /**
  * A JUnit test rule that ensures that optimized HTML, CSS and JS output is

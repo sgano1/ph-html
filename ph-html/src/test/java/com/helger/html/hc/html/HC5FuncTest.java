@@ -23,8 +23,34 @@ import org.junit.Test;
 import com.helger.commons.url.SimpleURL;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.config.HCSettings;
-import com.helger.html.hc.conversion.IHCConversionSettings;
 import com.helger.html.hc.render.HCRenderer;
+import com.helger.html.hcapi.config.IHCConversionSettings;
+import com.helger.html.hchtml.impl.HCArticle;
+import com.helger.html.hchtml.impl.HCAside;
+import com.helger.html.hchtml.impl.HCAudio;
+import com.helger.html.hchtml.impl.HCBDI;
+import com.helger.html.hchtml.impl.HCBody;
+import com.helger.html.hchtml.impl.HCCanvas;
+import com.helger.html.hchtml.impl.HCCommand;
+import com.helger.html.hchtml.impl.HCFigure;
+import com.helger.html.hchtml.impl.HCFooter;
+import com.helger.html.hchtml.impl.HCHGroup;
+import com.helger.html.hchtml.impl.HCHeader;
+import com.helger.html.hchtml.impl.HCHtml;
+import com.helger.html.hchtml.impl.HCKeyGen;
+import com.helger.html.hchtml.impl.HCMark;
+import com.helger.html.hchtml.impl.HCMeter;
+import com.helger.html.hchtml.impl.HCNav;
+import com.helger.html.hchtml.impl.HCProgress;
+import com.helger.html.hchtml.impl.HCRP;
+import com.helger.html.hchtml.impl.HCRT;
+import com.helger.html.hchtml.impl.HCRuby;
+import com.helger.html.hchtml.impl.HCSection;
+import com.helger.html.hchtml.impl.HCSource;
+import com.helger.html.hchtml.impl.HCTime;
+import com.helger.html.hchtml.impl.HCTrack;
+import com.helger.html.hchtml.impl.HCVideo;
+import com.helger.html.hchtml.impl.HCWBR;
 
 /**
  * Instantiate and generate code for all HTML5 elements available

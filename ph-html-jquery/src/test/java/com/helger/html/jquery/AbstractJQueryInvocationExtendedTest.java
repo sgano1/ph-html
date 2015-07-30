@@ -26,7 +26,7 @@ import java.math.BigInteger;
 
 import com.helger.html.EHTMLElement;
 import com.helger.html.css.DefaultCSSClassProvider;
-import com.helger.html.hc.html.HCDiv;
+import com.helger.html.hchtml.impl.HCDiv;
 import com.helger.html.jscode.JSAnonymousFunction;
 import com.helger.html.jscode.JSArray;
 import com.helger.html.jscode.JSExpr;

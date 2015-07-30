@@ -19,7 +19,7 @@ package com.helger.html.jscode.html;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.html.hc.IHCNode;
+import com.helger.html.hcapi.IHCNode;
 import com.helger.html.jscode.JSAssocArray;
 
 public interface IHCNodeWithJSOptions extends IHCNode

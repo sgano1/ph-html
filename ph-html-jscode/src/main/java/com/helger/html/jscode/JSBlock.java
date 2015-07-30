@@ -23,8 +23,8 @@ import com.helger.commons.annotation.CodingStyleguideUnaware;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.IHasJSCode;
-import com.helger.html.js.writer.IHasJSCodeWithSettings;
-import com.helger.html.js.writer.IJSWriterSettings;
+import com.helger.html.js.IHasJSCodeWithSettings;
+import com.helger.html.js.IJSWriterSettings;
 
 /**
  * A block of JS code, which may contain statements and local declarations.

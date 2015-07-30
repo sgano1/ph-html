@@ -39,7 +39,7 @@ import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.io.file.SimpleFileIO;
 import com.helger.commons.regex.RegExHelper;
 import com.helger.commons.string.StringHelper;
-import com.helger.html.js.provider.UnparsedJSCodeProvider;
+import com.helger.html.js.UnparsedJSCodeProvider;
 
 /**
  * JUnit test for class {@link JSMarshaller}.

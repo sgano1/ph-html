@@ -21,7 +21,7 @@ import java.util.List;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.html.hc.IHCNode;
+import com.helger.html.hcapi.IHCNode;
 
 public interface IHCSpecialNodeListModifier
 {

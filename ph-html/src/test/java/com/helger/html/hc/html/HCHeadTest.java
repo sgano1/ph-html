@@ -28,10 +28,17 @@ import org.junit.Test;
 
 import com.helger.commons.state.EChange;
 import com.helger.commons.url.SimpleURL;
-import com.helger.html.hc.api.EHCLinkType;
-import com.helger.html.hc.api.HC_Target;
 import com.helger.html.hc.render.HCRenderer;
-import com.helger.html.js.provider.UnparsedJSCodeProvider;
+import com.helger.html.hchtml.EHCLinkType;
+import com.helger.html.hchtml.HC_Target;
+import com.helger.html.hchtml.impl.HCBase;
+import com.helger.html.hchtml.impl.HCHead;
+import com.helger.html.hchtml.impl.HCLink;
+import com.helger.html.hchtml.impl.HCScriptFile;
+import com.helger.html.hchtml.impl.HCScriptInline;
+import com.helger.html.hchtml.impl.HCStyle;
+import com.helger.html.hchtml.impl.HCTitle;
+import com.helger.html.js.UnparsedJSCodeProvider;
 import com.helger.html.meta.MetaElement;
 import com.helger.html.mock.HCTestRuleOptimized;
 
