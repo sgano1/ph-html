@@ -43,39 +43,15 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
   private final String m_sConditionalComment;
   private final CSSMediaList m_aCSSMediaList;
 
-  public ConstantCSSPathProvider (@Nonnull @Nonempty final String sPath)
-  {
-    this (sPath, DEFAULT_CONDITIONAL_COMMENT, DEFAULT_CSS_MEDIA_LIST);
-  }
-
-  public ConstantCSSPathProvider (@Nonnull @Nonempty final String sPath, @Nullable final ICSSMediaList aMediaList)
-  {
-    this (sPath, DEFAULT_CONDITIONAL_COMMENT, aMediaList);
-  }
-
-  public ConstantCSSPathProvider (@Nonnull @Nonempty final String sPath,
-                                  @Nullable final String sConditionalComment,
-                                  @Nullable final ICSSMediaList aMediaList)
-  {
-    this (sPath, CSSFilenameHelper.getMinifiedCSSFilename (sPath), sConditionalComment, aMediaList);
-  }
-
-  public ConstantCSSPathProvider (@Nonnull @Nonempty final String sPath, @Nonnull @Nonempty final String sMinifiedPath)
-  {
-    this (sPath, sMinifiedPath, DEFAULT_CONDITIONAL_COMMENT, DEFAULT_CSS_MEDIA_LIST);
-  }
-
   public ConstantCSSPathProvider (@Nonnull @Nonempty final String sPath,
                                   @Nonnull @Nonempty final String sMinifiedPath,
                                   @Nullable final String sConditionalComment,
                                   @Nullable final ICSSMediaList aMediaList)
   {
     ValueEnforcer.notEmpty (sPath, "Path");
-    if (!CSSFilenameHelper.isCSSFilename (sPath))
-      throw new IllegalArgumentException ("path");
+    ValueEnforcer.isTrue (CSSFilenameHelper.isCSSFilename (sPath), "path");
     ValueEnforcer.notEmpty (sMinifiedPath, "MinifiedPath");
-    if (!CSSFilenameHelper.isCSSFilename (sMinifiedPath))
-      throw new IllegalArgumentException ("minified path");
+    ValueEnforcer.isTrue (CSSFilenameHelper.isCSSFilename (sMinifiedPath), "minified path");
     m_sPath = sPath;
     m_sMinifiedPath = sMinifiedPath;
     m_sConditionalComment = sConditionalComment;
@@ -123,5 +99,32 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
   public String toString ()
   {
     return new ToStringGenerator (this).append ("path", m_sPath).append ("minifiedPath", m_sMinifiedPath).toString ();
+  }
+
+  @Nonnull
+  public static ConstantCSSPathProvider create (@Nonnull @Nonempty final String sPath)
+  {
+    return new ConstantCSSPathProvider (sPath,
+                                        CSSFilenameHelper.getMinifiedCSSFilename (sPath),
+                                        DEFAULT_CONDITIONAL_COMMENT,
+                                        DEFAULT_CSS_MEDIA_LIST);
+  }
+
+  @Nonnull
+  public static ConstantCSSPathProvider createWithConditionalComment (@Nonnull @Nonempty final String sPath,
+                                                                      @Nullable final String sConditionalComment)
+  {
+    return createWithConditionalComment (sPath, sConditionalComment, DEFAULT_CSS_MEDIA_LIST);
+  }
+
+  @Nonnull
+  public static ConstantCSSPathProvider createWithConditionalComment (@Nonnull @Nonempty final String sPath,
+                                                                      @Nullable final String sConditionalComment,
+                                                                      @Nullable final ICSSMediaList aMediaList)
+  {
+    return new ConstantCSSPathProvider (sPath,
+                                        CSSFilenameHelper.getMinifiedCSSFilename (sPath),
+                                        sConditionalComment,
+                                        aMediaList);
   }
 }

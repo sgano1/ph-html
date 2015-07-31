@@ -24,6 +24,7 @@ import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.JSFilenameHelper;
 
 /**
  * An implementation of {@link IJSPathProvider} using constant paths.
@@ -32,35 +33,13 @@ import com.helger.commons.string.ToStringGenerator;
  */
 public final class ConstantJSPathProvider implements IJSPathProvider
 {
-  public static final boolean DEFAULT_CAN_BE_BUNDLED = true;
   private static final String DEFAULT_CONDITIONAL_COMMENT = null;
+  public static final boolean DEFAULT_CAN_BE_BUNDLED = true;
 
   private final String m_sPath;
   private final String m_sMinifiedPath;
   private final String m_sConditionalComment;
   private final boolean m_bCanBeBundled;
-
-  public ConstantJSPathProvider (@Nonnull @Nonempty final String sPath)
-  {
-    this (sPath, DEFAULT_CONDITIONAL_COMMENT, DEFAULT_CAN_BE_BUNDLED);
-  }
-
-  public ConstantJSPathProvider (@Nonnull @Nonempty final String sPath, final boolean bCanBeBundled)
-  {
-    this (sPath, DEFAULT_CONDITIONAL_COMMENT, bCanBeBundled);
-  }
-
-  public ConstantJSPathProvider (@Nonnull @Nonempty final String sPath,
-                                 @Nullable final String sConditionalComment,
-                                 final boolean bCanBeBundled)
-  {
-    this (sPath, JSFilenameHelper.getMinifiedJSPath (sPath), sConditionalComment, bCanBeBundled);
-  }
-
-  public ConstantJSPathProvider (@Nonnull @Nonempty final String sPath, @Nonnull @Nonempty final String sMinifiedPath)
-  {
-    this (sPath, sMinifiedPath, DEFAULT_CONDITIONAL_COMMENT, DEFAULT_CAN_BE_BUNDLED);
-  }
 
   public ConstantJSPathProvider (@Nonnull @Nonempty final String sPath,
                                  @Nonnull @Nonempty final String sMinifiedPath,
@@ -68,11 +47,9 @@ public final class ConstantJSPathProvider implements IJSPathProvider
                                  final boolean bCanBeBundled)
   {
     ValueEnforcer.notEmpty (sPath, "Path");
-    if (!JSFilenameHelper.isJSFilename (sPath))
-      throw new IllegalArgumentException ("path");
+    ValueEnforcer.isTrue (JSFilenameHelper.isJSFilename (sPath), "Path");
     ValueEnforcer.notEmpty (sMinifiedPath, "MinifiedPath");
-    if (!JSFilenameHelper.isJSFilename (sMinifiedPath))
-      throw new IllegalArgumentException ("minified path");
+    ValueEnforcer.isTrue (JSFilenameHelper.isJSFilename (sMinifiedPath), "Minified Path");
     m_sPath = sPath;
     m_sMinifiedPath = sMinifiedPath;
     m_sConditionalComment = sConditionalComment;
@@ -144,5 +121,33 @@ public final class ConstantJSPathProvider implements IJSPathProvider
                                        .appendIfNotNull ("conditionalComment", m_sConditionalComment)
                                        .append ("canBeBundled", m_bCanBeBundled)
                                        .toString ();
+  }
+
+  @Nonnull
+  public static ConstantJSPathProvider create (@Nonnull @Nonempty final String sPath)
+  {
+    return new ConstantJSPathProvider (sPath,
+                                       JSFilenameHelper.getMinifiedJSFilename (sPath),
+                                       DEFAULT_CONDITIONAL_COMMENT,
+                                       DEFAULT_CAN_BE_BUNDLED);
+  }
+
+  @Nonnull
+  public static ConstantJSPathProvider createWithConditionalComment (@Nonnull @Nonempty final String sPath,
+                                                                     @Nullable final String sConditionalComment)
+  {
+    return new ConstantJSPathProvider (sPath,
+                                       JSFilenameHelper.getMinifiedJSFilename (sPath),
+                                       sConditionalComment,
+                                       DEFAULT_CAN_BE_BUNDLED);
+  }
+
+  @Nonnull
+  public static ConstantJSPathProvider createBundlable (@Nonnull @Nonempty final String sPath, final boolean bBundlable)
+  {
+    return new ConstantJSPathProvider (sPath,
+                                       JSFilenameHelper.getMinifiedJSFilename (sPath),
+                                       DEFAULT_CONDITIONAL_COMMENT,
+                                       bBundlable);
   }
 }

@@ -14,14 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.resource.js;
+package com.helger.html.js;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.string.StringHelper;
-import com.helger.html.js.CJS;
 
 /**
  * Utility class for handling JavaScript file names.
@@ -50,7 +49,7 @@ public final class JSFilenameHelper
   }
 
   @Nonnull
-  public static String getMinifiedJSPath (@Nonnull final String sJSFilename)
+  public static String getMinifiedJSFilename (@Nonnull final String sJSFilename)
   {
     if (!isJSFilename (sJSFilename))
       throw new IllegalArgumentException ("Passed file name '" + sJSFilename + "' is not a JS file name!");

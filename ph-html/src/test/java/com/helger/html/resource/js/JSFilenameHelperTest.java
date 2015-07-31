@@ -23,6 +23,8 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
+import com.helger.html.js.JSFilenameHelper;
+
 /**
  * Test class for class {@link JSFilenameHelper}.
  *
@@ -48,11 +50,11 @@ public final class JSFilenameHelperTest
     assertFalse (JSFilenameHelper.isRegularJSFilename (s2));
     assertFalse (JSFilenameHelper.isRegularJSFilename ("anydir/otherfile.txt"));
 
-    assertEquals (s2, JSFilenameHelper.getMinifiedJSPath (s1));
-    assertEquals (s2, JSFilenameHelper.getMinifiedJSPath (s2));
+    assertEquals (s2, JSFilenameHelper.getMinifiedJSFilename (s1));
+    assertEquals (s2, JSFilenameHelper.getMinifiedJSFilename (s2));
     try
     {
-      JSFilenameHelper.getMinifiedJSPath ("anydir/otherfile.txt");
+      JSFilenameHelper.getMinifiedJSFilename ("anydir/otherfile.txt");
       fail ();
     }
     catch (final IllegalArgumentException ex)
