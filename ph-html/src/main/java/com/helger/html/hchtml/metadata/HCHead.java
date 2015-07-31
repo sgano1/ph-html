@@ -41,7 +41,6 @@ import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.hchtml.AbstractHCElement;
 import com.helger.html.hchtml.HC_Target;
-import com.helger.html.hchtml.IHCCSSNode;
 import com.helger.html.hchtml.script.HCJSNodeDetector;
 import com.helger.html.meta.IMetaElement;
 import com.helger.html.meta.MetaElementList;
@@ -361,7 +360,7 @@ public class HCHead extends AbstractHCElement <HCHead>
     int nCSSExternals = 0;
     for (final IHCNode aCSS : m_aCSS)
     {
-      if (aCSS instanceof IHCCSSNode && !((IHCCSSNode) aCSS).isInlineCSS ())
+      if (aCSS instanceof HCLink)
         ++nCSSExternals;
       eHead.appendChild (aCSS.convertToMicroNode (aConversionSettings));
     }

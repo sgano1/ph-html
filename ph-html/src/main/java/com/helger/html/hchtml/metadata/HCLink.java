@@ -37,7 +37,6 @@ import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hchtml.AbstractHCElement;
 import com.helger.html.hchtml.HC_Target;
-import com.helger.html.hchtml.IHCCSSNode;
 
 /**
  * Represents an HTML &lt;link&gt; element
@@ -45,7 +44,7 @@ import com.helger.html.hchtml.IHCCSSNode;
  * @author Philip Helger
  */
 @OutOfBandNode
-public class HCLink extends AbstractHCElement <HCLink>implements IHCCSSNode
+public class HCLink extends AbstractHCElement <HCLink>
 {
   private IHCLinkType m_aRel;
   private IHCLinkType m_aRev;
@@ -59,11 +58,6 @@ public class HCLink extends AbstractHCElement <HCLink>implements IHCCSSNode
   public HCLink ()
   {
     super (EHTMLElement.LINK);
-  }
-
-  public boolean isInlineCSS ()
-  {
-    return false;
   }
 
   /**

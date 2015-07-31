@@ -22,7 +22,6 @@ import javax.annotation.concurrent.NotThreadSafe;
 import com.helger.commons.annotation.PresentForCodeCoverage;
 import com.helger.html.hc.HCHelper;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hchtml.IHCCSSNode;
 
 /**
  * This class is used to determine the special nodes (JS and CSS, inline and
@@ -44,8 +43,8 @@ public final class HCCSSNodeDetector
    *
    * @param aNode
    *        The node to be checked - may be <code>null</code>.
-   * @return <code>true</code> if the node implements {@link IHCCSSNode} (and
-   *         not a special case).
+   * @return <code>true</code> if the node implements {@link HCStyle} or
+   *         {@link HCLink} (and not a special case).
    */
   public static boolean isCSSNode (@Nullable final IHCNode aNode)
   {
@@ -58,21 +57,12 @@ public final class HCCSSNodeDetector
    *
    * @param aNode
    *        The node to be checked - may be <code>null</code>.
-   * @return <code>true</code> if the node implements {@link IHCCSSNode} (and
-   *         not a special case).
+   * @return <code>true</code> if the node implements {@link HCStyle} or
+   *         {@link HCLink} (and not a special case).
    */
   public static boolean isDirectCSSNode (@Nullable final IHCNode aNode)
   {
-    // Direct CSS node?
-    if (aNode instanceof IHCCSSNode)
-    {
-      // Special case
-      if (aNode instanceof HCLink && !((HCLink) aNode).isCSSLink ())
-        return false;
-      return true;
-    }
-
-    return false;
+    return isDirectCSSInlineNode (aNode) || isDirectCSSFileNode (aNode);
   }
 
   /**
@@ -106,7 +96,7 @@ public final class HCCSSNodeDetector
    *
    * @param aNode
    *        The node to be checked - may be <code>null</code>.
-   * @return <code>true</code> if the node implements {@link HCStyle}.
+   * @return <code>true</code> if the node implements {@link HCLink}.
    */
   public static boolean isCSSFileNode (@Nullable final IHCNode aNode)
   {
@@ -119,7 +109,7 @@ public final class HCCSSNodeDetector
    *
    * @param aNode
    *        The node to be checked - may be <code>null</code>.
-   * @return <code>true</code> if the node implements {@link HCStyle}.
+   * @return <code>true</code> if the node implements {@link HCLink}.
    */
   public static boolean isDirectCSSFileNode (@Nullable final IHCNode aNode)
   {

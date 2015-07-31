@@ -44,7 +44,6 @@ import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hc.config.EHCStyleMode;
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hchtml.AbstractHCElement;
-import com.helger.html.hchtml.IHCCSSNode;
 
 /**
  * Represents an HTML &lt;style&gt; element
@@ -52,7 +51,7 @@ import com.helger.html.hchtml.IHCCSSNode;
  * @author Philip Helger
  */
 @OutOfBandNode
-public class HCStyle extends AbstractHCElement <HCStyle>implements IHCCSSNode
+public class HCStyle extends AbstractHCElement <HCStyle>
 {
   /** The default MIME type is text/css */
   public static final IMimeType DEFAULT_TYPE = CMimeType.TEXT_CSS;
@@ -87,11 +86,6 @@ public class HCStyle extends AbstractHCElement <HCStyle>implements IHCCSSNode
   {
     this ();
     setStyleContent (aCSS, aSettings);
-  }
-
-  public boolean isInlineCSS ()
-  {
-    return true;
   }
 
   @Nonnull

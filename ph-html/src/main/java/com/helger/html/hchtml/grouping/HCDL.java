@@ -21,7 +21,6 @@ import javax.annotation.Nullable;
 
 import com.helger.html.EHTMLElement;
 import com.helger.html.hchtml.AbstractHCElementWithInternalChildren;
-import com.helger.html.hchtml.IHCDefinitionItem;
 
 /**
  * Represents an HTML &lt;dl&gt; element

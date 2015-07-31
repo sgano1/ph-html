@@ -14,20 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hchtml;
+package com.helger.html.hchtml.grouping;
 
-import com.helger.html.hc.IHCNode;
+import com.helger.html.hchtml.IHCElementWithChildren;
 
 /**
- * Marker interface for nodes that can contain CSS code (inline or external)
- * 
+ * Interface for definition items
+ *
  * @author Philip Helger
+ * @param <THISTYPE>
+ *        Implementation type
  */
-public interface IHCCSSNode extends IHCNode
+public interface IHCDefinitionItem <THISTYPE extends IHCDefinitionItem <THISTYPE>> extends IHCElementWithChildren <THISTYPE>
 {
-  /**
-   * @return <code>true</code> if this is an inline CSS node, <code>false</code>
-   *         if it is an externally referenced CSS node
-   */
-  boolean isInlineCSS ();
+  /* empty */
 }

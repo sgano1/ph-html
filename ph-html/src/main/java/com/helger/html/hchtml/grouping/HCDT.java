@@ -17,7 +17,6 @@
 package com.helger.html.hchtml.grouping;
 
 import com.helger.html.EHTMLElement;
-import com.helger.html.hchtml.AbstractHCDefinitionItem;
 
 /**
  * Represents an HTML &lt;dt&gt; element
