@@ -27,9 +27,9 @@ import com.helger.commons.annotation.DevelopersNote;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hcapi.IHCConversionSettingsToNode;
-import com.helger.html.hcapi.IHCNode;
-import com.helger.html.hcapi.impl.HCNodeList;
+import com.helger.html.hc.IHCConversionSettingsToNode;
+import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.impl.HCNodeList;
 import com.helger.html.hchtml.AbstractHCElementWithInternalChildren;
 
 /**

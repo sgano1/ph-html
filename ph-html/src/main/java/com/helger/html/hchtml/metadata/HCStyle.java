@@ -40,9 +40,9 @@ import com.helger.css.writer.CSSWriterSettings;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.OutOfBandNode;
+import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hc.config.EHCStyleMode;
 import com.helger.html.hc.config.HCSettings;
-import com.helger.html.hcapi.IHCConversionSettingsToNode;
 import com.helger.html.hchtml.AbstractHCElement;
 import com.helger.html.hchtml.IHCCSSNode;
 

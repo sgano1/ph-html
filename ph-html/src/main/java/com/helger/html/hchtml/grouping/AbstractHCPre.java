@@ -19,8 +19,8 @@ package com.helger.html.hchtml.grouping;
 import javax.annotation.Nonnull;
 
 import com.helger.html.EHTMLElement;
+import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hc.config.HCConsistencyChecker;
-import com.helger.html.hcapi.IHCConversionSettingsToNode;
 import com.helger.html.hchtml.AbstractHCElementWithChildren;
 import com.helger.html.hchtml.HCHTMLHelper;
 import com.helger.html.hchtml.IHCElement;

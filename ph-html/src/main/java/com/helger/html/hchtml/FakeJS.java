@@ -19,7 +19,7 @@ package com.helger.html.hchtml;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.url.ISimpleURL;
-import com.helger.html.hcapi.IHCHasID;
+import com.helger.html.hc.IHCHasID;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.JSMarshaller;
 import com.helger.html.js.UnparsedJSCodeProvider;

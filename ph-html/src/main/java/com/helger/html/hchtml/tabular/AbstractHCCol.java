@@ -31,7 +31,7 @@ import com.helger.css.ECSSUnit;
 import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hcapi.IHCConversionSettingsToNode;
+import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hchtml.AbstractHCElement;
 
 /**

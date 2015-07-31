@@ -34,7 +34,7 @@ import com.helger.commons.url.SimpleURL;
 import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hcapi.IHCConversionSettingsToNode;
+import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hchtml.HC_Action;
 import com.helger.html.hchtml.HC_Target;
 import com.helger.html.js.IHasJSCode;

@@ -29,9 +29,9 @@ import com.helger.commons.microdom.MicroText;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.system.ENewLineMode;
+import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hc.config.EHCScriptInlineMode;
 import com.helger.html.hc.config.HCSettings;
-import com.helger.html.hcapi.IHCConversionSettingsToNode;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.IHasJSCodeWithSettings;
 import com.helger.html.js.IJSWriterSettings;
@@ -64,11 +64,6 @@ public abstract class AbstractHCScriptInline <THISTYPE extends AbstractHCScriptI
   {
     this ();
     setJSCodeProvider (aProvider);
-  }
-
-  public final boolean isInlineJS ()
-  {
-    return true;
   }
 
   @Nonnull

@@ -156,7 +156,7 @@ public final class HCHeadTest
                   HCRenderer.getAsHTMLString (aHead));
 
     aHead.setShortcutIconHref (null);
-    aHead.addJS (HCScriptFile.create (new SimpleURL ("/my.js")));
+    aHead.addJS (new HCScriptFile ().setSrc (new SimpleURL ("/my.js")));
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>test</title><script type=\"text/javascript\" src=\"/my.js\"></script></head>",
                   HCRenderer.getAsHTMLString (aHead));
 

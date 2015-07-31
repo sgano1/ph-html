@@ -16,8 +16,8 @@
  */
 package com.helger.html.hchtml;
 
-import com.helger.html.hcapi.IHCHasChildrenMutable;
-import com.helger.html.hcapi.IHCNode;
+import com.helger.html.hc.IHCHasChildrenMutable;
+import com.helger.html.hc.IHCNode;
 
 /**
  * Interface for elements having children of a certain type.

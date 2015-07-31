@@ -18,7 +18,7 @@ package com.helger.html.hchtml.forms;
 
 import javax.annotation.Nonnull;
 
-import com.helger.html.hcapi.IHCHasName;
+import com.helger.html.hc.IHCHasName;
 import com.helger.html.hchtml.IHCElement;
 import com.helger.html.hchtml.IHCHasState;
 

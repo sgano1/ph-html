@@ -16,7 +16,7 @@
  */
 package com.helger.html.hchtml.grouping;
 
-import com.helger.html.hcapi.IHCHasName;
+import com.helger.html.hc.IHCHasName;
 import com.helger.html.hchtml.IHCElementWithChildren;
 
 /**

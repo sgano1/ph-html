@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.mime.IMimeType;
 import com.helger.commons.url.ISimpleURL;
-import com.helger.html.hcapi.IHCHasName;
+import com.helger.html.hc.IHCHasName;
 import com.helger.html.hchtml.HC_Target;
 import com.helger.html.hchtml.IHCElementWithChildren;
 import com.helger.html.hchtml.IHCHasMedia;

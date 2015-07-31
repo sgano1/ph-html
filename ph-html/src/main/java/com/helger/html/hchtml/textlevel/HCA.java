@@ -22,8 +22,8 @@ import javax.annotation.Nullable;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.url.ISimpleURL;
 import com.helger.commons.url.URLValidator;
-import com.helger.html.hcapi.IHCNode;
-import com.helger.html.hcapi.impl.HCTextNode;
+import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.impl.HCTextNode;
 import com.helger.html.hchtml.HC_Target;
 
 /**

@@ -23,9 +23,9 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.html.hcapi.IHCConversionSettingsToNode;
-import com.helger.html.hcapi.IHCHasChildrenMutable;
-import com.helger.html.hcapi.IHCNode;
+import com.helger.html.hc.IHCConversionSettingsToNode;
+import com.helger.html.hc.IHCHasChildrenMutable;
+import com.helger.html.hc.IHCNode;
 import com.helger.html.request.IHCRequestFieldBoolean;
 import com.helger.html.request.IHCRequestFieldBooleanMultiValue;
 

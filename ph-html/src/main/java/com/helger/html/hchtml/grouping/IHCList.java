@@ -20,7 +20,7 @@ import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.html.hcapi.IHCNode;
+import com.helger.html.hc.IHCNode;
 import com.helger.html.hchtml.IHCElementWithInternalChildren;
 
 /**

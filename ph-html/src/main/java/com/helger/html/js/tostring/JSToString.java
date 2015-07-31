@@ -29,8 +29,8 @@ import org.slf4j.LoggerFactory;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.lang.ClassHelper;
+import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.render.HCRenderer;
-import com.helger.html.hcapi.IHCNode;
 import com.helger.html.js.CJS;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.JSMarshaller;

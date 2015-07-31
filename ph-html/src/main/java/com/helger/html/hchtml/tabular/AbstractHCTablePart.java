@@ -26,7 +26,7 @@ import javax.annotation.OverridingMethodsMustInvokeSuper;
 import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hcapi.IHCConversionSettingsToNode;
+import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hchtml.AbstractHCElementWithInternalChildren;
 
 /**

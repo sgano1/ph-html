@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 import com.helger.commons.annotation.MustImplementEqualsAndHashcode;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.microdom.IMicroNode;
-import com.helger.html.hcapi.IHCConversionSettingsToNode;
+import com.helger.html.hc.IHCConversionSettingsToNode;
 
 /**
  * Represents a single meta element

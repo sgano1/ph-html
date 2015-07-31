@@ -23,7 +23,6 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.mime.IMimeType;
 import com.helger.html.hchtml.IHCElement;
-import com.helger.html.hchtml.IHCJSNode;
 
 /**
  * Interface for SCRIPTs
@@ -32,7 +31,7 @@ import com.helger.html.hchtml.IHCJSNode;
  * @param <THISTYPE>
  *        Implementation type
  */
-public interface IHCScript <THISTYPE extends IHCScript <THISTYPE>> extends IHCElement <THISTYPE>, IHCJSNode
+public interface IHCScript <THISTYPE extends IHCScript <THISTYPE>> extends IHCElement <THISTYPE>
 {
   @Nonnull
   IMimeType getType ();

@@ -40,7 +40,7 @@ import com.helger.commons.typeconvert.TypeConverter;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.SinceHTML5;
-import com.helger.html.hcapi.IHCConversionSettingsToNode;
+import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hchtml.AbstractHCElementWithChildren;
 
 @SinceHTML5

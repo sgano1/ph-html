@@ -36,13 +36,13 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
+import com.helger.html.hc.IHCConversionSettingsToNode;
+import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.config.HCConsistencyChecker;
-import com.helger.html.hc.special.HCSpecialNodeHandler;
-import com.helger.html.hcapi.IHCConversionSettingsToNode;
-import com.helger.html.hcapi.IHCNode;
 import com.helger.html.hchtml.AbstractHCElement;
 import com.helger.html.hchtml.HC_Target;
 import com.helger.html.hchtml.IHCCSSNode;
+import com.helger.html.hchtml.script.HCJSNodeDetector;
 import com.helger.html.meta.IMetaElement;
 import com.helger.html.meta.MetaElementList;
 
@@ -225,7 +225,7 @@ public class HCHead extends AbstractHCElement <HCHead>
   public HCHead addCSS (@Nonnull final IHCNode aCSS)
   {
     ValueEnforcer.notNull (aCSS, "CSS");
-    if (!HCSpecialNodeHandler.isCSSNode (aCSS))
+    if (!HCCSSNodeDetector.isCSSNode (aCSS))
       throw new IllegalArgumentException (aCSS + " is not a valid CSS node!");
     m_aCSS.add (aCSS);
     return this;
@@ -235,7 +235,7 @@ public class HCHead extends AbstractHCElement <HCHead>
   public HCHead addCSS (@Nonnegative final int nIndex, @Nonnull final IHCNode aCSS)
   {
     ValueEnforcer.notNull (aCSS, "CSS");
-    if (!HCSpecialNodeHandler.isCSSNode (aCSS))
+    if (!HCCSSNodeDetector.isCSSNode (aCSS))
       throw new IllegalArgumentException (aCSS + " is not a valid CSS node!");
     m_aCSS.add (nIndex, aCSS);
     return this;
@@ -285,7 +285,7 @@ public class HCHead extends AbstractHCElement <HCHead>
   public HCHead addJS (@Nonnull final IHCNode aJS)
   {
     ValueEnforcer.notNull (aJS, "JS");
-    if (!HCSpecialNodeHandler.isJSNode (aJS))
+    if (!HCJSNodeDetector.isJSNode (aJS))
       throw new IllegalArgumentException (aJS + " is not a valid JS node!");
     m_aJS.add (aJS);
     return this;
@@ -304,7 +304,7 @@ public class HCHead extends AbstractHCElement <HCHead>
   public HCHead addJS (@Nonnegative final int nIndex, @Nonnull final IHCNode aJS)
   {
     ValueEnforcer.notNull (aJS, "JS");
-    if (!HCSpecialNodeHandler.isJSNode (aJS))
+    if (!HCJSNodeDetector.isJSNode (aJS))
       throw new IllegalArgumentException (aJS + " is not a valid JS node!");
     m_aJS.add (nIndex, aJS);
     return this;

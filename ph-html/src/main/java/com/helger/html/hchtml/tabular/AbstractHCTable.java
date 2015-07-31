@@ -26,7 +26,7 @@ import org.slf4j.LoggerFactory;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hcapi.IHCConversionSettingsToNode;
+import com.helger.html.hc.IHCConversionSettingsToNode;
 
 /**
  * Represents an HTML &lt;table&gt; element with open semantics.

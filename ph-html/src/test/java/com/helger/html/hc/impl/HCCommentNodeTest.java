@@ -22,8 +22,8 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import com.helger.html.hc.config.mock.HCTestRuleOptimized;
+import com.helger.html.hc.impl.HCCommentNode;
 import com.helger.html.hc.render.HCRenderer;
-import com.helger.html.hcapi.impl.HCCommentNode;
 
 /**
  * Test class for class {@link HCCommentNode}

@@ -19,7 +19,7 @@ package com.helger.html.hchtml.forms;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.html.hcapi.IHCHasID;
+import com.helger.html.hc.IHCHasID;
 import com.helger.html.hchtml.IHCElementWithChildren;
 
 /**

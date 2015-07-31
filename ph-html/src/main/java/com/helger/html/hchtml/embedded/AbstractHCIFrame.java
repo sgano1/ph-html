@@ -30,7 +30,7 @@ import com.helger.commons.url.ISimpleURL;
 import com.helger.css.ECSSUnit;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hcapi.IHCConversionSettingsToNode;
+import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hchtml.AbstractHCElementWithChildren;
 import com.helger.html.hchtml.EHCScrolling;
 

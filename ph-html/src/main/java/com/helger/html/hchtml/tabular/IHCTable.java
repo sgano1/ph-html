@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.html.css.ICSSClassProvider;
-import com.helger.html.hcapi.IHCNode;
+import com.helger.html.hc.IHCNode;
 import com.helger.html.hchtml.IHCElement;
 
 /**

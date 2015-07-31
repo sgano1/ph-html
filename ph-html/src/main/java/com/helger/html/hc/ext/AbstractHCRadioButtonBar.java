@@ -23,8 +23,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.collection.CollectionHelper;
-import com.helger.html.hcapi.IHCNode;
-import com.helger.html.hcapi.impl.HCTextNode;
+import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.impl.HCTextNode;
 import com.helger.html.hchtml.forms.HCRadioButton;
 import com.helger.html.hchtml.textlevel.AbstractHCSpan;
 

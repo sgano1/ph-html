@@ -33,13 +33,15 @@ import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
 import com.helger.html.EHTMLVersion;
+import com.helger.html.hc.IHCConversionSettingsToNode;
+import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.special.HCSpecialNodeHandler;
-import com.helger.html.hcapi.IHCConversionSettingsToNode;
-import com.helger.html.hcapi.IHCNode;
 import com.helger.html.hchtml.AbstractHCElement;
 import com.helger.html.hchtml.EHCTextDirection;
+import com.helger.html.hchtml.metadata.HCCSSNodeDetector;
 import com.helger.html.hchtml.metadata.HCHead;
 import com.helger.html.hchtml.metadata.HCLink;
+import com.helger.html.hchtml.script.HCJSNodeDetector;
 import com.helger.html.hchtml.script.IHCScriptInline;
 import com.helger.html.hchtml.sections.HCBody;
 
@@ -177,7 +179,7 @@ public class HCHtml extends AbstractHCElement <HCHtml>
     for (final IHCNode aNode : aMergedOOBNodes)
     {
       // Node for the body?
-      if (HCSpecialNodeHandler.isJSNode (aNode))
+      if (HCJSNodeDetector.isJSNode (aNode))
       {
         // It's a body node
         if (aNode instanceof IHCScriptInline <?> && !((IHCScriptInline <?>) aNode).isEmitAfterFiles ())
@@ -195,19 +197,16 @@ public class HCHtml extends AbstractHCElement <HCHtml>
       else
       {
         // It's a head node
-        if (HCSpecialNodeHandler.isCSSNode (aNode))
+        if (HCCSSNodeDetector.isCSSNode (aNode))
           m_aHead.addCSS (aNode);
         else
-          if (HCSpecialNodeHandler.isJSNode (aNode))
-            m_aHead.addJS (aNode);
+          if (aNode instanceof HCLink)
+          {
+            // Manually add all non-stylesheet LINK elements
+            m_aHead.addLink ((HCLink) aNode);
+          }
           else
-            if (aNode instanceof HCLink)
-            {
-              // Manually add all non-stylesheet LINK elements
-              m_aHead.addLink ((HCLink) aNode);
-            }
-            else
-              throw new IllegalStateException ("Found illegal out-of-band head node: " + aNode);
+            throw new IllegalStateException ("Found illegal out-of-band head node: " + aNode);
       }
     }
   }

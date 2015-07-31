@@ -44,10 +44,10 @@ import com.helger.commons.xml.serialize.write.XMLEmitter;
 import com.helger.html.EHTMLElement;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.entity.HTMLEntityResolver;
-import com.helger.html.hcapi.HCHelper;
-import com.helger.html.hcapi.IHCNode;
-import com.helger.html.hcapi.impl.HCDOMWrapper;
-import com.helger.html.hcapi.impl.HCTextNode;
+import com.helger.html.hc.HCHelper;
+import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.impl.HCDOMWrapper;
+import com.helger.html.hc.impl.HCTextNode;
 
 /**
  * Utility class for parsing stuff as HTML.

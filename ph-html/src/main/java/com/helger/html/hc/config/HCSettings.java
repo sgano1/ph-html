@@ -33,7 +33,7 @@ import com.helger.commons.debug.GlobalDebug;
 import com.helger.commons.lang.ServiceLoaderHelper;
 import com.helger.commons.system.ENewLineMode;
 import com.helger.html.EHTMLVersion;
-import com.helger.html.hcapi.config.IHCConversionSettings;
+import com.helger.html.hc.IHCConversionSettings;
 
 /**
  * Global HC settings
@@ -79,6 +79,9 @@ public final class HCSettings
 
   @GuardedBy ("s_aRWLock")
   private static ENewLineMode s_eNewLineMode = ENewLineMode.DEFAULT;
+
+  @GuardedBy ("s_aRWLock")
+  private static boolean s_bOOBDebugging = false;
 
   static
   {
@@ -357,6 +360,32 @@ public final class HCSettings
     try
     {
       s_eNewLineMode = eNewLineMode;
+    }
+    finally
+    {
+      s_aRWLock.writeLock ().unlock ();
+    }
+  }
+
+  public static boolean isOutOfBandDebuggingEnabled ()
+  {
+    s_aRWLock.readLock ().lock ();
+    try
+    {
+      return s_bOOBDebugging;
+    }
+    finally
+    {
+      s_aRWLock.readLock ().unlock ();
+    }
+  }
+
+  public static void setOutOfBandDebuggingEnabled (final boolean bEnabled)
+  {
+    s_aRWLock.writeLock ().lock ();
+    try
+    {
+      s_bOOBDebugging = bEnabled;
     }
     finally
     {

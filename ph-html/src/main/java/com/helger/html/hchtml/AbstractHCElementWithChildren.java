@@ -23,8 +23,8 @@ import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.annotation.DevelopersNote;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hcapi.IHCNode;
-import com.helger.html.hcapi.impl.HCTextNode;
+import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.impl.HCTextNode;
 
 @NotThreadSafe
 public abstract class AbstractHCElementWithChildren <THISTYPE extends AbstractHCElementWithChildren <THISTYPE>> extends AbstractHCElementWithInternalChildren <THISTYPE, IHCNode>implements IHCElementWithChildren <THISTYPE>

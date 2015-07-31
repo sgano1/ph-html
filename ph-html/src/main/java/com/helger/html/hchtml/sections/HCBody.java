@@ -28,12 +28,12 @@ import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.state.EFinish;
 import com.helger.commons.string.StringHelper;
 import com.helger.html.EHTMLElement;
+import com.helger.html.hc.HCHelper;
+import com.helger.html.hc.IHCConversionSettingsToNode;
+import com.helger.html.hc.IHCHasID;
+import com.helger.html.hc.IHCIteratorCallback;
+import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.config.HCConsistencyChecker;
-import com.helger.html.hcapi.HCHelper;
-import com.helger.html.hcapi.IHCConversionSettingsToNode;
-import com.helger.html.hcapi.IHCHasID;
-import com.helger.html.hcapi.IHCIteratorCallback;
-import com.helger.html.hcapi.IHCNode;
 import com.helger.html.hchtml.AbstractHCElementWithChildren;
 
 /**

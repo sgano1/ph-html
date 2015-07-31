@@ -41,12 +41,12 @@ import com.helger.css.property.CCSSProperties;
 import com.helger.html.EHTMLElement;
 import com.helger.html.css.DefaultCSSClassProvider;
 import com.helger.html.css.ICSSClassProvider;
+import com.helger.html.hc.IHCConversionSettingsToNode;
+import com.helger.html.hc.IHCHasChildrenMutable;
+import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.config.HCConsistencyChecker;
-import com.helger.html.hcapi.IHCConversionSettingsToNode;
-import com.helger.html.hcapi.IHCHasChildrenMutable;
-import com.helger.html.hcapi.IHCNode;
-import com.helger.html.hcapi.impl.HCEntityNode;
-import com.helger.html.hcapi.impl.HCTextNode;
+import com.helger.html.hc.impl.HCEntityNode;
+import com.helger.html.hc.impl.HCTextNode;
 import com.helger.html.hchtml.AbstractHCElement;
 
 /**

@@ -24,8 +24,8 @@ import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hcapi.IHCConversionSettingsToNode;
-import com.helger.html.hcapi.IHCHasID;
+import com.helger.html.hc.IHCConversionSettingsToNode;
+import com.helger.html.hc.IHCHasID;
 import com.helger.html.hchtml.AbstractHCElementWithChildren;
 
 /**

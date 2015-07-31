@@ -25,7 +25,7 @@ import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.html.hcapi.IHCNode;
+import com.helger.html.hc.IHCNode;
 
 @Immutable
 public final class HCCtrlHelper

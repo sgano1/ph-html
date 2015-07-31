@@ -26,7 +26,7 @@ import com.helger.commons.url.SimpleURL;
 import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.annotation.OutOfBandNode;
-import com.helger.html.hcapi.IHCConversionSettingsToNode;
+import com.helger.html.hc.IHCConversionSettingsToNode;
 
 /**
  * Represents an HTML &lt;script&gt; element that loads the code from a source
@@ -50,11 +50,6 @@ public class HCScriptFile extends AbstractHCScript <HCScriptFile>
 
   public HCScriptFile ()
   {}
-
-  public boolean isInlineJS ()
-  {
-    return false;
-  }
 
   @Nullable
   public ISimpleURL getSrc ()
@@ -128,17 +123,5 @@ public class HCScriptFile extends AbstractHCScript <HCScriptFile>
                             .append ("defer", m_bDefer)
                             .append ("async", m_bAsync)
                             .toString ();
-  }
-
-  @Nonnull
-  public static HCScriptFile create (@Nullable final ISimpleURL aSrc)
-  {
-    return new HCScriptFile ().setSrc (aSrc);
-  }
-
-  @Nonnull
-  public static HCScriptFile create (@Nonnull final String sSrc)
-  {
-    return create (new SimpleURL (sSrc));
   }
 }

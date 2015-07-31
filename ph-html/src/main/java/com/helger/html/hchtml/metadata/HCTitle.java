@@ -22,7 +22,7 @@ import javax.annotation.Nullable;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.StringHelper;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hcapi.IHCConversionSettingsToNode;
+import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hchtml.AbstractHCElement;
 
 /**

@@ -29,9 +29,9 @@ import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.state.EFinish;
 import com.helger.commons.wrapper.Wrapper;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hcapi.HCHelper;
-import com.helger.html.hcapi.IHCIteratorCallback;
-import com.helger.html.hcapi.IHCNode;
+import com.helger.html.hc.HCHelper;
+import com.helger.html.hc.IHCIteratorCallback;
+import com.helger.html.hc.IHCNode;
 
 @Immutable
 public final class HCHTMLHelper

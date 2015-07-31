@@ -28,9 +28,9 @@ import com.helger.commons.xml.serialize.write.EXMLSerializeIndent;
 import com.helger.commons.xml.serialize.write.XMLWriterSettings;
 import com.helger.html.hc.config.HCConversionSettings;
 import com.helger.html.hc.config.HCSettings;
+import com.helger.html.hc.ext.HCConditionalCommentNode;
+import com.helger.html.hc.impl.HCTextNode;
 import com.helger.html.hc.render.HCRenderer;
-import com.helger.html.hcapi.impl.HCTextNode;
-import com.helger.html.hchtml.HCConditionalCommentNode;
 import com.helger.html.hchtml.textlevel.HCB;
 
 /**

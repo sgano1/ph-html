@@ -22,11 +22,9 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import org.slf4j.Logger;
@@ -41,16 +39,16 @@ import com.helger.commons.lang.ClassHelper;
 import com.helger.commons.lang.GenericReflection;
 import com.helger.commons.string.StringHelper;
 import com.helger.html.annotation.OutOfBandNode;
+import com.helger.html.hc.EHCNodeState;
+import com.helger.html.hc.HCHelper;
+import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.IHCNodeWithChildren;
 import com.helger.html.hc.config.HCSettings;
-import com.helger.html.hcapi.EHCNodeState;
-import com.helger.html.hcapi.HCHelper;
-import com.helger.html.hcapi.IHCNode;
-import com.helger.html.hcapi.IHCNodeWithChildren;
-import com.helger.html.hchtml.HCConditionalCommentNode;
-import com.helger.html.hchtml.IHCCSSNode;
-import com.helger.html.hchtml.IHCJSNode;
+import com.helger.html.hc.ext.HCConditionalCommentNode;
+import com.helger.html.hchtml.metadata.HCCSSNodeDetector;
 import com.helger.html.hchtml.metadata.HCLink;
 import com.helger.html.hchtml.metadata.HCStyle;
+import com.helger.html.hchtml.script.HCJSNodeDetector;
 import com.helger.html.hchtml.script.HCScriptFile;
 import com.helger.html.hchtml.script.HCScriptInline;
 import com.helger.html.hchtml.script.HCScriptInlineOnDocumentReady;
@@ -69,7 +67,6 @@ public final class HCSpecialNodeHandler
   private static final Logger s_aLogger = LoggerFactory.getLogger (HCSpecialNodeHandler.class);
   private static final AnnotationUsageCache s_aOOBNAnnotationCache = new AnnotationUsageCache (OutOfBandNode.class);
   private static final AnnotationUsageCache s_aSNLMAnnotationCache = new AnnotationUsageCache (SpecialNodeListModifier.class);
-  private static final AtomicBoolean s_aOOBDebugging = new AtomicBoolean (false);
   private static final Map <String, IHCSpecialNodeListModifier> s_aModifiers = new HashMap <String, IHCSpecialNodeListModifier> ();
 
   @PresentForCodeCoverage
@@ -77,182 +74,6 @@ public final class HCSpecialNodeHandler
 
   private HCSpecialNodeHandler ()
   {}
-
-  public static boolean isOutOfBandDebuggingEnabled ()
-  {
-    return s_aOOBDebugging.get ();
-  }
-
-  public static void setOutOfBandDebuggingEnabled (final boolean bEnabled)
-  {
-    s_aOOBDebugging.set (bEnabled);
-  }
-
-  /**
-   * Check if the passed node is a CSS node after unwrapping.
-   *
-   * @param aNode
-   *        The node to be checked - may be <code>null</code>.
-   * @return <code>true</code> if the node implements {@link IHCCSSNode} (and
-   *         not a special case).
-   */
-  public static boolean isCSSNode (@Nullable final IHCNode aNode)
-  {
-    final IHCNode aUnwrappedNode = HCHelper.getUnwrappedNode (aNode);
-    return isDirectCSSNode (aUnwrappedNode);
-  }
-
-  /**
-   * Check if the passed node is a CSS node.
-   *
-   * @param aNode
-   *        The node to be checked - may be <code>null</code>.
-   * @return <code>true</code> if the node implements {@link IHCCSSNode} (and
-   *         not a special case).
-   */
-  public static boolean isDirectCSSNode (@Nullable final IHCNode aNode)
-  {
-    // Direct CSS node?
-    if (aNode instanceof IHCCSSNode)
-    {
-      // Special case
-      if (aNode instanceof HCLink && !((HCLink) aNode).isCSSLink ())
-        return false;
-      return true;
-    }
-
-    return false;
-  }
-
-  /**
-   * Check if the passed node is an inline CSS node after unwrapping.
-   *
-   * @param aNode
-   *        The node to be checked - may be <code>null</code>.
-   * @return <code>true</code> if the node implements {@link HCStyle}.
-   */
-  public static boolean isCSSInlineNode (@Nullable final IHCNode aNode)
-  {
-    final IHCNode aUnwrappedNode = HCHelper.getUnwrappedNode (aNode);
-    return isDirectCSSInlineNode (aUnwrappedNode);
-  }
-
-  /**
-   * Check if the passed node is an inline CSS node.
-   *
-   * @param aNode
-   *        The node to be checked - may be <code>null</code>.
-   * @return <code>true</code> if the node implements {@link HCStyle}.
-   */
-  public static boolean isDirectCSSInlineNode (@Nullable final IHCNode aNode)
-  {
-    // Inline CSS node?
-    return aNode instanceof HCStyle;
-  }
-
-  /**
-   * Check if the passed node is a file CSS node after unwrapping.
-   *
-   * @param aNode
-   *        The node to be checked - may be <code>null</code>.
-   * @return <code>true</code> if the node implements {@link HCStyle}.
-   */
-  public static boolean isCSSFileNode (@Nullable final IHCNode aNode)
-  {
-    final IHCNode aUnwrappedNode = HCHelper.getUnwrappedNode (aNode);
-    return isDirectCSSFileNode (aUnwrappedNode);
-  }
-
-  /**
-   * Check if the passed node is a file CSS node.
-   *
-   * @param aNode
-   *        The node to be checked - may be <code>null</code>.
-   * @return <code>true</code> if the node implements {@link HCStyle}.
-   */
-  public static boolean isDirectCSSFileNode (@Nullable final IHCNode aNode)
-  {
-    // File CSS node?
-    return aNode instanceof HCLink && ((HCLink) aNode).isCSSLink ();
-  }
-
-  /**
-   * Check if the passed node is a JS node after unwrapping.
-   *
-   * @param aNode
-   *        The node to be checked - may be <code>null</code>.
-   * @return <code>true</code> if the node implements {@link IHCJSNode}.
-   */
-  public static boolean isJSNode (@Nullable final IHCNode aNode)
-  {
-    final IHCNode aUnwrappedNode = HCHelper.getUnwrappedNode (aNode);
-    return isDirectJSNode (aUnwrappedNode);
-  }
-
-  /**
-   * Check if the passed node is a JS node.
-   *
-   * @param aNode
-   *        The node to be checked - may be <code>null</code>.
-   * @return <code>true</code> if the node implements {@link IHCJSNode}.
-   */
-  public static boolean isDirectJSNode (@Nullable final IHCNode aNode)
-  {
-    // Direct JS node?
-    return aNode instanceof IHCJSNode;
-  }
-
-  /**
-   * Check if the passed node is an inline JS node after unwrapping.
-   *
-   * @param aNode
-   *        The node to be checked - may be <code>null</code>.
-   * @return <code>true</code> if the node implements {@link HCScriptInline}.
-   */
-  public static boolean isJSInlineNode (@Nullable final IHCNode aNode)
-  {
-    final IHCNode aUnwrappedNode = HCHelper.getUnwrappedNode (aNode);
-    return isDirectJSInlineNode (aUnwrappedNode);
-  }
-
-  /**
-   * Check if the passed node is an inline JS node.
-   *
-   * @param aNode
-   *        The node to be checked - may be <code>null</code>.
-   * @return <code>true</code> if the node implements {@link IHCScriptInline} .
-   */
-  public static boolean isDirectJSInlineNode (@Nullable final IHCNode aNode)
-  {
-    // Inline JS node?
-    return aNode instanceof IHCScriptInline <?>;
-  }
-
-  /**
-   * Check if the passed node is a file JS node after unwrapping.
-   *
-   * @param aNode
-   *        The node to be checked - may be <code>null</code>.
-   * @return <code>true</code> if the node implements {@link HCScriptFile}.
-   */
-  public static boolean isJSFileNode (@Nullable final IHCNode aNode)
-  {
-    final IHCNode aUnwrappedNode = HCHelper.getUnwrappedNode (aNode);
-    return isDirectJSFileNode (aUnwrappedNode);
-  }
-
-  /**
-   * Check if the passed node is a file JS node.
-   *
-   * @param aNode
-   *        The node to be checked - may be <code>null</code>.
-   * @return <code>true</code> if the node implements {@link HCScriptFile}.
-   */
-  public static boolean isDirectJSFileNode (@Nullable final IHCNode aNode)
-  {
-    // File JS node?
-    return aNode instanceof HCScriptFile;
-  }
 
   /**
    * Check if the passed node is an out-of-band node.
@@ -286,7 +107,7 @@ public final class HCSpecialNodeHandler
 
     if (aParentElement.hasChildren ())
     {
-      final boolean bDebug = isOutOfBandDebuggingEnabled ();
+      final boolean bDebug = HCSettings.isOutOfBandDebuggingEnabled ();
       int nNodeIndex = 0;
 
       for (final IHCNode aChild : aParentElement.getAllChildren ())
@@ -521,22 +342,22 @@ public final class HCSpecialNodeHandler
 
     for (final IHCNode aNode : aNodes)
     {
-      if (isDirectCSSFileNode (aNode))
+      if (HCCSSNodeDetector.isDirectCSSFileNode (aNode))
       {
         aSpecialNodes.addExternalCSS (((HCLink) aNode).getHrefString ());
       }
       else
-        if (isDirectCSSInlineNode (aNode))
+        if (HCCSSNodeDetector.isDirectCSSInlineNode (aNode))
         {
           aSpecialNodes.addInlineCSS (((HCStyle) aNode).getStyleContent ());
         }
         else
-          if (isDirectJSFileNode (aNode))
+          if (HCJSNodeDetector.isDirectJSFileNode (aNode))
           {
             aSpecialNodes.addExternalJS (((HCScriptFile) aNode).getSrcString ());
           }
           else
-            if (isDirectJSInlineNode (aNode))
+            if (HCJSNodeDetector.isDirectJSInlineNode (aNode))
             {
               final IHCScriptInline <?> aScript = (IHCScriptInline <?>) aNode;
               if (aScript.isEmitAfterFiles ())

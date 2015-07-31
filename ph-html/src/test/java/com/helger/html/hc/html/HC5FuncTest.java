@@ -22,9 +22,9 @@ import org.junit.Test;
 
 import com.helger.commons.url.SimpleURL;
 import com.helger.html.EHTMLVersion;
+import com.helger.html.hc.IHCConversionSettings;
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.render.HCRenderer;
-import com.helger.html.hcapi.config.IHCConversionSettings;
 import com.helger.html.hchtml.deprecated.HCHGroup;
 import com.helger.html.hchtml.embedded.HCAudio;
 import com.helger.html.hchtml.embedded.HCSource;

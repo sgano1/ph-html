@@ -16,8 +16,8 @@
  */
 package com.helger.html.hchtml;
 
-import com.helger.html.hcapi.IHCNode;
-import com.helger.html.hcapi.IHCNodeWithChildren;
+import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.IHCNodeWithChildren;
 
 /**
  * Interface for elements having children.

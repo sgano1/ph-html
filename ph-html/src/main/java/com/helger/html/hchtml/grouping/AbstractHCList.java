@@ -23,7 +23,7 @@ import javax.annotation.Nullable;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hcapi.IHCNode;
+import com.helger.html.hc.IHCNode;
 import com.helger.html.hchtml.AbstractHCElementWithInternalChildren;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;

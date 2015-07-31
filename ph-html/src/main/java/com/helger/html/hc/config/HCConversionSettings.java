@@ -33,8 +33,8 @@ import com.helger.css.ECSSVersion;
 import com.helger.css.ICSSWriterSettings;
 import com.helger.css.writer.CSSWriterSettings;
 import com.helger.html.EHTMLVersion;
-import com.helger.html.hcapi.IHCCustomizer;
-import com.helger.html.hcapi.config.IHCConversionSettings;
+import com.helger.html.hc.IHCConversionSettings;
+import com.helger.html.hc.IHCCustomizer;
 import com.helger.html.js.IJSWriterSettings;
 import com.helger.html.js.JSWriterSettings;
 

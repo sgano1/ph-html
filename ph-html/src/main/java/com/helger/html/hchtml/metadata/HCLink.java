@@ -34,7 +34,7 @@ import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.DeprecatedInHTML5;
 import com.helger.html.annotation.OutOfBandNode;
-import com.helger.html.hcapi.IHCConversionSettingsToNode;
+import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hchtml.AbstractHCElement;
 import com.helger.html.hchtml.HC_Target;
 import com.helger.html.hchtml.IHCCSSNode;

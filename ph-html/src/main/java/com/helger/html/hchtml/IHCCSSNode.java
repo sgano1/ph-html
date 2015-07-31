@@ -16,7 +16,7 @@
  */
 package com.helger.html.hchtml;
 
-import com.helger.html.hcapi.IHCNode;
+import com.helger.html.hc.IHCNode;
 
 /**
  * Marker interface for nodes that can contain CSS code (inline or external)
