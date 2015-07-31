@@ -22,9 +22,9 @@ import javax.annotation.Nonnull;
 
 import com.helger.commons.id.factory.GlobalIDFactory;
 import com.helger.html.EHTMLVersion;
-import com.helger.html.hcapi.IHCHasChildrenMutable;
-import com.helger.html.hcapi.IHCNode;
-import com.helger.html.hcapi.config.AbstractHCCustomizer;
+import com.helger.html.hc.IHCHasChildrenMutable;
+import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.impl.AbstractHCCustomizer;
 import com.helger.html.hchtml.IHCElement;
 import com.helger.html.hchtml.script.HCScriptInline;
 import com.helger.html.hchtml.script.IHCScript;

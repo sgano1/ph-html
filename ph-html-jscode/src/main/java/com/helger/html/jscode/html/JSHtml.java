@@ -24,7 +24,7 @@ import javax.annotation.concurrent.Immutable;
 import com.helger.commons.annotation.PresentForCodeCoverage;
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.EHTMLElement;
-import com.helger.html.hcapi.IHCHasID;
+import com.helger.html.hc.IHCHasID;
 import com.helger.html.jscode.IJSExpression;
 import com.helger.html.jscode.JSAnonymousFunction;
 import com.helger.html.jscode.JSAssignment;
