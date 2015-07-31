@@ -44,7 +44,7 @@ import com.helger.html.hc.HCHelper;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeWithChildren;
 import com.helger.html.hc.config.HCSettings;
-import com.helger.html.hc.ext.HCConditionalCommentNode;
+import com.helger.html.hchtml.IHCConditionalCommentNode;
 import com.helger.html.hchtml.metadata.HCCSSNodeDetector;
 import com.helger.html.hchtml.metadata.HCLink;
 import com.helger.html.hchtml.metadata.HCStyle;
@@ -255,10 +255,10 @@ public final class HCSpecialNodeHandler
         else
           if (aNode instanceof HCStyle)
           {
-            if (((HCStyle) aNode).hasNoMediaOrAll ())
+            final HCStyle aStyle = (HCStyle) aNode;
+            if (aStyle.hasNoMediaOrAll ())
             {
               // Merge only inline CSS nodes, that are media-independent
-              final HCStyle aStyle = (HCStyle) aNode;
               (aStyle.isEmitAfterFiles () ? aCSSInlineAfter : aCSSInlineBefore).append (aStyle.getStyleContent ());
             }
             else
@@ -274,7 +274,7 @@ public final class HCSpecialNodeHandler
             // HCConditionalCommentNode
             if (!(aNode instanceof HCLink) &&
                 !(aNode instanceof HCScriptFile) &&
-                !(aNode instanceof HCConditionalCommentNode))
+                !(aNode instanceof IHCConditionalCommentNode))
               s_aLogger.warn ("Found unexpected node to merge inline CSS/JS: " + aNode);
 
             // Add always!

@@ -33,6 +33,7 @@ import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.impl.AbstractHCWrappingNode;
 import com.helger.html.hc.impl.HCCommentNode;
 import com.helger.html.hc.render.HCRenderer;
+import com.helger.html.hchtml.IHCConditionalCommentNode;
 
 /**
  * Represents an HTML conditional comment for IE specific usage. E.g.
@@ -46,7 +47,7 @@ import com.helger.html.hc.render.HCRenderer;
  * @author Philip Helger
  */
 @Immutable
-public class HCConditionalCommentNode extends AbstractHCWrappingNode
+public class HCConditionalCommentNode extends AbstractHCWrappingNode implements IHCConditionalCommentNode
 {
   public static final Version IE5 = new Version (5);
   public static final Version IE6 = new Version (6);
