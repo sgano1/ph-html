@@ -24,22 +24,17 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.mime.CMimeType;
 import com.helger.commons.mime.IMimeType;
-import com.helger.commons.mutable.MutableBoolean;
-import com.helger.commons.state.EFinish;
 import com.helger.commons.state.ETriState;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.ISimpleURL;
-import com.helger.commons.wrapper.Wrapper;
 import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.css.DefaultCSSClassProvider;
 import com.helger.html.css.ICSSClassProvider;
-import com.helger.html.hc.HCHelper;
 import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hc.IHCHasChildrenMutable;
-import com.helger.html.hc.IHCIteratorCallback;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.hc.html.AbstractHCElementWithChildren;
@@ -293,51 +288,6 @@ public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>
     return thisAsT ();
   }
 
-  public static void setAutoFocusOnFirstControl (@Nonnull final IHCNode aStartNode)
-  {
-    final Wrapper <IHCHasFocus <?>> aFirstCtrl = new Wrapper <IHCHasFocus <?>> ();
-    final MutableBoolean bAnyCtrlHasFocus = new MutableBoolean (false);
-    HCHelper.iterateChildren (aStartNode, new IHCIteratorCallback ()
-    {
-      public EFinish call (@Nullable final IHCNode aParentNode, @Nonnull final IHCNode aChildNode)
-      {
-        if (aChildNode instanceof IHCHasFocus <?>)
-        {
-          final IHCHasFocus <?> aHasFocus = (IHCHasFocus <?>) aChildNode;
-          if (!aFirstCtrl.isSet ())
-          {
-            if (aHasFocus instanceof HCHiddenField)
-            {
-              // cannot focus
-            }
-            else
-              if (aHasFocus instanceof IHCControl <?> && ((IHCControl <?>) aHasFocus).isReadOnly ())
-              {
-                // cannot focus read-only controls
-              }
-              else
-                aFirstCtrl.set (aHasFocus);
-          }
-          if (aHasFocus.isAutoFocus ())
-          {
-            // No need to continue
-            bAnyCtrlHasFocus.set (true);
-            return EFinish.FINISHED;
-          }
-        }
-
-        return EFinish.UNFINISHED;
-      }
-    });
-
-    if (!bAnyCtrlHasFocus.booleanValue ())
-    {
-      final IHCHasFocus <?> aFirst = aFirstCtrl.get ();
-      if (aFirst != null)
-        aFirst.setAutoFocus (true);
-    }
-  }
-
   @Override
   protected void onFinalizeNodeState (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
                                       @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
@@ -345,9 +295,6 @@ public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>
     super.onFinalizeNodeState (aConversionSettings, aTargetNode);
     if (m_bSubmitPressingEnter)
       addChild (new HCButton_Submit ("").addClass (CSS_CLASS_INVISIBLE_BUTTON).setTabIndex (m_nSubmitButtonTabIndex));
-
-    // Set focus on first control
-    setAutoFocusOnFirstControl (this);
   }
 
   @Override

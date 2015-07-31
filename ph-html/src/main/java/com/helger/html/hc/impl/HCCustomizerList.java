@@ -35,23 +35,24 @@ import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCNode;
 
 /**
- * An implementation of {@link IHCCustomizer} that handles multiple customizers.
+ * An implementation of {@link IHCCustomizer} that handles a list of multiple
+ * customizers.
  *
  * @author Philip Helger
  */
 @NotThreadSafe
-public class HCCustomizerMulti extends AbstractHCCustomizer
+public class HCCustomizerList extends AbstractHCCustomizer
 {
   private final List <IHCCustomizer> m_aCustomizers = new ArrayList <IHCCustomizer> ();
 
-  public HCCustomizerMulti (@Nullable final IHCCustomizer... aCustomizers)
+  public HCCustomizerList (@Nullable final IHCCustomizer... aCustomizers)
   {
     if (aCustomizers != null)
       for (final IHCCustomizer aCustomizer : aCustomizers)
         addCustomizer (aCustomizer);
   }
 
-  public HCCustomizerMulti (@Nullable final Iterable <? extends IHCCustomizer> aCustomizers)
+  public HCCustomizerList (@Nullable final Iterable <? extends IHCCustomizer> aCustomizers)
   {
     if (aCustomizers != null)
       for (final IHCCustomizer aCustomizer : aCustomizers)
@@ -59,7 +60,7 @@ public class HCCustomizerMulti extends AbstractHCCustomizer
   }
 
   @Nonnull
-  public HCCustomizerMulti addCustomizer (@Nonnull final IHCCustomizer aCustomizer)
+  public HCCustomizerList addCustomizer (@Nonnull final IHCCustomizer aCustomizer)
   {
     ValueEnforcer.notNull (aCustomizer, "Customizer");
     m_aCustomizers.add (aCustomizer);
