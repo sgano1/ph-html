@@ -26,9 +26,9 @@ import org.junit.Test;
 
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.html.grouping.HCDiv;
+import com.helger.html.hc.html.textlevel.HCBR;
 import com.helger.html.hc.impl.HCTextNode;
-import com.helger.html.hchtml.grouping.HCDiv;
-import com.helger.html.hchtml.textlevel.HCBR;
 
 /**
  * Test class for class {@link HCExtHelper}.

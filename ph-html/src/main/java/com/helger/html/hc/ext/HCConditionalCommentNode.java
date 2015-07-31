@@ -30,10 +30,10 @@ import com.helger.commons.version.Version;
 import com.helger.commons.xml.serialize.write.IXMLWriterSettings;
 import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.html.IHCConditionalCommentNode;
 import com.helger.html.hc.impl.AbstractHCWrappingNode;
 import com.helger.html.hc.impl.HCCommentNode;
 import com.helger.html.hc.render.HCRenderer;
-import com.helger.html.hchtml.IHCConditionalCommentNode;
 
 /**
  * Represents an HTML conditional comment for IE specific usage. E.g.

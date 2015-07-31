@@ -19,8 +19,8 @@ package com.helger.html.hc.ext;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.url.ISimpleURL;
-import com.helger.html.hchtml.FakeJS;
-import com.helger.html.hchtml.forms.AbstractHCButton;
+import com.helger.html.hc.html.FakeJS;
+import com.helger.html.hc.html.forms.AbstractHCButton;
 import com.helger.html.js.IHasJSCodeWithSettings;
 
 public class HCLinkButton extends AbstractHCButton <HCLinkButton>

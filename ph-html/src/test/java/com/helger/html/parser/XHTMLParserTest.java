@@ -16,7 +16,6 @@
  */
 package com.helger.html.parser;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
@@ -27,18 +26,11 @@ import org.junit.Test;
 
 import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.commons.io.resource.IReadableResource;
-import com.helger.commons.microdom.IMicroContainer;
 import com.helger.commons.microdom.IMicroDocument;
-import com.helger.commons.microdom.IMicroElement;
-import com.helger.commons.microdom.IMicroNode;
 import com.helger.commons.microdom.serialize.MicroReader;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.xml.serialize.read.SAXReaderSettings;
 import com.helger.html.entity.HTMLEntityResolver;
-import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.impl.HCDOMWrapper;
-import com.helger.html.hc.impl.HCTextNode;
-import com.helger.html.hc.render.HCRenderer;
 
 /**
  * Test class for class {@link XHTMLParser}.
@@ -337,36 +329,6 @@ public final class XHTMLParserTest
     assertNull (aParser.unescapeXHTMLFragment ("<b>Hallo"));
     assertNull (aParser.unescapeXHTMLFragment ("Hallo</b>"));
     assertNull (aParser.unescapeXHTMLFragment ("&"));
-  }
-
-  @Test
-  public void testconvertToXHTMLOnDemand ()
-  {
-    final XHTMLParser aParser = new XHTMLParser ();
-
-    IHCNode aNode = aParser.convertToXHTMLFragmentOnDemand ("<b>Hallo</b>");
-    assertTrue (aNode instanceof HCDOMWrapper);
-    IMicroNode aMicroNode = HCRenderer.getAsNode (aNode);
-    assertTrue (aMicroNode instanceof IMicroContainer);
-    assertTrue (((IMicroContainer) aMicroNode).getChildAtIndex (0) instanceof IMicroElement);
-
-    aNode = aParser.convertToXHTMLFragmentOnDemand ("<b>Hallo<br/>helger</b>");
-    assertTrue (aNode instanceof HCDOMWrapper);
-    aMicroNode = HCRenderer.getAsNode (aNode);
-    assertTrue (aMicroNode instanceof IMicroContainer);
-    assertTrue (((IMicroContainer) aMicroNode).getChildAtIndex (0) instanceof IMicroElement);
-
-    aNode = aParser.convertToXHTMLFragmentOnDemand ("<b>Hallo");
-    assertTrue (aNode instanceof HCTextNode);
-    assertEquals ("<b>Hallo", ((HCTextNode) aNode).getText ());
-
-    aNode = aParser.convertToXHTMLFragmentOnDemand ("Hallo</b>");
-    assertTrue (aNode instanceof HCTextNode);
-    assertEquals ("Hallo</b>", ((HCTextNode) aNode).getText ());
-
-    aNode = aParser.convertToXHTMLFragmentOnDemand ("&");
-    assertTrue (aNode instanceof HCTextNode);
-    assertEquals ("&", ((HCTextNode) aNode).getText ());
   }
 
   @Test

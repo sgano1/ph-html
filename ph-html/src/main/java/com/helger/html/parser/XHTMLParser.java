@@ -20,9 +20,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
@@ -44,10 +41,6 @@ import com.helger.commons.xml.serialize.write.XMLEmitter;
 import com.helger.html.EHTMLElement;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.entity.HTMLEntityResolver;
-import com.helger.html.hc.HCHelper;
-import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.impl.HCDOMWrapper;
-import com.helger.html.hc.impl.HCTextNode;
 
 /**
  * Utility class for parsing stuff as HTML.
@@ -55,10 +48,8 @@ import com.helger.html.hc.impl.HCTextNode;
  * @author Philip Helger
  */
 @NotThreadSafe
-public final class XHTMLParser
+public class XHTMLParser
 {
-  private static final Logger s_aLogger = LoggerFactory.getLogger (XHTMLParser.class);
-
   private final EHTMLVersion m_eHTMLVersion;
 
   // By default enable a little secured reader settings.
@@ -212,7 +203,7 @@ public final class XHTMLParser
     if (aDoc != null && aDoc.getDocumentElement () != null)
     {
       // Find "body" case insensitive
-      final IMicroElement eBody = HCHelper.getFirstChildElement (aDoc.getDocumentElement (), EHTMLElement.BODY);
+      final IMicroElement eBody = aDoc.getDocumentElement ().getFirstChildElement (EHTMLElement.BODY.getElementName ());
       if (eBody != null)
       {
         final IMicroContainer ret = new MicroContainer ();
@@ -227,28 +218,5 @@ public final class XHTMLParser
       }
     }
     return null;
-  }
-
-  /**
-   * If the passed text looks like XHTML, unescape it (using
-   * {@link #unescapeXHTMLFragment(String)}) else return a simple text node.
-   *
-   * @param sText
-   *        The text to be converted. May be <code>null</code>.
-   * @return A non-<code>null</code> IHCNode with the result representation
-   *         (e.g. an {@link HCTextNode} or an {@link HCDOMWrapper} with an
-   *         {@link IMicroContainer} having all the body elements)
-   */
-  @Nonnull
-  public IHCNode convertToXHTMLFragmentOnDemand (@Nullable final String sText)
-  {
-    if (looksLikeXHTML (sText))
-    {
-      final IMicroContainer aCont = unescapeXHTMLFragment (sText);
-      if (aCont != null)
-        return new HCDOMWrapper (aCont);
-      s_aLogger.error ("Failed to unescape XHTML:\n" + sText);
-    }
-    return new HCTextNode (sText);
   }
 }

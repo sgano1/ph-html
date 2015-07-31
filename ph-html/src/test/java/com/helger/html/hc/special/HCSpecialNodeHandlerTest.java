@@ -29,10 +29,10 @@ import com.helger.html.EHTMLVersion;
 import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.config.HCConversionSettings;
+import com.helger.html.hc.html.root.HCHtml;
+import com.helger.html.hc.html.script.AbstractHCScriptInline;
+import com.helger.html.hc.html.sections.HCH1;
 import com.helger.html.hc.render.HCRenderer;
-import com.helger.html.hchtml.root.HCHtml;
-import com.helger.html.hchtml.script.AbstractHCScriptInline;
-import com.helger.html.hchtml.sections.HCH1;
 import com.helger.html.js.UnparsedJSCodeProvider;
 
 public final class HCSpecialNodeHandlerTest

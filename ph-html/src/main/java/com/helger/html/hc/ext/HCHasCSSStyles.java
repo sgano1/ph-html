@@ -34,7 +34,7 @@ import com.helger.css.ICSSWriterSettings;
 import com.helger.css.property.CSSPropertyFree;
 import com.helger.css.property.ECSSProperty;
 import com.helger.css.propertyvalue.ICSSValue;
-import com.helger.html.hchtml.IHCHasCSSStyles;
+import com.helger.html.hc.html.IHCHasCSSStyles;
 
 /**
  * Stand alone implementation of {@link IHCHasCSSStyles}

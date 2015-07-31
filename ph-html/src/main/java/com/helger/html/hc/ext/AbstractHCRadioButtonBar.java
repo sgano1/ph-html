@@ -24,9 +24,9 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.html.forms.HCRadioButton;
+import com.helger.html.hc.html.textlevel.AbstractHCSpan;
 import com.helger.html.hc.impl.HCTextNode;
-import com.helger.html.hchtml.forms.HCRadioButton;
-import com.helger.html.hchtml.textlevel.AbstractHCSpan;
 
 public abstract class AbstractHCRadioButtonBar extends AbstractHCSpan <AbstractHCRadioButtonBar>
 {

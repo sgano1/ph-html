@@ -44,15 +44,15 @@ import com.helger.html.hc.HCHelper;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeWithChildren;
 import com.helger.html.hc.config.HCSettings;
-import com.helger.html.hchtml.IHCConditionalCommentNode;
-import com.helger.html.hchtml.metadata.HCCSSNodeDetector;
-import com.helger.html.hchtml.metadata.HCLink;
-import com.helger.html.hchtml.metadata.HCStyle;
-import com.helger.html.hchtml.script.HCJSNodeDetector;
-import com.helger.html.hchtml.script.HCScriptFile;
-import com.helger.html.hchtml.script.HCScriptInline;
-import com.helger.html.hchtml.script.HCScriptInlineOnDocumentReady;
-import com.helger.html.hchtml.script.IHCScriptInline;
+import com.helger.html.hc.html.IHCConditionalCommentNode;
+import com.helger.html.hc.html.metadata.HCCSSNodeDetector;
+import com.helger.html.hc.html.metadata.HCLink;
+import com.helger.html.hc.html.metadata.HCStyle;
+import com.helger.html.hc.html.script.HCJSNodeDetector;
+import com.helger.html.hc.html.script.HCScriptFile;
+import com.helger.html.hc.html.script.HCScriptInline;
+import com.helger.html.hc.html.script.HCScriptInlineOnDocumentReady;
+import com.helger.html.hc.html.script.IHCScriptInline;
 import com.helger.html.js.CollectingJSCodeProvider;
 
 /**

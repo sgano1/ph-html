@@ -28,7 +28,7 @@ import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.css.ICSSClassProvider;
-import com.helger.html.hchtml.IHCHasCSSClasses;
+import com.helger.html.hc.html.IHCHasCSSClasses;
 
 /**
  * Stand alone implementation of {@link IHCHasCSSClasses}

@@ -18,27 +18,27 @@ package com.helger.html.markdown;
 
 import javax.annotation.Nonnull;
 
-import com.helger.html.hchtml.IHCElementWithChildren;
-import com.helger.html.hchtml.embedded.HCImg;
-import com.helger.html.hchtml.grouping.HCBlockQuote;
-import com.helger.html.hchtml.grouping.HCHR;
-import com.helger.html.hchtml.grouping.HCLI;
-import com.helger.html.hchtml.grouping.HCOL;
-import com.helger.html.hchtml.grouping.HCP;
-import com.helger.html.hchtml.grouping.HCPre;
-import com.helger.html.hchtml.grouping.HCUL;
-import com.helger.html.hchtml.sections.HCH1;
-import com.helger.html.hchtml.sections.HCH2;
-import com.helger.html.hchtml.sections.HCH3;
-import com.helger.html.hchtml.sections.HCH4;
-import com.helger.html.hchtml.sections.HCH5;
-import com.helger.html.hchtml.sections.HCH6;
-import com.helger.html.hchtml.textlevel.HCA;
-import com.helger.html.hchtml.textlevel.HCCode;
-import com.helger.html.hchtml.textlevel.HCEM;
-import com.helger.html.hchtml.textlevel.HCS;
-import com.helger.html.hchtml.textlevel.HCStrong;
-import com.helger.html.hchtml.textlevel.HCSup;
+import com.helger.html.hc.html.IHCElementWithChildren;
+import com.helger.html.hc.html.embedded.HCImg;
+import com.helger.html.hc.html.grouping.HCBlockQuote;
+import com.helger.html.hc.html.grouping.HCHR;
+import com.helger.html.hc.html.grouping.HCLI;
+import com.helger.html.hc.html.grouping.HCOL;
+import com.helger.html.hc.html.grouping.HCP;
+import com.helger.html.hc.html.grouping.HCPre;
+import com.helger.html.hc.html.grouping.HCUL;
+import com.helger.html.hc.html.sections.HCH1;
+import com.helger.html.hc.html.sections.HCH2;
+import com.helger.html.hc.html.sections.HCH3;
+import com.helger.html.hc.html.sections.HCH4;
+import com.helger.html.hc.html.sections.HCH5;
+import com.helger.html.hc.html.sections.HCH6;
+import com.helger.html.hc.html.textlevel.HCA;
+import com.helger.html.hc.html.textlevel.HCCode;
+import com.helger.html.hc.html.textlevel.HCEM;
+import com.helger.html.hc.html.textlevel.HCS;
+import com.helger.html.hc.html.textlevel.HCStrong;
+import com.helger.html.hc.html.textlevel.HCSup;
 
 /**
  * Default Decorator implementation.

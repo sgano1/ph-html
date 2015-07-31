@@ -21,9 +21,9 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.url.ISimpleURL;
 import com.helger.commons.url.ReadOnlySimpleURL;
-import com.helger.html.hchtml.FakeJS;
-import com.helger.html.hchtml.textlevel.AbstractHCA;
-import com.helger.html.hchtml.textlevel.IHCA;
+import com.helger.html.hc.html.FakeJS;
+import com.helger.html.hc.html.textlevel.AbstractHCA;
+import com.helger.html.hc.html.textlevel.IHCA;
 import com.helger.html.js.CJS;
 import com.helger.html.js.CollectingJSCodeProvider;
 import com.helger.html.js.IHasJSCode;

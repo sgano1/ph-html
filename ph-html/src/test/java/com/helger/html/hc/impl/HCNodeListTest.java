@@ -25,12 +25,12 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import com.helger.commons.microdom.IMicroContainer;
+import com.helger.html.hc.html.grouping.HCDiv;
+import com.helger.html.hc.html.tabular.HCRow;
+import com.helger.html.hc.html.tabular.HCTable;
+import com.helger.html.hc.html.textlevel.HCSpan;
 import com.helger.html.hc.mock.HCTestRuleOptimized;
 import com.helger.html.hc.render.HCRenderer;
-import com.helger.html.hchtml.grouping.HCDiv;
-import com.helger.html.hchtml.tabular.HCRow;
-import com.helger.html.hchtml.tabular.HCTable;
-import com.helger.html.hchtml.textlevel.HCSpan;
 
 /**
  * Test class for class {@link HCNodeList}

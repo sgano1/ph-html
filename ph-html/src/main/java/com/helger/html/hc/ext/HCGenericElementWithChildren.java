@@ -19,7 +19,7 @@ package com.helger.html.hc.ext;
 import javax.annotation.Nonnull;
 
 import com.helger.html.EHTMLElement;
-import com.helger.html.hchtml.AbstractHCElementWithChildren;
+import com.helger.html.hc.html.AbstractHCElementWithChildren;
 
 /**
  * Fallback implementation of {@link AbstractHCElementWithChildren} for

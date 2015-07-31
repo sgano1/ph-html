@@ -34,8 +34,8 @@ import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCIteratorCallback;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.config.HCSettings;
+import com.helger.html.hc.html.root.HCHtml;
 import com.helger.html.hc.impl.HCNodeList;
-import com.helger.html.hchtml.root.HCHtml;
 
 @Immutable
 public final class HCRenderer
