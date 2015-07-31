@@ -26,7 +26,6 @@ import javax.annotation.Nullable;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.mime.CMimeType;
@@ -42,8 +41,6 @@ import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.hchtml.AbstractHCElement;
 import com.helger.html.hchtml.HC_Target;
 import com.helger.html.hchtml.script.HCJSNodeDetector;
-import com.helger.html.meta.IMetaElement;
-import com.helger.html.meta.MetaElementList;
 
 /**
  * Represents an HTML &lt;head&gt; element
@@ -55,7 +52,7 @@ public class HCHead extends AbstractHCElement <HCHead>
   private String m_sProfile;
   private final HCTitle m_aPageTitle = new HCTitle ();
   private final HCBase m_aBase = new HCBase ();
-  private final MetaElementList m_aMetaElements = new MetaElementList ();
+  private final List <HCMeta> m_aMetaElements = new ArrayList <HCMeta> ();
   private final List <HCLink> m_aLinks = new ArrayList <HCLink> ();
   private final List <IHCNode> m_aCSS = new ArrayList <IHCNode> ();
   private final List <IHCNode> m_aJS = new ArrayList <IHCNode> ();
@@ -126,10 +123,58 @@ public class HCHead extends AbstractHCElement <HCHead>
   //
 
   @Nonnull
-  @ReturnsMutableObject ("design")
-  public MetaElementList getMetaElementList ()
+  public HCHead addMetaElement (@Nonnull final HCMeta aMetaElement)
   {
-    return m_aMetaElements;
+    ValueEnforcer.notNull (aMetaElement, "MetaElement");
+    m_aMetaElements.add (aMetaElement);
+    return this;
+  }
+
+  @Nonnull
+  public HCHead addMetaElement (@Nonnegative final int nIndex, @Nonnull final HCMeta aMetaElement)
+  {
+    ValueEnforcer.notNull (aMetaElement, "MetaElement");
+    m_aMetaElements.add (nIndex, aMetaElement);
+    return this;
+  }
+
+  @Nonnull
+  public EChange removeMetaElement (@Nullable final String sName)
+  {
+    if (StringHelper.hasText (sName))
+    {
+      int nIndex = 0;
+      for (final HCMeta aMetaElement : m_aMetaElements)
+      {
+        if (sName.equals (aMetaElement.getName ()) || sName.equals (aMetaElement.getHttpEquiv ()))
+        {
+          m_aMetaElements.remove (nIndex);
+          return EChange.CHANGED;
+        }
+        ++nIndex;
+      }
+    }
+    return EChange.UNCHANGED;
+  }
+
+  @Nonnegative
+  public int getMetaElementCount ()
+  {
+    return m_aMetaElements.size ();
+  }
+
+  @Nonnull
+  @ReturnsMutableCopy
+  public List <HCMeta> getAllMetaElements ()
+  {
+    return CollectionHelper.newList (m_aMetaElements);
+  }
+
+  @Nonnull
+  public HCHead removeAllMetaElements ()
+  {
+    m_aMetaElements.clear ();
+    return this;
   }
 
   //
@@ -391,8 +436,8 @@ public class HCHead extends AbstractHCElement <HCHead>
       eHead.setAttribute (CHTMLAttributes.PROFILE, m_sProfile);
 
     // Append meta element first for charset encoding!
-    for (final IMetaElement aMetaElement : m_aMetaElements.getAllMetaElements ())
-      eHead.appendChild (aMetaElement.convertToNode (aConversionSettings));
+    for (final HCMeta aMetaElement : m_aMetaElements)
+      eHead.appendChild (aMetaElement.convertToMicroNode (aConversionSettings));
 
     // page title
     eHead.appendChild (m_aPageTitle.convertToMicroNode (aConversionSettings));
@@ -429,6 +474,7 @@ public class HCHead extends AbstractHCElement <HCHead>
     final List <IHCNode> ret = new ArrayList <IHCNode> ();
     ret.add (m_aPageTitle);
     ret.add (m_aBase);
+    ret.addAll (m_aMetaElements);
     ret.addAll (m_aLinks);
     ret.addAll (m_aCSS);
     ret.addAll (m_aJS);
@@ -445,7 +491,12 @@ public class HCHead extends AbstractHCElement <HCHead>
       return m_aBase;
 
     int nStart = 2;
-    int nEnd = nStart + m_aLinks.size ();
+    int nEnd = nStart + m_aMetaElements.size ();
+    if (nIndex >= nStart && nIndex < nEnd)
+      return m_aMetaElements.get (nIndex - nStart);
+
+    nStart = nEnd;
+    nEnd = nStart + m_aLinks.size ();
     if (nIndex >= nStart && nIndex < nEnd)
       return m_aLinks.get (nIndex - nStart);
 
@@ -479,6 +530,8 @@ public class HCHead extends AbstractHCElement <HCHead>
       return CollectionHelper.getLastElement (m_aCSS);
     if (!m_aLinks.isEmpty ())
       return CollectionHelper.getLastElement (m_aLinks);
+    if (!m_aMetaElements.isEmpty ())
+      return CollectionHelper.getLastElement (m_aMetaElements);
     return m_aBase;
   }
 
@@ -491,7 +544,7 @@ public class HCHead extends AbstractHCElement <HCHead>
   @Override
   public int getChildCount ()
   {
-    return 1 + 1 + m_aLinks.size () + m_aCSS.size () + m_aJS.size ();
+    return 1 + 1 + m_aMetaElements.size () + m_aLinks.size () + m_aCSS.size () + m_aJS.size ();
   }
 
   @Override
@@ -501,10 +554,10 @@ public class HCHead extends AbstractHCElement <HCHead>
                             .appendIfNotNull ("profile", m_sProfile)
                             .append ("pageTitle", m_aPageTitle)
                             .append ("base", m_aBase)
-                            .appendIfNotNull ("metaElements", m_aMetaElements)
-                            .appendIfNotNull ("links", m_aLinks)
-                            .appendIfNotNull ("CSS", m_aCSS)
-                            .appendIfNotNull ("JS", m_aJS)
+                            .append ("metaElements", m_aMetaElements)
+                            .append ("links", m_aLinks)
+                            .append ("CSS", m_aCSS)
+                            .append ("JS", m_aJS)
                             .toString ();
   }
 }

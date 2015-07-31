@@ -84,6 +84,7 @@ import com.helger.html.hchtml.interactive.HCSummary;
 import com.helger.html.hchtml.metadata.HCBase;
 import com.helger.html.hchtml.metadata.HCHead;
 import com.helger.html.hchtml.metadata.HCLink;
+import com.helger.html.hchtml.metadata.HCMeta;
 import com.helger.html.hchtml.metadata.HCStyle;
 import com.helger.html.hchtml.metadata.HCTitle;
 import com.helger.html.hchtml.root.HCHtml;
@@ -302,7 +303,7 @@ public final class HCExtHelper
       case MENU:
         return new HCMenu ();
       case META:
-        return new HCGenericElementWithChildren (eElement);
+        return new HCMeta ();
       case METER:
         return new HCMeter ();
       case NAV:

@@ -25,12 +25,11 @@ import com.helger.css.media.ECSSMedium;
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.mock.HCTestRuleOptimized;
 import com.helger.html.hc.render.HCRenderer;
+import com.helger.html.hchtml.metadata.HCMeta;
 import com.helger.html.hchtml.metadata.HCStyle;
-import com.helger.html.hchtml.root.HCHtml;
 import com.helger.html.hchtml.script.HCScriptInlineOnDocumentReady;
 import com.helger.html.hchtml.sections.HCH1;
 import com.helger.html.js.UnparsedJSCodeProvider;
-import com.helger.html.meta.MetaElement;
 
 /**
  * Test class for class {@link HCHtml}
@@ -96,7 +95,7 @@ public final class HCHtmlTest
   public void testOutOfBandNodes2 ()
   {
     final HCHtml aHtml = new HCHtml ();
-    aHtml.getHead ().getMetaElementList ().addMetaElement (new MetaElement ("foo", "bar"));
+    aHtml.getHead ().addMetaElement (new HCMeta ().setName ("foo").setContent ("bar"));
     aHtml.getBody ().addChild (new HCH1 ().addChild ("Test"));
     aHtml.getBody ().addChild (new HCScriptInlineOnDocumentReady (new UnparsedJSCodeProvider ("a=b;")));
     aHtml.getBody ().addChild (new HCScriptInlineOnDocumentReady (new UnparsedJSCodeProvider ("c=d;")));

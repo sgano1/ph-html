@@ -31,16 +31,9 @@ import com.helger.commons.url.SimpleURL;
 import com.helger.html.hc.mock.HCTestRuleOptimized;
 import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.hchtml.HC_Target;
-import com.helger.html.hchtml.metadata.EHCLinkType;
-import com.helger.html.hchtml.metadata.HCBase;
-import com.helger.html.hchtml.metadata.HCHead;
-import com.helger.html.hchtml.metadata.HCLink;
-import com.helger.html.hchtml.metadata.HCStyle;
-import com.helger.html.hchtml.metadata.HCTitle;
 import com.helger.html.hchtml.script.HCScriptFile;
 import com.helger.html.hchtml.script.HCScriptInline;
 import com.helger.html.js.UnparsedJSCodeProvider;
-import com.helger.html.meta.MetaElement;
 
 /**
  * Test class for class {@link HCHead}
@@ -60,8 +53,8 @@ public final class HCHeadTest
     assertNull (aHead.getPageTitle ());
     assertNull (aHead.getBaseHref ());
     assertNull (aHead.getBaseTarget ());
-    assertTrue (aHead.getMetaElementList ().getAllMetaElements ().isEmpty ());
-    assertEquals (0, aHead.getMetaElementList ().getMetaElementCount ());
+    assertTrue (aHead.getAllMetaElements ().isEmpty ());
+    assertEquals (0, aHead.getMetaElementCount ());
     assertTrue (aHead.getAllLinks ().isEmpty ());
     assertEquals (0, aHead.getLinkCount ());
     assertTrue (aHead.getAllCSSNodes ().isEmpty ());
@@ -94,39 +87,37 @@ public final class HCHeadTest
   public void testMetaElements ()
   {
     final HCHead aHead = new HCHead ();
-    assertTrue (aHead.getMetaElementList ().getAllMetaElements ().isEmpty ());
-    assertEquals (0, aHead.getMetaElementList ().getMetaElementCount ());
+    assertTrue (aHead.getAllMetaElements ().isEmpty ());
+    assertEquals (0, aHead.getMetaElementCount ());
 
-    assertSame (aHead.getMetaElementList (),
-                aHead.getMetaElementList ().addMetaElement (new MetaElement ("foo", "bar")));
-    assertFalse (aHead.getMetaElementList ().getAllMetaElements ().isEmpty ());
-    assertEquals (1, aHead.getMetaElementList ().getMetaElementCount ());
+    assertSame (aHead, aHead.addMetaElement (new HCMeta ().setName ("foo").setContent ("bar")));
+    assertFalse (aHead.getAllMetaElements ().isEmpty ());
+    assertEquals (1, aHead.getMetaElementCount ());
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\">" +
                   "<meta name=\"foo\" content=\"bar\" />" +
                   "</head>",
                   HCRenderer.getAsHTMLString (aHead));
 
-    assertSame (aHead.getMetaElementList (),
-                aHead.getMetaElementList ().addMetaElement (new MetaElement ("goo", true, "car")));
-    assertEquals (2, aHead.getMetaElementList ().getMetaElementCount ());
+    assertSame (aHead, aHead.addMetaElement (new HCMeta ().setHttpEquiv ("goo").setContent ("car")));
+    assertEquals (2, aHead.getMetaElementCount ());
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\">" +
                   "<meta name=\"foo\" content=\"bar\" />" +
                   "<meta http-equiv=\"goo\" content=\"car\" />" +
                   "</head>",
                   HCRenderer.getAsHTMLString (aHead));
 
-    assertEquals (EChange.UNCHANGED, aHead.getMetaElementList ().removeMetaElement ("any"));
-    assertEquals (2, aHead.getMetaElementList ().getMetaElementCount ());
-    assertEquals (EChange.CHANGED, aHead.getMetaElementList ().removeMetaElement ("foo"));
-    assertEquals (1, aHead.getMetaElementList ().getMetaElementCount ());
-    assertEquals (EChange.UNCHANGED, aHead.getMetaElementList ().removeMetaElement ("foo"));
-    assertEquals (1, aHead.getMetaElementList ().getMetaElementCount ());
+    assertEquals (EChange.UNCHANGED, aHead.removeMetaElement ("any"));
+    assertEquals (2, aHead.getMetaElementCount ());
+    assertEquals (EChange.CHANGED, aHead.removeMetaElement ("foo"));
+    assertEquals (1, aHead.getMetaElementCount ());
+    assertEquals (EChange.UNCHANGED, aHead.removeMetaElement ("foo"));
+    assertEquals (1, aHead.getMetaElementCount ());
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\">" +
                   "<meta http-equiv=\"goo\" content=\"car\" />" +
                   "</head>",
                   HCRenderer.getAsHTMLString (aHead));
-    assertEquals (EChange.CHANGED, aHead.getMetaElementList ().removeMetaElement ("goo"));
-    assertEquals (0, aHead.getMetaElementList ().getMetaElementCount ());
+    assertEquals (EChange.CHANGED, aHead.removeMetaElement ("goo"));
+    assertEquals (0, aHead.getMetaElementCount ());
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"></head>", HCRenderer.getAsHTMLString (aHead));
   }
 
