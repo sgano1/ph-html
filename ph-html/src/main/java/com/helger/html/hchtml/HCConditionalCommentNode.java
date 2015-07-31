@@ -26,10 +26,8 @@ import com.helger.commons.microdom.IMicroNode;
 import com.helger.commons.microdom.serialize.MicroWriter;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.commons.system.ENewLineMode;
 import com.helger.commons.version.Version;
 import com.helger.commons.xml.serialize.write.IXMLWriterSettings;
-import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.hcapi.IHCConversionSettingsToNode;
 import com.helger.html.hcapi.IHCNode;
@@ -67,16 +65,8 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
 
   private final String m_sCondition;
   private final IHCNode m_aWrappedNode;
-  private final ENewLineMode m_eNewLineMode;
 
   public HCConditionalCommentNode (@Nonnull @Nonempty final String sCondition, @Nonnull final IHCNode aWrappedNode)
-  {
-    this (sCondition, aWrappedNode, HCSettings.getNewLineMode ());
-  }
-
-  public HCConditionalCommentNode (@Nonnull @Nonempty final String sCondition,
-                                   @Nonnull final IHCNode aWrappedNode,
-                                   @Nonnull final ENewLineMode eNewLineMode)
   {
     m_sCondition = ValueEnforcer.notEmpty (sCondition, "Condition");
     ValueEnforcer.notNull (aWrappedNode, "WrappedNode");
@@ -85,7 +75,6 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
     ValueEnforcer.isFalse (aWrappedNode instanceof HCConditionalCommentNode,
                            "You cannot wrap a conditional comment inside another conditional comment");
     m_aWrappedNode = aWrappedNode;
-    m_eNewLineMode = ValueEnforcer.notNull (eNewLineMode, "NewLineMode");
   }
 
   /**
@@ -105,12 +94,6 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
     return m_aWrappedNode;
   }
 
-  @Nonnull
-  public ENewLineMode getNewLineMode ()
-  {
-    return m_eNewLineMode;
-  }
-
   @Override
   @Nullable
   protected IMicroNode internalConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
@@ -120,7 +103,8 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
 
     // Only create a newline when alignment is enabled
     final IXMLWriterSettings aXMLWriterSettings = aConversionSettings.getXMLWriterSettings ();
-    final String sLineSeparator = aXMLWriterSettings.getIndent ().isAlign () ? m_eNewLineMode.getText () : "";
+    final String sLineSeparator = aXMLWriterSettings.getIndent ().isAlign () ? aXMLWriterSettings.getNewLineString ()
+                                                                             : "";
 
     // Now wrap the created XML in the special format required for a conditional
     // comment
@@ -140,7 +124,6 @@ public class HCConditionalCommentNode extends AbstractHCWrappingNode
   {
     return new ToStringGenerator (this).append ("condition", m_sCondition)
                                        .append ("wrappedNode", m_aWrappedNode)
-                                       .append ("newLineMode", m_eNewLineMode)
                                        .toString ();
   }
 

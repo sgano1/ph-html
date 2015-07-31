@@ -28,7 +28,7 @@ import org.junit.Test;
 
 import com.helger.commons.state.EChange;
 import com.helger.commons.url.SimpleURL;
-import com.helger.html.hc.mock.HCTestRuleOptimized;
+import com.helger.html.hc.config.mock.HCTestRuleOptimized;
 import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.hchtml.HC_Target;
 import com.helger.html.hchtml.metadata.EHCLinkType;

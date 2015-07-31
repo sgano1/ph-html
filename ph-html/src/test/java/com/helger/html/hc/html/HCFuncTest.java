@@ -28,7 +28,7 @@ import com.helger.commons.url.SimpleURL;
 import com.helger.html.EHTMLRole;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.config.HCSettings;
-import com.helger.html.hc.mock.HCTestRuleOptimized;
+import com.helger.html.hc.config.mock.HCTestRuleOptimized;
 import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.hcapi.config.IHCConversionSettings;
 import com.helger.html.hchtml.HC_Target;

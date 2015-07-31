@@ -14,47 +14,41 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.mock;
+package com.helger.html.hc.config.mock;
 
 import javax.annotation.Nonnull;
 import javax.annotation.OverridingMethodsMustInvokeSuper;
 
 import org.junit.rules.ExternalResource;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.OverrideOnDemand;
-import com.helger.html.hc.config.DefaultHCOnDocumentReadyProvider;
+import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.config.HCSettings;
-import com.helger.html.hc.config.IHCOnDocumentReadyProvider;
-import com.helger.html.js.IHasJSCode;
-import com.helger.html.js.UnparsedJSCodeProvider;
 
 /**
- * A JUnit test rule that ensures that optimized HTML, CSS and JS output is
- * created.
+ * A JUnit test rule that ensures that a certain HTML version is used.
  *
  * @author Philip Helger
- * @since 4.7.0
+ * @since 5.0.0
  */
-public class HCTestRuleOptimized extends ExternalResource
+public class HCTestRuleHTMLVersion extends ExternalResource
 {
-  public HCTestRuleOptimized ()
-  {}
+  private final EHTMLVersion m_eHTMLVersion;
+  private EHTMLVersion m_ePrevHTMLVersion;
+
+  public HCTestRuleHTMLVersion (@Nonnull final EHTMLVersion eHTMLVersion)
+  {
+    m_eHTMLVersion = ValueEnforcer.notNull (eHTMLVersion, "HTMLVersion");
+  }
 
   @Override
   @OverrideOnDemand
   @OverridingMethodsMustInvokeSuper
   public void before ()
   {
-    HCSettings.getMutableConversionSettings ().setToOptimized ();
-    HCSettings.setOnDocumentReadyProvider (new IHCOnDocumentReadyProvider ()
-    {
-      @Nonnull
-      public IHasJSCode createOnDocumentReady (@Nonnull final IHasJSCode aJSCodeProvider)
-      {
-        // Fake jQuery style code :)
-        return new UnparsedJSCodeProvider ("$(document).ready(function(){" + aJSCodeProvider.getJSCode () + "});");
-      }
-    });
+    m_ePrevHTMLVersion = HCSettings.getConversionSettings ().getHTMLVersion ();
+    HCSettings.setDefaultHTMLVersion (m_eHTMLVersion);
   }
 
   @Override
@@ -62,7 +56,7 @@ public class HCTestRuleOptimized extends ExternalResource
   @OverridingMethodsMustInvokeSuper
   public void after ()
   {
-    HCSettings.setOnDocumentReadyProvider (new DefaultHCOnDocumentReadyProvider ());
-    HCSettings.getMutableConversionSettings ().setToDefault ();
+    // Reset to old version
+    HCSettings.setDefaultHTMLVersion (m_ePrevHTMLVersion);
   }
 }

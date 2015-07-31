@@ -23,7 +23,7 @@ import org.junit.Test;
 
 import com.helger.css.media.ECSSMedium;
 import com.helger.html.hc.config.HCSettings;
-import com.helger.html.hc.mock.HCTestRuleOptimized;
+import com.helger.html.hc.config.mock.HCTestRuleOptimized;
 import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.hchtml.metadata.HCStyle;
 import com.helger.html.hchtml.root.HCHtml;
