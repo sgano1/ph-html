@@ -538,7 +538,11 @@ public final class HCSpecialNodeHandler
           else
             if (isDirectJSInlineNode (aNode))
             {
-              aSpecialNodes.addInlineJS (((IHCScriptInline <?>) aNode).getJSCodeProvider ());
+              final IHCScriptInline <?> aScript = (IHCScriptInline <?>) aNode;
+              if (aScript.isEmitAfterFiles ())
+                aSpecialNodes.addInlineJSAfterExternal (aScript.getJSCodeProvider ());
+              else
+                aSpecialNodes.addInlineJSBeforeExternal (aScript.getJSCodeProvider ());
             }
             else
             {

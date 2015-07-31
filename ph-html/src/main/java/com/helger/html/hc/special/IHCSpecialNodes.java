@@ -78,12 +78,25 @@ public interface IHCSpecialNodes extends Serializable
    * @return <code>true</code> if inline JS is present, <code>false</code> if
    *         not
    */
-  boolean hasInlineJS ();
+  boolean hasInlineJSBeforeExternal ();
 
   /**
    * @return The inline JS. May not be <code>null</code>.
    */
   @Nonnull
   @ReturnsMutableCopy
-  IHasJSCode getInlineJS ();
+  IHasJSCode getInlineJSBeforeExternal ();
+
+  /**
+   * @return <code>true</code> if inline JS is present, <code>false</code> if
+   *         not
+   */
+  boolean hasInlineJSAfterExternal ();
+
+  /**
+   * @return The inline JS. May not be <code>null</code>.
+   */
+  @Nonnull
+  @ReturnsMutableCopy
+  IHasJSCode getInlineJSAfterExternal ();
 }

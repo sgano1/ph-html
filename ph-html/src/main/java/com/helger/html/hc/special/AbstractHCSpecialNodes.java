@@ -51,7 +51,8 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
   private final Set <String> m_aExternalCSSs = new LinkedHashSet <String> ();
   private final StringBuilder m_aInlineCSS = new StringBuilder ();
   private final Set <String> m_aExternalJSs = new LinkedHashSet <String> ();
-  private final CollectingJSCodeProvider m_aInlineJS = new CollectingJSCodeProvider ();
+  private final CollectingJSCodeProvider m_aInlineJSBeforeExternal = new CollectingJSCodeProvider ();
+  private final CollectingJSCodeProvider m_aInlineJSAfterExternal = new CollectingJSCodeProvider ();
 
   public AbstractHCSpecialNodes ()
   {}
@@ -64,7 +65,8 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
     m_aExternalCSSs.clear ();
     m_aInlineCSS.setLength (0);
     m_aExternalJSs.clear ();
-    m_aInlineJS.reset ();
+    m_aInlineJSBeforeExternal.reset ();
+    m_aInlineJSAfterExternal.reset ();
   }
 
   @SuppressWarnings ("unchecked")
@@ -140,24 +142,45 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
   }
 
   @Nonnull
-  public IMPLTYPE addInlineJS (@Nonnull final IHasJSCode aInlineJS)
+  public IMPLTYPE addInlineJSBeforeExternal (@Nonnull final IHasJSCode aInlineJS)
   {
     ValueEnforcer.notNull (aInlineJS, "InlineJS");
 
-    m_aInlineJS.appendFlattened (aInlineJS);
+    m_aInlineJSBeforeExternal.appendFlattened (aInlineJS);
     return thisAsT ();
   }
 
-  public boolean hasInlineJS ()
+  public boolean hasInlineJSBeforeExternal ()
   {
-    return m_aInlineJS.isNotEmpty ();
+    return m_aInlineJSBeforeExternal.isNotEmpty ();
   }
 
   @Nonnull
   @ReturnsMutableCopy
-  public CollectingJSCodeProvider getInlineJS ()
+  public CollectingJSCodeProvider getInlineJSBeforeExternal ()
   {
-    return m_aInlineJS.getClone ();
+    return m_aInlineJSBeforeExternal.getClone ();
+  }
+
+  @Nonnull
+  public IMPLTYPE addInlineJSAfterExternal (@Nonnull final IHasJSCode aInlineJS)
+  {
+    ValueEnforcer.notNull (aInlineJS, "InlineJS");
+
+    m_aInlineJSAfterExternal.appendFlattened (aInlineJS);
+    return thisAsT ();
+  }
+
+  public boolean hasInlineJSAfterExternal ()
+  {
+    return m_aInlineJSAfterExternal.isNotEmpty ();
+  }
+
+  @Nonnull
+  @ReturnsMutableCopy
+  public CollectingJSCodeProvider getInlineJSAfterExternal ()
+  {
+    return m_aInlineJSAfterExternal.getClone ();
   }
 
   @Nonnull
@@ -173,7 +196,8 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
     // JS
     for (final String sJSFile : aSpecialNodes.getAllExternalJSs ())
       addExternalJS (sJSFile);
-    addInlineJS (aSpecialNodes.getInlineJS ());
+    addInlineJSBeforeExternal (aSpecialNodes.getInlineJSBeforeExternal ());
+    addInlineJSAfterExternal (aSpecialNodes.getInlineJSAfterExternal ());
 
     return thisAsT ();
   }
@@ -189,7 +213,8 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
     return m_aExternalCSSs.equals (rhs.m_aExternalCSSs) &&
            EqualsHelper.equals (m_aInlineCSS, rhs.m_aInlineCSS) &&
            m_aExternalJSs.equals (rhs.m_aExternalJSs) &&
-           m_aInlineJS.equals (rhs.m_aInlineJS);
+           m_aInlineJSBeforeExternal.equals (rhs.m_aInlineJSBeforeExternal) &&
+           m_aInlineJSAfterExternal.equals (rhs.m_aInlineJSAfterExternal);
   }
 
   @Override
@@ -198,7 +223,8 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
     return new HashCodeGenerator (this).append (m_aExternalCSSs)
                                        .append (m_aInlineCSS)
                                        .append (m_aExternalJSs)
-                                       .append (m_aInlineJS)
+                                       .append (m_aInlineJSBeforeExternal)
+                                       .append (m_aInlineJSAfterExternal)
                                        .getHashCode ();
   }
 
@@ -208,7 +234,8 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
     return new ToStringGenerator (this).appendIfNotEmpty ("cssFiles", m_aExternalCSSs)
                                        .append ("inlineCSS", m_aInlineCSS)
                                        .appendIfNotEmpty ("jsFiles", m_aExternalJSs)
-                                       .append ("inlineJS", m_aInlineJS)
+                                       .append ("inlineJSBeforeExternal", m_aInlineJSBeforeExternal)
+                                       .append ("inlineJSAfterExternal", m_aInlineJSBeforeExternal)
                                        .toString ();
   }
 }
