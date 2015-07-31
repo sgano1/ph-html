@@ -81,8 +81,8 @@ public abstract class AbstractHCWrappingNode extends AbstractHCNode implements I
   @Override
   @OverrideOnDemand
   @OverridingMethodsMustInvokeSuper
-  protected final void onRegisterExternalResources (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
-                                                    final boolean bForceRegistration)
+  protected void onRegisterExternalResources (@Nonnull final IHCConversionSettingsToNode aConversionSettings,
+                                              final boolean bForceRegistration)
   {
     getWrappedNode ().registerExternalResources (aConversionSettings, bForceRegistration);
   }

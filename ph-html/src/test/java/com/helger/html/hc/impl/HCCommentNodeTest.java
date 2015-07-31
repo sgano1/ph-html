@@ -21,8 +21,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Rule;
 import org.junit.Test;
 
-import com.helger.html.hc.config.mock.HCTestRuleOptimized;
-import com.helger.html.hc.impl.HCCommentNode;
+import com.helger.html.hc.mock.HCTestRuleOptimized;
 import com.helger.html.hc.render.HCRenderer;
 
 /**

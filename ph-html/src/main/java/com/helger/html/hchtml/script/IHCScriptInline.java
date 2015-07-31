@@ -19,8 +19,6 @@ package com.helger.html.hchtml.script;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotation.Nonempty;
-import com.helger.commons.system.ENewLineMode;
 import com.helger.html.hc.config.EHCScriptInlineMode;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.IJSWriterSettings;
@@ -73,14 +71,4 @@ public interface IHCScriptInline <THISTYPE extends IHCScriptInline <THISTYPE>> e
 
   @Nonnull
   THISTYPE setEmitAfterFiles (boolean bEmitAfterFiles);
-
-  @Nonnull
-  ENewLineMode getNewLineMode ();
-
-  @Nonnull
-  @Nonempty
-  String getNewLineString ();
-
-  @Nonnull
-  THISTYPE setNewLineMode (@Nonnull ENewLineMode eNewLineMode);
 }

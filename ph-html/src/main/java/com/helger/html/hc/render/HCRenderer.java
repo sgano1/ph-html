@@ -246,8 +246,8 @@ public final class HCRenderer
    * @return The node as HTML string. Never <code>null</code>.
    */
   @Nonnull
-  public final static String getAsHTMLString (@Nonnull final IHCNode aHCNode,
-                                              @Nonnull final IHCConversionSettings aConversionSettings)
+  public static String getAsHTMLString (@Nonnull final IHCNode aHCNode,
+                                        @Nonnull final IHCConversionSettings aConversionSettings)
   {
     final IMicroNode aMicroNode = getAsNode (aHCNode, aConversionSettings);
     if (aMicroNode == null)

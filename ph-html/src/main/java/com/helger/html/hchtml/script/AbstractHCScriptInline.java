@@ -22,13 +22,11 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.microdom.IMicroNodeWithChildren;
 import com.helger.commons.microdom.MicroText;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.commons.system.ENewLineMode;
 import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hc.config.EHCScriptInlineMode;
 import com.helger.html.hc.config.HCSettings;
@@ -51,7 +49,6 @@ public abstract class AbstractHCScriptInline <THISTYPE extends AbstractHCScriptI
   private IHasJSCode m_aJSProvider;
   private EHCScriptInlineMode m_eScriptMode = HCSettings.getScriptInlineMode ();
   private boolean m_bEmitAfterFiles = DEFAULT_EMIT_AFTER_FILES;
-  private ENewLineMode m_eNewLineMode = HCSettings.getNewLineMode ();
 
   private transient String m_sCachedJSCode;
 
@@ -135,26 +132,6 @@ public abstract class AbstractHCScriptInline <THISTYPE extends AbstractHCScriptI
     return thisAsT ();
   }
 
-  @Nonnull
-  public ENewLineMode getNewLineMode ()
-  {
-    return m_eNewLineMode;
-  }
-
-  @Nonnull
-  @Nonempty
-  public String getNewLineString ()
-  {
-    return m_eNewLineMode.getText ();
-  }
-
-  @Nonnull
-  public THISTYPE setNewLineMode (@Nonnull final ENewLineMode eNewLineMode)
-  {
-    m_eNewLineMode = ValueEnforcer.notNull (eNewLineMode, "NewLineMode");
-    return thisAsT ();
-  }
-
   public static void setInlineScript (@Nonnull final IMicroNodeWithChildren aElement,
                                       @Nullable final String sContent,
                                       @Nonnull final EHCScriptInlineMode eMode,
@@ -207,7 +184,10 @@ public abstract class AbstractHCScriptInline <THISTYPE extends AbstractHCScriptI
     super.fillMicroElement (aElement, aConversionSettings);
 
     // m_sJSCode is set in canConvertToNode which is called before this method!
-    setInlineScript (aElement, m_sCachedJSCode, m_eScriptMode, getNewLineString ());
+    setInlineScript (aElement,
+                     m_sCachedJSCode,
+                     m_eScriptMode,
+                     aConversionSettings.getXMLWriterSettings ().getNewLineString ());
   }
 
   @Override
@@ -218,7 +198,6 @@ public abstract class AbstractHCScriptInline <THISTYPE extends AbstractHCScriptI
                             .append ("jsCode", m_sCachedJSCode)
                             .append ("mode", m_eScriptMode)
                             .append ("emitAfterFiles", m_bEmitAfterFiles)
-                            .append ("NewLineMode", m_eNewLineMode)
                             .toString ();
   }
 }

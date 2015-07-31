@@ -25,8 +25,7 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import com.helger.commons.microdom.IMicroContainer;
-import com.helger.html.hc.config.mock.HCTestRuleOptimized;
-import com.helger.html.hc.impl.HCNodeList;
+import com.helger.html.hc.mock.HCTestRuleOptimized;
 import com.helger.html.hc.render.HCRenderer;
 import com.helger.html.hchtml.grouping.HCDiv;
 import com.helger.html.hchtml.tabular.HCRow;

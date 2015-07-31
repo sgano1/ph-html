@@ -14,43 +14,38 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.config;
+package com.helger.html.hchtml.sections;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 import org.junit.Rule;
 import org.junit.Test;
 
 import com.helger.html.hc.mock.HCTestRuleOptimized;
 import com.helger.html.hc.render.HCRenderer;
-import com.helger.html.hchtml.textlevel.HCBR;
+import com.helger.html.hchtml.sections.HCBody;
+import com.helger.html.js.EJSEvent;
+import com.helger.html.js.UnparsedJSCodeProvider;
 
-/**
- * Test class for class {final @link HCSettings}.
- *
- * @author Philip Helger
- */
-public final class HCSettingsTest
+public final class HCBodyTest
 {
   @Rule
   public final HCTestRuleOptimized m_aRule = new HCTestRuleOptimized ();
 
   @Test
-  public void testGetAsString ()
+  public void testBody ()
   {
-    final HCBR aBR = new HCBR ();
-    final String s = HCRenderer.getAsHTMLString (aBR);
-    assertNotNull (s);
-    assertEquals ("<br xmlns=\"http://www.w3.org/1999/xhtml\" />", s);
-  }
+    final HCBody aBody = new HCBody ();
+    assertEquals ("<body xmlns=\"http://www.w3.org/1999/xhtml\"></body>", HCRenderer.getAsHTMLString (aBody));
 
-  @Test
-  public void testGetAsStringWithoutNamespaces ()
-  {
-    final HCBR aBR = new HCBR ();
-    final String s = HCRenderer.getAsHTMLStringWithoutNamespaces (aBR);
-    assertNotNull (s);
-    assertEquals ("<br />", s);
+    // With semicolon at the end
+    aBody.addEventHandler (EJSEvent.LOAD, new UnparsedJSCodeProvider ("onLoad();"));
+    // Empty event handler - ignored
+    aBody.addEventHandler (EJSEvent.MOUSEDOWN, null);
+    // With prefix
+    aBody.setEventHandler (EJSEvent.CLICK, new UnparsedJSCodeProvider ("onClick();"));
+    aBody.setCustomAttr ("bla", "foo");
+    assertEquals ("<body xmlns=\"http://www.w3.org/1999/xhtml\" onload=\"javascript:onLoad();\" onclick=\"javascript:onClick();\" bla=\"foo\"></body>",
+                  HCRenderer.getAsHTMLString (aBody));
   }
 }

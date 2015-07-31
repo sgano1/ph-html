@@ -30,8 +30,6 @@ import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.config.HCConversionSettings;
 import com.helger.html.hc.render.HCRenderer;
-import com.helger.html.hc.special.IHCSpecialNodeListModifier;
-import com.helger.html.hc.special.SpecialNodeListModifier;
 import com.helger.html.hchtml.root.HCHtml;
 import com.helger.html.hchtml.script.AbstractHCScriptInline;
 import com.helger.html.hchtml.sections.HCH1;
