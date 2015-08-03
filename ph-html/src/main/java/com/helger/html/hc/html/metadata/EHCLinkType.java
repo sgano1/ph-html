@@ -58,6 +58,7 @@ public enum EHCLinkType implements IHCLinkType
  NOREFERRER ("noreferrer"),
  PREFETCH ("prefetch"),
  TAG ("tag"),
+ MANIFEST ("manifest"),
  // Apple iOS
  // (http://developer.apple.com/library/IOs/#documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
  APPLE_TOUCH_ICON ("apple-touch-icon"),
