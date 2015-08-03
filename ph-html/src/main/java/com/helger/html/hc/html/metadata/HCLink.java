@@ -54,6 +54,7 @@ public class HCLink extends AbstractHCElement <HCLink>
   private HC_Target m_aTarget;
   private String m_sCharset;
   private CSSMediaList m_aMediaList;
+  private String m_sSizes;
 
   public HCLink ()
   {
@@ -239,6 +240,19 @@ public class HCLink extends AbstractHCElement <HCLink>
     return this;
   }
 
+  @Nullable
+  public String getSizes ()
+  {
+    return m_sSizes;
+  }
+
+  @Nonnull
+  public HCLink setSizes (@Nullable final String sSizes)
+  {
+    m_sSizes = sSizes;
+    return this;
+  }
+
   @Override
   protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
@@ -259,6 +273,8 @@ public class HCLink extends AbstractHCElement <HCLink>
       aElement.setAttribute (CHTMLAttributes.CHARSET, m_sCharset);
     if (m_aMediaList != null && m_aMediaList.hasAnyMedia ())
       aElement.setAttribute (CHTMLAttributes.MEDIA, m_aMediaList.getMediaString ());
+    if (StringHelper.hasText (m_sSizes))
+      aElement.setAttribute (CHTMLAttributes.SIZES, m_sSizes);
 
     if (aConversionSettings.getHTMLVersion ().isPriorToHTML5 ())
     {
