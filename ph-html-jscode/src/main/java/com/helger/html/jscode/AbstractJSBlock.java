@@ -978,6 +978,46 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   }
 
   /**
+   * Create an If statement and add it to this block
+   *
+   * @param aTest
+   *        {@link IJSExpression} to be tested to determine branching
+   * @param aThen
+   *        "then" block content. May be <code>null</code>.
+   * @return Newly generated conditional statement
+   */
+  @Nonnull
+  public JSConditional _if (@Nonnull final IJSExpression aTest, @Nullable final IHasJSCode aThen)
+  {
+    final JSConditional aCond = _if (aTest);
+    if (aThen != null)
+      aCond._then ().add (aThen);
+    return aCond;
+  }
+
+  /**
+   * Create an If statement and add it to this block
+   *
+   * @param aTest
+   *        {@link IJSExpression} to be tested to determine branching
+   * @param aThen
+   *        "then" block content. May be <code>null</code>.
+   * @param aElse
+   *        "else" block content. May be <code>null</code>.
+   * @return Newly generated conditional statement
+   */
+  @Nonnull
+  public JSConditional _if (@Nonnull final IJSExpression aTest,
+                            @Nullable final IHasJSCode aThen,
+                            @Nullable final IHasJSCode aElse)
+  {
+    final JSConditional aCond = _if (aTest, aThen);
+    if (aElse != null)
+      aCond._else ().add (aElse);
+    return aCond;
+  }
+
+  /**
    * Create a return statement and add it to this block
    *
    * @return this
