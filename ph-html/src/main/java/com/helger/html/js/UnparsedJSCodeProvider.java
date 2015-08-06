@@ -20,6 +20,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.ValueEnforcer;
+import com.helger.commons.annotation.UnsafeAPI;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 
@@ -34,6 +35,7 @@ public class UnparsedJSCodeProvider implements IHasJSCode
 {
   private final String m_sJSCode;
 
+  @UnsafeAPI
   public UnparsedJSCodeProvider (@Nonnull final String sJSCode)
   {
     m_sJSCode = ValueEnforcer.notNull (sJSCode, "JSCode");
