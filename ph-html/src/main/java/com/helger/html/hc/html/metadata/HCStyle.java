@@ -58,14 +58,12 @@ public class HCStyle extends AbstractHCElement <HCStyle>
 
   /** By default place inline CSS after script files */
   public static final boolean DEFAULT_EMIT_AFTER_FILES = true;
-  public static final boolean DEFAULT_IS_BUNDLABLE = true;
 
   private IMimeType m_aType = DEFAULT_TYPE;
   private CSSMediaList m_aMediaList;
   private String m_sContent;
   private EHCStyleMode m_eMode = HCSettings.getStyleMode ();
   private boolean m_bEmitAfterFiles = DEFAULT_EMIT_AFTER_FILES;
-  private boolean m_bIsBundlable = DEFAULT_IS_BUNDLABLE;
 
   public HCStyle ()
   {
@@ -228,18 +226,6 @@ public class HCStyle extends AbstractHCElement <HCStyle>
     return this;
   }
 
-  public boolean isBundlable ()
-  {
-    return m_bIsBundlable;
-  }
-
-  @Nonnull
-  public HCStyle setBundlable (@Nonnull final boolean bIsBundlable)
-  {
-    m_bIsBundlable = bIsBundlable;
-    return this;
-  }
-
   @Override
   public boolean canConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
@@ -284,7 +270,6 @@ public class HCStyle extends AbstractHCElement <HCStyle>
                             .append ("content", m_sContent)
                             .append ("mode", m_eMode)
                             .append ("emitAfterFiles", m_bEmitAfterFiles)
-                            .append ("isBundlable", m_bIsBundlable)
                             .toString ();
   }
 }
