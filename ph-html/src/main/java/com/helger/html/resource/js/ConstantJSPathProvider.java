@@ -34,7 +34,7 @@ import com.helger.html.js.JSFilenameHelper;
 public final class ConstantJSPathProvider implements IJSPathProvider
 {
   private static final String DEFAULT_CONDITIONAL_COMMENT = null;
-  public static final boolean DEFAULT_CAN_BE_BUNDLED = true;
+  public static final boolean DEFAULT_IS_BUNDLABLE = true;
 
   private final String m_sPath;
   private final String m_sMinifiedPath;
@@ -128,7 +128,7 @@ public final class ConstantJSPathProvider implements IJSPathProvider
     return new ConstantJSPathProvider (sPath,
                                        JSFilenameHelper.getMinifiedJSFilename (sPath),
                                        DEFAULT_CONDITIONAL_COMMENT,
-                                       DEFAULT_CAN_BE_BUNDLED);
+                                       DEFAULT_IS_BUNDLABLE);
   }
 
   @Nonnull
@@ -138,7 +138,7 @@ public final class ConstantJSPathProvider implements IJSPathProvider
     return new ConstantJSPathProvider (sPath,
                                        JSFilenameHelper.getMinifiedJSFilename (sPath),
                                        sConditionalComment,
-                                       DEFAULT_CAN_BE_BUNDLED);
+                                       DEFAULT_IS_BUNDLABLE);
   }
 
   @Nonnull

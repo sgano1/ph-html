@@ -46,6 +46,8 @@ import com.helger.html.hc.html.HC_Target;
 @OutOfBandNode
 public class HCLink extends AbstractHCElement <HCLink>
 {
+  public static final boolean DEFAULT_IS_BUNDLABLE = true;
+
   private IHCLinkType m_aRel;
   private IHCLinkType m_aRev;
   private IMimeType m_aType;
@@ -55,6 +57,7 @@ public class HCLink extends AbstractHCElement <HCLink>
   private String m_sCharset;
   private CSSMediaList m_aMediaList;
   private String m_sSizes;
+  private boolean m_bIsBundlable = DEFAULT_IS_BUNDLABLE;
 
   public HCLink ()
   {
@@ -253,6 +256,18 @@ public class HCLink extends AbstractHCElement <HCLink>
     return this;
   }
 
+  public boolean isBundlable ()
+  {
+    return m_bIsBundlable;
+  }
+
+  @Nonnull
+  public HCLink setBundlable (@Nonnull final boolean bIsBundlable)
+  {
+    m_bIsBundlable = bIsBundlable;
+    return this;
+  }
+
   @Override
   protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
@@ -295,6 +310,8 @@ public class HCLink extends AbstractHCElement <HCLink>
                             .appendIfNotNull ("target", m_aTarget)
                             .appendIfNotNull ("charset", m_sCharset)
                             .appendIfNotNull ("mediaList", m_aMediaList)
+                            .appendIfNotNull ("sizes", m_sSizes)
+                            .append ("isBundlable", m_bIsBundlable)
                             .toString ();
   }
 

@@ -45,11 +45,11 @@ public abstract class AbstractHCScript <THISTYPE extends AbstractHCScript <THIST
 {
   /** Default MIME type: text/javascript */
   public static final IMimeType DEFAULT_TYPE = CMimeType.TEXT_JAVASCRIPT;
-  public static final boolean DEFAULT_BUNDLABLE = true;
+  public static final boolean DEFAULT_IS_BUNDLABLE = true;
 
   private IMimeType m_aType = DEFAULT_TYPE;
   private String m_sCharset;
-  private boolean m_bBundlable = DEFAULT_BUNDLABLE;
+  private boolean m_bIsBundlable = DEFAULT_IS_BUNDLABLE;
 
   public AbstractHCScript ()
   {
@@ -90,13 +90,13 @@ public abstract class AbstractHCScript <THISTYPE extends AbstractHCScript <THIST
 
   public boolean isBundlable ()
   {
-    return m_bBundlable;
+    return m_bIsBundlable;
   }
 
   @Nonnull
-  public THISTYPE setBundlable (@Nonnull final boolean bBundlable)
+  public THISTYPE setBundlable (@Nonnull final boolean bIsBundlable)
   {
-    m_bBundlable = bBundlable;
+    m_bIsBundlable = bIsBundlable;
     return thisAsT ();
   }
 
@@ -115,7 +115,7 @@ public abstract class AbstractHCScript <THISTYPE extends AbstractHCScript <THIST
     return ToStringGenerator.getDerived (super.toString ())
                             .appendIfNotNull ("type", m_aType)
                             .appendIfNotNull ("charset", m_sCharset)
-                            .append ("bundlable", m_bBundlable)
+                            .append ("isBundlable", m_bIsBundlable)
                             .toString ();
   }
 }

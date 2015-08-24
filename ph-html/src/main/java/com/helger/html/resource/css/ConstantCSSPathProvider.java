@@ -37,7 +37,7 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
 {
   private static final String DEFAULT_CONDITIONAL_COMMENT = null;
   private static final ICSSMediaList DEFAULT_CSS_MEDIA_LIST = null;
-  public static final boolean DEFAULT_CAN_BE_BUNDLED = true;
+  public static final boolean DEFAULT_IS_BUNDLABLE = true;
 
   private final String m_sPath;
   private final String m_sMinifiedPath;
@@ -127,7 +127,7 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
                                         CSSFilenameHelper.getMinifiedCSSFilename (sPath),
                                         DEFAULT_CONDITIONAL_COMMENT,
                                         DEFAULT_CSS_MEDIA_LIST,
-                                        DEFAULT_CAN_BE_BUNDLED);
+                                        DEFAULT_IS_BUNDLABLE);
   }
 
   @Nonnull
@@ -146,7 +146,7 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
                                         CSSFilenameHelper.getMinifiedCSSFilename (sPath),
                                         sConditionalComment,
                                         aMediaList,
-                                        DEFAULT_CAN_BE_BUNDLED);
+                                        DEFAULT_IS_BUNDLABLE);
   }
 
   @Nonnull
