@@ -237,10 +237,11 @@ public final class HCSpecialNodeHandler
       // Note: do not unwrap the node, because it is not allowed to merge JS/CSS
       // with a conditional comment with JS/CSS without a conditional comment!
 
-      // Check HCScriptOnDocumentReady first, because it is a subclass of
-      // HCScript
+      // Check HCScriptInlineOnDocumentReady first, because it is a subclass of
+      // IHCScriptInline
       if (aNode instanceof HCScriptInlineOnDocumentReady)
       {
+        // Inline JS
         final HCScriptInlineOnDocumentReady aScript = (HCScriptInlineOnDocumentReady) aNode;
         (aScript.isEmitAfterFiles () ? aJSOnDocumentReadyAfter
                                      : aJSOnDocumentReadyBefore).appendFlattened (aScript.getOnDocumentReadyCode ());
@@ -248,6 +249,7 @@ public final class HCSpecialNodeHandler
       else
         if (aNode instanceof IHCScriptInline <?>)
         {
+          // Inline JS
           final IHCScriptInline <?> aScript = (IHCScriptInline <?>) aNode;
           (aScript.isEmitAfterFiles () ? aJSInlineAfter
                                        : aJSInlineBefore).appendFlattened (aScript.getJSCodeProvider ());
@@ -255,6 +257,7 @@ public final class HCSpecialNodeHandler
         else
           if (aNode instanceof HCStyle)
           {
+            // Inline CSS
             final HCStyle aStyle = (HCStyle) aNode;
             if (aStyle.hasNoMediaOrAll ())
             {
