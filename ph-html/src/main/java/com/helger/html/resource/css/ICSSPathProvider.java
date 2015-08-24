@@ -38,8 +38,7 @@ public interface ICSSPathProvider extends Serializable
    * @param bRegular
    *        if <code>true</code> the regular version of item should be
    *        retrieved, otherwise the minified version of the file.
-   * @return The path to the external CSS item. Always return the non-minified
-   *         version if available!
+   * @return The path to the external CSS item.
    */
   @Nonnull
   @Nonempty
