@@ -64,5 +64,5 @@ public interface ICSSPathProvider extends Serializable
    * @return Whether or not this script can be bundled to a big CSS profile. For
    *         some files this is not possible.
    */
-  boolean canBeBundled ();
+  boolean isBundlable ();
 }

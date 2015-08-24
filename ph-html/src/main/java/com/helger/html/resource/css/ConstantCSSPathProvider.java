@@ -43,13 +43,13 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
   private final String m_sMinifiedPath;
   private final String m_sConditionalComment;
   private final CSSMediaList m_aCSSMediaList;
-  private final boolean m_bCanBeBundled;
+  private final boolean m_bIsBundlable;
 
   public ConstantCSSPathProvider (@Nonnull @Nonempty final String sPath,
                                   @Nonnull @Nonempty final String sMinifiedPath,
                                   @Nullable final String sConditionalComment,
                                   @Nullable final ICSSMediaList aMediaList,
-                                  final boolean bCanBeBundled)
+                                  final boolean bIsBundlable)
   {
     ValueEnforcer.notEmpty (sPath, "Path");
     ValueEnforcer.isTrue (CSSFilenameHelper.isCSSFilename (sPath), "path");
@@ -59,7 +59,7 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
     m_sMinifiedPath = sMinifiedPath;
     m_sConditionalComment = sConditionalComment;
     m_aCSSMediaList = aMediaList == null ? new CSSMediaList () : new CSSMediaList (aMediaList);
-    m_bCanBeBundled = bCanBeBundled;
+    m_bIsBundlable = bIsBundlable;
   }
 
   @Nonnull
@@ -82,9 +82,9 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
     return m_aCSSMediaList.getClone ();
   }
 
-  public boolean canBeBundled ()
+  public boolean isBundlable ()
   {
-    return m_bCanBeBundled;
+    return m_bIsBundlable;
   }
 
   @Override
@@ -97,7 +97,7 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
     final ConstantCSSPathProvider rhs = (ConstantCSSPathProvider) o;
     return m_sPath.equals (rhs.m_sPath) &&
            m_sMinifiedPath.equals (rhs.m_sMinifiedPath) &&
-           m_bCanBeBundled == rhs.m_bCanBeBundled;
+           m_bIsBundlable == rhs.m_bIsBundlable;
   }
 
   @Override
@@ -105,7 +105,7 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
   {
     return new HashCodeGenerator (this).append (m_sPath)
                                        .append (m_sMinifiedPath)
-                                       .append (m_bCanBeBundled)
+                                       .append (m_bIsBundlable)
                                        .getHashCode ();
   }
 
@@ -116,7 +116,7 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
                                        .append ("minifiedPath", m_sMinifiedPath)
                                        .appendIfNotNull ("conditionalComment", m_sConditionalComment)
                                        .appendIfNotNull ("CSSMediaList", m_aCSSMediaList)
-                                       .append ("canBeBundled", m_bCanBeBundled)
+                                       .append ("isBundlable", m_bIsBundlable)
                                        .toString ();
   }
 

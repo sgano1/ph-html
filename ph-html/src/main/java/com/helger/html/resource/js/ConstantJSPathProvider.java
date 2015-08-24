@@ -39,12 +39,12 @@ public final class ConstantJSPathProvider implements IJSPathProvider
   private final String m_sPath;
   private final String m_sMinifiedPath;
   private final String m_sConditionalComment;
-  private final boolean m_bCanBeBundled;
+  private final boolean m_bIsBundlable;
 
   public ConstantJSPathProvider (@Nonnull @Nonempty final String sPath,
                                  @Nonnull @Nonempty final String sMinifiedPath,
                                  @Nullable final String sConditionalComment,
-                                 final boolean bCanBeBundled)
+                                 final boolean bIsBundlable)
   {
     ValueEnforcer.notEmpty (sPath, "Path");
     ValueEnforcer.isTrue (JSFilenameHelper.isJSFilename (sPath), "Path");
@@ -53,7 +53,7 @@ public final class ConstantJSPathProvider implements IJSPathProvider
     m_sPath = sPath;
     m_sMinifiedPath = sMinifiedPath;
     m_sConditionalComment = sConditionalComment;
-    m_bCanBeBundled = bCanBeBundled;
+    m_bIsBundlable = bIsBundlable;
   }
 
   @Nonnull
@@ -83,9 +83,9 @@ public final class ConstantJSPathProvider implements IJSPathProvider
     return m_sConditionalComment;
   }
 
-  public boolean canBeBundled ()
+  public boolean isBundlable ()
   {
-    return m_bCanBeBundled;
+    return m_bIsBundlable;
   }
 
   @Override
@@ -99,7 +99,7 @@ public final class ConstantJSPathProvider implements IJSPathProvider
     return m_sPath.equals (rhs.m_sPath) &&
            m_sMinifiedPath.equals (rhs.m_sMinifiedPath) &&
            EqualsHelper.equals (m_sConditionalComment, rhs.m_sConditionalComment) &&
-           m_bCanBeBundled == rhs.m_bCanBeBundled;
+           m_bIsBundlable == rhs.m_bIsBundlable;
   }
 
   @Override
@@ -108,7 +108,7 @@ public final class ConstantJSPathProvider implements IJSPathProvider
     return new HashCodeGenerator (this).append (m_sPath)
                                        .append (m_sMinifiedPath)
                                        .append (m_sConditionalComment)
-                                       .append (m_bCanBeBundled)
+                                       .append (m_bIsBundlable)
                                        .getHashCode ();
   }
 
@@ -118,7 +118,7 @@ public final class ConstantJSPathProvider implements IJSPathProvider
     return new ToStringGenerator (this).append ("path", m_sPath)
                                        .append ("minifiedPath", m_sMinifiedPath)
                                        .appendIfNotNull ("conditionalComment", m_sConditionalComment)
-                                       .append ("canBeBundled", m_bCanBeBundled)
+                                       .append ("isBundlable", m_bIsBundlable)
                                        .toString ();
   }
 
