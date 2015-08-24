@@ -47,4 +47,13 @@ public interface IHCScript <THISTYPE extends IHCScript <THISTYPE>> extends IHCEl
 
   @Nonnull
   THISTYPE setCharset (@Nullable String sCharset);
+
+  /**
+   * @return Whether or not this script can be bundled to a big JS profile. For
+   *         some files this is not possible.
+   */
+  boolean isBundlable ();
+
+  @Nonnull
+  THISTYPE setBundlable (@Nonnull boolean bBundlable);
 }
