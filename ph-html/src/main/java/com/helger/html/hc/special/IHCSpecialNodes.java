@@ -52,14 +52,27 @@ public interface IHCSpecialNodes extends Serializable
    * @return <code>true</code> if inline CSS is present, <code>false</code> if
    *         not
    */
-  boolean hasInlineCSS ();
+  boolean hasInlineCSSBeforeExternal ();
 
   /**
    * @return The inline CSS. May not be <code>null</code>.
    */
   @Nonnull
   @ReturnsMutableCopy
-  StringBuilder getInlineCSS ();
+  StringBuilder getInlineCSSBeforeExternal ();
+
+  /**
+   * @return <code>true</code> if inline CSS is present, <code>false</code> if
+   *         not
+   */
+  boolean hasInlineCSSAfterExternal ();
+
+  /**
+   * @return The inline CSS. May not be <code>null</code>.
+   */
+  @Nonnull
+  @ReturnsMutableCopy
+  StringBuilder getInlineCSSAfterExternal ();
 
   /**
    * @return <code>true</code> if JS files are present, <code>false</code> if

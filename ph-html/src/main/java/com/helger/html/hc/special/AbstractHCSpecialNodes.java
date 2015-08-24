@@ -49,7 +49,8 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
   private static final Logger s_aLogger = LoggerFactory.getLogger (AbstractHCSpecialNodes.class);
 
   private final Set <String> m_aExternalCSSs = new LinkedHashSet <String> ();
-  private final StringBuilder m_aInlineCSS = new StringBuilder ();
+  private final StringBuilder m_aInlineCSSBeforeExternal = new StringBuilder ();
+  private final StringBuilder m_aInlineCSSAfterExternal = new StringBuilder ();
   private final Set <String> m_aExternalJSs = new LinkedHashSet <String> ();
   private final CollectingJSCodeProvider m_aInlineJSBeforeExternal = new CollectingJSCodeProvider ();
   private final CollectingJSCodeProvider m_aInlineJSAfterExternal = new CollectingJSCodeProvider ();
@@ -63,7 +64,8 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
   public void clear ()
   {
     m_aExternalCSSs.clear ();
-    m_aInlineCSS.setLength (0);
+    m_aInlineCSSBeforeExternal.setLength (0);
+    m_aInlineCSSAfterExternal.setLength (0);
     m_aExternalJSs.clear ();
     m_aInlineJSBeforeExternal.reset ();
     m_aInlineJSAfterExternal.reset ();
@@ -99,24 +101,45 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
   }
 
   @Nonnull
-  public IMPLTYPE addInlineCSS (@Nonnull final CharSequence aInlineCSS)
+  public IMPLTYPE addInlineCSSBeforeExternal (@Nonnull final CharSequence aInlineCSS)
   {
     ValueEnforcer.notNull (aInlineCSS, "InlineCSS");
 
-    m_aInlineCSS.append (aInlineCSS);
+    m_aInlineCSSBeforeExternal.append (aInlineCSS);
     return thisAsT ();
   }
 
-  public boolean hasInlineCSS ()
+  public boolean hasInlineCSSBeforeExternal ()
   {
-    return m_aInlineCSS.length () > 0;
+    return m_aInlineCSSBeforeExternal.length () > 0;
   }
 
   @Nonnull
   @ReturnsMutableCopy
-  public StringBuilder getInlineCSS ()
+  public StringBuilder getInlineCSSBeforeExternal ()
   {
-    return new StringBuilder (m_aInlineCSS);
+    return new StringBuilder (m_aInlineCSSBeforeExternal);
+  }
+
+  @Nonnull
+  public IMPLTYPE addInlineCSSAfterExternal (@Nonnull final CharSequence aInlineCSS)
+  {
+    ValueEnforcer.notNull (aInlineCSS, "InlineCSS");
+
+    m_aInlineCSSAfterExternal.append (aInlineCSS);
+    return thisAsT ();
+  }
+
+  public boolean hasInlineCSSAfterExternal ()
+  {
+    return m_aInlineCSSAfterExternal.length () > 0;
+  }
+
+  @Nonnull
+  @ReturnsMutableCopy
+  public StringBuilder getInlineCSSAfterExternal ()
+  {
+    return new StringBuilder (m_aInlineCSSAfterExternal);
   }
 
   @Nonnull
@@ -191,7 +214,8 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
     // CSS
     for (final String sCSSFile : aSpecialNodes.getAllExternalCSSs ())
       addExternalCSS (sCSSFile);
-    addInlineCSS (aSpecialNodes.getInlineCSS ());
+    addInlineCSSBeforeExternal (aSpecialNodes.getInlineCSSBeforeExternal ());
+    addInlineCSSAfterExternal (aSpecialNodes.getInlineCSSAfterExternal ());
 
     // JS
     for (final String sJSFile : aSpecialNodes.getAllExternalJSs ())
@@ -211,7 +235,8 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
       return false;
     final AbstractHCSpecialNodes <?> rhs = (AbstractHCSpecialNodes <?>) o;
     return m_aExternalCSSs.equals (rhs.m_aExternalCSSs) &&
-           EqualsHelper.equals (m_aInlineCSS, rhs.m_aInlineCSS) &&
+           EqualsHelper.equals (m_aInlineCSSBeforeExternal, rhs.m_aInlineCSSBeforeExternal) &&
+           EqualsHelper.equals (m_aInlineCSSAfterExternal, rhs.m_aInlineCSSAfterExternal) &&
            m_aExternalJSs.equals (rhs.m_aExternalJSs) &&
            m_aInlineJSBeforeExternal.equals (rhs.m_aInlineJSBeforeExternal) &&
            m_aInlineJSAfterExternal.equals (rhs.m_aInlineJSAfterExternal);
@@ -221,7 +246,8 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
   public int hashCode ()
   {
     return new HashCodeGenerator (this).append (m_aExternalCSSs)
-                                       .append (m_aInlineCSS)
+                                       .append (m_aInlineCSSBeforeExternal)
+                                       .append (m_aInlineCSSAfterExternal)
                                        .append (m_aExternalJSs)
                                        .append (m_aInlineJSBeforeExternal)
                                        .append (m_aInlineJSAfterExternal)
@@ -232,7 +258,8 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
   public String toString ()
   {
     return new ToStringGenerator (this).appendIfNotEmpty ("cssFiles", m_aExternalCSSs)
-                                       .append ("inlineCSS", m_aInlineCSS)
+                                       .append ("inlineCSSBeforeExternal", m_aInlineCSSBeforeExternal)
+                                       .append ("inlineCSSAfterExternal", m_aInlineCSSAfterExternal)
                                        .appendIfNotEmpty ("jsFiles", m_aExternalJSs)
                                        .append ("inlineJSBeforeExternal", m_aInlineJSBeforeExternal)
                                        .append ("inlineJSAfterExternal", m_aInlineJSBeforeExternal)

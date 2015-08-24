@@ -354,7 +354,11 @@ public final class HCSpecialNodeHandler
       else
         if (HCCSSNodeDetector.isDirectCSSInlineNode (aNode))
         {
-          aSpecialNodes.addInlineCSS (((HCStyle) aNode).getStyleContent ());
+          final HCStyle aStyle = (HCStyle) aNode;
+          if (aStyle.isEmitAfterFiles ())
+            aSpecialNodes.addInlineCSSAfterExternal (aStyle.getStyleContent ());
+          else
+            aSpecialNodes.addInlineCSSBeforeExternal (aStyle.getStyleContent ());
         }
         else
           if (HCJSNodeDetector.isDirectJSFileNode (aNode))
