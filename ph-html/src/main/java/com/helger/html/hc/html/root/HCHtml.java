@@ -40,6 +40,7 @@ import com.helger.html.hc.html.EHCTextDirection;
 import com.helger.html.hc.html.metadata.HCCSSNodeDetector;
 import com.helger.html.hc.html.metadata.HCHead;
 import com.helger.html.hc.html.metadata.HCLink;
+import com.helger.html.hc.html.metadata.HCStyle;
 import com.helger.html.hc.html.script.HCJSNodeDetector;
 import com.helger.html.hc.html.script.IHCScriptInline;
 import com.helger.html.hc.html.sections.HCBody;
@@ -162,6 +163,7 @@ public class HCHtml extends AbstractHCElement <HCHtml>
 
     // Remember the body index where to append OOB nodes to
     int nBodyNodeIndex = m_aBody.getChildCount ();
+    int nCSSIndex = 0;
 
     // Add all existing JS and CSS nodes from the head, as they are known to be
     // out-of-band
@@ -190,7 +192,7 @@ public class HCHtml extends AbstractHCElement <HCHtml>
         }
         else
         {
-          // Append in order
+          // Append in order (inline script is always last)
           m_aBody.addChild (aNode);
         }
       }
@@ -198,7 +200,19 @@ public class HCHtml extends AbstractHCElement <HCHtml>
       {
         // It's a head node
         if (HCCSSNodeDetector.isCSSNode (aNode))
-          m_aHead.addCSS (aNode);
+        {
+          if (aNode instanceof HCStyle && !((HCStyle) aNode).isEmitAfterFiles ())
+          {
+            // Add inline style before files
+            m_aHead.addCSS (nCSSIndex, aNode);
+            nCSSIndex++;
+          }
+          else
+          {
+            // Append in order (inline CSS is always last)
+            m_aHead.addCSS (aNode);
+          }
+        }
         else
           if (aNode instanceof HCLink)
           {

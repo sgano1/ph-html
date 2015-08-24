@@ -211,8 +211,8 @@ public final class HCSpecialNodeHandler
    *        document.ready() scripts are converted to regular scripts and are
    *        executed after all other scripts. For AJAX calls, this should be
    *        <code>false</code>.
-   * @return Target list. It contains all non-script nodes and at last one JS
-   *         inline node (HCScript).
+   * @return Target list. File based nodes come first and inline nodes come
+   *         last.
    */
   @Nonnull
   @ReturnsMutableCopy
@@ -263,7 +263,7 @@ public final class HCSpecialNodeHandler
             }
             else
             {
-              // Add as-is
+              // Add CSS with media as-is
               ret.add (aNode);
             }
           }
@@ -278,6 +278,8 @@ public final class HCSpecialNodeHandler
               s_aLogger.warn ("Found unexpected node to merge inline CSS/JS: " + aNode);
 
             // Add always!
+            // These nodes are either file based nodes ot conditional comment
+            // nodes
             ret.add (aNode);
           }
     }
