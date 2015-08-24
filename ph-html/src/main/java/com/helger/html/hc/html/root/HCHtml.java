@@ -35,6 +35,7 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.html.AbstractHCElement;
 import com.helger.html.hc.html.EHCTextDirection;
 import com.helger.html.hc.html.metadata.HCCSSNodeDetector;
@@ -161,9 +162,11 @@ public class HCHtml extends AbstractHCElement <HCHtml>
     // Extract all out-of-band nodes
     final List <IHCNode> aExtractedOutOfBandNodes = HCSpecialNodeHandler.recursiveExtractAndRemoveOutOfBandNodes (m_aBody);
 
-    // Remember the body index where to append OOB nodes to
+    // Remember the body index where to append OOB nodes to (after extraction)
     int nBodyNodeIndex = m_aBody.getChildCount ();
+    int nJSIndex = 0;
     int nCSSIndex = 0;
+    final boolean bScriptsInBody = HCSettings.isScriptsInBody ();
 
     // Add all existing JS and CSS nodes from the head, as they are known to be
     // out-of-band
@@ -186,14 +189,25 @@ public class HCHtml extends AbstractHCElement <HCHtml>
         // It's a body node
         if (aNode instanceof IHCScriptInline <?> && !((IHCScriptInline <?>) aNode).isEmitAfterFiles ())
         {
-          // Add inline code before files
-          m_aBody.addChild (nBodyNodeIndex, aNode);
-          nBodyNodeIndex++;
+          // Add certain inline code before files
+          if (bScriptsInBody)
+          {
+            m_aBody.addChild (nBodyNodeIndex, aNode);
+            nBodyNodeIndex++;
+          }
+          else
+          {
+            m_aHead.addJS (nJSIndex, aNode);
+            nJSIndex++;
+          }
         }
         else
         {
           // Append in order (inline script is always last)
-          m_aBody.addChild (aNode);
+          if (bScriptsInBody)
+            m_aBody.addChild (aNode);
+          else
+            m_aHead.addJS (aNode);
         }
       }
       else

@@ -83,6 +83,9 @@ public final class HCSettings
   @GuardedBy ("s_aRWLock")
   private static boolean s_bOOBDebugging = false;
 
+  @GuardedBy ("s_aRWLock")
+  private static boolean s_bScriptsInBody = true;
+
   static
   {
     // Apply all SPI settings providers
@@ -386,6 +389,37 @@ public final class HCSettings
     try
     {
       s_bOOBDebugging = bEnabled;
+    }
+    finally
+    {
+      s_aRWLock.writeLock ().unlock ();
+    }
+  }
+
+  /**
+   * @return <code>true</code> if &lt;script&gt; elements should be placed in
+   *         the &lt;body&gt;, <code>false</code> if they should be placed in
+   *         the &lt;head&gt;. Default is <code>true</code>.
+   */
+  public static boolean isScriptsInBody ()
+  {
+    s_aRWLock.readLock ().lock ();
+    try
+    {
+      return s_bScriptsInBody;
+    }
+    finally
+    {
+      s_aRWLock.readLock ().unlock ();
+    }
+  }
+
+  public static void setScriptsInBody (final boolean bEnabled)
+  {
+    s_aRWLock.writeLock ().lock ();
+    try
+    {
+      s_bScriptsInBody = bEnabled;
     }
     finally
     {
