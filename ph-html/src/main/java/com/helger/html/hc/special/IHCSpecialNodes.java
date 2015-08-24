@@ -18,10 +18,12 @@ package com.helger.html.hc.special;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.css.media.ICSSMediaList;
 import com.helger.html.js.IHasJSCode;
 
 /**
@@ -42,37 +44,40 @@ public interface IHCSpecialNodes extends Serializable
   boolean hasExternalCSSs ();
 
   /**
-   * @return All CSS files. Never <code>null</code>.
+   * @return All CSS files as a map from media list to the list of matching
+   *         files. Never <code>null</code>.
    */
   @Nonnull
   @ReturnsMutableCopy
-  List <String> getAllExternalCSSs ();
+  Map <ICSSMediaList, List <String>> getAllExternalCSSs ();
 
   /**
-   * @return <code>true</code> if inline CSS is present, <code>false</code> if
-   *         not
+   * @return <code>true</code> if inline CSS to be included <b>before</b> the
+   *         CSS files is present, <code>false</code> if not
    */
   boolean hasInlineCSSBeforeExternal ();
 
   /**
-   * @return The inline CSS. May not be <code>null</code>.
+   * @return The inline CSS to be included <b>before</b> the files as a map from
+   *         media list to the CSS code. May not be <code>null</code>.
    */
   @Nonnull
   @ReturnsMutableCopy
-  StringBuilder getInlineCSSBeforeExternal ();
+  Map <ICSSMediaList, StringBuilder> getAllInlineCSSBeforeExternal ();
 
   /**
-   * @return <code>true</code> if inline CSS is present, <code>false</code> if
-   *         not
+   * @return <code>true</code> if inline CSS to be included <b>after</b> the CSS
+   *         files is present, <code>false</code> if not
    */
   boolean hasInlineCSSAfterExternal ();
 
   /**
-   * @return The inline CSS. May not be <code>null</code>.
+   * @return The inline CSS to be included <b>after</b> the files as a map from
+   *         media list to the CSS code. May not be <code>null</code>.
    */
   @Nonnull
   @ReturnsMutableCopy
-  StringBuilder getInlineCSSAfterExternal ();
+  Map <ICSSMediaList, StringBuilder> getAllInlineCSSAfterExternal ();
 
   /**
    * @return <code>true</code> if JS files are present, <code>false</code> if

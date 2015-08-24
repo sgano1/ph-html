@@ -83,7 +83,6 @@ public final class ConstantJSPathProvider implements IJSPathProvider
     return m_sConditionalComment;
   }
 
-  @Override
   public boolean canBeBundled ()
   {
     return m_bCanBeBundled;

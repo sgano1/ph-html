@@ -53,7 +53,7 @@ public interface IJSPathProvider extends Serializable
 
   /**
    * @return Whether or not this script can be bundled to a big JS profile. For
-   *         some files this is not possible (e.g. tinyMCE)
+   *         some files this is not possible.
    */
   boolean canBeBundled ();
 }

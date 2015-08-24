@@ -37,16 +37,19 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
 {
   private static final String DEFAULT_CONDITIONAL_COMMENT = null;
   private static final ICSSMediaList DEFAULT_CSS_MEDIA_LIST = null;
+  public static final boolean DEFAULT_CAN_BE_BUNDLED = true;
 
   private final String m_sPath;
   private final String m_sMinifiedPath;
   private final String m_sConditionalComment;
   private final CSSMediaList m_aCSSMediaList;
+  private final boolean m_bCanBeBundled;
 
   public ConstantCSSPathProvider (@Nonnull @Nonempty final String sPath,
                                   @Nonnull @Nonempty final String sMinifiedPath,
                                   @Nullable final String sConditionalComment,
-                                  @Nullable final ICSSMediaList aMediaList)
+                                  @Nullable final ICSSMediaList aMediaList,
+                                  final boolean bCanBeBundled)
   {
     ValueEnforcer.notEmpty (sPath, "Path");
     ValueEnforcer.isTrue (CSSFilenameHelper.isCSSFilename (sPath), "path");
@@ -56,6 +59,7 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
     m_sMinifiedPath = sMinifiedPath;
     m_sConditionalComment = sConditionalComment;
     m_aCSSMediaList = aMediaList == null ? new CSSMediaList () : new CSSMediaList (aMediaList);
+    m_bCanBeBundled = bCanBeBundled;
   }
 
   @Nonnull
@@ -78,6 +82,11 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
     return m_aCSSMediaList.getClone ();
   }
 
+  public boolean canBeBundled ()
+  {
+    return m_bCanBeBundled;
+  }
+
   @Override
   public boolean equals (final Object o)
   {
@@ -86,19 +95,29 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
     if (o == null || !getClass ().equals (o.getClass ()))
       return false;
     final ConstantCSSPathProvider rhs = (ConstantCSSPathProvider) o;
-    return m_sPath.equals (rhs.m_sPath) && m_sMinifiedPath.equals (rhs.m_sMinifiedPath);
+    return m_sPath.equals (rhs.m_sPath) &&
+           m_sMinifiedPath.equals (rhs.m_sMinifiedPath) &&
+           m_bCanBeBundled == rhs.m_bCanBeBundled;
   }
 
   @Override
   public int hashCode ()
   {
-    return new HashCodeGenerator (this).append (m_sPath).append (m_sMinifiedPath).getHashCode ();
+    return new HashCodeGenerator (this).append (m_sPath)
+                                       .append (m_sMinifiedPath)
+                                       .append (m_bCanBeBundled)
+                                       .getHashCode ();
   }
 
   @Override
   public String toString ()
   {
-    return new ToStringGenerator (this).append ("path", m_sPath).append ("minifiedPath", m_sMinifiedPath).toString ();
+    return new ToStringGenerator (this).append ("path", m_sPath)
+                                       .append ("minifiedPath", m_sMinifiedPath)
+                                       .appendIfNotNull ("conditionalComment", m_sConditionalComment)
+                                       .appendIfNotNull ("CSSMediaList", m_aCSSMediaList)
+                                       .append ("canBeBundled", m_bCanBeBundled)
+                                       .toString ();
   }
 
   @Nonnull
@@ -107,7 +126,8 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
     return new ConstantCSSPathProvider (sPath,
                                         CSSFilenameHelper.getMinifiedCSSFilename (sPath),
                                         DEFAULT_CONDITIONAL_COMMENT,
-                                        DEFAULT_CSS_MEDIA_LIST);
+                                        DEFAULT_CSS_MEDIA_LIST,
+                                        DEFAULT_CAN_BE_BUNDLED);
   }
 
   @Nonnull
@@ -125,6 +145,26 @@ public final class ConstantCSSPathProvider implements ICSSPathProvider
     return new ConstantCSSPathProvider (sPath,
                                         CSSFilenameHelper.getMinifiedCSSFilename (sPath),
                                         sConditionalComment,
-                                        aMediaList);
+                                        aMediaList,
+                                        DEFAULT_CAN_BE_BUNDLED);
+  }
+
+  @Nonnull
+  public static ConstantCSSPathProvider createBundlable (@Nonnull @Nonempty final String sPath,
+                                                         final boolean bBundlable)
+  {
+    return createBundlable (sPath, DEFAULT_CSS_MEDIA_LIST, bBundlable);
+  }
+
+  @Nonnull
+  public static ConstantCSSPathProvider createBundlable (@Nonnull @Nonempty final String sPath,
+                                                         @Nullable final ICSSMediaList aMediaList,
+                                                         final boolean bBundlable)
+  {
+    return new ConstantCSSPathProvider (sPath,
+                                        CSSFilenameHelper.getMinifiedCSSFilename (sPath),
+                                        DEFAULT_CONDITIONAL_COMMENT,
+                                        aMediaList,
+                                        bBundlable);
   }
 }

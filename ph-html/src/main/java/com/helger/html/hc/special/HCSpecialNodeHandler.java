@@ -41,8 +41,8 @@ import com.helger.commons.string.StringHelper;
 import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hc.EHCNodeState;
 import com.helger.html.hc.HCHelper;
+import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.IHCNodeWithChildren;
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.html.IHCConditionalCommentNode;
 import com.helger.html.hc.html.metadata.HCCSSNodeDetector;
@@ -121,10 +121,10 @@ public final class HCSpecialNodeHandler
             s_aLogger.info (StringHelper.getRepeated ("  ", nLevel) + "=> is an OOB node!");
 
           aTargetList.add (aChild);
-          if (aParentElement instanceof IHCNodeWithChildren <?>)
-            ((IHCNodeWithChildren <?>) aParentElement).removeChild (nNodeIndex);
+          if (aParentElement instanceof IHCHasChildrenMutable <?, ?>)
+            ((IHCHasChildrenMutable <?, ?>) aParentElement).removeChild (nNodeIndex);
           else
-            throw new IllegalStateException ("Cannot have out-of-band nodes at " + aParentElement);
+            throw new IllegalStateException ("Cannot remove out-of-band node from " + aParentElement);
         }
         else
         {
@@ -177,12 +177,17 @@ public final class HCSpecialNodeHandler
       return aNodes;
     }
 
-    // Ensure all modifiers are instantiated
+    // Ensure all modifiers are instantiated exactly once
     for (final Class <? extends IHCSpecialNodeListModifier> aModifierClass : aModifiersToApply)
     {
       final String sClassName = aModifierClass.getName ();
       if (!s_aModifiers.containsKey (sClassName))
-        s_aModifiers.put (sClassName, GenericReflection.newInstance (aModifierClass));
+      {
+        final IHCSpecialNodeListModifier aModifier = GenericReflection.newInstance (aModifierClass);
+        if (aModifier == null)
+          s_aLogger.error ("Failed to instantiate IHCSpecialNodeListModifier implementation " + aModifierClass);
+        s_aModifiers.put (sClassName, aModifier);
+      }
     }
 
     // Apply all modifiers
@@ -349,21 +354,23 @@ public final class HCSpecialNodeHandler
     {
       if (HCCSSNodeDetector.isDirectCSSFileNode (aNode))
       {
-        aSpecialNodes.addExternalCSS (((HCLink) aNode).getHrefString ());
+        final HCLink aLink = (HCLink) aNode;
+        aSpecialNodes.addExternalCSS (aLink.getMedia (), aLink.getHrefString ());
       }
       else
         if (HCCSSNodeDetector.isDirectCSSInlineNode (aNode))
         {
           final HCStyle aStyle = (HCStyle) aNode;
           if (aStyle.isEmitAfterFiles ())
-            aSpecialNodes.addInlineCSSAfterExternal (aStyle.getStyleContent ());
+            aSpecialNodes.addInlineCSSAfterExternal (aStyle.getMedia (), aStyle.getStyleContent ());
           else
-            aSpecialNodes.addInlineCSSBeforeExternal (aStyle.getStyleContent ());
+            aSpecialNodes.addInlineCSSBeforeExternal (aStyle.getMedia (), aStyle.getStyleContent ());
         }
         else
           if (HCJSNodeDetector.isDirectJSFileNode (aNode))
           {
-            aSpecialNodes.addExternalJS (((HCScriptFile) aNode).getSrcString ());
+            final HCScriptFile aScriptFile = (HCScriptFile) aNode;
+            aSpecialNodes.addExternalJS (aScriptFile.getSrcString ());
           }
           else
             if (HCJSNodeDetector.isDirectJSInlineNode (aNode))
