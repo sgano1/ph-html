@@ -41,7 +41,7 @@ import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hc.IHCConversionSettingsToNode;
-import com.helger.html.hc.config.EHCStyleMode;
+import com.helger.html.hc.config.EHCStyleInlineMode;
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.html.AbstractHCElement;
 
@@ -62,7 +62,7 @@ public class HCStyle extends AbstractHCElement <HCStyle>
   private IMimeType m_aType = DEFAULT_TYPE;
   private CSSMediaList m_aMediaList;
   private String m_sContent;
-  private EHCStyleMode m_eMode = HCSettings.getStyleMode ();
+  private EHCStyleInlineMode m_eMode = HCSettings.getStyleInlineMode ();
   private boolean m_bEmitAfterFiles = DEFAULT_EMIT_AFTER_FILES;
 
   public HCStyle ()
@@ -202,13 +202,13 @@ public class HCStyle extends AbstractHCElement <HCStyle>
   }
 
   @Nonnull
-  public EHCStyleMode getMode ()
+  public EHCStyleInlineMode getMode ()
   {
     return m_eMode;
   }
 
   @Nonnull
-  public HCStyle setMode (@Nonnull final EHCStyleMode eMode)
+  public HCStyle setMode (@Nonnull final EHCStyleInlineMode eMode)
   {
     m_eMode = ValueEnforcer.notNull (eMode, "Mode");
     return this;
@@ -235,7 +235,7 @@ public class HCStyle extends AbstractHCElement <HCStyle>
 
   public static void setInlineStyle (@Nonnull final IMicroNodeWithChildren aElement,
                                      @Nullable final String sContent,
-                                     @Nonnull final EHCStyleMode eMode)
+                                     @Nonnull final EHCStyleInlineMode eMode)
   {
     if (StringHelper.hasText (sContent))
       switch (eMode)

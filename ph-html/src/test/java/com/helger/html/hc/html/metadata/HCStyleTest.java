@@ -21,9 +21,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Rule;
 import org.junit.Test;
 
-import com.helger.html.hc.config.EHCStyleMode;
+import com.helger.html.hc.config.EHCStyleInlineMode;
 import com.helger.html.hc.config.HCSettings;
-import com.helger.html.hc.html.metadata.HCStyle;
 import com.helger.html.hc.mock.HCTestRuleOptimized;
 import com.helger.html.hc.render.HCRenderer;
 
@@ -51,11 +50,11 @@ public final class HCStyleTest
     HCStyle aStyle = new HCStyle ("div{background:url('foo.gif');}");
     assertEquals ("<style xmlns=\"http://www.w3.org/1999/xhtml\" type=\"text/css\">div{background:url('foo.gif');}</style>",
                   HCRenderer.getAsHTMLString (aStyle));
-    HCSettings.setStyleMode (EHCStyleMode.PLAIN_TEXT);
+    HCSettings.setStyleInlineMode (EHCStyleInlineMode.PLAIN_TEXT);
     aStyle = new HCStyle ("div{background:url('foo.gif');}");
     assertEquals ("<style xmlns=\"http://www.w3.org/1999/xhtml\" type=\"text/css\">div{background:url(&#39;foo.gif&#39;);}</style>",
                   HCRenderer.getAsHTMLString (aStyle));
-    HCSettings.setStyleMode (EHCStyleMode.PLAIN_TEXT_NO_ESCAPE);
+    HCSettings.setStyleInlineMode (EHCStyleInlineMode.PLAIN_TEXT_NO_ESCAPE);
     aStyle = new HCStyle ("div{background:url('foo.gif');}");
     assertEquals ("<style xmlns=\"http://www.w3.org/1999/xhtml\" type=\"text/css\">div{background:url('foo.gif');}</style>",
                   HCRenderer.getAsHTMLString (aStyle));

@@ -16,7 +16,7 @@
  */
 package com.helger.html.hc.config;
 
-public enum EHCStyleMode
+public enum EHCStyleInlineMode
 {
  /**
   * Emit JS code as plain text, but XML masked

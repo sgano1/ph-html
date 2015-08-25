@@ -43,14 +43,14 @@ import com.helger.html.hc.IHCConversionSettings;
 @ThreadSafe
 public final class HCSettings
 {
-  /** Default auto-complete for password fields: false */
-  public static final boolean DEFAULT_AUTO_COMPLETE_OFF_FOR_PASSWORD_EDITS = false;
+  /** Default auto-complete for password fields: only in debug mode */
+  public static final boolean DEFAULT_AUTO_COMPLETE_OFF_FOR_PASSWORD_EDITS = !GlobalDebug.isDebugMode ();
 
   /** By default inline scripts are emitted in mode "wrap in comment" */
   public static final EHCScriptInlineMode DEFAULT_SCRIPT_INLINE_MODE = EHCScriptInlineMode.PLAIN_TEXT_WRAPPED_IN_COMMENT;
 
   /** By default plain text without escape is used */
-  public static final EHCStyleMode DEFAULT_STYLE_MODE = EHCStyleMode.PLAIN_TEXT_NO_ESCAPE;
+  public static final EHCStyleInlineMode DEFAULT_STYLE_MODE = EHCStyleInlineMode.PLAIN_TEXT_NO_ESCAPE;
 
   private static final Logger s_aLogger = LoggerFactory.getLogger (HCSettings.class);
 
@@ -75,7 +75,7 @@ public final class HCSettings
   private static EHCScriptInlineMode s_eScriptInlineMode = DEFAULT_SCRIPT_INLINE_MODE;
 
   @GuardedBy ("s_aRWLock")
-  private static EHCStyleMode s_eStyleMode = DEFAULT_STYLE_MODE;
+  private static EHCStyleInlineMode s_eStyleInlineMode = DEFAULT_STYLE_MODE;
 
   @GuardedBy ("s_aRWLock")
   private static ENewLineMode s_eNewLineMode = ENewLineMode.DEFAULT;
@@ -207,8 +207,7 @@ public final class HCSettings
     s_aRWLock.readLock ().lock ();
     try
     {
-      // Extremely annoying for development...
-      return s_bAutoCompleteOffForPasswordEdits && !GlobalDebug.isDebugMode ();
+      return s_bAutoCompleteOffForPasswordEdits;
     }
     finally
     {
@@ -307,12 +306,12 @@ public final class HCSettings
    * @return The default mode to emit style content. Never <code>null</code>.
    */
   @Nonnull
-  public static EHCStyleMode getStyleMode ()
+  public static EHCStyleInlineMode getStyleInlineMode ()
   {
     s_aRWLock.readLock ().lock ();
     try
     {
-      return s_eStyleMode;
+      return s_eStyleInlineMode;
     }
     finally
     {
@@ -325,18 +324,18 @@ public final class HCSettings
    * new built objects, and does not alter existing objects! The default mode is
    * {@link #DEFAULT_STYLE_MODE}.
    *
-   * @param eMode
+   * @param eStyleInlineMode
    *        The new mode to set. May not be <code>null</code>.
    */
-  public static void setStyleMode (@Nonnull final EHCStyleMode eMode)
+  public static void setStyleInlineMode (@Nonnull final EHCStyleInlineMode eStyleInlineMode)
   {
-    ValueEnforcer.notNull (eMode, "mode");
+    ValueEnforcer.notNull (eStyleInlineMode, "mode");
 
     s_aRWLock.writeLock ().lock ();
     try
     {
-      s_eStyleMode = eMode;
-      s_aLogger.info ("Default <style> mode set to " + eMode);
+      s_eStyleInlineMode = eStyleInlineMode;
+      s_aLogger.info ("Default <style> mode set to " + eStyleInlineMode);
     }
     finally
     {
