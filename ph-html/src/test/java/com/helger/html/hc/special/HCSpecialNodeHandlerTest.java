@@ -25,10 +25,13 @@ import org.junit.Test;
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.system.ENewLineMode;
 import com.helger.commons.xml.serialize.write.EXMLSerializeIndent;
+import com.helger.css.media.CSSMediaList;
+import com.helger.css.media.ECSSMedium;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.config.HCConversionSettings;
+import com.helger.html.hc.html.metadata.HCStyle;
 import com.helger.html.hc.html.root.HCHtml;
 import com.helger.html.hc.html.script.AbstractHCScriptInline;
 import com.helger.html.hc.html.sections.HCH1;
@@ -42,6 +45,7 @@ public final class HCSpecialNodeHandlerTest
     public List <? extends IHCNode> modifySpecialNodes (final List <? extends IHCNode> aNodes)
     {
       final List <IHCNode> ret = CollectionHelper.newList (aNodes);
+      // Remove all but the first
       if (!ret.isEmpty ())
         ret.remove (0);
       return ret;
@@ -96,6 +100,250 @@ public final class HCSpecialNodeHandlerTest
                   "//-->" +
                   sCRLF +
                   "</script>" +
+                  sCRLF +
+                  "</body>" +
+                  sCRLF +
+                  "</html>" +
+                  sCRLF,
+                  HCRenderer.getAsHTMLString (aHtml, aCS));
+  }
+
+  @Test
+  public void testCSSMerge1 ()
+  {
+    final HCHtml aHtml = new HCHtml ();
+    aHtml.getHead ().setPageTitle ("Test");
+    aHtml.getHead ().addCSS (new HCStyle ("body{color:red}"));
+    aHtml.getHead ().addCSS (new HCStyle ("div{color:blue}"));
+    aHtml.getHead ().addCSS (new HCStyle ("span{color:green}"));
+    aHtml.getBody ().addChild (new HCH1 ().addChild ("root"));
+    final String sCRLF = ENewLineMode.DEFAULT.getText ();
+    final HCConversionSettings aCS = new HCConversionSettings (EHTMLVersion.HTML5);
+    aCS.getXMLWriterSettings ().setEmitNamespaces (false).setIndent (EXMLSerializeIndent.ALIGN_ONLY);
+
+    // Must be done for HCHtml separately
+    HCRenderer.prepareHtmlForConversion (aHtml, aCS);
+
+    assertEquals ("<!DOCTYPE html>" +
+                  sCRLF +
+                  "<html dir=\"ltr\">" +
+                  sCRLF +
+                  "<head>" +
+                  sCRLF +
+                  "<title>Test</title>" +
+                  sCRLF +
+                  "<style type=\"text/css\">body{color:red}div{color:blue}span{color:green}</style>" +
+                  sCRLF +
+                  "</head>" +
+                  sCRLF +
+                  "<body>" +
+                  sCRLF +
+                  "<h1>root</h1>" +
+                  sCRLF +
+                  "</body>" +
+                  sCRLF +
+                  "</html>" +
+                  sCRLF,
+                  HCRenderer.getAsHTMLString (aHtml, aCS));
+  }
+
+  @Test
+  public void testCSSMerge1a ()
+  {
+    final HCHtml aHtml = new HCHtml ();
+    aHtml.getHead ().setPageTitle ("Test");
+    aHtml.getHead ().addCSS (new HCStyle ("body{color:red}"));
+    // Should be the same as no media list specified!
+    aHtml.getHead ().addCSS (new HCStyle ("div{color:blue}").setMedia (new CSSMediaList ()));
+    aHtml.getHead ().addCSS (new HCStyle ("span{color:green}"));
+    aHtml.getBody ().addChild (new HCH1 ().addChild ("root"));
+    final String sCRLF = ENewLineMode.DEFAULT.getText ();
+    final HCConversionSettings aCS = new HCConversionSettings (EHTMLVersion.HTML5);
+    aCS.getXMLWriterSettings ().setEmitNamespaces (false).setIndent (EXMLSerializeIndent.ALIGN_ONLY);
+
+    // Must be done for HCHtml separately
+    HCRenderer.prepareHtmlForConversion (aHtml, aCS);
+
+    assertEquals ("<!DOCTYPE html>" +
+                  sCRLF +
+                  "<html dir=\"ltr\">" +
+                  sCRLF +
+                  "<head>" +
+                  sCRLF +
+                  "<title>Test</title>" +
+                  sCRLF +
+                  "<style type=\"text/css\">body{color:red}div{color:blue}span{color:green}</style>" +
+                  sCRLF +
+                  "</head>" +
+                  sCRLF +
+                  "<body>" +
+                  sCRLF +
+                  "<h1>root</h1>" +
+                  sCRLF +
+                  "</body>" +
+                  sCRLF +
+                  "</html>" +
+                  sCRLF,
+                  HCRenderer.getAsHTMLString (aHtml, aCS));
+  }
+
+  @Test
+  public void testCSSMerge1b ()
+  {
+    final HCHtml aHtml = new HCHtml ();
+    aHtml.getHead ().setPageTitle ("Test");
+    aHtml.getHead ().addCSS (new HCStyle ("body{color:red}"));
+    // Should be the same as no media list specified!
+    aHtml.getHead ().addCSS (new HCStyle ("div{color:blue}").setMedia (new CSSMediaList (ECSSMedium.ALL)));
+    aHtml.getHead ().addCSS (new HCStyle ("span{color:green}"));
+    aHtml.getBody ().addChild (new HCH1 ().addChild ("root"));
+    final String sCRLF = ENewLineMode.DEFAULT.getText ();
+    final HCConversionSettings aCS = new HCConversionSettings (EHTMLVersion.HTML5);
+    aCS.getXMLWriterSettings ().setEmitNamespaces (false).setIndent (EXMLSerializeIndent.ALIGN_ONLY);
+
+    // Must be done for HCHtml separately
+    HCRenderer.prepareHtmlForConversion (aHtml, aCS);
+
+    assertEquals ("<!DOCTYPE html>" +
+                  sCRLF +
+                  "<html dir=\"ltr\">" +
+                  sCRLF +
+                  "<head>" +
+                  sCRLF +
+                  "<title>Test</title>" +
+                  sCRLF +
+                  "<style type=\"text/css\">body{color:red}div{color:blue}span{color:green}</style>" +
+                  sCRLF +
+                  "</head>" +
+                  sCRLF +
+                  "<body>" +
+                  sCRLF +
+                  "<h1>root</h1>" +
+                  sCRLF +
+                  "</body>" +
+                  sCRLF +
+                  "</html>" +
+                  sCRLF,
+                  HCRenderer.getAsHTMLString (aHtml, aCS));
+  }
+
+  @Test
+  public void testCSSMerge2 ()
+  {
+    final HCHtml aHtml = new HCHtml ();
+    aHtml.getHead ().setPageTitle ("Test");
+    aHtml.getHead ().addCSS (new HCStyle ("body{color:red}").setMedia (new CSSMediaList (ECSSMedium.PRINT)));
+    aHtml.getHead ().addCSS (new HCStyle ("div{color:blue}"));
+    aHtml.getHead ().addCSS (new HCStyle ("span{color:green}"));
+    aHtml.getBody ().addChild (new HCH1 ().addChild ("root"));
+    final String sCRLF = ENewLineMode.DEFAULT.getText ();
+    final HCConversionSettings aCS = new HCConversionSettings (EHTMLVersion.HTML5);
+    aCS.getXMLWriterSettings ().setEmitNamespaces (false).setIndent (EXMLSerializeIndent.ALIGN_ONLY);
+
+    // Must be done for HCHtml separately
+    HCRenderer.prepareHtmlForConversion (aHtml, aCS);
+
+    assertEquals ("<!DOCTYPE html>" +
+                  sCRLF +
+                  "<html dir=\"ltr\">" +
+                  sCRLF +
+                  "<head>" +
+                  sCRLF +
+                  "<title>Test</title>" +
+                  sCRLF +
+                  "<style type=\"text/css\" media=\"print\">body{color:red}</style>" +
+                  sCRLF +
+                  "<style type=\"text/css\">div{color:blue}span{color:green}</style>" +
+                  sCRLF +
+                  "</head>" +
+                  sCRLF +
+                  "<body>" +
+                  sCRLF +
+                  "<h1>root</h1>" +
+                  sCRLF +
+                  "</body>" +
+                  sCRLF +
+                  "</html>" +
+                  sCRLF,
+                  HCRenderer.getAsHTMLString (aHtml, aCS));
+  }
+
+  @Test
+  public void testCSSMerge3 ()
+  {
+    final HCHtml aHtml = new HCHtml ();
+    aHtml.getHead ().setPageTitle ("Test");
+    aHtml.getHead ().addCSS (new HCStyle ("body{color:red}").setMedia (new CSSMediaList (ECSSMedium.PRINT)));
+    aHtml.getHead ().addCSS (new HCStyle ("div{color:blue}").setMedia (new CSSMediaList (ECSSMedium.PRINT)));
+    aHtml.getHead ().addCSS (new HCStyle ("span{color:green}"));
+    aHtml.getBody ().addChild (new HCH1 ().addChild ("root"));
+    final String sCRLF = ENewLineMode.DEFAULT.getText ();
+    final HCConversionSettings aCS = new HCConversionSettings (EHTMLVersion.HTML5);
+    aCS.getXMLWriterSettings ().setEmitNamespaces (false).setIndent (EXMLSerializeIndent.ALIGN_ONLY);
+
+    // Must be done for HCHtml separately
+    HCRenderer.prepareHtmlForConversion (aHtml, aCS);
+
+    assertEquals ("<!DOCTYPE html>" +
+                  sCRLF +
+                  "<html dir=\"ltr\">" +
+                  sCRLF +
+                  "<head>" +
+                  sCRLF +
+                  "<title>Test</title>" +
+                  sCRLF +
+                  "<style type=\"text/css\" media=\"print\">body{color:red}div{color:blue}</style>" +
+                  sCRLF +
+                  "<style type=\"text/css\">span{color:green}</style>" +
+                  sCRLF +
+                  "</head>" +
+                  sCRLF +
+                  "<body>" +
+                  sCRLF +
+                  "<h1>root</h1>" +
+                  sCRLF +
+                  "</body>" +
+                  sCRLF +
+                  "</html>" +
+                  sCRLF,
+                  HCRenderer.getAsHTMLString (aHtml, aCS));
+  }
+
+  @Test
+  public void testCSSMerge4 ()
+  {
+    final HCHtml aHtml = new HCHtml ();
+    aHtml.getHead ().setPageTitle ("Test");
+    aHtml.getHead ().addCSS (new HCStyle ("body{color:red}").setMedia (new CSSMediaList (ECSSMedium.PRINT)));
+    aHtml.getHead ().addCSS (new HCStyle ("div{color:blue}"));
+    aHtml.getHead ().addCSS (new HCStyle ("span{color:green}").setMedia (new CSSMediaList (ECSSMedium.PRINT)));
+    aHtml.getBody ().addChild (new HCH1 ().addChild ("root"));
+    final String sCRLF = ENewLineMode.DEFAULT.getText ();
+    final HCConversionSettings aCS = new HCConversionSettings (EHTMLVersion.HTML5);
+    aCS.getXMLWriterSettings ().setEmitNamespaces (false).setIndent (EXMLSerializeIndent.ALIGN_ONLY);
+
+    // Must be done for HCHtml separately
+    HCRenderer.prepareHtmlForConversion (aHtml, aCS);
+
+    assertEquals ("<!DOCTYPE html>" +
+                  sCRLF +
+                  "<html dir=\"ltr\">" +
+                  sCRLF +
+                  "<head>" +
+                  sCRLF +
+                  "<title>Test</title>" +
+                  sCRLF +
+                  "<style type=\"text/css\" media=\"print\">body{color:red}</style>" +
+                  sCRLF +
+                  "<style type=\"text/css\">div{color:blue}</style>" +
+                  sCRLF +
+                  "<style type=\"text/css\" media=\"print\">span{color:green}</style>" +
+                  sCRLF +
+                  "</head>" +
+                  sCRLF +
+                  "<body>" +
+                  sCRLF +
+                  "<h1>root</h1>" +
                   sCRLF +
                   "</body>" +
                   sCRLF +

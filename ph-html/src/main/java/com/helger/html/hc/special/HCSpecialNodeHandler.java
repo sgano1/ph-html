@@ -54,6 +54,7 @@ import com.helger.html.hc.html.script.HCScriptInline;
 import com.helger.html.hc.html.script.HCScriptInlineOnDocumentReady;
 import com.helger.html.hc.html.script.IHCScriptInline;
 import com.helger.html.js.CollectingJSCodeProvider;
+import com.helger.html.resource.css.ICSSCodeProvider;
 
 /**
  * This class is used to handle the special nodes (JS and CSS, inline and
@@ -140,25 +141,23 @@ public final class HCSpecialNodeHandler
   /**
    * Extract all out-of-band child nodes for the passed element. Must be called
    * after the element is finished! All out-of-band nodes are detached from
-   * their parent so that the original node can be reused.
+   * their parent so that the original node can be reused. Wrapped nodes where
+   * the inner node is an out of band node are also considered and removed.
    *
    * @param aParentElement
    *        The parent element to extract the nodes from. May not be
    *        <code>null</code>.
-   * @return The list with out-of-band nodes. Never <code>null</code>.
+   * @param aTargetList
+   *        The target list to be filled. May not be <code>null</code>.
    */
-  @Nonnull
-  @ReturnsMutableCopy
-  public static List <IHCNode> recursiveExtractAndRemoveOutOfBandNodes (@Nonnull final IHCNode aParentElement)
+  public static void recursiveExtractAndRemoveOutOfBandNodes (@Nonnull final IHCNode aParentElement,
+                                                              @Nonnull final List <IHCNode> aTargetList)
   {
     ValueEnforcer.notNull (aParentElement, "ParentElement");
-
-    final List <IHCNode> aTargetList = new ArrayList <IHCNode> ();
+    ValueEnforcer.notNull (aTargetList, "TargetList");
 
     // Using HCUtils.iterateTree would be too tedious here
     _recursiveExtractAndRemoveOutOfBandNodes (aParentElement, aTargetList, 0);
-
-    return aTargetList;
   }
 
   @Nonnull
@@ -235,8 +234,8 @@ public final class HCSpecialNodeHandler
     final CollectingJSCodeProvider aJSOnDocumentReadyAfter = new CollectingJSCodeProvider ();
     final CollectingJSCodeProvider aJSInlineBefore = new CollectingJSCodeProvider ();
     final CollectingJSCodeProvider aJSInlineAfter = new CollectingJSCodeProvider ();
-    final StringBuilder aCSSInlineBefore = new StringBuilder ();
-    final StringBuilder aCSSInlineAfter = new StringBuilder ();
+    final InlineCSSList aCSSInlineBefore = new InlineCSSList ();
+    final InlineCSSList aCSSInlineAfter = new InlineCSSList ();
     for (final IHCNode aNode : aRealSpecialNodes)
     {
       // Note: do not unwrap the node, because it is not allowed to merge JS/CSS
@@ -264,16 +263,8 @@ public final class HCSpecialNodeHandler
           {
             // Inline CSS
             final HCStyle aStyle = (HCStyle) aNode;
-            if (aStyle.hasNoMediaOrAll ())
-            {
-              // Merge only inline CSS nodes, that are media-independent
-              (aStyle.isEmitAfterFiles () ? aCSSInlineAfter : aCSSInlineBefore).append (aStyle.getStyleContent ());
-            }
-            else
-            {
-              // Add CSS with media as-is
-              ret.add (aNode);
-            }
+            (aStyle.isEmitAfterFiles () ? aCSSInlineAfter : aCSSInlineBefore).addInlineCSS (aStyle.getMedia (),
+                                                                                            aStyle.getStyleContent ());
           }
           else
           {
@@ -312,7 +303,7 @@ public final class HCSpecialNodeHandler
     {
       final HCScriptInline aScript = new HCScriptInline (aJSInlineBefore).setEmitAfterFiles (false);
       aScript.internalSetNodeState (EHCNodeState.RESOURCES_REGISTERED);
-      ret.add (aScript);
+      ret.add (0, aScript);
     }
 
     if (!aJSInlineAfter.isEmpty ())
@@ -323,18 +314,28 @@ public final class HCSpecialNodeHandler
     }
 
     // Add all merged inline CSSs
-    if (aCSSInlineBefore.length () > 0)
+    if (!aCSSInlineBefore.isEmpty ())
     {
-      final HCStyle aStyle = new HCStyle (aCSSInlineBefore.toString ()).setEmitAfterFiles (false);
-      aStyle.internalSetNodeState (EHCNodeState.RESOURCES_REGISTERED);
-      ret.add (aStyle);
+      int nIndex = 0;
+      for (final ICSSCodeProvider aEntry : aCSSInlineBefore.getAll ())
+      {
+        final HCStyle aStyle = new HCStyle (aEntry.getCSSCode ()).setMedia (aEntry.getMediaList ())
+                                                                 .setEmitAfterFiles (false);
+        aStyle.internalSetNodeState (EHCNodeState.RESOURCES_REGISTERED);
+        ret.add (nIndex, aStyle);
+        ++nIndex;
+      }
     }
 
-    if (aCSSInlineAfter.length () > 0)
+    if (!aCSSInlineAfter.isEmpty ())
     {
-      final HCStyle aStyle = new HCStyle (aCSSInlineAfter.toString ()).setEmitAfterFiles (true);
-      aStyle.internalSetNodeState (EHCNodeState.RESOURCES_REGISTERED);
-      ret.add (aStyle);
+      for (final ICSSCodeProvider aEntry : aCSSInlineAfter.getAll ())
+      {
+        final HCStyle aStyle = new HCStyle (aEntry.getCSSCode ()).setMedia (aEntry.getMediaList ())
+                                                                 .setEmitAfterFiles (true);
+        aStyle.internalSetNodeState (EHCNodeState.RESOURCES_REGISTERED);
+        ret.add (aStyle);
+      }
     }
 
     return ret;
@@ -383,6 +384,7 @@ public final class HCSpecialNodeHandler
             }
             else
             {
+              // Neither JS nor CSS node - so maybe a conditional comment node
               ret.add (aNode);
             }
     }
@@ -415,9 +417,10 @@ public final class HCSpecialNodeHandler
     ValueEnforcer.notNull (aSpecialNodes, "SpecialNodes");
 
     // Extract all out of band nodes from the passed node
-    List <IHCNode> aExtractedOutOfBandNodes = recursiveExtractAndRemoveOutOfBandNodes (aNode);
+    List <IHCNode> aExtractedOutOfBandNodes = new ArrayList <IHCNode> ();
+    recursiveExtractAndRemoveOutOfBandNodes (aNode, aExtractedOutOfBandNodes);
 
-    // Merge JS/CSS nodes
+    // Merge JS/CSS nodes - replace list content
     aExtractedOutOfBandNodes = getMergedInlineCSSAndJSNodes (aExtractedOutOfBandNodes, bKeepOnDocumentReady);
 
     // Extract the special nodes into the provided object

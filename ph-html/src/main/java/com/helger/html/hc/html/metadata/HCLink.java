@@ -37,6 +37,7 @@ import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hc.html.AbstractHCElement;
 import com.helger.html.hc.html.HC_Target;
+import com.helger.html.resource.css.ICSSPathProvider;
 
 /**
  * Represents an HTML &lt;link&gt; element
@@ -46,8 +47,6 @@ import com.helger.html.hc.html.HC_Target;
 @OutOfBandNode
 public class HCLink extends AbstractHCElement <HCLink>
 {
-  public static final boolean DEFAULT_IS_BUNDLABLE = true;
-
   private IHCLinkType m_aRel;
   private IHCLinkType m_aRev;
   private IMimeType m_aType;
@@ -57,7 +56,7 @@ public class HCLink extends AbstractHCElement <HCLink>
   private String m_sCharset;
   private CSSMediaList m_aMediaList;
   private String m_sSizes;
-  private boolean m_bIsBundlable = DEFAULT_IS_BUNDLABLE;
+  private ICSSPathProvider m_aCSSPathProvider;
 
   public HCLink ()
   {
@@ -256,15 +255,16 @@ public class HCLink extends AbstractHCElement <HCLink>
     return this;
   }
 
-  public boolean isBundlable ()
+  @Nullable
+  public ICSSPathProvider getPathProvider ()
   {
-    return m_bIsBundlable;
+    return m_aCSSPathProvider;
   }
 
   @Nonnull
-  public HCLink setBundlable (@Nonnull final boolean bIsBundlable)
+  public HCLink setPathProvider (@Nullable final ICSSPathProvider aCSSPathProvider)
   {
-    m_bIsBundlable = bIsBundlable;
+    m_aCSSPathProvider = aCSSPathProvider;
     return this;
   }
 
@@ -302,16 +302,16 @@ public class HCLink extends AbstractHCElement <HCLink>
   public String toString ()
   {
     return ToStringGenerator.getDerived (super.toString ())
-                            .appendIfNotNull ("rel", m_aRel)
-                            .appendIfNotNull ("rev", m_aRev)
-                            .appendIfNotNull ("type", m_aType)
-                            .appendIfNotNull ("href", m_aHref)
-                            .appendIfNotNull ("hrefLang", m_sHrefLang)
-                            .appendIfNotNull ("target", m_aTarget)
-                            .appendIfNotNull ("charset", m_sCharset)
-                            .appendIfNotNull ("mediaList", m_aMediaList)
-                            .appendIfNotNull ("sizes", m_sSizes)
-                            .append ("isBundlable", m_bIsBundlable)
+                            .appendIfNotNull ("Rel", m_aRel)
+                            .appendIfNotNull ("Rev", m_aRev)
+                            .appendIfNotNull ("Type", m_aType)
+                            .appendIfNotNull ("Href", m_aHref)
+                            .appendIfNotNull ("HrefLang", m_sHrefLang)
+                            .appendIfNotNull ("Target", m_aTarget)
+                            .appendIfNotNull ("Charset", m_sCharset)
+                            .appendIfNotNull ("MediaList", m_aMediaList)
+                            .appendIfNotNull ("Sizes", m_sSizes)
+                            .appendIfNotNull ("CSSPathProvider", m_aCSSPathProvider)
                             .toString ();
   }
 
@@ -326,18 +326,5 @@ public class HCLink extends AbstractHCElement <HCLink>
   public static HCLink createCSSLink (@Nonnull final ISimpleURL aCSSURL)
   {
     return new HCLink ().setRel (EHCLinkType.STYLESHEET).setType (CMimeType.TEXT_CSS).setHref (aCSSURL);
-  }
-
-  /**
-   * Shortcut to create a &lt;link&gt; element specific to CSS
-   *
-   * @param sCSSURL
-   *        The CSS URL to be referenced
-   * @return Never <code>null</code>.
-   */
-  @Nonnull
-  public static HCLink createCSSLink (@Nonnull final String sCSSURL)
-  {
-    return createCSSLink (new SimpleURL (sCSSURL));
   }
 }

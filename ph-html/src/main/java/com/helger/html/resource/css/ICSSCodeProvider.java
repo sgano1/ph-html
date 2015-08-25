@@ -14,37 +14,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html.script;
-
-import java.nio.charset.Charset;
+package com.helger.html.resource.css;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
-import com.helger.commons.mime.IMimeType;
-import com.helger.html.hc.html.IHCElement;
+import com.helger.commons.annotation.MustImplementEqualsAndHashcode;
 
 /**
- * Interface for SCRIPTs
+ * Interface for an inline CSS code provider.
  *
  * @author Philip Helger
- * @param <THISTYPE>
- *        Implementation type
  */
-public interface IHCScript <THISTYPE extends IHCScript <THISTYPE>> extends IHCElement <THISTYPE>
+@MustImplementEqualsAndHashcode
+public interface ICSSCodeProvider extends ICSSProvider
 {
+  /**
+   * @return The CSS code of the CSS inline item.
+   */
   @Nonnull
-  IMimeType getType ();
-
-  @Nonnull
-  THISTYPE setType (@Nonnull IMimeType aType);
-
-  @Nullable
-  String getCharset ();
-
-  @Nonnull
-  THISTYPE setCharset (@Nullable Charset aCharset);
-
-  @Nonnull
-  THISTYPE setCharset (@Nullable String sCharset);
+  String getCSSCode ();
 }

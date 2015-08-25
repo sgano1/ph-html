@@ -75,6 +75,7 @@ public final class HCRenderer
     return aNode;
   }
 
+  @Deprecated
   public static void prepareHtmlForConversion (@Nonnull final HCHtml aHtml,
                                                @Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {

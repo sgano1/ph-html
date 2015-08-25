@@ -16,26 +16,41 @@
  */
 package com.helger.html.resource.css;
 
+import java.io.Serializable;
+
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import com.helger.commons.annotation.MustImplementEqualsAndHashcode;
-import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.css.media.ICSSMediaList;
 
 /**
- * Provides a path to an external CSS object.
+ * Base for external CSS provider with all constraints
  *
  * @author Philip Helger
  */
 @MustImplementEqualsAndHashcode
-public interface ICSSPathProvider extends ICSSProvider
+public interface ICSSProvider extends Serializable
 {
   /**
-   * @param bRegular
-   *        if <code>true</code> the regular version of item should be
-   *        retrieved, otherwise the minified version of the file.
-   * @return The path to the external CSS item.
+   * @return The conditional comment required for this JS item or
+   *         <code>null</code> if it applies to all browsers.
+   */
+  @Nullable
+  String getConditionalComment ();
+
+  /**
+   * @return The media list for which this CSS item applies. Never
+   *         <code>null</code> but maybe empty.
    */
   @Nonnull
-  @Nonempty
-  String getCSSItemPath (boolean bRegular);
+  @ReturnsMutableCopy
+  ICSSMediaList getMediaList ();
+
+  /**
+   * @return Whether or not this script can be bundled to a big CSS profile. For
+   *         some files this is not possible.
+   */
+  boolean isBundlable ();
 }

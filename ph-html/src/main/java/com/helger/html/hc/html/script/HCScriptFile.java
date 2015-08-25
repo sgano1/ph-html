@@ -27,6 +27,7 @@ import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hc.IHCConversionSettingsToNode;
+import com.helger.html.resource.js.IJSPathProvider;
 
 /**
  * Represents an HTML &lt;script&gt; element that loads the code from a source
@@ -47,6 +48,7 @@ public class HCScriptFile extends AbstractHCScript <HCScriptFile>
   private ISimpleURL m_aSrc;
   private boolean m_bDefer = DEFAULT_DEFER;
   private boolean m_bAsync = DEFAULT_ASYNC;
+  private IJSPathProvider m_aJSPathProvider;
 
   public HCScriptFile ()
   {}
@@ -100,6 +102,19 @@ public class HCScriptFile extends AbstractHCScript <HCScriptFile>
     return this;
   }
 
+  @Nullable
+  public IJSPathProvider getPathProvider ()
+  {
+    return m_aJSPathProvider;
+  }
+
+  @Nonnull
+  public HCScriptFile setPathProvider (@Nullable final IJSPathProvider aJSPathProvider)
+  {
+    m_aJSPathProvider = aJSPathProvider;
+    return thisAsT ();
+  }
+
   @Override
   protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
@@ -122,6 +137,7 @@ public class HCScriptFile extends AbstractHCScript <HCScriptFile>
                             .appendIfNotNull ("src", m_aSrc)
                             .append ("defer", m_bDefer)
                             .append ("async", m_bAsync)
+                            .appendIfNotNull ("JSPathProvider", m_aJSPathProvider)
                             .toString ();
   }
 }

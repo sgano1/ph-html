@@ -33,6 +33,7 @@ import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
 import com.helger.html.EHTMLVersion;
+import com.helger.html.hc.HCHelper;
 import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.config.HCSettings;
@@ -157,23 +158,36 @@ public class HCHtml extends AbstractHCElement <HCHtml>
     return aDoc;
   }
 
+  /**
+   * @return The list with all out-of-band nodes from the head and the body.
+   *         Never <code>null</code> but maybe empty.
+   */
+  @Nonnull
+  @ReturnsMutableCopy
+  public List <IHCNode> extractAndRemoveOutOfBandNodes ()
+  {
+    final List <IHCNode> aCompleteOOBList = new ArrayList <IHCNode> ();
+    // Add all existing JS and CSS nodes from the head, as they are known to be
+    // out-of-band
+    m_aHead.getAllAndRemoveAllJSNodes (aCompleteOOBList);
+    m_aHead.getAllAndRemoveAllCSSNodes (aCompleteOOBList);
+
+    // Extract all out-of-band nodes from the body
+    HCSpecialNodeHandler.recursiveExtractAndRemoveOutOfBandNodes (m_aBody, aCompleteOOBList);
+
+    return aCompleteOOBList;
+  }
+
   public void extractAndReorderOutOfBandNodes ()
   {
-    // Extract all out-of-band nodes
-    final List <IHCNode> aExtractedOutOfBandNodes = HCSpecialNodeHandler.recursiveExtractAndRemoveOutOfBandNodes (m_aBody);
+    // Extract all out-of-band nodes from the body
+    final List <IHCNode> aCompleteOOBList = extractAndRemoveOutOfBandNodes ();
 
     // Remember the body index where to append OOB nodes to (after extraction)
     int nBodyNodeIndex = m_aBody.getChildCount ();
-    int nJSIndex = 0;
-    int nCSSIndex = 0;
+    int nHeadJSIndex = 0;
+    int nHeadCSSIndex = 0;
     final boolean bScriptsInBody = HCSettings.isScriptsInBody ();
-
-    // Add all existing JS and CSS nodes from the head, as they are known to be
-    // out-of-band
-    final List <IHCNode> aCompleteOOBList = new ArrayList <IHCNode> ();
-    aCompleteOOBList.addAll (m_aHead.getAllAndRemoveAllJSNodes ());
-    aCompleteOOBList.addAll (m_aHead.getAllAndRemoveAllCSSNodes ());
-    aCompleteOOBList.addAll (aExtractedOutOfBandNodes);
 
     // First merge all JS and CSS nodes (and keep document.ready() as it is)
     final boolean bKeepOnDocumentReady = true;
@@ -183,11 +197,14 @@ public class HCHtml extends AbstractHCElement <HCHtml>
     // And now move either to head or body
     for (final IHCNode aNode : aMergedOOBNodes)
     {
+      final IHCNode aUnwrappedNode = HCHelper.getUnwrappedNode (aNode);
+
       // Node for the body?
-      if (HCJSNodeDetector.isJSNode (aNode))
+      if (HCJSNodeDetector.isDirectJSNode (aUnwrappedNode))
       {
         // It's a body node
-        if (aNode instanceof IHCScriptInline <?> && !((IHCScriptInline <?>) aNode).isEmitAfterFiles ())
+        if (aUnwrappedNode instanceof IHCScriptInline <?> &&
+            !((IHCScriptInline <?>) aUnwrappedNode).isEmitAfterFiles ())
         {
           // Add certain inline code before files
           if (bScriptsInBody)
@@ -197,8 +214,8 @@ public class HCHtml extends AbstractHCElement <HCHtml>
           }
           else
           {
-            m_aHead.addJS (nJSIndex, aNode);
-            nJSIndex++;
+            m_aHead.addJS (nHeadJSIndex, aNode);
+            nHeadJSIndex++;
           }
         }
         else
@@ -213,13 +230,13 @@ public class HCHtml extends AbstractHCElement <HCHtml>
       else
       {
         // It's a head node
-        if (HCCSSNodeDetector.isCSSNode (aNode))
+        if (HCCSSNodeDetector.isDirectCSSNode (aUnwrappedNode))
         {
-          if (aNode instanceof HCStyle && !((HCStyle) aNode).isEmitAfterFiles ())
+          if (aUnwrappedNode instanceof HCStyle && !((HCStyle) aUnwrappedNode).isEmitAfterFiles ())
           {
             // Add inline style before files
-            m_aHead.addCSS (nCSSIndex, aNode);
-            nCSSIndex++;
+            m_aHead.addCSS (nHeadCSSIndex, aNode);
+            nHeadCSSIndex++;
           }
           else
           {

@@ -14,37 +14,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.html.hc.html.script;
+package com.helger.html.resource.js;
 
-import java.nio.charset.Charset;
+import java.io.Serializable;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.mime.IMimeType;
-import com.helger.html.hc.html.IHCElement;
+import com.helger.commons.annotation.MustImplementEqualsAndHashcode;
 
 /**
- * Interface for SCRIPTs
+ * Base for external JS provider with all constraints
  *
  * @author Philip Helger
- * @param <THISTYPE>
- *        Implementation type
  */
-public interface IHCScript <THISTYPE extends IHCScript <THISTYPE>> extends IHCElement <THISTYPE>
+@MustImplementEqualsAndHashcode
+public interface IJSProvider extends Serializable
 {
-  @Nonnull
-  IMimeType getType ();
-
-  @Nonnull
-  THISTYPE setType (@Nonnull IMimeType aType);
-
+  /**
+   * @return The conditional comment required for this JS item or
+   *         <code>null</code> if it applies to all browsers.
+   */
   @Nullable
-  String getCharset ();
+  String getConditionalComment ();
 
-  @Nonnull
-  THISTYPE setCharset (@Nullable Charset aCharset);
-
-  @Nonnull
-  THISTYPE setCharset (@Nullable String sCharset);
+  /**
+   * @return Whether or not this script can be bundled to a big JS profile. For
+   *         some files this is not possible.
+   */
+  boolean isBundlable ();
 }

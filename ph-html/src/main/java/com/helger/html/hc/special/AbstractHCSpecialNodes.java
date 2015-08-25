@@ -42,6 +42,7 @@ import com.helger.css.media.CSSMediaList;
 import com.helger.css.media.ICSSMediaList;
 import com.helger.html.js.CollectingJSCodeProvider;
 import com.helger.html.js.IHasJSCode;
+import com.helger.html.resource.css.ICSSCodeProvider;
 
 /**
  * Abstract implementation of {@link IHCSpecialNodes}.
@@ -56,8 +57,8 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
   private static final Logger s_aLogger = LoggerFactory.getLogger (AbstractHCSpecialNodes.class);
 
   private final IMultiMapSetBased <ICSSMediaList, String> m_aExternalCSSs = new MultiLinkedHashMapLinkedHashSetBased <ICSSMediaList, String> ();
-  private final Map <ICSSMediaList, StringBuilder> m_aInlineCSSBeforeExternal = new LinkedHashMap <ICSSMediaList, StringBuilder> ();
-  private final Map <ICSSMediaList, StringBuilder> m_aInlineCSSAfterExternal = new LinkedHashMap <ICSSMediaList, StringBuilder> ();
+  private final InlineCSSList m_aInlineCSSBeforeExternal = new InlineCSSList ();
+  private final InlineCSSList m_aInlineCSSAfterExternal = new InlineCSSList ();
 
   private final Set <String> m_aExternalJSs = new LinkedHashSet <String> ();
   private final CollectingJSCodeProvider m_aInlineJSBeforeExternal = new CollectingJSCodeProvider ();
@@ -101,13 +102,13 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
   }
 
   @Nonnull
-  public IMPLTYPE addExternalCSS (@Nullable final ICSSMediaList aMediaList, @Nonnull @Nonempty final String sCSSFile)
+  public IMPLTYPE addExternalCSS (@Nullable final ICSSMediaList aMediaList, @Nonnull @Nonempty final String sCSSURI)
   {
-    ValueEnforcer.notEmpty (sCSSFile, "CSSFile");
+    ValueEnforcer.notEmpty (sCSSURI, "CSSURI");
 
     final ICSSMediaList aRealMediaList = getSafeCSSMediaList (aMediaList);
-    if (m_aExternalCSSs.putSingle (aRealMediaList, sCSSFile).isUnchanged ())
-      s_aLogger.warn ("Duplicate CSS file '" + sCSSFile + "' with media list '" + aRealMediaList + "' ignored");
+    if (m_aExternalCSSs.putSingle (aRealMediaList, sCSSURI).isUnchanged ())
+      s_aLogger.warn ("Duplicate CSS URI '" + sCSSURI + "' with media list '" + aRealMediaList + "' ignored");
     return thisAsT ();
   }
 
@@ -132,14 +133,7 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
   {
     ValueEnforcer.notNull (aInlineCSS, "InlineCSS");
 
-    final ICSSMediaList aRealMediaList = getSafeCSSMediaList (aMediaList);
-    StringBuilder aSB = m_aInlineCSSBeforeExternal.get (aRealMediaList);
-    if (aSB == null)
-    {
-      aSB = new StringBuilder ();
-      m_aInlineCSSBeforeExternal.put (aRealMediaList, aSB);
-    }
-    aSB.append (aInlineCSS);
+    m_aInlineCSSBeforeExternal.addInlineCSS (aMediaList, aInlineCSS);
     return thisAsT ();
   }
 
@@ -150,9 +144,9 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
 
   @Nonnull
   @ReturnsMutableCopy
-  public Map <ICSSMediaList, StringBuilder> getAllInlineCSSBeforeExternal ()
+  public List <ICSSCodeProvider> getAllInlineCSSBeforeExternal ()
   {
-    return CollectionHelper.newOrderedMap (m_aInlineCSSBeforeExternal);
+    return m_aInlineCSSBeforeExternal.getAll ();
   }
 
   @Nonnull
@@ -161,14 +155,7 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
   {
     ValueEnforcer.notNull (aInlineCSS, "InlineCSS");
 
-    final ICSSMediaList aRealMediaList = getSafeCSSMediaList (aMediaList);
-    StringBuilder aSB = m_aInlineCSSAfterExternal.get (aRealMediaList);
-    if (aSB == null)
-    {
-      aSB = new StringBuilder ();
-      m_aInlineCSSAfterExternal.put (aRealMediaList, aSB);
-    }
-    aSB.append (aInlineCSS);
+    m_aInlineCSSAfterExternal.addInlineCSS (aMediaList, aInlineCSS);
     return thisAsT ();
   }
 
@@ -179,18 +166,18 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
 
   @Nonnull
   @ReturnsMutableCopy
-  public Map <ICSSMediaList, StringBuilder> getAllInlineCSSAfterExternal ()
+  public List <ICSSCodeProvider> getAllInlineCSSAfterExternal ()
   {
-    return CollectionHelper.newOrderedMap (m_aInlineCSSAfterExternal);
+    return m_aInlineCSSAfterExternal.getAll ();
   }
 
   @Nonnull
-  public IMPLTYPE addExternalJS (@Nonnull @Nonempty final String sJSFile)
+  public IMPLTYPE addExternalJS (@Nonnull @Nonempty final String sJSURI)
   {
-    ValueEnforcer.notEmpty (sJSFile, "JSFile");
+    ValueEnforcer.notEmpty (sJSURI, "JSURI");
 
-    if (!m_aExternalJSs.add (sJSFile))
-      s_aLogger.warn ("Duplicate JS file '" + sJSFile + "' ignored");
+    if (!m_aExternalJSs.add (sJSURI))
+      s_aLogger.warn ("Duplicate JS URI '" + sJSURI + "' ignored");
     return thisAsT ();
   }
 
@@ -257,12 +244,10 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
     for (final Map.Entry <ICSSMediaList, List <String>> aEntry : aSpecialNodes.getAllExternalCSSs ().entrySet ())
       for (final String sCSSFile : aEntry.getValue ())
         addExternalCSS (aEntry.getKey (), sCSSFile);
-    for (final Map.Entry <ICSSMediaList, StringBuilder> aEntry : aSpecialNodes.getAllInlineCSSBeforeExternal ()
-                                                                              .entrySet ())
-      addInlineCSSBeforeExternal (aEntry.getKey (), aEntry.getValue ());
-    for (final Map.Entry <ICSSMediaList, StringBuilder> aEntry : aSpecialNodes.getAllInlineCSSAfterExternal ()
-                                                                              .entrySet ())
-      addInlineCSSAfterExternal (aEntry.getKey (), aEntry.getValue ());
+    for (final ICSSCodeProvider aEntry : aSpecialNodes.getAllInlineCSSBeforeExternal ())
+      addInlineCSSBeforeExternal (aEntry.getMediaList (), aEntry.getCSSCode ());
+    for (final ICSSCodeProvider aEntry : aSpecialNodes.getAllInlineCSSAfterExternal ())
+      addInlineCSSAfterExternal (aEntry.getMediaList (), aEntry.getCSSCode ());
 
     // JS
     for (final String sJSFile : aSpecialNodes.getAllExternalJSs ())

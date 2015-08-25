@@ -25,6 +25,7 @@ import javax.annotation.Nonnull;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.css.media.ICSSMediaList;
 import com.helger.html.js.IHasJSCode;
+import com.helger.html.resource.css.ICSSCodeProvider;
 
 /**
  * This interface represents all special nodes that can occur in an HTML
@@ -63,7 +64,7 @@ public interface IHCSpecialNodes extends Serializable
    */
   @Nonnull
   @ReturnsMutableCopy
-  Map <ICSSMediaList, StringBuilder> getAllInlineCSSBeforeExternal ();
+  List <ICSSCodeProvider> getAllInlineCSSBeforeExternal ();
 
   /**
    * @return <code>true</code> if inline CSS to be included <b>after</b> the CSS
@@ -77,7 +78,7 @@ public interface IHCSpecialNodes extends Serializable
    */
   @Nonnull
   @ReturnsMutableCopy
-  Map <ICSSMediaList, StringBuilder> getAllInlineCSSAfterExternal ();
+  List <ICSSCodeProvider> getAllInlineCSSAfterExternal ();
 
   /**
    * @return <code>true</code> if JS files are present, <code>false</code> if
