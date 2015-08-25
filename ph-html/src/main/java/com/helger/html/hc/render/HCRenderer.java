@@ -85,6 +85,10 @@ public final class HCRenderer
     // Extract all out-of-band nodes into the body
     if (aConversionSettings.isExtractOutOfBandNodes ())
       aHtml.extractAndReorderOutOfBandNodes ();
+
+    // Move scripts to body?
+    if (HCSettings.isScriptsInBody ())
+      aHtml.moveScriptElementsToBody ();
   }
 
   /**

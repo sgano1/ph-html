@@ -148,6 +148,15 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
   }
 
   @Nonnull
+  @DevelopersNote ("Use addChild instead!")
+  @Deprecated
+  public final THISTYPE addChildren (@Nonnegative final int nIndex, @Nullable final CHILDTYPE aChild)
+  {
+    ValueEnforcer.isBetweenInclusive (nIndex, "Index", 0, getChildCount ());
+    return addChild (nIndex, aChild);
+  }
+
+  @Nonnull
   public final THISTYPE addChildren (@Nullable final CHILDTYPE... aChildren)
   {
     if (aChildren != null)
@@ -157,11 +166,38 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
   }
 
   @Nonnull
+  public final THISTYPE addChildren (@Nonnegative final int nIndex, @Nullable final CHILDTYPE... aChildren)
+  {
+    ValueEnforcer.isBetweenInclusive (nIndex, "Index", 0, getChildCount ());
+    if (aChildren != null)
+    {
+      int nRealIndex = nIndex;
+      for (final CHILDTYPE aChild : aChildren)
+        addChild (nRealIndex++, aChild);
+    }
+    return thisAsT ();
+  }
+
+  @Nonnull
   public final THISTYPE addChildren (@Nullable final Iterable <? extends CHILDTYPE> aChildren)
   {
     if (aChildren != null)
       for (final CHILDTYPE aChild : aChildren)
         addChild (aChild);
+    return thisAsT ();
+  }
+
+  @Nonnull
+  public final THISTYPE addChildren (@Nonnegative final int nIndex,
+                                     @Nullable final Iterable <? extends CHILDTYPE> aChildren)
+  {
+    ValueEnforcer.isBetweenInclusive (nIndex, "Index", 0, getChildCount ());
+    if (aChildren != null)
+    {
+      int nRealIndex = nIndex;
+      for (final CHILDTYPE aChild : aChildren)
+        addChild (nRealIndex++, aChild);
+    }
     return thisAsT ();
   }
 

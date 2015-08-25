@@ -65,6 +65,19 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
   THISTYPE addChildren (@Nullable CHILDTYPE aChild);
 
   /**
+   * Use {@link #addChild(IHCNode)} instead.
+   *
+   * @param nIndex
+   *        The index to where the element should be inserted.
+   * @param aChild
+   *        The child to add. May be <code>null</code>.
+   * @return this
+   */
+  @Deprecated
+  @DevelopersNote ("Use addChild instead")
+  THISTYPE addChildren (@Nonnegative int nIndex, @Nullable CHILDTYPE aChild);
+
+  /**
    * @param aChildren
    *        Children to add. May be <code>null</code>.
    * @return this
@@ -73,12 +86,32 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
   THISTYPE addChildren (@Nullable CHILDTYPE... aChildren);
 
   /**
+   * @param nIndex
+   *        The index to where the elements should be inserted.
+   * @param aChildren
+   *        Children to add. May be <code>null</code>.
+   * @return this
+   */
+  @Nonnull
+  THISTYPE addChildren (@Nonnegative int nIndex, @Nullable CHILDTYPE... aChildren);
+
+  /**
    * @param aChildren
    *        Children to add. May be <code>null</code>.
    * @return this
    */
   @Nonnull
   THISTYPE addChildren (@Nullable Iterable <? extends CHILDTYPE> aChildren);
+
+  /**
+   * @param nIndex
+   *        The index to where the elements should be inserted.
+   * @param aChildren
+   *        Children to add. May be <code>null</code>.
+   * @return this
+   */
+  @Nonnull
+  THISTYPE addChildren (@Nonnegative int nIndex, @Nullable Iterable <? extends CHILDTYPE> aChildren);
 
   /**
    * @param aChild

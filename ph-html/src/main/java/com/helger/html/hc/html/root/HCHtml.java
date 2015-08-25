@@ -36,12 +36,12 @@ import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.HCHelper;
 import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.html.AbstractHCElement;
 import com.helger.html.hc.html.EHCTextDirection;
 import com.helger.html.hc.html.metadata.HCCSSNodeDetector;
 import com.helger.html.hc.html.metadata.HCHead;
 import com.helger.html.hc.html.script.HCJSNodeDetector;
+import com.helger.html.hc.html.script.IHCScript;
 import com.helger.html.hc.html.sections.HCBody;
 import com.helger.html.hc.special.HCSpecialNodeHandler;
 
@@ -180,36 +180,49 @@ public class HCHtml extends AbstractHCElement <HCHtml>
     // Extract all out-of-band nodes from the body
     final List <IHCNode> aCompleteOOBList = extractAndRemoveOutOfBandNodes ();
 
-    final boolean bScriptsInBody = HCSettings.isScriptsInBody ();
-
     // First merge all JS and CSS nodes (and keep document.ready() as it is)
     final boolean bKeepOnDocumentReady = true;
     final List <IHCNode> aMergedOOBNodes = HCSpecialNodeHandler.getMergedInlineCSSAndJSNodes (aCompleteOOBList,
                                                                                               bKeepOnDocumentReady);
 
-    // And now move either to head or body
+    // And now add all to head in the correct order
     for (final IHCNode aNode : aMergedOOBNodes)
     {
       final IHCNode aUnwrappedNode = HCHelper.getUnwrappedNode (aNode);
 
       // Node for the body?
       if (HCJSNodeDetector.isDirectJSNode (aUnwrappedNode))
-      {
-        // Append in order
-        if (bScriptsInBody)
-          m_aBody.addChild (aNode);
-        else
-          m_aHead.addJS (aNode);
-      }
+        m_aHead.addJS (aNode);
       else
         if (HCCSSNodeDetector.isDirectCSSNode (aUnwrappedNode))
-        {
-          // Append in order
           m_aHead.addCSS (aNode);
-        }
         else
           throw new IllegalStateException ("Found illegal out-of-band head node: " + aNode);
     }
+  }
+
+  /**
+   * Move all JS nodes from the head to the body.
+   */
+  public void moveScriptElementsToBody ()
+  {
+    // Move all JS from head to body
+    final List <IHCNode> aJSNodes = new ArrayList <IHCNode> ();
+    m_aHead.getAllAndRemoveAllJSNodes (aJSNodes);
+
+    int nFirstScriptIndex = 0;
+    if (m_aBody.hasChildren ())
+      for (final IHCNode aChild : m_aBody.getAllChildren ())
+      {
+        if (aChild instanceof IHCScript <?>)
+        {
+          // Remember index to insert before
+          break;
+        }
+        nFirstScriptIndex++;
+      }
+
+    m_aBody.addChildren (nFirstScriptIndex, aJSNodes);
   }
 
   @Override
