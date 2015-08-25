@@ -125,7 +125,10 @@ public final class HCSpecialNodeHandler
           if (aParentElement instanceof IHCHasChildrenMutable <?, ?>)
             ((IHCHasChildrenMutable <?, ?>) aParentElement).removeChild (nNodeIndex);
           else
-            throw new IllegalStateException ("Cannot remove out-of-band node from " + aParentElement);
+            throw new IllegalStateException ("Cannot remove out-of-band node from " +
+                                             aParentElement +
+                                             " at index " +
+                                             nNodeIndex);
         }
         else
         {
@@ -215,8 +218,12 @@ public final class HCSpecialNodeHandler
    *        document.ready() scripts are converted to regular scripts and are
    *        executed after all other scripts. For AJAX calls, this should be
    *        <code>false</code>.
-   * @return Target list. File based nodes come first and inline nodes come
-   *         last.
+   * @return Target list. JS and CSS and other nodes are mixed. Inline JS and
+   *         CSS that comes before files, is first. Than come the CSS and JS
+   *         external as well as other elements. Finally the inline JS and CSS
+   *         nodes to be emitted after the files are contained. So the resulting
+   *         order is at it should be except that JS and CSS and other nodes are
+   *         mixed.
    */
   @Nonnull
   @ReturnsMutableCopy
@@ -241,46 +248,48 @@ public final class HCSpecialNodeHandler
       // Note: do not unwrap the node, because it is not allowed to merge JS/CSS
       // with a conditional comment with JS/CSS without a conditional comment!
 
-      // Check HCScriptInlineOnDocumentReady first, because it is a subclass of
-      // IHCScriptInline
-      if (aNode instanceof HCScriptInlineOnDocumentReady)
+      if (HCJSNodeDetector.isDirectJSInlineNode (aNode))
       {
-        // Inline JS
-        final HCScriptInlineOnDocumentReady aScript = (HCScriptInlineOnDocumentReady) aNode;
-        (aScript.isEmitAfterFiles () ? aJSOnDocumentReadyAfter
-                                     : aJSOnDocumentReadyBefore).appendFlattened (aScript.getOnDocumentReadyCode ());
-      }
-      else
-        if (aNode instanceof IHCScriptInline <?>)
+        // Check HCScriptInlineOnDocumentReady first, because it is a subclass
+        // of IHCScriptInline
+        if (aNode instanceof HCScriptInlineOnDocumentReady)
+        {
+          // Inline JS
+          final HCScriptInlineOnDocumentReady aScript = (HCScriptInlineOnDocumentReady) aNode;
+          (aScript.isEmitAfterFiles () ? aJSOnDocumentReadyAfter
+                                       : aJSOnDocumentReadyBefore).appendFlattened (aScript.getOnDocumentReadyCode ());
+        }
+        else
         {
           // Inline JS
           final IHCScriptInline <?> aScript = (IHCScriptInline <?>) aNode;
           (aScript.isEmitAfterFiles () ? aJSInlineAfter
                                        : aJSInlineBefore).appendFlattened (aScript.getJSCodeProvider ());
         }
+      }
+      else
+        if (HCCSSNodeDetector.isDirectCSSInlineNode (aNode))
+        {
+          // Inline CSS
+          final HCStyle aStyle = (HCStyle) aNode;
+          (aStyle.isEmitAfterFiles () ? aCSSInlineAfter : aCSSInlineBefore).addInlineCSS (aStyle.getMedia (),
+                                                                                          aStyle.getStyleContent ());
+        }
         else
-          if (aNode instanceof HCStyle)
-          {
-            // Inline CSS
-            final HCStyle aStyle = (HCStyle) aNode;
-            (aStyle.isEmitAfterFiles () ? aCSSInlineAfter : aCSSInlineBefore).addInlineCSS (aStyle.getMedia (),
-                                                                                            aStyle.getStyleContent ());
-          }
-          else
-          {
-            // HCLink
-            // HCScriptFile
-            // HCConditionalCommentNode
-            if (!(aNode instanceof HCLink) &&
-                !(aNode instanceof HCScriptFile) &&
-                !(aNode instanceof IHCConditionalCommentNode))
-              s_aLogger.warn ("Found unexpected node to merge inline CSS/JS: " + aNode);
+        {
+          // HCLink
+          // HCScriptFile
+          // HCConditionalCommentNode
+          if (!(aNode instanceof HCLink) &&
+              !(aNode instanceof HCScriptFile) &&
+              !(aNode instanceof IHCConditionalCommentNode))
+            s_aLogger.warn ("Found unexpected node to merge inline CSS/JS: " + aNode);
 
-            // Add always!
-            // These nodes are either file based nodes ot conditional comment
-            // nodes
-            ret.add (aNode);
-          }
+          // Add always!
+          // These nodes are either file based nodes ot conditional comment
+          // nodes
+          ret.add (aNode);
+        }
     }
 
     // on-document-ready JS always as last inline JS!
@@ -301,6 +310,7 @@ public final class HCSpecialNodeHandler
     // Finally add the inline JS
     if (!aJSInlineBefore.isEmpty ())
     {
+      // Add at the beginning
       final HCScriptInline aScript = new HCScriptInline (aJSInlineBefore).setEmitAfterFiles (false);
       aScript.internalSetNodeState (EHCNodeState.RESOURCES_REGISTERED);
       ret.add (0, aScript);
@@ -308,14 +318,16 @@ public final class HCSpecialNodeHandler
 
     if (!aJSInlineAfter.isEmpty ())
     {
+      // Add at the end
       final HCScriptInline aScript = new HCScriptInline (aJSInlineAfter).setEmitAfterFiles (true);
       aScript.internalSetNodeState (EHCNodeState.RESOURCES_REGISTERED);
       ret.add (aScript);
     }
 
-    // Add all merged inline CSSs
+    // Add all merged inline CSSs grouped by their media list
     if (!aCSSInlineBefore.isEmpty ())
     {
+      // Add at the beginning
       int nIndex = 0;
       for (final ICSSCodeProvider aEntry : aCSSInlineBefore.getAll ())
       {
@@ -329,6 +341,7 @@ public final class HCSpecialNodeHandler
 
     if (!aCSSInlineAfter.isEmpty ())
     {
+      // Add at the end
       for (final ICSSCodeProvider aEntry : aCSSInlineAfter.getAll ())
       {
         final HCStyle aStyle = new HCStyle (aEntry.getCSSCode ()).setMedia (aEntry.getMediaList ())

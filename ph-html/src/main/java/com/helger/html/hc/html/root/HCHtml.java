@@ -41,10 +41,7 @@ import com.helger.html.hc.html.AbstractHCElement;
 import com.helger.html.hc.html.EHCTextDirection;
 import com.helger.html.hc.html.metadata.HCCSSNodeDetector;
 import com.helger.html.hc.html.metadata.HCHead;
-import com.helger.html.hc.html.metadata.HCLink;
-import com.helger.html.hc.html.metadata.HCStyle;
 import com.helger.html.hc.html.script.HCJSNodeDetector;
-import com.helger.html.hc.html.script.IHCScriptInline;
 import com.helger.html.hc.html.sections.HCBody;
 import com.helger.html.hc.special.HCSpecialNodeHandler;
 
@@ -183,10 +180,6 @@ public class HCHtml extends AbstractHCElement <HCHtml>
     // Extract all out-of-band nodes from the body
     final List <IHCNode> aCompleteOOBList = extractAndRemoveOutOfBandNodes ();
 
-    // Remember the body index where to append OOB nodes to (after extraction)
-    int nBodyNodeIndex = m_aBody.getChildCount ();
-    int nHeadJSIndex = 0;
-    int nHeadCSSIndex = 0;
     final boolean bScriptsInBody = HCSettings.isScriptsInBody ();
 
     // First merge all JS and CSS nodes (and keep document.ready() as it is)
@@ -202,57 +195,20 @@ public class HCHtml extends AbstractHCElement <HCHtml>
       // Node for the body?
       if (HCJSNodeDetector.isDirectJSNode (aUnwrappedNode))
       {
-        // It's a body node
-        if (aUnwrappedNode instanceof IHCScriptInline <?> &&
-            !((IHCScriptInline <?>) aUnwrappedNode).isEmitAfterFiles ())
-        {
-          // Add certain inline code before files
-          if (bScriptsInBody)
-          {
-            m_aBody.addChild (nBodyNodeIndex, aNode);
-            nBodyNodeIndex++;
-          }
-          else
-          {
-            m_aHead.addJS (nHeadJSIndex, aNode);
-            nHeadJSIndex++;
-          }
-        }
+        // Append in order
+        if (bScriptsInBody)
+          m_aBody.addChild (aNode);
         else
-        {
-          // Append in order (inline script is always last)
-          if (bScriptsInBody)
-            m_aBody.addChild (aNode);
-          else
-            m_aHead.addJS (aNode);
-        }
+          m_aHead.addJS (aNode);
       }
       else
-      {
-        // It's a head node
         if (HCCSSNodeDetector.isDirectCSSNode (aUnwrappedNode))
         {
-          if (aUnwrappedNode instanceof HCStyle && !((HCStyle) aUnwrappedNode).isEmitAfterFiles ())
-          {
-            // Add inline style before files
-            m_aHead.addCSS (nHeadCSSIndex, aNode);
-            nHeadCSSIndex++;
-          }
-          else
-          {
-            // Append in order (inline CSS is always last)
-            m_aHead.addCSS (aNode);
-          }
+          // Append in order
+          m_aHead.addCSS (aNode);
         }
         else
-          if (aNode instanceof HCLink)
-          {
-            // Manually add all non-stylesheet LINK elements
-            m_aHead.addLink ((HCLink) aNode);
-          }
-          else
-            throw new IllegalStateException ("Found illegal out-of-band head node: " + aNode);
-      }
+          throw new IllegalStateException ("Found illegal out-of-band head node: " + aNode);
     }
   }
 
