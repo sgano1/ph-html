@@ -18,7 +18,18 @@
 
 -->
 <changelog xmlns="http://www.helger.com/xsd/changelog/1.0" version="1.0" component="ph-html">
-  <entry date="2015-08-24" category="tech" action="add">
+  <release date="2015-08-25" version="5.0.1" />
+  <entry date="2015-08-25" category="tech" action="fix">
+    <change>
+      <text locale="en">Fixed the inclusion of JS/CSS for many special cases</text>
+    </change>
+  </entry>
+  <entry date="2015-08-24" category="api" action="add">
+    <change>
+      <text locale="en">Added option in HCSettings to determine whether minified or regular CSS/JS should be included.</text>
+    </change>
+  </entry>
+  <entry date="2015-08-24" category="api" action="add">
     <change>
       <text locale="en">Added option in HCSettings to determine whether &lt;script&gt; elements go to head or body.</text>
     </change>
