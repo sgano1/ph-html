@@ -86,6 +86,9 @@ public final class HCSettings
   @GuardedBy ("s_aRWLock")
   private static boolean s_bScriptsInBody = true;
 
+  @GuardedBy ("s_aRWLock")
+  private static boolean s_bUseRegularResources = GlobalDebug.isDebugMode ();
+
   static
   {
     // Apply all SPI settings providers
@@ -420,6 +423,36 @@ public final class HCSettings
     try
     {
       s_bScriptsInBody = bEnabled;
+    }
+    finally
+    {
+      s_aRWLock.writeLock ().unlock ();
+    }
+  }
+
+  /**
+   * @return <code>true</code> to include regular, non-minified resources or
+   *         <code>false</code> to include minified resources (JS + CSS).
+   */
+  public static boolean isUseRegularResources ()
+  {
+    s_aRWLock.readLock ().lock ();
+    try
+    {
+      return s_bUseRegularResources;
+    }
+    finally
+    {
+      s_aRWLock.readLock ().unlock ();
+    }
+  }
+
+  public static void setUseRegularResources (final boolean bUseRegularResources)
+  {
+    s_aRWLock.writeLock ().lock ();
+    try
+    {
+      s_bUseRegularResources = bUseRegularResources;
     }
     finally
     {
