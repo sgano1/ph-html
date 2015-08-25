@@ -16,6 +16,8 @@
  */
 package com.helger.html.hc.render;
 
+import java.util.List;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
@@ -75,7 +77,6 @@ public final class HCRenderer
     return aNode;
   }
 
-  @Deprecated
   public static void prepareHtmlForConversion (@Nonnull final HCHtml aHtml,
                                                @Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
@@ -84,7 +85,13 @@ public final class HCRenderer
 
     // Extract all out-of-band nodes into the body
     if (aConversionSettings.isExtractOutOfBandNodes ())
-      aHtml.extractAndReorderOutOfBandNodes ();
+    {
+      final List <IHCNode> aOOBNodes = aHtml.getAllOutOfBandNodesWithMergedInlineNodes ();
+      aHtml.addAllOutOfBandNodesToHead (aOOBNodes);
+    }
+
+    // This would be the correct place to perform aggregation of CSS and JS
+    // nodes (before they are potentially moved)
 
     // Move scripts to body?
     if (HCSettings.isScriptsInBody ())

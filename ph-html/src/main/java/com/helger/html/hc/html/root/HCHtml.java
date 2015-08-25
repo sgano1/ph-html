@@ -42,6 +42,7 @@ import com.helger.html.hc.html.metadata.HCCSSNodeDetector;
 import com.helger.html.hc.html.metadata.HCHead;
 import com.helger.html.hc.html.script.HCJSNodeDetector;
 import com.helger.html.hc.html.script.IHCScript;
+import com.helger.html.hc.html.script.IHCScriptInline;
 import com.helger.html.hc.html.sections.HCBody;
 import com.helger.html.hc.special.HCSpecialNodeHandler;
 
@@ -156,37 +157,42 @@ public class HCHtml extends AbstractHCElement <HCHtml>
   }
 
   /**
-   * @return The list with all out-of-band nodes from the head and the body.
-   *         Never <code>null</code> but maybe empty.
+   * Extract all out-of-band (OOB) nodes from head and body. Afterwards merge
+   * all inline CSS and JS nodes.
+   *
+   * @return An ordered list of all OOB nodes in the correct order.
    */
   @Nonnull
   @ReturnsMutableCopy
-  public List <IHCNode> extractAndRemoveOutOfBandNodes ()
+  public List <IHCNode> getAllOutOfBandNodesWithMergedInlineNodes ()
   {
-    final List <IHCNode> aCompleteOOBList = new ArrayList <IHCNode> ();
+    final List <IHCNode> aAllOOBNodes = new ArrayList <IHCNode> ();
     // Add all existing JS and CSS nodes from the head, as they are known to be
     // out-of-band
-    m_aHead.getAllAndRemoveAllJSNodes (aCompleteOOBList);
-    m_aHead.getAllAndRemoveAllCSSNodes (aCompleteOOBList);
+    m_aHead.getAllAndRemoveAllJSNodes (aAllOOBNodes);
+    m_aHead.getAllAndRemoveAllCSSNodes (aAllOOBNodes);
 
     // Extract all out-of-band nodes from the body
-    HCSpecialNodeHandler.recursiveExtractAndRemoveOutOfBandNodes (m_aBody, aCompleteOOBList);
-
-    return aCompleteOOBList;
-  }
-
-  public void extractAndReorderOutOfBandNodes ()
-  {
-    // Extract all out-of-band nodes from the body
-    final List <IHCNode> aCompleteOOBList = extractAndRemoveOutOfBandNodes ();
+    HCSpecialNodeHandler.recursiveExtractAndRemoveOutOfBandNodes (m_aBody, aAllOOBNodes);
 
     // First merge all JS and CSS nodes (and keep document.ready() as it is)
     final boolean bKeepOnDocumentReady = true;
-    final List <IHCNode> aMergedOOBNodes = HCSpecialNodeHandler.getMergedInlineCSSAndJSNodes (aCompleteOOBList,
-                                                                                              bKeepOnDocumentReady);
+    return HCSpecialNodeHandler.getMergedInlineCSSAndJSNodes (aAllOOBNodes, bKeepOnDocumentReady);
+  }
 
+  /**
+   * Add the passed OOB nodes to the head.
+   *
+   * @param aAllOOBNodes
+   *        The out-of-band node list. Usually retrieved from
+   *        {@link #getAllOutOfBandNodesWithMergedInlineNodes()}. May not be
+   *        <code>null</code>.
+   */
+  public void addAllOutOfBandNodesToHead (@Nonnull final List <IHCNode> aAllOOBNodes)
+  {
+    ValueEnforcer.notNull (aAllOOBNodes, "AllOOBNodes");
     // And now add all to head in the correct order
-    for (final IHCNode aNode : aMergedOOBNodes)
+    for (final IHCNode aNode : aAllOOBNodes)
     {
       final IHCNode aUnwrappedNode = HCHelper.getUnwrappedNode (aNode);
 
@@ -210,14 +216,21 @@ public class HCHtml extends AbstractHCElement <HCHtml>
     final List <IHCNode> aJSNodes = new ArrayList <IHCNode> ();
     m_aHead.getAllAndRemoveAllJSNodes (aJSNodes);
 
+    // Find index of first script in body
     int nFirstScriptIndex = 0;
     if (m_aBody.hasChildren ())
       for (final IHCNode aChild : m_aBody.getAllChildren ())
       {
         if (aChild instanceof IHCScript <?>)
         {
-          // Remember index to insert before
-          break;
+          // Check if this is a special inline script to be emitted before files
+          final boolean bIsInlineBeforeFiles = (aChild instanceof IHCScriptInline <?>) &&
+                                               !((IHCScriptInline <?>) aChild).isEmitAfterFiles ();
+          if (!bIsInlineBeforeFiles)
+          {
+            // Remember index to insert before
+            break;
+          }
         }
         nFirstScriptIndex++;
       }

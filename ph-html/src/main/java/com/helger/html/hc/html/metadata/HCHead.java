@@ -298,9 +298,10 @@ public class HCHead extends AbstractHCElement <HCHead>
     return CollectionHelper.newList (m_aCSS);
   }
 
-  public void getAllAndRemoveAllCSSNodes (@Nonnull final List <IHCNode> aTarget)
+  public void getAllAndRemoveAllCSSNodes (@Nonnull final List <IHCNode> aTargetList)
   {
-    aTarget.addAll (m_aCSS);
+    ValueEnforcer.notNull (aTargetList, "TargetList");
+    aTargetList.addAll (m_aCSS);
     m_aCSS.clear ();
   }
 
@@ -367,9 +368,10 @@ public class HCHead extends AbstractHCElement <HCHead>
     return CollectionHelper.newList (m_aJS);
   }
 
-  public void getAllAndRemoveAllJSNodes (@Nonnull final List <IHCNode> aTarget)
+  public void getAllAndRemoveAllJSNodes (@Nonnull final List <IHCNode> aTargetList)
   {
-    aTarget.addAll (m_aJS);
+    ValueEnforcer.notNull (aTargetList, "TargetList");
+    aTargetList.addAll (m_aJS);
     m_aJS.clear ();
   }
 
