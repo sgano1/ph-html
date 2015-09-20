@@ -27,6 +27,7 @@ import javax.annotation.concurrent.NotThreadSafe;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.state.EChange;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLVersion;
@@ -73,6 +74,19 @@ public class HCCustomizerList extends AbstractHCCustomizer
     return EChange.valueOf (m_aCustomizers.add (aCustomizer));
   }
 
+  @Nonnull
+  public EChange removeAllCustomizersOfClass (@Nonnull final Class <? extends IHCCustomizer> aCustomizerClass)
+  {
+    ValueEnforcer.notNull (aCustomizerClass, "CustomizerClass");
+
+    EChange eChange = EChange.UNCHANGED;
+    for (final IHCCustomizer aCustomizer : CollectionHelper.newList (m_aCustomizers))
+      if (aCustomizer.getClass ().equals (aCustomizerClass))
+        if (m_aCustomizers.remove (aCustomizer))
+          eChange = EChange.CHANGED;
+    return eChange;
+  }
+
   @Nonnegative
   public int getCustomizerCount ()
   {
@@ -95,8 +109,25 @@ public class HCCustomizerList extends AbstractHCCustomizer
   }
 
   @Override
+  public boolean equals (final Object o)
+  {
+    if (o == this)
+      return true;
+    if (o == null || !getClass ().equals (o.getClass ()))
+      return false;
+    final HCCustomizerList rhs = (HCCustomizerList) o;
+    return m_aCustomizers.equals (rhs.m_aCustomizers);
+  }
+
+  @Override
+  public int hashCode ()
+  {
+    return new HashCodeGenerator (this).append (m_aCustomizers).getHashCode ();
+  }
+
+  @Override
   public String toString ()
   {
-    return ToStringGenerator.getDerived (super.toString ()).append ("customizers", m_aCustomizers).toString ();
+    return ToStringGenerator.getDerived (super.toString ()).append ("Customizers", m_aCustomizers).toString ();
   }
 }
