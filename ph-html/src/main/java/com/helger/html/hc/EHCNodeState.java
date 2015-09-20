@@ -18,6 +18,11 @@ package com.helger.html.hc;
 
 import javax.annotation.Nonnull;
 
+/**
+ * This enum represents the internal state of {@link IHCNode} objects.
+ * 
+ * @author Philip Helger
+ */
 public enum EHCNodeState
 {
  INITIAL (0),

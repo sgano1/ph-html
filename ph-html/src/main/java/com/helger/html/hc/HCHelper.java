@@ -30,6 +30,11 @@ import com.helger.commons.mutable.MutableBoolean;
 import com.helger.commons.state.EFinish;
 import com.helger.html.EHTMLElement;
 
+/**
+ * Helper class for common {@link IHCNode} related elements.
+ *
+ * @author Philip Helger
+ */
 @Immutable
 public final class HCHelper
 {
@@ -135,9 +140,13 @@ public final class HCHelper
     ValueEnforcer.notNull (aElement, "element");
     ValueEnforcer.notNull (eHTMLElement, "HTMLElement");
 
+    // First try with lower case name
     IMicroElement aChild = aElement.getFirstChildElement (eHTMLElement.getElementName ());
     if (aChild == null)
+    {
+      // Fallback: try with upper case name
       aChild = aElement.getFirstChildElement (eHTMLElement.getElementNameUpperCase ());
+    }
     return aChild;
   }
 
@@ -162,7 +171,7 @@ public final class HCHelper
 
     final List <IMicroElement> ret = new ArrayList <IMicroElement> ();
     ret.addAll (aElement.getAllChildElements (eHTMLElement.getElementName ()));
-    ret.addAll (aElement.getAllChildElements (eHTMLElement.getElementName ()));
+    ret.addAll (aElement.getAllChildElements (eHTMLElement.getElementNameUpperCase ()));
     return ret;
   }
 

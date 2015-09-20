@@ -19,6 +19,13 @@ package com.helger.html.hc;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+/**
+ * Base interface for a node having a name
+ * 
+ * @author Philip Helger
+ * @param <IMPLTYPE>
+ *        Implementation type
+ */
 public interface IHCHasName <IMPLTYPE extends IHCHasName <IMPLTYPE>>
 {
   /**

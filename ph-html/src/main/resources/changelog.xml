@@ -18,6 +18,11 @@
 
 -->
 <changelog xmlns="http://www.helger.com/xsd/changelog/1.0" version="1.0" component="ph-html">
+  <entry date="2015-09-20" category="api" action="fix">
+    <change>
+      <text locale="en">IHCCustomizer implementations handle equals/hashCode</text>
+    </change>
+  </entry>
   <release date="2015-08-25" version="5.0.1" />
   <entry date="2015-08-25" category="tech" action="fix">
     <change>

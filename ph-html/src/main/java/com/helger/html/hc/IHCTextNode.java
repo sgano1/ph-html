@@ -20,6 +20,11 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.microdom.MicroText;
 
+/**
+ * This class represents a text node.
+ * 
+ * @author Philip Helger
+ */
 public interface IHCTextNode extends IHCNode
 {
   /**

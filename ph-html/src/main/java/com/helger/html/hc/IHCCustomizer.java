@@ -18,6 +18,7 @@ package com.helger.html.hc;
 
 import javax.annotation.Nonnull;
 
+import com.helger.commons.annotation.MustImplementEqualsAndHashcode;
 import com.helger.html.EHTMLVersion;
 
 /**
@@ -26,11 +27,12 @@ import com.helger.html.EHTMLVersion;
  *
  * @author Philip Helger
  */
+@MustImplementEqualsAndHashcode
 public interface IHCCustomizer
 {
   /**
    * Customize HC node with some predefined classes etc.
-   * 
+   *
    * @param aNode
    *        The element to be customized. Never <code>null</code>.
    * @param eHTMLVersion
