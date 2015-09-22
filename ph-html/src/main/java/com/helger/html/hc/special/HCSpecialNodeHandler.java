@@ -25,6 +25,7 @@ import java.util.Set;
 
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import org.slf4j.Logger;
@@ -44,6 +45,7 @@ import com.helger.html.hc.HCHelper;
 import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.config.HCSettings;
+import com.helger.html.hc.config.IHCOnDocumentReadyProvider;
 import com.helger.html.hc.html.IHCConditionalCommentNode;
 import com.helger.html.hc.html.metadata.HCCSSNodeDetector;
 import com.helger.html.hc.html.metadata.HCLink;
@@ -230,6 +232,37 @@ public final class HCSpecialNodeHandler
   public static List <IHCNode> getMergedInlineCSSAndJSNodes (@Nonnull final Iterable <? extends IHCNode> aNodes,
                                                              final boolean bKeepOnDocumentReady)
   {
+    // Default to the global "on document ready" provider
+    return getMergedInlineCSSAndJSNodes (aNodes,
+                                         bKeepOnDocumentReady ? HCSettings.getOnDocumentReadyProvider () : null);
+  }
+
+  /**
+   * Merge all inline CSS and JS elements contained in the source nodes into one
+   * script elements
+   *
+   * @param aNodes
+   *        Source list of nodes. May not be <code>null</code>.
+   * @param aOnDocumentReadyProvider
+   *        if not <code>null</code> than all combined document.ready() scripts
+   *        are kept as document.ready() scripts using this provider. If
+   *        <code>null</code> than all document.ready() scripts are converted to
+   *        regular scripts and are executed after all other scripts. For AJAX
+   *        calls, this should be <code>null</code> as there is no
+   *        "document ready" callback - alternatively you can provide a custom
+   *        "on document ready" provider.
+   * @return Target list. JS and CSS and other nodes are mixed. Inline JS and
+   *         CSS that comes before files, is first. Than come the CSS and JS
+   *         external as well as other elements. Finally the inline JS and CSS
+   *         nodes to be emitted after the files are contained. So the resulting
+   *         order is at it should be except that JS and CSS and other nodes are
+   *         mixed.
+   */
+  @Nonnull
+  @ReturnsMutableCopy
+  public static List <IHCNode> getMergedInlineCSSAndJSNodes (@Nonnull final Iterable <? extends IHCNode> aNodes,
+                                                             @Nullable final IHCOnDocumentReadyProvider aOnDocumentReadyProvider)
+  {
     ValueEnforcer.notNull (aNodes, "Nodes");
 
     // Apply all modifiers
@@ -294,16 +327,14 @@ public final class HCSpecialNodeHandler
 
     // on-document-ready JS always as last inline JS!
     if (!aJSOnDocumentReadyBefore.isEmpty ())
-      if (bKeepOnDocumentReady)
-        aJSInlineBefore.append (HCSettings.getOnDocumentReadyProvider ()
-                                          .createOnDocumentReady (aJSOnDocumentReadyBefore));
+      if (aOnDocumentReadyProvider != null)
+        aJSInlineBefore.append (aOnDocumentReadyProvider.createOnDocumentReady (aJSOnDocumentReadyBefore));
       else
         aJSInlineBefore.append (aJSOnDocumentReadyBefore);
 
     if (!aJSOnDocumentReadyAfter.isEmpty ())
-      if (bKeepOnDocumentReady)
-        aJSInlineAfter.append (HCSettings.getOnDocumentReadyProvider ()
-                                         .createOnDocumentReady (aJSOnDocumentReadyAfter));
+      if (aOnDocumentReadyProvider != null)
+        aJSInlineAfter.append (aOnDocumentReadyProvider.createOnDocumentReady (aJSOnDocumentReadyAfter));
       else
         aJSInlineAfter.append (aJSOnDocumentReadyAfter);
 
