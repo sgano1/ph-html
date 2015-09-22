@@ -152,7 +152,7 @@ public final class HCSettings
    *         XML namespaces disabled
    */
   @Nonnull
-  public static IHCConversionSettings getConversionSettingsWithoutNamespaces ()
+  public static HCConversionSettings getConversionSettingsWithoutNamespaces ()
   {
     // Create a copy!!
     final HCConversionSettings aCS = getMutableConversionSettings ().getClone ();
