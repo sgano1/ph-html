@@ -20,6 +20,11 @@ import javax.annotation.Nonnull;
 
 import com.helger.html.js.IHasJSCode;
 
+/**
+ * An interface to create the "on document ready" deferred code.
+ *
+ * @author Philip Helger
+ */
 public interface IHCOnDocumentReadyProvider
 {
   /**
