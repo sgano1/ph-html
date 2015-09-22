@@ -16,17 +16,17 @@ Add the following to your pom.xml to use this artifact:
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-html</artifactId>
-  <version>5.0.2</version>
+  <version>5.0.3</version>
 </dependency>
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-html-jscode</artifactId>
-  <version>5.0.2</version>
+  <version>5.0.3</version>
 </dependency>
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-html-jquery</artifactId>
-  <version>5.0.2</version>
+  <version>5.0.3</version>
 </dependency>
 ```
 
