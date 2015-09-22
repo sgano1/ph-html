@@ -19,8 +19,10 @@ package com.helger.html.hc.html.script;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.ValueEnforcer;
+import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hc.config.HCSettings;
+import com.helger.html.hc.config.IHCOnDocumentReadyProvider;
 import com.helger.html.js.IHasJSCode;
 
 /**
@@ -44,11 +46,25 @@ public class HCScriptInlineOnDocumentReady extends AbstractHCScriptInline <HCScr
     setOnDocumentReadyCode (aOnDocumentReadyCode);
   }
 
+  public HCScriptInlineOnDocumentReady (@Nonnull final IHCOnDocumentReadyProvider aODRProvider,
+                                        @Nonnull final IHasJSCode aOnDocumentReadyCode)
+  {
+    setOnDocumentReadyCode (aODRProvider, aOnDocumentReadyCode);
+  }
+
   @Nonnull
   public HCScriptInlineOnDocumentReady setOnDocumentReadyCode (@Nonnull final IHasJSCode aOnDocumentReadyCode)
   {
+    return setOnDocumentReadyCode (HCSettings.getOnDocumentReadyProvider (), aOnDocumentReadyCode);
+  }
+
+  @Nonnull
+  public HCScriptInlineOnDocumentReady setOnDocumentReadyCode (@Nonnull final IHCOnDocumentReadyProvider aODRProvider,
+                                                               @Nonnull final IHasJSCode aOnDocumentReadyCode)
+  {
+    ValueEnforcer.notNull (aODRProvider, "OnDocumentReadyProvider");
     ValueEnforcer.notNull (aOnDocumentReadyCode, "OnDocumentReadyCode");
-    setJSCodeProvider (HCSettings.getOnDocumentReadyProvider ().createOnDocumentReady (aOnDocumentReadyCode));
+    setJSCodeProvider (aODRProvider.createOnDocumentReady (aOnDocumentReadyCode));
     m_aOnDocumentReadyCode = aOnDocumentReadyCode;
     return this;
   }
@@ -60,5 +76,13 @@ public class HCScriptInlineOnDocumentReady extends AbstractHCScriptInline <HCScr
   public IHasJSCode getOnDocumentReadyCode ()
   {
     return m_aOnDocumentReadyCode;
+  }
+
+  @Override
+  public String toString ()
+  {
+    return ToStringGenerator.getDerived (super.toString ())
+                            .appendIfNotNull ("OnDocumentReadyCode", m_aOnDocumentReadyCode)
+                            .toString ();
   }
 }
