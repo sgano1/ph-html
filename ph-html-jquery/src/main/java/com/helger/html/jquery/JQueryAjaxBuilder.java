@@ -21,6 +21,10 @@ import java.io.Serializable;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.helger.commons.ValueEnforcer;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.lang.ICloneable;
+import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.jscode.IJSExpression;
 import com.helger.html.jscode.JSAnonymousFunction;
@@ -37,7 +41,7 @@ import com.helger.html.jscode.JSExpr;
  *
  * @author Philip Helger
  */
-public class JQueryAjaxBuilder implements Serializable
+public class JQueryAjaxBuilder implements Serializable, ICloneable <JQueryAjaxBuilder>
 {
   // modifier
   private IJSExpression m_aAsync;
@@ -61,6 +65,26 @@ public class JQueryAjaxBuilder implements Serializable
   {
     // By default caching is disabled for real world use cases
     cache (false);
+  }
+
+  public JQueryAjaxBuilder (@Nonnull final JQueryAjaxBuilder aOther)
+  {
+    ValueEnforcer.notNull (aOther, "Other");
+    m_aAsync = aOther.m_aAsync;
+    m_aCache = aOther.m_aCache;
+    m_aData = aOther.m_aData;
+    m_aDataType = aOther.m_aDataType;
+    m_aGlobalEvents = aOther.m_aGlobalEvents;
+    m_aProcessData = aOther.m_aProcessData;
+    m_aURL = aOther.m_aURL;
+    m_aTraditional = aOther.m_aTraditional;
+    m_aType = aOther.m_aType;
+
+    m_aCallbackContext = aOther.m_aCallbackContext;
+    m_aBeforeSend = aOther.m_aBeforeSend;
+    m_aComplete = aOther.m_aComplete;
+    m_aError = aOther.m_aError;
+    m_aSuccess = aOther.m_aSuccess;
   }
 
   @Nullable
@@ -334,6 +358,13 @@ public class JQueryAjaxBuilder implements Serializable
   }
 
   @Nonnull
+  @ReturnsMutableCopy
+  public JQueryAjaxBuilder getClone ()
+  {
+    return new JQueryAjaxBuilder (this);
+  }
+
+  @Nonnull
   public JSAssocArray getJSSettings ()
   {
     final JSAssocArray aSettings = new JSAssocArray ();
@@ -374,5 +405,11 @@ public class JQueryAjaxBuilder implements Serializable
   public JQueryInvocation build ()
   {
     return JQuery.ajax (getJSSettings ());
+  }
+
+  @Override
+  public String toString ()
+  {
+    return new ToStringGenerator (this).append ("url", m_aURL).toString ();
   }
 }
