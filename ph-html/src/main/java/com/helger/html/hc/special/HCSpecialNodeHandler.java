@@ -452,10 +452,36 @@ public final class HCSpecialNodeHandler
    *        executed after all other scripts. For AJAX calls, this should be
    *        <code>false</code>.
    */
-  @Nonnull
   public static void extractSpecialContent (@Nonnull final IHCNode aNode,
                                             @Nonnull final AbstractHCSpecialNodes <?> aSpecialNodes,
                                             final boolean bKeepOnDocumentReady)
+  {
+    extractSpecialContent (aNode,
+                           aSpecialNodes,
+                           bKeepOnDocumentReady ? HCSettings.getOnDocumentReadyProvider () : null);
+  }
+
+  /**
+   * Extract all out-of-band nodes of the source node, merge JS and CSS and
+   * finally extract all special nodes into the passed object.
+   *
+   * @param aNode
+   *        Source node. May not be <code>null</code>.
+   * @param aSpecialNodes
+   *        Target special node object to be filled. May not be
+   *        <code>null</code>.
+   * @param aOnDocumentReadyProvider
+   *        if not <code>null</code> than all combined document.ready() scripts
+   *        are kept as document.ready() scripts using this provider. If
+   *        <code>null</code> than all document.ready() scripts are converted to
+   *        regular scripts and are executed after all other scripts. For AJAX
+   *        calls, this should be <code>null</code> as there is no
+   *        "document ready" callback - alternatively you can provide a custom
+   *        "on document ready" provider.
+   */
+  public static void extractSpecialContent (@Nonnull final IHCNode aNode,
+                                            @Nonnull final AbstractHCSpecialNodes <?> aSpecialNodes,
+                                            @Nullable final IHCOnDocumentReadyProvider aOnDocumentReadyProvider)
   {
     ValueEnforcer.notNull (aNode, "Node");
     ValueEnforcer.notNull (aSpecialNodes, "SpecialNodes");
@@ -465,7 +491,7 @@ public final class HCSpecialNodeHandler
     recursiveExtractAndRemoveOutOfBandNodes (aNode, aExtractedOutOfBandNodes);
 
     // Merge JS/CSS nodes - replace list content
-    aExtractedOutOfBandNodes = getMergedInlineCSSAndJSNodes (aExtractedOutOfBandNodes, bKeepOnDocumentReady);
+    aExtractedOutOfBandNodes = getMergedInlineCSSAndJSNodes (aExtractedOutOfBandNodes, aOnDocumentReadyProvider);
 
     // Extract the special nodes into the provided object
     aExtractedOutOfBandNodes = extractSpecialNodes (aExtractedOutOfBandNodes, aSpecialNodes);
