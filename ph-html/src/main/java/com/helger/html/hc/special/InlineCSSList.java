@@ -110,6 +110,12 @@ public class InlineCSSList
     {
       return m_aCSS.toString ();
     }
+
+    @Override
+    public String toString ()
+    {
+      return new ToStringGenerator (this).append ("Key", m_aKey).append ("CSS", m_aCSS).toString ();
+    }
   }
 
   private final List <Item> m_aItems = new ArrayList <Item> ();
@@ -153,5 +159,11 @@ public class InlineCSSList
     for (final Item aItem : m_aItems)
       ret.add (new ConstantCSSCodeProvider (aItem.getCSS (), null, aItem.getMediaList (), true));
     return ret;
+  }
+
+  @Override
+  public String toString ()
+  {
+    return new ToStringGenerator (this).append ("Items", m_aItems).toString ();
   }
 }
