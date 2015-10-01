@@ -301,11 +301,13 @@ public abstract class AbstractHCObject <THISTYPE extends AbstractHCObject <THIST
     if (StringHelper.hasText (m_sClassID))
       aElement.setAttribute (CHTMLAttributes.CLASSID, m_sClassID);
     if (m_aCodeBase != null)
-      aElement.setAttribute (CHTMLAttributes.CODEBASE, m_aCodeBase.getAsString ());
+      aElement.setAttribute (CHTMLAttributes.CODEBASE,
+                             m_aCodeBase.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
     if (m_aCodeType != null)
       aElement.setAttribute (CHTMLAttributes.CODETYPE, m_aCodeType.getAsString ());
     if (m_aData != null)
-      aElement.setAttribute (CHTMLAttributes.DATA, m_aData.getAsString ());
+      aElement.setAttribute (CHTMLAttributes.DATA,
+                             m_aData.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
     if (m_bDeclare)
       aElement.setAttribute (CHTMLAttributes.DECLARE, CHTMLAttributeValues.DECLARE);
     if (StringHelper.hasText (m_sName))

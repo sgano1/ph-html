@@ -196,7 +196,8 @@ public abstract class AbstractHCMediaElement <THISTYPE extends AbstractHCMediaEl
     if (m_bMuted)
       aElement.setAttribute (CHTMLAttributes.MUTED, CHTMLAttributeValues.MUTED);
     if (m_aSrc != null)
-      aElement.setAttribute (CHTMLAttributes.SRC, m_aSrc.getAsString ());
+      aElement.setAttribute (CHTMLAttributes.SRC,
+                             m_aSrc.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
     if (m_eCrossOrigin != null)
       aElement.setAttribute (CHTMLAttributes.CROSSORIGIN, m_eCrossOrigin);
   }

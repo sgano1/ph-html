@@ -246,7 +246,8 @@ public abstract class AbstractHCIFrame <THISTYPE extends AbstractHCIFrame <THIST
   {
     super.fillMicroElement (aElement, aConversionSettings);
     if (m_aSrc != null)
-      aElement.setAttribute (CHTMLAttributes.SRC, m_aSrc.getAsString ());
+      aElement.setAttribute (CHTMLAttributes.SRC,
+                             m_aSrc.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
     if (StringHelper.hasText (m_sName))
       aElement.setAttribute (CHTMLAttributes.NAME, m_sName);
     if (StringHelper.hasText (m_sLongDesc))
