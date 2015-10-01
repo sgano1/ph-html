@@ -20,11 +20,13 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.dimension.SizeInt;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.ISimpleURL;
+import com.helger.commons.url.SimpleURL;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCConversionSettingsToNode;
@@ -40,8 +42,8 @@ import com.helger.html.hc.html.AbstractHCMediaElementChild;
  */
 public abstract class AbstractHCImg <THISTYPE extends AbstractHCImg <THISTYPE>> extends AbstractHCMediaElementChild <THISTYPE>implements IHCImg <THISTYPE>
 {
-  // Must be a String to allow for inline images
-  private String m_sSrc;
+  // Inline images can be SimpleURLs as well!
+  private ISimpleURL m_aSrc;
   private String m_sSrcSet;
   private String m_sSizes;
   private SizeInt m_aExtent;
@@ -53,22 +55,24 @@ public abstract class AbstractHCImg <THISTYPE extends AbstractHCImg <THISTYPE>> 
   }
 
   @Nullable
-  public final String getSrc ()
+  public final ISimpleURL getSrc ()
   {
-    return m_sSrc;
+    return m_aSrc;
   }
 
   @Nonnull
-  public THISTYPE setSrc (@Nullable final ISimpleURL aSrc)
-  {
-    return setSrc (aSrc == null ? null : aSrc.getAsString ());
-  }
-
-  @Nonnull
-  public THISTYPE setSrc (@Nullable final String sSrc)
+  public THISTYPE setSrc (@Nonnull final String sSrc)
   {
     HCConsistencyChecker.checkIfLinkIsMasked (sSrc);
-    m_sSrc = sSrc;
+    return setSrc (new SimpleURL (sSrc));
+  }
+
+  @Nonnull
+  public THISTYPE setSrc (@Nonnull final ISimpleURL aSrc)
+  {
+    ValueEnforcer.notNull (aSrc, "src");
+
+    m_aSrc = aSrc;
     return thisAsT ();
   }
 
@@ -183,8 +187,9 @@ public abstract class AbstractHCImg <THISTYPE extends AbstractHCImg <THISTYPE>> 
   protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
     super.fillMicroElement (aElement, aConversionSettings);
-    if (StringHelper.hasText (m_sSrc))
-      aElement.setAttribute (CHTMLAttributes.SRC, m_sSrc);
+    if (m_aSrc != null)
+      aElement.setAttribute (CHTMLAttributes.SRC,
+                             m_aSrc.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
     if (StringHelper.hasText (m_sSrcSet))
       aElement.setAttribute (CHTMLAttributes.SRCSET, m_sSrcSet);
     if (StringHelper.hasText (m_sSizes))
@@ -211,7 +216,9 @@ public abstract class AbstractHCImg <THISTYPE extends AbstractHCImg <THISTYPE>> 
   public String toString ()
   {
     return ToStringGenerator.getDerived (super.toString ())
-                            .appendIfNotNull ("src", m_sSrc)
+                            .appendIfNotNull ("src", m_aSrc)
+                            .appendIfNotNull ("srcSet", m_sSrcSet)
+                            .appendIfNotNull ("Sizes", m_sSizes)
                             .appendIfNotNull ("extent", m_aExtent)
                             .appendIfNotNull ("alt", m_sAlt)
                             .toString ();

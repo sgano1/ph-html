@@ -34,13 +34,13 @@ import com.helger.html.hc.html.IHCMediaElementChild;
 public interface IHCImg <THISTYPE extends IHCImg <THISTYPE>> extends IHCMediaElementChild <THISTYPE>
 {
   @Nullable
-  String getSrc ();
+  ISimpleURL getSrc ();
 
   @Nonnull
-  THISTYPE setSrc (@Nullable ISimpleURL aSrc);
+  THISTYPE setSrc (@Nonnull String sSrc);
 
   @Nonnull
-  THISTYPE setSrc (@Nullable String sSrc);
+  THISTYPE setSrc (@Nonnull ISimpleURL aSrc);
 
   @Nullable
   String getSrcSet ();
