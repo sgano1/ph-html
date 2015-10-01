@@ -16,6 +16,8 @@
  */
 package com.helger.html.hc;
 
+import java.nio.charset.Charset;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -110,4 +112,11 @@ public interface IHCConversionSettingsToNode
    */
   @Nullable
   IHCCustomizer getCustomizer ();
+
+  /**
+   * @return The charset to be used. This is a shortcut for
+   *         <code>getXMLWriterSettings ().getCharset()</code>.
+   */
+  @Nonnull
+  Charset getCharset ();
 }

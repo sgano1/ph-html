@@ -77,6 +77,7 @@ public abstract class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>> exte
   @Nonnull
   public final THISTYPE setHref (@Nonnull final String sHref)
   {
+    HCConsistencyChecker.checkIfLinkIsMasked (sHref);
     return setHref (new SimpleURL (sHref));
   }
 
@@ -85,7 +86,6 @@ public abstract class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>> exte
   {
     ValueEnforcer.notNull (aHref, "href");
 
-    HCConsistencyChecker.checkIfLinkIsMasked (aHref.getAsString ());
     m_aHref = aHref;
     return thisAsT ();
   }
@@ -184,9 +184,9 @@ public abstract class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>> exte
   {
     super.onConsistencyCheck (aConversionSettings);
     if (HCHTMLHelper.recursiveContainsChildWithTagName (this, EHTMLElement.A))
-      HCConsistencyChecker.consistencyError ("A may never contain other links!");
+      HCConsistencyChecker.consistencyError ("<A> may never contain other links!");
     if (HCHTMLHelper.recursiveContainsChildWithTagName (this, EHTMLElement.SELECT))
-      HCConsistencyChecker.consistencyError ("A contains invalid child element!");
+      HCConsistencyChecker.consistencyError ("<A> contains invalid child element!");
   }
 
   @Override
@@ -195,7 +195,8 @@ public abstract class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>> exte
   {
     super.fillMicroElement (aElement, aConversionSettings);
     if (m_aHref != null)
-      aElement.setAttribute (CHTMLAttributes.HREF, m_aHref.getAsString ());
+      aElement.setAttribute (CHTMLAttributes.HREF,
+                             m_aHref.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
     if (m_aTarget != null)
     {
       // Note: attribute "target" is not allowed in XHTML 1.0 strict (but in
