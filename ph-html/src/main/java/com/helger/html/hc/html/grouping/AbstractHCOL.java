@@ -33,7 +33,7 @@ import com.helger.html.hc.IHCConversionSettingsToNode;
  * @param <THISTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCOL <THISTYPE extends AbstractHCOL <THISTYPE>> extends AbstractHCList <THISTYPE>implements IHCOL <THISTYPE>
+public abstract class AbstractHCOL <THISTYPE extends AbstractHCOL <THISTYPE>> extends AbstractHCListLI <THISTYPE> implements IHCOL <THISTYPE>
 {
   private Integer m_aStart;
   private boolean m_bReversed = false;

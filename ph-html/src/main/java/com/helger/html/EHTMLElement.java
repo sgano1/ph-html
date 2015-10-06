@@ -102,6 +102,7 @@ public enum EHTMLElement
  MAP ("map", false, EHTMLContentModelType.FLOW),
  MARK ("mark", false, EHTMLContentModelType.PHRASING),
  MENU ("menu", false, EHTMLContentModelType.FLOW),
+ MENUITEM ("menuitem", false, EHTMLContentModelType.FLOW),
  META ("meta", true, EHTMLContentModelType.METADATA),
  METER ("meter", false, EHTMLContentModelType.PHRASING),
  NAV ("nav", false, EHTMLContentModelType.FLOW),

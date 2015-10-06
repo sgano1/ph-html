@@ -29,35 +29,37 @@ import com.helger.html.hc.html.IHCElementWithInternalChildren;
  * @author Philip Helger
  * @param <THISTYPE>
  *        Implementation type
+ * @param <ITEMTYPE>
+ *        List item type
  */
-public interface IHCList <THISTYPE extends IHCList <THISTYPE>> extends IHCElementWithInternalChildren <THISTYPE, IHCLI <?>>
+public interface IHCList <THISTYPE extends IHCList <THISTYPE, ITEMTYPE>, ITEMTYPE extends IHCLI <ITEMTYPE>> extends IHCElementWithInternalChildren <THISTYPE, ITEMTYPE>
 {
   @Nonnull
-  IHCLI <?> addItem ();
+  ITEMTYPE addItem ();
 
   @Nonnull
   @CheckReturnValue
-  IHCLI <?> addAndReturnItem (@Nullable String sChild);
+  ITEMTYPE addAndReturnItem (@Nullable String sChild);
 
   @Nonnull
   @CheckReturnValue
-  IHCLI <?> addAndReturnItem (@Nullable String... aChildren);
+  ITEMTYPE addAndReturnItem (@Nullable String... aChildren);
 
   @Nonnull
   @CheckReturnValue
-  IHCLI <?> addAndReturnItem (@Nullable IHCNode aChild);
+  ITEMTYPE addAndReturnItem (@Nullable IHCNode aChild);
 
   @Nonnull
   @CheckReturnValue
-  IHCLI <?> addAndReturnItem (@Nullable IHCNode... aChildren);
+  ITEMTYPE addAndReturnItem (@Nullable IHCNode... aChildren);
 
   @Nonnull
   @CheckReturnValue
-  IHCLI <?> addAndReturnItem (@Nullable Iterable <? extends IHCNode> aChildren);
+  ITEMTYPE addAndReturnItem (@Nullable Iterable <? extends IHCNode> aChildren);
 
   @Nullable
   @CheckReturnValue
-  IHCLI <?> addAndReturnItem (@Nullable IHCLI <?> aItem);
+  ITEMTYPE addAndReturnItem (@Nullable ITEMTYPE aItem);
 
   @Nonnull
   THISTYPE addItem (@Nullable String sChild);
@@ -75,11 +77,11 @@ public interface IHCList <THISTYPE extends IHCList <THISTYPE>> extends IHCElemen
   THISTYPE addItem (@Nullable Iterable <? extends IHCNode> aChildren);
 
   @Nonnull
-  THISTYPE addItem (@Nullable IHCLI <?> aItem);
+  THISTYPE addItem (@Nullable ITEMTYPE aItem);
 
   @Nullable
-  IHCLI <?> getFirstItem ();
+  ITEMTYPE getFirstItem ();
 
   @Nullable
-  IHCLI <?> getLastItem ();
+  ITEMTYPE getLastItem ();
 }

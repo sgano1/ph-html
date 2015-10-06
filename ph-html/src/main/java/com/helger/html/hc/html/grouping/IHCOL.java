@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
  * @param <THISTYPE>
  *        Implementation type
  */
-public interface IHCOL <THISTYPE extends IHCOL <THISTYPE>> extends IHCList <THISTYPE>
+public interface IHCOL <THISTYPE extends IHCOL <THISTYPE>> extends IHCList <THISTYPE, HCLI>
 {
   @Nullable
   Integer getStart ();

@@ -20,7 +20,7 @@ import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCNode;
@@ -34,27 +34,32 @@ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
  * @author Philip Helger
  * @param <THISTYPE>
  *        The real implementation type.
+ * @param <ITEMTYPE>
+ *        The item type
  */
-public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>> extends AbstractHCElementWithInternalChildren <THISTYPE, IHCLI <?>>implements IHCList <THISTYPE>
+public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE, ITEMTYPE>, ITEMTYPE extends IHCLI <ITEMTYPE>> extends AbstractHCElementWithInternalChildren <THISTYPE, ITEMTYPE> implements IHCList <THISTYPE, ITEMTYPE>
 {
-  protected AbstractHCList (@Nonnull @Nonempty final EHTMLElement aElement)
+  private final Class <ITEMTYPE> m_aItemClass;
+
+  protected AbstractHCList (@Nonnull final EHTMLElement eElement, @Nonnull final Class <ITEMTYPE> aItemClass)
   {
-    super (aElement);
+    super (eElement);
+    m_aItemClass = ValueEnforcer.notNull (aItemClass, "ItemClass");
   }
 
   /**
-   * Callback method to be implemented in derived classes. Called everytime
+   * Callback method to be implemented in derived classes. Called every time
    * after an item was added.
    *
    * @param aItem
    *        The added item. Never <code>null</code>.
    */
   @OverrideOnDemand
-  protected void onAddItem (@Nonnull final IHCLI <?> aItem)
+  protected void onAddItem (@Nonnull final ITEMTYPE aItem)
   {}
 
   @Nullable
-  private IHCLI <?> _addItem (@Nullable final IHCLI <?> aItem)
+  private ITEMTYPE _addItem (@Nullable final ITEMTYPE aItem)
   {
     if (aItem != null)
     {
@@ -65,59 +70,62 @@ public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>
   }
 
   @Nonnull
-  public final IHCLI <?> addItem ()
+  protected abstract ITEMTYPE createEmptyItem ();
+
+  @Nonnull
+  public final ITEMTYPE addItem ()
   {
-    return _addItem (new HCLI ());
+    return _addItem (createEmptyItem ());
   }
 
   @Nonnull
   @CheckReturnValue
-  public final IHCLI <?> addAndReturnItem (@Nullable final String sChild)
+  public final ITEMTYPE addAndReturnItem (@Nullable final String sChild)
   {
     return addItem ().addChild (sChild);
   }
 
   @Nonnull
   @CheckReturnValue
-  public final IHCLI <?> addAndReturnItem (@Nullable final String... aChildren)
+  public final ITEMTYPE addAndReturnItem (@Nullable final String... aChildren)
   {
     return addItem ().addChildren (aChildren);
   }
 
   @Nonnull
   @CheckReturnValue
-  public final IHCLI <?> addAndReturnItem (@Nullable final IHCNode aChild)
+  public final ITEMTYPE addAndReturnItem (@Nullable final IHCNode aChild)
   {
     // Avoid directly nested LI elements
-    if (aChild instanceof IHCLI <?>)
-      return addAndReturnItem ((IHCLI <?>) aChild);
+    if (m_aItemClass.isInstance (aChild))
+      return _addItem (m_aItemClass.cast (aChild));
 
-    final IHCLI <?> aItem = addItem ();
+    final ITEMTYPE aItem = addItem ();
     aItem.addChild (aChild);
     return aItem;
   }
 
   @Nonnull
   @CheckReturnValue
-  public final IHCLI <?> addAndReturnItem (@Nullable final IHCNode... aChildren)
+  public final ITEMTYPE addAndReturnItem (@Nullable final IHCNode... aChildren)
   {
-    final IHCLI <?> aItem = addItem ();
+    final ITEMTYPE aItem = addItem ();
     aItem.addChildren (aChildren);
     return aItem;
   }
 
   @Nonnull
   @CheckReturnValue
-  public final IHCLI <?> addAndReturnItem (@Nullable final Iterable <? extends IHCNode> aChildren)
+  public final ITEMTYPE addAndReturnItem (@Nullable final Iterable <? extends IHCNode> aChildren)
   {
-    final IHCLI <?> aItem = addItem ();
+    final ITEMTYPE aItem = addItem ();
     aItem.addChildren (aChildren);
     return aItem;
   }
 
   @Nullable
   @CheckReturnValue
-  public final IHCLI <?> addAndReturnItem (@Nullable final IHCLI <?> aItem)
+  public final ITEMTYPE addAndReturnItem (@Nullable final ITEMTYPE aItem)
   {
     return _addItem (aItem);
   }
@@ -163,20 +171,20 @@ public abstract class AbstractHCList <THISTYPE extends AbstractHCList <THISTYPE>
   }
 
   @Nonnull
-  public final THISTYPE addItem (@Nullable final IHCLI <?> aItem)
+  public final THISTYPE addItem (@Nullable final ITEMTYPE aItem)
   {
     _addItem (aItem);
     return thisAsT ();
   }
 
   @Nullable
-  public IHCLI <?> getFirstItem ()
+  public ITEMTYPE getFirstItem ()
   {
     return getFirstChild ();
   }
 
   @Nullable
-  public IHCLI <?> getLastItem ()
+  public ITEMTYPE getLastItem ()
   {
     return getLastChild ();
   }

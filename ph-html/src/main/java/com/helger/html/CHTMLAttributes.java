@@ -60,6 +60,7 @@ public final class CHTMLAttributes
   public static final String COLOR = "color";
   public static final String COLS = "cols";
   public static final String COLSPAN = "colspan";
+  public static final String COMMAND = "command";
   public static final String COMPACT = "compact";
   public static final String CONTENT = "content";
   public static final String CONTENTEDITABLE = "contenteditable";

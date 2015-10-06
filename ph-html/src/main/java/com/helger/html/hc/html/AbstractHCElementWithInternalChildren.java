@@ -59,9 +59,9 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
 {
   private List <CHILDTYPE> m_aChildren;
 
-  protected AbstractHCElementWithInternalChildren (@Nonnull final EHTMLElement aElement)
+  protected AbstractHCElementWithInternalChildren (@Nonnull final EHTMLElement eElement)
   {
-    super (aElement);
+    super (eElement);
   }
 
   @Override

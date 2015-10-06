@@ -16,18 +16,27 @@
  */
 package com.helger.html.hc.html.interactive;
 
+import javax.annotation.Nonnull;
+
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.html.grouping.AbstractHCList;
 
 /**
- * Represents an HTML &lt;menu&gt; element
+ * Represents an HTML &lt;menu&gt; element.
  *
  * @author Philip Helger
  */
-public class HCMenu extends AbstractHCList <HCMenu>
+public class HCMenu extends AbstractHCList <HCMenu, HCMenuitem>
 {
   public HCMenu ()
   {
-    super (EHTMLElement.MENU);
+    super (EHTMLElement.MENU, HCMenuitem.class);
+  }
+
+  @Override
+  @Nonnull
+  protected HCMenuitem createEmptyItem ()
+  {
+    return new HCMenuitem ();
   }
 }

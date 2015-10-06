@@ -17,20 +17,27 @@
 package com.helger.html.hc.html.grouping;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+
+import com.helger.html.EHTMLElement;
 
 /**
- * Interface for ULs
+ * Abstract HTML list element that uses {@link HCLI} as the item.
  *
  * @author Philip Helger
  * @param <THISTYPE>
- *        Implementation type
+ *        The real implementation type.
  */
-public interface IHCUL <THISTYPE extends IHCUL <THISTYPE>> extends IHCList <THISTYPE, HCLI>
+public abstract class AbstractHCListLI <THISTYPE extends AbstractHCList <THISTYPE, HCLI>> extends AbstractHCList <THISTYPE, HCLI>
 {
-  @Nullable
-  EHCULType getType ();
+  public AbstractHCListLI (@Nonnull final EHTMLElement eElement)
+  {
+    super (eElement, HCLI.class);
+  }
 
+  @Override
   @Nonnull
-  THISTYPE setType (@Nullable EHCULType eType);
+  protected HCLI createEmptyItem ()
+  {
+    return new HCLI ();
+  }
 }

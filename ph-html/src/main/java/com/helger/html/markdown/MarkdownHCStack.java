@@ -110,8 +110,8 @@ final class MarkdownHCStack
     final IHCNode aParent = m_aStack.peek ();
 
     // Handle special cases
-    if (aParent instanceof IHCList <?> && aNode instanceof HCLI)
-      ((IHCList <?>) aParent).addItem ((HCLI) aNode);
+    if (aParent instanceof IHCList <?, ?> && aNode instanceof HCLI)
+      ((IHCList <?, ?>) aParent).addItem (aNode);
     else
       if (aParent instanceof IHCMediaElement <?> && aNode instanceof IHCMediaElementChild <?>)
         ((IHCMediaElement <?>) aParent).addChild ((IHCMediaElementChild <?>) aNode);
