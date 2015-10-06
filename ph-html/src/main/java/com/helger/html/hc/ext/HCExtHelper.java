@@ -79,6 +79,7 @@ import com.helger.html.hc.html.grouping.HCUL;
 import com.helger.html.hc.html.interactive.HCCommand;
 import com.helger.html.hc.html.interactive.HCDetails;
 import com.helger.html.hc.html.interactive.HCMenu;
+import com.helger.html.hc.html.interactive.HCMenuItem;
 import com.helger.html.hc.html.interactive.HCSummary;
 import com.helger.html.hc.html.metadata.HCBase;
 import com.helger.html.hc.html.metadata.HCHead;
@@ -302,6 +303,8 @@ public final class HCExtHelper
         return new HCMark ();
       case MENU:
         return new HCMenu ();
+      case MENUITEM:
+        return new HCMenuItem ();
       case META:
         return new HCMeta ();
       case METER:

@@ -36,7 +36,7 @@ import com.helger.html.hc.html.grouping.IHCLI;
  *
  * @author Philip Helger
  */
-public class HCMenuitem extends AbstractHCElementWithChildren <HCMenuitem> implements IHCLI <HCMenuitem>
+public class HCMenuItem extends AbstractHCElementWithChildren <HCMenuItem> implements IHCLI <HCMenuItem>
 {
   /**
    * Boolean attribute which indicates whether the command is selected. May only
@@ -92,7 +92,7 @@ public class HCMenuitem extends AbstractHCElementWithChildren <HCMenuitem> imple
   /**
    * Create a new MENUITEM element
    */
-  public HCMenuitem ()
+  public HCMenuItem ()
   {
     super (EHTMLElement.MENUITEM);
   }
@@ -103,7 +103,7 @@ public class HCMenuitem extends AbstractHCElementWithChildren <HCMenuitem> imple
   }
 
   @Nonnull
-  public HCMenuitem setChecked (final boolean bMenuItem)
+  public HCMenuItem setChecked (final boolean bMenuItem)
   {
     m_eChecked = ETriState.valueOf (bMenuItem);
     return this;
@@ -116,7 +116,7 @@ public class HCMenuitem extends AbstractHCElementWithChildren <HCMenuitem> imple
   }
 
   @Nonnull
-  public HCMenuitem setCommand (@Nullable final String sCommand)
+  public HCMenuItem setCommand (@Nullable final String sCommand)
   {
     m_sCommand = sCommand;
     return this;
@@ -128,7 +128,7 @@ public class HCMenuitem extends AbstractHCElementWithChildren <HCMenuitem> imple
   }
 
   @Nonnull
-  public HCMenuitem setDefault (final boolean bMenuItem)
+  public HCMenuItem setDefault (final boolean bMenuItem)
   {
     m_eDefault = ETriState.valueOf (bMenuItem);
     return this;
@@ -140,7 +140,7 @@ public class HCMenuitem extends AbstractHCElementWithChildren <HCMenuitem> imple
   }
 
   @Nonnull
-  public HCMenuitem setDisabled (final boolean bMenuItem)
+  public HCMenuItem setDisabled (final boolean bMenuItem)
   {
     m_eDisabled = ETriState.valueOf (bMenuItem);
     return this;
@@ -153,7 +153,7 @@ public class HCMenuitem extends AbstractHCElementWithChildren <HCMenuitem> imple
   }
 
   @Nonnull
-  public HCMenuitem setIcon (@Nullable final ISimpleURL aIcon)
+  public HCMenuItem setIcon (@Nullable final ISimpleURL aIcon)
   {
     m_aIcon = aIcon;
     return this;
@@ -166,7 +166,7 @@ public class HCMenuitem extends AbstractHCElementWithChildren <HCMenuitem> imple
   }
 
   @Nonnull
-  public HCMenuitem setLabel (@Nullable final String sLabel)
+  public HCMenuItem setLabel (@Nullable final String sLabel)
   {
     m_sLabel = sLabel;
     return this;
@@ -179,7 +179,7 @@ public class HCMenuitem extends AbstractHCElementWithChildren <HCMenuitem> imple
   }
 
   @Nonnull
-  public HCMenuitem setRadioGroup (@Nullable final String sRadioGroup)
+  public HCMenuItem setRadioGroup (@Nullable final String sRadioGroup)
   {
     m_sRadioGroup = sRadioGroup;
     return this;
@@ -192,7 +192,7 @@ public class HCMenuitem extends AbstractHCElementWithChildren <HCMenuitem> imple
   }
 
   @Nonnull
-  public HCMenuitem setType (@Nullable final EHCCommandType eType)
+  public HCMenuItem setType (@Nullable final EHCCommandType eType)
   {
     m_eType = eType;
     return this;

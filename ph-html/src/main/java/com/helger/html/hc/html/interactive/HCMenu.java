@@ -26,17 +26,17 @@ import com.helger.html.hc.html.grouping.AbstractHCList;
  *
  * @author Philip Helger
  */
-public class HCMenu extends AbstractHCList <HCMenu, HCMenuitem>
+public class HCMenu extends AbstractHCList <HCMenu, HCMenuItem>
 {
   public HCMenu ()
   {
-    super (EHTMLElement.MENU, HCMenuitem.class);
+    super (EHTMLElement.MENU, HCMenuItem.class);
   }
 
   @Override
   @Nonnull
-  protected HCMenuitem createEmptyItem ()
+  protected HCMenuItem createEmptyItem ()
   {
-    return new HCMenuitem ();
+    return new HCMenuItem ();
   }
 }
