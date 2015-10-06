@@ -175,7 +175,8 @@ public class HCEmbed extends AbstractHCElement <HCEmbed>
   {
     super.fillMicroElement (aElement, aConversionSettings);
     if (m_aSrc != null)
-      aElement.setAttribute (CHTMLAttributes.SRC, m_aSrc.getAsString ());
+      aElement.setAttribute (CHTMLAttributes.SRC,
+                             m_aSrc.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
     if (m_nWidth > 0)
       aElement.setAttribute (CHTMLAttributes.WIDTH, m_nWidth);
     if (m_nHeight > 0)

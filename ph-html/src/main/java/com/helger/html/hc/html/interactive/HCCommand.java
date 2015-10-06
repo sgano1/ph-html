@@ -32,7 +32,7 @@ import com.helger.html.hc.html.AbstractHCElement;
 import com.helger.html.hc.html.IHCHasState;
 
 @SinceHTML5
-public class HCCommand extends AbstractHCElement <HCCommand>implements IHCHasState <HCCommand>
+public class HCCommand extends AbstractHCElement <HCCommand> implements IHCHasState <HCCommand>
 {
   /** By default checked is disabled */
   public static final boolean DEFAULT_CHECKED = false;
@@ -153,7 +153,8 @@ public class HCCommand extends AbstractHCElement <HCCommand>implements IHCHasSta
     if (m_bDisabled)
       aElement.setAttribute (CHTMLAttributes.DISABLED, CHTMLAttributeValues.DISABLED);
     if (m_aIcon != null)
-      aElement.setAttribute (CHTMLAttributes.ICON, m_aIcon.getAsString ());
+      aElement.setAttribute (CHTMLAttributes.ICON,
+                             m_aIcon.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
     if (StringHelper.hasText (m_sLabel))
       aElement.setAttribute (CHTMLAttributes.LABEL, m_sLabel);
     if (StringHelper.hasText (m_sRadioGroup) && EHCCommandType.RADIO.equals (m_eType))

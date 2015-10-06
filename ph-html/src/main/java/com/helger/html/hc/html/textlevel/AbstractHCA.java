@@ -44,7 +44,7 @@ import com.helger.html.js.IHasJSCode;
  * @param <THISTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCA <THISTYPE>
+public abstract class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE> implements IHCA <THISTYPE>
 {
   private ISimpleURL m_aHref;
   private HC_Target m_aTarget;
@@ -57,9 +57,11 @@ public abstract class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>> exte
     super (EHTMLElement.A);
   }
 
+  @Deprecated
   public AbstractHCA (@Nonnull final String sHref)
   {
-    this (new SimpleURL (sHref));
+    this ();
+    setHref (sHref);
   }
 
   public AbstractHCA (@Nonnull final ISimpleURL aHref)
@@ -75,9 +77,10 @@ public abstract class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>> exte
   }
 
   @Nonnull
+  @Deprecated
   public final THISTYPE setHref (@Nonnull final String sHref)
   {
-    HCConsistencyChecker.checkIfLinkIsMasked (sHref);
+    HCConsistencyChecker.checkIfStringURLIsEscaped (sHref);
     return setHref (new SimpleURL (sHref));
   }
 

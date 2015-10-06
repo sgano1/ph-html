@@ -25,6 +25,9 @@ import org.slf4j.LoggerFactory;
 
 import com.helger.commons.annotation.PresentForCodeCoverage;
 import com.helger.commons.debug.GlobalDebug;
+import com.helger.commons.string.StringHelper;
+import com.helger.commons.url.URLHelper;
+import com.helger.commons.url.URLParameterDecoder;
 
 /**
  * This class performs some consistency checks on HCNodes
@@ -52,9 +55,9 @@ public final class HCConsistencyChecker
     s_aLogger.error ("HC Consistency check error: " + sMsg);
   }
 
-  public static void checkIfLinkIsMasked (@Nullable final String sHref)
+  public static void checkIfStringURLIsEscaped (@Nullable final String sHref)
   {
-    if (sHref != null)
+    if (StringHelper.hasText (sHref))
     {
       // This is potential vulnerability. If the passed href is passed
       // from a user input, which cannot be told at this point, it might as well
@@ -62,7 +65,13 @@ public final class HCConsistencyChecker
       // escaped.
       // Note PH: this is not a vulnerability. This is a programming error!
       if (sHref.contains ("&amp;"))
-        consistencyError ("The URL '" + sHref + "' seems to be already escaped - please use an unescaped URL!!");
+        consistencyError ("The URL '" + sHref + "' seems to be already XML escaped - please use an unescaped URL!!");
+
+      // Check if string is URL escaped
+      final URLParameterDecoder aDecoder = new URLParameterDecoder (URLHelper.CHARSET_URL_OBJ);
+      final String sDecoded = aDecoder.getDecoded (sHref);
+      if (!sHref.equals (sDecoded))
+        consistencyError ("The URL '" + sHref + "' seems to be already URL encoded - please use a decoded URL!!");
     }
   }
 

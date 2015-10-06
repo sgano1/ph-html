@@ -29,7 +29,6 @@ import com.helger.html.EHTMLRole;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.IHCConversionSettings;
 import com.helger.html.hc.config.HCSettings;
-import com.helger.html.hc.html.HC_Target;
 import com.helger.html.hc.html.deprecated.HCCenter;
 import com.helger.html.hc.html.deprecated.HCFrame;
 import com.helger.html.hc.html.deprecated.HCFrameset;
@@ -177,7 +176,7 @@ public final class HCFuncTest
     b.addChild (new HCHiddenField ("action", false));
     b.addChild (new HCHR ());
     b.addChild (new HCIFrame ());
-    b.addChild (new HCImg ().setSrc ("test1.png"));
+    b.addChild (new HCImg ().setSrc (new SimpleURL ("test1.png")));
     b.addChild (new HCIns ());
     b.addChild (new HCIns ().addChild ("Das wäre also ein Beispiel"));
     b.addChild (new HCI ());

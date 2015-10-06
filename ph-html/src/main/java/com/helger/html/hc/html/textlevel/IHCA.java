@@ -40,6 +40,7 @@ public interface IHCA <THISTYPE extends IHCA <THISTYPE>> extends IHCElementWithC
   ISimpleURL getHref ();
 
   @Nonnull
+  @Deprecated
   THISTYPE setHref (@Nonnull String sHref);
 
   @Nonnull

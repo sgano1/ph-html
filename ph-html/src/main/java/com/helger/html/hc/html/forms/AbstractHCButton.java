@@ -48,7 +48,7 @@ import com.helger.html.js.IHasJSCodeWithSettings;
  * @param <THISTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCButton <THISTYPE extends AbstractHCButton <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCButton <THISTYPE>
+public abstract class AbstractHCButton <THISTYPE extends AbstractHCButton <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE> implements IHCButton <THISTYPE>
 {
   /** By default auto focus is disabled */
   public static final boolean DEFAULT_AUTO_FOCUS = false;
@@ -126,7 +126,7 @@ public abstract class AbstractHCButton <THISTYPE extends AbstractHCButton <THIST
   }
 
   @Nullable
-  public final String getFormActionURL ()
+  public final ISimpleURL getFormActionURL ()
   {
     return m_aFormAction.getActionURL ();
   }
@@ -145,6 +145,7 @@ public abstract class AbstractHCButton <THISTYPE extends AbstractHCButton <THIST
   }
 
   @Nonnull
+  @Deprecated
   public final THISTYPE setFormAction (@Nullable final String sAction)
   {
     m_aFormAction.setAction (sAction);
@@ -316,7 +317,10 @@ public abstract class AbstractHCButton <THISTYPE extends AbstractHCButton <THIST
       aElement.setAttribute (CHTMLAttributes.DISABLED, CHTMLAttributeValues.DISABLED);
     if (StringHelper.hasText (m_sForm))
       aElement.setAttribute (CHTMLAttributes.FORM, m_sForm);
-    m_aFormAction.applyProperties (CHTMLAttributes.FORMACTION, aElement, aConversionSettings.getJSWriterSettings ());
+    m_aFormAction.applyProperties (CHTMLAttributes.FORMACTION,
+                                   aElement,
+                                   aConversionSettings.getJSWriterSettings (),
+                                   aConversionSettings.getCharset ());
     if (m_aFormEncType != null)
       aElement.setAttribute (CHTMLAttributes.FORMENCTYPE, m_aFormEncType.getAsString ());
     if (m_eFormMethod != null)

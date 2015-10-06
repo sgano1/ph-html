@@ -37,6 +37,7 @@ public interface IHCImg <THISTYPE extends IHCImg <THISTYPE>> extends IHCMediaEle
   ISimpleURL getSrc ();
 
   @Nonnull
+  @Deprecated
   THISTYPE setSrc (@Nonnull String sSrc);
 
   @Nonnull

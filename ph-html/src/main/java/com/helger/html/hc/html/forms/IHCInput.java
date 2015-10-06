@@ -105,7 +105,7 @@ public interface IHCInput <IMPLTYPE extends IHCInput <IMPLTYPE>> extends IHCCont
   IMPLTYPE setForm (@Nullable String sForm);
 
   @Nullable
-  String getFormActionURL ();
+  ISimpleURL getFormActionURL ();
 
   @Nullable
   IHasJSCode getFormActionJS ();
@@ -114,6 +114,7 @@ public interface IHCInput <IMPLTYPE extends IHCInput <IMPLTYPE>> extends IHCCont
   IMPLTYPE setFormAction (@Nullable ISimpleURL aAction);
 
   @Nonnull
+  @Deprecated
   IMPLTYPE setFormAction (@Nullable String sAction);
 
   @Nonnull

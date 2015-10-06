@@ -16,6 +16,8 @@
  */
 package com.helger.html.hc.html;
 
+import java.nio.charset.Charset;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
@@ -24,9 +26,10 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.lang.ICloneable;
 import com.helger.commons.microdom.IMicroElement;
-import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.ISimpleURL;
+import com.helger.commons.url.SimpleURL;
+import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.js.CJS;
 import com.helger.html.js.IHasJSCodeWithSettings;
 import com.helger.html.js.IJSWriterSettings;
@@ -39,8 +42,8 @@ import com.helger.html.js.IJSWriterSettings;
 @NotThreadSafe
 public class HC_Action implements ICloneable <HC_Action>
 {
-  private String m_sAction;
-  private IHasJSCodeWithSettings m_aAction;
+  private ISimpleURL m_aActionURL;
+  private IHasJSCodeWithSettings m_aActionJS;
 
   public HC_Action ()
   {}
@@ -48,51 +51,54 @@ public class HC_Action implements ICloneable <HC_Action>
   public HC_Action (@Nonnull final HC_Action aOther)
   {
     ValueEnforcer.notNull (aOther, "Other");
-    m_sAction = aOther.m_sAction;
-    m_aAction = aOther.m_aAction;
+    m_aActionURL = aOther.m_aActionURL;
+    m_aActionJS = aOther.m_aActionJS;
   }
 
   @Nullable
-  public String getActionURL ()
+  public ISimpleURL getActionURL ()
   {
-    return m_sAction;
+    return m_aActionURL;
   }
 
   @Nullable
   public IHasJSCodeWithSettings getActionJS ()
   {
-    return m_aAction;
+    return m_aActionJS;
   }
 
   public void setAction (@Nullable final ISimpleURL aAction)
   {
-    setAction (aAction == null ? null : aAction.getAsString ());
+    m_aActionURL = aAction;
+    m_aActionJS = null;
   }
 
+  @Deprecated
   public void setAction (@Nullable final String sAction)
   {
-    m_sAction = sAction;
-    m_aAction = null;
+    HCConsistencyChecker.checkIfStringURLIsEscaped (sAction);
+    setAction (sAction == null ? null : new SimpleURL (sAction));
   }
 
   public void setAction (@Nullable final IHasJSCodeWithSettings aAction)
   {
-    m_sAction = null;
-    m_aAction = aAction;
+    m_aActionURL = null;
+    m_aActionJS = aAction;
   }
 
   public void applyProperties (@Nonnull final String sAttributeName,
                                @Nonnull final IMicroElement aElement,
-                               @Nonnull final IJSWriterSettings aSettings)
+                               @Nonnull final IJSWriterSettings aSettings,
+                               @Nonnull final Charset aCharset)
   {
-    if (m_aAction != null)
+    if (m_aActionJS != null)
     {
-      final String sJSCode = m_aAction.getJSCode (aSettings);
+      final String sJSCode = m_aActionJS.getJSCode (aSettings);
       aElement.setAttribute (sAttributeName, CJS.JS_PREFIX + sJSCode);
     }
     else
-      if (StringHelper.hasText (m_sAction))
-        aElement.setAttribute (sAttributeName, m_sAction);
+      if (m_aActionURL != null)
+        aElement.setAttribute (sAttributeName, m_aActionURL.getAsStringWithEncodedParameters (aCharset));
   }
 
   @Nonnull
@@ -105,8 +111,8 @@ public class HC_Action implements ICloneable <HC_Action>
   @Override
   public String toString ()
   {
-    return new ToStringGenerator (null).appendIfNotNull ("actionURL", m_sAction)
-                                       .appendIfNotNull ("actionJS", m_aAction)
+    return new ToStringGenerator (null).appendIfNotNull ("ActionURL", m_aActionURL)
+                                       .appendIfNotNull ("ActionJS", m_aActionJS)
                                        .toString ();
   }
 }

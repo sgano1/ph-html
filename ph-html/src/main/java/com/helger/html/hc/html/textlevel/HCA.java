@@ -36,6 +36,7 @@ public class HCA extends AbstractHCA <HCA>
   public HCA ()
   {}
 
+  @Deprecated
   public HCA (@Nonnull final String sHref)
   {
     super (sHref);

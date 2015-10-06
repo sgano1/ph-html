@@ -93,15 +93,15 @@ public class HCHead extends AbstractHCElement <HCHead>
   }
 
   @Nullable
-  public String getBaseHref ()
+  public ISimpleURL getBaseHref ()
   {
     return m_aBase.getHref ();
   }
 
   @Nonnull
-  public HCHead setBaseHref (@Nullable final String sBaseHref)
+  public HCHead setBaseHref (@Nullable final ISimpleURL aBaseHref)
   {
-    m_aBase.setHref (sBaseHref);
+    m_aBase.setHref (aBaseHref);
     return this;
   }
 

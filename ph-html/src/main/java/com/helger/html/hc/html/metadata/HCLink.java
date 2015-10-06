@@ -35,6 +35,7 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.DeprecatedInHTML5;
 import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hc.IHCConversionSettingsToNode;
+import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.hc.html.AbstractHCElement;
 import com.helger.html.hc.html.HC_Target;
 import com.helger.html.resource.css.ICSSPathProvider;
@@ -131,8 +132,10 @@ public class HCLink extends AbstractHCElement <HCLink>
   }
 
   @Nonnull
+  @Deprecated
   public HCLink setHref (@Nullable final String sHref)
   {
+    HCConsistencyChecker.checkIfStringURLIsEscaped (sHref);
     return setHref (sHref == null ? null : new SimpleURL (sHref));
   }
 
@@ -279,7 +282,8 @@ public class HCLink extends AbstractHCElement <HCLink>
     if (m_aType != null)
       aElement.setAttribute (CHTMLAttributes.TYPE, m_aType.getAsString ());
     if (m_aHref != null)
-      aElement.setAttribute (CHTMLAttributes.HREF, m_aHref.getAsString ());
+      aElement.setAttribute (CHTMLAttributes.HREF,
+                             m_aHref.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
     if (StringHelper.hasText (m_sHrefLang))
       aElement.setAttribute (CHTMLAttributes.HREFLANG, m_sHrefLang);
     if (m_aTarget != null)

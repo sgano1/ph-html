@@ -17,17 +17,23 @@
 package com.helger.html.hc.html;
 
 import javax.annotation.Nonnull;
+import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.hc.IHCHasID;
+import com.helger.html.hc.config.HCSettings;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.JSMarshaller;
 import com.helger.html.js.UnparsedJSCodeProvider;
 
+@Immutable
 public final class FakeJS
 {
   public static final IHasJSCode JS_BLUR = new UnparsedJSCodeProvider ("blur();");
   public static final IHasJSCode RETURN_FALSE = new UnparsedJSCodeProvider ("return false;");
+
+  private FakeJS ()
+  {}
 
   @Nonnull
   public static IHasJSCode focus (@Nonnull final IHCHasID <?> aElement)
@@ -41,7 +47,7 @@ public final class FakeJS
   public static IHasJSCode windowLocationHref (@Nonnull final ISimpleURL aURL)
   {
     return new UnparsedJSCodeProvider ("window.location.href='" +
-                                       JSMarshaller.javaScriptEscape (aURL.getAsString ()) +
+                                       JSMarshaller.javaScriptEscape (aURL.getAsStringWithEncodedParameters (HCSettings.getHTMLCharset ())) +
                                        "';");
   }
 }

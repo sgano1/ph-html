@@ -27,6 +27,7 @@ import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hc.IHCConversionSettingsToNode;
+import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.resource.js.IJSPathProvider;
 
 /**
@@ -66,8 +67,10 @@ public class HCScriptFile extends AbstractHCScript <HCScriptFile>
   }
 
   @Nonnull
+  @Deprecated
   public HCScriptFile setSrc (@Nullable final String sSrc)
   {
+    HCConsistencyChecker.checkIfStringURLIsEscaped (sSrc);
     return setSrc (sSrc == null ? null : new SimpleURL (sSrc));
   }
 
@@ -120,7 +123,8 @@ public class HCScriptFile extends AbstractHCScript <HCScriptFile>
   {
     super.fillMicroElement (aElement, aConversionSettings);
     if (m_aSrc != null)
-      aElement.setAttribute (CHTMLAttributes.SRC, m_aSrc.getAsString ());
+      aElement.setAttribute (CHTMLAttributes.SRC,
+                             m_aSrc.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
     if (m_bDefer)
       aElement.setAttribute (CHTMLAttributes.DEFER, CHTMLAttributeValues.DEFER);
     if (m_bAsync)

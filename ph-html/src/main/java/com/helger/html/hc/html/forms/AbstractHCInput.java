@@ -35,13 +35,14 @@ import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCConversionSettingsToNode;
+import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.hc.html.HC_Action;
 import com.helger.html.hc.html.HC_Target;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.IHasJSCodeWithSettings;
 
 @NotThreadSafe
-public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYPE>> extends AbstractHCControl <IMPLTYPE>implements IHCInput <IMPLTYPE>
+public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYPE>> extends AbstractHCControl <IMPLTYPE> implements IHCInput <IMPLTYPE>
 {
   /** By default no auto complete setting is active */
   public static final ETriState DEFAULT_AUTO_COMPLETE = ETriState.UNDEFINED;
@@ -219,7 +220,7 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   }
 
   @Nullable
-  public final String getFormActionURL ()
+  public final ISimpleURL getFormActionURL ()
   {
     return m_aFormAction.getActionURL ();
   }
@@ -238,6 +239,7 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   }
 
   @Nonnull
+  @Deprecated
   public final IMPLTYPE setFormAction (@Nullable final String sAction)
   {
     m_aFormAction.setAction (sAction);
@@ -460,6 +462,7 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   @Nonnull
   public final IMPLTYPE setSrc (@Nullable final String sSrc)
   {
+    HCConsistencyChecker.checkIfStringURLIsEscaped (sSrc);
     return setSrc (sSrc == null ? null : new SimpleURL (sSrc));
   }
 
@@ -549,7 +552,10 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
       aElement.setAttribute (CHTMLAttributes.DIRNAME, m_sDirName);
     if (StringHelper.hasText (m_sForm))
       aElement.setAttribute (CHTMLAttributes.FORM, m_sForm);
-    m_aFormAction.applyProperties (CHTMLAttributes.FORMACTION, aElement, aConversionSettings.getJSWriterSettings ());
+    m_aFormAction.applyProperties (CHTMLAttributes.FORMACTION,
+                                   aElement,
+                                   aConversionSettings.getJSWriterSettings (),
+                                   aConversionSettings.getCharset ());
     if (m_aFormEncType != null)
       aElement.setAttribute (CHTMLAttributes.FORMENCTYPE, m_aFormEncType.getAsString ());
     if (m_eFormMethod != null)

@@ -23,6 +23,11 @@ import com.helger.html.hc.html.FakeJS;
 import com.helger.html.hc.html.forms.AbstractHCButton;
 import com.helger.html.js.IHasJSCodeWithSettings;
 
+/**
+ * A special &lt;button&gt; that changes the location of the current page.
+ *
+ * @author Philip Helger
+ */
 public class HCLinkButton extends AbstractHCButton <HCLinkButton>
 {
   public HCLinkButton (final String sLabel, @Nonnull final ISimpleURL aURL)

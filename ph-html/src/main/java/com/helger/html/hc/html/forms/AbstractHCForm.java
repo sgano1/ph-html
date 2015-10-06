@@ -51,7 +51,7 @@ import com.helger.html.js.IHasJSCodeWithSettings;
  * @param <THISTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCForm <THISTYPE>
+public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE> implements IHCForm <THISTYPE>
 {
   /** By default no auto complete setting is active */
   public static final ETriState DEFAULT_AUTO_COMPLETE = ETriState.UNDEFINED;
@@ -118,7 +118,7 @@ public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>
   }
 
   @Nullable
-  public final String getActionURL ()
+  public final ISimpleURL getActionURL ()
   {
     return m_aAction.getActionURL ();
   }
@@ -137,6 +137,7 @@ public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>
   }
 
   @Nonnull
+  @Deprecated
   public final THISTYPE setAction (@Nullable final String sAction)
   {
     m_aAction.setAction (sAction);
@@ -313,7 +314,10 @@ public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>
 
     if (StringHelper.hasText (m_sAcceptCharset))
       aElement.setAttribute (CHTMLAttributes.ACCEPTCHARSET, m_sAcceptCharset);
-    m_aAction.applyProperties (CHTMLAttributes.ACTION, aElement, aConversionSettings.getJSWriterSettings ());
+    m_aAction.applyProperties (CHTMLAttributes.ACTION,
+                               aElement,
+                               aConversionSettings.getJSWriterSettings (),
+                               aConversionSettings.getCharset ());
     if (m_eAutoComplete.isDefined ())
       aElement.setAttribute (CHTMLAttributes.AUTOCOMPLETE,
                              m_eAutoComplete.isTrue () ? CHTMLAttributeValues.ON : CHTMLAttributeValues.OFF);

@@ -38,6 +38,7 @@ public class HCImg extends AbstractHCImg <HCImg>
   }
 
   @Nonnull
+  @Deprecated
   public static HCImg create (@Nullable final String sSrc)
   {
     return new HCImg ().setSrc (sSrc);

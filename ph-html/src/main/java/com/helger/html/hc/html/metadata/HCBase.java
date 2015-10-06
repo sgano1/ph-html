@@ -20,12 +20,13 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.microdom.IMicroElement;
-import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.ISimpleURL;
+import com.helger.commons.url.SimpleURL;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCConversionSettingsToNode;
+import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.hc.html.AbstractHCElement;
 import com.helger.html.hc.html.HC_Target;
 
@@ -36,7 +37,7 @@ import com.helger.html.hc.html.HC_Target;
  */
 public class HCBase extends AbstractHCElement <HCBase>
 {
-  private String m_sHref;
+  private ISimpleURL m_aHref;
   private HC_Target m_aTarget;
 
   public HCBase ()
@@ -45,22 +46,24 @@ public class HCBase extends AbstractHCElement <HCBase>
   }
 
   @Nullable
-  public String getHref ()
+  public ISimpleURL getHref ()
   {
-    return m_sHref;
+    return m_aHref;
   }
 
   @Nonnull
   public HCBase setHref (@Nullable final ISimpleURL aHref)
   {
-    return setHref (aHref == null ? null : aHref.getAsString ());
+    m_aHref = aHref;
+    return this;
   }
 
   @Nonnull
+  @Deprecated
   public HCBase setHref (@Nullable final String sHref)
   {
-    m_sHref = sHref;
-    return this;
+    HCConsistencyChecker.checkIfStringURLIsEscaped (sHref);
+    return setHref (sHref == null ? null : new SimpleURL (sHref));
   }
 
   @Nullable
@@ -79,15 +82,16 @@ public class HCBase extends AbstractHCElement <HCBase>
   @Override
   public boolean canConvertToMicroNode (@Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
-    return StringHelper.hasText (m_sHref) || m_aTarget != null;
+    return m_aHref != null || m_aTarget != null;
   }
 
   @Override
   protected void fillMicroElement (final IMicroElement aElement, final IHCConversionSettingsToNode aConversionSettings)
   {
     super.fillMicroElement (aElement, aConversionSettings);
-    if (StringHelper.hasText (m_sHref))
-      aElement.setAttribute (CHTMLAttributes.HREF, m_sHref);
+    if (m_aHref != null)
+      aElement.setAttribute (CHTMLAttributes.HREF,
+                             m_aHref.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
     if (m_aTarget != null)
       aElement.setAttribute (CHTMLAttributes.TARGET, m_aTarget.getAttrValue ());
   }
@@ -96,7 +100,7 @@ public class HCBase extends AbstractHCElement <HCBase>
   public String toString ()
   {
     return ToStringGenerator.getDerived (super.toString ())
-                            .append ("href", m_sHref)
+                            .append ("href", m_aHref)
                             .append ("target", m_aTarget)
                             .toString ();
   }

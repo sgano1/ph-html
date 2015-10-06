@@ -29,13 +29,6 @@ import org.junit.Test;
 import com.helger.commons.state.EChange;
 import com.helger.commons.url.SimpleURL;
 import com.helger.html.hc.html.HC_Target;
-import com.helger.html.hc.html.metadata.EHCLinkType;
-import com.helger.html.hc.html.metadata.HCBase;
-import com.helger.html.hc.html.metadata.HCHead;
-import com.helger.html.hc.html.metadata.HCLink;
-import com.helger.html.hc.html.metadata.HCMeta;
-import com.helger.html.hc.html.metadata.HCStyle;
-import com.helger.html.hc.html.metadata.HCTitle;
 import com.helger.html.hc.html.script.HCScriptFile;
 import com.helger.html.hc.html.script.HCScriptInline;
 import com.helger.html.hc.mock.HCTestRuleOptimized;
@@ -78,8 +71,8 @@ public final class HCHeadTest
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\" profile=\"any\"><title>Title</title></head>",
                   HCRenderer.getAsHTMLString (aHead));
 
-    assertSame (aHead, aHead.setBaseHref ("/"));
-    assertEquals ("/", aHead.getBaseHref ());
+    assertSame (aHead, aHead.setBaseHref (new SimpleURL ("/")));
+    assertEquals ("/", aHead.getBaseHref ().getAsString ());
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\" profile=\"any\"><title>Title</title><base href=\"/\" /></head>",
                   HCRenderer.getAsHTMLString (aHead));
 
@@ -138,7 +131,7 @@ public final class HCHeadTest
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>test</title></head>",
                   HCRenderer.getAsHTMLString (aHead));
 
-    aHead.setBaseHref ("/root");
+    aHead.setBaseHref (new SimpleURL ("/root"));
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\"><title>test</title><base href=\"/root\" /></head>",
                   HCRenderer.getAsHTMLString (aHead));
     aHead.setBaseHref (null);

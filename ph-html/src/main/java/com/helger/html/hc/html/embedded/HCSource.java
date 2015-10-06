@@ -31,7 +31,7 @@ import com.helger.html.hc.html.AbstractHCMediaElementChild;
 import com.helger.html.hc.html.IHCHasMedia;
 
 @SinceHTML5
-public class HCSource extends AbstractHCMediaElementChild <HCSource>implements IHCHasMedia <HCSource>
+public class HCSource extends AbstractHCMediaElementChild <HCSource> implements IHCHasMedia <HCSource>
 {
   private ISimpleURL m_aSrc;
   private IMimeType m_aType;
@@ -115,7 +115,8 @@ public class HCSource extends AbstractHCMediaElementChild <HCSource>implements I
   {
     super.fillMicroElement (aElement, aConversionSettings);
     if (m_aSrc != null)
-      aElement.setAttribute (CHTMLAttributes.SRC, m_aSrc.getAsString ());
+      aElement.setAttribute (CHTMLAttributes.SRC,
+                             m_aSrc.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
     if (m_aType != null)
       aElement.setAttribute (CHTMLAttributes.TYPE, m_aType.getAsString ());
     if (StringHelper.hasText (m_sSrcSet))

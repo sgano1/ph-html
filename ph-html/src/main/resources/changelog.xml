@@ -18,6 +18,11 @@
 
 -->
 <changelog xmlns="http://www.helger.com/xsd/changelog/1.0" version="1.0" component="ph-html">
+  <entry date="2015-10-01" category="tech" action="fix">
+    <change>
+      <text locale="en">By default URL parameters in all elements are automatically escaped correctly</text>
+    </change>
+  </entry>
   <release date="2015-09-22" version="5.0.3" />
   <release date="2015-09-20" version="5.0.2" />
   <entry date="2015-09-20" category="api" action="fix">

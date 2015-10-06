@@ -37,7 +37,7 @@ public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends IHCEl
   THISTYPE setForm (@Nullable String sForm);
 
   @Nullable
-  String getFormActionURL ();
+  ISimpleURL getFormActionURL ();
 
   @Nullable
   IHasJSCode getFormActionJS ();
@@ -46,6 +46,7 @@ public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends IHCEl
   THISTYPE setFormAction (@Nullable ISimpleURL aAction);
 
   @Nonnull
+  @Deprecated
   THISTYPE setFormAction (@Nullable String sAction);
 
   @Nonnull

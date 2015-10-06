@@ -44,7 +44,7 @@ public interface IHCForm <THISTYPE extends IHCForm <THISTYPE>> extends IHCElemen
   THISTYPE setAcceptCharset (@Nullable String sAcceptCharset);
 
   @Nullable
-  String getActionURL ();
+  ISimpleURL getActionURL ();
 
   @Nullable
   IHasJSCode getActionJS ();
@@ -53,6 +53,7 @@ public interface IHCForm <THISTYPE extends IHCForm <THISTYPE>> extends IHCElemen
   THISTYPE setAction (@Nullable ISimpleURL aAction);
 
   @Nonnull
+  @Deprecated
   THISTYPE setAction (@Nullable String sAction);
 
   @Nonnull

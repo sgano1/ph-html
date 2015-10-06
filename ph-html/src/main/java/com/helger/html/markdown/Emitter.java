@@ -32,6 +32,8 @@ import com.helger.commons.microdom.IMicroQName;
 import com.helger.commons.microdom.serialize.MicroReader;
 import com.helger.commons.regex.RegExPool;
 import com.helger.commons.string.StringHelper;
+import com.helger.commons.url.ISimpleURL;
+import com.helger.commons.url.SimpleURL;
 import com.helger.commons.xml.serialize.write.XMLEmitter;
 import com.helger.html.entity.EHTMLEntity;
 import com.helger.html.entity.HTMLEntity;
@@ -278,6 +280,7 @@ final class Emitter
    *        Either LINK or IMAGE.
    * @return The new position or -1 if there is no valid markdown link.
    */
+  @SuppressWarnings ("deprecation")
   private int _checkInlineLink (final MarkdownHCStack out, final String in, final int start, final EMarkToken token)
   {
     boolean isAbbrev = false;
@@ -413,6 +416,7 @@ final class Emitter
    *        Starting position.
    * @return The new position or -1 if nothing valid has been found.
    */
+  @SuppressWarnings ("deprecation")
   private int _checkInlineHtml (final MarkdownHCStack out, final String in, final int nStart)
   {
     final StringBuilder aTemp = new StringBuilder ();
@@ -433,7 +437,7 @@ final class Emitter
       }
     }
 
-    // Check for mailto or adress auto link
+    // Check for mailto or address auto link
     aTemp.setLength (0);
     nPos = MarkdownHelper.readUntil (aTemp, in, nStart + 1, '@', ' ', '>', '\n');
     if (nPos != -1 && in.charAt (nPos) == '@')
@@ -447,13 +451,13 @@ final class Emitter
         {
           // address auto links
           final String sAddress = sLink.substring (1);
-          final String sUrl = "https://maps.google.com/maps?q=" + sAddress.replace (' ', '+');
-          aLink.setHref (sUrl).addChild (sAddress);
+          final ISimpleURL aUrl = new SimpleURL ("https://maps.google.com/maps").add ("q", sAddress);
+          aLink.setHref (aUrl).addChild (sAddress);
         }
         else
         {
           // mailto auto links
-          aLink.setHref ("mailto:" + sLink).addChild (sLink);
+          aLink.setHref (new SimpleURL ("mailto:" + sLink)).addChild (sLink);
         }
         m_aConfig.getDecorator ().closeLink (out);
         return nPos;
