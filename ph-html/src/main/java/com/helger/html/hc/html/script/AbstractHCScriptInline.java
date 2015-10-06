@@ -195,9 +195,9 @@ public abstract class AbstractHCScriptInline <THISTYPE extends AbstractHCScriptI
   {
     return ToStringGenerator.getDerived (super.toString ())
                             .append ("provider", m_aJSProvider)
-                            .append ("jsCode", m_sCachedJSCode)
                             .append ("mode", m_eScriptMode)
                             .append ("emitAfterFiles", m_bEmitAfterFiles)
+                            .append ("cachedJSCode", m_sCachedJSCode)
                             .toString ();
   }
 }
