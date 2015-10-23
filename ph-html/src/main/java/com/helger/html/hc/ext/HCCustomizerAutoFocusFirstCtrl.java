@@ -28,12 +28,18 @@ import com.helger.html.hc.HCHelper;
 import com.helger.html.hc.IHCHasChildrenMutable;
 import com.helger.html.hc.IHCIteratorCallback;
 import com.helger.html.hc.IHCNode;
+import com.helger.html.hc.html.forms.AbstractHCInput;
 import com.helger.html.hc.html.forms.HCHiddenField;
-import com.helger.html.hc.html.forms.IHCControl;
 import com.helger.html.hc.html.forms.IHCForm;
 import com.helger.html.hc.html.forms.IHCHasFocus;
 import com.helger.html.hc.impl.AbstractHCCustomizer;
 
+/**
+ * Special customizer that customizes the first input element on the page (if
+ * available).
+ *
+ * @author Philip Helger
+ */
 public class HCCustomizerAutoFocusFirstCtrl extends AbstractHCCustomizer
 {
   public HCCustomizerAutoFocusFirstCtrl ()
@@ -47,9 +53,9 @@ public class HCCustomizerAutoFocusFirstCtrl extends AbstractHCCustomizer
     {
       public EFinish call (@Nullable final IHCNode aParentNode, @Nonnull final IHCNode aChildNode)
       {
-        if (aChildNode instanceof IHCHasFocus <?>)
+        if (aChildNode instanceof AbstractHCInput <?>)
         {
-          final IHCHasFocus <?> aHasFocus = (IHCHasFocus <?>) aChildNode;
+          final AbstractHCInput <?> aHasFocus = (AbstractHCInput <?>) aChildNode;
           if (!aFirstCtrl.isSet ())
           {
             if (aHasFocus instanceof HCHiddenField)
@@ -57,7 +63,7 @@ public class HCCustomizerAutoFocusFirstCtrl extends AbstractHCCustomizer
               // cannot focus
             }
             else
-              if (aHasFocus instanceof IHCControl <?> && ((IHCControl <?>) aHasFocus).isReadOnly ())
+              if (aHasFocus.isReadOnly ())
               {
                 // cannot focus read-only controls
               }
