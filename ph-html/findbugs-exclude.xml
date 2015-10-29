@@ -18,14 +18,4 @@
 -->
 <FindBugsFilter>
   <!-- Docs: http://findbugs.sourceforge.net/manual/filter.html -->
-  <Match>
-    <Class name="com.helger.html.js.builder.jquery.AbstractJQueryInvocationExtended" />
-  </Match>
-  <Match>
-    <Class name="com.helger.html.js.builder.jquery.IJQueryInvocationExtended" />
-  </Match>
-  <Match>
-    <Class name="com.helger.html.js.builder.jquery.JQuery" />
-    <Bug code="NM_METHOD_NAMING_CONVENTION" />
-  </Match>
 </FindBugsFilter>
