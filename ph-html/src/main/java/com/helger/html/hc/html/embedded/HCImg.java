@@ -34,13 +34,19 @@ public class HCImg extends AbstractHCImg <HCImg>
   @Nonnull
   public static HCImg create (@Nullable final ISimpleURL aSrc)
   {
-    return new HCImg ().setSrc (aSrc);
+    final HCImg ret = new HCImg ();
+    if (aSrc != null)
+      ret.setSrc (aSrc);
+    return ret;
   }
 
   @Nonnull
   @Deprecated
   public static HCImg create (@Nullable final String sSrc)
   {
-    return new HCImg ().setSrc (sSrc);
+    final HCImg ret = new HCImg ();
+    if (sSrc != null)
+      ret.setSrc (sSrc);
+    return ret;
   }
 }
