@@ -39,7 +39,7 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
  * @param <THISTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCObject <THISTYPE extends AbstractHCObject <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCObject <THISTYPE>
+public abstract class AbstractHCObject <THISTYPE extends AbstractHCObject <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE> implements IHCObject <THISTYPE>
 {
   /** By default declare is disabled */
   public static final boolean DEFAULT_DECLARE = false;
@@ -280,8 +280,7 @@ public abstract class AbstractHCObject <THISTYPE extends AbstractHCObject <THIST
   }
 
   @Override
-  protected void fillMicroElement (@Nonnull final IMicroElement aElement,
-                                   @Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (@Nonnull final IMicroElement aElement, @Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     super.fillMicroElement (aElement, aConversionSettings);
     if (m_nWidth > 0)
@@ -301,13 +300,11 @@ public abstract class AbstractHCObject <THISTYPE extends AbstractHCObject <THIST
     if (StringHelper.hasText (m_sClassID))
       aElement.setAttribute (CHTMLAttributes.CLASSID, m_sClassID);
     if (m_aCodeBase != null)
-      aElement.setAttribute (CHTMLAttributes.CODEBASE,
-                             m_aCodeBase.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
+      aElement.setAttribute (CHTMLAttributes.CODEBASE, m_aCodeBase.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
     if (m_aCodeType != null)
       aElement.setAttribute (CHTMLAttributes.CODETYPE, m_aCodeType.getAsString ());
     if (m_aData != null)
-      aElement.setAttribute (CHTMLAttributes.DATA,
-                             m_aData.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
+      aElement.setAttribute (CHTMLAttributes.DATA, m_aData.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
     if (m_bDeclare)
       aElement.setAttribute (CHTMLAttributes.DECLARE, CHTMLAttributeValues.DECLARE);
     if (StringHelper.hasText (m_sName))

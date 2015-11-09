@@ -61,6 +61,7 @@ public class HCScriptFile extends AbstractHCScript <HCScriptFile>
   }
 
   @Nullable
+  @Deprecated
   public String getSrcString ()
   {
     return m_aSrc == null ? null : m_aSrc.getAsString ();
@@ -123,8 +124,7 @@ public class HCScriptFile extends AbstractHCScript <HCScriptFile>
   {
     super.fillMicroElement (aElement, aConversionSettings);
     if (m_aSrc != null)
-      aElement.setAttribute (CHTMLAttributes.SRC,
-                             m_aSrc.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
+      aElement.setAttribute (CHTMLAttributes.SRC, m_aSrc.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
     if (m_bDefer)
       aElement.setAttribute (CHTMLAttributes.DEFER, CHTMLAttributeValues.DEFER);
     if (m_bAsync)

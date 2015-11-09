@@ -264,9 +264,11 @@ public interface IHCInput <IMPLTYPE extends IHCInput <IMPLTYPE>> extends IHCCont
   ISimpleURL getSrc ();
 
   @Nullable
+  @Deprecated
   String getSrcAsString ();
 
   @Nonnull
+  @Deprecated
   IMPLTYPE setSrc (@Nullable String sSrc);
 
   @Nonnull

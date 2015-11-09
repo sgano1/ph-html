@@ -119,6 +119,7 @@ public class HCLink extends AbstractHCElement <HCLink>
   }
 
   @Nullable
+  @Deprecated
   public String getHrefString ()
   {
     return m_aHref == null ? null : m_aHref.getAsString ();
@@ -282,8 +283,7 @@ public class HCLink extends AbstractHCElement <HCLink>
     if (m_aType != null)
       aElement.setAttribute (CHTMLAttributes.TYPE, m_aType.getAsString ());
     if (m_aHref != null)
-      aElement.setAttribute (CHTMLAttributes.HREF,
-                             m_aHref.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
+      aElement.setAttribute (CHTMLAttributes.HREF, m_aHref.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
     if (StringHelper.hasText (m_sHrefLang))
       aElement.setAttribute (CHTMLAttributes.HREFLANG, m_sHrefLang);
     if (m_aTarget != null)

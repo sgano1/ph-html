@@ -16,6 +16,8 @@
  */
 package com.helger.html.jscode.html;
 
+import java.nio.charset.Charset;
+
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -688,9 +690,16 @@ public final class JSHtml
   }
 
   @Nonnull
+  @Deprecated
   public static JSAssignment windowLocationHref (@Nonnull final ISimpleURL aURL)
   {
-    return windowLocationHref ().assign (aURL.getAsString ());
+    return windowLocationHref ().assign (aURL.getAsStringWithEncodedParameters ());
+  }
+
+  @Nonnull
+  public static JSAssignment windowLocationHref (@Nonnull final ISimpleURL aURL, @Nonnull final Charset aCharset)
+  {
+    return windowLocationHref ().assign (aURL.getAsStringWithEncodedParameters (aCharset));
   }
 
   /**
@@ -994,8 +1003,7 @@ public final class JSHtml
   }
 
   @Nonnull
-  public static JSInvocation windowSetInterval (@Nonnull final JSAnonymousFunction aCallback,
-                                                @Nonnegative final int nMillis)
+  public static JSInvocation windowSetInterval (@Nonnull final JSAnonymousFunction aCallback, @Nonnegative final int nMillis)
   {
     return windowSetInterval ().arg (aCallback).arg (nMillis);
   }
@@ -1010,8 +1018,7 @@ public final class JSHtml
   }
 
   @Nonnull
-  public static JSInvocation windowSetTimeout (@Nonnull final JSAnonymousFunction aCallback,
-                                               @Nonnegative final int nMillis)
+  public static JSInvocation windowSetTimeout (@Nonnull final JSAnonymousFunction aCallback, @Nonnegative final int nMillis)
   {
     return windowSetTimeout ().arg (aCallback).arg (nMillis);
   }
