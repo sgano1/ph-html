@@ -417,8 +417,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
    *         if the name is not unique
    */
   @Nonnull
-  public JSVar var (@Nonnull @Nonempty final String sName,
-                    @Nullable final String sInitValue) throws JSNameAlreadyExistsException
+  public JSVar var (@Nonnull @Nonempty final String sName, @Nullable final String sInitValue) throws JSNameAlreadyExistsException
   {
     return var (sName, sInitValue == null ? JSExpr.NULL : JSExpr.lit (sInitValue));
   }
@@ -435,8 +434,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
    *         if the name is not unique
    */
   @Nonnull
-  public JSVar var (@Nonnull @Nonempty final String sName,
-                    @Nullable final IJSExpression aInitExpression) throws JSNameAlreadyExistsException
+  public JSVar var (@Nonnull @Nonempty final String sName, @Nullable final IJSExpression aInitExpression) throws JSNameAlreadyExistsException
   {
     final JSVar aVar = new JSVar (sName, aInitExpression);
     return addDeclaration (aVar);
@@ -989,10 +987,7 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   @Nonnull
   public JSConditional _if (@Nonnull final IJSExpression aTest, @Nullable final IHasJSCode aThen)
   {
-    final JSConditional aCond = _if (aTest);
-    if (aThen != null)
-      aCond._then ().add (aThen);
-    return aCond;
+    return addStatement (new JSConditional (aTest, aThen));
   }
 
   /**
@@ -1007,14 +1002,9 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
    * @return Newly generated conditional statement
    */
   @Nonnull
-  public JSConditional _if (@Nonnull final IJSExpression aTest,
-                            @Nullable final IHasJSCode aThen,
-                            @Nullable final IHasJSCode aElse)
+  public JSConditional _if (@Nonnull final IJSExpression aTest, @Nullable final IHasJSCode aThen, @Nullable final IHasJSCode aElse)
   {
-    final JSConditional aCond = _if (aTest, aThen);
-    if (aElse != null)
-      aCond._else ().add (aElse);
-    return aCond;
+    return addStatement (new JSConditional (aTest, aThen, aElse));
   }
 
   /**
@@ -1172,9 +1162,6 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   @Override
   public String toString ()
   {
-    return new ToStringGenerator (this).appendIfNotEmpty ("objs", m_aObjs)
-                                       .appendIfNotEmpty ("decls", m_aDecls)
-                                       .append ("pos", m_nPos)
-                                       .toString ();
+    return new ToStringGenerator (this).appendIfNotEmpty ("objs", m_aObjs).appendIfNotEmpty ("decls", m_aDecls).append ("pos", m_nPos).toString ();
   }
 }

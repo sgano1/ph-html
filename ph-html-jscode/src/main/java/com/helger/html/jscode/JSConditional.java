@@ -24,6 +24,7 @@ import com.helger.commons.annotation.CodingStyleguideUnaware;
 import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.IJSWriterSettings;
 
 /**
@@ -49,14 +50,46 @@ public class JSConditional extends AbstractJSStatement
   private JSBlock m_aElse;
 
   /**
-   * Constructor
+   * Create an If statement
    *
    * @param aTest
-   *        Expression which will determine branching
+   *        {@link IJSExpression} to be tested to determine branching
    */
   public JSConditional (@Nonnull final IJSExpression aTest)
   {
     m_aTest = ValueEnforcer.notNull (aTest, "Test");
+  }
+
+  /**
+   * Create an If statement
+   *
+   * @param aTest
+   *        {@link IJSExpression} to be tested to determine branching
+   * @param aThen
+   *        "then" block content. May be <code>null</code>.
+   */
+  public JSConditional (@Nonnull final IJSExpression aTest, @Nullable final IHasJSCode aThen)
+  {
+    this (aTest);
+    if (aThen != null)
+      m_aThen.add (aThen);
+  }
+
+  /**
+   * Create an If statement
+   *
+   * @param aTest
+   *        {@link IJSExpression} to be tested to determine branching
+   * @param aThen
+   *        "then" block content. May be <code>null</code>.
+   * @param aElse
+   *        "else" block content. May be <code>null</code>.
+   */
+  public JSConditional (@Nonnull final IJSExpression aTest, @Nullable final IHasJSCode aThen, @Nullable final IHasJSCode aElse)
+  {
+    this (aTest, aThen);
+    if (aElse != null)
+      _else ().add (aElse);
   }
 
   @Nonnull
@@ -72,7 +105,7 @@ public class JSConditional extends AbstractJSStatement
    */
   @Nonnull
   @CodingStyleguideUnaware
-  public JSBlock _then ()
+  public final JSBlock _then ()
   {
     return m_aThen;
   }
@@ -84,7 +117,7 @@ public class JSConditional extends AbstractJSStatement
    */
   @Nonnull
   @CodingStyleguideUnaware
-  public JSBlock _else ()
+  public final JSBlock _else ()
   {
     if (m_aElse == null)
       m_aElse = new JSBlock ();
@@ -153,9 +186,6 @@ public class JSConditional extends AbstractJSStatement
   @Override
   public String toString ()
   {
-    return new ToStringGenerator (this).append ("test", m_aTest)
-                                       .append ("then", m_aThen)
-                                       .appendIfNotNull ("else", m_aElse)
-                                       .toString ();
+    return new ToStringGenerator (this).append ("test", m_aTest).append ("then", m_aThen).appendIfNotNull ("else", m_aElse).toString ();
   }
 }
