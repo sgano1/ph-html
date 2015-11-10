@@ -1,5 +1,8 @@
 #ph-html
 
+[![Build Status](https://travis-ci.org/phax/ph-html.svg?branch=master)](https://travis-ci.org/phax/ph-html)
+﻿
+
 Java library to dynamically create HTML and JavaScript content using an XML tree. Base interface is `IHCNode` and start class for creation is `HCHtml`.
 
 Contained subprojects are:
