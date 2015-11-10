@@ -44,18 +44,30 @@ public abstract class AbstractHCTable <THISTYPE extends AbstractHCTable <THISTYP
     super (EHTMLElement.TABLE);
   }
 
+  /**
+   * @param aCol
+   *        Column to be added. <code>null</code> values are ignored!
+   */
   public AbstractHCTable (@Nullable final IHCCol <?> aCol)
   {
     this ();
     addColumn (aCol);
   }
 
+  /**
+   * @param aCols
+   *        Columns to be added. <code>null</code> values are ignored!
+   */
   public AbstractHCTable (@Nullable final IHCCol <?>... aCols)
   {
     this ();
     addColumns (aCols);
   }
 
+  /**
+   * @param aCols
+   *        Columns to be added. <code>null</code> values are ignored!
+   */
   public AbstractHCTable (@Nullable final Iterable <? extends IHCCol <?>> aCols)
   {
     this ();
@@ -64,8 +76,7 @@ public abstract class AbstractHCTable <THISTYPE extends AbstractHCTable <THISTYP
 
   @Override
   @OverridingMethodsMustInvokeSuper
-  protected void fillMicroElement (@Nonnull final IMicroElement aElement,
-                                   @Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (@Nonnull final IMicroElement aElement, @Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     super.fillMicroElement (aElement, aConversionSettings);
 
