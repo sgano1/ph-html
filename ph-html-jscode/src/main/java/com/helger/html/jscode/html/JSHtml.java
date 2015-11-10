@@ -23,6 +23,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
+import com.helger.commons.annotation.DevelopersNote;
 import com.helger.commons.annotation.PresentForCodeCoverage;
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.EHTMLElement;
@@ -690,9 +691,10 @@ public final class JSHtml
   }
 
   @Nonnull
-  @Deprecated
+  @DevelopersNote ("Should be deprecated but is used too often")
   public static JSAssignment windowLocationHref (@Nonnull final ISimpleURL aURL)
   {
+    // Use the version with the default charset - not nice :(
     return windowLocationHref ().assign (aURL.getAsStringWithEncodedParameters ());
   }
 
