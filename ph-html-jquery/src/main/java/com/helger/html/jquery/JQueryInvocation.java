@@ -173,4 +173,58 @@ public class JQueryInvocation extends AbstractJQueryInvocationExtended <JQueryIn
   {
     return setChecked ().arg (aExpr);
   }
+
+  /**
+   * @return <code>is (':disabled')</code>
+   */
+  @Nonnull
+  public JQueryInvocation isDisabled ()
+  {
+    return is (JQuerySelector.disabled);
+  }
+
+  /**
+   * @return <code>is (':enabled')</code>
+   */
+  @Nonnull
+  public JQueryInvocation isEnabled ()
+  {
+    return is (JQuerySelector.enabled);
+  }
+
+  /**
+   * @return <code>is (':first-child')</code>
+   */
+  @Nonnull
+  public JQueryInvocation isFirstChild ()
+  {
+    return is (JQuerySelector.first_child);
+  }
+
+  /**
+   * @return <code>is (':last-child')</code>
+   */
+  @Nonnull
+  public JQueryInvocation isLastChild ()
+  {
+    return is (JQuerySelector.last_child);
+  }
+
+  /**
+   * @return <code>is (':visible')</code>
+   */
+  @Nonnull
+  public JQueryInvocation isVisible ()
+  {
+    return is (JQuerySelector.visible);
+  }
+
+  /**
+   * @return <code>is (':hidden')</code>
+   */
+  @Nonnull
+  public JQueryInvocation isHidden ()
+  {
+    return is (JQuerySelector.hidden);
+  }
 }
