@@ -25,10 +25,10 @@ import com.helger.commons.id.factory.GlobalIDFactory;
  * Special interface for HC elements having an optional ID
  *
  * @author Philip Helger
- * @param <THISTYPE>
+ * @param <IMPLTYPE>
  *        The implementation type
  */
-public interface IHCHasID <THISTYPE extends IHCHasID <THISTYPE>>
+public interface IHCHasID <IMPLTYPE extends IHCHasID <IMPLTYPE>>
 {
   /**
    * @return <code>true</code> if this element has an ID, <code>false</code> if
@@ -55,7 +55,7 @@ public interface IHCHasID <THISTYPE extends IHCHasID <THISTYPE>>
    * @return this
    */
   @Nonnull
-  THISTYPE setID (@Nullable String sID);
+  IMPLTYPE setID (@Nullable String sID);
 
   /**
    * Set a unique HTML ID for this object. Equal to
@@ -64,7 +64,7 @@ public interface IHCHasID <THISTYPE extends IHCHasID <THISTYPE>>
    * @return this
    */
   @Nonnull
-  default THISTYPE setUniqueID ()
+  default IMPLTYPE setUniqueID ()
   {
     return setID (GlobalIDFactory.getNewStringID ());
   }
@@ -76,5 +76,5 @@ public interface IHCHasID <THISTYPE extends IHCHasID <THISTYPE>>
    * @return this
    */
   @Nonnull
-  THISTYPE ensureID ();
+  IMPLTYPE ensureID ();
 }

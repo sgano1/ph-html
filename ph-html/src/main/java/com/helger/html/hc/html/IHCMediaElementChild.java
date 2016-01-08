@@ -20,10 +20,10 @@ package com.helger.html.hc.html;
  * Marker interface
  *
  * @author Philip Helger
- * @param <THISTYPE>
+ * @param <IMPLTYPE>
  *        Implementation type
  */
-public interface IHCMediaElementChild <THISTYPE extends IHCMediaElementChild <THISTYPE>> extends IHCElement <THISTYPE>
+public interface IHCMediaElementChild <IMPLTYPE extends IHCMediaElementChild <IMPLTYPE>> extends IHCElement <IMPLTYPE>
 {
   /* empty */
 }

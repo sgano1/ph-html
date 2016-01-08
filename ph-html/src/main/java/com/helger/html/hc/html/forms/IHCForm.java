@@ -19,6 +19,8 @@ package com.helger.html.hc.html.forms;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.helger.commons.CGlobal;
+import com.helger.commons.mime.CMimeType;
 import com.helger.commons.mime.IMimeType;
 import com.helger.commons.state.ETriState;
 import com.helger.commons.url.ISimpleURL;
@@ -67,7 +69,10 @@ public interface IHCForm <THISTYPE extends IHCForm <THISTYPE>>
   boolean isAutoCompleteUndefined ();
 
   @Nonnull
-  THISTYPE setAutoComplete (boolean bAutoComplete);
+  default THISTYPE setAutoComplete (final boolean bAutoComplete)
+  {
+    return setAutoComplete (ETriState.valueOf (bAutoComplete));
+  }
 
   @Nonnull
   THISTYPE setAutoComplete (@Nonnull ETriState eAutoComplete);
@@ -81,7 +86,10 @@ public interface IHCForm <THISTYPE extends IHCForm <THISTYPE>>
    * @return this
    */
   @Nonnull
-  THISTYPE setEncTypeFileUpload ();
+  default THISTYPE setEncTypeFileUpload ()
+  {
+    return setEncType (CMimeType.MULTIPART_FORMDATA);
+  }
 
   /**
    * Set the enctype to text/plain
@@ -89,7 +97,10 @@ public interface IHCForm <THISTYPE extends IHCForm <THISTYPE>>
    * @return this
    */
   @Nonnull
-  THISTYPE setEncTypeTextPlain ();
+  default THISTYPE setEncTypeTextPlain ()
+  {
+    return setEncType (CMimeType.TEXT_PLAIN);
+  }
 
   @Nonnull
   THISTYPE setEncType (@Nullable IMimeType aEncType);
@@ -116,7 +127,10 @@ public interface IHCForm <THISTYPE extends IHCForm <THISTYPE>>
   int getSubmitButtonTabIndex ();
 
   @Nonnull
-  THISTYPE setSubmitPressingEnter (boolean bSubmitPressingEnter);
+  default THISTYPE setSubmitPressingEnter (final boolean bSubmitPressingEnter)
+  {
+    return setSubmitPressingEnter (bSubmitPressingEnter, CGlobal.ILLEGAL_UINT);
+  }
 
   @Nonnull
   THISTYPE setSubmitPressingEnter (boolean bSubmitPressingEnter, int nSubmitButtonTabIndex);

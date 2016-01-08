@@ -16,10 +16,8 @@
  */
 package com.helger.html.hc.impl;
 
-import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
-import com.helger.commons.ValueEnforcer;
 import com.helger.commons.lang.GenericReflection;
 import com.helger.commons.microdom.IMicroText;
 import com.helger.commons.microdom.MicroText;
@@ -32,11 +30,11 @@ import com.helger.html.hc.IHCTextNode;
  * Represents a single text node as HC node.
  *
  * @author Philip Helger
- * @param <THISTYPE>
+ * @param <IMPLTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCTextNode <THISTYPE extends AbstractHCTextNode <THISTYPE>> extends AbstractHCNode
-                                         implements IHCTextNode
+public abstract class AbstractHCTextNode <IMPLTYPE extends AbstractHCTextNode <IMPLTYPE>> extends AbstractHCNode
+                                         implements IHCTextNode <IMPLTYPE>
 {
   private String m_sText;
   private boolean m_bEscape = MicroText.DEFAULT_ESCAPE;
@@ -45,10 +43,10 @@ public abstract class AbstractHCTextNode <THISTYPE extends AbstractHCTextNode <T
   {}
 
   @Nonnull
-  protected final THISTYPE thisAsT ()
+  protected final IMPLTYPE thisAsT ()
   {
     // Avoid the unchecked cast warning in all places
-    return GenericReflection.<AbstractHCTextNode <THISTYPE>, THISTYPE> uncheckedCast (this);
+    return GenericReflection.<AbstractHCTextNode <IMPLTYPE>, IMPLTYPE> uncheckedCast (this);
   }
 
   @Nonnull
@@ -58,28 +56,14 @@ public abstract class AbstractHCTextNode <THISTYPE extends AbstractHCTextNode <T
   }
 
   @Nonnull
-  public THISTYPE setText (final String sText)
+  public IMPLTYPE setText (final String sText)
   {
     m_sText = StringHelper.getNotNull (sText);
     return thisAsT ();
   }
 
   @Nonnull
-  public THISTYPE setText (@Nonnull final char [] aChars)
-  {
-    ValueEnforcer.notNull (aChars, "Chars");
-    return setText (new String (aChars));
-  }
-
-  @Nonnull
-  public THISTYPE setText (@Nonnull final char [] aChars, @Nonnegative final int nOfs, @Nonnegative final int nLen)
-  {
-    ValueEnforcer.notNull (aChars, "Chars");
-    return setText (new String (aChars, nOfs, nLen));
-  }
-
-  @Nonnull
-  public THISTYPE prependText (final String sText)
+  public IMPLTYPE prependText (final String sText)
   {
     if (StringHelper.hasText (sText))
       m_sText = sText + m_sText;
@@ -87,21 +71,7 @@ public abstract class AbstractHCTextNode <THISTYPE extends AbstractHCTextNode <T
   }
 
   @Nonnull
-  public THISTYPE prependText (@Nonnull final char [] aChars)
-  {
-    ValueEnforcer.notNull (aChars, "Chars");
-    return prependText (new String (aChars));
-  }
-
-  @Nonnull
-  public THISTYPE prependText (@Nonnull final char [] aChars, @Nonnegative final int nOfs, @Nonnegative final int nLen)
-  {
-    ValueEnforcer.notNull (aChars, "Chars");
-    return prependText (new String (aChars, nOfs, nLen));
-  }
-
-  @Nonnull
-  public THISTYPE appendText (final String sText)
+  public IMPLTYPE appendText (final String sText)
   {
     if (StringHelper.hasText (sText))
       m_sText = m_sText + sText;
@@ -109,21 +79,7 @@ public abstract class AbstractHCTextNode <THISTYPE extends AbstractHCTextNode <T
   }
 
   @Nonnull
-  public THISTYPE appendText (@Nonnull final char [] aChars)
-  {
-    ValueEnforcer.notNull (aChars, "Chars");
-    return appendText (new String (aChars));
-  }
-
-  @Nonnull
-  public THISTYPE appendText (@Nonnull final char [] aChars, @Nonnegative final int nOfs, @Nonnegative final int nLen)
-  {
-    ValueEnforcer.notNull (aChars, "Chars");
-    return appendText (new String (aChars, nOfs, nLen));
-  }
-
-  @Nonnull
-  public THISTYPE setEscape (final boolean bEscape)
+  public IMPLTYPE setEscape (final boolean bEscape)
   {
     m_bEscape = bEscape;
     return thisAsT ();

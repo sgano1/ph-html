@@ -34,10 +34,10 @@ import com.helger.css.propertyvalue.ICSSValue;
  * Base interface for objects having CSS styles
  *
  * @author Philip Helger
- * @param <THISTYPE>
+ * @param <IMPLTYPE>
  *        Implementation type
  */
-public interface IHCHasCSSStyles <THISTYPE extends IHCHasCSSStyles <THISTYPE>>
+public interface IHCHasCSSStyles <IMPLTYPE extends IHCHasCSSStyles <IMPLTYPE>>
 {
   /**
    * Add an element specific style (that is not consistency checked).
@@ -49,7 +49,7 @@ public interface IHCHasCSSStyles <THISTYPE extends IHCHasCSSStyles <THISTYPE>>
    * @return this
    */
   @Nonnull
-  default THISTYPE addStyle (@Nonnull final ECSSProperty eProperty, @Nonnull @Nonempty final String sPropertyValue)
+  default IMPLTYPE addStyle (@Nonnull final ECSSProperty eProperty, @Nonnull @Nonempty final String sPropertyValue)
   {
     return addStyle (new CSSPropertyFree (eProperty).newValue (sPropertyValue));
   }
@@ -62,12 +62,12 @@ public interface IHCHasCSSStyles <THISTYPE extends IHCHasCSSStyles <THISTYPE>>
    * @return this
    */
   @Nonnull
-  THISTYPE addStyle (@Nullable ICSSValue aValue);
+  IMPLTYPE addStyle (@Nullable ICSSValue aValue);
 
   @Nonnull
   @Deprecated
   @DevelopersNote ("Use addStyle instead!")
-  default THISTYPE addStyles (@Nullable final ICSSValue aValue)
+  default IMPLTYPE addStyles (@Nullable final ICSSValue aValue)
   {
     return addStyle (aValue);
   }
@@ -80,7 +80,7 @@ public interface IHCHasCSSStyles <THISTYPE extends IHCHasCSSStyles <THISTYPE>>
    * @return this
    */
   @Nonnull
-  THISTYPE addStyles (@Nullable final ICSSValue... aValues);
+  IMPLTYPE addStyles (@Nullable final ICSSValue... aValues);
 
   /**
    * Add element specific styles.
@@ -90,7 +90,7 @@ public interface IHCHasCSSStyles <THISTYPE extends IHCHasCSSStyles <THISTYPE>>
    * @return this
    */
   @Nonnull
-  THISTYPE addStyles (@Nullable final Iterable <? extends ICSSValue> aValues);
+  IMPLTYPE addStyles (@Nullable final Iterable <? extends ICSSValue> aValues);
 
   /**
    * Remove the specified style from the element
@@ -100,7 +100,7 @@ public interface IHCHasCSSStyles <THISTYPE extends IHCHasCSSStyles <THISTYPE>>
    * @return this
    */
   @Nonnull
-  THISTYPE removeStyle (@Nonnull ECSSProperty eProperty);
+  IMPLTYPE removeStyle (@Nonnull ECSSProperty eProperty);
 
   /**
    * Remove all styles from the element
@@ -108,7 +108,7 @@ public interface IHCHasCSSStyles <THISTYPE extends IHCHasCSSStyles <THISTYPE>>
    * @return this
    */
   @Nonnull
-  THISTYPE removeAllStyles ();
+  IMPLTYPE removeAllStyles ();
 
   /**
    * @return A copy of all contained styles. Never <code>null</code>.

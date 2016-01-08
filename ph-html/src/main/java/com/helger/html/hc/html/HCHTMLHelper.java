@@ -30,7 +30,6 @@ import com.helger.commons.state.EFinish;
 import com.helger.commons.wrapper.Wrapper;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.HCHelper;
-import com.helger.html.hc.IHCIteratorCallback;
 import com.helger.html.hc.IHCNode;
 
 @Immutable
@@ -59,24 +58,19 @@ public final class HCHTMLHelper
     ValueEnforcer.notEmpty (aElements, "Elements");
 
     final List <IHCElement <?>> ret = new ArrayList <IHCElement <?>> ();
-    HCHelper.iterateChildren (aOwner, new IHCIteratorCallback ()
-    {
-      @Nullable
-      public EFinish call (@Nullable final IHCNode aParentNode, @Nonnull final IHCNode aChildNode)
+    HCHelper.iterateChildren (aOwner, (aParentNode, aChildNode) -> {
+      if (aChildNode instanceof IHCElement <?>)
       {
-        if (aChildNode instanceof IHCElement <?>)
-        {
-          final IHCElement <?> aCurrentElement = (IHCElement <?>) aChildNode;
-          final String sCurrentTagName = aCurrentElement.getTagName ();
-          for (final EHTMLElement aElement : aElements)
-            if (sCurrentTagName.equalsIgnoreCase (aElement.getElementName ()))
-            {
-              ret.add (aCurrentElement);
-              break;
-            }
-        }
-        return EFinish.UNFINISHED;
+        final IHCElement <?> aCurrentElement = (IHCElement <?>) aChildNode;
+        final String sCurrentTagName = aCurrentElement.getTagName ();
+        for (final EHTMLElement aElement : aElements)
+          if (sCurrentTagName.equalsIgnoreCase (aElement.getElementName ()))
+          {
+            ret.add (aCurrentElement);
+            break;
+          }
       }
+      return EFinish.UNFINISHED;
     });
     return ret;
   }
@@ -100,30 +94,25 @@ public final class HCHTMLHelper
     ValueEnforcer.notEmpty (aElements, "Elements");
 
     final Wrapper <IHCElement <?>> ret = new Wrapper <IHCElement <?>> ();
-    HCHelper.iterateChildren (aOwner, new IHCIteratorCallback ()
-    {
-      @Nullable
-      public EFinish call (@Nullable final IHCNode aParentNode, @Nonnull final IHCNode aChildNode)
+    HCHelper.iterateChildren (aOwner, (aParentNode, aChildNode) -> {
+      if (aChildNode instanceof IHCElement <?>)
       {
-        if (aChildNode instanceof IHCElement <?>)
-        {
-          final IHCElement <?> aCurrentElement = (IHCElement <?>) aChildNode;
-          final String sCurrentTagName = aCurrentElement.getTagName ();
-          boolean bFound = false;
-          for (final EHTMLElement aElement : aElements)
-            if (sCurrentTagName.equalsIgnoreCase (aElement.getElementName ()))
-            {
-              bFound = true;
-              break;
-            }
-          if (!bFound)
+        final IHCElement <?> aCurrentElement = (IHCElement <?>) aChildNode;
+        final String sCurrentTagName = aCurrentElement.getTagName ();
+        boolean bFound = false;
+        for (final EHTMLElement aElement : aElements)
+          if (sCurrentTagName.equalsIgnoreCase (aElement.getElementName ()))
           {
-            ret.set (aCurrentElement);
-            return EFinish.FINISHED;
+            bFound = true;
+            break;
           }
+        if (!bFound)
+        {
+          ret.set (aCurrentElement);
+          return EFinish.FINISHED;
         }
-        return EFinish.UNFINISHED;
       }
+      return EFinish.UNFINISHED;
     });
     return ret.get ();
   }
@@ -153,24 +142,19 @@ public final class HCHTMLHelper
     ValueEnforcer.notEmpty (aElements, "Elements");
 
     final Wrapper <IHCElement <?>> ret = new Wrapper <IHCElement <?>> ();
-    HCHelper.iterateChildren (aOwner, new IHCIteratorCallback ()
-    {
-      @Nullable
-      public EFinish call (@Nullable final IHCNode aParentNode, @Nonnull final IHCNode aChildNode)
+    HCHelper.iterateChildren (aOwner, (aParentNode, aChildNode) -> {
+      if (aChildNode instanceof IHCElement <?>)
       {
-        if (aChildNode instanceof IHCElement <?>)
-        {
-          final IHCElement <?> aCurrentElement = (IHCElement <?>) aChildNode;
-          final String sCurrentTagName = aCurrentElement.getTagName ();
-          for (final EHTMLElement aElement : aElements)
-            if (sCurrentTagName.equalsIgnoreCase (aElement.getElementName ()))
-            {
-              ret.set (aCurrentElement);
-              return EFinish.FINISHED;
-            }
-        }
-        return EFinish.UNFINISHED;
+        final IHCElement <?> aCurrentElement = (IHCElement <?>) aChildNode;
+        final String sCurrentTagName = aCurrentElement.getTagName ();
+        for (final EHTMLElement aElement : aElements)
+          if (sCurrentTagName.equalsIgnoreCase (aElement.getElementName ()))
+          {
+            ret.set (aCurrentElement);
+            return EFinish.FINISHED;
+          }
       }
+      return EFinish.UNFINISHED;
     });
     return ret.get ();
   }

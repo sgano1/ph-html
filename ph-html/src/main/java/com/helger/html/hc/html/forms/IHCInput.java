@@ -19,6 +19,7 @@ package com.helger.html.hc.html.forms;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.helger.commons.mime.CMimeType;
 import com.helger.commons.mime.IMimeType;
 import com.helger.commons.state.ETriState;
 import com.helger.commons.url.ISimpleURL;
@@ -67,7 +68,10 @@ public interface IHCInput <IMPLTYPE extends IHCInput <IMPLTYPE>> extends IHCCont
   boolean isAutoCompleteUndefined ();
 
   @Nonnull
-  IMPLTYPE setAutoComplete (final boolean bAutoComplete);
+  default IMPLTYPE setAutoComplete (final boolean bAutoComplete)
+  {
+    return setAutoComplete (ETriState.valueOf (bAutoComplete));
+  }
 
   @Nonnull
   IMPLTYPE setAutoComplete (@Nonnull ETriState eAutoComplete);
@@ -129,7 +133,10 @@ public interface IHCInput <IMPLTYPE extends IHCInput <IMPLTYPE>> extends IHCCont
    * @return this
    */
   @Nonnull
-  IMPLTYPE setFormEncTypeFileUpload ();
+  default IMPLTYPE setFormEncTypeFileUpload ()
+  {
+    return setFormEncType (CMimeType.MULTIPART_FORMDATA);
+  }
 
   /**
    * Set the enctype to text/plain
@@ -137,7 +144,10 @@ public interface IHCInput <IMPLTYPE extends IHCInput <IMPLTYPE>> extends IHCCont
    * @return this
    */
   @Nonnull
-  IMPLTYPE setFormEncTypeTextPlain ();
+  default IMPLTYPE setFormEncTypeTextPlain ()
+  {
+    return setFormEncType (CMimeType.TEXT_PLAIN);
+  }
 
   @Nonnull
   IMPLTYPE setFormEncType (@Nullable IMimeType aFormEncType);
@@ -157,7 +167,10 @@ public interface IHCInput <IMPLTYPE extends IHCInput <IMPLTYPE>> extends IHCCont
   HC_Target getFormTarget ();
 
   @Nonnull
-  IMPLTYPE setFormTargetBlank ();
+  default IMPLTYPE setFormTargetBlank ()
+  {
+    return setFormTarget (HC_Target.BLANK);
+  }
 
   @Nonnull
   IMPLTYPE setFormTarget (@Nullable HC_Target aFormTarget);
@@ -294,7 +307,10 @@ public interface IHCInput <IMPLTYPE extends IHCInput <IMPLTYPE>> extends IHCCont
    * @return This object for chaining
    */
   @Nonnull
-  IMPLTYPE setValue (final int nValue);
+  default IMPLTYPE setValue (final int nValue)
+  {
+    return setValue (Integer.toString (nValue));
+  }
 
   /**
    * Sets the passed field value
@@ -304,7 +320,10 @@ public interface IHCInput <IMPLTYPE extends IHCInput <IMPLTYPE>> extends IHCCont
    * @return This object for chaining
    */
   @Nonnull
-  IMPLTYPE setValue (final long nValue);
+  default IMPLTYPE setValue (final long nValue)
+  {
+    return setValue (Long.toString (nValue));
+  }
 
   /**
    * Sets the passed field value

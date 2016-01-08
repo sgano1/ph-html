@@ -30,12 +30,12 @@ import com.helger.commons.annotation.DevelopersNote;
  * Base interface for HC nodes that have mutable children.
  *
  * @author Philip Helger
- * @param <THISTYPE>
+ * @param <IMPLTYPE>
  *        Implementation type
  * @param <CHILDTYPE>
  *        Desired child type
  */
-public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode>
+public interface IHCHasChildrenMutable <IMPLTYPE extends IHCHasChildrenMutable <IMPLTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode>
                                        extends IHCNode
 {
   /**
@@ -44,7 +44,7 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
    * @return this
    */
   @Nonnull
-  THISTYPE addChild (@Nullable CHILDTYPE aNode);
+  IMPLTYPE addChild (@Nullable CHILDTYPE aNode);
 
   /**
    * @param nIndex
@@ -54,7 +54,7 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
    * @return this
    */
   @Nonnull
-  THISTYPE addChild (@Nonnegative int nIndex, @Nullable CHILDTYPE aNode);
+  IMPLTYPE addChild (@Nonnegative int nIndex, @Nullable CHILDTYPE aNode);
 
   /**
    * Use {@link #addChild(IHCNode)} instead.
@@ -65,7 +65,7 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
    */
   @Deprecated
   @DevelopersNote ("Use addChild instead")
-  default THISTYPE addChildren (@Nullable final CHILDTYPE aChild)
+  default IMPLTYPE addChildren (@Nullable final CHILDTYPE aChild)
   {
     return addChild (aChild);
   }
@@ -81,7 +81,7 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
    */
   @Deprecated
   @DevelopersNote ("Use addChild instead")
-  default THISTYPE addChildren (@Nonnegative final int nIndex, @Nullable final CHILDTYPE aChild)
+  default IMPLTYPE addChildren (@Nonnegative final int nIndex, @Nullable final CHILDTYPE aChild)
   {
     ValueEnforcer.isBetweenInclusive (nIndex, "Index", 0, getChildCount ());
     return addChild (nIndex, aChild);
@@ -94,7 +94,7 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
    */
   @Nonnull
   @SuppressWarnings ("unchecked")
-  THISTYPE addChildren (@Nullable CHILDTYPE... aChildren);
+  IMPLTYPE addChildren (@Nullable CHILDTYPE... aChildren);
 
   /**
    * @param nIndex
@@ -105,7 +105,7 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
    */
   @Nonnull
   @SuppressWarnings ("unchecked")
-  THISTYPE addChildren (@Nonnegative int nIndex, @Nullable CHILDTYPE... aChildren);
+  IMPLTYPE addChildren (@Nonnegative int nIndex, @Nullable CHILDTYPE... aChildren);
 
   /**
    * @param aChildren
@@ -113,7 +113,7 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
    * @return this
    */
   @Nonnull
-  THISTYPE addChildren (@Nullable Iterable <? extends CHILDTYPE> aChildren);
+  IMPLTYPE addChildren (@Nullable Iterable <? extends CHILDTYPE> aChildren);
 
   /**
    * @param nIndex
@@ -123,7 +123,7 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
    * @return this
    */
   @Nonnull
-  THISTYPE addChildren (@Nonnegative int nIndex, @Nullable Iterable <? extends CHILDTYPE> aChildren);
+  IMPLTYPE addChildren (@Nonnegative int nIndex, @Nullable Iterable <? extends CHILDTYPE> aChildren);
 
   /**
    * @param aChild
@@ -165,7 +165,7 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
    * @return this
    */
   @Nonnull
-  THISTYPE removeChild (@Nonnegative int nIndex);
+  IMPLTYPE removeChild (@Nonnegative int nIndex);
 
   /**
    * Remove the passed direct child object.
@@ -175,7 +175,7 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
    * @return this
    */
   @Nonnull
-  THISTYPE removeChild (@Nullable CHILDTYPE aNode);
+  IMPLTYPE removeChild (@Nullable CHILDTYPE aNode);
 
   /**
    * Remove all children of this object.
@@ -183,7 +183,7 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
    * @return this
    */
   @Nonnull
-  THISTYPE removeAllChildren ();
+  IMPLTYPE removeAllChildren ();
 
   /**
    * Sort all children with the passed comparator
@@ -193,7 +193,7 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
    * @return this
    */
   @Nonnull
-  THISTYPE sortAllChildren (@Nonnull Comparator <? super CHILDTYPE> aComparator);
+  IMPLTYPE sortAllChildren (@Nonnull Comparator <? super CHILDTYPE> aComparator);
 
   /**
    * @return A new node list with all contained children. Never

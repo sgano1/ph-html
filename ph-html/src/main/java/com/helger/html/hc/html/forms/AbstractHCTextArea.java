@@ -99,12 +99,6 @@ public abstract class AbstractHCTextArea <THISTYPE extends AbstractHCTextArea <T
   }
 
   @Nonnull
-  public final THISTYPE setAutoComplete (final boolean bAutoComplete)
-  {
-    return setAutoComplete (ETriState.valueOf (bAutoComplete));
-  }
-
-  @Nonnull
   public final THISTYPE setAutoComplete (@Nonnull final ETriState eAutoComplete)
   {
     m_eAutoComplete = ValueEnforcer.notNull (eAutoComplete, "AutoComplete");

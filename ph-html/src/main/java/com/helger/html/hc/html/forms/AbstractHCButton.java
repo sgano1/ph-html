@@ -21,7 +21,6 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.microdom.IMicroElement;
-import com.helger.commons.mime.CMimeType;
 import com.helger.commons.mime.IMimeType;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
@@ -32,12 +31,10 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.hc.html.AbstractHCElementWithChildren;
-import com.helger.html.hc.html.FakeJS;
 import com.helger.html.hc.html.HCHTMLHelper;
 import com.helger.html.hc.html.HC_Action;
 import com.helger.html.hc.html.HC_Target;
 import com.helger.html.hc.html.IHCElement;
-import com.helger.html.js.EJSEvent;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.IHasJSCodeWithSettings;
 
@@ -167,18 +164,6 @@ public abstract class AbstractHCButton <THISTYPE extends AbstractHCButton <THIST
   }
 
   @Nonnull
-  public THISTYPE setFormEncTypeFileUpload ()
-  {
-    return setFormEncType (CMimeType.MULTIPART_FORMDATA);
-  }
-
-  @Nonnull
-  public THISTYPE setFormEncTypeTextPlain ()
-  {
-    return setFormEncType (CMimeType.TEXT_PLAIN);
-  }
-
-  @Nonnull
   public THISTYPE setFormEncType (@Nullable final IMimeType aFormEncType)
   {
     m_aFormEncType = aFormEncType;
@@ -214,12 +199,6 @@ public abstract class AbstractHCButton <THISTYPE extends AbstractHCButton <THIST
   public final HC_Target getFormTarget ()
   {
     return m_aFormTarget;
-  }
-
-  @Nonnull
-  public final THISTYPE setFormTargetBlank ()
-  {
-    return setFormTarget (HC_Target.BLANK);
   }
 
   @Nonnull
@@ -264,30 +243,6 @@ public abstract class AbstractHCButton <THISTYPE extends AbstractHCButton <THIST
   {
     m_sValue = sValue;
     return thisAsT ();
-  }
-
-  @Nonnull
-  public THISTYPE setOnClick (@Nullable final IHasJSCode aOnClick)
-  {
-    return setEventHandler (EJSEvent.CLICK, aOnClick);
-  }
-
-  @Nonnull
-  public THISTYPE setOnClick (@Nonnull final ISimpleURL aURL)
-  {
-    return setOnClick (FakeJS.windowLocationHref (aURL));
-  }
-
-  @Nonnull
-  public THISTYPE addOnClick (@Nullable final IHasJSCode aOnClick)
-  {
-    return addEventHandler (EJSEvent.CLICK, aOnClick);
-  }
-
-  @Nonnull
-  public THISTYPE addOnClick (@Nonnull final ISimpleURL aURL)
-  {
-    return addOnClick (FakeJS.windowLocationHref (aURL));
   }
 
   @Override

@@ -17,7 +17,6 @@
 package com.helger.html.hc.ext;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.mutable.MutableBoolean;
@@ -26,7 +25,6 @@ import com.helger.commons.wrapper.Wrapper;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.HCHelper;
 import com.helger.html.hc.IHCHasChildrenMutable;
-import com.helger.html.hc.IHCIteratorCallback;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.html.forms.AbstractHCInput;
 import com.helger.html.hc.html.forms.HCHiddenField;
@@ -49,38 +47,34 @@ public class HCCustomizerAutoFocusFirstCtrl extends AbstractHCCustomizer
   {
     final Wrapper <IHCHasFocus <?>> aFirstCtrl = new Wrapper <IHCHasFocus <?>> ();
     final MutableBoolean bAnyCtrlHasFocus = new MutableBoolean (false);
-    HCHelper.iterateChildren (aStartNode, new IHCIteratorCallback ()
-    {
-      public EFinish call (@Nullable final IHCNode aParentNode, @Nonnull final IHCNode aChildNode)
+    HCHelper.iterateChildren (aStartNode, (aParentNode, aChildNode) -> {
+      if (aChildNode instanceof AbstractHCInput <?>)
       {
-        if (aChildNode instanceof AbstractHCInput <?>)
+        final AbstractHCInput <?> aHasFocus = (AbstractHCInput <?>) aChildNode;
+        if (!aFirstCtrl.isSet ())
         {
-          final AbstractHCInput <?> aHasFocus = (AbstractHCInput <?>) aChildNode;
-          if (!aFirstCtrl.isSet ())
+          if (aHasFocus instanceof HCHiddenField)
           {
-            if (aHasFocus instanceof HCHiddenField)
+            // cannot focus
+          }
+          else
+            if (aHasFocus.isReadOnly ())
             {
-              // cannot focus
+              // cannot focus read-only controls
             }
             else
-              if (aHasFocus.isReadOnly ())
-              {
-                // cannot focus read-only controls
-              }
-              else
-                aFirstCtrl.set (aHasFocus);
-          }
-          if (aHasFocus.isAutoFocus ())
-          {
-            // No need to continue because an existing control already has the
-            // focus
-            bAnyCtrlHasFocus.set (true);
-            return EFinish.FINISHED;
-          }
+              aFirstCtrl.set (aHasFocus);
         }
-
-        return EFinish.UNFINISHED;
+        if (aHasFocus.isAutoFocus ())
+        {
+          // No need to continue because an existing control already has the
+          // focus
+          bAnyCtrlHasFocus.set (true);
+          return EFinish.FINISHED;
+        }
       }
+
+      return EFinish.UNFINISHED;
     });
 
     if (!bAnyCtrlHasFocus.booleanValue ())

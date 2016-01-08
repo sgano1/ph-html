@@ -23,12 +23,12 @@ import com.helger.html.hc.IHCNodeWithChildren;
  * Interface for elements having children.
  *
  * @author Philip Helger
- * @param <THISTYPE>
+ * @param <IMPLTYPE>
  *        Implementation type
  */
-public interface IHCElementWithChildren <THISTYPE extends IHCElementWithChildren <THISTYPE>> extends
-                                        IHCElementWithInternalChildren <THISTYPE, IHCNode>,
-                                        IHCNodeWithChildren <THISTYPE>
+public interface IHCElementWithChildren <IMPLTYPE extends IHCElementWithChildren <IMPLTYPE>> extends
+                                        IHCElementWithInternalChildren <IMPLTYPE, IHCNode>,
+                                        IHCNodeWithChildren <IMPLTYPE>
 {
   /** empty */
 }

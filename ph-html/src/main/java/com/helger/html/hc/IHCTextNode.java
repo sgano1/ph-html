@@ -16,39 +16,78 @@
  */
 package com.helger.html.hc;
 
+import javax.annotation.Nonnegative;
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.microdom.MicroText;
 
 /**
  * This class represents a text node.
  *
  * @author Philip Helger
+ * @param <IMPLTYPE>
+ *        Implementation type
  */
-public interface IHCTextNode extends IHCNode
+public interface IHCTextNode <IMPLTYPE extends IHCTextNode <IMPLTYPE>> extends IHCNode
 {
   /**
    * @return The unescaped text. Never <code>null</code>.
    */
+  @Nonnull
   String getText ();
 
-  IHCTextNode setText (@Nullable String sText);
+  @Nonnull
+  IMPLTYPE setText (@Nullable String sText);
 
-  IHCTextNode setText (char [] aChars);
+  @Nonnull
+  default IMPLTYPE setText (@Nonnull final char [] aChars)
+  {
+    ValueEnforcer.notNull (aChars, "Chars");
+    return setText (new String (aChars));
+  }
 
-  IHCTextNode setText (char [] aChars, int nOfs, int nLen);
+  @Nonnull
+  default IMPLTYPE setText (@Nonnull final char [] aChars, @Nonnegative final int nOfs, @Nonnegative final int nLen)
+  {
+    ValueEnforcer.notNull (aChars, "Chars");
+    return setText (new String (aChars, nOfs, nLen));
+  }
 
-  IHCTextNode prependText (@Nullable String sText);
+  @Nonnull
+  IMPLTYPE prependText (@Nullable String sText);
 
-  IHCTextNode prependText (char [] aChars);
+  @Nonnull
+  default IMPLTYPE prependText (@Nonnull final char [] aChars)
+  {
+    ValueEnforcer.notNull (aChars, "Chars");
+    return prependText (new String (aChars));
+  }
 
-  IHCTextNode prependText (char [] aChars, int nOfs, int nLen);
+  @Nonnull
+  default IMPLTYPE prependText (@Nonnull final char [] aChars, @Nonnegative final int nOfs, @Nonnegative final int nLen)
+  {
+    ValueEnforcer.notNull (aChars, "Chars");
+    return prependText (new String (aChars, nOfs, nLen));
+  }
 
-  IHCTextNode appendText (@Nullable String sText);
+  @Nonnull
+  IMPLTYPE appendText (@Nullable String sText);
 
-  IHCTextNode appendText (char [] aChars);
+  @Nonnull
+  default IMPLTYPE appendText (@Nonnull final char [] aChars)
+  {
+    ValueEnforcer.notNull (aChars, "Chars");
+    return appendText (new String (aChars));
+  }
 
-  IHCTextNode appendText (char [] aChars, int nOfs, int nLen);
+  @Nonnull
+  default IMPLTYPE appendText (@Nonnull final char [] aChars, @Nonnegative final int nOfs, @Nonnegative final int nLen)
+  {
+    ValueEnforcer.notNull (aChars, "Chars");
+    return appendText (new String (aChars, nOfs, nLen));
+  }
 
   /**
    * Enable or disable XML escaping in the final document. By default all text
@@ -60,7 +99,8 @@ public interface IHCTextNode extends IHCNode
    *        to disable it
    * @return this
    */
-  IHCTextNode setEscape (boolean bEscape);
+  @Nonnull
+  IMPLTYPE setEscape (boolean bEscape);
 
   /**
    * @return <code>true</code> if XML escaping is enabled, <code>false</code> if

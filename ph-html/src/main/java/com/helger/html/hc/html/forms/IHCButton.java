@@ -19,12 +19,15 @@ package com.helger.html.hc.html.forms;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.helger.commons.mime.CMimeType;
 import com.helger.commons.mime.IMimeType;
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.hc.IHCHasName;
+import com.helger.html.hc.html.FakeJS;
 import com.helger.html.hc.html.HC_Target;
 import com.helger.html.hc.html.IHCElementWithChildren;
 import com.helger.html.hc.html.IHCHasState;
+import com.helger.html.js.EJSEvent;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.IHasJSCodeWithSettings;
 
@@ -65,7 +68,10 @@ public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setFormEncTypeFileUpload ();
+  default THISTYPE setFormEncTypeFileUpload ()
+  {
+    return setFormEncType (CMimeType.MULTIPART_FORMDATA);
+  }
 
   /**
    * Set the enctype to text/plain
@@ -73,7 +79,10 @@ public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setFormEncTypeTextPlain ();
+  default THISTYPE setFormEncTypeTextPlain ()
+  {
+    return setFormEncType (CMimeType.TEXT_PLAIN);
+  }
 
   @Nonnull
   THISTYPE setFormEncType (@Nullable IMimeType aFormEncType);
@@ -93,7 +102,10 @@ public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends
   HC_Target getFormTarget ();
 
   @Nonnull
-  THISTYPE setFormTargetBlank ();
+  default THISTYPE setFormTargetBlank ()
+  {
+    return setFormTarget (HC_Target.BLANK);
+  }
 
   @Nonnull
   THISTYPE setFormTarget (@Nullable HC_Target aFormTarget);
@@ -139,7 +151,10 @@ public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setOnClick (@Nullable IHasJSCode aOnClick);
+  default THISTYPE setOnClick (@Nullable final IHasJSCode aOnClick)
+  {
+    return setEventHandler (EJSEvent.CLICK, aOnClick);
+  }
 
   /**
    * Shortcut for <code>setOnClick(JSHtml.windowLocationHref (aURL))</code>
@@ -149,7 +164,10 @@ public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setOnClick (@Nonnull ISimpleURL aURL);
+  default THISTYPE setOnClick (@Nonnull final ISimpleURL aURL)
+  {
+    return setOnClick (FakeJS.windowLocationHref (aURL));
+  }
 
   /**
    * Shortcut for <code>addEventHandler(EJSEvent.ONCLICK, aOnClick)</code>
@@ -159,7 +177,10 @@ public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE addOnClick (@Nullable IHasJSCode aOnClick);
+  default THISTYPE addOnClick (@Nullable final IHasJSCode aOnClick)
+  {
+    return addEventHandler (EJSEvent.CLICK, aOnClick);
+  }
 
   /**
    * Shortcut for <code>addOnClick(JSHtml.windowLocationHref (aURL))</code>
@@ -169,5 +190,9 @@ public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE addOnClick (@Nonnull ISimpleURL aURL);
+  default THISTYPE addOnClick (@Nonnull final ISimpleURL aURL)
+  {
+    return addOnClick (FakeJS.windowLocationHref (aURL));
+  }
+
 }

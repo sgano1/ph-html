@@ -20,10 +20,10 @@ package com.helger.html.hc;
  * Marker interface for node lists
  *
  * @author Philip Helger
- * @param <THISTYPE>
+ * @param <IMPLTYPE>
  *        Implementation type
  */
-public interface IHCNodeList <THISTYPE extends IHCNodeList <THISTYPE>> extends IHCNodeWithChildren <THISTYPE>
+public interface IHCNodeList <IMPLTYPE extends IHCNodeList <IMPLTYPE>> extends IHCNodeWithChildren <IMPLTYPE>
 {
   /* empty */
 }

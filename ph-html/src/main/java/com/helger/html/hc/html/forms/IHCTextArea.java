@@ -37,7 +37,10 @@ public interface IHCTextArea <THISTYPE extends IHCTextArea <THISTYPE>> extends I
   boolean isAutoCompleteUndefined ();
 
   @Nonnull
-  THISTYPE setAutoComplete (boolean bAutoComplete);
+  default THISTYPE setAutoComplete (final boolean bAutoComplete)
+  {
+    return setAutoComplete (ETriState.valueOf (bAutoComplete));
+  }
 
   @Nonnull
   THISTYPE setAutoComplete (@Nonnull ETriState eAutoComplete);

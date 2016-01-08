@@ -23,15 +23,15 @@ import com.helger.html.hc.IHCNode;
  * Interface for elements having children of a certain type.
  *
  * @author Philip Helger
- * @param <THISTYPE>
+ * @param <IMPLTYPE>
  *        Implementation type
  * @param <CHILDTYPE>
  *        Contained child type
  */
-public interface IHCElementWithInternalChildren <THISTYPE extends IHCElementWithInternalChildren <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode>
+public interface IHCElementWithInternalChildren <IMPLTYPE extends IHCElementWithInternalChildren <IMPLTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode>
                                                 extends
-                                                IHCElement <THISTYPE>,
-                                                IHCHasChildrenMutable <THISTYPE, CHILDTYPE>
+                                                IHCElement <IMPLTYPE>,
+                                                IHCHasChildrenMutable <IMPLTYPE, CHILDTYPE>
 {
   /** empty */
 }

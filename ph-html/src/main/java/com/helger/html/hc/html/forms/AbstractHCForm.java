@@ -22,7 +22,6 @@ import javax.annotation.Nullable;
 import com.helger.commons.CGlobal;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.microdom.IMicroElement;
-import com.helger.commons.mime.CMimeType;
 import com.helger.commons.mime.IMimeType;
 import com.helger.commons.state.ETriState;
 import com.helger.commons.string.StringHelper;
@@ -168,12 +167,6 @@ public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>
   }
 
   @Nonnull
-  public final THISTYPE setAutoComplete (final boolean bAutoComplete)
-  {
-    return setAutoComplete (ETriState.valueOf (bAutoComplete));
-  }
-
-  @Nonnull
   public final THISTYPE setAutoComplete (@Nonnull final ETriState eAutoComplete)
   {
     m_eAutoComplete = ValueEnforcer.notNull (eAutoComplete, "AutoComplete");
@@ -184,28 +177,6 @@ public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>
   public IMimeType getEncType ()
   {
     return m_aEncType;
-  }
-
-  /**
-   * Make this form a file-upload form.
-   *
-   * @return this
-   */
-  @Nonnull
-  public THISTYPE setEncTypeFileUpload ()
-  {
-    return setEncType (CMimeType.MULTIPART_FORMDATA);
-  }
-
-  /**
-   * Set the enctype to text/plain
-   *
-   * @return this
-   */
-  @Nonnull
-  public THISTYPE setEncTypeTextPlain ()
-  {
-    return setEncType (CMimeType.TEXT_PLAIN);
   }
 
   @Nonnull
@@ -274,12 +245,6 @@ public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>
   public final int getSubmitButtonTabIndex ()
   {
     return m_nSubmitButtonTabIndex;
-  }
-
-  @Nonnull
-  public final THISTYPE setSubmitPressingEnter (final boolean bSubmitPressingEnter)
-  {
-    return setSubmitPressingEnter (bSubmitPressingEnter, CGlobal.ILLEGAL_UINT);
   }
 
   @Nonnull

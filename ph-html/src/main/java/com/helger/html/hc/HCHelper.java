@@ -46,22 +46,17 @@ public final class HCHelper
     if (aStartNode == null)
       return false;
 
-    if (aStartNode instanceof IHCTextNode)
+    if (aStartNode instanceof IHCTextNode <?>)
       return true;
 
     final MutableBoolean ret = new MutableBoolean (false);
-    iterateChildren (aStartNode, new IHCIteratorCallback ()
-    {
-      @Nullable
-      public EFinish call (@Nullable final IHCNode aParentNode, @Nonnull final IHCNode aChildNode)
+    iterateChildren (aStartNode, (aParentNode, aChildNode) -> {
+      if (aChildNode instanceof IHCTextNode <?>)
       {
-        if (aChildNode instanceof IHCTextNode)
-        {
-          ret.set (true);
-          return EFinish.FINISHED;
-        }
-        return EFinish.UNFINISHED;
+        ret.set (true);
+        return EFinish.FINISHED;
       }
+      return EFinish.UNFINISHED;
     });
     return ret.booleanValue ();
   }

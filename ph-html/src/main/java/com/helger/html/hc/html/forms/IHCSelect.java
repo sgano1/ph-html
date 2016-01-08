@@ -83,7 +83,7 @@ public interface IHCSelect <THISTYPE extends IHCSelect <THISTYPE>> extends IHCCo
   HCOption addOption (@Nullable String sValue, @Nullable String sText, @Nullable String sSelectedValue);
 
   @Nonnull
-  HCOption addOptionAtIndex (final int nIndex, String sValue, String sText);
+  HCOption addOptionAtIndex (@Nonnegative final int nIndex, @Nullable String sValue, @Nullable String sText);
 
   @Nonnull
   THISTYPE addOptionGroup (@Nullable HCOptGroup aOptGroup);

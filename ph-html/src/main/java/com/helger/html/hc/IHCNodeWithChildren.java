@@ -26,11 +26,11 @@ import com.helger.commons.annotation.DevelopersNote;
  * Special node interface for objects containing other objects
  *
  * @author Philip Helger
- * @param <THISTYPE>
+ * @param <IMPLTYPE>
  *        The type of the contained child objects.
  */
-public interface IHCNodeWithChildren <THISTYPE extends IHCNodeWithChildren <THISTYPE>>
-                                     extends IHCHasChildrenMutable <THISTYPE, IHCNode>
+public interface IHCNodeWithChildren <IMPLTYPE extends IHCNodeWithChildren <IMPLTYPE>>
+                                     extends IHCHasChildrenMutable <IMPLTYPE, IHCNode>
 {
   /**
    * @param sText
@@ -38,7 +38,7 @@ public interface IHCNodeWithChildren <THISTYPE extends IHCNodeWithChildren <THIS
    * @return this
    */
   @Nonnull
-  THISTYPE addChild (@Nullable String sText);
+  IMPLTYPE addChild (@Nullable String sText);
 
   /**
    * @param nIndex
@@ -48,7 +48,7 @@ public interface IHCNodeWithChildren <THISTYPE extends IHCNodeWithChildren <THIS
    * @return this
    */
   @Nonnull
-  THISTYPE addChild (@Nonnegative int nIndex, @Nullable String sText);
+  IMPLTYPE addChild (@Nonnegative int nIndex, @Nullable String sText);
 
   /**
    * Use {@link #addChild(String)} instead
@@ -60,7 +60,7 @@ public interface IHCNodeWithChildren <THISTYPE extends IHCNodeWithChildren <THIS
   @Nonnull
   @DevelopersNote ("Use addChild instead")
   @Deprecated
-  default THISTYPE addChildren (@Nullable final String sChild)
+  default IMPLTYPE addChildren (@Nullable final String sChild)
   {
     return addChild (sChild);
   }
@@ -71,5 +71,5 @@ public interface IHCNodeWithChildren <THISTYPE extends IHCNodeWithChildren <THIS
    * @return this
    */
   @Nonnull
-  THISTYPE addChildren (@Nullable String... aChildren);
+  IMPLTYPE addChildren (@Nullable String... aChildren);
 }

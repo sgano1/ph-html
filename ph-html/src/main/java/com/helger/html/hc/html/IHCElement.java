@@ -39,14 +39,14 @@ import com.helger.html.js.JSEventMap;
  * Base interface for an HC element
  *
  * @author Philip Helger
- * @param <THISTYPE>
+ * @param <IMPLTYPE>
  *        The implementation type
  */
-public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
+public interface IHCElement <IMPLTYPE extends IHCElement <IMPLTYPE>> extends
                             IHCNode,
-                            IHCHasID <THISTYPE>,
-                            IHCHasCSSStyles <THISTYPE>,
-                            IHCHasCSSClasses <THISTYPE>
+                            IHCHasID <IMPLTYPE>,
+                            IHCHasCSSStyles <IMPLTYPE>,
+                            IHCHasCSSClasses <IMPLTYPE>
 {
   /** The default value for an unset tab index, as -1 is used for "none" */
   public static final long DEFAULT_TABINDEX = -5l;
@@ -79,7 +79,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setTitle (String sTitle);
+  IMPLTYPE setTitle (String sTitle);
 
   /**
    * @return The value of the HTML <code>dir</code> attribute. May be
@@ -96,7 +96,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setDirection (@Nullable EHCTextDirection eDirection);
+  IMPLTYPE setDirection (@Nullable EHCTextDirection eDirection);
 
   /**
    * @return The value of the HTML <code>lang</code> attribute. May be
@@ -113,7 +113,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setLanguage (@Nullable String sLanguage);
+  IMPLTYPE setLanguage (@Nullable String sLanguage);
 
   @Nullable
   @ReturnsMutableObject ("design")
@@ -150,7 +150,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this.
    */
   @Nonnull
-  THISTYPE addEventHandler (@Nonnull EJSEvent eJSEvent, @Nullable IHasJSCode aJSHandler);
+  IMPLTYPE addEventHandler (@Nonnull EJSEvent eJSEvent, @Nullable IHasJSCode aJSHandler);
 
   /**
    * Add a JS event handler at the front.
@@ -163,7 +163,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this.
    */
   @Nonnull
-  THISTYPE prependEventHandler (@Nonnull EJSEvent eJSEvent, @Nullable IHasJSCode aJSHandler);
+  IMPLTYPE prependEventHandler (@Nonnull EJSEvent eJSEvent, @Nullable IHasJSCode aJSHandler);
 
   /**
    * Set a JS event handler. All eventually present event handlers are
@@ -178,7 +178,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this.
    */
   @Nonnull
-  THISTYPE setEventHandler (@Nonnull EJSEvent eJSEvent, @Nullable IHasJSCode aJSHandler);
+  IMPLTYPE setEventHandler (@Nonnull EJSEvent eJSEvent, @Nullable IHasJSCode aJSHandler);
 
   /**
    * Remove all event handler for the specified JS event.
@@ -188,7 +188,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE removeAllEventHandler (@Nullable EJSEvent eJSEvent);
+  IMPLTYPE removeAllEventHandler (@Nullable EJSEvent eJSEvent);
 
   /**
    * @return <code>true</code> if this element cannot be focused.
@@ -204,7 +204,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setUnfocusable (boolean bUnfocusable);
+  IMPLTYPE setUnfocusable (boolean bUnfocusable);
 
   /**
    * @return <code>true</code> if this is hidden
@@ -218,7 +218,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    *        <code>true</code> if it is hidden, <code>false</code> otherwise
    * @return this
    */
-  THISTYPE setHidden (boolean bHidden);
+  IMPLTYPE setHidden (boolean bHidden);
 
   /**
    * @return The tab index of this object. The semantics of negative values
@@ -240,7 +240,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setTabIndex (long nTabIndex);
+  IMPLTYPE setTabIndex (long nTabIndex);
 
   /**
    * @return The value of the HTML <code>accesskey</code> attribute. May be
@@ -257,7 +257,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setAccessKey (@Nullable String sAccessKey);
+  IMPLTYPE setAccessKey (@Nullable String sAccessKey);
 
   /**
    * @return the draggable state. May be <code>null</code>.
@@ -273,7 +273,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setDraggable (@Nullable EHCDraggable eDraggable);
+  IMPLTYPE setDraggable (@Nullable EHCDraggable eDraggable);
 
   /**
    * @return The drop zone value. May be <code>null</code>.
@@ -289,7 +289,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setDropZone (@Nullable EHCDropZone eDropZone);
+  IMPLTYPE setDropZone (@Nullable EHCDropZone eDropZone);
 
   /**
    * @return <code>true</code> if HTML <code>translate</code> is
@@ -323,7 +323,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setTranslate (boolean bTranslate);
+  IMPLTYPE setTranslate (boolean bTranslate);
 
   /**
    * Set the value of the HTML <code>translate</code> attribute.
@@ -333,7 +333,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setTranslate (@Nonnull ETriState eTranslate);
+  IMPLTYPE setTranslate (@Nonnull ETriState eTranslate);
 
   /**
    * @return The current state of content editable
@@ -349,7 +349,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setContentEditable (@Nullable EHCContentEditable eContentEditable);
+  IMPLTYPE setContentEditable (@Nullable EHCContentEditable eContentEditable);
 
   /**
    * @return The ID of the <code>menu</code> element that should be used as the
@@ -367,7 +367,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setContextMenu (@Nullable String sContextMenu);
+  IMPLTYPE setContextMenu (@Nullable String sContextMenu);
 
   /**
    * @return <code>true</code> if spell check is enabled, <code>false</code>
@@ -383,7 +383,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setSpellCheck (boolean bSpellCheck);
+  IMPLTYPE setSpellCheck (boolean bSpellCheck);
 
   /**
    * @return The role of this element. May be <code>null</code>. By default an
@@ -401,7 +401,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setRole (@Nullable EHTMLRole eRole);
+  IMPLTYPE setRole (@Nullable EHTMLRole eRole);
 
   /**
    * @return <code>true</code> if at least one custom attribute is contained
@@ -451,7 +451,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setCustomAttr (@Nullable String sName, int nValue);
+  IMPLTYPE setCustomAttr (@Nullable String sName, int nValue);
 
   /**
    * Set a custom attribute that is serialized as is.
@@ -464,7 +464,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setCustomAttr (@Nullable String sName, long nValue);
+  IMPLTYPE setCustomAttr (@Nullable String sName, long nValue);
 
   /**
    * Set a custom attribute that is serialized as is.
@@ -478,7 +478,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setCustomAttr (@Nullable String sName, @Nullable String sValue);
+  IMPLTYPE setCustomAttr (@Nullable String sName, @Nullable String sValue);
 
   /**
    * Remove the custom attribute with the specified name
@@ -488,7 +488,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE removeCustomAttr (@Nullable String sName);
+  IMPLTYPE removeCustomAttr (@Nullable String sName);
 
   /**
    * @return <code>true</code> if at least one data attribute is contained
@@ -535,7 +535,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setDataAttr (@Nullable String sName, int nValue);
+  IMPLTYPE setDataAttr (@Nullable String sName, int nValue);
 
   /**
    * Set a data attribute that is serialized as is. Shortcut for
@@ -549,7 +549,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setDataAttr (@Nullable String sName, long nValue);
+  IMPLTYPE setDataAttr (@Nullable String sName, long nValue);
 
   /**
    * Set a data attribute that is serialized as is. Shortcut for
@@ -564,7 +564,7 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE setDataAttr (@Nullable String sName, @Nullable String sValue);
+  IMPLTYPE setDataAttr (@Nullable String sName, @Nullable String sValue);
 
   /**
    * Remove the data attribute with the specified name. Shortcut for
@@ -575,5 +575,5 @@ public interface IHCElement <THISTYPE extends IHCElement <THISTYPE>> extends
    * @return this
    */
   @Nonnull
-  THISTYPE removeDataAttr (@Nullable String sName);
+  IMPLTYPE removeDataAttr (@Nullable String sName);
 }

@@ -24,7 +24,6 @@ import javax.annotation.concurrent.NotThreadSafe;
 import com.helger.commons.CGlobal;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.microdom.IMicroElement;
-import com.helger.commons.mime.CMimeType;
 import com.helger.commons.mime.IMimeType;
 import com.helger.commons.state.ETriState;
 import com.helger.commons.string.StringHelper;
@@ -170,12 +169,6 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   }
 
   @Nonnull
-  public final IMPLTYPE setAutoComplete (final boolean bAutoComplete)
-  {
-    return setAutoComplete (ETriState.valueOf (bAutoComplete));
-  }
-
-  @Nonnull
   public final IMPLTYPE setAutoComplete (@Nonnull final ETriState eAutoComplete)
   {
     m_eAutoComplete = ValueEnforcer.notNull (eAutoComplete, "AutoComplete");
@@ -261,18 +254,6 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   }
 
   @Nonnull
-  public IMPLTYPE setFormEncTypeFileUpload ()
-  {
-    return setFormEncType (CMimeType.MULTIPART_FORMDATA);
-  }
-
-  @Nonnull
-  public IMPLTYPE setFormEncTypeTextPlain ()
-  {
-    return setFormEncType (CMimeType.TEXT_PLAIN);
-  }
-
-  @Nonnull
   public IMPLTYPE setFormEncType (@Nullable final IMimeType aFormEncType)
   {
     m_aFormEncType = aFormEncType;
@@ -308,12 +289,6 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   public final HC_Target getFormTarget ()
   {
     return m_aFormTarget;
-  }
-
-  @Nonnull
-  public final IMPLTYPE setFormTargetBlank ()
-  {
-    return setFormTarget (HC_Target.BLANK);
   }
 
   @Nonnull
@@ -496,18 +471,6 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   public final String getValue ()
   {
     return m_sValue;
-  }
-
-  @Nonnull
-  public final IMPLTYPE setValue (final int nValue)
-  {
-    return setValue (Integer.toString (nValue));
-  }
-
-  @Nonnull
-  public final IMPLTYPE setValue (final long nValue)
-  {
-    return setValue (Long.toString (nValue));
   }
 
   @Nonnull

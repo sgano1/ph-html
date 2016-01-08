@@ -33,7 +33,6 @@ import com.helger.html.hc.IHCConversionSettings;
 import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hc.IHCCustomizer;
 import com.helger.html.hc.IHCHasChildrenMutable;
-import com.helger.html.hc.IHCIteratorCallback;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.html.root.HCHtml;
@@ -110,6 +109,7 @@ public final class HCRenderer
    * @param aConversionSettings
    *        The conversion settings to use. May not be <code>null</code>.
    */
+  @SuppressWarnings ("unchecked")
   public static void prepareForConversion (@Nonnull final IHCNode aStartNode,
                                            @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aGlobalTargetNode,
                                            @Nonnull final IHCConversionSettingsToNode aConversionSettings)
@@ -124,46 +124,43 @@ public final class HCRenderer
     // Customize all elements before extracting out-of-band nodes, in case the
     // customizer adds some out-of-band nodes as well
     // Than finalize and register external resources
-    HCHelper.iterateTree (aStartNode, new IHCIteratorCallback ()
-    {
-      @SuppressWarnings ("unchecked")
-      @Nonnull
-      public EFinish call (@Nullable final IHCNode aParentNode, @Nonnull final IHCNode aChildNode)
+    HCHelper.iterateTree (aStartNode, (aParentNode, aChildNode) -> {
+      // If the parent node is suitable, use it, else use the global target
+      // node
+      IHCHasChildrenMutable <?, ? super IHCNode> aRealTargetNode;
+      if (aParentNode instanceof IHCHasChildrenMutable <?, ?>)
       {
-        // If the parent node is suitable, use it, else use the global target
-        // node
-        IHCHasChildrenMutable <?, ? super IHCNode> aRealTargetNode;
-        if (aParentNode instanceof IHCHasChildrenMutable <?, ?>)
-          aRealTargetNode = (IHCHasChildrenMutable <?, IHCNode>) aParentNode;
-        else
-          aRealTargetNode = aGlobalTargetNode;
-
-        final int nTargetNodeChildren = aRealTargetNode.getChildCount ();
-
-        // Run the global customizer
-        aChildNode.customizeNode (aCustomizer, eHTMLVersion, aRealTargetNode);
-
-        // finalize the node
-        aChildNode.finalizeNodeState (aConversionSettings, aRealTargetNode);
-
-        // Consistency check
-        aChildNode.consistencyCheck (aConversionSettings);
-
-        // No forced registration here
-        final boolean bForcedResourceRegistration = false;
-        aChildNode.registerExternalResources (aConversionSettings, bForcedResourceRegistration);
-
-        // Something was added?
-        if (aRealTargetNode.getChildCount () > nTargetNodeChildren)
-        {
-          // Recursive call on the target node only.
-          // It's important to scan the whole tree, as a hierarchy of nodes may
-          // have been added!
-          prepareForConversion (aRealTargetNode, aRealTargetNode, aConversionSettings);
-        }
-
-        return EFinish.UNFINISHED;
+        // Unchecked conversion
+        aRealTargetNode = (IHCHasChildrenMutable <?, IHCNode>) aParentNode;
       }
+      else
+        aRealTargetNode = aGlobalTargetNode;
+
+      final int nTargetNodeChildren = aRealTargetNode.getChildCount ();
+
+      // Run the global customizer
+      aChildNode.customizeNode (aCustomizer, eHTMLVersion, aRealTargetNode);
+
+      // finalize the node
+      aChildNode.finalizeNodeState (aConversionSettings, aRealTargetNode);
+
+      // Consistency check
+      aChildNode.consistencyCheck (aConversionSettings);
+
+      // No forced registration here
+      final boolean bForcedResourceRegistration = false;
+      aChildNode.registerExternalResources (aConversionSettings, bForcedResourceRegistration);
+
+      // Something was added?
+      if (aRealTargetNode.getChildCount () > nTargetNodeChildren)
+      {
+        // Recursive call on the target node only.
+        // It's important to scan the whole tree, as a hierarchy of nodes may
+        // have been added!
+        prepareForConversion (aRealTargetNode, aRealTargetNode, aConversionSettings);
+      }
+
+      return EFinish.UNFINISHED;
     });
   }
 

@@ -22,7 +22,6 @@ import java.util.Set;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotation.DevelopersNote;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.string.StringHelper;
@@ -58,14 +57,6 @@ public class HCHasCSSClasses implements IHCHasCSSClasses <HCHasCSSClasses>
       m_aCSSClassProviders.add (aCSSClassProvider);
     }
     return this;
-  }
-
-  @Deprecated
-  @Nonnull
-  @DevelopersNote ("Use addClass instead")
-  public HCHasCSSClasses addClasses (@Nullable final ICSSClassProvider aCSSClassProvider)
-  {
-    return addClass (aCSSClassProvider);
   }
 
   @Nonnull

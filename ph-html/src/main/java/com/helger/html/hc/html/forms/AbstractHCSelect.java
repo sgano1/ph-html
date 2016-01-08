@@ -167,7 +167,7 @@ public abstract class AbstractHCSelect <THISTYPE extends AbstractHCSelect <THIST
 
     // Ensure list is present
     if (m_aOptions == null)
-      m_aOptions = new ArrayList <IHCNode> ();
+      m_aOptions = new ArrayList <> ();
 
     // Handle preselection (if no manual selection state was defined so far)
     if (!aOption.isSelectionDefined ())
@@ -212,7 +212,9 @@ public abstract class AbstractHCSelect <THISTYPE extends AbstractHCSelect <THIST
   }
 
   @Nonnull
-  public final HCOption addOptionAtIndex (final int nIndex, final String sValue, final String sText)
+  public final HCOption addOptionAtIndex (@Nonnegative final int nIndex,
+                                          @Nullable final String sValue,
+                                          @Nullable final String sText)
   {
     final HCOption aOption = new HCOption ().setValue (sValue).addChild (HCTextNode.createOnDemand (sText));
     return addOptionAtIndex (nIndex, aOption);

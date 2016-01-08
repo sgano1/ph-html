@@ -27,6 +27,7 @@ import com.helger.commons.state.EFinish;
  *
  * @author Philip Helger
  */
+@FunctionalInterface
 public interface IHCIteratorCallback extends ICallback
 {
   /**

@@ -20,7 +20,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.annotation.OverridingMethodsMustInvokeSuper;
 
 import com.helger.commons.annotation.OverrideOnDemand;
@@ -31,8 +30,6 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.hc.HCHelper;
 import com.helger.html.hc.IHCConversionSettingsToNode;
 import com.helger.html.hc.IHCHasID;
-import com.helger.html.hc.IHCIteratorCallback;
-import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.hc.html.AbstractHCElementWithChildren;
 
@@ -54,24 +51,19 @@ public class HCBody extends AbstractHCElementWithChildren <HCBody>
     super.onConsistencyCheck (aConversionSettings);
 
     final Set <String> aUsedIDs = new HashSet <String> ();
-    HCHelper.iterateTree (this, new IHCIteratorCallback ()
-    {
-      @Nonnull
-      public EFinish call (@Nullable final IHCNode aParentNode, @Nonnull final IHCNode aChildNode)
+    HCHelper.iterateTree (this, (aParentNode, aChildNode) -> {
+      if (aChildNode instanceof IHCHasID <?>)
       {
-        if (aChildNode instanceof IHCHasID <?>)
+        final IHCHasID <?> aElement = (IHCHasID <?>) aChildNode;
+        final String sID = aElement.getID ();
+        if (StringHelper.hasText (sID) && !aUsedIDs.add (sID))
         {
-          final IHCHasID <?> aElement = (IHCHasID <?>) aChildNode;
-          final String sID = aElement.getID ();
-          if (StringHelper.hasText (sID) && !aUsedIDs.add (sID))
-          {
-            HCConsistencyChecker.consistencyError ("The ID '" +
-                                                   sID +
-                                                   "' is used more than once within a single HTML page!");
-          }
+          HCConsistencyChecker.consistencyError ("The ID '" +
+                                                 sID +
+                                                 "' is used more than once within a single HTML page!");
         }
-        return EFinish.UNFINISHED;
       }
+      return EFinish.UNFINISHED;
     });
   }
 

@@ -32,7 +32,6 @@ import javax.annotation.concurrent.NotThreadSafe;
 import javax.xml.XMLConstants;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotation.DevelopersNote;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.annotation.ReturnsMutableCopy;
@@ -248,14 +247,6 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
     return thisAsT ();
   }
 
-  @Deprecated
-  @DevelopersNote ("Use addClass - singular")
-  @Nonnull
-  public final THISTYPE addClasses (@Nullable final ICSSClassProvider aCSSClassProvider)
-  {
-    return addClass (aCSSClassProvider);
-  }
-
   @Nonnull
   public final THISTYPE addClasses (@Nullable final ICSSClassProvider... aCSSClassProviders)
   {
@@ -393,14 +384,6 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
       m_aStyles.put (aValue.getProp (), aValue);
     }
     return thisAsT ();
-  }
-
-  @Nonnull
-  @DevelopersNote ("Use addStyle - singular")
-  @Deprecated
-  public final THISTYPE addStyles (@Nullable final ICSSValue aValue)
-  {
-    return addStyle (aValue);
   }
 
   @Nonnull

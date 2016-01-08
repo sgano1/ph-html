@@ -29,18 +29,21 @@ import com.helger.html.css.ICSSClassProvider;
  * Base interface for objects having CSS classes
  *
  * @author Philip Helger
- * @param <THISTYPE>
+ * @param <IMPLTYPE>
  *        Implementation type
  */
-public interface IHCHasCSSClasses <THISTYPE extends IHCHasCSSClasses <THISTYPE>>
+public interface IHCHasCSSClasses <IMPLTYPE extends IHCHasCSSClasses <IMPLTYPE>>
 {
   @Nonnull
-  THISTYPE addClass (@Nullable ICSSClassProvider aProvider);
+  IMPLTYPE addClass (@Nullable ICSSClassProvider aProvider);
 
   @Deprecated
   @DevelopersNote ("Use addClass instead!")
   @Nonnull
-  THISTYPE addClasses (@Nullable ICSSClassProvider aProvider);
+  default IMPLTYPE addClasses (@Nullable final ICSSClassProvider aProvider)
+  {
+    return addClass (aProvider);
+  }
 
   /**
    * Add multiple unique CSS classes at once. Each CSS class that is already
@@ -51,7 +54,7 @@ public interface IHCHasCSSClasses <THISTYPE extends IHCHasCSSClasses <THISTYPE>>
    * @return this
    */
   @Nonnull
-  THISTYPE addClasses (@Nullable ICSSClassProvider... aProviders);
+  IMPLTYPE addClasses (@Nullable ICSSClassProvider... aProviders);
 
   /**
    * Add multiple unique CSS classes at once. Each CSS class that is already
@@ -62,7 +65,7 @@ public interface IHCHasCSSClasses <THISTYPE extends IHCHasCSSClasses <THISTYPE>>
    * @return this
    */
   @Nonnull
-  THISTYPE addClasses (@Nullable Iterable <? extends ICSSClassProvider> aProviders);
+  IMPLTYPE addClasses (@Nullable Iterable <? extends ICSSClassProvider> aProviders);
 
   /**
    * Remove the specified CSS class if present.
@@ -72,7 +75,7 @@ public interface IHCHasCSSClasses <THISTYPE extends IHCHasCSSClasses <THISTYPE>>
    * @return this
    */
   @Nonnull
-  THISTYPE removeClass (@Nullable ICSSClassProvider aProvider);
+  IMPLTYPE removeClass (@Nullable ICSSClassProvider aProvider);
 
   /**
    * Remove all previously added CSS classes at once.
@@ -80,7 +83,7 @@ public interface IHCHasCSSClasses <THISTYPE extends IHCHasCSSClasses <THISTYPE>>
    * @return this
    */
   @Nonnull
-  THISTYPE removeAllClasses ();
+  IMPLTYPE removeAllClasses ();
 
   /**
    * Check if the passed CSS class is present or not.

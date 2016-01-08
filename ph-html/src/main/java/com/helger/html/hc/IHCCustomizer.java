@@ -28,6 +28,7 @@ import com.helger.html.EHTMLVersion;
  * @author Philip Helger
  */
 @MustImplementEqualsAndHashcode
+@FunctionalInterface
 public interface IHCCustomizer
 {
   /**

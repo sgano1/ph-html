@@ -22,7 +22,7 @@ import javax.annotation.Nullable;
 import com.helger.html.annotation.SinceHTML5;
 
 @SinceHTML5
-public interface IHCHasMedia <THISTYPE extends IHCHasMedia <THISTYPE>>
+public interface IHCHasMedia <IMPLTYPE extends IHCHasMedia <IMPLTYPE>>
 {
   /**
    * @return The currently set media query. May be <code>null</code>.
@@ -38,5 +38,5 @@ public interface IHCHasMedia <THISTYPE extends IHCHasMedia <THISTYPE>>
    * @return this
    */
   @Nonnull
-  THISTYPE setMedia (String sMediaQuery);
+  IMPLTYPE setMedia (String sMediaQuery);
 }
