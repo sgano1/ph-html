@@ -12,6 +12,7 @@ Contained subprojects are:
 
 Versions <= 4.7.4 are compatible with ph-commons < 6.0.
 Versions >= 5.0.0 are compatible with ph-commons >= 6.0.
+Versions >= 6 require JDK 8. Please note that Java 1.8.0_31 has problems compiling the sources. Please update to a later version of the compiler. 
 
 #Maven usage
 Add the following to your pom.xml to use this artifact:
