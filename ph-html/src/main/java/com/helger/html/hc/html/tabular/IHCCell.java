@@ -24,7 +24,7 @@ import com.helger.html.hc.html.IHCElementWithChildren;
 
 /**
  * Base interface for a table cell.
- * 
+ *
  * @author Philip Helger
  * @param <THISTYPE>
  *        Implementation type

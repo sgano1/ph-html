@@ -18,20 +18,20 @@ package com.helger.html.js.tostring;
 
 /**
  * Basic JavaScript object types.
- * 
+ *
  * @author Philip Helger
  */
 enum EJSType
 {
- HTML,
- STRING,
- INT,
- DOUBLE,
- BOOLEAN,
- ARRAY,
- LIST,
- MAP,
- VOID,
- JS,
- JSON;
+  HTML,
+  STRING,
+  INT,
+  DOUBLE,
+  BOOLEAN,
+  ARRAY,
+  LIST,
+  MAP,
+  VOID,
+  JS,
+  JSON;
 }

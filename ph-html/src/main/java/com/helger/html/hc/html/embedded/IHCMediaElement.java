@@ -30,7 +30,8 @@ import com.helger.html.hc.html.IHCMediaElementChild;
  * @param <THISTYPE>
  *        Implementation type
  */
-public interface IHCMediaElement <THISTYPE extends IHCMediaElement <THISTYPE>> extends IHCElementWithInternalChildren <THISTYPE, IHCMediaElementChild <?>>
+public interface IHCMediaElement <THISTYPE extends IHCMediaElement <THISTYPE>>
+                                 extends IHCElementWithInternalChildren <THISTYPE, IHCMediaElementChild <?>>
 {
   boolean isAutoPlay ();
 

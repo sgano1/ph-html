@@ -20,7 +20,7 @@ import javax.annotation.concurrent.NotThreadSafe;
 
 /**
  * Default implementation of {@link IHCSpecialNodes}.
- * 
+ *
  * @author Philip Helger
  */
 @NotThreadSafe

@@ -24,7 +24,7 @@ import com.helger.commons.annotation.MustImplementEqualsAndHashcode;
 
 /**
  * Basic interface for object providing JavaScript code.
- * 
+ *
  * @author Philip Helger
  */
 @MustImplementEqualsAndHashcode

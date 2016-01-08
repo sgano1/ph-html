@@ -22,18 +22,19 @@ import com.helger.commons.annotation.Nonempty;
 import com.helger.html.hc.html.IHCHasHTMLAttributeValue;
 
 /**
- * An enumeration that can be used in {@link com.helger.html.hc.html.grouping.HCOL}
- * objects to define the used type.
- * 
+ * An enumeration that can be used in
+ * {@link com.helger.html.hc.html.grouping.HCOL} objects to define the used
+ * type.
+ *
  * @author Philip Helger
  */
 public enum EHCOLType implements IHCHasHTMLAttributeValue
 {
- NUMERIC ("1"),
- ALPHA_LOWERCASE ("a"),
- ALPHA_UPPERCASE ("A"),
- ROMAN_LOWERCASE ("i"),
- ROMAN_UPPERCASE ("I");
+  NUMERIC ("1"),
+  ALPHA_LOWERCASE ("a"),
+  ALPHA_UPPERCASE ("A"),
+  ROMAN_LOWERCASE ("i"),
+  ROMAN_UPPERCASE ("I");
 
   private final String m_sAttrValue;
 

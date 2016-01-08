@@ -26,7 +26,8 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
  * @param <THISTYPE>
  *        implementation type
  */
-public abstract class AbstractHCLI <THISTYPE extends AbstractHCLI <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCLI <THISTYPE>
+public abstract class AbstractHCLI <THISTYPE extends AbstractHCLI <THISTYPE>>
+                                   extends AbstractHCElementWithChildren <THISTYPE> implements IHCLI <THISTYPE>
 {
   /**
    * Create a new LI element

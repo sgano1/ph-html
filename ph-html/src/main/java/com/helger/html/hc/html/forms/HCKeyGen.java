@@ -31,7 +31,7 @@ import com.helger.html.hc.html.AbstractHCElement;
 import com.helger.html.hc.html.IHCHasState;
 
 @SinceHTML5
-public class HCKeyGen extends AbstractHCElement <HCKeyGen>implements IHCHasState <HCKeyGen>, IHCHasFocus <HCKeyGen>
+public class HCKeyGen extends AbstractHCElement <HCKeyGen> implements IHCHasState <HCKeyGen>, IHCHasFocus <HCKeyGen>
 {
   public static final boolean DEFAULT_AUTOFOCUS = false;
   public static final boolean DEFAULT_DISABLED = false;

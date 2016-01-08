@@ -23,29 +23,29 @@ package com.helger.html.markdown;
  */
 enum ELineType
 {
- /** Empty line. */
+  /** Empty line. */
   EMPTY,
- /** Undefined content. */
+  /** Undefined content. */
   OTHER,
- /** A markdown headline. */
+  /** A markdown headline. */
   HEADLINE,
- HEADLINE1,
- HEADLINE2,
- /** A code block line. */
+  HEADLINE1,
+  HEADLINE2,
+  /** A code block line. */
   CODE,
- /** A list. */
+  /** A list. */
   ULIST,
- OLIST,
- /** A block quote. */
+  OLIST,
+  /** A block quote. */
   BQUOTE,
- /** A horizontal ruler. */
+  /** A horizontal ruler. */
   HR,
- /** Start of a XML block. */
+  /** Start of a XML block. */
   XML,
- /** XML comment. */
+  /** XML comment. */
   XML_COMMENT,
- /** Fenced code block start/end */
+  /** Fenced code block start/end */
   FENCED_CODE,
- /** plugin block */
+  /** plugin block */
   PLUGIN
 }

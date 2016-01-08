@@ -20,7 +20,7 @@ import javax.annotation.Nonnull;
 
 /**
  * Program elements that can have JSDoc
- * 
+ *
  * @author Philip Helger
  */
 public interface IJSDocCommentable

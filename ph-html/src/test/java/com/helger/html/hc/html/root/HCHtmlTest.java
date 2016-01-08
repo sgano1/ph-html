@@ -25,7 +25,6 @@ import com.helger.css.media.ECSSMedium;
 import com.helger.html.hc.config.HCSettings;
 import com.helger.html.hc.html.metadata.HCMeta;
 import com.helger.html.hc.html.metadata.HCStyle;
-import com.helger.html.hc.html.root.HCHtml;
 import com.helger.html.hc.html.script.HCScriptInlineOnDocumentReady;
 import com.helger.html.hc.html.sections.HCH1;
 import com.helger.html.hc.mock.HCTestRuleOptimized;

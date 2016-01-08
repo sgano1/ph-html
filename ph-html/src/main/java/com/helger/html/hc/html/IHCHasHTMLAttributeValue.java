@@ -20,7 +20,7 @@ import com.helger.commons.microdom.IHasAttributeValue;
 
 /**
  * Base interface for an HTML attribute value provider.
- * 
+ *
  * @author Philip Helger
  */
 public interface IHCHasHTMLAttributeValue extends IHasAttributeValue

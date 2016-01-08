@@ -22,7 +22,7 @@ import javax.annotation.Nonnull;
  * Marker interface for code components that can be placed to the left of '=' in
  * an assignment. A left hand value can always be a right hand value, so this
  * interface derives from {@link IJSExpression}.
- * 
+ *
  * @author Philip Helger
  */
 public interface IJSAssignmentTarget extends IJSExpression

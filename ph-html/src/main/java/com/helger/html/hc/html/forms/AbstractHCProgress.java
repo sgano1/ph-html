@@ -30,7 +30,8 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
 import com.helger.html.hc.html.HCHTMLHelper;
 
 @SinceHTML5
-public abstract class AbstractHCProgress <THISTYPE extends AbstractHCProgress <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCProgress <THISTYPE>
+public abstract class AbstractHCProgress <THISTYPE extends AbstractHCProgress <THISTYPE>> extends
+                                         AbstractHCElementWithChildren <THISTYPE> implements IHCProgress <THISTYPE>
 {
   private double m_dValue = CGlobal.ILLEGAL_DOUBLE;
   private double m_dMax = CGlobal.ILLEGAL_DOUBLE;

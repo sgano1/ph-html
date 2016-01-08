@@ -46,7 +46,8 @@ import com.helger.json.IJson;
  * @param <IMPLTYPE>
  *        Implementation type
  */
-public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocation <IMPLTYPE>> extends AbstractJSExpression implements IJSStatement
+public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocation <IMPLTYPE>>
+                                           extends AbstractJSExpression implements IJSStatement
 {
   /**
    * Object expression upon which this method will be invoked, or null if this

@@ -22,7 +22,7 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
 
 /**
  * Represents the caption of a {@link HCFigure}. Must be the first child there.
- * 
+ *
  * @author Philip Helger
  */
 @SinceHTML5

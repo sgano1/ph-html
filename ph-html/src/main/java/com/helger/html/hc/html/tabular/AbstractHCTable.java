@@ -35,7 +35,8 @@ import com.helger.html.hc.IHCConversionSettingsToNode;
  * @param <THISTYPE>
  *        The implementing type
  */
-public abstract class AbstractHCTable <THISTYPE extends AbstractHCTable <THISTYPE>> extends AbstractHCBaseTable <THISTYPE>
+public abstract class AbstractHCTable <THISTYPE extends AbstractHCTable <THISTYPE>>
+                                      extends AbstractHCBaseTable <THISTYPE>
 {
   private static final Logger s_aLogger = LoggerFactory.getLogger (AbstractHCTable.class);
 
@@ -76,7 +77,8 @@ public abstract class AbstractHCTable <THISTYPE extends AbstractHCTable <THISTYP
 
   @Override
   @OverridingMethodsMustInvokeSuper
-  protected void fillMicroElement (@Nonnull final IMicroElement aElement, @Nonnull final IHCConversionSettingsToNode aConversionSettings)
+  protected void fillMicroElement (@Nonnull final IMicroElement aElement,
+                                   @Nonnull final IHCConversionSettingsToNode aConversionSettings)
   {
     super.fillMicroElement (aElement, aConversionSettings);
 

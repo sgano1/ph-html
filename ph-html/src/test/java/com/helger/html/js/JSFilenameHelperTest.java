@@ -23,8 +23,6 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-import com.helger.html.js.JSFilenameHelper;
-
 /**
  * Test class for class {@link JSFilenameHelper}.
  *

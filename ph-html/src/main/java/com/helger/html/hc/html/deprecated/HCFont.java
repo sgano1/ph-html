@@ -22,7 +22,7 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;FONT&gt; element
- * 
+ *
  * @author Philip Helger
  */
 @DeprecatedInHTML5

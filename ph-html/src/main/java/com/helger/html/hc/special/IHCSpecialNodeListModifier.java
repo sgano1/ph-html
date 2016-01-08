@@ -27,7 +27,7 @@ public interface IHCSpecialNodeListModifier
 {
   /**
    * Merge certain special nodes.
-   * 
+   *
    * @param aNodes
    *        The source list of special nodes to be merged.
    * @return The modified list to be used for further processing.

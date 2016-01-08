@@ -30,7 +30,11 @@ import com.helger.html.hc.html.IHCHasState;
  * @param <THISTYPE>
  *        Implementation type
  */
-public interface IHCControl <THISTYPE extends IHCControl <THISTYPE>> extends IHCElement <THISTYPE>, IHCHasFocus <THISTYPE>, IHCHasState <THISTYPE>, IHCHasName <THISTYPE>
+public interface IHCControl <THISTYPE extends IHCControl <THISTYPE>> extends
+                            IHCElement <THISTYPE>,
+                            IHCHasFocus <THISTYPE>,
+                            IHCHasState <THISTYPE>,
+                            IHCHasName <THISTYPE>
 {
   boolean isReadOnly ();
 

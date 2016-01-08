@@ -25,23 +25,6 @@ import org.junit.Test;
 import com.helger.commons.mock.CommonsTestHelper;
 import com.helger.html.js.JSWriterSettings;
 import com.helger.html.js.UnparsedJSCodeProvider;
-import com.helger.html.jscode.IJSGeneratable;
-import com.helger.html.jscode.JSAnonymousFunction;
-import com.helger.html.jscode.JSArray;
-import com.helger.html.jscode.JSAssocArray;
-import com.helger.html.jscode.JSBlock;
-import com.helger.html.jscode.JSCatchBlock;
-import com.helger.html.jscode.JSConditional;
-import com.helger.html.jscode.JSExpr;
-import com.helger.html.jscode.JSForIn;
-import com.helger.html.jscode.JSForLoop;
-import com.helger.html.jscode.JSFunction;
-import com.helger.html.jscode.JSLabel;
-import com.helger.html.jscode.JSPackage;
-import com.helger.html.jscode.JSPrinter;
-import com.helger.html.jscode.JSRef;
-import com.helger.html.jscode.JSTryBlock;
-import com.helger.html.jscode.JSVar;
 import com.helger.html.jscode.type.JSPrimitiveType;
 
 /**

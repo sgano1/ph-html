@@ -26,7 +26,9 @@ import com.helger.html.hc.IHCNodeWithChildren;
  * @param <THISTYPE>
  *        Implementation type
  */
-public interface IHCElementWithChildren <THISTYPE extends IHCElementWithChildren <THISTYPE>> extends IHCElementWithInternalChildren <THISTYPE, IHCNode>, IHCNodeWithChildren <THISTYPE>
+public interface IHCElementWithChildren <THISTYPE extends IHCElementWithChildren <THISTYPE>> extends
+                                        IHCElementWithInternalChildren <THISTYPE, IHCNode>,
+                                        IHCNodeWithChildren <THISTYPE>
 {
   /** empty */
 }

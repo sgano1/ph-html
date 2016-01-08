@@ -28,7 +28,7 @@ import com.helger.commons.string.ToStringGenerator;
 
 /**
  * HTML5 document type representation
- * 
+ *
  * @author Philip Helger
  */
 @Immutable

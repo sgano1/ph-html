@@ -25,7 +25,7 @@ import com.helger.commons.string.ToStringGenerator;
 
 /**
  * Field Reference
- * 
+ *
  * @author Philip Helger
  */
 public class JSFieldRef extends JSRef

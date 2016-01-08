@@ -21,14 +21,14 @@ import javax.annotation.Nonnull;
 /**
  * An interface for emitting span elements. Currently only used for special
  * links.
- * 
+ *
  * @author René Jeschke (rene_jeschke@yahoo.de)
  */
 public interface IMarkdownSpanEmitter
 {
   /**
    * Emits a span element.
-   * 
+   *
    * @param out
    *        The StringBuilder to append to.
    * @param content

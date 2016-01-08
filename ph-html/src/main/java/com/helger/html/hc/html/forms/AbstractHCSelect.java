@@ -49,7 +49,8 @@ import com.helger.html.request.IHCRequestField;
  * @param <THISTYPE>
  *        the implementation type
  */
-public abstract class AbstractHCSelect <THISTYPE extends AbstractHCSelect <THISTYPE>> extends AbstractHCControl <THISTYPE>implements IHCSelect <THISTYPE>
+public abstract class AbstractHCSelect <THISTYPE extends AbstractHCSelect <THISTYPE>>
+                                       extends AbstractHCControl <THISTYPE> implements IHCSelect <THISTYPE>
 {
   /** By default multi select is disabled */
   public static final boolean DEFAULT_MULTIPLE = false;

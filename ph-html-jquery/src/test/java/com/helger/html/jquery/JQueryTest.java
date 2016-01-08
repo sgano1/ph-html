@@ -25,8 +25,6 @@ import com.helger.commons.collection.pair.IPair;
 import com.helger.html.EHTMLElement;
 import com.helger.html.css.DefaultCSSClassProvider;
 import com.helger.html.css.ICSSClassProvider;
-import com.helger.html.jquery.JQuery;
-import com.helger.html.jquery.JQueryInvocation;
 import com.helger.html.js.JSWriterSettings;
 import com.helger.html.jscode.JSAnonymousFunction;
 import com.helger.html.jscode.JSExpr;
@@ -114,8 +112,8 @@ public final class JQueryTest
     assertEquals ("$('.any');", JQuery.classRef (aClass).getJSCode ());
     assertEquals ("$('.any');", JQuery.classRefMultiple (aClass).getJSCode ());
     assertEquals ("$('.any,.other');", JQuery.classRefMultiple (aClass, aClass2).getJSCode ());
-    assertEquals ("$('.any,.other');", JQuery.classRefMultiple (CollectionHelper.newList (aClass, aClass2))
-                                             .getJSCode ());
+    assertEquals ("$('.any,.other');",
+                  JQuery.classRefMultiple (CollectionHelper.newList (aClass, aClass2)).getJSCode ());
     assertEquals ("$('div');", JQuery.elementNameRef (EHTMLElement.DIV).getJSCode ());
     assertEquals ("$('bla');", JQuery.elementNameRef ("bla").getJSCode ());
     assertEquals ("$('div#foo');", JQuery.elementNameWithIDRef (EHTMLElement.DIV, "foo").getJSCode ());

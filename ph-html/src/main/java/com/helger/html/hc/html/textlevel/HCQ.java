@@ -21,7 +21,7 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;Q&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCQ extends AbstractHCElementWithChildren <HCQ>

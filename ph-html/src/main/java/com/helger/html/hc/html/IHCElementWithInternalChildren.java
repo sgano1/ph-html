@@ -28,7 +28,10 @@ import com.helger.html.hc.IHCNode;
  * @param <CHILDTYPE>
  *        Contained child type
  */
-public interface IHCElementWithInternalChildren <THISTYPE extends IHCElementWithInternalChildren <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode> extends IHCElement <THISTYPE>, IHCHasChildrenMutable <THISTYPE, CHILDTYPE>
+public interface IHCElementWithInternalChildren <THISTYPE extends IHCElementWithInternalChildren <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode>
+                                                extends
+                                                IHCElement <THISTYPE>,
+                                                IHCHasChildrenMutable <THISTYPE, CHILDTYPE>
 {
   /** empty */
 }

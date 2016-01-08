@@ -22,16 +22,17 @@ import com.helger.commons.annotation.Nonempty;
 import com.helger.html.hc.html.IHCHasHTMLAttributeValue;
 
 /**
- * An enumeration that can be used in {@link com.helger.html.hc.html.grouping.HCUL}
- * objects to define the used type.
- * 
+ * An enumeration that can be used in
+ * {@link com.helger.html.hc.html.grouping.HCUL} objects to define the used
+ * type.
+ *
  * @author Philip Helger
  */
 public enum EHCULType implements IHCHasHTMLAttributeValue
 {
- DISC ("disc"),
- SQUARE ("square"),
- CIRCLE ("circle");
+  DISC ("disc"),
+  SQUARE ("square"),
+  CIRCLE ("circle");
 
   private final String m_sAttrValue;
 

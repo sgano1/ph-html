@@ -35,7 +35,8 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
  * @param <THISTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCDiv <THISTYPE extends AbstractHCDiv <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCDiv <THISTYPE>
+public abstract class AbstractHCDiv <THISTYPE extends AbstractHCDiv <THISTYPE>>
+                                    extends AbstractHCElementWithChildren <THISTYPE> implements IHCDiv <THISTYPE>
 {
   private String m_sName;
 

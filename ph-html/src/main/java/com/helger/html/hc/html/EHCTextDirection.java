@@ -23,18 +23,18 @@ import com.helger.html.annotation.SinceHTML5;
 
 /**
  * Enum for HTML text directions.
- * 
+ *
  * @author Philip Helger
  */
 public enum EHCTextDirection implements IHCHasHTMLAttributeValue
 {
- /** left-to-right */
+  /** left-to-right */
   LTR ("ltr"),
 
- /** right-to-left */
+  /** right-to-left */
   RTL ("rtl"),
 
- /** automatic */
+  /** automatic */
   @SinceHTML5 AUTO ("auto");
 
   /**

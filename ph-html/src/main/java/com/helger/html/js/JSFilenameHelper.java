@@ -24,7 +24,7 @@ import com.helger.commons.string.StringHelper;
 
 /**
  * Utility class for handling JavaScript file names.
- * 
+ *
  * @author Philip Helger
  */
 @Immutable

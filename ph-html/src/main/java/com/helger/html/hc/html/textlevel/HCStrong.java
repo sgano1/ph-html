@@ -21,7 +21,7 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;STRONG&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCStrong extends AbstractHCElementWithChildren <HCStrong>

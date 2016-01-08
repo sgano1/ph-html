@@ -41,7 +41,8 @@ import com.helger.html.js.IJSWriterSettings;
  * @param <THISTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCScriptInline <THISTYPE extends AbstractHCScriptInline <THISTYPE>> extends AbstractHCScript <THISTYPE>implements IHCScriptInline <THISTYPE>
+public abstract class AbstractHCScriptInline <THISTYPE extends AbstractHCScriptInline <THISTYPE>>
+                                             extends AbstractHCScript <THISTYPE> implements IHCScriptInline <THISTYPE>
 {
   /** By default place inline JS after script files */
   public static final boolean DEFAULT_EMIT_AFTER_FILES = true;

@@ -55,7 +55,9 @@ import com.helger.html.hc.impl.HCNodeList;
  *        Contained child type
  */
 @NotThreadSafe
-public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends AbstractHCElementWithInternalChildren <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode> extends AbstractHCElement <THISTYPE>implements IHCElementWithInternalChildren <THISTYPE, CHILDTYPE>
+public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends AbstractHCElementWithInternalChildren <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode>
+                                                            extends AbstractHCElement <THISTYPE> implements
+                                                            IHCElementWithInternalChildren <THISTYPE, CHILDTYPE>
 {
   private List <CHILDTYPE> m_aChildren;
 
@@ -151,7 +153,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
   }
 
   @Nonnull
-  public final THISTYPE addChildren (@Nullable final CHILDTYPE... aChildren)
+  public final THISTYPE addChildren (@SuppressWarnings ("unchecked") @Nullable final CHILDTYPE... aChildren)
   {
     if (aChildren != null)
       for (final CHILDTYPE aChild : aChildren)
@@ -160,7 +162,8 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
   }
 
   @Nonnull
-  public final THISTYPE addChildren (@Nonnegative final int nIndex, @Nullable final CHILDTYPE... aChildren)
+  public final THISTYPE addChildren (@Nonnegative final int nIndex,
+                                     @SuppressWarnings ("unchecked") @Nullable final CHILDTYPE... aChildren)
   {
     ValueEnforcer.isBetweenInclusive (nIndex, "Index", 0, getChildCount ());
     if (aChildren != null)

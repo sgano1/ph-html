@@ -24,7 +24,7 @@ import com.helger.html.hc.html.AbstractHCElement;
 /**
  * Fallback implementation of {@link AbstractHCElement} for {@link EHTMLElement}
  * items that are not explicitly wrapped in its own class.
- * 
+ *
  * @author Philip Helger
  */
 public class HCGenericElement extends AbstractHCElement <HCGenericElement>

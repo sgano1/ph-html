@@ -48,7 +48,8 @@ import com.helger.html.js.IHasJSCodeWithSettings;
  * @param <THISTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCButton <THISTYPE extends AbstractHCButton <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE> implements IHCButton <THISTYPE>
+public abstract class AbstractHCButton <THISTYPE extends AbstractHCButton <THISTYPE>>
+                                       extends AbstractHCElementWithChildren <THISTYPE> implements IHCButton <THISTYPE>
 {
   /** By default auto focus is disabled */
   public static final boolean DEFAULT_AUTO_FOCUS = false;

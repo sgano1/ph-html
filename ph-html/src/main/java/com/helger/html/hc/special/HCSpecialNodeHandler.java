@@ -102,7 +102,9 @@ public final class HCSpecialNodeHandler
     return false;
   }
 
-  private static void _recursiveExtractAndRemoveOutOfBandNodes (@Nonnull final IHCNode aParentElement, @Nonnull final List <IHCNode> aTargetList, @Nonnegative final int nLevel)
+  private static void _recursiveExtractAndRemoveOutOfBandNodes (@Nonnull final IHCNode aParentElement,
+                                                                @Nonnull final List <IHCNode> aTargetList,
+                                                                @Nonnegative final int nLevel)
   {
     ValueEnforcer.notNull (aParentElement, "ParentElement");
 
@@ -125,7 +127,10 @@ public final class HCSpecialNodeHandler
           if (aParentElement instanceof IHCHasChildrenMutable <?, ?>)
             ((IHCHasChildrenMutable <?, ?>) aParentElement).removeChild (nNodeIndex);
           else
-            throw new IllegalStateException ("Cannot remove out-of-band node from " + aParentElement + " at index " + nNodeIndex);
+            throw new IllegalStateException ("Cannot remove out-of-band node from " +
+                                             aParentElement +
+                                             " at index " +
+                                             nNodeIndex);
         }
         else
         {
@@ -150,7 +155,8 @@ public final class HCSpecialNodeHandler
    * @param aTargetList
    *        The target list to be filled. May not be <code>null</code>.
    */
-  public static void recursiveExtractAndRemoveOutOfBandNodes (@Nonnull final IHCNode aParentElement, @Nonnull final List <IHCNode> aTargetList)
+  public static void recursiveExtractAndRemoveOutOfBandNodes (@Nonnull final IHCNode aParentElement,
+                                                              @Nonnull final List <IHCNode> aTargetList)
   {
     ValueEnforcer.notNull (aParentElement, "ParentElement");
     ValueEnforcer.notNull (aTargetList, "TargetList");
@@ -223,10 +229,12 @@ public final class HCSpecialNodeHandler
    */
   @Nonnull
   @ReturnsMutableCopy
-  public static List <IHCNode> getMergedInlineCSSAndJSNodes (@Nonnull final Iterable <? extends IHCNode> aNodes, final boolean bKeepOnDocumentReady)
+  public static List <IHCNode> getMergedInlineCSSAndJSNodes (@Nonnull final Iterable <? extends IHCNode> aNodes,
+                                                             final boolean bKeepOnDocumentReady)
   {
     // Default to the global "on document ready" provider
-    return getMergedInlineCSSAndJSNodes (aNodes, bKeepOnDocumentReady ? HCSettings.getOnDocumentReadyProvider () : null);
+    return getMergedInlineCSSAndJSNodes (aNodes,
+                                         bKeepOnDocumentReady ? HCSettings.getOnDocumentReadyProvider () : null);
   }
 
   /**
@@ -252,7 +260,8 @@ public final class HCSpecialNodeHandler
    */
   @Nonnull
   @ReturnsMutableCopy
-  public static List <IHCNode> getMergedInlineCSSAndJSNodes (@Nonnull final Iterable <? extends IHCNode> aNodes, @Nullable final IHCOnDocumentReadyProvider aOnDocumentReadyProvider)
+  public static List <IHCNode> getMergedInlineCSSAndJSNodes (@Nonnull final Iterable <? extends IHCNode> aNodes,
+                                                             @Nullable final IHCOnDocumentReadyProvider aOnDocumentReadyProvider)
   {
     ValueEnforcer.notNull (aNodes, "Nodes");
 
@@ -280,13 +289,15 @@ public final class HCSpecialNodeHandler
         {
           // Inline JS
           final HCScriptInlineOnDocumentReady aScript = (HCScriptInlineOnDocumentReady) aNode;
-          (aScript.isEmitAfterFiles () ? aJSOnDocumentReadyAfter : aJSOnDocumentReadyBefore).appendFlattened (aScript.getOnDocumentReadyCode ());
+          (aScript.isEmitAfterFiles () ? aJSOnDocumentReadyAfter
+                                       : aJSOnDocumentReadyBefore).appendFlattened (aScript.getOnDocumentReadyCode ());
         }
         else
         {
           // Inline JS
           final IHCScriptInline <?> aScript = (IHCScriptInline <?>) aNode;
-          (aScript.isEmitAfterFiles () ? aJSInlineAfter : aJSInlineBefore).appendFlattened (aScript.getJSCodeProvider ());
+          (aScript.isEmitAfterFiles () ? aJSInlineAfter
+                                       : aJSInlineBefore).appendFlattened (aScript.getJSCodeProvider ());
         }
       }
       else
@@ -294,14 +305,17 @@ public final class HCSpecialNodeHandler
         {
           // Inline CSS
           final HCStyle aStyle = (HCStyle) aNode;
-          (aStyle.isEmitAfterFiles () ? aCSSInlineAfter : aCSSInlineBefore).addInlineCSS (aStyle.getMedia (), aStyle.getStyleContent ());
+          (aStyle.isEmitAfterFiles () ? aCSSInlineAfter : aCSSInlineBefore).addInlineCSS (aStyle.getMedia (),
+                                                                                          aStyle.getStyleContent ());
         }
         else
         {
           // HCLink
           // HCScriptFile
           // HCConditionalCommentNode
-          if (!(aNode instanceof HCLink) && !(aNode instanceof HCScriptFile) && !(aNode instanceof IHCConditionalCommentNode))
+          if (!(aNode instanceof HCLink) &&
+              !(aNode instanceof HCScriptFile) &&
+              !(aNode instanceof IHCConditionalCommentNode))
             s_aLogger.warn ("Found unexpected node to merge inline CSS/JS: " + aNode);
 
           // Add always!
@@ -348,7 +362,8 @@ public final class HCSpecialNodeHandler
       int nIndex = 0;
       for (final ICSSCodeProvider aEntry : aCSSInlineBefore.getAll ())
       {
-        final HCStyle aStyle = new HCStyle (aEntry.getCSSCode ()).setMedia (aEntry.getMediaList ()).setEmitAfterFiles (false);
+        final HCStyle aStyle = new HCStyle (aEntry.getCSSCode ()).setMedia (aEntry.getMediaList ())
+                                                                 .setEmitAfterFiles (false);
         aStyle.internalSetNodeState (EHCNodeState.RESOURCES_REGISTERED);
         ret.add (nIndex, aStyle);
         ++nIndex;
@@ -360,7 +375,8 @@ public final class HCSpecialNodeHandler
       // Add at the end
       for (final ICSSCodeProvider aEntry : aCSSInlineAfter.getAll ())
       {
-        final HCStyle aStyle = new HCStyle (aEntry.getCSSCode ()).setMedia (aEntry.getMediaList ()).setEmitAfterFiles (true);
+        final HCStyle aStyle = new HCStyle (aEntry.getCSSCode ()).setMedia (aEntry.getMediaList ())
+                                                                 .setEmitAfterFiles (true);
         aStyle.internalSetNodeState (EHCNodeState.RESOURCES_REGISTERED);
         ret.add (aStyle);
       }
@@ -371,7 +387,8 @@ public final class HCSpecialNodeHandler
 
   @Nonnull
   @ReturnsMutableCopy
-  public static List <IHCNode> extractSpecialNodes (@Nonnull final Iterable <? extends IHCNode> aNodes, @Nonnull final AbstractHCSpecialNodes <?> aSpecialNodes)
+  public static List <IHCNode> extractSpecialNodes (@Nonnull final Iterable <? extends IHCNode> aNodes,
+                                                    @Nonnull final AbstractHCSpecialNodes <?> aSpecialNodes)
   {
     ValueEnforcer.notNull (aNodes, "Nodes");
     ValueEnforcer.notNull (aSpecialNodes, "SpecialNodes");
@@ -443,9 +460,13 @@ public final class HCSpecialNodeHandler
    *        executed after all other scripts. For AJAX calls, this should be
    *        <code>false</code>.
    */
-  public static void extractSpecialContent (@Nonnull final IHCNode aNode, @Nonnull final AbstractHCSpecialNodes <?> aSpecialNodes, final boolean bKeepOnDocumentReady)
+  public static void extractSpecialContent (@Nonnull final IHCNode aNode,
+                                            @Nonnull final AbstractHCSpecialNodes <?> aSpecialNodes,
+                                            final boolean bKeepOnDocumentReady)
   {
-    extractSpecialContent (aNode, aSpecialNodes, bKeepOnDocumentReady ? HCSettings.getOnDocumentReadyProvider () : null);
+    extractSpecialContent (aNode,
+                           aSpecialNodes,
+                           bKeepOnDocumentReady ? HCSettings.getOnDocumentReadyProvider () : null);
   }
 
   /**
@@ -466,7 +487,9 @@ public final class HCSpecialNodeHandler
    *        "document ready" callback - alternatively you can provide a custom
    *        "on document ready" provider.
    */
-  public static void extractSpecialContent (@Nonnull final IHCNode aNode, @Nonnull final AbstractHCSpecialNodes <?> aSpecialNodes, @Nullable final IHCOnDocumentReadyProvider aOnDocumentReadyProvider)
+  public static void extractSpecialContent (@Nonnull final IHCNode aNode,
+                                            @Nonnull final AbstractHCSpecialNodes <?> aSpecialNodes,
+                                            @Nullable final IHCOnDocumentReadyProvider aOnDocumentReadyProvider)
   {
     ValueEnforcer.notNull (aNode, "Node");
     ValueEnforcer.notNull (aSpecialNodes, "SpecialNodes");
@@ -484,6 +507,7 @@ public final class HCSpecialNodeHandler
     // Now the aExtractedOutOfBandNodes list must be empty - otherwise we have
     // an internal inconsistency
     if (!aExtractedOutOfBandNodes.isEmpty ())
-      throw new IllegalStateException ("Out-of-band nodes are left after merging and extraction: " + aExtractedOutOfBandNodes);
+      throw new IllegalStateException ("Out-of-band nodes are left after merging and extraction: " +
+                                       aExtractedOutOfBandNodes);
   }
 }

@@ -22,7 +22,6 @@ import java.util.Comparator;
 import java.util.List;
 
 import javax.annotation.CheckForSigned;
-import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -31,7 +30,6 @@ import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.CGlobal;
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotation.DevelopersNote;
 import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.annotation.ReturnsMutableObject;
@@ -56,7 +54,9 @@ import com.helger.html.hc.IHCNode;
  *        Child type
  */
 @NotThreadSafe
-public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCHasChildrenMutable <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode> extends AbstractHCNode implements IHCHasChildrenMutable <THISTYPE, CHILDTYPE>
+public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCHasChildrenMutable <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode>
+                                                   extends AbstractHCNode
+                                                   implements IHCHasChildrenMutable <THISTYPE, CHILDTYPE>
 {
   private List <CHILDTYPE> m_aChildren;
 
@@ -140,23 +140,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
   }
 
   @Nonnull
-  @DevelopersNote ("Use addChild instead!")
-  @Deprecated
-  public final THISTYPE addChildren (@Nullable final CHILDTYPE aChild)
-  {
-    return addChild (aChild);
-  }
-
-  @Nonnull
-  @DevelopersNote ("Use addChild instead!")
-  @Deprecated
-  public final THISTYPE addChildren (@Nonnegative final int nIndex, @Nullable final CHILDTYPE aChild)
-  {
-    ValueEnforcer.isBetweenInclusive (nIndex, "Index", 0, getChildCount ());
-    return addChild (nIndex, aChild);
-  }
-
-  @Nonnull
+  @SafeVarargs
   public final THISTYPE addChildren (@Nullable final CHILDTYPE... aChildren)
   {
     if (aChildren != null)
@@ -166,6 +150,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
   }
 
   @Nonnull
+  @SafeVarargs
   public final THISTYPE addChildren (@Nonnegative final int nIndex, @Nullable final CHILDTYPE... aChildren)
   {
     ValueEnforcer.isBetweenInclusive (nIndex, "Index", 0, getChildCount ());
@@ -199,22 +184,6 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
         addChild (nRealIndex++, aChild);
     }
     return thisAsT ();
-  }
-
-  @Nullable
-  @CheckReturnValue
-  public final <V extends CHILDTYPE> V addAndReturnChild (@Nullable final V aChild)
-  {
-    addChild (aChild);
-    return aChild;
-  }
-
-  @Nullable
-  @CheckReturnValue
-  public final <V extends CHILDTYPE> V addAndReturnChild (@Nonnegative final int nIndex, @Nullable final V aChild)
-  {
-    addChild (nIndex, aChild);
-    return aChild;
   }
 
   /**

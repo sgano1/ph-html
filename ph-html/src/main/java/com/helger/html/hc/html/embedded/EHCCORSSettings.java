@@ -23,13 +23,13 @@ import com.helger.html.hc.html.IHCHasHTMLAttributeValue;
 
 /**
  * CORS settings
- * 
+ *
  * @author Philip Helger
  */
 public enum EHCCORSSettings implements IHCHasHTMLAttributeValue
 {
- ANONYMOUS ("anonymous"),
- USE_CREDENTIALS ("use-credentials");
+  ANONYMOUS ("anonymous"),
+  USE_CREDENTIALS ("use-credentials");
 
   /** Default CORS settings: anonymous */
   @Nonnull

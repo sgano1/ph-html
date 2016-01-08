@@ -28,7 +28,11 @@ import com.helger.html.hc.html.IHCHasState;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.IHasJSCodeWithSettings;
 
-public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends IHCElementWithChildren <THISTYPE>, IHCHasState <THISTYPE>, IHCHasName <THISTYPE>, IHCHasFocus <THISTYPE>
+public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends
+                           IHCElementWithChildren <THISTYPE>,
+                           IHCHasState <THISTYPE>,
+                           IHCHasName <THISTYPE>,
+                           IHCHasFocus <THISTYPE>
 {
   @Nullable
   String getForm ();

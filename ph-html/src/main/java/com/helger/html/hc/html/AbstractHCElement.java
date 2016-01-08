@@ -40,7 +40,6 @@ import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.cache.AnnotationUsageCache;
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.equals.EqualsHelper;
-import com.helger.commons.id.factory.GlobalIDFactory;
 import com.helger.commons.lang.GenericReflection;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.microdom.IMicroNode;
@@ -81,7 +80,8 @@ import com.helger.html.js.JSEventMap;
  *        The implementation type.
  */
 @NotThreadSafe
-public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THISTYPE>> extends AbstractHCNode implements IHCElement <THISTYPE>
+public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THISTYPE>> extends AbstractHCNode
+                                        implements IHCElement <THISTYPE>
 {
   /** Default translate mode */
   public static final ETriState DEFAULT_TRANSLATE = ETriState.UNDEFINED;
@@ -206,12 +206,6 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
       }
     m_sID = sID;
     return thisAsT ();
-  }
-
-  @Nonnull
-  public final THISTYPE setUniqueID ()
-  {
-    return setID (GlobalIDFactory.getNewStringID ());
   }
 
   @Nonnull

@@ -18,13 +18,7 @@ package com.helger.html.hc.html.textlevel;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.GregorianCalendar;
-
-import org.joda.time.DateTime;
-import org.joda.time.Duration;
 import org.junit.Test;
-
-import com.helger.html.hc.html.textlevel.HCTime;
 
 /**
  * Test class for class {@link HCTime}
@@ -37,8 +31,7 @@ public final class HCTimeTest
   public void testSetDatetime ()
   {
     final HCTime t = new HCTime ();
-    t.setAsDuration (new Duration (new DateTime (new GregorianCalendar (2010, 5, 6)),
-                                   new DateTime (new GregorianCalendar (2010, 6, 7))));
-    assertEquals ("PT744H", t.getDatetime ());
+    t.setAsDate (2010, 5, 6);
+    assertEquals ("2010-05-06", t.getDatetime ());
   }
 }

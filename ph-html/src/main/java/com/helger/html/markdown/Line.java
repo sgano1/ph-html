@@ -434,9 +434,9 @@ final class Line
 
   private static enum EHTMLElementType
   {
-   NONE,
-   TAG,
-   COMMENT;
+    NONE,
+    TAG,
+    COMMENT;
   }
 
   /**

@@ -75,7 +75,7 @@ import org.junit.runners.Parameterized.Parameters;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.commons.io.stream.StreamHelper;
-import com.helger.commons.regex.RegExPool;
+import com.helger.commons.regex.RegExCache;
 import com.helger.commons.string.StringHelper;
 import com.helger.html.hc.mock.HCTestRuleOptimized;
 import com.helger.html.markdown.MarkdownConfiguration.Builder;
@@ -119,8 +119,8 @@ public final class MarkupFileFuncTest
       StringBuilder test = null;
       StringBuilder result = null;
 
-      final Pattern pTest = RegExPool.getPattern ("# Test (\\w+) \\((.*)\\)");
-      final Pattern pResult = RegExPool.getPattern ("# Result (\\w+)");
+      final Pattern pTest = RegExCache.getPattern ("# Test (\\w+) \\((.*)\\)");
+      final Pattern pResult = RegExCache.getPattern ("# Result (\\w+)");
       String line;
       int lineNumber = 0;
 

@@ -29,7 +29,7 @@ import com.helger.json.IJson;
 /**
  * Implementation of the {@link IJSToStringConverter} interface, for converting
  * native {@link IJson} objects.
- * 
+ *
  * @author Philip Helger
  */
 @Immutable

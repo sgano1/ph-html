@@ -41,7 +41,8 @@ import com.helger.html.hc.html.AbstractHCElement;
  * @param <THISTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCScript <THISTYPE extends AbstractHCScript <THISTYPE>> extends AbstractHCElement <THISTYPE>implements IHCScript <THISTYPE>
+public abstract class AbstractHCScript <THISTYPE extends AbstractHCScript <THISTYPE>>
+                                       extends AbstractHCElement <THISTYPE> implements IHCScript <THISTYPE>
 {
   /** Default MIME type: text/javascript */
   public static final IMimeType DEFAULT_TYPE = CMimeType.TEXT_JAVASCRIPT;

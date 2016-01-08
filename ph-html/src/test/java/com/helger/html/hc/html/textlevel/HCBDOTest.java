@@ -20,11 +20,9 @@ import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
-import com.helger.html.hc.html.textlevel.HCBDO;
-
 /**
  * Test class for class {@link HCBDO}
- * 
+ *
  * @author Philip Helger
  */
 public final class HCBDOTest

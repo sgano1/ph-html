@@ -20,8 +20,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.helger.html.jquery.JQueryProperty;
-
 /**
  * Test class for class {@link JQueryProperty}.
  *

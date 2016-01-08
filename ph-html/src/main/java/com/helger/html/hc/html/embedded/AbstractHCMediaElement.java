@@ -35,7 +35,9 @@ import com.helger.html.hc.html.AbstractHCElementWithInternalChildren;
 import com.helger.html.hc.html.IHCMediaElementChild;
 
 @SinceHTML5
-public abstract class AbstractHCMediaElement <THISTYPE extends AbstractHCMediaElement <THISTYPE>> extends AbstractHCElementWithInternalChildren <THISTYPE, IHCMediaElementChild <?>>implements IHCMediaElement <THISTYPE>
+public abstract class AbstractHCMediaElement <THISTYPE extends AbstractHCMediaElement <THISTYPE>> extends
+                                             AbstractHCElementWithInternalChildren <THISTYPE, IHCMediaElementChild <?>>
+                                             implements IHCMediaElement <THISTYPE>
 {
   /** By default auto play is disabled */
   public static final boolean DEFAULT_AUTOPLAY = false;

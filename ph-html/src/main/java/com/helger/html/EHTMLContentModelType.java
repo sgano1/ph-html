@@ -24,18 +24,18 @@ package com.helger.html;
  */
 public enum EHTMLContentModelType
 {
- FLOW (EHTMLContentKind.FLOW.getValue () | EHTMLContentKind.PHRASING.getValue ()),
- FLOW_METADATA (EHTMLContentKind.METADATA.getValue () |
-                EHTMLContentKind.FLOW.getValue () |
-                EHTMLContentKind.PHRASING.getValue ()),
- PHRASING_METADATA (EHTMLContentKind.METADATA.getValue () | EHTMLContentKind.PHRASING.getValue ()),
- METADATA (EHTMLContentKind.METADATA.getValue ()),
- PHRASING (EHTMLContentKind.PHRASING.getValue ()),
- EMPTY (0),
- CHILD (0),
- SPECIAL (0),
- UNDEFINED (0),
- LEGACY_PHRASING (EHTMLContentKind.PHRASING.getValue ());
+  FLOW (EHTMLContentKind.FLOW.getValue () | EHTMLContentKind.PHRASING.getValue ()),
+  FLOW_METADATA (EHTMLContentKind.METADATA.getValue () |
+                 EHTMLContentKind.FLOW.getValue () |
+                 EHTMLContentKind.PHRASING.getValue ()),
+  PHRASING_METADATA (EHTMLContentKind.METADATA.getValue () | EHTMLContentKind.PHRASING.getValue ()),
+  METADATA (EHTMLContentKind.METADATA.getValue ()),
+  PHRASING (EHTMLContentKind.PHRASING.getValue ()),
+  EMPTY (0),
+  CHILD (0),
+  SPECIAL (0),
+  UNDEFINED (0),
+  LEGACY_PHRASING (EHTMLContentKind.PHRASING.getValue ());
 
   private final int m_nValue;
 

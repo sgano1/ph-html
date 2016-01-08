@@ -57,7 +57,8 @@ import com.helger.html.hc.impl.HCTextNode;
  * @param <IMPLTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable <IMPLTYPE>> extends AbstractHCElement <IMPLTYPE>implements IHCTable <IMPLTYPE>
+public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable <IMPLTYPE>>
+                                          extends AbstractHCElement <IMPLTYPE> implements IHCTable <IMPLTYPE>
 {
   public static final ICSSClassProvider CSS_FORCE_COLSPAN = DefaultCSSClassProvider.create ("force-colspan");
 

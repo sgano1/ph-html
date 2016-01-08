@@ -22,15 +22,16 @@ import com.helger.commons.annotation.Nonempty;
 import com.helger.html.hc.html.IHCHasHTMLAttributeValue;
 
 /**
- * An enumeration that can be used in {@link com.helger.html.hc.html.forms.HCForm}
- * objects to define the used method.
- * 
+ * An enumeration that can be used in
+ * {@link com.helger.html.hc.html.forms.HCForm} objects to define the used
+ * method.
+ *
  * @author Philip Helger
  */
 public enum EHCFormMethod implements IHCHasHTMLAttributeValue
 {
- GET ("GET"),
- POST ("POST");
+  GET ("GET"),
+  POST ("POST");
 
   private final String m_sMethod;
 

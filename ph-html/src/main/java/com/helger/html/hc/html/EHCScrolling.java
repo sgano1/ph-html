@@ -22,9 +22,9 @@ import com.helger.commons.annotation.Nonempty;
 
 public enum EHCScrolling implements IHCHasHTMLAttributeValue
 {
- YES ("yes"),
- NO ("no"),
- AUTO ("auto");
+  YES ("yes"),
+  NO ("no"),
+  AUTO ("auto");
 
   private final String m_sAttrValue;
 

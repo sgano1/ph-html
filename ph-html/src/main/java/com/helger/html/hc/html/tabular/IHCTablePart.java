@@ -28,7 +28,8 @@ import com.helger.html.hc.html.IHCElementWithInternalChildren;
  * @param <THISTYPE>
  *        Implementation type
  */
-public interface IHCTablePart <THISTYPE extends IHCTablePart <THISTYPE>> extends IHCElementWithInternalChildren <THISTYPE, HCRow>
+public interface IHCTablePart <THISTYPE extends IHCTablePart <THISTYPE>>
+                              extends IHCElementWithInternalChildren <THISTYPE, HCRow>
 {
   boolean isHeaderOrFooter ();
 

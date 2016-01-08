@@ -21,8 +21,6 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.helger.html.css.DefaultCSSClassProvider;
-import com.helger.html.jquery.JQuerySelector;
-import com.helger.html.jquery.JQuerySelectorList;
 
 /**
  * Test class for class {@link JQuerySelectorList}.
@@ -36,8 +34,8 @@ public final class JQuerySelectorListTest
   {
     assertEquals ("'#id5'", new JQuerySelectorList ().addSelector (JQuerySelector.id ("id5")).getJSCode ());
     // Check masking
-    assertEquals ("'#id\\\\.value'", new JQuerySelectorList ().addSelector (JQuerySelector.id ("id.value"))
-                                                              .getJSCode ());
+    assertEquals ("'#id\\\\.value'",
+                  new JQuerySelectorList ().addSelector (JQuerySelector.id ("id.value")).getJSCode ());
     assertEquals ("'.basic'",
                   new JQuerySelectorList ().addSelector (JQuerySelector.clazz (DefaultCSSClassProvider.create ("basic")))
                                            .getJSCode ());

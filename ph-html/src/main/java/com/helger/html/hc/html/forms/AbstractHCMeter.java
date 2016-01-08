@@ -30,7 +30,8 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
 import com.helger.html.hc.html.HCHTMLHelper;
 
 @SinceHTML5
-public abstract class AbstractHCMeter <THISTYPE extends AbstractHCMeter <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCMeter <THISTYPE>
+public abstract class AbstractHCMeter <THISTYPE extends AbstractHCMeter <THISTYPE>>
+                                      extends AbstractHCElementWithChildren <THISTYPE> implements IHCMeter <THISTYPE>
 {
   private double m_dValue = CGlobal.ILLEGAL_DOUBLE;
   private double m_dMin = CGlobal.ILLEGAL_DOUBLE;

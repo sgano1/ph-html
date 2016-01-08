@@ -31,7 +31,7 @@ import com.helger.html.parser.XHTMLParser;
 
 /**
  * A special XHTML parser that can convert nodes to {@link IHCNode}s.
- * 
+ *
  * @author Philip Helger
  */
 public class HCParser extends XHTMLParser

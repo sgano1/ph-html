@@ -28,7 +28,9 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
  * @param <THISTYPE>
  *        The implementing type
  */
-public abstract class AbstractHCDefinitionItem <THISTYPE extends AbstractHCDefinitionItem <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCDefinitionItem <THISTYPE>
+public abstract class AbstractHCDefinitionItem <THISTYPE extends AbstractHCDefinitionItem <THISTYPE>>
+                                               extends AbstractHCElementWithChildren <THISTYPE>
+                                               implements IHCDefinitionItem <THISTYPE>
 {
   public AbstractHCDefinitionItem (@Nonnull final EHTMLElement aElement)
   {

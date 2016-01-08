@@ -24,12 +24,6 @@ import java.math.BigDecimal;
 
 import org.junit.Test;
 
-import com.helger.html.jscode.IJSExpression;
-import com.helger.html.jscode.JSAtomBigDecimal;
-import com.helger.html.jscode.JSAtomInt;
-import com.helger.html.jscode.JSExpr;
-import com.helger.html.jscode.JSOp;
-import com.helger.html.jscode.JSRef;
 import com.helger.html.jscode.type.JSPrimitiveType;
 
 /**

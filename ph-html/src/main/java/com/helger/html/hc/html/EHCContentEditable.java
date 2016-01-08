@@ -22,14 +22,14 @@ import com.helger.commons.annotation.Nonempty;
 
 /**
  * Content editable?
- * 
+ *
  * @author Philip Helger
  */
 public enum EHCContentEditable implements IHCHasHTMLAttributeValue
 {
- TRUE ("true"),
- FALSE ("false"),
- INHERIT ("inherit");
+  TRUE ("true"),
+  FALSE ("false"),
+  INHERIT ("inherit");
 
   private final String m_sAttrValue;
 

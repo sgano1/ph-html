@@ -24,7 +24,7 @@ import java.lang.annotation.Target;
 
 /**
  * Marker annotation that a type is an out-of-band node.
- * 
+ *
  * @author Philip Helger
  */
 @Documented

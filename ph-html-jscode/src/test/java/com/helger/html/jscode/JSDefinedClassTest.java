@@ -18,13 +18,6 @@ package com.helger.html.jscode;
 
 import org.junit.Test;
 
-import com.helger.html.jscode.JSConstructor;
-import com.helger.html.jscode.JSDefinedClass;
-import com.helger.html.jscode.JSExpr;
-import com.helger.html.jscode.JSFieldVar;
-import com.helger.html.jscode.JSMethod;
-import com.helger.html.jscode.JSPackage;
-import com.helger.html.jscode.JSVar;
 import com.helger.html.jscode.html.JSHtml;
 
 /**

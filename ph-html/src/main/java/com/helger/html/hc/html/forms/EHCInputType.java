@@ -29,25 +29,25 @@ import com.helger.html.hc.html.IHCHasHTMLAttributeValue;
  */
 public enum EHCInputType implements IHCHasHTMLAttributeValue
 {
- HIDDEN ("hidden"),
- TEXT ("text"),
- @SinceHTML5 SEARCH ("search"),
- @SinceHTML5 TEL ("tel"),
- @SinceHTML5 URL ("url"),
- @SinceHTML5 EMAIL ("email"),
- PASSWORD ("password"),
- @SinceHTML5 DATE ("date"),
- @SinceHTML5 TIME ("time"),
- @SinceHTML5 NUMBER ("number"),
- @SinceHTML5 RANGE ("range"),
- @SinceHTML5 COLOR ("color"),
- CHECKBOX ("checkbox"),
- RADIO ("radio"),
- FILE ("file"),
- SUBMIT ("submit"),
- IMAGE ("image"),
- RESET ("reset"),
- BUTTON ("button");
+  HIDDEN ("hidden"),
+  TEXT ("text"),
+  @SinceHTML5 SEARCH ("search"),
+  @SinceHTML5 TEL ("tel"),
+  @SinceHTML5 URL ("url"),
+  @SinceHTML5 EMAIL ("email"),
+  PASSWORD ("password"),
+  @SinceHTML5 DATE ("date"),
+  @SinceHTML5 TIME ("time"),
+  @SinceHTML5 NUMBER ("number"),
+  @SinceHTML5 RANGE ("range"),
+  @SinceHTML5 COLOR ("color"),
+  CHECKBOX ("checkbox"),
+  RADIO ("radio"),
+  FILE ("file"),
+  SUBMIT ("submit"),
+  IMAGE ("image"),
+  RESET ("reset"),
+  BUTTON ("button");
 
   private final String m_sAttrValue;
 

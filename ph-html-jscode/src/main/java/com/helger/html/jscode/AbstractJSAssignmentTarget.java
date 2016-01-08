@@ -20,7 +20,7 @@ import javax.annotation.Nonnull;
 
 /**
  * Abstract assignment target implementation
- * 
+ *
  * @author Philip Helger
  */
 public abstract class AbstractJSAssignmentTarget extends AbstractJSExpression implements IJSAssignmentTarget

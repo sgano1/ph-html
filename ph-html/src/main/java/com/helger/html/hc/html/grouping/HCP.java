@@ -23,7 +23,7 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;P&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCP extends AbstractHCElementWithChildren <HCP>

@@ -24,16 +24,16 @@ import com.helger.html.hc.html.IHCHasHTMLAttributeValue;
 /**
  * Enumeration for the possible "alignment" values in HTML
  * {@link com.helger.html.hc.html.embedded.HCObject} tags.
- * 
+ *
  * @author Philip Helger
  */
 public enum EHCObjectAlign implements IHCHasHTMLAttributeValue
 {
- TOP ("top"),
- MIDDLE ("middle"),
- BOTTOM ("bottom"),
- LEFT ("left"),
- RIGHT ("right");
+  TOP ("top"),
+  MIDDLE ("middle"),
+  BOTTOM ("bottom"),
+  LEFT ("left"),
+  RIGHT ("right");
 
   private final String m_sAttrValue;
 

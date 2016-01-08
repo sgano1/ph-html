@@ -25,8 +25,6 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-import com.helger.html.hc.html.grouping.HCP;
-
 /**
  * Test class for class {@link HCP}
  *

@@ -52,7 +52,8 @@ import com.helger.html.resource.css.ICSSCodeProvider;
  *        Implementation type
  */
 @NotThreadSafe
-public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecialNodes <IMPLTYPE>> implements IHCSpecialNodes
+public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecialNodes <IMPLTYPE>>
+                                             implements IHCSpecialNodes
 {
   private static final Logger s_aLogger = LoggerFactory.getLogger (AbstractHCSpecialNodes.class);
 

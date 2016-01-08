@@ -51,7 +51,8 @@ import com.helger.html.js.IHasJSCodeWithSettings;
  * @param <THISTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE> implements IHCForm <THISTYPE>
+public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>>
+                                     extends AbstractHCElementWithChildren <THISTYPE> implements IHCForm <THISTYPE>
 {
   /** By default no auto complete setting is active */
   public static final ETriState DEFAULT_AUTO_COMPLETE = ETriState.UNDEFINED;

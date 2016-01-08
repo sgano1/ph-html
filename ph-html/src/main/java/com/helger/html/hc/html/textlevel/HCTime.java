@@ -16,6 +16,10 @@
  */
 package com.helger.html.hc.html.textlevel;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 import javax.annotation.CheckForSigned;
@@ -23,16 +27,8 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import org.joda.time.DateTime;
-import org.joda.time.Duration;
-import org.joda.time.LocalDate;
-import org.joda.time.LocalDateTime;
-import org.joda.time.LocalTime;
-import org.joda.time.Period;
-import org.joda.time.format.ISODateTimeFormat;
-import org.joda.time.format.ISOPeriodFormat;
-
 import com.helger.commons.CGlobal;
+import com.helger.commons.datetime.DateTimeFormatterCache;
 import com.helger.commons.math.MathHelper;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.StringHelper;
@@ -90,7 +86,7 @@ public class HCTime extends AbstractHCElementWithChildren <HCTime>
   @Nonnull
   public HCTime setAsDate (@Nonnull final LocalDate aDate)
   {
-    m_sDatetime = ISODateTimeFormat.yearMonthDay ().print (aDate);
+    m_sDatetime = DateTimeFormatterCache.getDateTimeFormatterStrict ("uuuu-MM-dd").format (aDate);
     return this;
   }
 
@@ -148,7 +144,7 @@ public class HCTime extends AbstractHCElementWithChildren <HCTime>
   @Nonnull
   public HCTime setAsTime (@Nonnull final LocalTime aTime)
   {
-    m_sDatetime = ISODateTimeFormat.hourMinuteSecondMillis ().print (aTime);
+    m_sDatetime = DateTimeFormatterCache.getDateTimeFormatterStrict ("HH:mm:ss").format (aTime);
     return this;
   }
 
@@ -161,15 +157,14 @@ public class HCTime extends AbstractHCElementWithChildren <HCTime>
   @Nonnull
   public HCTime setAsDateAndTime (@Nonnull final LocalDateTime aDateTime)
   {
-    m_sDatetime = ISODateTimeFormat.dateTime ().print (aDateTime);
+    m_sDatetime = DateTimeFormatterCache.getDateTimeFormatterStrict ("uuuu-MM-dd'T'HH:mm:ss.SSSZZ").format (aDateTime);
     return this;
   }
 
   @Nonnull
-  public HCTime setAsDateAndTime (@Nonnull final DateTime aDateTime)
+  public HCTime setAsDateAndTime (@Nonnull final ZonedDateTime aDateTime)
   {
-    m_sDatetime = ISODateTimeFormat.dateTime ().print (aDateTime);
-    return this;
+    return setAsDateAndTime (aDateTime.toLocalDateTime ());
   }
 
   @Nonnull
@@ -197,19 +192,6 @@ public class HCTime extends AbstractHCElementWithChildren <HCTime>
   public HCTime setAsYear (@Nonnegative final int nYear)
   {
     m_sDatetime = StringHelper.getLeadingZero (nYear, LENGTH_YEAR);
-    return this;
-  }
-
-  @Nonnull
-  public HCTime setAsDuration (@Nonnull final Duration aDuration)
-  {
-    return setAsDuration (aDuration.toPeriod ());
-  }
-
-  @Nonnull
-  public HCTime setAsDuration (@Nonnull final Period aPeriod)
-  {
-    m_sDatetime = ISOPeriodFormat.standard ().print (aPeriod);
     return this;
   }
 

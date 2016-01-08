@@ -21,13 +21,14 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
 
-import com.helger.commons.annotation.DevelopersNote;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.impl.HCTextNode;
 
 @NotThreadSafe
-public abstract class AbstractHCElementWithChildren <THISTYPE extends AbstractHCElementWithChildren <THISTYPE>> extends AbstractHCElementWithInternalChildren <THISTYPE, IHCNode>implements IHCElementWithChildren <THISTYPE>
+public abstract class AbstractHCElementWithChildren <THISTYPE extends AbstractHCElementWithChildren <THISTYPE>>
+                                                    extends AbstractHCElementWithInternalChildren <THISTYPE, IHCNode>
+                                                    implements IHCElementWithChildren <THISTYPE>
 {
   protected AbstractHCElementWithChildren (@Nonnull final EHTMLElement eElement)
   {
@@ -50,14 +51,6 @@ public abstract class AbstractHCElementWithChildren <THISTYPE extends AbstractHC
     if (sText != null)
       addChild (nIndex, new HCTextNode (sText));
     return thisAsT ();
-  }
-
-  @Nonnull
-  @DevelopersNote ("Use addChild instead!")
-  @Deprecated
-  public final THISTYPE addChildren (@Nullable final String sChild)
-  {
-    return addChild (sChild);
   }
 
   @Nonnull

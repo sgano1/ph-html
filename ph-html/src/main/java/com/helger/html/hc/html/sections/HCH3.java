@@ -21,7 +21,7 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;H3&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCH3 extends AbstractHCElementWithChildren <HCH3>

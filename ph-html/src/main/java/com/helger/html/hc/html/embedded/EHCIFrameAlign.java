@@ -23,16 +23,16 @@ import com.helger.html.hc.html.IHCHasHTMLAttributeValue;
 
 /**
  * Enumeration for {@link com.helger.html.hc.html.embedded.HCIFrame} alignment.
- * 
+ *
  * @author Philip Helger
  */
 public enum EHCIFrameAlign implements IHCHasHTMLAttributeValue
 {
- TOP ("top"),
- MIDDLE ("middle"),
- BOTTOM ("bottom"),
- LEFT ("left"),
- RIGHT ("right");
+  TOP ("top"),
+  MIDDLE ("middle"),
+  BOTTOM ("bottom"),
+  LEFT ("left"),
+  RIGHT ("right");
 
   private final String m_sAttrValue;
 

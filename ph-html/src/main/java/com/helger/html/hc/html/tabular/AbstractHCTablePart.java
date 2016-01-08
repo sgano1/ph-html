@@ -36,7 +36,9 @@ import com.helger.html.hc.html.AbstractHCElementWithInternalChildren;
  * @param <THISTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCTablePart <THISTYPE extends AbstractHCTablePart <THISTYPE>> extends AbstractHCElementWithInternalChildren <THISTYPE, HCRow>implements IHCTablePart <THISTYPE>
+public abstract class AbstractHCTablePart <THISTYPE extends AbstractHCTablePart <THISTYPE>>
+                                          extends AbstractHCElementWithInternalChildren <THISTYPE, HCRow>
+                                          implements IHCTablePart <THISTYPE>
 {
   private final boolean m_bHeaderOrFooter;
 

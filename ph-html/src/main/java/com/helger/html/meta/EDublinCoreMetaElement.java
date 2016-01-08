@@ -24,26 +24,26 @@ import com.helger.commons.lang.EnumHelper;
 
 /**
  * An enumeration with all DublinCore meta tag names.
- * 
+ *
  * @author Philip Helger
  */
 public enum EDublinCoreMetaElement implements IMetaElementDeclaration
 {
- TITLE ("DC.title"),
- CREATOR ("DC.creator"),
- SUBJECT ("DC.subject"),
- DESCRIPTION ("DC.description"),
- PUBLISHER ("DC.publisher"),
- CONTRIBUTOR ("DC.contributor"),
- DATE ("DC.date", "DCTERMS.W3CDTF"),
- TYPE ("DC.type", "DCTERMS.DCMIType"),
- FORMAT ("DC.format", "DCTERMS.IMT"),
- IDENTIFIER ("DC.identifier", "DCTERMS.URI"),
- SOURCE ("DC.source", "DCTERMS.URI"),
- LANGUAGE ("DC.language", "DCTERMS.RFC3066"),
- RELATION ("DC.relation", "DCTERMS.URI"),
- COVERAGE ("DC.coverage", "DCTERMS.TGN"),
- RIGHTS ("DC.rights");
+  TITLE ("DC.title"),
+  CREATOR ("DC.creator"),
+  SUBJECT ("DC.subject"),
+  DESCRIPTION ("DC.description"),
+  PUBLISHER ("DC.publisher"),
+  CONTRIBUTOR ("DC.contributor"),
+  DATE ("DC.date", "DCTERMS.W3CDTF"),
+  TYPE ("DC.type", "DCTERMS.DCMIType"),
+  FORMAT ("DC.format", "DCTERMS.IMT"),
+  IDENTIFIER ("DC.identifier", "DCTERMS.URI"),
+  SOURCE ("DC.source", "DCTERMS.URI"),
+  LANGUAGE ("DC.language", "DCTERMS.RFC3066"),
+  RELATION ("DC.relation", "DCTERMS.URI"),
+  COVERAGE ("DC.coverage", "DCTERMS.TGN"),
+  RIGHTS ("DC.rights");
 
   /**
    * Meta tag name
@@ -68,7 +68,7 @@ public enum EDublinCoreMetaElement implements IMetaElementDeclaration
 
   /**
    * Get the meta tag name.
-   * 
+   *
    * @return the meta tag name
    */
   @Nonnull
@@ -80,7 +80,7 @@ public enum EDublinCoreMetaElement implements IMetaElementDeclaration
 
   /**
    * Get the corresponding scheme of the meta tag.
-   * 
+   *
    * @return <code>null</code> if the meta tag has no scheme
    */
   @Nullable
@@ -99,7 +99,7 @@ public enum EDublinCoreMetaElement implements IMetaElementDeclaration
 
   /**
    * Check if a tag is a DublinCore tag.
-   * 
+   *
    * @param sTagName
    *        the tag name to check
    * @return null if the tag name is not a DublinCore meta tag

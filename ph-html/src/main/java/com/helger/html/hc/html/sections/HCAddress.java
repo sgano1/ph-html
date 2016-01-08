@@ -21,7 +21,7 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;ADDRESS&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCAddress extends AbstractHCElementWithChildren <HCAddress>

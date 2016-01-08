@@ -22,17 +22,18 @@ import com.helger.commons.annotation.Nonempty;
 import com.helger.html.hc.html.IHCHasHTMLAttributeValue;
 
 /**
- * Alignment of an {@link com.helger.html.hc.html.tabular.AbstractHCCell} element.
- * 
+ * Alignment of an {@link com.helger.html.hc.html.tabular.AbstractHCCell}
+ * element.
+ *
  * @author Philip Helger
  */
 public enum EHCCellAlign implements IHCHasHTMLAttributeValue
 {
- LEFT ("left"),
- CENTER ("center"),
- RIGHT ("right"),
- JUSTIFY ("justify"),
- CHAR ("char");
+  LEFT ("left"),
+  CENTER ("center"),
+  RIGHT ("right"),
+  JUSTIFY ("justify"),
+  CHAR ("char");
 
   private final String m_sAttrValue;
 

@@ -27,7 +27,8 @@ import com.helger.html.EHTMLElement;
  * @param <THISTYPE>
  *        The real implementation type.
  */
-public abstract class AbstractHCListLI <THISTYPE extends AbstractHCList <THISTYPE, HCLI>> extends AbstractHCList <THISTYPE, HCLI>
+public abstract class AbstractHCListLI <THISTYPE extends AbstractHCList <THISTYPE, HCLI>>
+                                       extends AbstractHCList <THISTYPE, HCLI>
 {
   public AbstractHCListLI (@Nonnull final EHTMLElement eElement)
   {

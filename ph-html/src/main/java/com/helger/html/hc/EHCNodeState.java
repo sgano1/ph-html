@@ -20,16 +20,16 @@ import javax.annotation.Nonnull;
 
 /**
  * This enum represents the internal state of {@link IHCNode} objects.
- * 
+ *
  * @author Philip Helger
  */
 public enum EHCNodeState
 {
- INITIAL (0),
- CUSTOMIZED (1),
- FINALIZED (2),
- CONSISTENCY_CHECKED (3),
- RESOURCES_REGISTERED (4);
+  INITIAL (0),
+  CUSTOMIZED (1),
+  FINALIZED (2),
+  CONSISTENCY_CHECKED (3),
+  RESOURCES_REGISTERED (4);
 
   private final int m_nID;
 

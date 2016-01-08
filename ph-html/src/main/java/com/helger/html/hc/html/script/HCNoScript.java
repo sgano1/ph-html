@@ -21,7 +21,7 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;NOSCRIPT&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCNoScript extends AbstractHCElementWithChildren <HCNoScript>

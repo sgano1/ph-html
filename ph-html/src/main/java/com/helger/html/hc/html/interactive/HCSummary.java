@@ -22,7 +22,7 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
 
 /**
  * Summary element may be the first child of {@link HCDetails}
- * 
+ *
  * @author Philip Helger
  */
 @SinceHTML5

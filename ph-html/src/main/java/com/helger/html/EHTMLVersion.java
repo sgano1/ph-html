@@ -28,86 +28,86 @@ import com.helger.commons.microdom.IMicroDocumentType;
  */
 public enum EHTMLVersion
 {
- XHTML10_STRICT
- {
-   @Override
-   @Nonnull
-   public IMicroDocumentType getDocType ()
-   {
-     return CHTMLDocTypes.DOCTYPE_XHTML10_STRICT;
-   }
+  XHTML10_STRICT
+  {
+    @Override
+    @Nonnull
+    public IMicroDocumentType getDocType ()
+    {
+      return CHTMLDocTypes.DOCTYPE_XHTML10_STRICT;
+    }
 
-   @Override
-   @Nonnull
-   public String getNamespaceURI ()
-   {
-     return CHTMLDocTypes.DOCTYPE_XHTML_URI;
-   }
- },
- XHTML10_TRANSITIONAL
- {
-   @Override
-   @Nonnull
-   public IMicroDocumentType getDocType ()
-   {
-     return CHTMLDocTypes.DOCTYPE_XHTML10_TRANS;
-   }
+    @Override
+    @Nonnull
+    public String getNamespaceURI ()
+    {
+      return CHTMLDocTypes.DOCTYPE_XHTML_URI;
+    }
+  },
+  XHTML10_TRANSITIONAL
+  {
+    @Override
+    @Nonnull
+    public IMicroDocumentType getDocType ()
+    {
+      return CHTMLDocTypes.DOCTYPE_XHTML10_TRANS;
+    }
 
-   @Override
-   @Nonnull
-   public String getNamespaceURI ()
-   {
-     return CHTMLDocTypes.DOCTYPE_XHTML_URI;
-   }
- },
- XHTML11
- {
-   @Override
-   @Nonnull
-   public IMicroDocumentType getDocType ()
-   {
-     return CHTMLDocTypes.DOCTYPE_XHTML11;
-   }
+    @Override
+    @Nonnull
+    public String getNamespaceURI ()
+    {
+      return CHTMLDocTypes.DOCTYPE_XHTML_URI;
+    }
+  },
+  XHTML11
+  {
+    @Override
+    @Nonnull
+    public IMicroDocumentType getDocType ()
+    {
+      return CHTMLDocTypes.DOCTYPE_XHTML11;
+    }
 
-   @Override
-   @Nonnull
-   public String getNamespaceURI ()
-   {
-     return CHTMLDocTypes.DOCTYPE_XHTML_URI;
-   }
- },
- HTML5
- {
-   @Override
-   @Nonnull
-   public IMicroDocumentType getDocType ()
-   {
-     return CHTMLDocTypes.DOCTYPE_HTML5;
-   }
+    @Override
+    @Nonnull
+    public String getNamespaceURI ()
+    {
+      return CHTMLDocTypes.DOCTYPE_XHTML_URI;
+    }
+  },
+  HTML5
+  {
+    @Override
+    @Nonnull
+    public IMicroDocumentType getDocType ()
+    {
+      return CHTMLDocTypes.DOCTYPE_HTML5;
+    }
 
-   @Override
-   @Nullable
-   public String getNamespaceURI ()
-   {
-     return null;
-   }
- },
- HTML51
- {
-   @Override
-   @Nonnull
-   public IMicroDocumentType getDocType ()
-   {
-     return CHTMLDocTypes.DOCTYPE_HTML5;
-   }
+    @Override
+    @Nullable
+    public String getNamespaceURI ()
+    {
+      return null;
+    }
+  },
+  HTML51
+  {
+    @Override
+    @Nonnull
+    public IMicroDocumentType getDocType ()
+    {
+      return CHTMLDocTypes.DOCTYPE_HTML5;
+    }
 
-   @Override
-   @Nullable
-   public String getNamespaceURI ()
-   {
-     return null;
-   }
- };
+    @Override
+    @Nullable
+    public String getNamespaceURI ()
+    {
+      return null;
+    }
+  };
 
   /**
    * XHTML 1.1 is the default HTML version to use

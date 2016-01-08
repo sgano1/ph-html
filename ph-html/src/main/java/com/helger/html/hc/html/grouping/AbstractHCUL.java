@@ -34,7 +34,8 @@ import com.helger.html.hc.IHCConversionSettingsToNode;
  * @param <THISTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCUL <THISTYPE extends AbstractHCUL <THISTYPE>> extends AbstractHCListLI <THISTYPE> implements IHCUL <THISTYPE>
+public abstract class AbstractHCUL <THISTYPE extends AbstractHCUL <THISTYPE>> extends AbstractHCListLI <THISTYPE>
+                                   implements IHCUL <THISTYPE>
 {
   private EHCULType m_eType;
 

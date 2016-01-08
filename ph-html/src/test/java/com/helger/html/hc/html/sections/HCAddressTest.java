@@ -20,11 +20,9 @@ import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
-import com.helger.html.hc.html.sections.HCAddress;
-
 /**
  * Test class for class {@link HCAddress}
- * 
+ *
  * @author Philip Helger
  */
 public final class HCAddressTest

@@ -28,7 +28,8 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
  *        Implementation type
  */
 @SinceHTML5
-public abstract class AbstractHCNav <THISTYPE extends AbstractHCNav <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCNav <THISTYPE>
+public abstract class AbstractHCNav <THISTYPE extends AbstractHCNav <THISTYPE>>
+                                    extends AbstractHCElementWithChildren <THISTYPE> implements IHCNav <THISTYPE>
 {
   public AbstractHCNav ()
   {

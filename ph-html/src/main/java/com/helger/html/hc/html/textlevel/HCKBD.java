@@ -21,7 +21,7 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;KBD&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCKBD extends AbstractHCElementWithChildren <HCKBD>

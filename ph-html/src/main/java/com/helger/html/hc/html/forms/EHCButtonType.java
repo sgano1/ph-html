@@ -23,14 +23,14 @@ import com.helger.html.hc.html.IHCHasHTMLAttributeValue;
 
 /**
  * Type of an {@link com.helger.html.hc.html.forms.HCButton}
- * 
+ *
  * @author Philip Helger
  */
 public enum EHCButtonType implements IHCHasHTMLAttributeValue
 {
- SUBMIT ("submit"),
- RESET ("reset"),
- BUTTON ("button");
+  SUBMIT ("submit"),
+  RESET ("reset"),
+  BUTTON ("button");
 
   private final String m_sAttrValue;
 

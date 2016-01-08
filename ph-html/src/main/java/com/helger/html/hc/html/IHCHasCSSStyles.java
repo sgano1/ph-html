@@ -26,6 +26,7 @@ import com.helger.commons.annotation.DevelopersNote;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.css.ICSSWriterSettings;
+import com.helger.css.property.CSSPropertyFree;
 import com.helger.css.property.ECSSProperty;
 import com.helger.css.propertyvalue.ICSSValue;
 
@@ -48,7 +49,10 @@ public interface IHCHasCSSStyles <THISTYPE extends IHCHasCSSStyles <THISTYPE>>
    * @return this
    */
   @Nonnull
-  THISTYPE addStyle (@Nonnull ECSSProperty eProperty, @Nonnull @Nonempty String sPropertyValue);
+  default THISTYPE addStyle (@Nonnull final ECSSProperty eProperty, @Nonnull @Nonempty final String sPropertyValue)
+  {
+    return addStyle (new CSSPropertyFree (eProperty).newValue (sPropertyValue));
+  }
 
   /**
    * Add an element specific style.
@@ -63,7 +67,10 @@ public interface IHCHasCSSStyles <THISTYPE extends IHCHasCSSStyles <THISTYPE>>
   @Nonnull
   @Deprecated
   @DevelopersNote ("Use addStyle instead!")
-  THISTYPE addStyles (@Nullable ICSSValue aValue);
+  default THISTYPE addStyles (@Nullable final ICSSValue aValue)
+  {
+    return addStyle (aValue);
+  }
 
   /**
    * Add element specific styles.
@@ -119,7 +126,7 @@ public interface IHCHasCSSStyles <THISTYPE extends IHCHasCSSStyles <THISTYPE>>
 
   /**
    * Find the style value associated to a single property.
-   * 
+   *
    * @param eProperty
    *        The property to search. May be <code>null</code>.
    * @return <code>null</code> if no such style is contained.
@@ -129,7 +136,7 @@ public interface IHCHasCSSStyles <THISTYPE extends IHCHasCSSStyles <THISTYPE>>
 
   /**
    * Check if a style value is associated to a single property.
-   * 
+   *
    * @param eProperty
    *        The property to search. May be <code>null</code>.
    * @return <code>true</code> if a respective style is present,

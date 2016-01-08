@@ -22,7 +22,7 @@ import com.helger.commons.annotation.MustImplementEqualsAndHashcode;
 
 /**
  * Interface for a CSS class provider.
- * 
+ *
  * @author Philip Helger
  */
 @MustImplementEqualsAndHashcode

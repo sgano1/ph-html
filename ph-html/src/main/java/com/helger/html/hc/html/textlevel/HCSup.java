@@ -21,7 +21,7 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;SUP&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCSup extends AbstractHCElementWithChildren <HCSup>

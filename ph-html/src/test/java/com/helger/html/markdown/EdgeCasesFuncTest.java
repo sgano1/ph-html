@@ -60,7 +60,7 @@ import java.util.regex.Pattern;
 import org.junit.Rule;
 import org.junit.Test;
 
-import com.helger.commons.regex.RegExPool;
+import com.helger.commons.regex.RegExCache;
 import com.helger.html.hc.mock.HCTestRuleOptimized;
 
 public final class EdgeCasesFuncTest
@@ -97,7 +97,7 @@ public final class EdgeCasesFuncTest
   {
     // In Perl, split(/x/, "") returns the empty string.
     // But in Java, it's the array { "" }.
-    final Pattern x = RegExPool.getPattern ("x");
+    final Pattern x = RegExCache.getPattern ("x");
     final String [] xs = x.split ("");
     assertEquals (1, xs.length);
     assertEquals ("", xs[0]);

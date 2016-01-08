@@ -19,6 +19,8 @@ package com.helger.html.hc;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.helger.commons.id.factory.GlobalIDFactory;
+
 /**
  * Special interface for HC elements having an optional ID
  *
@@ -62,7 +64,10 @@ public interface IHCHasID <THISTYPE extends IHCHasID <THISTYPE>>
    * @return this
    */
   @Nonnull
-  THISTYPE setUniqueID ();
+  default THISTYPE setUniqueID ()
+  {
+    return setID (GlobalIDFactory.getNewStringID ());
+  }
 
   /**
    * Set a new ID if none is present. This is a shortcut for

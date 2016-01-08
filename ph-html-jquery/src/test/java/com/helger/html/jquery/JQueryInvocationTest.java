@@ -21,10 +21,6 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.helger.html.EHTMLElement;
-import com.helger.html.jquery.JQuery;
-import com.helger.html.jquery.JQueryInvocation;
-import com.helger.html.jquery.JQuerySelector;
-import com.helger.html.jquery.JQuerySelectorList;
 
 /**
  * Test class for class {@link JQueryInvocation}
@@ -187,10 +183,8 @@ public final class JQueryInvocationTest
   public void testArgs ()
   {
     assertEquals ("$(document).on($('#abc'));", JQuery.jQueryDocument ().on ().arg (JQuery.idRef ("abc")).getJSCode ());
-    assertEquals ("$(document).on('#abc');", JQuery.jQueryDocument ()
-                                                   .on ()
-                                                   .arg (JQuerySelector.id ("abc"))
-                                                   .getJSCode ());
+    assertEquals ("$(document).on('#abc');",
+                  JQuery.jQueryDocument ().on ().arg (JQuerySelector.id ("abc")).getJSCode ());
     assertEquals ("$(document).on('#abc td');",
                   JQuery.jQueryDocument ()
                         .on ()

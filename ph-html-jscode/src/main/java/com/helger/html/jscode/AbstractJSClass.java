@@ -114,7 +114,7 @@ public abstract class AbstractJSClass extends AbstractJSType
 
   /**
    * Static field reference.
-   * 
+   *
    * @param aField
    *        Field to reference
    * @return The created {@link JSFieldRef}

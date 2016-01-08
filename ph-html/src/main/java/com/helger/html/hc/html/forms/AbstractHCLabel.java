@@ -35,7 +35,8 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
  * @param <THISTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCLabel <THISTYPE extends AbstractHCLabel <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCLabel <THISTYPE>
+public abstract class AbstractHCLabel <THISTYPE extends AbstractHCLabel <THISTYPE>>
+                                      extends AbstractHCElementWithChildren <THISTYPE> implements IHCLabel <THISTYPE>
 {
   private String m_sFor;
   private String m_sForm;

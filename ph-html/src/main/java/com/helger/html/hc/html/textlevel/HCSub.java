@@ -21,7 +21,7 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;SUB&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCSub extends AbstractHCElementWithChildren <HCSub>

@@ -35,7 +35,8 @@ import com.helger.html.hc.IHCTextNode;
  * @param <THISTYPE>
  *        Implementation type
  */
-public abstract class AbstractHCTextNode <THISTYPE extends AbstractHCTextNode <THISTYPE>> extends AbstractHCNode implements IHCTextNode
+public abstract class AbstractHCTextNode <THISTYPE extends AbstractHCTextNode <THISTYPE>> extends AbstractHCNode
+                                         implements IHCTextNode
 {
   private String m_sText;
   private boolean m_bEscape = MicroText.DEFAULT_ESCAPE;

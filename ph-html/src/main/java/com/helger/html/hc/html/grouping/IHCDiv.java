@@ -21,12 +21,13 @@ import com.helger.html.hc.html.IHCElementWithChildren;
 
 /**
  * Interface for DIVs
- * 
+ *
  * @author Philip Helger
  * @param <THISTYPE>
  *        Implementation type
  */
-public interface IHCDiv <THISTYPE extends IHCDiv <THISTYPE>> extends IHCElementWithChildren <THISTYPE>, IHCHasName <THISTYPE>
+public interface IHCDiv <THISTYPE extends IHCDiv <THISTYPE>>
+                        extends IHCElementWithChildren <THISTYPE>, IHCHasName <THISTYPE>
 {
   /* empty */
 }

@@ -40,7 +40,8 @@ import com.helger.html.hc.html.AbstractHCMediaElementChild;
  * @param <THISTYPE>
  *        The implementation type.
  */
-public abstract class AbstractHCImg <THISTYPE extends AbstractHCImg <THISTYPE>> extends AbstractHCMediaElementChild <THISTYPE> implements IHCImg <THISTYPE>
+public abstract class AbstractHCImg <THISTYPE extends AbstractHCImg <THISTYPE>>
+                                    extends AbstractHCMediaElementChild <THISTYPE> implements IHCImg <THISTYPE>
 {
   // Inline images can be SimpleURLs as well!
   private ISimpleURL m_aSrc;

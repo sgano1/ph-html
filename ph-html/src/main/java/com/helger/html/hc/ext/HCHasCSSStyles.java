@@ -24,14 +24,11 @@ import java.util.Map;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotation.DevelopersNote;
-import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.css.ICSSWriterSettings;
-import com.helger.css.property.CSSPropertyFree;
 import com.helger.css.property.ECSSProperty;
 import com.helger.css.propertyvalue.ICSSValue;
 import com.helger.html.hc.html.IHCHasCSSStyles;
@@ -88,13 +85,6 @@ public class HCHasCSSStyles implements IHCHasCSSStyles <HCHasCSSStyles>
   }
 
   @Nonnull
-  public final HCHasCSSStyles addStyle (@Nonnull final ECSSProperty eProperty,
-                                        @Nonnull @Nonempty final String sPropertyValue)
-  {
-    return addStyle (new CSSPropertyFree (eProperty).newValue (sPropertyValue));
-  }
-
-  @Nonnull
   public final HCHasCSSStyles addStyle (@Nullable final ICSSValue aValue)
   {
     if (aValue != null)
@@ -104,14 +94,6 @@ public class HCHasCSSStyles implements IHCHasCSSStyles <HCHasCSSStyles>
       m_aStyles.put (aValue.getProp (), aValue);
     }
     return this;
-  }
-
-  @Nonnull
-  @DevelopersNote ("Use addStyle - singular")
-  @Deprecated
-  public final HCHasCSSStyles addStyles (@Nullable final ICSSValue aValue)
-  {
-    return addStyle (aValue);
   }
 
   @Nonnull

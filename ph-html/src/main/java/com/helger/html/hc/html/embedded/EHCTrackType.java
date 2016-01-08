@@ -23,16 +23,16 @@ import com.helger.html.hc.html.IHCHasHTMLAttributeValue;
 
 /**
  * Track type (read-only property in JS)
- * 
+ *
  * @author Philip Helger
  */
 public enum EHCTrackType implements IHCHasHTMLAttributeValue
 {
- SUBTITLES ("subtitles"),
- CAPTIONS ("captions"),
- DESCRIPTIONS ("descriptions"),
- CHAPTERS ("chapters"),
- METADATA ("metadata");
+  SUBTITLES ("subtitles"),
+  CAPTIONS ("captions"),
+  DESCRIPTIONS ("descriptions"),
+  CHAPTERS ("chapters"),
+  METADATA ("metadata");
 
   private final String m_sAttrValue;
 

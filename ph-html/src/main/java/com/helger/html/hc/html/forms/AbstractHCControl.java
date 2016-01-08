@@ -38,7 +38,8 @@ import com.helger.html.hc.html.FakeJS;
 import com.helger.html.hc.html.script.HCScriptInline;
 
 @NotThreadSafe
-public abstract class AbstractHCControl <THISTYPE extends AbstractHCControl <THISTYPE>> extends AbstractHCElement <THISTYPE>implements IHCControl <THISTYPE>
+public abstract class AbstractHCControl <THISTYPE extends AbstractHCControl <THISTYPE>>
+                                        extends AbstractHCElement <THISTYPE> implements IHCControl <THISTYPE>
 {
   public static final boolean DEFAULT_DISABLED = false;
   public static final boolean DEFAULT_READ_ONLY = false;

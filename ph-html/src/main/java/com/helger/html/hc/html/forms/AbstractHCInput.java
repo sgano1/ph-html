@@ -42,7 +42,8 @@ import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.IHasJSCodeWithSettings;
 
 @NotThreadSafe
-public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYPE>> extends AbstractHCControl <IMPLTYPE> implements IHCInput <IMPLTYPE>
+public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYPE>> extends AbstractHCControl <IMPLTYPE>
+                                      implements IHCInput <IMPLTYPE>
 {
   /** By default no auto complete setting is active */
   public static final ETriState DEFAULT_AUTO_COMPLETE = ETriState.UNDEFINED;
@@ -546,14 +547,18 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
     if (StringHelper.hasText (m_sAlt))
       aElement.setAttribute (CHTMLAttributes.ALT, m_sAlt);
     if (m_eAutoComplete.isDefined ())
-      aElement.setAttribute (CHTMLAttributes.AUTOCOMPLETE, m_eAutoComplete.isTrue () ? CHTMLAttributeValues.ON : CHTMLAttributeValues.OFF);
+      aElement.setAttribute (CHTMLAttributes.AUTOCOMPLETE,
+                             m_eAutoComplete.isTrue () ? CHTMLAttributeValues.ON : CHTMLAttributeValues.OFF);
     if (m_bChecked)
       aElement.setAttribute (CHTMLAttributes.CHECKED, CHTMLAttributeValues.CHECKED);
     if (StringHelper.hasText (m_sDirName))
       aElement.setAttribute (CHTMLAttributes.DIRNAME, m_sDirName);
     if (StringHelper.hasText (m_sForm))
       aElement.setAttribute (CHTMLAttributes.FORM, m_sForm);
-    m_aFormAction.applyProperties (CHTMLAttributes.FORMACTION, aElement, aConversionSettings.getJSWriterSettings (), aConversionSettings.getCharset ());
+    m_aFormAction.applyProperties (CHTMLAttributes.FORMACTION,
+                                   aElement,
+                                   aConversionSettings.getJSWriterSettings (),
+                                   aConversionSettings.getCharset ());
     if (m_aFormEncType != null)
       aElement.setAttribute (CHTMLAttributes.FORMENCTYPE, m_aFormEncType.getAsString ());
     if (m_eFormMethod != null)
@@ -583,7 +588,8 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
     if (m_nSize > 0)
       aElement.setAttribute (CHTMLAttributes.SIZE, m_nSize);
     if (m_aSrc != null)
-      aElement.setAttribute (CHTMLAttributes.SRC, m_aSrc.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
+      aElement.setAttribute (CHTMLAttributes.SRC,
+                             m_aSrc.getAsStringWithEncodedParameters (aConversionSettings.getCharset ()));
     if (StringHelper.hasText (m_sStep))
       aElement.setAttribute (CHTMLAttributes.STEP, m_sStep);
     if (m_sValue != null)

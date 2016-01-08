@@ -28,9 +28,6 @@ import org.junit.Test;
 import org.junit.rules.TestRule;
 
 import com.helger.commons.junit.DebugModeTestRule;
-import com.helger.html.hc.html.tabular.HCCol;
-import com.helger.html.hc.html.tabular.HCRow;
-import com.helger.html.hc.html.tabular.HCTable;
 import com.helger.html.hc.render.HCRenderer;
 
 /**

@@ -21,7 +21,7 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;ABBR&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCAbbr extends AbstractHCElementWithChildren <HCAbbr>

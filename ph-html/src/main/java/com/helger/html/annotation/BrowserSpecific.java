@@ -25,7 +25,7 @@ import java.lang.annotation.Target;
 /**
  * Marker annotation for JAVA generated output which has only the reason to
  * satisfy a specific browser
- * 
+ *
  * @author boris
  */
 @Documented

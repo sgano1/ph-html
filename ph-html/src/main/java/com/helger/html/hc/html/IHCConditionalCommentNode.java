@@ -23,7 +23,7 @@ import com.helger.html.hc.IHCWrappingNode;
 
 /**
  * Base interface for conditional comments.
- * 
+ *
  * @author Philip Helger
  */
 public interface IHCConditionalCommentNode extends IHCWrappingNode

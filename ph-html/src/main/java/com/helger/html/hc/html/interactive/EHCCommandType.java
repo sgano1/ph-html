@@ -23,14 +23,14 @@ import com.helger.html.hc.html.IHCHasHTMLAttributeValue;
 
 /**
  * Command type
- * 
+ *
  * @author Philip Helger
  */
 public enum EHCCommandType implements IHCHasHTMLAttributeValue
 {
- CHECKBOX ("checkbox"),
- COMMAND ("command"),
- RADIO ("radio");
+  CHECKBOX ("checkbox"),
+  COMMAND ("command"),
+  RADIO ("radio");
 
   /** Default command: command */
   @Nonnull

@@ -28,8 +28,8 @@ import com.helger.html.hc.html.IHCHasHTMLAttributeValue;
  */
 public enum EHCTextAreaWrap implements IHCHasHTMLAttributeValue
 {
- SOFT ("soft"),
- HARD ("hard");
+  SOFT ("soft"),
+  HARD ("hard");
 
   private final String m_sAttrValue;
 

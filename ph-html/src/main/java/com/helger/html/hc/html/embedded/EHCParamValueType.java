@@ -22,16 +22,17 @@ import com.helger.commons.annotation.Nonempty;
 import com.helger.html.hc.html.IHCHasHTMLAttributeValue;
 
 /**
- * An enumeration that can be used in {@link com.helger.html.hc.html.embedded.HCParam}
- * objects to define the used value type.
- * 
+ * An enumeration that can be used in
+ * {@link com.helger.html.hc.html.embedded.HCParam} objects to define the used
+ * value type.
+ *
  * @author Philip Helger
  */
 public enum EHCParamValueType implements IHCHasHTMLAttributeValue
 {
- DATA ("data"),
- REF ("ref"),
- OBJECT ("object");
+  DATA ("data"),
+  REF ("ref"),
+  OBJECT ("object");
 
   /** Default param value type is data */
   public static final EHCParamValueType DEFAULT = DATA;

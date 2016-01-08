@@ -21,7 +21,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
 
-import com.helger.commons.annotation.DevelopersNote;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.IHCNodeList;
 
@@ -34,7 +33,9 @@ import com.helger.html.hc.IHCNodeList;
  *        Implementation type
  */
 @NotThreadSafe
-public abstract class AbstractHCNodeList <THISTYPE extends AbstractHCNodeList <THISTYPE>> extends AbstractHCHasChildrenMutable <THISTYPE, IHCNode>implements IHCNodeList <THISTYPE>
+public abstract class AbstractHCNodeList <THISTYPE extends AbstractHCNodeList <THISTYPE>>
+                                         extends AbstractHCHasChildrenMutable <THISTYPE, IHCNode>
+                                         implements IHCNodeList <THISTYPE>
 {
   public AbstractHCNodeList ()
   {}
@@ -55,14 +56,6 @@ public abstract class AbstractHCNodeList <THISTYPE extends AbstractHCNodeList <T
     if (sText != null)
       addChild (nIndex, new HCTextNode (sText));
     return thisAsT ();
-  }
-
-  @Deprecated
-  @DevelopersNote ("Use addChild instead")
-  @Nonnull
-  public THISTYPE addChildren (@Nullable final String sChild)
-  {
-    return addChild (sChild);
   }
 
   @Nonnull

@@ -32,7 +32,8 @@ import com.helger.html.hc.html.IHCElementWithInternalChildren;
  * @param <ITEMTYPE>
  *        List item type
  */
-public interface IHCList <THISTYPE extends IHCList <THISTYPE, ITEMTYPE>, ITEMTYPE extends IHCLI <ITEMTYPE>> extends IHCElementWithInternalChildren <THISTYPE, ITEMTYPE>
+public interface IHCList <THISTYPE extends IHCList <THISTYPE, ITEMTYPE>, ITEMTYPE extends IHCLI <ITEMTYPE>>
+                         extends IHCElementWithInternalChildren <THISTYPE, ITEMTYPE>
 {
   @Nonnull
   ITEMTYPE addItem ();

@@ -21,7 +21,7 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;INS&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCIns extends AbstractHCElementWithChildren <HCIns>

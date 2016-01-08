@@ -21,7 +21,7 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;BDO&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCBDO extends AbstractHCElementWithChildren <HCBDO>

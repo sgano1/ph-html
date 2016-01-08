@@ -26,7 +26,7 @@ import com.helger.commons.name.IHasName;
 
 /**
  * Represents the value of a single meta element
- * 
+ *
  * @author Philip Helger
  */
 public interface IMetaElementValue extends IHasName, Serializable

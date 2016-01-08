@@ -30,7 +30,7 @@ import com.helger.commons.microdom.IMicroDocument;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.microdom.IMicroQName;
 import com.helger.commons.microdom.serialize.MicroReader;
-import com.helger.commons.regex.RegExPool;
+import com.helger.commons.regex.RegExCache;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.url.ISimpleURL;
 import com.helger.commons.url.SimpleURL;
@@ -1167,16 +1167,13 @@ final class Emitter
 
   protected Map <String, String> parsePluginParams (final String s)
   {
-    final Map <String, String> params = new HashMap <String, String> ();
-    final Pattern p = RegExPool.getPattern ("(\\w+)=\"*((?<=\")[^\"]+(?=\")|([^\\s]+))\"*");
+    final Map <String, String> ret = new HashMap <> ();
+    final Pattern aPattern = RegExCache.getPattern ("(\\w+)=\"*((?<=\")[^\"]+(?=\")|([^\\s]+))\"*");
 
-    final Matcher m = p.matcher (s);
-    while (m.find ())
-    {
-      params.put (m.group (1), m.group (2));
-    }
+    final Matcher aMatcher = aPattern.matcher (s);
+    while (aMatcher.find ())
+      ret.put (aMatcher.group (1), aMatcher.group (2));
 
-    return params;
+    return ret;
   }
-
 }

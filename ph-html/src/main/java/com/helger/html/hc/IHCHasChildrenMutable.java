@@ -18,10 +18,12 @@ package com.helger.html.hc;
 
 import java.util.Comparator;
 
+import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.DevelopersNote;
 
 /**
@@ -33,7 +35,8 @@ import com.helger.commons.annotation.DevelopersNote;
  * @param <CHILDTYPE>
  *        Desired child type
  */
-public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode> extends IHCNode
+public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <THISTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode>
+                                       extends IHCNode
 {
   /**
    * @param aNode
@@ -62,7 +65,10 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
    */
   @Deprecated
   @DevelopersNote ("Use addChild instead")
-  THISTYPE addChildren (@Nullable CHILDTYPE aChild);
+  default THISTYPE addChildren (@Nullable final CHILDTYPE aChild)
+  {
+    return addChild (aChild);
+  }
 
   /**
    * Use {@link #addChild(IHCNode)} instead.
@@ -75,7 +81,11 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
    */
   @Deprecated
   @DevelopersNote ("Use addChild instead")
-  THISTYPE addChildren (@Nonnegative int nIndex, @Nullable CHILDTYPE aChild);
+  default THISTYPE addChildren (@Nonnegative final int nIndex, @Nullable final CHILDTYPE aChild)
+  {
+    ValueEnforcer.isBetweenInclusive (nIndex, "Index", 0, getChildCount ());
+    return addChild (nIndex, aChild);
+  }
 
   /**
    * @param aChildren
@@ -83,6 +93,7 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
    * @return this
    */
   @Nonnull
+  @SuppressWarnings ("unchecked")
   THISTYPE addChildren (@Nullable CHILDTYPE... aChildren);
 
   /**
@@ -93,6 +104,7 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
    * @return this
    */
   @Nonnull
+  @SuppressWarnings ("unchecked")
   THISTYPE addChildren (@Nonnegative int nIndex, @Nullable CHILDTYPE... aChildren);
 
   /**
@@ -121,7 +133,12 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
    * @return the added child
    */
   @Nullable
-  <V extends CHILDTYPE> V addAndReturnChild (@Nullable V aChild);
+  @CheckReturnValue
+  default <V extends CHILDTYPE> V addAndReturnChild (@Nullable final V aChild)
+  {
+    addChild (aChild);
+    return aChild;
+  }
 
   /**
    * @param nIndex
@@ -133,7 +150,12 @@ public interface IHCHasChildrenMutable <THISTYPE extends IHCHasChildrenMutable <
    * @return the added child
    */
   @Nullable
-  <V extends CHILDTYPE> V addAndReturnChild (@Nonnegative int nIndex, @Nullable V aChild);
+  @CheckReturnValue
+  default <V extends CHILDTYPE> V addAndReturnChild (@Nonnegative final int nIndex, @Nullable final V aChild)
+  {
+    addChild (nIndex, aChild);
+    return aChild;
+  }
 
   /**
    * Remove the child at the specified index.

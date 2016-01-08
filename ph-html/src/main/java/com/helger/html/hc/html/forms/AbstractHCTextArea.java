@@ -39,7 +39,8 @@ import com.helger.html.request.IHCRequestField;
  * @param <THISTYPE>
  *        The implementing type
  */
-public abstract class AbstractHCTextArea <THISTYPE extends AbstractHCTextArea <THISTYPE>> extends AbstractHCControl <THISTYPE>implements IHCTextArea <THISTYPE>
+public abstract class AbstractHCTextArea <THISTYPE extends AbstractHCTextArea <THISTYPE>>
+                                         extends AbstractHCControl <THISTYPE> implements IHCTextArea <THISTYPE>
 {
   /** By default no auto complete setting is active */
   public static final ETriState DEFAULT_AUTO_COMPLETE = ETriState.UNDEFINED;

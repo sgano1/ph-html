@@ -24,14 +24,14 @@ import com.helger.commons.name.IHasName;
 
 /**
  * Defines the properties for a meta tag declaration.
- * 
+ *
  * @author Philip Helger
  */
 public interface IMetaElementDeclaration extends IHasName, Serializable
 {
   /**
    * Get the optional metatag scheme.
-   * 
+   *
    * @return the optional meta tag scheme - can be <code>null</code>
    */
   @Nullable

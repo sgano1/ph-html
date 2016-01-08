@@ -21,7 +21,7 @@ import javax.annotation.Nonnull;
 /**
  * Interface for {@link JSType} objects having child types. Used for lists,
  * arrays and maps.
- * 
+ *
  * @author Philip Helger
  */
 public interface IHasChildJSType

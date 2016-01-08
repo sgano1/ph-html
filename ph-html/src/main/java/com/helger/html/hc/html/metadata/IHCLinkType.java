@@ -19,8 +19,8 @@ package com.helger.html.hc.html.metadata;
 import com.helger.html.hc.html.IHCHasHTMLAttributeValue;
 
 /**
- * Base interface for link types (used in {@link com.helger.html.hc.html.metadata.HCLink}
- * )
+ * Base interface for link types (used in
+ * {@link com.helger.html.hc.html.metadata.HCLink} )
  *
  * @author Philip Helger
  */

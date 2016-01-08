@@ -82,7 +82,7 @@ public class JSInvocation extends AbstractJSInvocation <JSInvocation>
 
   /**
    * Invokes a static method on a class.
-   * 
+   *
    * @param aType
    *        Type to use
    * @param sName

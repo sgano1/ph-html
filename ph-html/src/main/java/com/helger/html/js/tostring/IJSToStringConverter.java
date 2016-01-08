@@ -24,7 +24,7 @@ import com.helger.commons.annotation.MustImplementEqualsAndHashcode;
 /**
  * Interface that defines the conversion routines to convert an arbitrary Java
  * object to a valid JavaScript object.
- * 
+ *
  * @author Philip Helger
  */
 @MustImplementEqualsAndHashcode
@@ -32,7 +32,7 @@ public interface IJSToStringConverter
 {
   /**
    * Convert an arbitrary JS object to a string.
-   * 
+   *
    * @param aObject
    *        The object to be converted. May be <code>null</code>.
    * @param aType

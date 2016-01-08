@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 
 /**
  * Base interface for a node having a name
- * 
+ *
  * @author Philip Helger
  * @param <IMPLTYPE>
  *        Implementation type

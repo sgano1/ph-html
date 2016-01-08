@@ -74,9 +74,11 @@ public class HCConversionSettings implements IHCConversionSettings
   @Nonnull
   public static XMLWriterSettings createDefaultXMLWriterSettings (@Nonnull final EHTMLVersion eHTMLVersion)
   {
-    final XMLWriterSettings ret = eHTMLVersion.isAtLeastHTML5 () ? XMLWriterSettings.createForHTML5 () : XMLWriterSettings.createForXHTML ();
+    final XMLWriterSettings ret = eHTMLVersion.isAtLeastHTML5 () ? XMLWriterSettings.createForHTML5 ()
+                                                                 : XMLWriterSettings.createForXHTML ();
     return ret.setIncorrectCharacterHandling (EXMLIncorrectCharacterHandling.DO_NOT_WRITE_LOG_WARNING)
-              .setIndent (DEFAULT_INDENT_AND_ALIGN_HTML ? EXMLSerializeIndent.INDENT_AND_ALIGN : EXMLSerializeIndent.NONE);
+              .setIndent (DEFAULT_INDENT_AND_ALIGN_HTML ? EXMLSerializeIndent.INDENT_AND_ALIGN
+                                                        : EXMLSerializeIndent.NONE);
   }
 
   @Nonnull
@@ -195,7 +197,8 @@ public class HCConversionSettings implements IHCConversionSettings
   public HCConversionSettings setXMLWriterSettingsOptimized (final boolean bOptimized)
   {
     m_aXMLWriterSettings.setIndent (bOptimized ? EXMLSerializeIndent.NONE
-                                               : DEFAULT_INDENT_AND_ALIGN_HTML ? EXMLSerializeIndent.INDENT_AND_ALIGN : EXMLSerializeIndent.NONE);
+                                               : DEFAULT_INDENT_AND_ALIGN_HTML ? EXMLSerializeIndent.INDENT_AND_ALIGN
+                                                                               : EXMLSerializeIndent.NONE);
     return this;
   }
 

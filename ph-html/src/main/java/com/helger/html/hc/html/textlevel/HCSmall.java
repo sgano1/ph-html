@@ -21,7 +21,7 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
 
 /**
  * Represents an HTML &lt;SMALL&gt; element
- * 
+ *
  * @author Philip Helger
  */
 public class HCSmall extends AbstractHCElementWithChildren <HCSmall>

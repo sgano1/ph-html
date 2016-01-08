@@ -57,9 +57,9 @@ abstract class AbstractCreateJQueryAPIList
 
   protected static enum EAPIType implements IHasName
   {
-   METHOD ("method"),
-   PROPERTY ("property"),
-   SELECTOR ("selector");
+    METHOD ("method"),
+    PROPERTY ("property"),
+    SELECTOR ("selector");
 
     private final String m_sName;
 

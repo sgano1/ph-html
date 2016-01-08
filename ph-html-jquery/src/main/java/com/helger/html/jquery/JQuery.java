@@ -354,6 +354,7 @@ public final class JQuery
    *         <code>$('#id1,#id2,#id3')</code>
    */
   @Nonnull
+  @SafeVarargs
   public static JQueryInvocation idRefMultiple (@Nonnull @Nonempty final IHasID <String>... aIDs)
   {
     ValueEnforcer.notEmptyNoNullValue (aIDs, "IDs");

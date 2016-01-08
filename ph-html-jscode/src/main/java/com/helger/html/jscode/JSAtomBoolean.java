@@ -24,7 +24,7 @@ import com.helger.commons.string.ToStringGenerator;
 
 /**
  * An atom for boolean values
- * 
+ *
  * @author Philip Helger
  */
 @Immutable

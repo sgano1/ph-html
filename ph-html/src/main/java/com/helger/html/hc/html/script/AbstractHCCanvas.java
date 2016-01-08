@@ -34,7 +34,8 @@ import com.helger.html.hc.html.AbstractHCElementWithChildren;
  *        Implementation type
  */
 @SinceHTML5
-public abstract class AbstractHCCanvas <THISTYPE extends AbstractHCCanvas <THISTYPE>> extends AbstractHCElementWithChildren <THISTYPE>implements IHCCanvas <THISTYPE>
+public abstract class AbstractHCCanvas <THISTYPE extends AbstractHCCanvas <THISTYPE>>
+                                       extends AbstractHCElementWithChildren <THISTYPE> implements IHCCanvas <THISTYPE>
 {
   private long m_nHeight = CGlobal.ILLEGAL_ULONG;
   private long m_nWidth = CGlobal.ILLEGAL_ULONG;
