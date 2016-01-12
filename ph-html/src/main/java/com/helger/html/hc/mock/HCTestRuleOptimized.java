@@ -16,7 +16,6 @@
  */
 package com.helger.html.hc.mock;
 
-import javax.annotation.Nonnull;
 import javax.annotation.OverridingMethodsMustInvokeSuper;
 
 import org.junit.rules.ExternalResource;
@@ -24,8 +23,6 @@ import org.junit.rules.ExternalResource;
 import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.html.hc.config.DefaultHCOnDocumentReadyProvider;
 import com.helger.html.hc.config.HCSettings;
-import com.helger.html.hc.config.IHCOnDocumentReadyProvider;
-import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.UnparsedJSCodeProvider;
 
 /**
@@ -46,15 +43,9 @@ public class HCTestRuleOptimized extends ExternalResource
   public void before ()
   {
     HCSettings.getMutableConversionSettings ().setToOptimized ();
-    HCSettings.setOnDocumentReadyProvider (new IHCOnDocumentReadyProvider ()
-    {
-      @Nonnull
-      public IHasJSCode createOnDocumentReady (@Nonnull final IHasJSCode aJSCodeProvider)
-      {
-        // Fake jQuery style code :)
-        return new UnparsedJSCodeProvider ("$(document).ready(function(){" + aJSCodeProvider.getJSCode () + "});");
-      }
-    });
+    HCSettings.setOnDocumentReadyProvider (aJSCodeProvider -> new UnparsedJSCodeProvider ("$(document).ready(function(){" +
+                                                                                          aJSCodeProvider.getJSCode () +
+                                                                                          "});"));
   }
 
   @Override

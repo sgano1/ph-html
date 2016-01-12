@@ -144,9 +144,11 @@ public class Main_AbstractJQueryInvocationExtended extends AbstractCreateJQueryA
                   for (final String sJavaType : aMultiJavaTypeArgs[i].getAllJavaTypes ())
                   {
                     for (final String sParam : aAllParams)
-                      aNewParams.add (sParam.replace (sSearch, _getAnnotation (sJavaType) + sJavaType));
+                      aNewParams.add (StringHelper.replaceAll (sParam,
+                                                               sSearch,
+                                                               _getAnnotation (sJavaType) + sJavaType));
                     for (final String sJavaKey : aAllJavaKeys)
-                      aNewJavaKeys.add (sJavaKey.replace (sSearch, sJavaType));
+                      aNewJavaKeys.add (StringHelper.replaceAll (sJavaKey, sSearch, sJavaType));
                   }
                   aAllParams = aNewParams;
                   aAllJavaKeys = aNewJavaKeys;

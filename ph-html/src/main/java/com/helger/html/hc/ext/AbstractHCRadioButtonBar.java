@@ -31,7 +31,7 @@ import com.helger.html.hc.impl.HCTextNode;
 public abstract class AbstractHCRadioButtonBar extends AbstractHCSpan <AbstractHCRadioButtonBar>
 {
   private final String m_sName;
-  private final List <HCRadioButton> m_aButtons = new ArrayList <HCRadioButton> ();
+  private final List <HCRadioButton> m_aButtons = new ArrayList <> ();
 
   protected AbstractHCRadioButtonBar (@Nullable final String sName)
   {
@@ -42,22 +42,24 @@ public abstract class AbstractHCRadioButtonBar extends AbstractHCSpan <AbstractH
   protected abstract IHCNode getSeparator ();
 
   @Nonnull
-  public final AbstractHCRadioButtonBar addRadioButton (final int nValue, final String sLabel, final boolean bChecked)
+  public final AbstractHCRadioButtonBar addRadioButton (final int nValue,
+                                                        @Nullable final String sLabel,
+                                                        final boolean bChecked)
   {
     return addRadioButton (Integer.toString (nValue), sLabel, bChecked);
   }
 
   @Nonnull
-  public final AbstractHCRadioButtonBar addRadioButton (final String sValue,
-                                                        final String sLabel,
+  public final AbstractHCRadioButtonBar addRadioButton (@Nullable final String sValue,
+                                                        @Nullable final String sLabel,
                                                         final boolean bChecked)
   {
     return addRadioButton (sValue, HCTextNode.createOnDemand (sLabel), bChecked);
   }
 
   @Nonnull
-  public final AbstractHCRadioButtonBar addRadioButton (final String sValue,
-                                                        final IHCNode aLabel,
+  public final AbstractHCRadioButtonBar addRadioButton (@Nullable final String sValue,
+                                                        @Nullable final IHCNode aLabel,
                                                         final boolean bChecked)
   {
     final HCRadioButton aButton = new HCRadioButton (m_sName, sValue, bChecked);

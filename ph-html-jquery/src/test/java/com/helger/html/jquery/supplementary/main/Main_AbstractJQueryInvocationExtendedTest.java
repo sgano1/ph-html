@@ -152,9 +152,9 @@ public class Main_AbstractJQueryInvocationExtendedTest extends AbstractCreateJQu
                   for (final String sJavaType : aMultiJavaTypeArgs[i].getAllJavaTypes ())
                   {
                     for (final String sParam : aAllParams)
-                      aNewParams.add (sParam.replace (sSearch, _getTestValue (sJavaType)));
+                      aNewParams.add (StringHelper.replaceAll (sParam, sSearch, _getTestValue (sJavaType)));
                     for (final String sJavaKey : aAllJavaKeys)
-                      aNewJavaKeys.add (sJavaKey.replace (sSearch, sJavaType));
+                      aNewJavaKeys.add (StringHelper.replaceAll (sJavaKey, sSearch, sJavaType));
                   }
                   aAllParams = aNewParams;
                   aAllJavaKeys = aNewJavaKeys;

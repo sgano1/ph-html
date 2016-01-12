@@ -25,6 +25,7 @@ import com.helger.html.js.IHasJSCode;
  *
  * @author Philip Helger
  */
+@FunctionalInterface
 public interface IHCOnDocumentReadyProvider
 {
   /**

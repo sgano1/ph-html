@@ -421,7 +421,7 @@ public final class HCExtHelper
     if (StringHelper.hasText (sText))
     {
       // Remove all "\r" chars
-      final String sRealText = sText.replace ("\r", "");
+      final String sRealText = StringHelper.removeAll (sText, '\r');
       int nIndex = 0;
       while (nIndex < sRealText.length ())
       {
@@ -460,11 +460,11 @@ public final class HCExtHelper
   @ReturnsMutableCopy
   public static List <HCDiv> nl2divList (@Nullable final String sText)
   {
-    final List <HCDiv> ret = new ArrayList <HCDiv> ();
+    final List <HCDiv> ret = new ArrayList <> ();
     if (StringHelper.hasText (sText))
     {
       // Remove all "\r" chars
-      final String sRealText = sText.replace ("\r", "");
+      final String sRealText = StringHelper.removeAll (sText, '\r');
       int nIndex = 0;
       while (nIndex < sRealText.length ())
       {
@@ -492,16 +492,14 @@ public final class HCExtHelper
   @ReturnsMutableCopy
   public static List <IHCNode> list2brList (@Nullable final Iterable <String> aCont)
   {
-    final List <IHCNode> ret = new ArrayList <IHCNode> ();
+    final List <IHCNode> ret = new ArrayList <> ();
     if (aCont != null)
-    {
       for (final String sText : aCont)
       {
         if (!ret.isEmpty ())
           ret.add (new HCBR ());
         ret.add (new HCTextNode (sText));
       }
-    }
     return ret;
   }
 
@@ -509,7 +507,7 @@ public final class HCExtHelper
   @ReturnsMutableCopy
   public static List <IHCNode> list2divList (@Nullable final Iterable <String> aCont)
   {
-    final List <IHCNode> ret = new ArrayList <IHCNode> ();
+    final List <IHCNode> ret = new ArrayList <> ();
     if (aCont != null)
       for (final String sText : aCont)
         ret.add (new HCDiv ().addChild (sText));
