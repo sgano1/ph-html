@@ -17,8 +17,6 @@
 package com.helger.html.hc.config;
 
 import java.nio.charset.Charset;
-import java.util.concurrent.locks.ReadWriteLock;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.GuardedBy;
@@ -29,6 +27,7 @@ import org.slf4j.LoggerFactory;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.ReturnsMutableObject;
+import com.helger.commons.concurrent.SimpleReadWriteLock;
 import com.helger.commons.debug.GlobalDebug;
 import com.helger.commons.lang.ServiceLoaderHelper;
 import com.helger.commons.system.ENewLineMode;
@@ -54,7 +53,7 @@ public final class HCSettings
 
   private static final Logger s_aLogger = LoggerFactory.getLogger (HCSettings.class);
 
-  private static final ReadWriteLock s_aRWLock = new ReentrantReadWriteLock ();
+  private static final SimpleReadWriteLock s_aRWLock = new SimpleReadWriteLock ();
 
   /** HC to MicroNode converter settings */
   @GuardedBy ("s_aRWLock")
@@ -109,15 +108,9 @@ public final class HCSettings
   {
     ValueEnforcer.notNull (aConversionSettings, "ConversionSettings");
 
-    s_aRWLock.writeLock ().lock ();
-    try
-    {
+    s_aRWLock.writeLocked ( () -> {
       s_aConversionSettings = aConversionSettings;
-    }
-    finally
-    {
-      s_aRWLock.writeLock ().unlock ();
-    }
+    });
   }
 
   /**
@@ -127,15 +120,7 @@ public final class HCSettings
   @ReturnsMutableObject ("design")
   public static HCConversionSettings getMutableConversionSettings ()
   {
-    s_aRWLock.readLock ().lock ();
-    try
-    {
-      return s_aConversionSettings;
-    }
-    finally
-    {
-      s_aRWLock.readLock ().unlock ();
-    }
+    return s_aRWLock.readLocked ( () -> s_aConversionSettings);
   }
 
   /**
@@ -204,57 +189,29 @@ public final class HCSettings
 
   public static boolean isAutoCompleteOffForPasswordEdits ()
   {
-    s_aRWLock.readLock ().lock ();
-    try
-    {
-      return s_bAutoCompleteOffForPasswordEdits;
-    }
-    finally
-    {
-      s_aRWLock.readLock ().unlock ();
-    }
+    return s_aRWLock.readLocked ( () -> s_bAutoCompleteOffForPasswordEdits);
   }
 
   public static void setAutoCompleteOffForPasswordEdits (final boolean bOff)
   {
-    s_aRWLock.writeLock ().lock ();
-    try
-    {
+    s_aRWLock.writeLocked ( () -> {
       s_bAutoCompleteOffForPasswordEdits = bOff;
-    }
-    finally
-    {
-      s_aRWLock.writeLock ().unlock ();
-    }
+    });
   }
 
   @Nonnull
   public static IHCOnDocumentReadyProvider getOnDocumentReadyProvider ()
   {
-    s_aRWLock.readLock ().lock ();
-    try
-    {
-      return s_aOnDocumentReadyProvider;
-    }
-    finally
-    {
-      s_aRWLock.readLock ().unlock ();
-    }
+    return s_aRWLock.readLocked ( () -> s_aOnDocumentReadyProvider);
   }
 
   public static void setOnDocumentReadyProvider (@Nonnull final IHCOnDocumentReadyProvider aOnDocumentReadyProvider)
   {
     ValueEnforcer.notNull (aOnDocumentReadyProvider, "OnDocumentReadyProvider");
 
-    s_aRWLock.writeLock ().lock ();
-    try
-    {
+    s_aRWLock.writeLocked ( () -> {
       s_aOnDocumentReadyProvider = aOnDocumentReadyProvider;
-    }
-    finally
-    {
-      s_aRWLock.writeLock ().unlock ();
-    }
+    });
   }
 
   /**
@@ -264,15 +221,7 @@ public final class HCSettings
   @Nonnull
   public static EHCScriptInlineMode getScriptInlineMode ()
   {
-    s_aRWLock.readLock ().lock ();
-    try
-    {
-      return s_eScriptInlineMode;
-    }
-    finally
-    {
-      s_aRWLock.readLock ().unlock ();
-    }
+    return s_aRWLock.readLocked ( () -> s_eScriptInlineMode);
   }
 
   /**
@@ -287,19 +236,13 @@ public final class HCSettings
   {
     ValueEnforcer.notNull (eMode, "Mode");
 
-    s_aRWLock.writeLock ().lock ();
-    try
-    {
+    s_aRWLock.writeLocked ( () -> {
       if (s_eScriptInlineMode != eMode)
       {
         s_eScriptInlineMode = eMode;
         s_aLogger.info ("Default <script> mode set to " + eMode);
       }
-    }
-    finally
-    {
-      s_aRWLock.writeLock ().unlock ();
-    }
+    });
   }
 
   /**
@@ -308,15 +251,7 @@ public final class HCSettings
   @Nonnull
   public static EHCStyleInlineMode getStyleInlineMode ()
   {
-    s_aRWLock.readLock ().lock ();
-    try
-    {
-      return s_eStyleInlineMode;
-    }
-    finally
-    {
-      s_aRWLock.readLock ().unlock ();
-    }
+    return s_aRWLock.readLocked ( () -> s_eStyleInlineMode);
   }
 
   /**
@@ -331,71 +266,37 @@ public final class HCSettings
   {
     ValueEnforcer.notNull (eStyleInlineMode, "mode");
 
-    s_aRWLock.writeLock ().lock ();
-    try
-    {
+    s_aRWLock.writeLocked ( () -> {
       s_eStyleInlineMode = eStyleInlineMode;
       s_aLogger.info ("Default <style> mode set to " + eStyleInlineMode);
-    }
-    finally
-    {
-      s_aRWLock.writeLock ().unlock ();
-    }
+    });
   }
 
   @Nonnull
   public static ENewLineMode getNewLineMode ()
   {
-    s_aRWLock.readLock ().lock ();
-    try
-    {
-      return s_eNewLineMode;
-    }
-    finally
-    {
-      s_aRWLock.readLock ().unlock ();
-    }
+    return s_aRWLock.readLocked ( () -> s_eNewLineMode);
   }
 
   public static void setNewLineMode (@Nonnull final ENewLineMode eNewLineMode)
   {
     ValueEnforcer.notNull (eNewLineMode, "NewLineMode");
 
-    s_aRWLock.writeLock ().lock ();
-    try
-    {
+    s_aRWLock.writeLocked ( () -> {
       s_eNewLineMode = eNewLineMode;
-    }
-    finally
-    {
-      s_aRWLock.writeLock ().unlock ();
-    }
+    });
   }
 
   public static boolean isOutOfBandDebuggingEnabled ()
   {
-    s_aRWLock.readLock ().lock ();
-    try
-    {
-      return s_bOOBDebugging;
-    }
-    finally
-    {
-      s_aRWLock.readLock ().unlock ();
-    }
+    return s_aRWLock.readLocked ( () -> s_bOOBDebugging);
   }
 
   public static void setOutOfBandDebuggingEnabled (final boolean bEnabled)
   {
-    s_aRWLock.writeLock ().lock ();
-    try
-    {
+    s_aRWLock.writeLocked ( () -> {
       s_bOOBDebugging = bEnabled;
-    }
-    finally
-    {
-      s_aRWLock.writeLock ().unlock ();
-    }
+    });
   }
 
   /**
@@ -405,28 +306,14 @@ public final class HCSettings
    */
   public static boolean isScriptsInBody ()
   {
-    s_aRWLock.readLock ().lock ();
-    try
-    {
-      return s_bScriptsInBody;
-    }
-    finally
-    {
-      s_aRWLock.readLock ().unlock ();
-    }
+    return s_aRWLock.readLocked ( () -> s_bScriptsInBody);
   }
 
   public static void setScriptsInBody (final boolean bEnabled)
   {
-    s_aRWLock.writeLock ().lock ();
-    try
-    {
+    s_aRWLock.writeLocked ( () -> {
       s_bScriptsInBody = bEnabled;
-    }
-    finally
-    {
-      s_aRWLock.writeLock ().unlock ();
-    }
+    });
   }
 
   /**
@@ -435,27 +322,13 @@ public final class HCSettings
    */
   public static boolean isUseRegularResources ()
   {
-    s_aRWLock.readLock ().lock ();
-    try
-    {
-      return s_bUseRegularResources;
-    }
-    finally
-    {
-      s_aRWLock.readLock ().unlock ();
-    }
+    return s_aRWLock.readLocked ( () -> s_bUseRegularResources);
   }
 
   public static void setUseRegularResources (final boolean bUseRegularResources)
   {
-    s_aRWLock.writeLock ().lock ();
-    try
-    {
+    s_aRWLock.writeLocked ( () -> {
       s_bUseRegularResources = bUseRegularResources;
-    }
-    finally
-    {
-      s_aRWLock.writeLock ().unlock ();
-    }
+    });
   }
 }
