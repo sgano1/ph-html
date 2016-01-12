@@ -571,10 +571,6 @@ public enum EHTMLEntity implements IHTMLEntity
     if (StringHelper.hasNoText (sSource))
       return sSource;
 
-    String ret = sSource;
-    // Keep the order!
-    for (final Map.Entry <String, String> aEntry : s_aCharStringToEntityRefMap.entrySet ())
-      ret = StringHelper.replaceAll (ret, aEntry.getKey (), aEntry.getValue ());
-    return ret;
+    return StringHelper.replaceMultiple (sSource, s_aCharStringToEntityRefMap);
   }
 }
