@@ -25,6 +25,7 @@ import javax.annotation.concurrent.ThreadSafe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.helger.commons.CGlobal;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.concurrent.SimpleReadWriteLock;
@@ -65,6 +66,9 @@ public final class HCSettings
    */
   @GuardedBy ("s_aRWLock")
   private static boolean s_bAutoCompleteOffForPasswordEdits = DEFAULT_AUTO_COMPLETE_OFF_FOR_PASSWORD_EDITS;
+
+  @GuardedBy ("s_aRWLock")
+  private static int s_nTextAreaDefaultRows = CGlobal.ILLEGAL_UINT;
 
   /** The "on document ready" code provider */
   @GuardedBy ("s_aRWLock")
@@ -108,9 +112,7 @@ public final class HCSettings
   {
     ValueEnforcer.notNull (aConversionSettings, "ConversionSettings");
 
-    s_aRWLock.writeLocked ( () -> {
-      s_aConversionSettings = aConversionSettings;
-    });
+    s_aRWLock.writeLocked ( () -> s_aConversionSettings = aConversionSettings);
   }
 
   /**
@@ -192,11 +194,19 @@ public final class HCSettings
     return s_aRWLock.readLocked ( () -> s_bAutoCompleteOffForPasswordEdits);
   }
 
-  public static void setAutoCompleteOffForPasswordEdits (final boolean bOff)
+  public static void setAutoCompleteOffForPasswordEdits (final boolean bAutoCompleteOffForPasswordEdits)
   {
-    s_aRWLock.writeLocked ( () -> {
-      s_bAutoCompleteOffForPasswordEdits = bOff;
-    });
+    s_aRWLock.writeLocked ( () -> s_bAutoCompleteOffForPasswordEdits = bAutoCompleteOffForPasswordEdits);
+  }
+
+  public static int getTextAreaDefaultRows ()
+  {
+    return s_aRWLock.readLocked ( () -> s_nTextAreaDefaultRows);
+  }
+
+  public static void setTextAreaDefaultRows (final int nTextAreaDefaultRows)
+  {
+    s_aRWLock.writeLocked ( () -> s_nTextAreaDefaultRows = nTextAreaDefaultRows);
   }
 
   @Nonnull
@@ -209,9 +219,7 @@ public final class HCSettings
   {
     ValueEnforcer.notNull (aOnDocumentReadyProvider, "OnDocumentReadyProvider");
 
-    s_aRWLock.writeLocked ( () -> {
-      s_aOnDocumentReadyProvider = aOnDocumentReadyProvider;
-    });
+    s_aRWLock.writeLocked ( () -> s_aOnDocumentReadyProvider = aOnDocumentReadyProvider);
   }
 
   /**
@@ -282,9 +290,7 @@ public final class HCSettings
   {
     ValueEnforcer.notNull (eNewLineMode, "NewLineMode");
 
-    s_aRWLock.writeLocked ( () -> {
-      s_eNewLineMode = eNewLineMode;
-    });
+    s_aRWLock.writeLocked ( () -> s_eNewLineMode = eNewLineMode);
   }
 
   public static boolean isOutOfBandDebuggingEnabled ()
@@ -294,9 +300,7 @@ public final class HCSettings
 
   public static void setOutOfBandDebuggingEnabled (final boolean bEnabled)
   {
-    s_aRWLock.writeLocked ( () -> {
-      s_bOOBDebugging = bEnabled;
-    });
+    s_aRWLock.writeLocked ( () -> s_bOOBDebugging = bEnabled);
   }
 
   /**
@@ -311,9 +315,7 @@ public final class HCSettings
 
   public static void setScriptsInBody (final boolean bEnabled)
   {
-    s_aRWLock.writeLocked ( () -> {
-      s_bScriptsInBody = bEnabled;
-    });
+    s_aRWLock.writeLocked ( () -> s_bScriptsInBody = bEnabled);
   }
 
   /**
@@ -327,8 +329,6 @@ public final class HCSettings
 
   public static void setUseRegularResources (final boolean bUseRegularResources)
   {
-    s_aRWLock.writeLocked ( () -> {
-      s_bUseRegularResources = bUseRegularResources;
-    });
+    s_aRWLock.writeLocked ( () -> s_bUseRegularResources = bUseRegularResources);
   }
 }

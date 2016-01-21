@@ -30,6 +30,7 @@ import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCConversionSettingsToNode;
+import com.helger.html.hc.config.HCSettings;
 import com.helger.html.request.IHCRequestField;
 
 /**
@@ -57,7 +58,7 @@ public abstract class AbstractHCTextArea <THISTYPE extends AbstractHCTextArea <T
   private String m_sPlaceholder;
   // readonly is inherited
   // required is inherited
-  private int m_nRows = CGlobal.ILLEGAL_UINT;
+  private int m_nRows = HCSettings.getTextAreaDefaultRows ();
   private String m_sValue;
   private EHCTextAreaWrap m_eWrap;
 
