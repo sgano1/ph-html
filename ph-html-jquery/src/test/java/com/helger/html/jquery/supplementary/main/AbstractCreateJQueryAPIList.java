@@ -18,7 +18,6 @@ package com.helger.html.jquery.supplementary.main;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -667,13 +666,7 @@ abstract class AbstractCreateJQueryAPIList
       ++nFiles;
     }
 
-    Collections.sort (aAllEntries, new Comparator <Entry> ()
-    {
-      public int compare (final Entry o1, final Entry o2)
-      {
-        return o1.getName ().compareTo (o2.getName ());
-      }
-    });
+    aAllEntries.sort (Comparator.comparing (Entry::getName));
 
     // Build unique signatures where optional arguments are present
     for (final Entry aEntry : aAllEntries)
