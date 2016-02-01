@@ -31,6 +31,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.PrimitiveCollectionHelper;
 import com.helger.html.js.UnparsedJSCodeProvider;
 
 /**
@@ -144,11 +145,11 @@ public final class JSToStringTest
                                                new JSListType (JSType.STRING),
                                                false));
     assertEquals ("[1,9]",
-                  JSToString.objectToJSString (CollectionHelper.newPrimitiveList (1, 9),
+                  JSToString.objectToJSString (PrimitiveCollectionHelper.newPrimitiveList (1, 9),
                                                new JSListType (JSType.INT),
                                                false));
     assertEquals ("[1.1,9.8]",
-                  JSToString.objectToJSString (CollectionHelper.newPrimitiveList (1.1, 9.8),
+                  JSToString.objectToJSString (PrimitiveCollectionHelper.newPrimitiveList (1.1, 9.8),
                                                new JSListType (JSType.DOUBLE),
                                                false));
   }
