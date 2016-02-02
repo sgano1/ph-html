@@ -33,7 +33,7 @@ import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.hashcode.HashCodeGenerator;
-import com.helger.commons.io.file.filter.FileFilterFilenameEndsWith;
+import com.helger.commons.io.file.filter.IFileFilter;
 import com.helger.commons.io.file.iterate.FileSystemIterator;
 import com.helger.commons.lang.EnumHelper;
 import com.helger.commons.microdom.IMicroDocument;
@@ -577,8 +577,7 @@ abstract class AbstractCreateJQueryAPIList
     SystemProperties.setPropertyValue ("org.apache.xerces.xni.parser.XMLParserConfiguration",
                                        "org.apache.xerces.parsers.XIncludeParserConfiguration");
 
-    for (final File aFile : FileSystemIterator.create (new File ("src/test/resources/jquery/api"),
-                                                       new FileFilterFilenameEndsWith (".xml")))
+    for (final File aFile : new FileSystemIterator ("src/test/resources/jquery/api").withFilter (IFileFilter.filenameEndsWith (".xml")))
     {
       final IMicroDocument aDoc = MicroReader.readMicroXML (aFile);
       final IMicroElement eRoot = aDoc.getDocumentElement ();
