@@ -148,7 +148,7 @@ public enum EJSEvent
   private EJSEvent (@Nonnull @Nonempty final String sEvent, @Nonnull @Nonempty final EJSEventType... aTypes)
   {
     m_sEvent = sEvent;
-    m_aJSEventTypes = CollectionHelper.newUnmodifiableSet (aTypes);
+    m_aJSEventTypes = CollectionHelper.makeUnmodifiable (CollectionHelper.newSet (aTypes));
   }
 
   /**
