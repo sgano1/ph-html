@@ -39,7 +39,6 @@ import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.cache.AnnotationUsageCache;
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.equals.EqualsHelper;
-import com.helger.commons.lang.GenericReflection;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.commons.microdom.MicroElement;
@@ -147,13 +146,6 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
   public final String getTagName ()
   {
     return m_sElementName;
-  }
-
-  @Nonnull
-  protected final THISTYPE thisAsT ()
-  {
-    // Avoid the unchecked cast warning in all places
-    return GenericReflection.<AbstractHCElement <THISTYPE>, THISTYPE> uncheckedCast (this);
   }
 
   public final boolean hasID ()

@@ -20,6 +20,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.id.factory.GlobalIDFactory;
+import com.helger.commons.traits.IGenericImplTrait;
 
 /**
  * Special interface for HC elements having an optional ID
@@ -28,7 +29,7 @@ import com.helger.commons.id.factory.GlobalIDFactory;
  * @param <IMPLTYPE>
  *        The implementation type
  */
-public interface IHCHasID <IMPLTYPE extends IHCHasID <IMPLTYPE>>
+public interface IHCHasID <IMPLTYPE extends IHCHasID <IMPLTYPE>> extends IGenericImplTrait <IMPLTYPE>
 {
   /**
    * @return <code>true</code> if this element has an ID, <code>false</code> if

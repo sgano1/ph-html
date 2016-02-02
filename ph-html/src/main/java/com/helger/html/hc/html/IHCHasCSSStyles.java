@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 import com.helger.commons.annotation.DevelopersNote;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.traits.IGenericImplTrait;
 import com.helger.css.ICSSWriterSettings;
 import com.helger.css.property.CSSPropertyFree;
 import com.helger.css.property.ECSSProperty;
@@ -37,7 +38,7 @@ import com.helger.css.propertyvalue.ICSSValue;
  * @param <IMPLTYPE>
  *        Implementation type
  */
-public interface IHCHasCSSStyles <IMPLTYPE extends IHCHasCSSStyles <IMPLTYPE>>
+public interface IHCHasCSSStyles <IMPLTYPE extends IHCHasCSSStyles <IMPLTYPE>> extends IGenericImplTrait <IMPLTYPE>
 {
   /**
    * Add an element specific style (that is not consistency checked).

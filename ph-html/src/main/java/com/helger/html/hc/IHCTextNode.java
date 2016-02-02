@@ -22,6 +22,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.microdom.MicroText;
+import com.helger.commons.traits.IGenericImplTrait;
 
 /**
  * This class represents a text node.
@@ -30,7 +31,7 @@ import com.helger.commons.microdom.MicroText;
  * @param <IMPLTYPE>
  *        Implementation type
  */
-public interface IHCTextNode <IMPLTYPE extends IHCTextNode <IMPLTYPE>> extends IHCNode
+public interface IHCTextNode <IMPLTYPE extends IHCTextNode <IMPLTYPE>> extends IHCNode, IGenericImplTrait <IMPLTYPE>
 {
   /**
    * @return The unescaped text. Never <code>null</code>.

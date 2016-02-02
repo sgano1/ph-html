@@ -34,7 +34,6 @@ import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.collection.CollectionHelper;
-import com.helger.commons.lang.GenericReflection;
 import com.helger.commons.microdom.IMicroContainer;
 import com.helger.commons.microdom.MicroContainer;
 import com.helger.commons.string.StringHelper;
@@ -62,13 +61,6 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
 
   public AbstractHCHasChildrenMutable ()
   {}
-
-  @Nonnull
-  protected final THISTYPE thisAsT ()
-  {
-    // Avoid the unchecked cast warning in all places
-    return GenericReflection.<AbstractHCHasChildrenMutable <THISTYPE, CHILDTYPE>, THISTYPE> uncheckedCast (this);
-  }
 
   @Override
   public final boolean hasChildren ()

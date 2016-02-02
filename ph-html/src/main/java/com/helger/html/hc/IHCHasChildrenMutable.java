@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.DevelopersNote;
+import com.helger.commons.traits.IGenericImplTrait;
 
 /**
  * Base interface for HC nodes that have mutable children.
@@ -36,7 +37,7 @@ import com.helger.commons.annotation.DevelopersNote;
  *        Desired child type
  */
 public interface IHCHasChildrenMutable <IMPLTYPE extends IHCHasChildrenMutable <IMPLTYPE, CHILDTYPE>, CHILDTYPE extends IHCNode>
-                                       extends IHCNode
+                                       extends IHCNode, IGenericImplTrait <IMPLTYPE>
 {
   /**
    * @param aNode

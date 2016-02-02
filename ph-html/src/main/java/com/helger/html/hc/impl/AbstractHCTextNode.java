@@ -18,7 +18,6 @@ package com.helger.html.hc.impl;
 
 import javax.annotation.Nonnull;
 
-import com.helger.commons.lang.GenericReflection;
 import com.helger.commons.microdom.IMicroText;
 import com.helger.commons.microdom.MicroText;
 import com.helger.commons.string.StringHelper;
@@ -41,13 +40,6 @@ public abstract class AbstractHCTextNode <IMPLTYPE extends AbstractHCTextNode <I
 
   public AbstractHCTextNode ()
   {}
-
-  @Nonnull
-  protected final IMPLTYPE thisAsT ()
-  {
-    // Avoid the unchecked cast warning in all places
-    return GenericReflection.<AbstractHCTextNode <IMPLTYPE>, IMPLTYPE> uncheckedCast (this);
-  }
 
   @Nonnull
   public String getText ()

@@ -23,6 +23,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.annotation.DevelopersNote;
 import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.traits.IGenericImplTrait;
 import com.helger.html.css.ICSSClassProvider;
 
 /**
@@ -32,7 +33,7 @@ import com.helger.html.css.ICSSClassProvider;
  * @param <IMPLTYPE>
  *        Implementation type
  */
-public interface IHCHasCSSClasses <IMPLTYPE extends IHCHasCSSClasses <IMPLTYPE>>
+public interface IHCHasCSSClasses <IMPLTYPE extends IHCHasCSSClasses <IMPLTYPE>> extends IGenericImplTrait <IMPLTYPE>
 {
   @Nonnull
   IMPLTYPE addClass (@Nullable ICSSClassProvider aProvider);
