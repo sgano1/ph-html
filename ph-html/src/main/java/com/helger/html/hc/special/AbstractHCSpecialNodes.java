@@ -38,6 +38,7 @@ import com.helger.commons.collection.multimap.MultiLinkedHashMapLinkedHashSetBas
 import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
+import com.helger.commons.traits.IGenericImplTrait;
 import com.helger.css.media.CSSMediaList;
 import com.helger.css.media.ICSSMediaList;
 import com.helger.html.js.CollectingJSCodeProvider;
@@ -53,7 +54,7 @@ import com.helger.html.resource.css.ICSSCodeProvider;
  */
 @NotThreadSafe
 public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecialNodes <IMPLTYPE>>
-                                             implements IHCSpecialNodes
+                                             implements IHCSpecialNodes, IGenericImplTrait <IMPLTYPE>
 {
   private static final Logger s_aLogger = LoggerFactory.getLogger (AbstractHCSpecialNodes.class);
 
@@ -79,13 +80,6 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
     m_aExternalJSs.clear ();
     m_aInlineJSBeforeExternal.reset ();
     m_aInlineJSAfterExternal.reset ();
-  }
-
-  @SuppressWarnings ("unchecked")
-  @Nonnull
-  protected final IMPLTYPE thisAsT ()
-  {
-    return (IMPLTYPE) this;
   }
 
   @Nonnull
