@@ -143,6 +143,9 @@ public class HCHasCSSClasses implements IHCHasCSSClasses <HCHasCSSClasses>
   @Override
   public String toString ()
   {
-    return new ToStringGenerator (this).appendIfNotEmpty ("CSSClassProviders", m_aCSSClassProviders).toString ();
+    return new ToStringGenerator (this).appendIf ("CSSClassProviders",
+                                                  m_aCSSClassProviders,
+                                                  CollectionHelper::isNotEmpty)
+                                       .toString ();
   }
 }

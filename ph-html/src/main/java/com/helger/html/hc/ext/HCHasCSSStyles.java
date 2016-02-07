@@ -143,6 +143,6 @@ public class HCHasCSSStyles implements IHCHasCSSStyles <HCHasCSSStyles>
   @Override
   public String toString ()
   {
-    return new ToStringGenerator (this).appendIfNotEmpty ("Styles", m_aStyles).toString ();
+    return new ToStringGenerator (this).appendIf ("Styles", m_aStyles, CollectionHelper::isNotEmpty).toString ();
   }
 }

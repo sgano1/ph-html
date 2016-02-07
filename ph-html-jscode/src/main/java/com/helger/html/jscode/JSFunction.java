@@ -240,7 +240,7 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
   {
     return new ToStringGenerator (this).appendIfNotNull ("jsDoc", m_aJSDoc)
                                        .append ("name", m_sName)
-                                       .appendIfNotEmpty ("params", m_aParams)
+                                       .appendIf ("params", m_aParams, CollectionHelper::isNotEmpty)
                                        .appendIfNotNull ("body", m_aBody)
                                        .toString ();
   }
