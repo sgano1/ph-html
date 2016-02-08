@@ -53,10 +53,6 @@ public interface IHCButton <THISTYPE extends IHCButton <THISTYPE>> extends
   THISTYPE setFormAction (@Nullable ISimpleURL aAction);
 
   @Nonnull
-  @Deprecated
-  THISTYPE setFormAction (@Nullable String sAction);
-
-  @Nonnull
   THISTYPE setFormAction (@Nullable IHasJSCodeWithSettings aAction);
 
   @Nullable

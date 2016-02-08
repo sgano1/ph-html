@@ -20,7 +20,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.url.ISimpleURL;
-import com.helger.commons.url.ReadOnlySimpleURL;
+import com.helger.commons.url.SimpleURL;
 import com.helger.html.hc.html.FakeJS;
 import com.helger.html.hc.html.textlevel.AbstractHCA;
 import com.helger.html.hc.html.textlevel.IHCA;
@@ -30,7 +30,7 @@ import com.helger.html.js.IHasJSCode;
 
 public class HCA_JS extends AbstractHCA <HCA_JS>
 {
-  public static final ISimpleURL JS_URL = new ReadOnlySimpleURL (CJS.JS_VOID);
+  public static final ISimpleURL JS_URL = new SimpleURL (CJS.JS_VOID);
 
   public HCA_JS ()
   {

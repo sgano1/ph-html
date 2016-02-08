@@ -29,7 +29,6 @@ import javax.annotation.OverridingMethodsMustInvokeSuper;
 
 import com.helger.commons.CGlobal;
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotation.DevelopersNote;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.annotation.ReturnsMutableObject;
@@ -237,14 +236,6 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
       m_aColGroup.addColumn (nIndex, aCol);
     }
     return thisAsT ();
-  }
-
-  @Nonnull
-  @Deprecated
-  @DevelopersNote ("use addColumn instead")
-  public final IMPLTYPE addColumns (@Nullable final IHCCol <?> aCol)
-  {
-    return addColumn (aCol);
   }
 
   @Nonnull

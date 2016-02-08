@@ -24,29 +24,29 @@ import com.helger.commons.email.IEmailAddress;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.EURLProtocol;
-import com.helger.commons.url.ReadOnlySimpleURL;
+import com.helger.commons.url.SimpleURL;
 import com.helger.html.hc.html.textlevel.AbstractHCA;
 
 public class HCA_MailTo extends AbstractHCA <HCA_MailTo>
 {
-  private final String m_sEmail;
+  private final String m_sEmailAddress;
 
-  public HCA_MailTo (@Nonnull final String sEmail)
+  public HCA_MailTo (@Nonnull final String sEmailAddress)
   {
-    super (new ReadOnlySimpleURL (EURLProtocol.MAILTO.getProtocol () + sEmail));
-    m_sEmail = ValueEnforcer.notNull (sEmail, "Email");
+    super (new SimpleURL (EURLProtocol.MAILTO.getProtocol () + sEmailAddress));
+    m_sEmailAddress = ValueEnforcer.notNull (sEmailAddress, "Email");
   }
 
   @Nonnull
   public String getEmail ()
   {
-    return m_sEmail;
+    return m_sEmailAddress;
   }
 
   @Override
   public String toString ()
   {
-    return ToStringGenerator.getDerived (super.toString ()).append ("email", m_sEmail).toString ();
+    return ToStringGenerator.getDerived (super.toString ()).append ("email", m_sEmailAddress).toString ();
   }
 
   @Nullable

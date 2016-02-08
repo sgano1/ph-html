@@ -143,14 +143,6 @@ public abstract class AbstractHCButton <THISTYPE extends AbstractHCButton <THIST
   }
 
   @Nonnull
-  @Deprecated
-  public final THISTYPE setFormAction (@Nullable final String sAction)
-  {
-    m_aFormAction.setAction (sAction);
-    return thisAsT ();
-  }
-
-  @Nonnull
   public final THISTYPE setFormAction (@Nullable final IHasJSCodeWithSettings aAction)
   {
     m_aFormAction.setAction (aAction);

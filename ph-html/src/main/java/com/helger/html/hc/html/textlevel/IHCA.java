@@ -41,10 +41,6 @@ public interface IHCA <THISTYPE extends IHCA <THISTYPE>>
   ISimpleURL getHref ();
 
   @Nonnull
-  @Deprecated
-  THISTYPE setHref (@Nonnull String sHref);
-
-  @Nonnull
   THISTYPE setHref (@Nonnull ISimpleURL aHref);
 
   @Nullable

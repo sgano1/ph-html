@@ -242,7 +242,7 @@ public class JQueryAjaxBuilder implements Serializable, ICloneable <JQueryAjaxBu
   @Nonnull
   public JQueryAjaxBuilder url (@Nullable final ISimpleURL aURL)
   {
-    return url (aURL == null ? null : aURL.getAsString ());
+    return url (aURL == null ? null : aURL.getAsStringWithEncodedParameters ());
   }
 
   @Nonnull

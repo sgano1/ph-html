@@ -29,12 +29,10 @@ import com.helger.commons.state.ETriState;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.ISimpleURL;
-import com.helger.commons.url.SimpleURL;
 import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCConversionSettingsToNode;
-import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.hc.html.HC_Action;
 import com.helger.html.hc.html.HC_Target;
 import com.helger.html.js.IHasJSCode;
@@ -233,14 +231,6 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   }
 
   @Nonnull
-  @Deprecated
-  public final IMPLTYPE setFormAction (@Nullable final String sAction)
-  {
-    m_aFormAction.setAction (sAction);
-    return thisAsT ();
-  }
-
-  @Nonnull
   public final IMPLTYPE setFormAction (@Nullable final IHasJSCodeWithSettings aAction)
   {
     m_aFormAction.setAction (aAction);
@@ -427,21 +417,6 @@ public abstract class AbstractHCInput <IMPLTYPE extends AbstractHCInput <IMPLTYP
   public final ISimpleURL getSrc ()
   {
     return m_aSrc;
-  }
-
-  @Nullable
-  @Deprecated
-  public final String getSrcAsString ()
-  {
-    return m_aSrc == null ? null : m_aSrc.getAsString ();
-  }
-
-  @Nonnull
-  @Deprecated
-  public final IMPLTYPE setSrc (@Nullable final String sSrc)
-  {
-    HCConsistencyChecker.checkIfStringURLIsEscaped (sSrc);
-    return setSrc (sSrc == null ? null : new SimpleURL (sSrc));
   }
 
   @Nonnull

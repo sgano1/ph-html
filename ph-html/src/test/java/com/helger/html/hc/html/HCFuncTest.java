@@ -155,7 +155,6 @@ public final class HCFuncTest
     b.addChild (new HCEmbed ().setSrc (new SimpleURL ("myfile.txt")));
     b.addChild (new HCFieldSet ());
     b.addChild (new HCFieldSet ("Gruppe"));
-    b.addChild (new HCForm ("?").setSubmitPressingEnter (false));
     b.addChild (new HCForm (new SimpleURL ()).setSubmitPressingEnter (false));
     b.addChild (new HCFrame ("frame1"));
     b.addChild (new HCFrameset ());

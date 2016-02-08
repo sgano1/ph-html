@@ -26,7 +26,6 @@ import com.helger.commons.mime.IMimeType;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.ISimpleURL;
-import com.helger.commons.url.SimpleURL;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCConversionSettingsToNode;
@@ -58,13 +57,6 @@ public abstract class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>>
     super (EHTMLElement.A);
   }
 
-  @Deprecated
-  public AbstractHCA (@Nonnull final String sHref)
-  {
-    this ();
-    setHref (sHref);
-  }
-
   public AbstractHCA (@Nonnull final ISimpleURL aHref)
   {
     this ();
@@ -75,14 +67,6 @@ public abstract class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>>
   public ISimpleURL getHref ()
   {
     return m_aHref;
-  }
-
-  @Nonnull
-  @Deprecated
-  public final THISTYPE setHref (@Nonnull final String sHref)
-  {
-    HCConsistencyChecker.checkIfStringURLIsEscaped (sHref);
-    return setHref (new SimpleURL (sHref));
   }
 
   @Nonnull

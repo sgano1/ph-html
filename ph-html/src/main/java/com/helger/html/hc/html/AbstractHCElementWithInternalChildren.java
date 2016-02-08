@@ -31,7 +31,6 @@ import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.CGlobal;
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotation.DevelopersNote;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.annotation.ReturnsMutableCopy;
@@ -133,23 +132,6 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
     ValueEnforcer.isBetweenInclusive (nIndex, "Index", 0, getChildCount ());
     _addChild (nIndex, aChild);
     return thisAsT ();
-  }
-
-  @Nonnull
-  @DevelopersNote ("Use addChild instead!")
-  @Deprecated
-  public final THISTYPE addChildren (@Nullable final CHILDTYPE aChild)
-  {
-    return addChild (aChild);
-  }
-
-  @Nonnull
-  @DevelopersNote ("Use addChild instead!")
-  @Deprecated
-  public final THISTYPE addChildren (@Nonnegative final int nIndex, @Nullable final CHILDTYPE aChild)
-  {
-    ValueEnforcer.isBetweenInclusive (nIndex, "Index", 0, getChildCount ());
-    return addChild (nIndex, aChild);
   }
 
   @Nonnull

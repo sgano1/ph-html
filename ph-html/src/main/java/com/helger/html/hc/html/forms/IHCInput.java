@@ -118,10 +118,6 @@ public interface IHCInput <IMPLTYPE extends IHCInput <IMPLTYPE>> extends IHCCont
   IMPLTYPE setFormAction (@Nullable ISimpleURL aAction);
 
   @Nonnull
-  @Deprecated
-  IMPLTYPE setFormAction (@Nullable String sAction);
-
-  @Nonnull
   IMPLTYPE setFormAction (@Nullable IHasJSCodeWithSettings aAction);
 
   @Nullable
@@ -275,14 +271,6 @@ public interface IHCInput <IMPLTYPE extends IHCInput <IMPLTYPE>> extends IHCCont
 
   @Nullable
   ISimpleURL getSrc ();
-
-  @Nullable
-  @Deprecated
-  String getSrcAsString ();
-
-  @Nonnull
-  @Deprecated
-  IMPLTYPE setSrc (@Nullable String sSrc);
 
   @Nonnull
   IMPLTYPE setSrc (@Nullable ISimpleURL aSrc);

@@ -22,11 +22,9 @@ import javax.annotation.Nullable;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.ISimpleURL;
-import com.helger.commons.url.SimpleURL;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCConversionSettingsToNode;
-import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.hc.html.AbstractHCElement;
 import com.helger.html.hc.html.HC_Target;
 
@@ -56,14 +54,6 @@ public class HCBase extends AbstractHCElement <HCBase>
   {
     m_aHref = aHref;
     return this;
-  }
-
-  @Nonnull
-  @Deprecated
-  public HCBase setHref (@Nullable final String sHref)
-  {
-    HCConsistencyChecker.checkIfStringURLIsEscaped (sHref);
-    return setHref (sHref == null ? null : new SimpleURL (sHref));
   }
 
   @Nullable

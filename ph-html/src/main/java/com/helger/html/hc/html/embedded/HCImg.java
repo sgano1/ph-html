@@ -39,14 +39,4 @@ public class HCImg extends AbstractHCImg <HCImg>
       ret.setSrc (aSrc);
     return ret;
   }
-
-  @Nonnull
-  @Deprecated
-  public static HCImg create (@Nullable final String sSrc)
-  {
-    final HCImg ret = new HCImg ();
-    if (sSrc != null)
-      ret.setSrc (sSrc);
-    return ret;
-  }
 }

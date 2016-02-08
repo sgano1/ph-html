@@ -72,7 +72,7 @@ public final class HCHeadTest
                   HCRenderer.getAsHTMLString (aHead));
 
     assertSame (aHead, aHead.setBaseHref (new SimpleURL ("/")));
-    assertEquals ("/", aHead.getBaseHref ().getAsString ());
+    assertEquals ("/", aHead.getBaseHref ().getAsStringWithEncodedParameters ());
     assertEquals ("<head xmlns=\"http://www.w3.org/1999/xhtml\" profile=\"any\"><title>Title</title><base href=\"/\" /></head>",
                   HCRenderer.getAsHTMLString (aHead));
 

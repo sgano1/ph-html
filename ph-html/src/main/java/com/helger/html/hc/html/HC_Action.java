@@ -28,8 +28,6 @@ import com.helger.commons.lang.ICloneable;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.ISimpleURL;
-import com.helger.commons.url.SimpleURL;
-import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.js.CJS;
 import com.helger.html.js.IHasJSCodeWithSettings;
 import com.helger.html.js.IJSWriterSettings;
@@ -71,13 +69,6 @@ public class HC_Action implements ICloneable <HC_Action>
   {
     m_aActionURL = aAction;
     m_aActionJS = null;
-  }
-
-  @Deprecated
-  public void setAction (@Nullable final String sAction)
-  {
-    HCConsistencyChecker.checkIfStringURLIsEscaped (sAction);
-    setAction (sAction == null ? null : new SimpleURL (sAction));
   }
 
   public void setAction (@Nullable final IHasJSCodeWithSettings aAction)

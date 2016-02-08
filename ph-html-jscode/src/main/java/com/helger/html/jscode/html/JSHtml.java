@@ -752,7 +752,7 @@ public final class JSHtml
   @Nonnull
   public static JSInvocation windowLocationReplace (@Nonnull final ISimpleURL aURL)
   {
-    return windowLocationReplace (JSExpr.lit (aURL.getAsString ()));
+    return windowLocationReplace (JSExpr.lit (aURL.getAsStringWithEncodedParameters ()));
   }
 
   @Nonnull

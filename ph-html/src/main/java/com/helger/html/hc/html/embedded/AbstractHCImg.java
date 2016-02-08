@@ -26,11 +26,9 @@ import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.ISimpleURL;
-import com.helger.commons.url.SimpleURL;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCConversionSettingsToNode;
-import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.hc.html.AbstractHCMediaElementChild;
 
 /**
@@ -59,14 +57,6 @@ public abstract class AbstractHCImg <THISTYPE extends AbstractHCImg <THISTYPE>>
   public final ISimpleURL getSrc ()
   {
     return m_aSrc;
-  }
-
-  @Nonnull
-  @Deprecated
-  public THISTYPE setSrc (@Nonnull final String sSrc)
-  {
-    HCConsistencyChecker.checkIfStringURLIsEscaped (sSrc);
-    return setSrc (new SimpleURL (sSrc));
   }
 
   @Nonnull

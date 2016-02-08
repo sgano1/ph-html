@@ -34,11 +34,6 @@ public class HCForm extends AbstractHCForm <HCForm>
     super ();
   }
 
-  public HCForm (@Nullable final String sAction)
-  {
-    super (sAction);
-  }
-
   public HCForm (@Nonnull final ISimpleURL aAction)
   {
     super (aAction);

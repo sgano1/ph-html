@@ -139,7 +139,10 @@ public interface IHCTable <IMPLTYPE extends IHCTable <IMPLTYPE>> extends IHCElem
    */
   @Nonnull
   @Deprecated
-  IMPLTYPE addColumns (@Nullable IHCCol <?> aCol);
+  default IMPLTYPE addColumns (@Nullable final IHCCol <?> aCol)
+  {
+    return addColumn (aCol);
+  }
 
   /**
    * Add multiple columns at once.

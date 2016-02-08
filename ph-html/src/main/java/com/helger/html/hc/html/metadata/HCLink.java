@@ -26,7 +26,6 @@ import com.helger.commons.mime.IMimeType;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.ISimpleURL;
-import com.helger.commons.url.SimpleURL;
 import com.helger.css.media.CSSMediaList;
 import com.helger.css.media.ECSSMedium;
 import com.helger.css.media.ICSSMediaList;
@@ -35,7 +34,6 @@ import com.helger.html.EHTMLElement;
 import com.helger.html.annotation.DeprecatedInHTML5;
 import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hc.IHCConversionSettingsToNode;
-import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.hc.html.AbstractHCElement;
 import com.helger.html.hc.html.HC_Target;
 import com.helger.html.resource.css.ICSSPathProvider;
@@ -118,26 +116,11 @@ public class HCLink extends AbstractHCElement <HCLink>
     return m_aHref;
   }
 
-  @Nullable
-  @Deprecated
-  public String getHrefString ()
-  {
-    return m_aHref == null ? null : m_aHref.getAsString ();
-  }
-
   @Nonnull
   public HCLink setHref (@Nullable final ISimpleURL aHref)
   {
     m_aHref = aHref;
     return this;
-  }
-
-  @Nonnull
-  @Deprecated
-  public HCLink setHref (@Nullable final String sHref)
-  {
-    HCConsistencyChecker.checkIfStringURLIsEscaped (sHref);
-    return setHref (sHref == null ? null : new SimpleURL (sHref));
   }
 
   @Nullable

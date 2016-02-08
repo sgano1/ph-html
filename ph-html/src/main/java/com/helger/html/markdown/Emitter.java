@@ -280,7 +280,6 @@ final class Emitter
    *        Either LINK or IMAGE.
    * @return The new position or -1 if there is no valid markdown link.
    */
-  @SuppressWarnings ("deprecation")
   private int _checkInlineLink (final MarkdownHCStack out, final String in, final int start, final EMarkToken token)
   {
     boolean isAbbrev = false;
@@ -385,7 +384,7 @@ final class Emitter
       else
       {
         final HCA aLink = m_aConfig.getDecorator ().openLink (out);
-        aLink.setHref (link);
+        aLink.setHref (new SimpleURL (link));
         if (comment != null)
           aLink.setTitle (comment);
         _recursiveEmitLine (out, name, 0, EMarkToken.NONE);
@@ -395,7 +394,7 @@ final class Emitter
     else
     {
       final HCImg aImg = m_aConfig.getDecorator ().appendImage (out);
-      aImg.setSrc (link);
+      aImg.setSrc (new SimpleURL (link));
       aImg.setAlt (name);
       if (comment != null)
         aImg.setTitle (comment);
@@ -416,7 +415,6 @@ final class Emitter
    *        Starting position.
    * @return The new position or -1 if nothing valid has been found.
    */
-  @SuppressWarnings ("deprecation")
   private int _checkInlineHtml (final MarkdownHCStack out, final String in, final int nStart)
   {
     final StringBuilder aTemp = new StringBuilder ();
@@ -431,7 +429,7 @@ final class Emitter
       {
         final String sLink = aTemp.toString ();
         final HCA aLink = m_aConfig.getDecorator ().openLink (out);
-        aLink.setHref (sLink).addChild (sLink);
+        aLink.setHref (new SimpleURL (sLink)).addChild (sLink);
         m_aConfig.getDecorator ().closeLink (out);
         return nPos;
       }

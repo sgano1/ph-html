@@ -22,12 +22,10 @@ import javax.annotation.Nullable;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.commons.url.ISimpleURL;
-import com.helger.commons.url.SimpleURL;
 import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.annotation.OutOfBandNode;
 import com.helger.html.hc.IHCConversionSettingsToNode;
-import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.resource.js.IJSPathProvider;
 
 /**
@@ -58,21 +56,6 @@ public class HCScriptFile extends AbstractHCScript <HCScriptFile>
   public ISimpleURL getSrc ()
   {
     return m_aSrc;
-  }
-
-  @Nullable
-  @Deprecated
-  public String getSrcString ()
-  {
-    return m_aSrc == null ? null : m_aSrc.getAsString ();
-  }
-
-  @Nonnull
-  @Deprecated
-  public HCScriptFile setSrc (@Nullable final String sSrc)
-  {
-    HCConsistencyChecker.checkIfStringURLIsEscaped (sSrc);
-    return setSrc (sSrc == null ? null : new SimpleURL (sSrc));
   }
 
   @Nonnull

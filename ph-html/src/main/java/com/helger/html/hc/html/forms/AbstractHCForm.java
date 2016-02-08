@@ -86,12 +86,6 @@ public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>
     super (EHTMLElement.FORM);
   }
 
-  public AbstractHCForm (@Nullable final String sAction)
-  {
-    this ();
-    setAction (sAction);
-  }
-
   public AbstractHCForm (@Nullable final ISimpleURL aAction)
   {
     this ();
@@ -133,14 +127,6 @@ public abstract class AbstractHCForm <THISTYPE extends AbstractHCForm <THISTYPE>
   public final THISTYPE setAction (@Nullable final ISimpleURL aAction)
   {
     m_aAction.setAction (aAction);
-    return thisAsT ();
-  }
-
-  @Nonnull
-  @Deprecated
-  public final THISTYPE setAction (@Nullable final String sAction)
-  {
-    m_aAction.setAction (sAction);
     return thisAsT ();
   }
 

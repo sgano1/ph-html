@@ -21,6 +21,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.url.ISimpleURL;
+import com.helger.commons.url.SimpleURL;
 import com.helger.commons.url.URLValidator;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.html.HC_Target;
@@ -35,12 +36,6 @@ public class HCA extends AbstractHCA <HCA>
 {
   public HCA ()
   {}
-
-  @Deprecated
-  public HCA (@Nonnull final String sHref)
-  {
-    super (sHref);
-  }
 
   public HCA (@Nonnull final ISimpleURL aHref)
   {
@@ -62,6 +57,6 @@ public class HCA extends AbstractHCA <HCA>
     if (!URLValidator.isValid (sWebsite))
       return new HCTextNode (sWebsite);
 
-    return new HCA (sWebsite).setTarget (aTarget).addChild (sWebsite);
+    return new HCA (new SimpleURL (sWebsite)).setTarget (aTarget).addChild (sWebsite);
   }
 }

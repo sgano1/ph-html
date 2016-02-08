@@ -56,10 +56,6 @@ public interface IHCForm <THISTYPE extends IHCForm <THISTYPE>>
   THISTYPE setAction (@Nullable ISimpleURL aAction);
 
   @Nonnull
-  @Deprecated
-  THISTYPE setAction (@Nullable String sAction);
-
-  @Nonnull
   THISTYPE setAction (@Nullable IHasJSCodeWithSettings aAction);
 
   boolean isAutoCompleteOn ();
