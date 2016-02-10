@@ -17,6 +17,7 @@
 package com.helger.html.hc.ext;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import javax.annotation.Nonnull;
@@ -418,6 +419,12 @@ public final class HCExtHelper
   public static List <IHCNode> nl2brList (@Nullable final String sText)
   {
     final List <IHCNode> ret = new ArrayList <IHCNode> ();
+    nl2brList (sText, ret);
+    return ret;
+  }
+
+  public static void nl2brList (@Nullable final String sText, @Nonnull final Collection <IHCNode> aTarget)
+  {
     if (StringHelper.hasText (sText))
     {
       // Remove all "\r" chars
@@ -429,19 +436,18 @@ public final class HCExtHelper
         if (nNext >= 0)
         {
           if (nNext > nIndex)
-            ret.add (new HCTextNode (sRealText.substring (nIndex, nNext)));
-          ret.add (new HCBR ());
+            aTarget.add (new HCTextNode (sRealText.substring (nIndex, nNext)));
+          aTarget.add (new HCBR ());
           nIndex = nNext + PATTERN_NEWLINE_LENGTH;
         }
         else
         {
           // Add the rest
-          ret.add (new HCTextNode (sRealText.substring (nIndex)));
+          aTarget.add (new HCTextNode (sRealText.substring (nIndex)));
           break;
         }
       }
     }
-    return ret;
   }
 
   /**
@@ -461,6 +467,24 @@ public final class HCExtHelper
   public static List <HCDiv> nl2divList (@Nullable final String sText)
   {
     final List <HCDiv> ret = new ArrayList <> ();
+    nl2divList (sText, ret);
+    return ret;
+  }
+
+  /**
+   * Convert the passed text to a list of &lt;div&gt; elements. Each \n is used
+   * to split the text into separate lines. \r characters are removed from the
+   * string! Empty lines are preserved except for the last line. E.g.
+   * <code>Hello\nworld</code> results in 2 &lt;div&gt;s:
+   * &lt;div&gt;Hello&lt;/div&gt; and &lt;div&gt;world&lt;/div&gt;
+   *
+   * @param sText
+   *        The text to be split. May be <code>null</code>.
+   * @param aTarget
+   *        The collection to be filled. May not be <code>null</code>.
+   */
+  public static void nl2divList (@Nullable final String sText, @Nonnull final Collection <HCDiv> aTarget)
+  {
     if (StringHelper.hasText (sText))
     {
       // Remove all "\r" chars
@@ -472,7 +496,7 @@ public final class HCExtHelper
         if (nNext >= 0)
         {
           // There is a newline
-          ret.add (new HCDiv ().addChild (sRealText.substring (nIndex, nNext)));
+          aTarget.add (new HCDiv ().addChild (sRealText.substring (nIndex, nNext)));
           nIndex = nNext + PATTERN_NEWLINE_LENGTH;
         }
         else
@@ -480,12 +504,11 @@ public final class HCExtHelper
           // Add the rest
           final String sRest = sRealText.substring (nIndex);
           if (sRest.length () > 0)
-            ret.add (new HCDiv ().addChild (sRest));
+            aTarget.add (new HCDiv ().addChild (sRest));
           break;
         }
       }
     }
-    return ret;
   }
 
   @Nonnull
