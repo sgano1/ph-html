@@ -17,8 +17,8 @@
 package com.helger.html.hc.ext;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
+import java.util.function.Consumer;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -419,11 +419,11 @@ public final class HCExtHelper
   public static List <IHCNode> nl2brList (@Nullable final String sText)
   {
     final List <IHCNode> ret = new ArrayList <IHCNode> ();
-    nl2brList (sText, ret);
+    nl2brList (sText, aNode -> ret.add (aNode));
     return ret;
   }
 
-  public static void nl2brList (@Nullable final String sText, @Nonnull final Collection <IHCNode> aTarget)
+  public static void nl2brList (@Nullable final String sText, @Nonnull final Consumer <? super IHCNode> aTarget)
   {
     if (StringHelper.hasText (sText))
     {
@@ -436,14 +436,14 @@ public final class HCExtHelper
         if (nNext >= 0)
         {
           if (nNext > nIndex)
-            aTarget.add (new HCTextNode (sRealText.substring (nIndex, nNext)));
-          aTarget.add (new HCBR ());
+            aTarget.accept (new HCTextNode (sRealText.substring (nIndex, nNext)));
+          aTarget.accept (new HCBR ());
           nIndex = nNext + PATTERN_NEWLINE_LENGTH;
         }
         else
         {
           // Add the rest
-          aTarget.add (new HCTextNode (sRealText.substring (nIndex)));
+          aTarget.accept (new HCTextNode (sRealText.substring (nIndex)));
           break;
         }
       }
@@ -467,7 +467,7 @@ public final class HCExtHelper
   public static List <HCDiv> nl2divList (@Nullable final String sText)
   {
     final List <HCDiv> ret = new ArrayList <> ();
-    nl2divList (sText, ret);
+    nl2divList (sText, aDiv -> ret.add (aDiv));
     return ret;
   }
 
@@ -483,7 +483,7 @@ public final class HCExtHelper
    * @param aTarget
    *        The collection to be filled. May not be <code>null</code>.
    */
-  public static void nl2divList (@Nullable final String sText, @Nonnull final Collection <HCDiv> aTarget)
+  public static void nl2divList (@Nullable final String sText, @Nonnull final Consumer <? super HCDiv> aTarget)
   {
     if (StringHelper.hasText (sText))
     {
@@ -496,7 +496,7 @@ public final class HCExtHelper
         if (nNext >= 0)
         {
           // There is a newline
-          aTarget.add (new HCDiv ().addChild (sRealText.substring (nIndex, nNext)));
+          aTarget.accept (new HCDiv ().addChild (sRealText.substring (nIndex, nNext)));
           nIndex = nNext + PATTERN_NEWLINE_LENGTH;
         }
         else
@@ -504,7 +504,7 @@ public final class HCExtHelper
           // Add the rest
           final String sRest = sRealText.substring (nIndex);
           if (sRest.length () > 0)
-            aTarget.add (new HCDiv ().addChild (sRest));
+            aTarget.accept (new HCDiv ().addChild (sRest));
           break;
         }
       }
