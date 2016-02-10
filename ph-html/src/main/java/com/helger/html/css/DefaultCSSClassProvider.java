@@ -26,10 +26,10 @@ import javax.annotation.concurrent.Immutable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.regex.RegExHelper;
-import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 
 /**
@@ -50,10 +50,10 @@ public class DefaultCSSClassProvider implements ICSSClassProvider, Serializable
 
   private DefaultCSSClassProvider (@Nonnull @Nonempty final String sCSSClass)
   {
-    if (StringHelper.hasNoText (sCSSClass))
-      throw new IllegalArgumentException ("Empty CSS class provided");
+    ValueEnforcer.notEmpty (sCSSClass, "CSSClass");
     if (sCSSClass.indexOf (' ') >= 0)
       throw new IllegalArgumentException ("CSS class may not contain spaces '" + sCSSClass + "'");
+
     {
       // Happens more frequently because people are reusing existing attributes
       // for configuration purposes.
