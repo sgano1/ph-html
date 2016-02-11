@@ -43,7 +43,7 @@ public final class JsonToStringConverter implements IJSToStringConverter, Serial
                                           aObject.getClass ().getName ());
     if (aType != JSType.JSON)
       throw new IllegalArgumentException ("Unexpected JSType '" + aType + "'! Only JSON is supported!");
-    return aObject == null ? null : ((IJson) aObject).getAsString ();
+    return aObject == null ? null : ((IJson) aObject).getAsJsonString ();
   }
 
   @Override

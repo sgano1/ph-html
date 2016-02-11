@@ -123,7 +123,7 @@ public final class JSToString
             aSB.append ((String) aObject);
           break;
         case JSON:
-          aSB.append (((IJson) aObject).getAsString ());
+          aSB.append (((IJson) aObject).getAsJsonString ());
           break;
         case STRING:
           // Note: use single quotes for use in HTML attributes!

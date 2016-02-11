@@ -313,7 +313,7 @@ public final class JSExpr
   {
     ValueEnforcer.notNull (aJson, "Json");
 
-    return direct (aJson.getAsString ());
+    return direct (aJson.getAsJsonString ());
   }
 
   /**
