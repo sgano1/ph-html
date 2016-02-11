@@ -186,7 +186,7 @@ public final class MarkupFileFuncTest
   }
 
   @Parameters
-  public static Collection <Object []> testResultPairs () throws IOException
+  public static Iterable <Object []> testResultPairs () throws IOException
   {
     final Collection <Object []> testResultPairs = new ArrayList <Object []> ();
     for (final String filename : TEST_FILENAMES)

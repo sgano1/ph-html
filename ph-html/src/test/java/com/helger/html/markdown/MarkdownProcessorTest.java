@@ -56,7 +56,6 @@ import static org.junit.Assert.assertEquals;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import javax.annotation.Nonnull;
@@ -77,7 +76,7 @@ import com.helger.html.hc.mock.HCTestRuleOptimized;
 public final class MarkdownProcessorTest
 {
   @Parameters
-  public static Collection <Object []> markdownTests ()
+  public static Iterable <Object []> markdownTests ()
   {
     final List <Object []> ret = new ArrayList <Object []> ();
     for (final File aFile : new FileSystemRecursiveIterator (new File ("src/test/resources/MarkdownTest")))
