@@ -675,7 +675,7 @@ public abstract class AbstractJSInvocation <IMPLTYPE extends AbstractJSInvocatio
   @Nullable
   public IJSExpression getArgAtIndex (final int nIndex)
   {
-    return CollectionHelper.getSafe (m_aArgs, nIndex);
+    return CollectionHelper.getAtIndex (m_aArgs, nIndex);
   }
 
   /**

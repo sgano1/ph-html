@@ -251,7 +251,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
   @Nullable
   public final CHILDTYPE getChildAtIndex (@Nonnegative final int nIndex)
   {
-    return CollectionHelper.getSafe (m_aChildren, nIndex);
+    return CollectionHelper.getAtIndex (m_aChildren, nIndex);
   }
 
   @Override

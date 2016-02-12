@@ -74,6 +74,6 @@ public abstract class AbstractHCRadioButtonBar extends AbstractHCSpan <AbstractH
   @Nullable
   public final HCRadioButton getRadioButtonAtIndex (final int nIndex)
   {
-    return CollectionHelper.getSafe (m_aButtons, nIndex);
+    return CollectionHelper.getAtIndex (m_aButtons, nIndex);
   }
 }

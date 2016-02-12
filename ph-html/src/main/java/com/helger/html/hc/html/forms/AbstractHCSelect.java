@@ -446,7 +446,7 @@ public abstract class AbstractHCSelect <THISTYPE extends AbstractHCSelect <THIST
   @Nullable
   public IHCNode getChildAtIndex (final int nIndex)
   {
-    return CollectionHelper.getSafe (m_aOptions, nIndex);
+    return CollectionHelper.getAtIndex (m_aOptions, nIndex);
   }
 
   @Override

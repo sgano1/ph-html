@@ -268,7 +268,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
   @Nullable
   public final CHILDTYPE getChildAtIndex (@Nonnegative final int nIndex)
   {
-    return CollectionHelper.getSafe (m_aChildren, nIndex, null);
+    return CollectionHelper.getAtIndex (m_aChildren, nIndex, null);
   }
 
   @Override

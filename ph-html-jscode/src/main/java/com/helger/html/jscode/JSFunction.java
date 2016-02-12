@@ -131,7 +131,7 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
   @Nullable
   public JSVar getParamAtIndex (final int nIndex)
   {
-    return CollectionHelper.getSafe (m_aParams, nIndex);
+    return CollectionHelper.getAtIndex (m_aParams, nIndex);
   }
 
   @Nonnull
