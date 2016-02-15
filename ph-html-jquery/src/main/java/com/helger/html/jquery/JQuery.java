@@ -44,6 +44,7 @@ import com.helger.html.jscode.IJSExpression;
 import com.helger.html.jscode.JSAnonymousFunction;
 import com.helger.html.jscode.JSAssocArray;
 import com.helger.html.jscode.JSExpr;
+import com.helger.html.jscode.JSFieldRef;
 import com.helger.html.jscode.JSFunction;
 import com.helger.html.jscode.html.JSHtml;
 import com.helger.json.IJson;
@@ -780,13 +781,22 @@ public final class JQuery
   }
 
   /**
+   * @return The reference of the static jQuery field <code>jQuery.fn</code>
+   */
+  @Nonnull
+  public static JSFieldRef fn ()
+  {
+    return JQueryProperty.jQueryField ().ref ("fn");
+  }
+
+  /**
    * @return The invocation of the static jQuery function
    *         <code>jQuery.fn.extend()</code> with return type Object
    */
   @Nonnull
   public static JQueryInvocation fn_extend ()
   {
-    return new JQueryInvocation (JQueryProperty.jQueryField (), "fn.extend");
+    return new JQueryInvocation (fn (), "extend");
   }
 
   /**
