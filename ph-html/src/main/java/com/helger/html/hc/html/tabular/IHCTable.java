@@ -26,6 +26,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.collection.CollectionHelper;
 import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.html.IHCElement;
@@ -106,6 +107,14 @@ public interface IHCTable <IMPLTYPE extends IHCTable <IMPLTYPE>> extends IHCElem
    */
   @Nullable
   HCColGroup getColGroup ();
+
+  @Nonnull
+  @ReturnsMutableCopy
+  default List <? extends IHCCol <?>> getAllColumns ()
+  {
+    final HCColGroup aColGroup = getColGroup ();
+    return aColGroup != null ? aColGroup.getAllColumns () : CollectionHelper.newList (0);
+  }
 
   /**
    * Add the specified column.

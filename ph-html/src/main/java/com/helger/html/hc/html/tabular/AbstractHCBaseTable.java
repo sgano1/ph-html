@@ -152,7 +152,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
   @ReturnsMutableCopy
   public final List <IHCNode> getAllChildren ()
   {
-    final List <IHCNode> ret = new ArrayList <IHCNode> ();
+    final List <IHCNode> ret = new ArrayList <> ();
     if (m_aColGroup != null)
       ret.add (m_aColGroup);
     ret.add (m_aHead);
