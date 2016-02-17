@@ -16,8 +16,6 @@
  */
 package com.helger.html.hc.ext;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.function.Consumer;
 
 import javax.annotation.Nonnull;
@@ -25,6 +23,8 @@ import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.collection.ext.CommonsList;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.string.StringHelper;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCNode;
@@ -416,10 +416,10 @@ public final class HCExtHelper
   }
 
   @ReturnsMutableCopy
-  public static List <IHCNode> nl2brList (@Nullable final String sText)
+  public static ICommonsList <IHCNode> nl2brList (@Nullable final String sText)
   {
-    final List <IHCNode> ret = new ArrayList <IHCNode> ();
-    nl2brList (sText, aNode -> ret.add (aNode));
+    final ICommonsList <IHCNode> ret = new CommonsList <IHCNode> ();
+    nl2brList (sText, ret::add);
     return ret;
   }
 
@@ -464,10 +464,10 @@ public final class HCExtHelper
    */
   @Nonnull
   @ReturnsMutableCopy
-  public static List <HCDiv> nl2divList (@Nullable final String sText)
+  public static ICommonsList <HCDiv> nl2divList (@Nullable final String sText)
   {
-    final List <HCDiv> ret = new ArrayList <> ();
-    nl2divList (sText, aDiv -> ret.add (aDiv));
+    final ICommonsList <HCDiv> ret = new CommonsList <> ();
+    nl2divList (sText, ret::add);
     return ret;
   }
 
@@ -513,9 +513,9 @@ public final class HCExtHelper
 
   @Nonnull
   @ReturnsMutableCopy
-  public static List <IHCNode> list2brList (@Nullable final Iterable <String> aCont)
+  public static ICommonsList <IHCNode> list2brList (@Nullable final Iterable <String> aCont)
   {
-    final List <IHCNode> ret = new ArrayList <> ();
+    final ICommonsList <IHCNode> ret = new CommonsList <> ();
     if (aCont != null)
       for (final String sText : aCont)
       {
@@ -528,9 +528,9 @@ public final class HCExtHelper
 
   @Nonnull
   @ReturnsMutableCopy
-  public static List <IHCNode> list2divList (@Nullable final Iterable <String> aCont)
+  public static ICommonsList <IHCNode> list2divList (@Nullable final Iterable <String> aCont)
   {
-    final List <IHCNode> ret = new ArrayList <> ();
+    final ICommonsList <IHCNode> ret = new CommonsList <> ();
     if (aCont != null)
       for (final String sText : aCont)
         ret.add (new HCDiv ().addChild (sText));

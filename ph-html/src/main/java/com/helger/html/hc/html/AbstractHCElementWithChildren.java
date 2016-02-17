@@ -16,14 +16,11 @@
  */
 package com.helger.html.hc.html;
 
-import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCNode;
-import com.helger.html.hc.impl.HCTextNode;
 
 @NotThreadSafe
 public abstract class AbstractHCElementWithChildren <THISTYPE extends AbstractHCElementWithChildren <THISTYPE>>
@@ -33,32 +30,5 @@ public abstract class AbstractHCElementWithChildren <THISTYPE extends AbstractHC
   protected AbstractHCElementWithChildren (@Nonnull final EHTMLElement eElement)
   {
     super (eElement);
-  }
-
-  @Nonnull
-  public final THISTYPE addChild (@Nullable final String sText)
-  {
-    // Empty text is OK!!!
-    if (sText != null)
-      addChild (new HCTextNode (sText));
-    return thisAsT ();
-  }
-
-  @Nonnull
-  public final THISTYPE addChild (@Nonnegative final int nIndex, @Nullable final String sText)
-  {
-    // Empty text is OK!!!
-    if (sText != null)
-      addChild (nIndex, new HCTextNode (sText));
-    return thisAsT ();
-  }
-
-  @Nonnull
-  public final THISTYPE addChildren (@Nullable final String... aChildren)
-  {
-    if (aChildren != null)
-      for (final String sChild : aChildren)
-        addChild (sChild);
-    return thisAsT ();
   }
 }

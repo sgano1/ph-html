@@ -20,6 +20,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.id.factory.GlobalIDFactory;
+import com.helger.commons.string.StringHelper;
 import com.helger.commons.traits.IGenericImplTrait;
 
 /**
@@ -32,12 +33,6 @@ import com.helger.commons.traits.IGenericImplTrait;
 public interface IHCHasID <IMPLTYPE extends IHCHasID <IMPLTYPE>> extends IGenericImplTrait <IMPLTYPE>
 {
   /**
-   * @return <code>true</code> if this element has an ID, <code>false</code> if
-   *         not.
-   */
-  boolean hasID ();
-
-  /**
    * Get the HTML ID of this object.<br>
    * Note: we cannot use <code>IHasID&lt;String&gt;</code> because the
    * constraint of IHasID is, that the returned ID may not be <code>null</code>
@@ -47,6 +42,15 @@ public interface IHCHasID <IMPLTYPE extends IHCHasID <IMPLTYPE>> extends IGeneri
    */
   @Nullable
   String getID ();
+
+  /**
+   * @return <code>true</code> if this element has an ID, <code>false</code> if
+   *         not.
+   */
+  default boolean hasID ()
+  {
+    return StringHelper.hasText (getID ());
+  }
 
   /**
    * Set the HTML ID of this object.
@@ -77,5 +81,10 @@ public interface IHCHasID <IMPLTYPE extends IHCHasID <IMPLTYPE>> extends IGeneri
    * @return this
    */
   @Nonnull
-  IMPLTYPE ensureID ();
+  default IMPLTYPE ensureID ()
+  {
+    if (!hasID ())
+      setUniqueID ();
+    return thisAsT ();
+  }
 }

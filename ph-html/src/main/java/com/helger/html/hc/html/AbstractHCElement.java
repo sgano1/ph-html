@@ -16,8 +16,6 @@
  */
 package com.helger.html.hc.html;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
@@ -38,6 +36,8 @@ import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.cache.AnnotationUsageCache;
 import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.ext.CommonsList;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.microdom.IMicroNode;
@@ -47,7 +47,6 @@ import com.helger.commons.state.ETriState;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.css.ICSSWriterSettings;
-import com.helger.css.property.CSSPropertyFree;
 import com.helger.css.property.ECSSProperty;
 import com.helger.css.propertyvalue.ICSSValue;
 import com.helger.html.CHTMLAttributeValues;
@@ -148,11 +147,6 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
     return m_sElementName;
   }
 
-  public final boolean hasID ()
-  {
-    return StringHelper.hasText (m_sID);
-  }
-
   @Nullable
   public final String getID ()
   {
@@ -199,14 +193,6 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
     return thisAsT ();
   }
 
-  @Nonnull
-  public THISTYPE ensureID ()
-  {
-    if (!hasID ())
-      setUniqueID ();
-    return thisAsT ();
-  }
-
   @Nullable
   public final String getTitle ()
   {
@@ -233,27 +219,9 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
     if (aCSSClassProvider != null)
     {
       if (m_aCSSClassProviders == null)
-        m_aCSSClassProviders = new LinkedHashSet <ICSSClassProvider> ();
+        m_aCSSClassProviders = new LinkedHashSet <> ();
       m_aCSSClassProviders.add (aCSSClassProvider);
     }
-    return thisAsT ();
-  }
-
-  @Nonnull
-  public final THISTYPE addClasses (@Nullable final ICSSClassProvider... aCSSClassProviders)
-  {
-    if (aCSSClassProviders != null)
-      for (final ICSSClassProvider aProvider : aCSSClassProviders)
-        addClass (aProvider);
-    return thisAsT ();
-  }
-
-  @Nonnull
-  public final THISTYPE addClasses (@Nullable final Iterable <? extends ICSSClassProvider> aCSSClassProviders)
-  {
-    if (aCSSClassProviders != null)
-      for (final ICSSClassProvider aProvider : aCSSClassProviders)
-        addClass (aProvider);
     return thisAsT ();
   }
 
@@ -284,7 +252,7 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
   @ReturnsMutableCopy
   public final Set <String> getAllClassNames ()
   {
-    final Set <String> ret = new LinkedHashSet <String> ();
+    final Set <String> ret = new LinkedHashSet <> ();
     if (m_aCSSClassProviders != null)
       for (final ICSSClassProvider aCSSClassProvider : m_aCSSClassProviders)
       {
@@ -324,14 +292,14 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
   @ReturnsMutableCopy
   public final Map <ECSSProperty, ICSSValue> getAllStyles ()
   {
-    return CollectionHelper.newMap (m_aStyles);
+    return CollectionHelper.newOrderedMap (m_aStyles);
   }
 
   @Nonnull
   @ReturnsMutableCopy
-  public final Collection <ICSSValue> getAllStyleValues ()
+  public final ICommonsList <ICSSValue> getAllStyleValues ()
   {
-    return m_aStyles == null ? new ArrayList <ICSSValue> () : CollectionHelper.newList (m_aStyles.values ());
+    return m_aStyles == null ? new CommonsList <> () : CollectionHelper.newList (m_aStyles.values ());
   }
 
   @Nullable
@@ -361,38 +329,14 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
   }
 
   @Nonnull
-  public final THISTYPE addStyle (@Nonnull final ECSSProperty eProperty, @Nonnull @Nonempty final String sPropertyValue)
-  {
-    return addStyle (new CSSPropertyFree (eProperty).newValue (sPropertyValue));
-  }
-
-  @Nonnull
   public final THISTYPE addStyle (@Nullable final ICSSValue aValue)
   {
     if (aValue != null)
     {
       if (m_aStyles == null)
-        m_aStyles = new LinkedHashMap <ECSSProperty, ICSSValue> ();
+        m_aStyles = new LinkedHashMap <> ();
       m_aStyles.put (aValue.getProp (), aValue);
     }
-    return thisAsT ();
-  }
-
-  @Nonnull
-  public final THISTYPE addStyles (@Nullable final ICSSValue... aValues)
-  {
-    if (aValues != null)
-      for (final ICSSValue aValue : aValues)
-        addStyle (aValue);
-    return thisAsT ();
-  }
-
-  @Nonnull
-  public final THISTYPE addStyles (@Nullable final Iterable <? extends ICSSValue> aValues)
-  {
-    if (aValues != null)
-      for (final ICSSValue aValue : aValues)
-        addStyle (aValue);
     return thisAsT ();
   }
 
@@ -585,12 +529,6 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
   }
 
   @Nonnull
-  public final THISTYPE setTranslate (final boolean bTranslate)
-  {
-    return setTranslate (ETriState.valueOf (bTranslate));
-  }
-
-  @Nonnull
   public final THISTYPE setTranslate (@Nonnull final ETriState eTranslate)
   {
     m_eTranslate = ValueEnforcer.notNull (eTranslate, "Translate");
@@ -770,7 +708,7 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
   @ReturnsMutableCopy
   public Map <String, String> getAllDataAttrs ()
   {
-    final Map <String, String> ret = new LinkedHashMap <String, String> ();
+    final Map <String, String> ret = new LinkedHashMap <> ();
     if (m_aCustomAttrs != null)
       for (final Map.Entry <String, String> aEntry : m_aCustomAttrs.entrySet ())
         if (isDataAttrName (aEntry.getKey ()))

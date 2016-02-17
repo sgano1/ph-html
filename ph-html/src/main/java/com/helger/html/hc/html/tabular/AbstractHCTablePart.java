@@ -16,14 +16,13 @@
  */
 package com.helger.html.hc.html.tabular;
 
-import java.util.List;
-
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.OverridingMethodsMustInvokeSuper;
 
 import com.helger.commons.annotation.ReturnsMutableObject;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCConversionSettingsToNode;
@@ -77,7 +76,7 @@ public abstract class AbstractHCTablePart <THISTYPE extends AbstractHCTablePart 
    */
   @Nullable
   @ReturnsMutableObject ("speed")
-  protected final List <HCRow> directGetRowList ()
+  protected final ICommonsList <HCRow> directGetRowList ()
   {
     return directGetChildren ();
   }

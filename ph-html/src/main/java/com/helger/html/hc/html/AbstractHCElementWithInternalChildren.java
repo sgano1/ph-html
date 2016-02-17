@@ -18,7 +18,6 @@ package com.helger.html.hc.html;
 
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
 
 import javax.annotation.CheckForSigned;
 import javax.annotation.Nonnegative;
@@ -190,7 +189,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
 
   @Nullable
   @ReturnsMutableObject ("speed")
-  protected final List <CHILDTYPE> directGetChildren ()
+  protected final ICommonsList <CHILDTYPE> directGetChildren ()
   {
     return m_aChildren;
   }
@@ -266,7 +265,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
   @Nonnull
   @Nonempty
   @OverrideOnDemand
-  protected List <? extends CHILDTYPE> getChildrenFormEmitting (@Nonnull @Nonempty final List <CHILDTYPE> aChildren)
+  protected ICommonsList <? extends CHILDTYPE> getChildrenFormEmitting (@Nonnull @Nonempty final ICommonsList <CHILDTYPE> aChildren)
   {
     return aChildren;
   }

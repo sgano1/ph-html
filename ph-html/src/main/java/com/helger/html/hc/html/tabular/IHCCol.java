@@ -21,6 +21,8 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.helger.css.ECSSUnit;
+import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.hc.html.IHCElement;
 
 /**
@@ -35,7 +37,10 @@ public interface IHCCol <IMPLTYPE extends IHCCol <IMPLTYPE>> extends IHCElement 
   /**
    * @return <code>true</code> if this is a star column (width == "*")
    */
-  boolean isStar ();
+  default boolean isStar ()
+  {
+    return CHTMLAttributeValues.STAR.equals (getWidth ());
+  }
 
   /**
    * @return The width definition of the column as a string or <code>null</code>
@@ -52,7 +57,10 @@ public interface IHCCol <IMPLTYPE extends IHCCol <IMPLTYPE>> extends IHCElement 
    * @return this
    */
   @Nonnull
-  IMPLTYPE setWidth (@Nonnegative int nWidth);
+  default IMPLTYPE setWidth (@Nonnegative final int nWidth)
+  {
+    return setWidth (Integer.toString (nWidth));
+  }
 
   /**
    * Set the width in percent.
@@ -62,7 +70,10 @@ public interface IHCCol <IMPLTYPE extends IHCCol <IMPLTYPE>> extends IHCElement 
    * @return this
    */
   @Nonnull
-  IMPLTYPE setWidthPerc (@Nonnegative double dPerc);
+  default IMPLTYPE setWidthPerc (@Nonnegative final double dPerc)
+  {
+    return setWidth (ECSSUnit.perc (dPerc));
+  }
 
   /**
    * Set the width as string. May either be a pure integer or e.g. a percentage

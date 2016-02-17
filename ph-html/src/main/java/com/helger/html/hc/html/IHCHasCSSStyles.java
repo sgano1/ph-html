@@ -16,7 +16,6 @@
  */
 package com.helger.html.hc.html;
 
-import java.util.Collection;
 import java.util.Map;
 
 import javax.annotation.Nonnull;
@@ -25,6 +24,7 @@ import javax.annotation.Nullable;
 import com.helger.commons.annotation.DevelopersNote;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.traits.IGenericImplTrait;
 import com.helger.css.ICSSWriterSettings;
 import com.helger.css.property.CSSPropertyFree;
@@ -81,7 +81,13 @@ public interface IHCHasCSSStyles <IMPLTYPE extends IHCHasCSSStyles <IMPLTYPE>> e
    * @return this
    */
   @Nonnull
-  IMPLTYPE addStyles (@Nullable final ICSSValue... aValues);
+  default IMPLTYPE addStyles (@Nullable final ICSSValue... aValues)
+  {
+    if (aValues != null)
+      for (final ICSSValue aValue : aValues)
+        addStyle (aValue);
+    return thisAsT ();
+  }
 
   /**
    * Add element specific styles.
@@ -91,7 +97,13 @@ public interface IHCHasCSSStyles <IMPLTYPE extends IHCHasCSSStyles <IMPLTYPE>> e
    * @return this
    */
   @Nonnull
-  IMPLTYPE addStyles (@Nullable final Iterable <? extends ICSSValue> aValues);
+  default IMPLTYPE addStyles (@Nullable final Iterable <? extends ICSSValue> aValues)
+  {
+    if (aValues != null)
+      for (final ICSSValue aValue : aValues)
+        addStyle (aValue);
+    return thisAsT ();
+  }
 
   /**
    * Remove the specified style from the element
@@ -123,7 +135,7 @@ public interface IHCHasCSSStyles <IMPLTYPE extends IHCHasCSSStyles <IMPLTYPE>> e
    */
   @Nonnull
   @ReturnsMutableCopy
-  Collection <ICSSValue> getAllStyleValues ();
+  ICommonsList <ICSSValue> getAllStyleValues ();
 
   /**
    * Find the style value associated to a single property.

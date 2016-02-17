@@ -323,7 +323,10 @@ public interface IHCElement <IMPLTYPE extends IHCElement <IMPLTYPE>> extends
    * @return this
    */
   @Nonnull
-  IMPLTYPE setTranslate (boolean bTranslate);
+  default IMPLTYPE setTranslate (final boolean bTranslate)
+  {
+    return setTranslate (ETriState.valueOf (bTranslate));
+  }
 
   /**
    * Set the value of the HTML <code>translate</code> attribute.

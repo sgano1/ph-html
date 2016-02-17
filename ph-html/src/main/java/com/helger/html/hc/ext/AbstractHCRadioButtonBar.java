@@ -16,13 +16,11 @@
  */
 package com.helger.html.hc.ext;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.ext.CommonsList;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.html.forms.HCRadioButton;
 import com.helger.html.hc.html.textlevel.AbstractHCSpan;
@@ -31,7 +29,7 @@ import com.helger.html.hc.impl.HCTextNode;
 public abstract class AbstractHCRadioButtonBar extends AbstractHCSpan <AbstractHCRadioButtonBar>
 {
   private final String m_sName;
-  private final List <HCRadioButton> m_aButtons = new ArrayList <> ();
+  private final ICommonsList <HCRadioButton> m_aButtons = new CommonsList <> ();
 
   protected AbstractHCRadioButtonBar (@Nullable final String sName)
   {
@@ -74,6 +72,6 @@ public abstract class AbstractHCRadioButtonBar extends AbstractHCSpan <AbstractH
   @Nullable
   public final HCRadioButton getRadioButtonAtIndex (final int nIndex)
   {
-    return CollectionHelper.getAtIndex (m_aButtons, nIndex);
+    return m_aButtons.getAtIndex (nIndex);
   }
 }

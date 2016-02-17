@@ -16,14 +16,13 @@
  */
 package com.helger.html.hc.html.embedded;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.OverridingMethodsMustInvokeSuper;
 
 import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.collection.ext.CommonsList;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.url.ISimpleURL;
 import com.helger.html.CHTMLAttributeValues;
@@ -167,18 +166,13 @@ public abstract class AbstractHCMediaElement <THISTYPE extends AbstractHCMediaEl
   @Override
   @Nonnull
   @Nonempty
-  protected List <IHCMediaElementChild <?>> getChildrenFormEmitting (@Nonnull @Nonempty final List <IHCMediaElementChild <?>> aChildren)
+  protected ICommonsList <IHCMediaElementChild <?>> getChildrenFormEmitting (@Nonnull @Nonempty final ICommonsList <IHCMediaElementChild <?>> aChildren)
   {
+    final ICommonsList <IHCMediaElementChild <?>> ret = new CommonsList <> (aChildren.size ());
     // <source> must be first
-    final List <IHCMediaElementChild <?>> ret = new ArrayList <IHCMediaElementChild <?>> (aChildren.size ());
-    for (final IHCMediaElementChild <?> aChild : aChildren)
-      if (aChild.getElement ().equals (EHTMLElement.SOURCE))
-        ret.add (aChild);
-
+    aChildren.findAll (c -> c.getElement ().equals (EHTMLElement.SOURCE), ret::add);
     // Add <track> and <img>
-    for (final IHCMediaElementChild <?> aChild : aChildren)
-      if (!aChild.getElement ().equals (EHTMLElement.SOURCE))
-        ret.add (aChild);
+    aChildren.findAll (c -> !c.getElement ().equals (EHTMLElement.SOURCE), ret::add);
     return ret;
   }
 

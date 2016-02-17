@@ -16,8 +16,6 @@
  */
 package com.helger.html.hc.ext;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -26,6 +24,8 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.ext.CommonsList;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.css.ICSSWriterSettings;
@@ -48,14 +48,14 @@ public class HCHasCSSStyles implements IHCHasCSSStyles <HCHasCSSStyles>
   @ReturnsMutableCopy
   public final Map <ECSSProperty, ICSSValue> getAllStyles ()
   {
-    return CollectionHelper.newMap (m_aStyles);
+    return CollectionHelper.newOrderedMap (m_aStyles);
   }
 
   @Nonnull
   @ReturnsMutableCopy
-  public final Collection <ICSSValue> getAllStyleValues ()
+  public final ICommonsList <ICSSValue> getAllStyleValues ()
   {
-    return m_aStyles == null ? new ArrayList <ICSSValue> () : CollectionHelper.newList (m_aStyles.values ());
+    return m_aStyles == null ? new CommonsList <> () : CollectionHelper.newList (m_aStyles.values ());
   }
 
   @Nullable
@@ -90,27 +90,9 @@ public class HCHasCSSStyles implements IHCHasCSSStyles <HCHasCSSStyles>
     if (aValue != null)
     {
       if (m_aStyles == null)
-        m_aStyles = new LinkedHashMap <ECSSProperty, ICSSValue> ();
+        m_aStyles = new LinkedHashMap <> ();
       m_aStyles.put (aValue.getProp (), aValue);
     }
-    return this;
-  }
-
-  @Nonnull
-  public final HCHasCSSStyles addStyles (@Nullable final ICSSValue... aValues)
-  {
-    if (aValues != null)
-      for (final ICSSValue aValue : aValues)
-        addStyle (aValue);
-    return this;
-  }
-
-  @Nonnull
-  public final HCHasCSSStyles addStyles (@Nullable final Iterable <? extends ICSSValue> aValues)
-  {
-    if (aValues != null)
-      for (final ICSSValue aValue : aValues)
-        addStyle (aValue);
     return this;
   }
 

@@ -23,12 +23,9 @@ import javax.annotation.Nullable;
 import javax.annotation.OverridingMethodsMustInvokeSuper;
 
 import com.helger.commons.CGlobal;
-import com.helger.commons.ValueEnforcer;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
-import com.helger.css.ECSSUnit;
-import com.helger.html.CHTMLAttributeValues;
 import com.helger.html.CHTMLAttributes;
 import com.helger.html.EHTMLElement;
 import com.helger.html.hc.IHCConversionSettingsToNode;
@@ -58,28 +55,10 @@ public abstract class AbstractHCCol <IMPLTYPE extends AbstractHCCol <IMPLTYPE>> 
     setWidth (nWidth);
   }
 
-  public boolean isStar ()
-  {
-    return CHTMLAttributeValues.STAR.equals (m_sWidth);
-  }
-
   @Nullable
   public String getWidth ()
   {
     return m_sWidth;
-  }
-
-  @Nonnull
-  public IMPLTYPE setWidth (@Nonnegative final int nWidth)
-  {
-    ValueEnforcer.isGE0 (nWidth, "Width");
-    return setWidth (Integer.toString (nWidth));
-  }
-
-  @Nonnull
-  public IMPLTYPE setWidthPerc (@Nonnegative final double dPerc)
-  {
-    return setWidth (ECSSUnit.perc (dPerc));
   }
 
   @Nonnull

@@ -27,9 +27,11 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.html.css.ICSSClassProvider;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.html.IHCElement;
+import com.helger.html.hc.impl.HCTextNode;
 
 /**
  * Base interface for HTML tables
@@ -162,7 +164,13 @@ public interface IHCTable <IMPLTYPE extends IHCTable <IMPLTYPE>> extends IHCElem
    * @return this
    */
   @Nonnull
-  IMPLTYPE addColumns (@Nullable IHCCol <?>... aCols);
+  default IMPLTYPE addColumns (@Nullable final IHCCol <?>... aCols)
+  {
+    if (aCols != null)
+      for (final IHCCol <?> aCol : aCols)
+        addColumn (aCol);
+    return thisAsT ();
+  }
 
   /**
    * Add multiple columns at once.
@@ -173,7 +181,13 @@ public interface IHCTable <IMPLTYPE extends IHCTable <IMPLTYPE>> extends IHCElem
    * @return this
    */
   @Nonnull
-  IMPLTYPE addColumns (@Nullable Iterable <? extends IHCCol <?>> aCols);
+  default IMPLTYPE addColumns (@Nullable final Iterable <? extends IHCCol <?>> aCols)
+  {
+    if (aCols != null)
+      for (final IHCCol <?> aCol : aCols)
+        addColumn (aCol);
+    return thisAsT ();
+  }
 
   /**
    * Remove the column definition at the specified index. This does not affect
@@ -207,7 +221,10 @@ public interface IHCTable <IMPLTYPE extends IHCTable <IMPLTYPE>> extends IHCElem
    * @return The ID of the table head. May be <code>null</code>.
    */
   @Nullable
-  String getHeaderID ();
+  default String getHeaderID ()
+  {
+    return getHead ().getID ();
+  }
 
   /**
    * Set the ID of the table head.
@@ -217,135 +234,274 @@ public interface IHCTable <IMPLTYPE extends IHCTable <IMPLTYPE>> extends IHCElem
    * @return this
    */
   @Nonnull
-  IMPLTYPE setHeaderID (@Nullable String sID);
+  default IMPLTYPE setHeaderID (@Nullable final String sID)
+  {
+    getHead ().setID (sID);
+    return thisAsT ();
+  }
 
   /**
    * @return <code>true</code> if a table header ID is present,
    *         <code>false</code> otherwise
    */
-  boolean hasHeaderID ();
+  default boolean hasHeaderID ()
+  {
+    return getHead ().hasID ();
+  }
 
   @Nonnull
   @ReturnsMutableCopy
-  Set <ICSSClassProvider> getAllHeaderClasses ();
+  default Set <ICSSClassProvider> getAllHeaderClasses ()
+  {
+    return getHead ().getAllClasses ();
+  }
 
   @Nonnull
-  String getAllHeaderClassesAsString ();
+  default String getAllHeaderClassesAsString ()
+  {
+    return getHead ().getAllClassesAsString ();
+  }
 
   @Nonnull
-  IMPLTYPE addHeaderClass (@Nonnull ICSSClassProvider aCSSClassProvider);
+  default IMPLTYPE addHeaderClass (@Nonnull final ICSSClassProvider aCSSClassProvider)
+  {
+    getHead ().addClass (aCSSClassProvider);
+    return thisAsT ();
+  }
 
   @Nonnull
-  IMPLTYPE removeHeaderClass (@Nonnull ICSSClassProvider aCSSClassProvider);
+  default IMPLTYPE removeHeaderClass (@Nonnull final ICSSClassProvider aCSSClassProvider)
+  {
+    getHead ().removeClass (aCSSClassProvider);
+    return thisAsT ();
+  }
 
-  boolean hasHeaderClasses ();
+  default boolean hasHeaderClasses ()
+  {
+    return getHead ().hasAnyClass ();
+  }
 
-  boolean hasHeaderRows ();
+  default boolean hasHeaderRows ()
+  {
+    return getHead ().hasChildren ();
+  }
 
   @Nonnegative
-  int getHeaderRowCount ();
+  default int getHeaderRowCount ()
+  {
+    return getHead ().getChildCount ();
+  }
 
   @Nullable
-  HCRow getFirstHeaderRow ();
+  default HCRow getFirstHeaderRow ()
+  {
+    return getHead ().getFirstChild ();
+  }
 
   @Nullable
-  HCRow getHeaderRowAtIndex (@Nonnegative int nIndex);
+  default HCRow getHeaderRowAtIndex (@Nonnegative final int nIndex)
+  {
+    return getHead ().getChildAtIndex (nIndex);
+  }
 
   @Nullable
-  HCRow getLastHeaderRow ();
+  default HCRow getLastHeaderRow ()
+  {
+    return getHead ().getLastChild ();
+  }
 
   @Nonnull
   @ReturnsMutableCopy
-  List <HCRow> getAllHeaderRows ();
+  default ICommonsList <HCRow> getAllHeaderRows ()
+  {
+    return getHead ().getAllChildren ();
+  }
 
   @Nonnull
-  HCRow addHeaderRow ();
+  default HCRow addHeaderRow ()
+  {
+    return getHead ().addRow ();
+  }
 
   @Nonnull
-  HCRow addHeaderRow (@Nonnegative int nIndex);
+  default HCRow addHeaderRow (@Nonnegative final int nIndex)
+  {
+    return getHead ().addRow (nIndex);
+  }
 
   @Nonnull
-  IMPLTYPE addHeaderRow (@Nullable HCRow aRow);
+  default IMPLTYPE addHeaderRow (@Nullable final HCRow aRow)
+  {
+    getHead ().addChild (aRow);
+    return thisAsT ();
+  }
 
   @Nonnull
-  IMPLTYPE addHeaderRow (@Nonnegative int nIndex, @Nullable HCRow aRow);
+  default IMPLTYPE addHeaderRow (@Nonnegative final int nIndex, @Nullable final HCRow aRow)
+  {
+    getHead ().addChild (nIndex, aRow);
+    return thisAsT ();
+  }
 
   @Nonnull
-  IMPLTYPE removeHeaderRowAtIndex (@Nonnegative int nIndex);
+  default IMPLTYPE removeHeaderRowAtIndex (@Nonnegative final int nIndex)
+  {
+    getHead ().removeChild (nIndex);
+    return thisAsT ();
+  }
 
   @Nonnull
-  IMPLTYPE removeAllHeaderRows ();
+  default IMPLTYPE removeAllHeaderRows ()
+  {
+    getHead ().removeAllChildren ();
+    return thisAsT ();
+  }
 
   @Nonnull
-  IMPLTYPE sortAllHeaderRows (@Nonnull Comparator <? super HCRow> aComparator);
+  default IMPLTYPE sortAllHeaderRows (@Nonnull final Comparator <? super HCRow> aComparator)
+  {
+    getHead ().sortAllChildren (aComparator);
+    return thisAsT ();
+  }
 
   // Footer rows
 
   @Nullable
-  String getFooterID ();
+  default String getFooterID ()
+  {
+    return getFoot ().getID ();
+  }
 
   @Nonnull
-  IMPLTYPE setFooterID (@Nullable String sID);
+  default IMPLTYPE setFooterID (@Nullable final String sID)
+  {
+    getFoot ().setID (sID);
+    return thisAsT ();
+  }
 
   /**
    * @return <code>true</code> if a Footer ID is present, <code>false</code>
    *         otherwise
    */
-  boolean hasFooterID ();
+  default boolean hasFooterID ()
+  {
+    return getFoot ().hasID ();
+  }
 
   @Nonnull
   @ReturnsMutableCopy
-  Set <ICSSClassProvider> getAllFooterClasses ();
+  default Set <ICSSClassProvider> getAllFooterClasses ()
+  {
+    return getFoot ().getAllClasses ();
+  }
 
   @Nonnull
-  String getAllFooterClassesAsString ();
+  default String getAllFooterClassesAsString ()
+  {
+    return getFoot ().getAllClassesAsString ();
+  }
 
   @Nonnull
-  IMPLTYPE addFooterClass (@Nonnull ICSSClassProvider aCSSClassProvider);
+  default IMPLTYPE addFooterClass (@Nonnull final ICSSClassProvider aCSSClassProvider)
+  {
+    getFoot ().addClass (aCSSClassProvider);
+    return thisAsT ();
+  }
 
   @Nonnull
-  IMPLTYPE removeFooterClass (@Nonnull ICSSClassProvider aCSSClassProvider);
+  default IMPLTYPE removeFooterClass (@Nonnull final ICSSClassProvider aCSSClassProvider)
+  {
+    getFoot ().removeClass (aCSSClassProvider);
+    return thisAsT ();
+  }
 
-  boolean hasFooterClasses ();
+  default boolean hasFooterClasses ()
+  {
+    return getFoot ().hasAnyClass ();
+  }
 
-  boolean hasFooterRows ();
+  default boolean hasFooterRows ()
+  {
+    return getFoot ().hasChildren ();
+  }
 
   @Nonnegative
-  int getFooterRowCount ();
+  default int getFooterRowCount ()
+  {
+    return getFoot ().getChildCount ();
+  }
 
   @Nullable
-  HCRow getFirstFooterRow ();
+  default HCRow getFirstFooterRow ()
+  {
+    return getFoot ().getFirstChild ();
+  }
 
   @Nullable
-  HCRow getFooterRowAtIndex (@Nonnegative int nIndex);
+  default HCRow getFooterRowAtIndex (@Nonnegative final int nIndex)
+  {
+    return getFoot ().getChildAtIndex (nIndex);
+  }
 
   @Nullable
-  HCRow getLastFooterRow ();
+  default HCRow getLastFooterRow ()
+  {
+    return getFoot ().getLastChild ();
+  }
 
   @Nonnull
   @ReturnsMutableCopy
-  List <HCRow> getAllFooterRows ();
+  default ICommonsList <HCRow> getAllFooterRows ()
+  {
+    return getFoot ().getAllChildren ();
+  }
 
   @Nonnull
-  HCRow addFooterRow ();
+  default HCRow addFooterRow ()
+  {
+    return getFoot ().addRow ();
+  }
 
   @Nonnull
-  HCRow addFooterRow (@Nonnegative int nIndex);
+  default HCRow addFooterRow (@Nonnegative final int nIndex)
+  {
+    return getFoot ().addRow (nIndex);
+  }
 
   @Nonnull
-  IMPLTYPE addFooterRow (@Nullable HCRow aRow);
+  default IMPLTYPE addFooterRow (@Nullable final HCRow aRow)
+  {
+    getFoot ().addChild (aRow);
+    return thisAsT ();
+  }
 
   @Nonnull
-  IMPLTYPE addFooterRow (@Nonnegative int nIndex, @Nullable HCRow aRow);
+  default IMPLTYPE addFooterRow (@Nonnegative final int nIndex, @Nullable final HCRow aRow)
+  {
+    getFoot ().addChild (nIndex, aRow);
+    return thisAsT ();
+  }
 
   @Nonnull
-  IMPLTYPE removeFooterRowAtIndex (@Nonnegative int nIndex);
+  default IMPLTYPE removeFooterRowAtIndex (@Nonnegative final int nIndex)
+  {
+    getFoot ().removeChild (nIndex);
+    return thisAsT ();
+  }
 
   @Nonnull
-  IMPLTYPE removeAllFooterRows ();
+  default IMPLTYPE removeAllFooterRows ()
+  {
+    getFoot ().removeAllChildren ();
+    return thisAsT ();
+  }
 
   @Nonnull
-  IMPLTYPE sortAllFooterRows (@Nonnull Comparator <? super HCRow> aComparator);
+  default IMPLTYPE sortAllFooterRows (@Nonnull final Comparator <? super HCRow> aComparator)
+  {
+    getFoot ().sortAllChildren (aComparator);
+    return thisAsT ();
+  }
 
   // Body rows
 
@@ -415,35 +571,72 @@ public interface IHCTable <IMPLTYPE extends IHCTable <IMPLTYPE>> extends IHCElem
   @Nonnull
   IMPLTYPE sortAllBodyRows (@Nonnull Comparator <? super HCRow> aComparator);
 
-  @Nonnull
-  IMPLTYPE setSpanningHeaderContent (@Nullable String sText);
+  // Special layout stuff
 
   @Nonnull
-  IMPLTYPE setSpanningHeaderContent (@Nullable IHCNode aNode);
+  default IMPLTYPE setSpanningHeaderContent (@Nullable final String sText)
+  {
+    return setSpanningHeaderContent (HCTextNode.createOnDemand (sText));
+  }
 
   @Nonnull
-  IMPLTYPE addSpanningHeaderContent (@Nullable String sText);
+  default IMPLTYPE setSpanningHeaderContent (@Nullable final IHCNode aNode)
+  {
+    removeAllHeaderRows ();
+    return addSpanningHeaderContent (aNode);
+  }
 
   @Nonnull
-  IMPLTYPE addSpanningHeaderContent (@Nullable IHCNode aNode);
+  default IMPLTYPE addSpanningHeaderContent (@Nullable final String sText)
+  {
+    return addSpanningHeaderContent (HCTextNode.createOnDemand (sText));
+  }
 
   @Nonnull
-  IMPLTYPE addSpanningBodyContent (@Nullable String sText);
+  default IMPLTYPE addSpanningHeaderContent (@Nullable final IHCNode aNode)
+  {
+    addHeaderRow ().addAndReturnCell (aNode).setColspan (getColumnCount ());
+    return thisAsT ();
+  }
 
   @Nonnull
-  IMPLTYPE addSpanningBodyContent (@Nullable IHCNode aNode);
+  default IMPLTYPE addSpanningBodyContent (@Nullable final String sText)
+  {
+    return addSpanningBodyContent (HCTextNode.createOnDemand (sText));
+  }
 
   @Nonnull
-  IMPLTYPE setSpanningFooterContent (@Nullable String sText);
+  default IMPLTYPE addSpanningBodyContent (@Nullable final IHCNode aNode)
+  {
+    addBodyRow ().addAndReturnCell (aNode).setColspan (getColumnCount ());
+    return thisAsT ();
+  }
 
   @Nonnull
-  IMPLTYPE setSpanningFooterContent (@Nullable IHCNode aNode);
+  default IMPLTYPE setSpanningFooterContent (@Nullable final String sText)
+  {
+    return setSpanningFooterContent (HCTextNode.createOnDemand (sText));
+  }
 
   @Nonnull
-  IMPLTYPE addSpanningFooterContent (@Nullable String sText);
+  default IMPLTYPE setSpanningFooterContent (@Nullable final IHCNode aNode)
+  {
+    removeAllFooterRows ();
+    return addSpanningFooterContent (aNode);
+  }
 
   @Nonnull
-  IMPLTYPE addSpanningFooterContent (@Nullable IHCNode aNode);
+  default IMPLTYPE addSpanningFooterContent (@Nullable final String sText)
+  {
+    return addSpanningFooterContent (HCTextNode.createOnDemand (sText));
+  }
+
+  @Nonnull
+  default IMPLTYPE addSpanningFooterContent (@Nullable final IHCNode aNode)
+  {
+    addFooterRow ().addAndReturnCell (aNode).setColspan (getColumnCount ());
+    return thisAsT ();
+  }
 
   void checkInternalConsistency ();
 }

@@ -50,23 +50,35 @@ public interface IHCHasCSSClasses <IMPLTYPE extends IHCHasCSSClasses <IMPLTYPE>>
    * Add multiple unique CSS classes at once. Each CSS class that is already
    * present, is ignored.
    *
-   * @param aProviders
+   * @param aCSSClassProviders
    *        The CSS classed to add. May neither be <code>null</code> nor empty.
    * @return this
    */
   @Nonnull
-  IMPLTYPE addClasses (@Nullable ICSSClassProvider... aProviders);
+  default IMPLTYPE addClasses (@Nullable final ICSSClassProvider... aCSSClassProviders)
+  {
+    if (aCSSClassProviders != null)
+      for (final ICSSClassProvider aProvider : aCSSClassProviders)
+        addClass (aProvider);
+    return thisAsT ();
+  }
 
   /**
    * Add multiple unique CSS classes at once. Each CSS class that is already
    * present, is ignored.
    *
-   * @param aProviders
+   * @param aCSSClassProviders
    *        The CSS classed to add. May neither be <code>null</code> nor empty.
    * @return this
    */
   @Nonnull
-  IMPLTYPE addClasses (@Nullable Iterable <? extends ICSSClassProvider> aProviders);
+  default IMPLTYPE addClasses (@Nullable final Iterable <? extends ICSSClassProvider> aCSSClassProviders)
+  {
+    if (aCSSClassProviders != null)
+      for (final ICSSClassProvider aProvider : aCSSClassProviders)
+        addClass (aProvider);
+    return thisAsT ();
+  }
 
   /**
    * Remove the specified CSS class if present.

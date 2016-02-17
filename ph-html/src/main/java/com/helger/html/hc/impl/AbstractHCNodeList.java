@@ -16,9 +16,6 @@
  */
 package com.helger.html.hc.impl;
 
-import javax.annotation.Nonnegative;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.html.hc.IHCNode;
@@ -29,41 +26,14 @@ import com.helger.html.hc.IHCNodeList;
  * creating an HTML element by itself.
  *
  * @author Philip Helger
- * @param <THISTYPE>
+ * @param <IMPLTYPE>
  *        Implementation type
  */
 @NotThreadSafe
-public abstract class AbstractHCNodeList <THISTYPE extends AbstractHCNodeList <THISTYPE>>
-                                         extends AbstractHCHasChildrenMutable <THISTYPE, IHCNode>
-                                         implements IHCNodeList <THISTYPE>
+public abstract class AbstractHCNodeList <IMPLTYPE extends AbstractHCNodeList <IMPLTYPE>>
+                                         extends AbstractHCHasChildrenMutable <IMPLTYPE, IHCNode>
+                                         implements IHCNodeList <IMPLTYPE>
 {
   public AbstractHCNodeList ()
   {}
-
-  @Nonnull
-  public THISTYPE addChild (@Nullable final String sText)
-  {
-    // Empty text is OK!
-    if (sText != null)
-      addChild (new HCTextNode (sText));
-    return thisAsT ();
-  }
-
-  @Nonnull
-  public THISTYPE addChild (@Nonnegative final int nIndex, @Nullable final String sText)
-  {
-    // Empty text is OK!
-    if (sText != null)
-      addChild (nIndex, new HCTextNode (sText));
-    return thisAsT ();
-  }
-
-  @Nonnull
-  public THISTYPE addChildren (@Nullable final String... aChildren)
-  {
-    if (aChildren != null)
-      for (final String sChild : aChildren)
-        addChild (sChild);
-    return thisAsT ();
-  }
 }

@@ -53,27 +53,9 @@ public class HCHasCSSClasses implements IHCHasCSSClasses <HCHasCSSClasses>
     if (aCSSClassProvider != null)
     {
       if (m_aCSSClassProviders == null)
-        m_aCSSClassProviders = new LinkedHashSet <ICSSClassProvider> ();
+        m_aCSSClassProviders = new LinkedHashSet <> ();
       m_aCSSClassProviders.add (aCSSClassProvider);
     }
-    return this;
-  }
-
-  @Nonnull
-  public HCHasCSSClasses addClasses (@Nullable final ICSSClassProvider... aCSSClassProviders)
-  {
-    if (aCSSClassProviders != null)
-      for (final ICSSClassProvider aProvider : aCSSClassProviders)
-        addClass (aProvider);
-    return this;
-  }
-
-  @Nonnull
-  public HCHasCSSClasses addClasses (@Nullable final Iterable <? extends ICSSClassProvider> aCSSClassProviders)
-  {
-    if (aCSSClassProviders != null)
-      for (final ICSSClassProvider aProvider : aCSSClassProviders)
-        addClass (aProvider);
     return this;
   }
 
@@ -104,7 +86,7 @@ public class HCHasCSSClasses implements IHCHasCSSClasses <HCHasCSSClasses>
   @ReturnsMutableCopy
   public Set <String> getAllClassNames ()
   {
-    final Set <String> ret = new LinkedHashSet <String> ();
+    final Set <String> ret = new LinkedHashSet <> ();
     if (m_aCSSClassProviders != null)
       for (final ICSSClassProvider aCSSClassProvider : m_aCSSClassProviders)
       {

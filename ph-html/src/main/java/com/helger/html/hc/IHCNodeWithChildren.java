@@ -21,6 +21,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.annotation.DevelopersNote;
+import com.helger.html.hc.impl.HCTextNode;
 
 /**
  * Special node interface for objects containing other objects
@@ -38,7 +39,13 @@ public interface IHCNodeWithChildren <IMPLTYPE extends IHCNodeWithChildren <IMPL
    * @return this
    */
   @Nonnull
-  IMPLTYPE addChild (@Nullable String sText);
+  default IMPLTYPE addChild (@Nullable final String sText)
+  {
+    // Empty text is OK!!!
+    if (sText != null)
+      addChild (new HCTextNode (sText));
+    return thisAsT ();
+  }
 
   /**
    * @param nIndex
@@ -48,7 +55,13 @@ public interface IHCNodeWithChildren <IMPLTYPE extends IHCNodeWithChildren <IMPL
    * @return this
    */
   @Nonnull
-  IMPLTYPE addChild (@Nonnegative int nIndex, @Nullable String sText);
+  default IMPLTYPE addChild (@Nonnegative final int nIndex, @Nullable final String sText)
+  {
+    // Empty text is OK!!!
+    if (sText != null)
+      addChild (nIndex, new HCTextNode (sText));
+    return thisAsT ();
+  }
 
   /**
    * Use {@link #addChild(String)} instead
@@ -71,5 +84,11 @@ public interface IHCNodeWithChildren <IMPLTYPE extends IHCNodeWithChildren <IMPL
    * @return this
    */
   @Nonnull
-  IMPLTYPE addChildren (@Nullable String... aChildren);
+  default IMPLTYPE addChildren (@Nullable final String... aChildren)
+  {
+    if (aChildren != null)
+      for (final String sChild : aChildren)
+        addChild (sChild);
+    return thisAsT ();
+  }
 }
