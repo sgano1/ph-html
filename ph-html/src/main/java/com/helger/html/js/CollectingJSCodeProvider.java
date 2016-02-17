@@ -149,12 +149,6 @@ public class CollectingJSCodeProvider implements IHasJSCodeWithSettings, IHasSiz
   }
 
   @Nonnull
-  public String getJSCode ()
-  {
-    return getJSCode ((IJSWriterSettings) null);
-  }
-
-  @Nonnull
   public String getJSCode (@Nullable final IJSWriterSettings aSettings)
   {
     final StringBuilder aSB = new StringBuilder ();

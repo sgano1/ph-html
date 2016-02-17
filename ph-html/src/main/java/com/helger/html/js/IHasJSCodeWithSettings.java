@@ -28,6 +28,12 @@ import com.helger.commons.annotation.MustImplementEqualsAndHashcode;
 @MustImplementEqualsAndHashcode
 public interface IHasJSCodeWithSettings extends IHasJSCode
 {
+  @Nullable
+  default String getJSCode ()
+  {
+    return getJSCode ((IJSWriterSettings) null);
+  }
+
   /**
    * @param aSettings
    *        The formatter settings to be used. May be <code>null</code> for the

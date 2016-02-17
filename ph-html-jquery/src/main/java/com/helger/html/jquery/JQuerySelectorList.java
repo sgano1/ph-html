@@ -16,7 +16,6 @@
  */
 package com.helger.html.jquery;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Nonnegative;
@@ -26,6 +25,8 @@ import javax.annotation.Nullable;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.ext.CommonsList;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.state.EChange;
 import com.helger.html.js.IHasJSCodeWithSettings;
 import com.helger.html.js.IJSWriterSettings;
@@ -38,7 +39,7 @@ import com.helger.html.jscode.IJSExpression;
  */
 public class JQuerySelectorList implements IHasJSCodeWithSettings
 {
-  private final List <IJQuerySelector> m_aElements = new ArrayList <IJQuerySelector> ();
+  private final ICommonsList <IJQuerySelector> m_aElements = new CommonsList <> ();
 
   public JQuerySelectorList ()
   {}
@@ -64,7 +65,7 @@ public class JQuerySelectorList implements IHasJSCodeWithSettings
 
   public boolean hasSelectors ()
   {
-    return !m_aElements.isEmpty ();
+    return m_aElements.isNotEmpty ();
   }
 
   @Nonnegative
@@ -103,10 +104,7 @@ public class JQuerySelectorList implements IHasJSCodeWithSettings
   @Nonnull
   public EChange clear ()
   {
-    if (m_aElements.isEmpty ())
-      return EChange.UNCHANGED;
-    m_aElements.clear ();
-    return EChange.CHANGED;
+    return m_aElements.removeAll ();
   }
 
   @Nonnull
@@ -133,12 +131,6 @@ public class JQuerySelectorList implements IHasJSCodeWithSettings
   public JQueryInvocation invoke ()
   {
     return JQuery.jQuery (getAsExpression ());
-  }
-
-  @Nonnull
-  public String getJSCode ()
-  {
-    return getJSCode (null);
   }
 
   @Nonnull

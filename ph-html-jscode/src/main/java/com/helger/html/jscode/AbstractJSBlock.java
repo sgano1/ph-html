@@ -45,7 +45,6 @@ import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.js.CollectingJSCodeProvider;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.js.IHasJSCodeWithSettings;
-import com.helger.html.js.IJSWriterSettings;
 import com.helger.json.IJson;
 
 /**
@@ -1138,12 +1137,6 @@ public abstract class AbstractJSBlock implements IJSFunctionContainer
   {
     addStatement (aStatement);
     return this;
-  }
-
-  @Nonnull
-  public final String getJSCode ()
-  {
-    return getJSCode ((IJSWriterSettings) null);
   }
 
   @Override

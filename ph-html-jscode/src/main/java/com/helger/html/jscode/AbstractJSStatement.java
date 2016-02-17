@@ -16,15 +16,5 @@
  */
 package com.helger.html.jscode;
 
-import javax.annotation.Nonnull;
-
-import com.helger.html.js.IJSWriterSettings;
-
 public abstract class AbstractJSStatement implements IJSStatement
-{
-  @Nonnull
-  public final String getJSCode ()
-  {
-    return getJSCode ((IJSWriterSettings) null);
-  }
-}
+{}

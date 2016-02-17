@@ -127,12 +127,6 @@ public final class JQuerySelector implements IJQuerySelector
   }
 
   @Nonnull
-  public String getJSCode ()
-  {
-    return getJSCode (null);
-  }
-
-  @Nonnull
   public String getJSCode (@Nullable final IJSWriterSettings aSettings)
   {
     return m_aExpr.getJSCode (aSettings);

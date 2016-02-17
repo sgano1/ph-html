@@ -199,12 +199,6 @@ public class JSFunction implements IJSDocCommentable, IJSDeclaration
     aFormatter.plain (')').stmt (body ());
   }
 
-  @Nonnull
-  public final String getJSCode ()
-  {
-    return getJSCode ((IJSWriterSettings) null);
-  }
-
   @Nullable
   public String getJSCode (@Nullable final IJSWriterSettings aSettings)
   {

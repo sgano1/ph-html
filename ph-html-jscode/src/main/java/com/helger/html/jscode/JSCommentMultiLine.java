@@ -223,12 +223,6 @@ public class JSCommentMultiLine extends JSCommentPart implements IJSGeneratable
   }
 
   @Nonnull
-  public final String getJSCode ()
-  {
-    return getJSCode ((IJSWriterSettings) null);
-  }
-
-  @Nonnull
   public String getJSCode (@Nullable final IJSWriterSettings aSettings)
   {
     return JSPrinter.getAsString (aSettings, this);
