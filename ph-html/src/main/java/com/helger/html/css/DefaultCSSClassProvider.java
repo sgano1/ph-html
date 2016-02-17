@@ -48,21 +48,24 @@ public class DefaultCSSClassProvider implements ICSSClassProvider, Serializable
   private final String m_sCSSClass;
   private Integer m_aHashCode;
 
-  private DefaultCSSClassProvider (@Nonnull @Nonempty final String sCSSClass)
+  public static void validateCSSClassName (@Nonnull @Nonempty final String sCSSClass) throws IllegalArgumentException
   {
     ValueEnforcer.notEmpty (sCSSClass, "CSSClass");
     if (sCSSClass.indexOf (' ') >= 0)
       throw new IllegalArgumentException ("CSS class may not contain spaces '" + sCSSClass + "'");
 
-    {
-      // Happens more frequently because people are reusing existing attributes
-      // for configuration purposes.
-      if (!RegExHelper.stringMatchesPattern ("-?[_a-zA-Z]+[_a-zA-Z0-9-]*", sCSSClass))
-        s_aLogger.warn ("The CSS class '" + sCSSClass + "' does not match the naming requirements!");
-    }
+    // Happens more frequently because people are reusing existing attributes
+    // for configuration purposes.
+    if (!RegExHelper.stringMatchesPattern ("-?[_a-zA-Z]+[_a-zA-Z0-9-]*", sCSSClass))
+      s_aLogger.warn ("The CSS class '" + sCSSClass + "' does not match the naming requirements!");
+
     if (sCSSClass.startsWith ("_"))
       throw new IllegalArgumentException ("The CSS class name '" + sCSSClass + "' may rise problems with IE6!");
+  }
 
+  private DefaultCSSClassProvider (@Nonnull @Nonempty final String sCSSClass)
+  {
+    validateCSSClassName (sCSSClass);
     m_sCSSClass = sCSSClass;
   }
 
