@@ -46,17 +46,19 @@ public final class HTMLEntityResolver implements EntityResolver
 {
   private static final HTMLEntityResolver s_aInstance = new HTMLEntityResolver ();
 
-  /** Maps public ID to the DTD content */
-  private final Map <String, byte []> m_aResolveMap = new HashMap <String, byte []> ();
+  /** Maps public ID to the DTD content for performance reasons */
+  private final Map <String, byte []> m_aResolveMap = new HashMap <> ();
 
   private void _addResolvablePublicId (@Nonnull @Nonempty final String sPublicID,
                                        @Nonnull @Nonempty final String sFilePath)
   {
     if (m_aResolveMap.containsKey (sPublicID))
       throw new IllegalArgumentException ("Passed public id '" + sPublicID + "' is already contained!");
+
     final InputStream aIS = ClassPathResource.getInputStream (sFilePath);
     if (aIS == null)
       throw new IllegalArgumentException ("The passed resource " + sFilePath + " does not exist!");
+
     final byte [] aBytes = StreamHelper.getAllBytes (aIS);
     m_aResolveMap.put (sPublicID, aBytes);
   }

@@ -22,7 +22,6 @@ import java.util.Comparator;
 import java.util.List;
 
 import javax.annotation.CheckForSigned;
-import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -94,10 +93,10 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
   protected void afterAddChild (@Nonnegative final int nIndex, @Nonnull final CHILDTYPE aChild)
   {}
 
-  private void _addChild (@CheckForSigned final int nIndex, @Nullable final CHILDTYPE aChild)
+  private void _internalAddChild (@CheckForSigned final int nIndex, @Nullable final CHILDTYPE aChild)
   {
     if (aChild == this)
-      throw new IllegalArgumentException ("Cannot append to self!");
+      throw new IllegalArgumentException ("Cannot append child to self: " + aChild);
 
     if (aChild != null)
     {
@@ -122,7 +121,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
   @Nonnull
   public final THISTYPE addChild (@Nullable final CHILDTYPE aChild)
   {
-    _addChild (CGlobal.ILLEGAL_UINT, aChild);
+    _internalAddChild (CGlobal.ILLEGAL_UINT, aChild);
     return thisAsT ();
   }
 
@@ -130,78 +129,17 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
   public final THISTYPE addChild (@Nonnegative final int nIndex, @Nullable final CHILDTYPE aChild)
   {
     ValueEnforcer.isBetweenInclusive (nIndex, "Index", 0, getChildCount ());
-    _addChild (nIndex, aChild);
+    _internalAddChild (nIndex, aChild);
     return thisAsT ();
-  }
-
-  @Nonnull
-  public final THISTYPE addChildren (@SuppressWarnings ("unchecked") @Nullable final CHILDTYPE... aChildren)
-  {
-    if (aChildren != null)
-      for (final CHILDTYPE aChild : aChildren)
-        addChild (aChild);
-    return thisAsT ();
-  }
-
-  @Nonnull
-  public final THISTYPE addChildren (@Nonnegative final int nIndex,
-                                     @SuppressWarnings ("unchecked") @Nullable final CHILDTYPE... aChildren)
-  {
-    ValueEnforcer.isBetweenInclusive (nIndex, "Index", 0, getChildCount ());
-    if (aChildren != null)
-    {
-      int nRealIndex = nIndex;
-      for (final CHILDTYPE aChild : aChildren)
-        addChild (nRealIndex++, aChild);
-    }
-    return thisAsT ();
-  }
-
-  @Nonnull
-  public final THISTYPE addChildren (@Nullable final Iterable <? extends CHILDTYPE> aChildren)
-  {
-    if (aChildren != null)
-      for (final CHILDTYPE aChild : aChildren)
-        addChild (aChild);
-    return thisAsT ();
-  }
-
-  @Nonnull
-  public final THISTYPE addChildren (@Nonnegative final int nIndex,
-                                     @Nullable final Iterable <? extends CHILDTYPE> aChildren)
-  {
-    ValueEnforcer.isBetweenInclusive (nIndex, "Index", 0, getChildCount ());
-    if (aChildren != null)
-    {
-      int nRealIndex = nIndex;
-      for (final CHILDTYPE aChild : aChildren)
-        addChild (nRealIndex++, aChild);
-    }
-    return thisAsT ();
-  }
-
-  @Nullable
-  @CheckReturnValue
-  public final <V extends CHILDTYPE> V addAndReturnChild (@Nullable final V aChild)
-  {
-    addChild (aChild);
-    return aChild;
-  }
-
-  @Nullable
-  @CheckReturnValue
-  public final <V extends CHILDTYPE> V addAndReturnChild (@Nonnegative final int nIndex, @Nullable final V aChild)
-  {
-    addChild (nIndex, aChild);
-    return aChild;
   }
 
   /**
    * Invoked after an element was removed.
    *
    * @param nIndex
-   *        The index of the child relative to the parent.
-   * @param aChild
+   *        The index where the element was removed from. Always &ge; 0. This is
+   *        the OLD index and now contains a different or no child.
+  * @param aChild
    *        The child that was removed. Never <code>null</code>.
    */
   @OverrideOnDemand
@@ -377,6 +315,6 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
   @Override
   public String toString ()
   {
-    return ToStringGenerator.getDerived (super.toString ()).appendIfNotNull ("children", m_aChildren).toString ();
+    return ToStringGenerator.getDerived (super.toString ()).append ("children", m_aChildren).toString ();
   }
 }

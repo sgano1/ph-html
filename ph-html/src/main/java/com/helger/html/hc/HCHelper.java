@@ -205,7 +205,7 @@ public final class HCHelper
   @ReturnsMutableCopy
   public static List <IHCNode> getAsFlattenedList (@Nullable final IHCNode aNode)
   {
-    final List <IHCNode> ret = new ArrayList <IHCNode> ();
+    final List <IHCNode> ret = new ArrayList <> ();
     _recursiveAddFlattened (aNode, ret);
     return ret;
   }
@@ -225,7 +225,7 @@ public final class HCHelper
   @ReturnsMutableCopy
   public static List <IHCNode> getAsFlattenedList (@Nullable final Iterable <? extends IHCNode> aNodes)
   {
-    final List <IHCNode> ret = new ArrayList <IHCNode> ();
+    final List <IHCNode> ret = new ArrayList <> ();
     if (aNodes != null)
       for (final IHCNode aNode : aNodes)
         _recursiveAddFlattened (aNode, ret);

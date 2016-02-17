@@ -18,7 +18,6 @@ package com.helger.html.hc;
 
 import javax.annotation.Nonnull;
 
-import com.helger.commons.annotation.MustImplementEqualsAndHashcode;
 import com.helger.html.EHTMLVersion;
 
 /**
@@ -27,7 +26,6 @@ import com.helger.html.EHTMLVersion;
  *
  * @author Philip Helger
  */
-@MustImplementEqualsAndHashcode
 @FunctionalInterface
 public interface IHCCustomizer
 {

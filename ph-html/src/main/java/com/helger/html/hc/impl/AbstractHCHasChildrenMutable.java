@@ -30,6 +30,7 @@ import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.CGlobal;
 import com.helger.commons.ValueEnforcer;
+import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.annotation.ReturnsMutableObject;
@@ -131,53 +132,6 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
     return thisAsT ();
   }
 
-  @Nonnull
-  @SafeVarargs
-  public final THISTYPE addChildren (@Nullable final CHILDTYPE... aChildren)
-  {
-    if (aChildren != null)
-      for (final CHILDTYPE aChild : aChildren)
-        addChild (aChild);
-    return thisAsT ();
-  }
-
-  @Nonnull
-  @SafeVarargs
-  public final THISTYPE addChildren (@Nonnegative final int nIndex, @Nullable final CHILDTYPE... aChildren)
-  {
-    ValueEnforcer.isBetweenInclusive (nIndex, "Index", 0, getChildCount ());
-    if (aChildren != null)
-    {
-      int nRealIndex = nIndex;
-      for (final CHILDTYPE aChild : aChildren)
-        addChild (nRealIndex++, aChild);
-    }
-    return thisAsT ();
-  }
-
-  @Nonnull
-  public final THISTYPE addChildren (@Nullable final Iterable <? extends CHILDTYPE> aChildren)
-  {
-    if (aChildren != null)
-      for (final CHILDTYPE aChild : aChildren)
-        addChild (aChild);
-    return thisAsT ();
-  }
-
-  @Nonnull
-  public final THISTYPE addChildren (@Nonnegative final int nIndex,
-                                     @Nullable final Iterable <? extends CHILDTYPE> aChildren)
-  {
-    ValueEnforcer.isBetweenInclusive (nIndex, "Index", 0, getChildCount ());
-    if (aChildren != null)
-    {
-      int nRealIndex = nIndex;
-      for (final CHILDTYPE aChild : aChildren)
-        addChild (nRealIndex++, aChild);
-    }
-    return thisAsT ();
-  }
-
   /**
    * Invoked after an element was removed.
    *
@@ -251,7 +205,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
   @Nullable
   public final CHILDTYPE getChildAtIndex (@Nonnegative final int nIndex)
   {
-    return CollectionHelper.getAtIndex (m_aChildren, nIndex);
+    return CollectionHelper.getAtIndex (m_aChildren, nIndex, null);
   }
 
   @Override
@@ -283,27 +237,6 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
     return new HCNodeList ().addChildren (m_aChildren);
   }
 
-  /**
-   * Try to simplify this node list as much as possible.
-   *
-   * @return the most simple representation of this list. If the list is empty,
-   *         <code>null</code> is returned. If exactly one element is contained,
-   *         this element will be returned. If more than one element is
-   *         contained no simplification can be performed.
-   */
-  @Nullable
-  public IHCNode getAsSimpleNode ()
-  {
-    if (m_aChildren.isEmpty ())
-      return null;
-
-    if (m_aChildren.size () == 1)
-      return CollectionHelper.getFirstElement (m_aChildren);
-
-    // Return as-is
-    return this;
-  }
-
   @Override
   @OverrideOnDemand
   @OverridingMethodsMustInvokeSuper
@@ -322,6 +255,24 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
     return false;
   }
 
+  /**
+   * Helper method that returns the elements in the correct order for emitting.
+   * This can e.g. be used for sorting or ordering.
+   *
+   * @param aChildren
+   *        The children to be emitted. Is a direct reference to the container
+   *        where the children are stored. So handle with care!
+   * @return The non-<code>null</code> list with all child elements to be
+   *         emitted.
+   */
+  @Nonnull
+  @Nonempty
+  @OverrideOnDemand
+  protected List <? extends CHILDTYPE> getChildrenFormEmitting (@Nonnull @Nonempty final List <CHILDTYPE> aChildren)
+  {
+    return aChildren;
+  }
+
   @Nonnull
   @Override
   @OverrideOnDemand
@@ -330,7 +281,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
   {
     final IMicroContainer ret = new MicroContainer ();
     if (hasChildren ())
-      for (final CHILDTYPE aNode : m_aChildren)
+      for (final CHILDTYPE aNode : getChildrenFormEmitting (m_aChildren))
         ret.appendChild (aNode.convertToMicroNode (aConversionSettings));
     return ret;
   }
@@ -343,9 +294,9 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
       return "";
 
     final StringBuilder ret = new StringBuilder ();
-    for (final CHILDTYPE aNode : m_aChildren)
+    for (final CHILDTYPE aChild : getChildrenFormEmitting (m_aChildren))
     {
-      final String sPlainText = aNode.getPlainText ();
+      final String sPlainText = aChild.getPlainText ();
       if (StringHelper.hasText (sPlainText))
       {
         if (ret.length () > 0)

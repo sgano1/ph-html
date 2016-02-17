@@ -95,7 +95,13 @@ public interface IHCHasChildrenMutable <IMPLTYPE extends IHCHasChildrenMutable <
    */
   @Nonnull
   @SuppressWarnings ("unchecked")
-  IMPLTYPE addChildren (@Nullable CHILDTYPE... aChildren);
+  default IMPLTYPE addChildren (@Nullable final CHILDTYPE... aChildren)
+  {
+    if (aChildren != null)
+      for (final CHILDTYPE aChild : aChildren)
+        addChild (aChild);
+    return thisAsT ();
+  }
 
   /**
    * @param nIndex
@@ -106,7 +112,17 @@ public interface IHCHasChildrenMutable <IMPLTYPE extends IHCHasChildrenMutable <
    */
   @Nonnull
   @SuppressWarnings ("unchecked")
-  IMPLTYPE addChildren (@Nonnegative int nIndex, @Nullable CHILDTYPE... aChildren);
+  default IMPLTYPE addChildren (@Nonnegative final int nIndex, @Nullable final CHILDTYPE... aChildren)
+  {
+    ValueEnforcer.isBetweenInclusive (nIndex, "Index", 0, getChildCount ());
+    if (aChildren != null)
+    {
+      int nRealIndex = nIndex;
+      for (final CHILDTYPE aChild : aChildren)
+        addChild (nRealIndex++, aChild);
+    }
+    return thisAsT ();
+  }
 
   /**
    * @param aChildren
@@ -114,7 +130,13 @@ public interface IHCHasChildrenMutable <IMPLTYPE extends IHCHasChildrenMutable <
    * @return this
    */
   @Nonnull
-  IMPLTYPE addChildren (@Nullable Iterable <? extends CHILDTYPE> aChildren);
+  default IMPLTYPE addChildren (@Nullable final Iterable <? extends CHILDTYPE> aChildren)
+  {
+    if (aChildren != null)
+      for (final CHILDTYPE aChild : aChildren)
+        addChild (aChild);
+    return thisAsT ();
+  }
 
   /**
    * @param nIndex
@@ -124,7 +146,17 @@ public interface IHCHasChildrenMutable <IMPLTYPE extends IHCHasChildrenMutable <
    * @return this
    */
   @Nonnull
-  IMPLTYPE addChildren (@Nonnegative int nIndex, @Nullable Iterable <? extends CHILDTYPE> aChildren);
+  default IMPLTYPE addChildren (@Nonnegative final int nIndex, @Nullable final Iterable <? extends CHILDTYPE> aChildren)
+  {
+    ValueEnforcer.isBetweenInclusive (nIndex, "Index", 0, getChildCount ());
+    if (aChildren != null)
+    {
+      int nRealIndex = nIndex;
+      for (final CHILDTYPE aChild : aChildren)
+        addChild (nRealIndex++, aChild);
+    }
+    return thisAsT ();
+  }
 
   /**
    * @param aChild

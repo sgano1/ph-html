@@ -27,7 +27,6 @@ import javax.annotation.concurrent.NotThreadSafe;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
-import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.state.EChange;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLVersion;
@@ -44,7 +43,7 @@ import com.helger.html.hc.IHCNode;
 @NotThreadSafe
 public class HCCustomizerList extends AbstractHCCustomizer
 {
-  private final List <IHCCustomizer> m_aCustomizers = new ArrayList <IHCCustomizer> ();
+  private final List <IHCCustomizer> m_aList = new ArrayList <> ();
 
   public HCCustomizerList (@Nullable final IHCCustomizer... aCustomizers)
   {
@@ -64,14 +63,14 @@ public class HCCustomizerList extends AbstractHCCustomizer
   public HCCustomizerList addCustomizer (@Nonnull final IHCCustomizer aCustomizer)
   {
     ValueEnforcer.notNull (aCustomizer, "Customizer");
-    m_aCustomizers.add (aCustomizer);
+    m_aList.add (aCustomizer);
     return this;
   }
 
   @Nonnull
   public EChange removeCustomizer (@Nullable final IHCCustomizer aCustomizer)
   {
-    return EChange.valueOf (m_aCustomizers.add (aCustomizer));
+    return EChange.valueOf (m_aList.remove (aCustomizer));
   }
 
   @Nonnull
@@ -80,9 +79,9 @@ public class HCCustomizerList extends AbstractHCCustomizer
     ValueEnforcer.notNull (aCustomizerClass, "CustomizerClass");
 
     EChange eChange = EChange.UNCHANGED;
-    for (final IHCCustomizer aCustomizer : CollectionHelper.newList (m_aCustomizers))
+    for (final IHCCustomizer aCustomizer : CollectionHelper.newList (m_aList))
       if (aCustomizer.getClass ().equals (aCustomizerClass))
-        if (m_aCustomizers.remove (aCustomizer))
+        if (m_aList.remove (aCustomizer))
           eChange = EChange.CHANGED;
     return eChange;
   }
@@ -90,44 +89,27 @@ public class HCCustomizerList extends AbstractHCCustomizer
   @Nonnegative
   public int getCustomizerCount ()
   {
-    return m_aCustomizers.size ();
+    return m_aList.size ();
   }
 
   @Nonnull
   @ReturnsMutableCopy
   public List <IHCCustomizer> getAllCustomizers ()
   {
-    return CollectionHelper.newList (m_aCustomizers);
+    return CollectionHelper.newList (m_aList);
   }
 
   public void customizeNode (@Nonnull final IHCNode aNode,
                              @Nonnull final EHTMLVersion eHTMLVersion,
                              @Nonnull final IHCHasChildrenMutable <?, ? super IHCNode> aTargetNode)
   {
-    for (final IHCCustomizer aCustomizer : m_aCustomizers)
+    for (final IHCCustomizer aCustomizer : m_aList)
       aCustomizer.customizeNode (aNode, eHTMLVersion, aTargetNode);
-  }
-
-  @Override
-  public boolean equals (final Object o)
-  {
-    if (o == this)
-      return true;
-    if (o == null || !getClass ().equals (o.getClass ()))
-      return false;
-    final HCCustomizerList rhs = (HCCustomizerList) o;
-    return m_aCustomizers.equals (rhs.m_aCustomizers);
-  }
-
-  @Override
-  public int hashCode ()
-  {
-    return new HashCodeGenerator (this).append (m_aCustomizers).getHashCode ();
   }
 
   @Override
   public String toString ()
   {
-    return ToStringGenerator.getDerived (super.toString ()).append ("Customizers", m_aCustomizers).toString ();
+    return ToStringGenerator.getDerived (super.toString ()).append ("List", m_aList).toString ();
   }
 }
