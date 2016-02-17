@@ -16,13 +16,13 @@
  */
 package com.helger.html.hc.special;
 
-import java.util.List;
-
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.html.hc.IHCNode;
 
+@FunctionalInterface
 public interface IHCSpecialNodeListModifier
 {
   /**
@@ -34,5 +34,5 @@ public interface IHCSpecialNodeListModifier
    */
   @Nonnull
   @ReturnsMutableCopy
-  List <? extends IHCNode> modifySpecialNodes (@Nonnull List <? extends IHCNode> aNodes);
+  ICommonsList <? extends IHCNode> modifySpecialNodes (@Nonnull ICommonsList <? extends IHCNode> aNodes);
 }

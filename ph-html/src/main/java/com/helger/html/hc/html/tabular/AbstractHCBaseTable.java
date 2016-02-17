@@ -17,9 +17,7 @@
 package com.helger.html.hc.html.tabular;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Set;
 
 import javax.annotation.CheckForSigned;
 import javax.annotation.Nonnegative;
@@ -272,7 +270,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
    */
   @Nullable
   @ReturnsMutableObject ("For performance reasons in derived classes")
-  protected final List <HCRow> directGetHeaderRowList ()
+  protected final ICommonsList <HCRow> directGetHeaderRowList ()
   {
     return m_aHead.directGetRowList ();
   }
@@ -290,71 +288,6 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
     return m_aFoot.directGetRowList ();
   }
 
-  //
-  // body row handling
-  //
-
-  @Nullable
-  public final String getBodyID ()
-  {
-    return m_aBody.getID ();
-  }
-
-  @Nonnull
-  public final IMPLTYPE setBodyID (@Nullable final String sID)
-  {
-    m_aBody.setID (sID);
-    return thisAsT ();
-  }
-
-  public final boolean hasBodyID ()
-  {
-    return m_aBody.hasID ();
-  }
-
-  @Nonnull
-  @ReturnsMutableCopy
-  public final Set <ICSSClassProvider> getAllBodyClasses ()
-  {
-    return m_aBody.getAllClasses ();
-  }
-
-  @Nonnull
-  public final String getAllBodyClassesAsString ()
-  {
-    return m_aBody.getAllClassesAsString ();
-  }
-
-  @Nonnull
-  public final IMPLTYPE addBodyClass (@Nonnull final ICSSClassProvider aCSSClassProvider)
-  {
-    m_aBody.addClass (aCSSClassProvider);
-    return thisAsT ();
-  }
-
-  @Nonnull
-  public final IMPLTYPE removeBodyClass (@Nonnull final ICSSClassProvider aCSSClassProvider)
-  {
-    m_aBody.removeClass (aCSSClassProvider);
-    return thisAsT ();
-  }
-
-  public final boolean hasBodyClasses ()
-  {
-    return m_aBody.hasAnyClass ();
-  }
-
-  public final boolean hasBodyRows ()
-  {
-    return m_aBody.hasChildren ();
-  }
-
-  @Nonnegative
-  public final int getBodyRowCount ()
-  {
-    return m_aBody.getChildCount ();
-  }
-
   /**
    * Get the contained list object that holds all the rows. Handle with care
    * because it alters the internal data structures of this table.
@@ -363,81 +296,9 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
    */
   @Nullable
   @ReturnsMutableObject ("For performance reasons in derived classes")
-  protected final List <HCRow> directGetBodyRowList ()
+  protected final ICommonsList <HCRow> directGetBodyRowList ()
   {
     return m_aBody.directGetRowList ();
-  }
-
-  @Nullable
-  public final HCRow getFirstBodyRow ()
-  {
-    return m_aBody.getFirstChild ();
-  }
-
-  @Nullable
-  public final HCRow getBodyRowAtIndex (@Nonnegative final int nIndex)
-  {
-    return m_aBody.getChildAtIndex (nIndex);
-  }
-
-  @Nullable
-  public final HCRow getLastBodyRow ()
-  {
-    return m_aBody.getLastChild ();
-  }
-
-  @Nonnull
-  @ReturnsMutableCopy
-  public final List <HCRow> getAllBodyRows ()
-  {
-    return m_aBody.getAllChildren ();
-  }
-
-  @Nonnull
-  public final HCRow addBodyRow ()
-  {
-    return m_aBody.addRow ();
-  }
-
-  @Nonnull
-  public final HCRow addBodyRow (@Nonnegative final int nIndex)
-  {
-    return m_aBody.addRow (nIndex);
-  }
-
-  @Nonnull
-  public final IMPLTYPE addBodyRow (@Nullable final HCRow aRow)
-  {
-    m_aBody.addChild (aRow);
-    return thisAsT ();
-  }
-
-  @Nonnull
-  public final IMPLTYPE addBodyRow (@Nonnegative final int nIndex, @Nullable final HCRow aRow)
-  {
-    m_aBody.addChild (nIndex, aRow);
-    return thisAsT ();
-  }
-
-  @Nonnull
-  public final IMPLTYPE removeBodyRowAtIndex (@Nonnegative final int nIndex)
-  {
-    m_aBody.removeChild (nIndex);
-    return thisAsT ();
-  }
-
-  @Nonnull
-  public final IMPLTYPE removeAllBodyRows ()
-  {
-    m_aBody.removeAllChildren ();
-    return thisAsT ();
-  }
-
-  @Nonnull
-  public final IMPLTYPE sortAllBodyRows (@Nonnull final Comparator <? super HCRow> aComparator)
-  {
-    m_aBody.sortAllChildren (aComparator);
-    return thisAsT ();
   }
 
   //
@@ -520,7 +381,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
   {
     int nRowIndex = 0;
     boolean bTotalHasRowSpans = false;
-    final List <int []> aTotalRowSpans = new ArrayList <int []> (aPart.getChildCount ());
+    final List <int []> aTotalRowSpans = new ArrayList <> (aPart.getChildCount ());
     if (aPart.hasChildren ())
       for (final HCRow aBodyRow : aPart.directGetRowList ())
       {

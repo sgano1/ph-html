@@ -18,11 +18,10 @@ package com.helger.html.hc.special;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.List;
-
 import org.junit.Test;
 
 import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.system.ENewLineMode;
 import com.helger.commons.xml.serialize.write.EXMLSerializeIndent;
 import com.helger.css.media.CSSMediaList;
@@ -42,12 +41,12 @@ public final class HCSpecialNodeHandlerTest
 {
   public static final class MockSpecialNodeListHandler implements IHCSpecialNodeListModifier
   {
-    public List <? extends IHCNode> modifySpecialNodes (final List <? extends IHCNode> aNodes)
+    public ICommonsList <? extends IHCNode> modifySpecialNodes (final ICommonsList <? extends IHCNode> aNodes)
     {
-      final List <IHCNode> ret = CollectionHelper.newList (aNodes);
+      final ICommonsList <IHCNode> ret = CollectionHelper.newList (aNodes);
       // Remove all but the first
-      if (!ret.isEmpty ())
-        ret.remove (0);
+      if (ret.isNotEmpty ())
+        ret.removeFirst ();
       return ret;
     }
   }

@@ -33,8 +33,6 @@ import com.helger.html.hc.config.HCConsistencyChecker;
 import com.helger.html.hc.html.AbstractHCElementWithChildren;
 import com.helger.html.hc.html.HCHTMLHelper;
 import com.helger.html.hc.html.HC_Target;
-import com.helger.html.js.EJSEvent;
-import com.helger.html.js.IHasJSCode;
 
 /**
  * Represents an HTML &lt;a&gt; element
@@ -84,22 +82,11 @@ public abstract class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>>
     return m_aTarget;
   }
 
-  public boolean hasTarget ()
-  {
-    return m_aTarget != null;
-  }
-
   @Nonnull
   public THISTYPE setTarget (@Nullable final HC_Target aTarget)
   {
     m_aTarget = aTarget;
     return thisAsT ();
-  }
-
-  @Nonnull
-  public THISTYPE setTargetBlank ()
-  {
-    return setTarget (HC_Target.BLANK);
   }
 
   @Nullable
@@ -139,32 +126,6 @@ public abstract class AbstractHCA <THISTYPE extends AbstractHCA <THISTYPE>>
   {
     m_sMediaQuery = sMediaQuery;
     return thisAsT ();
-  }
-
-  /**
-   * Shortcut for <code>setEventHandler(EJSEvent.ONCLICK, aOnClick)</code>
-   *
-   * @param aOnClick
-   *        JS event to trigger
-   * @return this
-   */
-  @Nonnull
-  public THISTYPE setOnClick (@Nullable final IHasJSCode aOnClick)
-  {
-    return setEventHandler (EJSEvent.CLICK, aOnClick);
-  }
-
-  /**
-   * Shortcut for <code>addEventHandler(EJSEvent.ONCLICK, aOnClick)</code>
-   *
-   * @param aOnClick
-   *        JS event to trigger
-   * @return this
-   */
-  @Nonnull
-  public THISTYPE addOnClick (@Nullable final IHasJSCode aOnClick)
-  {
-    return addEventHandler (EJSEvent.CLICK, aOnClick);
   }
 
   @Override

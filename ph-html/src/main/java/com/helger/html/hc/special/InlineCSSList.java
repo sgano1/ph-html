@@ -16,15 +16,13 @@
  */
 package com.helger.html.hc.special;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.ext.CommonsList;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.css.media.CSSMediaList;
@@ -134,7 +132,7 @@ public class InlineCSSList
     }
   }
 
-  private final List <Item> m_aItems = new ArrayList <Item> ();
+  private final ICommonsList <Item> m_aItems = new CommonsList <> ();
 
   public InlineCSSList ()
   {}
@@ -142,7 +140,7 @@ public class InlineCSSList
   public void addInlineCSS (@Nullable final ICSSMediaList aMediaList, @Nonnull final CharSequence aInlineCSS)
   {
     final Key aKey = new Key (aMediaList);
-    final Item aLastItem = CollectionHelper.getLastElement (m_aItems);
+    final Item aLastItem = m_aItems.getLast ();
     final Key aLastKey = aLastItem == null ? null : aLastItem.getKey ();
     Item aItemToUse;
     if (aLastKey != null && aLastKey.equals (aKey))
@@ -162,19 +160,19 @@ public class InlineCSSList
     m_aItems.clear ();
   }
 
-  public boolean isEmpty ()
+  public boolean isNotEmpty ()
   {
-    return m_aItems.isEmpty ();
+    return m_aItems.isNotEmpty ();
   }
 
   @Nonnull
   @ReturnsMutableCopy
-  public List <ICSSCodeProvider> getAll ()
+  public ICommonsList <ICSSCodeProvider> getAll ()
   {
-    final List <ICSSCodeProvider> ret = new ArrayList <ICSSCodeProvider> ();
-    for (final Item aItem : m_aItems)
-      ret.add (new ConstantCSSCodeProvider (aItem.getCSS (), null, aItem.getMediaList (), true));
-    return ret;
+    return m_aItems.getAllMapped (aItem -> new ConstantCSSCodeProvider (aItem.getCSS (),
+                                                                        null,
+                                                                        aItem.getMediaList (),
+                                                                        true));
   }
 
   @Override

@@ -506,70 +506,141 @@ public interface IHCTable <IMPLTYPE extends IHCTable <IMPLTYPE>> extends IHCElem
   // Body rows
 
   @Nullable
-  String getBodyID ();
+  default String getBodyID ()
+  {
+    return getBody ().getID ();
+  }
 
   @Nonnull
-  IMPLTYPE setBodyID (@Nullable String sID);
+  default IMPLTYPE setBodyID (@Nullable final String sID)
+  {
+    getBody ().setID (sID);
+    return thisAsT ();
+  }
 
   /**
    * @return <code>true</code> if a body ID is present, <code>false</code>
    *         otherwise
    */
-  boolean hasBodyID ();
+  default boolean hasBodyID ()
+  {
+    return getBody ().hasID ();
+  }
 
   @Nonnull
   @ReturnsMutableCopy
-  Set <ICSSClassProvider> getAllBodyClasses ();
+  default Set <ICSSClassProvider> getAllBodyClasses ()
+  {
+    return getBody ().getAllClasses ();
+  }
 
   @Nonnull
-  String getAllBodyClassesAsString ();
+  default String getAllBodyClassesAsString ()
+  {
+    return getBody ().getAllClassesAsString ();
+  }
 
   @Nonnull
-  IMPLTYPE addBodyClass (@Nonnull ICSSClassProvider aCSSClassProvider);
+  default IMPLTYPE addBodyClass (@Nonnull final ICSSClassProvider aCSSClassProvider)
+  {
+    getBody ().addClass (aCSSClassProvider);
+    return thisAsT ();
+  }
 
   @Nonnull
-  IMPLTYPE removeBodyClass (@Nonnull ICSSClassProvider aCSSClassProvider);
+  default IMPLTYPE removeBodyClass (@Nonnull final ICSSClassProvider aCSSClassProvider)
+  {
+    getBody ().removeClass (aCSSClassProvider);
+    return thisAsT ();
+  }
 
-  boolean hasBodyClasses ();
+  default boolean hasBodyClasses ()
+  {
+    return getBody ().hasAnyClass ();
+  }
 
-  boolean hasBodyRows ();
+  default boolean hasBodyRows ()
+  {
+    return getBody ().hasChildren ();
+  }
 
   @Nonnegative
-  int getBodyRowCount ();
+  default int getBodyRowCount ()
+  {
+    return getBody ().getChildCount ();
+  }
 
   @Nullable
-  HCRow getFirstBodyRow ();
+  default HCRow getFirstBodyRow ()
+  {
+    return getBody ().getFirstChild ();
+  }
 
   @Nullable
-  HCRow getBodyRowAtIndex (@Nonnegative int nIndex);
+  default HCRow getBodyRowAtIndex (@Nonnegative final int nIndex)
+  {
+    return getBody ().getChildAtIndex (nIndex);
+  }
 
   @Nullable
-  HCRow getLastBodyRow ();
+  default HCRow getLastBodyRow ()
+  {
+    return getBody ().getLastChild ();
+  }
 
   @Nonnull
   @ReturnsMutableCopy
-  List <HCRow> getAllBodyRows ();
+  default ICommonsList <HCRow> getAllBodyRows ()
+  {
+    return getBody ().getAllChildren ();
+  }
 
   @Nonnull
-  HCRow addBodyRow ();
+  default HCRow addBodyRow ()
+  {
+    return getBody ().addRow ();
+  }
 
   @Nonnull
-  HCRow addBodyRow (@Nonnegative int nIndex);
+  default HCRow addBodyRow (@Nonnegative final int nIndex)
+  {
+    return getBody ().addRow (nIndex);
+  }
 
   @Nonnull
-  IMPLTYPE addBodyRow (@Nullable HCRow aRow);
+  default IMPLTYPE addBodyRow (@Nullable final HCRow aRow)
+  {
+    getBody ().addChild (aRow);
+    return thisAsT ();
+  }
 
   @Nonnull
-  IMPLTYPE addBodyRow (@Nonnegative int nIndex, @Nullable HCRow aRow);
+  default IMPLTYPE addBodyRow (@Nonnegative final int nIndex, @Nullable final HCRow aRow)
+  {
+    getBody ().addChild (nIndex, aRow);
+    return thisAsT ();
+  }
 
   @Nonnull
-  IMPLTYPE removeBodyRowAtIndex (@Nonnegative int nIndex);
+  default IMPLTYPE removeBodyRowAtIndex (@Nonnegative final int nIndex)
+  {
+    getBody ().removeChild (nIndex);
+    return thisAsT ();
+  }
 
   @Nonnull
-  IMPLTYPE removeAllBodyRows ();
+  default IMPLTYPE removeAllBodyRows ()
+  {
+    getBody ().removeAllChildren ();
+    return thisAsT ();
+  }
 
   @Nonnull
-  IMPLTYPE sortAllBodyRows (@Nonnull Comparator <? super HCRow> aComparator);
+  default IMPLTYPE sortAllBodyRows (@Nonnull final Comparator <? super HCRow> aComparator)
+  {
+    getBody ().sortAllChildren (aComparator);
+    return thisAsT ();
+  }
 
   // Special layout stuff
 

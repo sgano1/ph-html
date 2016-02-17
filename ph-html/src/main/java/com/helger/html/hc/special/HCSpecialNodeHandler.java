@@ -36,6 +36,8 @@ import com.helger.commons.annotation.PresentForCodeCoverage;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.cache.AnnotationUsageCache;
 import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.ext.CommonsList;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.lang.ClassHelper;
 import com.helger.commons.lang.GenericReflection;
 import com.helger.commons.string.StringHelper;
@@ -70,7 +72,7 @@ public final class HCSpecialNodeHandler
   private static final Logger s_aLogger = LoggerFactory.getLogger (HCSpecialNodeHandler.class);
   private static final AnnotationUsageCache s_aOOBNAnnotationCache = new AnnotationUsageCache (OutOfBandNode.class);
   private static final AnnotationUsageCache s_aSNLMAnnotationCache = new AnnotationUsageCache (SpecialNodeListModifier.class);
-  private static final Map <String, IHCSpecialNodeListModifier> s_aModifiers = new HashMap <String, IHCSpecialNodeListModifier> ();
+  private static final Map <String, IHCSpecialNodeListModifier> s_aModifiers = new HashMap <> ();
 
   @PresentForCodeCoverage
   private static final HCSpecialNodeHandler s_aInstance = new HCSpecialNodeHandler ();
@@ -195,7 +197,7 @@ public final class HCSpecialNodeHandler
     }
 
     // Apply all modifiers
-    List <? extends IHCNode> ret = CollectionHelper.newList (aNodes);
+    ICommonsList <? extends IHCNode> ret = CollectionHelper.newList (aNodes);
     for (final Class <? extends IHCSpecialNodeListModifier> aModifierClass : aModifiersToApply)
     {
       final IHCSpecialNodeListModifier aModifier = s_aModifiers.get (aModifierClass.getName ());
@@ -229,8 +231,8 @@ public final class HCSpecialNodeHandler
    */
   @Nonnull
   @ReturnsMutableCopy
-  public static List <IHCNode> getMergedInlineCSSAndJSNodes (@Nonnull final Iterable <? extends IHCNode> aNodes,
-                                                             final boolean bKeepOnDocumentReady)
+  public static ICommonsList <IHCNode> getMergedInlineCSSAndJSNodes (@Nonnull final Iterable <? extends IHCNode> aNodes,
+                                                                     final boolean bKeepOnDocumentReady)
   {
     // Default to the global "on document ready" provider
     return getMergedInlineCSSAndJSNodes (aNodes,
@@ -260,8 +262,8 @@ public final class HCSpecialNodeHandler
    */
   @Nonnull
   @ReturnsMutableCopy
-  public static List <IHCNode> getMergedInlineCSSAndJSNodes (@Nonnull final Iterable <? extends IHCNode> aNodes,
-                                                             @Nullable final IHCOnDocumentReadyProvider aOnDocumentReadyProvider)
+  public static ICommonsList <IHCNode> getMergedInlineCSSAndJSNodes (@Nonnull final Iterable <? extends IHCNode> aNodes,
+                                                                     @Nullable final IHCOnDocumentReadyProvider aOnDocumentReadyProvider)
   {
     ValueEnforcer.notNull (aNodes, "Nodes");
 
@@ -269,7 +271,7 @@ public final class HCSpecialNodeHandler
     final Iterable <? extends IHCNode> aRealSpecialNodes = applyModifiers (aNodes);
 
     // Do standard aggregations of CSS and JS
-    final List <IHCNode> ret = new ArrayList <IHCNode> ();
+    final ICommonsList <IHCNode> ret = new CommonsList <> ();
     final CollectingJSCodeProvider aJSOnDocumentReadyBefore = new CollectingJSCodeProvider ();
     final CollectingJSCodeProvider aJSOnDocumentReadyAfter = new CollectingJSCodeProvider ();
     final CollectingJSCodeProvider aJSInlineBefore = new CollectingJSCodeProvider ();
@@ -356,7 +358,7 @@ public final class HCSpecialNodeHandler
     }
 
     // Add all merged inline CSSs grouped by their media list
-    if (!aCSSInlineBefore.isEmpty ())
+    if (aCSSInlineBefore.isNotEmpty ())
     {
       // Add at the beginning
       int nIndex = 0;
@@ -370,7 +372,7 @@ public final class HCSpecialNodeHandler
       }
     }
 
-    if (!aCSSInlineAfter.isEmpty ())
+    if (aCSSInlineAfter.isNotEmpty ())
     {
       // Add at the end
       for (final ICSSCodeProvider aEntry : aCSSInlineAfter.getAll ())
@@ -387,13 +389,13 @@ public final class HCSpecialNodeHandler
 
   @Nonnull
   @ReturnsMutableCopy
-  public static List <IHCNode> extractSpecialNodes (@Nonnull final Iterable <? extends IHCNode> aNodes,
-                                                    @Nonnull final AbstractHCSpecialNodes <?> aSpecialNodes)
+  public static ICommonsList <IHCNode> extractSpecialNodes (@Nonnull final Iterable <? extends IHCNode> aNodes,
+                                                            @Nonnull final AbstractHCSpecialNodes <?> aSpecialNodes)
   {
     ValueEnforcer.notNull (aNodes, "Nodes");
     ValueEnforcer.notNull (aSpecialNodes, "SpecialNodes");
 
-    final List <IHCNode> ret = new ArrayList <IHCNode> ();
+    final ICommonsList <IHCNode> ret = new CommonsList <> ();
 
     for (final IHCNode aNode : aNodes)
     {

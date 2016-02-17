@@ -33,6 +33,7 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.collection.multimap.IMultiMapSetBased;
 import com.helger.commons.collection.multimap.MultiLinkedHashMapLinkedHashSetBased;
 import com.helger.commons.equals.EqualsHelper;
@@ -58,11 +59,11 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
 {
   private static final Logger s_aLogger = LoggerFactory.getLogger (AbstractHCSpecialNodes.class);
 
-  private final IMultiMapSetBased <ICSSMediaList, String> m_aExternalCSSs = new MultiLinkedHashMapLinkedHashSetBased <ICSSMediaList, String> ();
+  private final IMultiMapSetBased <ICSSMediaList, String> m_aExternalCSSs = new MultiLinkedHashMapLinkedHashSetBased <> ();
   private final InlineCSSList m_aInlineCSSBeforeExternal = new InlineCSSList ();
   private final InlineCSSList m_aInlineCSSAfterExternal = new InlineCSSList ();
 
-  private final Set <String> m_aExternalJSs = new LinkedHashSet <String> ();
+  private final Set <String> m_aExternalJSs = new LinkedHashSet <> ();
   private final CollectingJSCodeProvider m_aInlineJSBeforeExternal = new CollectingJSCodeProvider ();
   private final CollectingJSCodeProvider m_aInlineJSAfterExternal = new CollectingJSCodeProvider ();
 
@@ -116,7 +117,7 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
   @ReturnsMutableCopy
   public Map <ICSSMediaList, List <String>> getAllExternalCSSs ()
   {
-    final Map <ICSSMediaList, List <String>> ret = new LinkedHashMap <ICSSMediaList, List <String>> ();
+    final Map <ICSSMediaList, List <String>> ret = new LinkedHashMap <> ();
     for (final Map.Entry <ICSSMediaList, Set <String>> aEntry : m_aExternalCSSs.entrySet ())
       ret.put (aEntry.getKey (), CollectionHelper.newList (aEntry.getValue ()));
     return ret;
@@ -134,12 +135,12 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
 
   public boolean hasInlineCSSBeforeExternal ()
   {
-    return !m_aInlineCSSBeforeExternal.isEmpty ();
+    return m_aInlineCSSBeforeExternal.isNotEmpty ();
   }
 
   @Nonnull
   @ReturnsMutableCopy
-  public List <ICSSCodeProvider> getAllInlineCSSBeforeExternal ()
+  public ICommonsList <ICSSCodeProvider> getAllInlineCSSBeforeExternal ()
   {
     return m_aInlineCSSBeforeExternal.getAll ();
   }
@@ -156,12 +157,12 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
 
   public boolean hasInlineCSSAfterExternal ()
   {
-    return !m_aInlineCSSAfterExternal.isEmpty ();
+    return m_aInlineCSSAfterExternal.isNotEmpty ();
   }
 
   @Nonnull
   @ReturnsMutableCopy
-  public List <ICSSCodeProvider> getAllInlineCSSAfterExternal ()
+  public ICommonsList <ICSSCodeProvider> getAllInlineCSSAfterExternal ()
   {
     return m_aInlineCSSAfterExternal.getAll ();
   }
@@ -183,7 +184,7 @@ public abstract class AbstractHCSpecialNodes <IMPLTYPE extends AbstractHCSpecial
 
   @Nonnull
   @ReturnsMutableCopy
-  public List <String> getAllExternalJSs ()
+  public ICommonsList <String> getAllExternalJSs ()
   {
     return CollectionHelper.newList (m_aExternalJSs);
   }

@@ -23,6 +23,7 @@ import java.util.Map;
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.css.media.ICSSMediaList;
 import com.helger.html.js.IHasJSCode;
 import com.helger.html.resource.css.ICSSCodeProvider;
@@ -64,7 +65,7 @@ public interface IHCSpecialNodes extends Serializable
    */
   @Nonnull
   @ReturnsMutableCopy
-  List <ICSSCodeProvider> getAllInlineCSSBeforeExternal ();
+  ICommonsList <ICSSCodeProvider> getAllInlineCSSBeforeExternal ();
 
   /**
    * @return <code>true</code> if inline CSS to be included <b>after</b> the CSS
@@ -78,7 +79,7 @@ public interface IHCSpecialNodes extends Serializable
    */
   @Nonnull
   @ReturnsMutableCopy
-  List <ICSSCodeProvider> getAllInlineCSSAfterExternal ();
+  ICommonsList <ICSSCodeProvider> getAllInlineCSSAfterExternal ();
 
   /**
    * @return <code>true</code> if JS files are present, <code>false</code> if
@@ -91,7 +92,7 @@ public interface IHCSpecialNodes extends Serializable
    */
   @Nonnull
   @ReturnsMutableCopy
-  List <String> getAllExternalJSs ();
+  ICommonsList <String> getAllExternalJSs ();
 
   /**
    * @return <code>true</code> if inline JS is present, <code>false</code> if

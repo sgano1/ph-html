@@ -25,6 +25,7 @@ import com.helger.html.hc.IHCHasName;
 import com.helger.html.hc.html.HC_Target;
 import com.helger.html.hc.html.IHCElementWithChildren;
 import com.helger.html.hc.html.IHCHasMedia;
+import com.helger.html.js.EJSEvent;
 import com.helger.html.js.IHasJSCode;
 
 /**
@@ -46,13 +47,19 @@ public interface IHCA <THISTYPE extends IHCA <THISTYPE>>
   @Nullable
   HC_Target getTarget ();
 
-  boolean hasTarget ();
+  default boolean hasTarget ()
+  {
+    return getTarget () != null;
+  }
 
   @Nonnull
   THISTYPE setTarget (@Nullable HC_Target aTarget);
 
   @Nonnull
-  THISTYPE setTargetBlank ();
+  default THISTYPE setTargetBlank ()
+  {
+    return setTarget (HC_Target.BLANK);
+  }
 
   @Nullable
   IMimeType getType ();
@@ -60,9 +67,29 @@ public interface IHCA <THISTYPE extends IHCA <THISTYPE>>
   @Nonnull
   THISTYPE setType (@Nullable IMimeType aType);
 
+  /**
+   * Shortcut for <code>setEventHandler(EJSEvent.ONCLICK, aOnClick)</code>
+   *
+   * @param aOnClick
+   *        JS event to trigger
+   * @return this
+   */
   @Nonnull
-  THISTYPE setOnClick (@Nullable IHasJSCode aOnClick);
+  default THISTYPE setOnClick (@Nullable final IHasJSCode aOnClick)
+  {
+    return setEventHandler (EJSEvent.CLICK, aOnClick);
+  }
 
+  /**
+   * Shortcut for <code>addEventHandler(EJSEvent.ONCLICK, aOnClick)</code>
+   *
+   * @param aOnClick
+   *        JS event to trigger
+   * @return this
+   */
   @Nonnull
-  THISTYPE addOnClick (@Nullable IHasJSCode aOnClick);
+  default THISTYPE addOnClick (@Nullable final IHasJSCode aOnClick)
+  {
+    return addEventHandler (EJSEvent.CLICK, aOnClick);
+  }
 }
