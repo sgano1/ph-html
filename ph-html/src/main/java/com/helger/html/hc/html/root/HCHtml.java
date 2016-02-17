@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.microdom.IMicroDocument;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.microdom.IMicroNode;
@@ -89,9 +90,9 @@ public class HCHtml extends AbstractHCElement <HCHtml>
   @Override
   @Nonnull
   @ReturnsMutableCopy
-  public List <? extends IHCNode> getAllChildren ()
+  public ICommonsList <? extends IHCNode> getAllChildren ()
   {
-    return CollectionHelper.<IHCNode> newList (m_aHead, m_aBody);
+    return CollectionHelper.newList (m_aHead, m_aBody);
   }
 
   @Override

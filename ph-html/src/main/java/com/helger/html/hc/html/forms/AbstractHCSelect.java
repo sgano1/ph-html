@@ -30,6 +30,7 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.StringHelper;
@@ -437,7 +438,7 @@ public abstract class AbstractHCSelect <THISTYPE extends AbstractHCSelect <THIST
 
   @Override
   @Nullable
-  public List <? extends IHCNode> getAllChildren ()
+  public ICommonsList <? extends IHCNode> getAllChildren ()
   {
     return CollectionHelper.newList (m_aOptions);
   }

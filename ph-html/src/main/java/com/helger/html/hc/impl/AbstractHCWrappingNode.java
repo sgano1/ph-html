@@ -16,8 +16,6 @@
  */
 package com.helger.html.hc.impl;
 
-import java.util.List;
-
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -25,6 +23,7 @@ import javax.annotation.OverridingMethodsMustInvokeSuper;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.annotation.OverrideOnDemand;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.html.EHTMLVersion;
 import com.helger.html.hc.EHCNodeState;
@@ -113,7 +112,7 @@ public abstract class AbstractHCWrappingNode extends AbstractHCNode implements I
 
   @Override
   @Nullable
-  public List <? extends IHCNode> getAllChildren ()
+  public ICommonsList <? extends IHCNode> getAllChildren ()
   {
     return getWrappedNode ().getAllChildren ();
   }

@@ -16,8 +16,6 @@
  */
 package com.helger.html.hc.impl;
 
-import java.util.List;
-
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -26,6 +24,7 @@ import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.OverrideOnDemand;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.microdom.IMicroNode;
 import com.helger.commons.string.ToStringGenerator;
 import com.helger.html.EHTMLVersion;
@@ -61,7 +60,7 @@ public abstract class AbstractHCNode implements IHCNode
 
   @Nullable
   @OverrideOnDemand
-  public List <? extends IHCNode> getAllChildren ()
+  public ICommonsList <? extends IHCNode> getAllChildren ()
   {
     return null;
   }

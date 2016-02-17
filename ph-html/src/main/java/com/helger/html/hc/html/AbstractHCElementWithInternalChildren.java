@@ -16,7 +16,6 @@
  */
 package com.helger.html.hc.html;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -35,6 +34,8 @@ import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.ext.CommonsList;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.ToStringGenerator;
@@ -57,7 +58,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
                                                             extends AbstractHCElement <THISTYPE> implements
                                                             IHCElementWithInternalChildren <THISTYPE, CHILDTYPE>
 {
-  private List <CHILDTYPE> m_aChildren;
+  private ICommonsList <CHILDTYPE> m_aChildren;
 
   protected AbstractHCElementWithInternalChildren (@Nonnull final EHTMLElement eElement)
   {
@@ -102,7 +103,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
     {
       beforeAddChild (aChild);
       if (m_aChildren == null)
-        m_aChildren = new ArrayList <CHILDTYPE> ();
+        m_aChildren = new CommonsList <> ();
       int nAddIndex;
       if (nIndex < 0)
       {
@@ -139,7 +140,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
    * @param nIndex
    *        The index where the element was removed from. Always &ge; 0. This is
    *        the OLD index and now contains a different or no child.
-  * @param aChild
+   * @param aChild
    *        The child that was removed. Never <code>null</code>.
    */
   @OverrideOnDemand
@@ -197,7 +198,7 @@ public abstract class AbstractHCElementWithInternalChildren <THISTYPE extends Ab
   @Override
   @Nonnull
   @ReturnsMutableCopy
-  public final List <CHILDTYPE> getAllChildren ()
+  public final ICommonsList <CHILDTYPE> getAllChildren ()
   {
     return CollectionHelper.newList (m_aChildren);
   }

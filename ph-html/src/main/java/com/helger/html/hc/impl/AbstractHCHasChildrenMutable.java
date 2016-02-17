@@ -16,7 +16,6 @@
  */
 package com.helger.html.hc.impl;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -35,6 +34,8 @@ import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.ext.CommonsList;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.microdom.IMicroContainer;
 import com.helger.commons.microdom.MicroContainer;
 import com.helger.commons.string.StringHelper;
@@ -58,7 +59,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
                                                    extends AbstractHCNode
                                                    implements IHCHasChildrenMutable <THISTYPE, CHILDTYPE>
 {
-  private List <CHILDTYPE> m_aChildren;
+  private ICommonsList <CHILDTYPE> m_aChildren;
 
   public AbstractHCHasChildrenMutable ()
   {}
@@ -101,7 +102,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
     {
       beforeAddChild (aChild);
       if (m_aChildren == null)
-        m_aChildren = new ArrayList <CHILDTYPE> ();
+        m_aChildren = new CommonsList <> ();
       int nAddIndex;
       if (nIndex < 0)
       {
@@ -172,7 +173,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
   {
     if (m_aChildren != null)
     {
-      while (!m_aChildren.isEmpty ())
+      while (m_aChildren.isNotEmpty ())
         removeChild (0);
       m_aChildren = null;
     }
@@ -188,7 +189,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
 
   @Nullable
   @ReturnsMutableObject ("speed")
-  protected final List <CHILDTYPE> directGetChildren ()
+  protected final ICommonsList <CHILDTYPE> directGetChildren ()
   {
     return m_aChildren;
   }
@@ -196,7 +197,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
   @Override
   @Nonnull
   @ReturnsMutableCopy
-  public final List <CHILDTYPE> getAllChildren ()
+  public final ICommonsList <CHILDTYPE> getAllChildren ()
   {
     return CollectionHelper.newList (m_aChildren);
   }
