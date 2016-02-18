@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
-import com.helger.commons.collection.ext.CommonsList;
+import com.helger.commons.collection.ext.CommonsArrayList;
 import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.state.EChange;
 import com.helger.html.js.IHasJSCodeWithSettings;
@@ -39,7 +39,7 @@ import com.helger.html.jscode.IJSExpression;
  */
 public class JQuerySelectorList implements IHasJSCodeWithSettings
 {
-  private final ICommonsList <IJQuerySelector> m_aElements = new CommonsList <> ();
+  private final ICommonsList <IJQuerySelector> m_aElements = new CommonsArrayList <> ();
 
   public JQuerySelectorList ()
   {}
