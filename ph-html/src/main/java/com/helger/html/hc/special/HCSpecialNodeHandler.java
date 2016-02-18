@@ -36,7 +36,7 @@ import com.helger.commons.annotation.PresentForCodeCoverage;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.cache.AnnotationUsageCache;
 import com.helger.commons.collection.CollectionHelper;
-import com.helger.commons.collection.ext.CommonsList;
+import com.helger.commons.collection.ext.CommonsArrayList;
 import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.lang.ClassHelper;
 import com.helger.commons.lang.GenericReflection;
@@ -271,7 +271,7 @@ public final class HCSpecialNodeHandler
     final Iterable <? extends IHCNode> aRealSpecialNodes = applyModifiers (aNodes);
 
     // Do standard aggregations of CSS and JS
-    final ICommonsList <IHCNode> ret = new CommonsList <> ();
+    final ICommonsList <IHCNode> ret = new CommonsArrayList <> ();
     final CollectingJSCodeProvider aJSOnDocumentReadyBefore = new CollectingJSCodeProvider ();
     final CollectingJSCodeProvider aJSOnDocumentReadyAfter = new CollectingJSCodeProvider ();
     final CollectingJSCodeProvider aJSInlineBefore = new CollectingJSCodeProvider ();
@@ -395,7 +395,7 @@ public final class HCSpecialNodeHandler
     ValueEnforcer.notNull (aNodes, "Nodes");
     ValueEnforcer.notNull (aSpecialNodes, "SpecialNodes");
 
-    final ICommonsList <IHCNode> ret = new CommonsList <> ();
+    final ICommonsList <IHCNode> ret = new CommonsArrayList <> ();
 
     for (final IHCNode aNode : aNodes)
     {

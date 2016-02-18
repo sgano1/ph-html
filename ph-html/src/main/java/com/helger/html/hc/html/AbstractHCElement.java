@@ -36,7 +36,7 @@ import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.cache.AnnotationUsageCache;
 import com.helger.commons.collection.CollectionHelper;
-import com.helger.commons.collection.ext.CommonsList;
+import com.helger.commons.collection.ext.CommonsArrayList;
 import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.microdom.IMicroElement;
@@ -299,7 +299,7 @@ public abstract class AbstractHCElement <THISTYPE extends AbstractHCElement <THI
   @ReturnsMutableCopy
   public final ICommonsList <ICSSValue> getAllStyleValues ()
   {
-    return m_aStyles == null ? new CommonsList <> () : CollectionHelper.newList (m_aStyles.values ());
+    return m_aStyles == null ? new CommonsArrayList <> () : CollectionHelper.newList (m_aStyles.values ());
   }
 
   @Nullable

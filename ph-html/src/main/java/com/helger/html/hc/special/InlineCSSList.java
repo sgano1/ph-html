@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.commons.collection.ext.CommonsList;
+import com.helger.commons.collection.ext.CommonsArrayList;
 import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
@@ -132,7 +132,7 @@ public class InlineCSSList
     }
   }
 
-  private final ICommonsList <Item> m_aItems = new CommonsList <> ();
+  private final ICommonsList <Item> m_aItems = new CommonsArrayList <> ();
 
   public InlineCSSList ()
   {}

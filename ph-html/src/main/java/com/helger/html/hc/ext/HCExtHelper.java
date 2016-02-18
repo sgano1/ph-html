@@ -23,7 +23,7 @@ import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.commons.collection.ext.CommonsList;
+import com.helger.commons.collection.ext.CommonsArrayList;
 import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.string.StringHelper;
 import com.helger.html.EHTMLElement;
@@ -418,7 +418,7 @@ public final class HCExtHelper
   @ReturnsMutableCopy
   public static ICommonsList <IHCNode> nl2brList (@Nullable final String sText)
   {
-    final ICommonsList <IHCNode> ret = new CommonsList <IHCNode> ();
+    final ICommonsList <IHCNode> ret = new CommonsArrayList <IHCNode> ();
     nl2brList (sText, ret::add);
     return ret;
   }
@@ -466,7 +466,7 @@ public final class HCExtHelper
   @ReturnsMutableCopy
   public static ICommonsList <HCDiv> nl2divList (@Nullable final String sText)
   {
-    final ICommonsList <HCDiv> ret = new CommonsList <> ();
+    final ICommonsList <HCDiv> ret = new CommonsArrayList <> ();
     nl2divList (sText, ret::add);
     return ret;
   }
@@ -515,7 +515,7 @@ public final class HCExtHelper
   @ReturnsMutableCopy
   public static ICommonsList <IHCNode> list2brList (@Nullable final Iterable <String> aCont)
   {
-    final ICommonsList <IHCNode> ret = new CommonsList <> ();
+    final ICommonsList <IHCNode> ret = new CommonsArrayList <> ();
     if (aCont != null)
       for (final String sText : aCont)
       {
@@ -530,7 +530,7 @@ public final class HCExtHelper
   @ReturnsMutableCopy
   public static ICommonsList <IHCNode> list2divList (@Nullable final Iterable <String> aCont)
   {
-    final ICommonsList <IHCNode> ret = new CommonsList <> ();
+    final ICommonsList <IHCNode> ret = new CommonsArrayList <> ();
     if (aCont != null)
       for (final String sText : aCont)
         ret.add (new HCDiv ().addChild (sText));

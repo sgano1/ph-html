@@ -30,7 +30,7 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.annotation.ReturnsMutableObject;
-import com.helger.commons.collection.ext.CommonsList;
+import com.helger.commons.collection.ext.CommonsArrayList;
 import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.string.StringParser;
@@ -151,7 +151,7 @@ public abstract class AbstractHCBaseTable <IMPLTYPE extends AbstractHCBaseTable 
   @ReturnsMutableCopy
   public final ICommonsList <IHCNode> getAllChildren ()
   {
-    final ICommonsList <IHCNode> ret = new CommonsList <> ();
+    final ICommonsList <IHCNode> ret = new CommonsArrayList <> ();
     if (m_aColGroup != null)
       ret.add (m_aColGroup);
     ret.add (m_aHead);

@@ -27,7 +27,7 @@ import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
-import com.helger.commons.collection.ext.CommonsList;
+import com.helger.commons.collection.ext.CommonsArrayList;
 import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.mime.CMimeType;
@@ -469,7 +469,7 @@ public class HCHead extends AbstractHCElement <HCHead>
   @Nullable
   public ICommonsList <? extends IHCNode> getAllChildren ()
   {
-    final ICommonsList <IHCNode> ret = new CommonsList <> ();
+    final ICommonsList <IHCNode> ret = new CommonsArrayList <> ();
     ret.add (m_aPageTitle);
     ret.add (m_aBase);
     ret.addAll (m_aMetaElements);

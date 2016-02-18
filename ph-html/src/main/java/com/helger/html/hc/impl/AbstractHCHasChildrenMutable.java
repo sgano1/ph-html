@@ -34,7 +34,7 @@ import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.commons.collection.CollectionHelper;
-import com.helger.commons.collection.ext.CommonsList;
+import com.helger.commons.collection.ext.CommonsArrayList;
 import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.microdom.IMicroContainer;
 import com.helger.commons.microdom.MicroContainer;
@@ -102,7 +102,7 @@ public abstract class AbstractHCHasChildrenMutable <THISTYPE extends AbstractHCH
     {
       beforeAddChild (aChild);
       if (m_aChildren == null)
-        m_aChildren = new CommonsList <> ();
+        m_aChildren = new CommonsArrayList <> ();
       int nAddIndex;
       if (nIndex < 0)
       {

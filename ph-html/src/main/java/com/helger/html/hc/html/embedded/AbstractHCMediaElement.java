@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 import javax.annotation.OverridingMethodsMustInvokeSuper;
 
 import com.helger.commons.annotation.Nonempty;
-import com.helger.commons.collection.ext.CommonsList;
+import com.helger.commons.collection.ext.CommonsArrayList;
 import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.microdom.IMicroElement;
 import com.helger.commons.url.ISimpleURL;
@@ -168,7 +168,7 @@ public abstract class AbstractHCMediaElement <THISTYPE extends AbstractHCMediaEl
   @Nonempty
   protected ICommonsList <IHCMediaElementChild <?>> getChildrenFormEmitting (@Nonnull @Nonempty final ICommonsList <IHCMediaElementChild <?>> aChildren)
   {
-    final ICommonsList <IHCMediaElementChild <?>> ret = new CommonsList <> (aChildren.size ());
+    final ICommonsList <IHCMediaElementChild <?>> ret = new CommonsArrayList <> (aChildren.size ());
     // <source> must be first
     aChildren.findAll (c -> c.getElement ().equals (EHTMLElement.SOURCE), ret::add);
     // Add <track> and <img>

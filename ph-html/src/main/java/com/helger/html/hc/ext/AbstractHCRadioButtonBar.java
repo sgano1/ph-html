@@ -19,7 +19,7 @@ package com.helger.html.hc.ext;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.collection.ext.CommonsList;
+import com.helger.commons.collection.ext.CommonsArrayList;
 import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.html.hc.IHCNode;
 import com.helger.html.hc.html.forms.HCRadioButton;
@@ -29,7 +29,7 @@ import com.helger.html.hc.impl.HCTextNode;
 public abstract class AbstractHCRadioButtonBar extends AbstractHCSpan <AbstractHCRadioButtonBar>
 {
   private final String m_sName;
-  private final ICommonsList <HCRadioButton> m_aButtons = new CommonsList <> ();
+  private final ICommonsList <HCRadioButton> m_aButtons = new CommonsArrayList <> ();
 
   protected AbstractHCRadioButtonBar (@Nullable final String sName)
   {
